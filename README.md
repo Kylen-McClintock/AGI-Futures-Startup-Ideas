@@ -55,3 +55,11 @@ The main `<StatChart />` visualizes the adoption vs impact gap mentioned in the 
 - Layout logic is in `src/app/layout.tsx` (loads `Outfit` sans and `Playfair Display` serif).
 - Tailwind setup is completely handled via standard V4 variables mapped in `src/app/globals.css`.
 - The main accent color (`--primary`) is a vibrant, luminous emerald green (`#21de9a`), which provides the intended sci-fi glass hologram feel.
+
+## Hand-off Instructions for Other Agents
+To integrate a new startup idea (e.g. Attune) into this repository:
+1. Copy the Next.js page components from your prototype.
+2. Create a new folder under `src/app/` (e.g. `src/app/attune/`).
+3. Place the copied `page.tsx` into that new folder.
+4. Ensure any custom images or assets are copied into the `public/` folder.
+5. Update the `src/app/page.tsx` Index Library to link to your new sub-route.
