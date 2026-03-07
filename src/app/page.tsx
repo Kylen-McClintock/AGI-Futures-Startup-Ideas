@@ -38,16 +38,20 @@ export default function Home() {
                         </div>
                     </Link>
 
-                    {/* Placeholders for future ideas */}
-                    <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.01] opacity-50 relative overflow-hidden flex flex-col justify-center">
-                        <h2 className="text-2xl font-serif text-white/50 mb-3">Attune (Coming Soon)</h2>
-                        <p className="text-white/40 font-light line-clamp-2 mb-6">
+                    {/* Attune Card */}
+                    <Link
+                        href="/attune"
+                        className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-[var(--primary)]/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Attune</h2>
+                        <p className="text-white/70 font-light mb-6 line-clamp-2">
                             A neural-syncing communication layer for high-leverage teams...
                         </p>
-                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/30">
-                            Locked
+                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors">
+                            View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                         </div>
-                    </div>
+                    </Link>
                 </div>
 
             </div>
