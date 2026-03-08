@@ -21,6 +21,8 @@ import cookImage from "./assets/aura_use_case_cooking.png";
 import fitImage from "./assets/aura_use_case_fitness.png";
 import officeImage from "./assets/aura_use_case_office.png";
 import connectImage from "./assets/aura_connection_avatar.png";
+import arGlassesImage from "./assets/aura_use_case_ar_glasses.png";
+import carHudImage from "./assets/aura_use_case_autonomous_car.png";
 
 // Citations Data
 const citations = [
@@ -236,6 +238,32 @@ export default function AuraPage() {
                                     <div className="p-6 sm:w-1/2 flex flex-col justify-center">
                                         <h4 className="text-white font-medium mb-2">Virtual Coworker</h4>
                                         <p className="text-white/60 font-light text-sm">Runs focus sprints, posture nudges, and could become the avatar embodiment of AI agents working for you.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Commute */}
+                            <div>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-amber-400 mb-6 text-center">In-Transit & Daily Life</h3>
+                                <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                    <div className="glass-panel p-2 rounded-3xl border border-white/5 relative overflow-hidden group">
+                                        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative mb-4">
+                                            <Image src={carHudImage} alt="Autonomous Car HUD" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        </div>
+                                        <div className="p-4">
+                                            <h4 className="text-white font-medium mb-2">Autonomous Vehicle Windows</h4>
+                                            <p className="text-white/60 font-light text-sm">Turns the windshield into a context-aware HUD, overlaid on the real world while passengers lounge.</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="glass-panel p-2 rounded-3xl border border-white/5 relative overflow-hidden group">
+                                        <div className="aspect-[4/3] rounded-2xl overflow-hidden relative mb-4">
+                                            <Image src={arGlassesImage} alt="AR Glasses Dashboard" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                                        </div>
+                                        <div className="p-4">
+                                            <h4 className="text-white font-medium mb-2">Always-on AR Glasses</h4>
+                                            <p className="text-white/60 font-light text-sm">Sleek, stylish form factors providing elegant digital interfaces and subtle routing intelligence.</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

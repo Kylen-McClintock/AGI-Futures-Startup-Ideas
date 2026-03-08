@@ -29,8 +29,8 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                 {isExpanded && (
                     <>
                         {/* Backdrop to close on click outside (simplified for inline) */}
-                        <div 
-                            className="fixed inset-0 z-40" 
+                        <div
+                            className="fixed inset-0 z-40"
                             onClick={() => setIsExpanded(false)}
                             aria-hidden="true"
                         />
@@ -39,15 +39,15 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                             animate={{ opacity: 1, y: 0, scale: 1 }}
                             exit={{ opacity: 0, y: 5, scale: 0.95 }}
                             transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 rounded-xl bg-gray-900 border border-white/10 shadow-2xl z-50 text-left cursor-default glass-panel"
+                            className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 p-3 rounded-xl bg-black/95 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] z-[100] text-left cursor-default"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <div className="flex items-start justify-between gap-2 mb-1">
                                 <span className="text-xs font-mono uppercase tracking-wider text-[var(--primary)]">{source}</span>
                                 {url && (
-                                    <a 
-                                        href={url} 
-                                        target="_blank" 
+                                    <a
+                                        href={url}
+                                        target="_blank"
                                         rel="noopener noreferrer"
                                         className="text-white/40 hover:text-white transition-colors"
                                     >
@@ -56,7 +56,7 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                                 )}
                             </div>
                             <p className="text-sm text-white/90 leading-snug">{title}</p>
-                            
+
                             {/* Arrow down */}
                             <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-solid border-t-gray-900 border-x-transparent border-b-transparent border-t-8 border-x-8 border-b-0" />
                         </motion.div>
@@ -81,9 +81,9 @@ export function CitationSection({ citations }: { citations: CitationProps[] }) {
                                 <span className="italic">{cite.title}</span>.
                             </p>
                             {cite.url && (
-                                <a 
-                                    href={cite.url} 
-                                    target="_blank" 
+                                <a
+                                    href={cite.url}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="text-xs font-mono text-white/40 hover:text-[var(--primary)] transition-colors mt-1 inline-block"
                                 >
