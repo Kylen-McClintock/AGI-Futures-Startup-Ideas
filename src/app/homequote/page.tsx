@@ -11,6 +11,9 @@ import heroImg from "./assets/hq_hero_scan_1772949695780.png";
 import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
 import dispatchMapImg from "./assets/hq_dispatch_map_1772949722344.png";
 import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173.png";
+import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184.png";
+import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671.png";
+import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109.png";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
     <motion.div
@@ -99,6 +102,20 @@ export default function HomeQuotePage() {
                 </FadeIn>
 
                 <FadeIn>
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
+                        <Image
+                            src={groundedHeroImg}
+                            alt="HomeQuote AI Field View"
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
+                            sizes="(max-width: 1024px) 100vw, 1024px"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
+                    </div>
+                </FadeIn>
+
+                <FadeIn>
                     <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Problem
@@ -132,17 +149,16 @@ export default function HomeQuotePage() {
                 </FadeIn>
 
                 <FadeIn>
-                    <div className="relative h-[60vh] md:h-[70vh] w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden my-24 group">
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
                         <Image
                             src={arDeviceImg}
                             alt="HomeQuote AR Space Scanning"
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
                             quality={100}
-                            sizes="100vw"
+                            sizes="(max-width: 1024px) 100vw, 1024px"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
-                        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#06090c] to-transparent" />
                     </div>
                 </FadeIn>
 
@@ -186,6 +202,20 @@ export default function HomeQuotePage() {
                         <p className="text-xl text-emerald-400/90 italic">
                             This is not just lead generation. It is the operating system for scope, quote, and dispatch.
                         </p>
+                    </div>
+                </FadeIn>
+
+                <FadeIn>
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
+                        <Image
+                            src={cleanerTabletImg}
+                            alt="HomeQuote AI Cleaner Interface"
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
+                            sizes="(max-width: 1024px) 100vw, 1024px"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
                     </div>
                 </FadeIn>
 
@@ -235,17 +265,16 @@ export default function HomeQuotePage() {
                 </FadeIn>
 
                 <FadeIn>
-                    <div className="relative h-[60vh] md:h-[70vh] w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden my-24 group">
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
                         <Image
                             src={dispatchMapImg}
                             alt="HomeQuote AI Dispatch Network"
                             fill
-                            className="object-cover object-center scale-100 xl:scale-105"
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
                             quality={100}
-                            sizes="100vw"
+                            sizes="(max-width: 1024px) 100vw, 1024px"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
-                        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#06090c] to-transparent" />
                     </div>
                 </FadeIn>
 
@@ -286,6 +315,20 @@ export default function HomeQuotePage() {
                         <p>
                             That means HomeQuote AI can start with one high-frequency, visually legible category, then expand outward by reusing the same core workflow. If HomeQuote AI becomes the default way to transform &quot;show me the job&quot; into &quot;here is the price, time, and best crew,&quot; it can sit inside a meaningful slice of a trillion-dollar category.
                         </p>
+                    </div>
+                </FadeIn>
+
+                <FadeIn>
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
+                        <Image
+                            src={kitchenLaptopImg}
+                            alt="HomeQuote AI Office View"
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
+                            sizes="(max-width: 1024px) 100vw, 1024px"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
                     </div>
                 </FadeIn>
 
@@ -392,17 +435,16 @@ export default function HomeQuotePage() {
                 </FadeIn>
 
                 <FadeIn>
-                    <div className="relative h-[60vh] md:h-[70vh] w-[100vw] left-1/2 -translate-x-1/2 overflow-hidden my-24 group">
+                    <div className="relative h-[350px] md:h-[450px] w-[100vw] max-w-5xl left-1/2 -translate-x-1/2 overflow-hidden my-20 group rounded-3xl border border-white/10 shadow-2xl">
                         <Image
                             src={neighborhoodImg}
                             alt="HomeQuote Autonomous Neighborhood Service"
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
                             quality={100}
-                            sizes="100vw"
+                            sizes="(max-width: 1024px) 100vw, 1024px"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
-                        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-[#06090c] to-transparent" />
                     </div>
                 </FadeIn>
 
