@@ -36,7 +36,7 @@ export default function Home() {
                     >
                         {/* Background Image Overlay */}
                         <div className="absolute inset-0 z-0">
-                            <Image src={murmuration_hero} alt="Murmuration Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <Image src={murmuration_hero} alt="Murmuration Hero" fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
@@ -64,7 +64,7 @@ export default function Home() {
                     >
                         {/* Background Image Overlay */}
                         <div className="absolute inset-0 z-0">
-                            <Image src={attune_hero} alt="Attune Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <Image src={attune_hero} alt="Attune Hero" fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
@@ -91,7 +91,7 @@ export default function Home() {
                     >
                         {/* Background Image Overlay */}
                         <div className="absolute inset-0 z-0">
-                            <Image src={porchfront_hero} alt="Porchfront Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <Image src={porchfront_hero} alt="Porchfront Hero" fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
@@ -118,7 +118,7 @@ export default function Home() {
                     >
                         {/* Background Image Overlay */}
                         <div className="absolute inset-0 z-0">
-                            <Image src={homequote_hero} alt="HomeQuote AI Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <Image src={homequote_hero} alt="HomeQuote AI Hero" fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
                             <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />

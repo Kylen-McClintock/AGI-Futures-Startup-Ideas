@@ -40,6 +40,7 @@ export default function HomeQuotePage() {
                         alt="HomeQuote AI Hero Visualization"
                         fill
                         className="object-cover object-center"
+                        quality={100}
                         priority
                         sizes="100vw"
                     />
@@ -137,6 +138,7 @@ export default function HomeQuotePage() {
                             alt="HomeQuote AR Space Scanning"
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
                             sizes="100vw"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
@@ -239,6 +241,7 @@ export default function HomeQuotePage() {
                             alt="HomeQuote AI Dispatch Network"
                             fill
                             className="object-cover object-center scale-100 xl:scale-105"
+                            quality={100}
                             sizes="100vw"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />
@@ -395,6 +398,7 @@ export default function HomeQuotePage() {
                             alt="HomeQuote Autonomous Neighborhood Service"
                             fill
                             className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
                             sizes="100vw"
                         />
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#06090c] to-transparent" />

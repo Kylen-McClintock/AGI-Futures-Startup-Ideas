@@ -54,6 +54,7 @@ export default function Home() {
                 src={attune_couple_connection}
                 alt="A warm cinematic shot of a couple sitting on a mid-century sofa looking at a glowing tablet together."
                 fill
+                quality={100}
                 className="object-cover"
                 priority
               />
@@ -136,6 +137,7 @@ export default function Home() {
                 src={attune_kitchen_moment}
                 alt="A close-up cinematic shot of a man and a woman in a retro-futurist kitchen sharing a warm moment."
                 fill
+                quality={100}
                 className="object-cover"
               />
             </div>
@@ -204,6 +206,7 @@ export default function Home() {
               src={attune_dual_sync}
               alt="Two glowing tablets showing relationship sync interfaces on a mid-century table"
               fill
+              quality={100}
               className="object-cover"
             />
           </div>
@@ -329,6 +332,7 @@ export default function Home() {
             src={attune_memory_engine}
             alt="Relationship memory engine UI displaying compounding graphs in a nature-filled room"
             fill
+            quality={100}
             className="object-cover"
           />
         </RevealSection>

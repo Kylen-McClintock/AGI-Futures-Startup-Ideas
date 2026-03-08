@@ -2,7 +2,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 export function ParallaxImage({
     src,
@@ -32,10 +32,13 @@ export function ParallaxImage({
                 className="absolute inset-x-0 -inset-y-16"
             >
                 {src ? (
-                    <img
-                        src={typeof src === "string" ? src : src.src}
+                    <Image
+                        src={src}
                         alt={alt}
-                        className="w-full h-full object-cover"
+                        fill
+                        quality={100}
+                        className="object-cover"
+                        priority={priority}
                     />
                 ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center text-gray-400 text-sm relative z-0">

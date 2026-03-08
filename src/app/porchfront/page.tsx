@@ -63,7 +63,7 @@ export default function PorchfrontPage() {
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                     className="w-full max-w-6xl mx-auto rounded-[2rem] overflow-hidden shadow-2xl border border-black/10 dark:border-white/10 relative z-20 aspect-[16/9] md:aspect-[21/9]"
                 >
-                    <Image src={us_block_party} alt="A lively block party in a typical US suburban cul-de-sac with a Homegrown Ales banner" fill className="object-cover" priority />
+                    <Image src={us_block_party} alt="A lively block party in a typical US suburban cul-de-sac with a Homegrown Ales banner" fill quality={100} className="object-cover" priority />
                 </motion.div>
             </motion.section>
 
@@ -109,7 +109,7 @@ export default function PorchfrontPage() {
                         viewport={{ once: true, margin: "-100px" }}
                         className="w-full relative rounded-3xl overflow-hidden shadow-xl mb-20 aspect-[16/9] md:aspect-[21/9] bg-zinc-100 dark:bg-zinc-900 border border-black/5 dark:border-white/5"
                     >
-                        <Image src={lush_neighborhood_street} alt="A lush pedestrianized futuristic street with open garages" fill className="object-cover" />
+                        <Image src={lush_neighborhood_street} alt="A lush pedestrianized futuristic street with open garages" fill quality={100} className="object-cover" />
                     </motion.div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -192,7 +192,7 @@ export default function PorchfrontPage() {
                                 viewport={{ once: true }}
                                 className="w-full relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-emerald-800"
                             >
-                                <Image src={us_suburb_bakery} alt="A typical American suburban garage converted into a neighborhood micro-bakery" fill className="object-cover" />
+                                <Image src={us_suburb_bakery} alt="A typical American suburban garage converted into a neighborhood micro-bakery" fill quality={100} className="object-cover" />
                             </motion.div>
                         </div>
                     </div>
@@ -265,7 +265,7 @@ export default function PorchfrontPage() {
                                     viewport={{ once: true }}
                                     className="hidden md:block w-full relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5"
                                 >
-                                    <Image src={us_suburb_bakery} alt="A typical American suburban garage converted into a neighborhood micro-bakery" fill className="object-cover" />
+                                    <Image src={us_suburb_bakery} alt="A typical American suburban garage converted into a neighborhood micro-bakery" fill quality={100} className="object-cover" />
                                 </motion.div>
                             </div>
                         </div>
@@ -305,7 +305,7 @@ export default function PorchfrontPage() {
                                 viewport={{ once: true }}
                                 className="w-full mt-8 relative aspect-[21/9] rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5"
                             >
-                                <Image src={us_suburb_repair_cafe} alt="A standard American suburban house with a repair cafe in the garage" fill className="object-cover" />
+                                <Image src={us_suburb_repair_cafe} alt="A standard American suburban house with a repair cafe in the garage" fill quality={100} className="object-cover" />
                             </motion.div>
                         </div>
                     </div>
@@ -351,7 +351,7 @@ export default function PorchfrontPage() {
                                 viewport={{ once: true }}
                                 className="w-full mt-8 relative aspect-video rounded-2xl overflow-hidden shadow-lg border border-black/5 dark:border-white/5"
                             >
-                                <Image src={hero_garage_cafe} alt="Open residential garage converted into a vibrant micro-cafe on a retro-futuristic suburban street" fill className="object-cover" />
+                                <Image src={hero_garage_cafe} alt="Open residential garage converted into a vibrant micro-cafe on a retro-futuristic suburban street" fill quality={100} className="object-cover" />
                             </motion.div>
                         </div>
                     </div>
