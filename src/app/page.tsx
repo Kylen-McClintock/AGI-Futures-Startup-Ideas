@@ -22,7 +22,7 @@ export default function Home() {
                     A collection of premium speculative venture theses and product storytelling prototypes.
                 </p>
 
-                <div className="grid gap-4 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {/* Murmuration Engine Card */}
                     <Link
                         href="/murmuration"
@@ -49,6 +49,20 @@ export default function Home() {
                             A neural-syncing communication layer for high-leverage teams...
                         </p>
                         <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors">
+                            View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                        </div>
+                    </Link>
+                    {/* Porchfront Card */}
+                    <Link
+                        href="/porchfront"
+                        className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
+                    >
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-emerald-400 transition-colors">Porchfront</h2>
+                        <p className="text-white/70 font-light mb-6 line-clamp-3">
+                            Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
+                        </p>
+                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors">
                             View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                         </div>
                     </Link>
