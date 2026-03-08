@@ -42,9 +42,14 @@ export default function Home() {
 
                         <div className="relative z-10 flex flex-col h-full">
                             <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Murmuration Engine</h2>
-                            <p className="text-white/70 font-light mb-6 line-clamp-none">
-                                An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.
-                            </p>
+                            <div className="relative mb-6 flex-1">
+                                <p className="text-white/80 font-medium absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                    AI Agent Swarm Intelligence
+                                </p>
+                                <p className="text-white/70 font-light transition-opacity duration-500 opacity-0 group-hover:opacity-100 line-clamp-none">
+                                    An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.
+                                </p>
+                            </div>
                             <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors mt-auto pt-4">
                                 View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
@@ -65,9 +70,14 @@ export default function Home() {
 
                         <div className="relative z-10 flex flex-col h-full">
                             <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Attune</h2>
-                            <p className="text-white/70 font-light mb-6 line-clamp-none">
-                                A neural-syncing communication layer for high-leverage teams.
-                            </p>
+                            <div className="relative mb-6 flex-1">
+                                <p className="text-white/80 font-medium absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                    An AI relationship coach
+                                </p>
+                                <p className="text-white/70 font-light transition-opacity duration-500 opacity-0 group-hover:opacity-100 line-clamp-none">
+                                    An AI relationship coach to make her feel heard, seen, and supported, consistently.
+                                </p>
+                            </div>
                             <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors mt-auto pt-4">
                                 View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
@@ -87,9 +97,14 @@ export default function Home() {
 
                         <div className="relative z-10 flex flex-col h-full">
                             <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-emerald-400 transition-colors">Porchfront</h2>
-                            <p className="text-white/70 font-light mb-6 line-clamp-none">
-                                Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
-                            </p>
+                            <div className="relative mb-6 flex-1">
+                                <p className="text-white/80 font-medium absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                    The open-garage culture OS
+                                </p>
+                                <p className="text-white/70 font-light transition-opacity duration-500 opacity-0 group-hover:opacity-100 line-clamp-none">
+                                    Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
+                                </p>
+                            </div>
                             <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors mt-auto pt-4">
                                 View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
