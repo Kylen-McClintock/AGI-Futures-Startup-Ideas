@@ -1,10 +1,10 @@
-# Murmuration Engine - Landing Page Prototype
+# AGI Futures - Startup Ideas Library
 
-This is a single production-quality webpage in Next.js + TypeScript + Tailwind CSS (v4) + Framer Motion that renders the startup idea script for "Murmuration Engine" as an immersive editorial landing page.
+This repository contains a collection of production-quality, immersive landing page prototypes for speculative AGI-era startup ideas. The core project is built using Next.js (App Router) + TypeScript + Tailwind CSS (v4) + Framer Motion.
 
-It uses a "Tomorrowland / Retro-Futurist" aesthetic: highly detailed, luminous, and optimistic, favoring lush, nature-filled sci-fi rather than cyberpunk grime.
+Each startup idea gets its own sub-route (e.g. `/murmuration`, `/attune`, `/porchfront`), encapsulating its own aesthetic, components, and assets.
 
-## How to run the page
+## How to run the library
 
 1. Ensure you have Node.js installed (v18+ recommended).
 2. Install dependencies:
@@ -45,10 +45,8 @@ To bring in a different startup script:
 
 ## Where the charts source their data from
 
-The main `<StatChart />` visualizes the adoption vs impact gap mentioned in the script:
-- **78% organizations use AI vs <20% report tangible earnings impact.**
-- Source: *McKinsey: The state of AI: How organizations are rewiring to capture value.* (This data point specifically matches the structural framing the script used).
-- If you need to visualize new data, the chart component is found at `src/components/charts/stat-chart.tsx` and can easily be adapted as a generic dual-bar or ring progress component.
+Various components like `<StatChart />`, `<RelationshipStatGraph />`, and `<LonelinessChart />` are used across the different startup ideas to visualize key data points from actual research papers and studies.
+- If you need to visualize new data, you can build custom chart components in the specific startup's `components/` folder or adapt existing generic components if they fit the use case.
 
 ## Architecture & Styling
 
@@ -57,9 +55,9 @@ The main `<StatChart />` visualizes the adoption vs impact gap mentioned in the 
 - The main accent color (`--primary`) is a vibrant, luminous emerald green (`#21de9a`), which provides the intended sci-fi glass hologram feel.
 
 ## Hand-off Instructions for Other Agents
-To integrate a new startup idea (e.g. Attune) into this repository:
-1. Copy the Next.js page components from your prototype.
-2. Create a new folder under `src/app/` (e.g. `src/app/attune/`).
-3. Place the copied `page.tsx` into that new folder.
-4. Ensure any custom images or assets are copied into the `public/` folder.
-5. Update the `src/app/page.tsx` Index Library to link to your new sub-route.
+To integrate a new startup idea (e.g. HomeQuote AI) into this repository:
+1. Create a new folder under `src/app/` (e.g. `src/app/homequote/`).
+2. Build the route by creating a `page.tsx` within that folder.
+3. Place all custom components specific to the new idea in a colocated `components/` folder (e.g. `src/app/homequote/components/`).
+4. Place all static assets in a colocated `assets/` folder (e.g. `src/app/homequote/assets/`). Use static imports inside your components (e.g. `import hero from './assets/hero.png'`).
+5. Update the main Index Library (`src/app/page.tsx`) to link to your new sub-route.
