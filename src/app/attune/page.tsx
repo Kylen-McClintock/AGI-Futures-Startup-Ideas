@@ -48,8 +48,8 @@ export default function Home() {
             </div>
           </RevealSection>
 
-          <RevealSection delay={0.4} className="relative hidden lg:block">
-            <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)]">
+          <RevealSection delay={0.4} className="relative w-full mt-8 lg:mt-0">
+            <div className="relative w-full max-w-md mx-auto aspect-square rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)]">
               <Image
                 src={attune_couple_connection}
                 alt="A warm cinematic shot of a couple sitting on a mid-century sofa looking at a glowing tablet together."
