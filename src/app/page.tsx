@@ -6,6 +6,7 @@ import murmuration_hero from "./murmuration/assets/hero_strategy_dashboard.png";
 import attune_hero from "./attune/assets/attune_hero_vista.png";
 import porchfront_hero from "./porchfront/assets/hero_garage_cafe.png";
 import homequote_hero from "./homequote/assets/hq_hero_scan_1772949695780.png";
+import aura_hero from "./aura/assets/aura_hero_vista.png";
 
 export default function Home() {
     return (
@@ -134,6 +135,34 @@ export default function Home() {
                                 </p>
                             </div>
                             <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors mt-auto pt-4">
+                                View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                            </div>
+                        </div>
+                    </Link>
+
+                    {/* AURA Card */}
+                    <Link
+                        href="/aura"
+                        className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
+                    >
+                        {/* Background Image Overlay */}
+                        <div className="absolute inset-0 z-0">
+                            <Image src={aura_hero} alt="AURA Hero" fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                            <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-blue-400 transition-colors">AURA</h2>
+                            <div className="relative mb-6 flex-1">
+                                <p className="text-white/80 font-medium absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
+                                    Marketplace for AR embedded AI Avatars
+                                </p>
+                                <p className="text-white/70 font-light transition-opacity duration-500 opacity-0 group-hover:opacity-100 line-clamp-none">
+                                    An SDK and marketplace that lets any developer drop lifelike, spatially aware AI companions into AR apps.
+                                </p>
+                            </div>
+                            <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-blue-400 transition-colors mt-auto pt-4">
                                 View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
