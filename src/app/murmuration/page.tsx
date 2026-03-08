@@ -5,6 +5,10 @@ import { StatChart } from "./components/charts/stat-chart";
 import { InteractiveLoop } from "./components/ui/interactive-loop";
 import { ArrowRight, CheckCircle2, ChevronDown, Layers, Target, Activity } from "lucide-react";
 
+import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
+import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
+import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.png";
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[var(--background)] overflow-hidden">
@@ -56,7 +60,7 @@ export default function Home() {
         {/* PARALLAX VISUAL 1 */}
         <ScrollReveal className="py-12">
           <ParallaxImage
-            src="/hero_strategy_dashboard.png"
+            src={hero_strategy_dashboard}
             alt="Tomorrowland corporate vista"
             prompt="High-rise luminous office overlooking a lush, nature-filled sci-fi cityscape. Sunlight streaming onto transparent holographic glass displays showing data nodes connecting like a murmuration."
             className="aspect-video w-full rounded-3xl"
@@ -133,7 +137,7 @@ export default function Home() {
         {/* PARALLAX VISUAL 2 */}
         <ScrollReveal className="py-12">
           <ParallaxImage
-            src="/swarm_workflow_hologram.png"
+            src={swarm_workflow_hologram}
             alt="Abstract AI workflow simulation diagram"
             prompt="A translucent 3D holographic map of a business workflow, floating gracefully in the air inside a bright, clean, premium lab overlooking a forest. The hologram shows green glowing nodes representing successful automated agent tasks."
             className="aspect-video w-full rounded-3xl"
@@ -249,7 +253,7 @@ export default function Home() {
         {/* PARALLAX VISUAL 3 */}
         <ScrollReveal className="py-12">
           <ParallaxImage
-            src="/logistics_dashboard_vista.png"
+            src={logistics_dashboard_vista}
             alt="Startups outmaneuvering incumbents"
             prompt="Wide shot of a massive, slow-moving monolithic structure in the distance, while a sleek, luminous, incredibly fast swarm of small silver crafts maneuvers brilliantly around it, set against a stunning, vibrant Tomorrowland sunset."
             className="aspect-[21/9] w-full rounded-3xl"
