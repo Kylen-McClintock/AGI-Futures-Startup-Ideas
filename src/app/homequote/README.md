@@ -20,7 +20,7 @@ To seamlessly drag-and-drop this into your `AGI-Futures-Startup-Ideas` repositor
 3. Add the `<Link>` block below into `AGI-Futures-Startup-Ideas/src/app/page.tsx`:
 
 ```tsx
-import homequote_hero from "./homequote-ai/assets/hq_hero_scan_1772949695780.png";
+import homequote_hero from "./homequote-ai/assets/hq_hero_grounded_1772952881184.png";
 
 {/* HomeQuote AI Card */}
 <Link
