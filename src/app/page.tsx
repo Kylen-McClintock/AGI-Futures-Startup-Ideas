@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import murmuration_hero from "./murmuration/assets/hero_strategy_dashboard.png";
 import attune_hero from "./attune/assets/attune_hero_vista.png";
 import porchfront_hero from "./porchfront/assets/hero_garage_cafe.png";
-import homequote_hero from "./homequote/assets/hq_hero_grounded_1772952881184.png";
+import homequote_hero from "./homequote/assets/hq_hero_scan_1772949695780.png";
 
 export default function Home() {
     return (

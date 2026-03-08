@@ -7,10 +7,10 @@ import ExpandableCitation from "./components/ExpandableCitation";
 import InteractiveSection from "./components/InteractiveSection";
 import MarketChart from "./components/MarketChart";
 
-import heroImg from "./assets/hq_hero_grounded_1772952881184.png";
-import arDeviceImg from "./assets/hq_cleaner_tablet_1772952910671.png";
+import heroImg from "./assets/hq_hero_scan_1772949695780.png";
+import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
 import dispatchMapImg from "./assets/hq_dispatch_map_1772949722344.png";
-import neighborhoodImg from "./assets/hq_kitchen_laptop_1772952899109.png";
+import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173.png";
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
     <motion.div
