@@ -1,5 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+
+import murmuration_hero from "./murmuration/assets/hero_strategy_dashboard.png";
+import attune_hero from "./attune/assets/attune_hero_vista.png";
+import porchfront_hero from "./porchfront/assets/hero_garage_cafe.png";
 
 export default function Home() {
     return (
@@ -28,13 +33,21 @@ export default function Home() {
                         href="/murmuration"
                         className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-[var(--primary)]/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Murmuration Engine</h2>
-                        <p className="text-white/70 font-light mb-6 line-clamp-2">
-                            An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.
-                        </p>
-                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors">
-                            View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                        {/* Background Image Overlay */}
+                        <div className="absolute inset-0 z-0">
+                            <Image src={murmuration_hero} alt="Murmuration Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                            <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Murmuration Engine</h2>
+                            <p className="text-white/70 font-light mb-6 line-clamp-none">
+                                An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.
+                            </p>
+                            <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors mt-auto pt-4">
+                                View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                            </div>
                         </div>
                     </Link>
 
@@ -43,13 +56,21 @@ export default function Home() {
                         href="/attune"
                         className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-[var(--primary)]/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Attune</h2>
-                        <p className="text-white/70 font-light mb-6 line-clamp-2">
-                            A neural-syncing communication layer for high-leverage teams...
-                        </p>
-                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors">
-                            View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                        {/* Background Image Overlay */}
+                        <div className="absolute inset-0 z-0">
+                            <Image src={attune_hero} alt="Attune Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                            <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-[var(--primary)] transition-colors">Attune</h2>
+                            <p className="text-white/70 font-light mb-6 line-clamp-none">
+                                A neural-syncing communication layer for high-leverage teams.
+                            </p>
+                            <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-[var(--primary)] transition-colors mt-auto pt-4">
+                                View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                            </div>
                         </div>
                     </Link>
                     {/* Porchfront Card */}
@@ -57,13 +78,21 @@ export default function Home() {
                         href="/porchfront"
                         className="group block glass-panel p-8 rounded-3xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden"
                     >
-                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-emerald-400 transition-colors">Porchfront</h2>
-                        <p className="text-white/70 font-light mb-6 line-clamp-6">
-                            Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
-                        </p>
-                        <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors">
-                            View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                        {/* Background Image Overlay */}
+                        <div className="absolute inset-0 z-0">
+                            <Image src={porchfront_hero} alt="Porchfront Hero" fill className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-0" />
+
+                        <div className="relative z-10 flex flex-col h-full">
+                            <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-emerald-400 transition-colors">Porchfront</h2>
+                            <p className="text-white/70 font-light mb-6 line-clamp-none">
+                                Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
+                            </p>
+                            <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors mt-auto pt-4">
+                                View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                            </div>
                         </div>
                     </Link>
                 </div>
