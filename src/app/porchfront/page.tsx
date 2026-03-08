@@ -72,11 +72,10 @@ export default function PorchfrontPage() {
                             <p className="text-lg md:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6 font-light">
                                 Roughly <strong className="font-semibold text-zinc-900 dark:text-zinc-100">half of U.S. adults report loneliness</strong>, while driverless ride-hail now delivers <strong className="font-semibold text-zinc-900 dark:text-zinc-100">~250k rides weekly</strong> across major U.S. metros—early proof that car-light living is coming and garages can shift from storage to social.
                                 <ExpandableCitation
-                                    title="Surgeon General Advisory"
-                                    url="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf?utm_source=chatgpt.com"
-                                >
-                                    Our Epidemic of Loneliness and Isolation: The U.S. Surgeon General's Advisory on the Healing Effects of Social Connection and Community.
-                                </ExpandableCitation>
+                                    label="Surgeon General Advisory"
+                                    sourceUrl="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf?utm_source=chatgpt.com"
+                                    sourceText="Our Epidemic of Loneliness and Isolation: The U.S. Surgeon General's Advisory on the Healing Effects of Social Connection and Community."
+                                />
                             </p>
                         </div>
 
@@ -131,7 +130,7 @@ export default function PorchfrontPage() {
                             <h3 className="font-serif text-2xl font-medium mb-3">Walkable Europe shows the appetite.</h3>
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                                 Pedestrianized, mixed-use streets consistently lift foot traffic and nearby spend—evidence that people crave neighborhood-scale connection.
-                                <ExpandableCitation title="ScienceDirect" url="https://www.sciencedirect.com/science/article/am/pii/S026427512100367X?utm_source=chatgpt.com" className="mt-2" />
+                                <ExpandableCitation label="ScienceDirect" sourceUrl="https://www.sciencedirect.com/science/article/am/pii/S026427512100367X?utm_source=chatgpt.com" sourceText="Pedestrianization and the economy." />
                             </p>
                         </motion.div>
 
@@ -146,7 +145,7 @@ export default function PorchfrontPage() {
                             <h3 className="font-serif text-2xl font-medium mb-3">Policy tailwinds.</h3>
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                                 ADU and parking-minimum reforms make it easier to adapt small residential spaces; cities are already updating handbooks and guidance.
-                                <ExpandableCitation title="California ADU Handbook" url="https://ahcd.assembly.ca.gov/system/files/2025-03/adu-handbook-update.pdf?utm_source=chatgpt.com" className="mt-2" />
+                                <ExpandableCitation label="California ADU Handbook" sourceUrl="https://ahcd.assembly.ca.gov/system/files/2025-03/adu-handbook-update.pdf?utm_source=chatgpt.com" sourceText="ADU regulatory guidelines." />
                             </p>
                         </motion.div>
 
@@ -163,7 +162,7 @@ export default function PorchfrontPage() {
                             <h3 className="font-serif text-2xl font-medium mb-3">Autonomy is arriving.</h3>
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                                 Fewer household cars over time means more sidewalk-facing space dedicated to people, not storage.
-                                <ExpandableCitation title="Waymo Expansion" url="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" className="mt-2" />
+                                <ExpandableCitation label="Waymo Expansion" sourceUrl="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" sourceText="Robotaxi services expand." />
                             </p>
                         </motion.div>
                     </div>
@@ -425,7 +424,7 @@ export default function PorchfrontPage() {
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-4">
                                 Reduces the need for private car storage over time; more garages can face the sidewalk as human-scale spaces.
                             </p>
-                            <ExpandableCitation title="Reuters: Waymo Expands" url="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" />
+                            <ExpandableCitation label="Reuters: Waymo Expands" sourceUrl="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" sourceText="Autonomous ride-hailing expansion context." />
                         </div>
 
                         <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 relative group">
@@ -435,7 +434,7 @@ export default function PorchfrontPage() {
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed mb-4">
                                 Drives setup/ops costs down for ultra-small businesses (load-in/out, cleaning, stocking, simple prep), enabling one-person + robot micro-shops.
                             </p>
-                            <ExpandableCitation title="BMW Completes Pilot" url="https://www.automotivedive.com/news/bmw-completes-sucessful-pilot-humanoid-robots-spartanburg-plant-figure-02/723574/?utm_source=chatgpt.com" />
+                            <ExpandableCitation label="BMW Completes Pilot" sourceUrl="https://www.automotivedive.com/news/bmw-completes-sucessful-pilot-humanoid-robots-spartanburg-plant-figure-02/723574/?utm_source=chatgpt.com" sourceText="Pilot program for humanoid robots." />
                         </div>
 
                         <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 shadow-lg relative group overflow-hidden">
@@ -461,11 +460,5 @@ export default function PorchfrontPage() {
             </section>
 
         </div>
-    );
-}
-                </GridContainer >
-            </section >
-
-        </div >
     );
 }

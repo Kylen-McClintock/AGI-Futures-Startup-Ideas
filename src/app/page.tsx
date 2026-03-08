@@ -59,7 +59,7 @@ export default function Home() {
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                         <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-emerald-400 transition-colors">Porchfront</h2>
-                        <p className="text-white/70 font-light mb-6 line-clamp-4">
+                        <p className="text-white/70 font-light mb-6 line-clamp-6">
                             Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.
                         </p>
                         <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-emerald-400 transition-colors">
