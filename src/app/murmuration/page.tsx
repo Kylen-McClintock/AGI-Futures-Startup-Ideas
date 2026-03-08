@@ -1,8 +1,8 @@
-import { ParallaxImage } from "@/components/ui/parallax-image";
-import { ScrollReveal, FadeIn } from "@/components/ui/scroll-reveal";
-import { ExpandableCitation } from "@/components/ui/expandable-citation";
-import { StatChart } from "@/components/charts/stat-chart";
-import { InteractiveLoop } from "@/components/ui/interactive-loop";
+import { ParallaxImage } from "./components/ui/parallax-image";
+import { ScrollReveal, FadeIn } from "./components/ui/scroll-reveal";
+import { ExpandableCitation } from "./components/ui/expandable-citation";
+import { StatChart } from "./components/charts/stat-chart";
+import { InteractiveLoop } from "./components/ui/interactive-loop";
 import { ArrowRight, CheckCircle2, ChevronDown, Layers, Target, Activity } from "lucide-react";
 
 export default function Home() {
