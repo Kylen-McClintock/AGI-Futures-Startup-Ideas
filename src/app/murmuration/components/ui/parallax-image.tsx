@@ -3,6 +3,9 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
+import { StaticImageData } from "next/image";
+import Image from "next/image";
+
 export function ParallaxImage({
     src,
     alt,
@@ -10,7 +13,7 @@ export function ParallaxImage({
     className,
     priority = false
 }: {
-    src?: string;
+    src?: string | StaticImageData;
     alt: string;
     prompt: string;
     className?: string;
@@ -31,11 +34,22 @@ export function ParallaxImage({
                 className="absolute inset-x-0 -inset-y-16"
             >
                 {src ? (
-                    <img
-                        src={src}
-                        alt={alt}
-                        className="w-full h-full object-cover"
-                    />
+                    typeof src === 'string' ? (
+                        <img
+                            src={src}
+                            alt={alt}
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <Image
+                            src={src}
+                            alt={alt}
+                            placeholder="blur"
+                            fill
+                            className="object-cover"
+                            priority={priority}
+                        />
+                    )
                 ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center text-gray-400 text-sm relative z-0">
                         {/* Pseudo-luminous grid background */}

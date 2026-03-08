@@ -1,4 +1,10 @@
 import Image from "next/image";
+import attune_couple_connection from "./assets/attune_couple_connection.png";
+import attune_daily_reps from "./assets/attune_daily_reps.png";
+import attune_dual_sync from "./assets/attune_dual_sync.png";
+import attune_hero_vista from "./assets/attune_hero_vista.png";
+import attune_kitchen_moment from "./assets/attune_kitchen_moment.png";
+import attune_memory_engine from "./assets/attune_memory_engine.png";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
@@ -45,7 +51,7 @@ export default function Home() {
           <RevealSection delay={0.4} className="relative hidden lg:block">
             <div className="relative w-full aspect-square rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_60px_-15px_rgba(16,185,129,0.3)]">
               <Image
-                src="/images/attune/attune_couple_connection.png"
+                src={attune_couple_connection}
                 alt="A warm cinematic shot of a couple sitting on a mid-century sofa looking at a glowing tablet together."
                 fill
                 className="object-cover"
@@ -127,7 +133,7 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden glass shadow-2xl">
               <Image
-                src="/images/attune/attune_kitchen_moment.png"
+                src={attune_kitchen_moment}
                 alt="A close-up cinematic shot of a man and a woman in a retro-futurist kitchen sharing a warm moment."
                 fill
                 className="object-cover"
@@ -195,7 +201,7 @@ export default function Home() {
           </div>
           <div className="w-full mt-12 relative aspect-[21/9] rounded-2xl overflow-hidden glass shadow-2xl">
             <Image
-              src="/images/attune/attune_dual_sync.png"
+              src={attune_dual_sync}
               alt="Two glowing tablets showing relationship sync interfaces on a mid-century table"
               fill
               className="object-cover"
@@ -320,7 +326,7 @@ export default function Home() {
         {/* Cinematic Break */}
         <RevealSection className="w-full relative aspect-video rounded-[2rem] overflow-hidden my-24 border border-amber-500/20 shadow-2xl">
           <Image
-            src="/images/attune/attune_memory_engine.png"
+            src={attune_memory_engine}
             alt="Relationship memory engine UI displaying compounding graphs in a nature-filled room"
             fill
             className="object-cover"
