@@ -8,7 +8,7 @@ import { RevealSection } from "./components/RevealSection";
 import {
     Users, Brain, Network,
     ArrowRight, Activity, ChevronDown, CheckCircle2, Globe,
-    Building2, Zap, Briefcase
+    Building2, Zap, Briefcase, UserPlus, Layers
 } from "lucide-react";
 
 // Assets
@@ -178,49 +178,154 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
                         <Image unoptimized src={jarvisImage} alt="AI chief of staff desk orchestrating tasks" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
-                        <div className="absolute bottom-6 left-6 right-6">
-                            <p className="text-lg text-white/90 font-light drop-shadow-md">
-                                Departments are rooms. Work moves as cards through multi-agent runs with shared memory, tools, and explicit approval gates. Human-in-the-loop is default.
-                            </p>
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
                     </div>
 
-                    <h3 className="text-2xl font-light text-white mb-8 border-b border-white/10 pb-4">Product Experience</h3>
+                    <div className="mb-16">
+                        <h3 className="text-3xl font-light text-white mb-8 border-b border-white/10 pb-4">Product Experience</h3>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-indigo-500/30 hover:bg-indigo-500/5 transition-all cursor-default">
-                            <Building2 className="w-8 h-8 text-indigo-400 mb-4" />
-                            <h4 className="text-xl font-medium text-white mb-2">Upgradable skeuomorphic office</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">
-                                A literal building that levels up with progress. Marketing has a campaign wall. Sales shows a live pipeline. Product has a PRD shelf. Hit milestones to unlock power-ups.
-                            </p>
-                        </motion.div>
+                        <div className="space-y-8">
+                            {/* 1. Upgradable skeuomorphic office */}
+                            <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
+                                <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[80px]" />
+                                <div className="relative z-10">
+                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                        <Building2 className="w-7 h-7 text-indigo-400" />
+                                        Upgradable skeuomorphic office
+                                    </h4>
+                                    <p className="text-white/80 leading-relaxed font-light text-lg">
+                                        A literal building that levels up with progress. Marketing has a campaign wall and creative bin. Sales shows a live pipeline you can drag. Product has a whiteboard and PRD shelf. Dev has a terminal with tests and pull requests. Finance shows cash, burn, runway. Hit milestones to unlock rooms, dashboards, and power-ups. Pay to customize themes, layouts, and department mascots.
+                                    </p>
+                                </div>
+                            </div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-violet-500/30 hover:bg-violet-500/5 transition-all cursor-default">
-                            <Users className="w-8 h-8 text-violet-400 mb-4" />
-                            <h4 className="text-xl font-medium text-white mb-2">Agent teamwork by design</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">
-                                Agents share context, critique each other, decompose tasks, and hand off using multi-agent patterns validated in research <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL multi-agent frameworks." />.
-                            </p>
-                        </motion.div>
+                            {/* 2 & 3. Agent teamwork & Jarvis */}
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-violet-500/30 transition-colors">
+                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                        <Users className="w-7 h-7 text-violet-400" />
+                                        Agent teamwork by design
+                                    </h4>
+                                    <p className="text-white/80 leading-relaxed font-light text-lg">
+                                        Agents share context, critique each other, decompose tasks, and hand off using multi-agent patterns validated in research <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
+                                    </p>
+                                </div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-sky-500/30 hover:bg-sky-500/5 transition-all cursor-default relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-sky-500/10 rounded-full blur-[40px]" />
-                            <Brain className="w-8 h-8 text-sky-400 mb-4" />
-                            <h4 className="text-xl font-medium text-white mb-2">Jarvis, brought from your life</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">
-                                Jarvis carries a deep model of your taste, risk tolerance, voice, and goals. That continuity shrinks decision latency and misfires.
-                            </p>
-                        </motion.div>
+                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-sky-500/30 transition-colors">
+                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                        <Brain className="w-7 h-7 text-sky-400" />
+                                        Jarvis, brought from your life
+                                    </h4>
+                                    <p className="text-white/80 leading-relaxed font-light text-lg">
+                                        Bring the personal AI you already use. Jarvis carries a deep model of your taste, risk tolerance, voice, and goals. That continuity shrinks decision latency and misfires. It recommends hires that match your style, sets escalation rules you actually like, and drafts board packets you would have written.
+                                    </p>
+                                </div>
+                            </div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-fuchsia-500/30 hover:bg-fuchsia-500/5 transition-all cursor-default">
-                            <Network className="w-8 h-8 text-fuchsia-400 mb-4" />
-                            <h4 className="text-xl font-medium text-white mb-2">Opt-in network rail</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">
-                                Connect Farcaster <ExpandableCitation label="[8]" sourceUrl="https://docs.farcaster.xyz/learn/architecture/overview" sourceText="Farcaster Docs" /> and AT Protocol <ExpandableCitation label="[9]" sourceUrl="https://atproto.com/guides/overview" sourceText="AT Protocol" /> for your portable social graph. Rather than shouting into the void, Helm routes discrete asks with deep context, tight constraints, and frictionless acceptance tests. Your network becomes a liquid talent pool of on-demand brilliance.
-                            </p>
-                        </motion.div>
+                            {/* 4. Advisors and AI mentors */}
+                            <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-colors">
+                                <h4 className="text-2xl font-medium text-white mb-6 flex items-center gap-3">
+                                    <Globe className="w-7 h-7 text-amber-400" />
+                                    Advisors and AI mentors, your living board
+                                </h4>
+                                <div className="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Official AI versions</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Of high-profile operators, investors, and scientists, with optional limited time from the human.</p>
+                                    </div>
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Historical and fictional mentors</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">A community marketplace of rigorously built advisor profiles trained on high-quality sources, with transparent provenance and reviews.</p>
+                                    </div>
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Your real advisors</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Add the people you already trust. Helm routes precise asks, captures replies from email or Slack, and links advice to the work it changes.</p>
+                                    </div>
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Jarvis orchestration</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Jarvis assembles briefs, orchestrates board meetings, contrasts viewpoints, and acts as both secretary and the most trusted advisor aggregating insights from across the company and real world.</p>
+                                    </div>
+                                    <div className="sm:col-span-2">
+                                        <strong className="text-white block mb-2 font-medium">Outcome tracking</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Every recommendation is tied to results, so the most predictive advisors gain weight over time.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 5. Opt-in network rail */}
+                            <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-fuchsia-500/20 bg-fuchsia-950/10 hover:border-fuchsia-500/40 transition-colors">
+                                <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                    <Network className="w-7 h-7 text-fuchsia-400" />
+                                    Opt-in network rail with concrete flows
+                                </h4>
+                                <p className="text-white/80 leading-relaxed font-light text-lg mb-8">
+                                    Connect Farcaster and AT Protocol for portable social graphs, plus LinkedIn, Instagram, and email. Helm builds opt-in help cohorts so you never spam your network. People volunteer for specific streams and time budgets. Helm routes asks with context, constraints, and an acceptance test <ExpandableCitation label="[8][9]" sourceUrl="https://docs.farcaster.xyz/learn/architecture/overview" sourceText="Farcaster and AT Protocol" />.
+                                </p>
+                                <div className="space-y-4">
+                                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 border-l-2 border-l-fuchsia-500/50">
+                                        <strong className="text-white block mb-1 font-medium">Feature triage.</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Tag product managers in your cohort. Helm sends goals, segments, top tickets, and a short Loom. They stack-rank, flag traps, propose a cut line. One-click accept, credit recorded.</p>
+                                    </div>
+                                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 border-l-2 border-l-fuchsia-500/50">
+                                        <strong className="text-white block mb-1 font-medium">Pricing sanity check.</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Helm ships unit economics and three plan sketches to operators who opted in. You get a teardown and a test matrix to run now.</p>
+                                    </div>
+                                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 border-l-2 border-l-fuchsia-500/50">
+                                        <strong className="text-white block mb-1 font-medium">Ad creative review.</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Brief, ideal customer profile, and three hooks go to marketers who opted in. They return headline, angle, and risk notes. You greenlight and log outcomes.</p>
+                                    </div>
+                                    <div className="p-5 rounded-xl bg-white/[0.02] border border-white/5 border-l-2 border-l-fuchsia-500/50">
+                                        <strong className="text-white block mb-1 font-medium">Investor intros, zero spam.</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Choose category and cap intros. Only contacts who opted into investor intros receive a one-pager and the ask. They tap Accept to forward warm or Decline with guidance. Outcomes are tracked.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 6 & 7. Freelance rail & Seamless human teammates */}
+                            <div className="grid md:grid-cols-2 gap-8">
+                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-colors">
+                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                        <Briefcase className="w-7 h-7 text-emerald-400" />
+                                        Freelance rail
+                                    </h4>
+                                    <p className="text-white/80 leading-relaxed font-light text-lg">
+                                        Escalate any card to a paid micro-review or an implementation sprint with vetted specialists. Briefs, context, and acceptance tests travel with the work so ramp time is minutes.
+                                    </p>
+                                </div>
+                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-blue-500/30 transition-colors">
+                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                        <UserPlus className="w-7 h-7 text-blue-400" />
+                                        Seamless human teammates
+                                    </h4>
+                                    <p className="text-white/80 leading-relaxed font-light text-lg">
+                                        Invite real employees into the same rooms and runs. Agents handle glue, quality assurance, and follow-through. Humans handle craft and judgment. Everyone sees the same state.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* 8. AI agent hiring pool */}
+                            <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-rose-500/30 transition-colors">
+                                <h4 className="text-2xl font-medium text-white mb-6 flex items-center gap-3">
+                                    <Layers className="w-7 h-7 text-rose-400" />
+                                    AI agent hiring pool
+                                </h4>
+                                <div className="grid sm:grid-cols-3 gap-6">
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Train and rent your agents</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Package an internal agent’s skills, tools, and industry standard operating procedures as a hireable teammate without exposing private data.</p>
+                                    </div>
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Creator incentives</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Usage-based revenue share, reputation from verified outcomes, and bounties for public benchmarks.</p>
+                                    </div>
+                                    <div>
+                                        <strong className="text-white block mb-2 font-medium">Developer track</strong>
+                                        <p className="text-white/70 font-light text-sm leading-relaxed">Build agents from scratch with clean tool and data application programming interfaces. Top performers get featured placement and enterprise deals. Your org upgrades as stronger agents surface.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </RevealSection>
 
@@ -290,20 +395,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                 {/* Network Graph Visual */}
                 <RevealSection className="mb-32 w-full aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 relative group">
                     <Image unoptimized src={networkImage} alt="Social graph wall displaying advisors and freelancers" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none" />
-                    <div className="absolute bottom-10 left-10 max-w-2xl pr-10">
-                        <h4 className="text-white font-serif text-3xl sm:text-4xl mb-4 drop-shadow-lg flex items-center gap-4">
-                            <Network className="w-8 h-8 text-fuchsia-400" /> Opt-in Network Rail
-                        </h4>
-                        <div className="space-y-4 border-l-2 border-fuchsia-500/50 pl-6">
-                            <p className="text-white/90 text-lg font-light drop-shadow-md leading-relaxed">
-                                Most of your brilliant peers are too busy to take a 30-minute networking call, but they have 5 minutes to review a beautifully scoped problem.
-                            </p>
-                            <p className="text-white/70 font-light drop-shadow-md leading-relaxed">
-                                Connect your portable social graphs (Farcaster, AT Protocol) and let Helm orchestrate micro-advisory and execution tasks effortlessly. It routes your hardest challenges to the exact person in your network who has solved it before, attaching full context and a predefined bounty or equity micro-grant. No spam. No context drain. Just frictionless, on-demand genius.
-                            </p>
-                        </div>
-                    </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/40 via-transparent to-transparent pointer-events-none" />
                 </RevealSection>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
