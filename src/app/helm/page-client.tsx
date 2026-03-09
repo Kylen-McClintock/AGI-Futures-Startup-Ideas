@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
@@ -33,6 +34,14 @@ const citations = [
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function HelmClientPage({ initialTags, initialScores }: { initialTags: ProjectTagsProps['tags'], initialScores: any }) {
+    const firstExpRef = useRef<HTMLDetailsElement>(null);
+
+    useEffect(() => {
+        if (firstExpRef.current && window.innerWidth >= 768) {
+            firstExpRef.current.open = true;
+        }
+    }, []);
+
     // Fallbacks
     const tags = {
         sector: initialTags?.sector?.length ? initialTags.sector : ['AI', 'Community', 'Media'],
@@ -551,7 +560,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <details className="glass-panel rounded-[2rem] border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-white/[0.01]">
+                        <details ref={firstExpRef} className="glass-panel rounded-[2rem] border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-white/[0.01]">
                             <summary className="p-8 outline-none flex justify-between items-center">
                                 <div>
                                     <h3 className="text-2xl font-light text-white mb-2 group-hover:text-indigo-300 transition-colors">First Experiment</h3>
