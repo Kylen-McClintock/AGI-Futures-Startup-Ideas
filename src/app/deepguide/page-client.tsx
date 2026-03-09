@@ -555,9 +555,39 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                             <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-emerald-500/30 pl-6">
                                 Mental health infrastructure is civilization infrastructure. If psychedelic therapies work for a meaningful subset of depression, trauma, addiction, and existential distress, then the bottleneck shifts from molecule discovery to safe, scalable delivery. DeepGuide directly attacks that bottleneck.
                             </p>
-                            <p className="text-lg leading-relaxed text-white/60 font-light pl-6">
+                            <p className="text-lg leading-relaxed text-white/60 font-light pl-6 relative">
                                 The upside is larger than clinic software. A trusted intelligence layer for high-variance healing work could accelerate protocol discovery, reduce preventable harm, and make one of the most promising therapeutic categories more legible to institutions.
                             </p>
+
+                            <details className="mt-8 glass-panel rounded-[2rem] border border-emerald-500/20 bg-emerald-950/20 hover:bg-emerald-950/30 hover:border-emerald-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[300px]">
+                                <summary className="p-6 list-none flex justify-between items-center outline-none">
+                                    <div>
+                                        <div className="text-4xl font-light text-white tracking-tight mb-1">63</div>
+                                        <div className="text-xs font-mono uppercase tracking-widest text-emerald-400/80">Impact Score</div>
+                                    </div>
+                                    <ChevronDown className="w-5 h-5 text-emerald-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                </summary>
+                                <div className="px-6 pb-6 pt-2 border-t border-emerald-500/10">
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-emerald-100/70 font-light">Human Flourishing</span>
+                                            <span className="text-emerald-400 font-mono">82</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-emerald-100/70 font-light">Scientific Acceleration</span>
+                                            <span className="text-emerald-400 font-mono">74</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-rose-100/70 font-light">Social Trust</span>
+                                            <span className="text-rose-400 font-mono">51</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-rose-100/70 font-light">Resilience</span>
+                                            <span className="text-rose-400 font-mono">46</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
                         </div>
 
                         <div className="glass-panel p-8 rounded-3xl border border-emerald-500/20 bg-emerald-950/10 hover:bg-emerald-950/20 transition-colors">
