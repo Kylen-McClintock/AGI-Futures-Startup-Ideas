@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { Variants, motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { ChevronDown, ArrowRight, Layers, Box, Cpu, Network, BarChart3, Link as LinkIcon } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { ExpandableSection } from "./components/ExpandableSection";
@@ -11,6 +12,7 @@ import { UpliftChart } from "./components/UpliftChart";
 import heroImg from "./assets/hero.png";
 import operatorHubImg from "./assets/operator-hub.png";
 import hvacTransformedImg from "./assets/hvac-transformed.png";
+import mechanicImg from "./assets/mechanic.png";
 import syndicateImg from "./assets/syndicate.png";
 
 // Fade in up animation variant
@@ -126,10 +128,10 @@ export default function ClientPage() {
                     className="mb-24"
                 >
                     <p className="text-xl md:text-2xl font-light text-stone-300 leading-relaxed drop-cap">
-                        Surf the two biggest curves of the decade, retiring Boomer owners and AI margin shock. We run a selective operator cohort, coinvest in the top grads, help them buy small and medium-sized businesses (SMBs), then install AI playbooks that double profits.
+                        Surf the two biggest curves of the decade, <strong className="text-amber-400 font-normal">retiring Boomer owners and AI margin shock</strong>. We run a selective operator cohort, coinvest in the top grads, help them buy small and medium-sized businesses (SMBs), then install AI playbooks that double profits.
                     </p>
                     <p className="mt-8 text-lg font-light text-stone-400 leading-relaxed">
-                        Buy a boring business with real cash flow, step into ownership with financing that actually closes, and deploy AI systems that improve phones, quoting, routing, collections, and follow-up from day one. This is a faster path from operator ambition to compounding local wealth, and a cleaner succession path for sellers who built valuable firms but do not have a natural heir.
+                        <strong className="text-amber-400 font-normal">Buy a boring business with real cash flow</strong>, step into ownership with financing that actually closes, and deploy AI systems that improve phones, quoting, routing, collections, and follow-up from day one. This is a faster path from operator ambition to compounding local wealth, and a cleaner succession path for sellers who built valuable firms but do not have a natural heir.
                     </p>
                 </motion.section>
 
@@ -223,33 +225,47 @@ export default function ClientPage() {
                         Product Stack
                     </h2>
 
-                    <div className="grid gap-6">
+                    <div className="grid md:grid-cols-2 gap-6">
                         {[
                             {
                                 title: "Cohort + Curriculum",
-                                desc: "Eight to twelve weeks. You learn niche economics, staffing, compliance, and the complete AI toolchain, from marketing and sales to supplier management, scheduling, and customer service. You also learn sourcing, diligence, DSCR math, and negotiation tactics with live term-sheet reps."
+                                desc: "Eight to twelve weeks. You learn niche economics, staffing, compliance, and the complete AI toolchain, from marketing and sales to supplier management, scheduling, and customer service. You also learn sourcing, diligence, DSCR math, and negotiation tactics with live term-sheet reps.",
+                                icon: <Layers className="block w-6 h-6" />
                             },
                             {
                                 title: "Deal Sourcing Tools",
-                                desc: "Broker feeds, CPA networks, targeted owner outreach, red-flag checklists, fast underwriting templates."
+                                desc: "Broker feeds, CPA networks, targeted owner outreach, red-flag checklists, fast underwriting templates.",
+                                icon: <Network className="block w-6 h-6" />
                             },
                             {
                                 title: "Selective Coinvestment",
-                                desc: "SPVs for the top graduates. We stack equity with SBA 7(a) and seller notes. Profit-distribution waterfalls let retiring owners keep income while you ramp."
+                                desc: "SPVs for the top graduates. We stack equity with SBA 7(a) and seller notes. Profit-distribution waterfalls let retiring owners keep income while you ramp.",
+                                icon: <BarChart3 className="block w-6 h-6" />
                             },
                             {
                                 title: "AI Playbooks",
-                                desc: "Vertical standard operating procedures, voice agents, robotic process automation, customer relationship management automations, pricing and accounts receivable workflows, plus a common data spine."
+                                desc: "Vertical standard operating procedures, voice agents, robotic process automation, customer relationship management automations, pricing and accounts receivable workflows, plus a common data spine.",
+                                icon: <Cpu className="block w-6 h-6" />
                             },
                             {
                                 title: "Uplift Oracle",
-                                desc: "A portfolio benchmark that tracks before-after KPIs, feeds DSCR modeling, and compounds learnings across deals."
+                                desc: "A portfolio benchmark that tracks before-after KPIs, feeds DSCR modeling, and compounds learnings across deals.",
+                                icon: <Box className="block w-6 h-6" />
                             }
                         ].map((item, idx) => (
-                            <div key={idx} className="bg-stone-900/50 border border-white/5 rounded-2xl p-6 md:p-8 hover:bg-stone-800/50 hover:border-white/10 transition-colors">
-                                <h3 className="text-white font-medium text-lg mb-3">{item.title}</h3>
+                            <motion.div
+                                key={idx}
+                                whileHover={{ scale: 1.02, y: -5 }}
+                                className="bg-stone-900/40 border border-white/5 p-8 rounded-3xl hover:bg-stone-800/60 hover:border-amber-500/30 transition-all duration-300 group"
+                            >
+                                <div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                                    {item.icon}
+                                </div>
+                                <h3 className="text-white font-medium text-xl mb-3 flex items-center group-hover:text-amber-400 transition-colors">
+                                    {item.title}
+                                </h3>
                                 <p className="text-stone-400 font-light leading-relaxed">{item.desc}</p>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 </motion.section>
@@ -372,6 +388,28 @@ export default function ClientPage() {
                     </div>
                 </motion.section>
 
+                {/* Mechanic Shop Transformation Image */}
+                <motion.section
+                    initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
+                    variants={fadeInUp}
+                    className="mb-24 w-full relative h-[400px] md:h-[600px] rounded-3xl overflow-hidden border border-white/10 group"
+                >
+                    <Image
+                        src={mechanicImg}
+                        alt="Clean, modern Auto repair shop with sophisticated digital AI tools"
+                        fill
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        quality={100}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
+                        <div className="bg-stone-950/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 inline-block">
+                            <h4 className="text-amber-400 font-mono text-xs tracking-widest uppercase mb-2">Deployed Environment</h4>
+                            <p className="text-white text-lg font-light">Auto Repair & Triage Automations</p>
+                        </div>
+                    </div>
+                </motion.section>
+
                 {/* Investment Syndicate Image & Text */}
                 <motion.section
                     initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
@@ -480,19 +518,49 @@ export default function ClientPage() {
                 <motion.section
                     initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
                     variants={fadeInUp}
-                    className="mb-24 text-center"
+                    className="mb-24 text-center border-t border-white/10 pt-24"
                 >
                     <h2 className="text-3xl font-serif text-white mb-8">Civilizational Impact</h2>
                     <p className="text-xl font-light text-stone-300 leading-relaxed text-pretty max-w-2xl mx-auto mb-10">
-                        Keep productive local firms alive. Transfer ownership to a new class of AI-literate operators. Raise wages through efficiency and create higher quality service for communities. Channel the Boomer exit toward abundance instead of attrition.
+                        Keep productive local firms alive. Transfer ownership to a new class of <strong className="text-amber-400 font-normal">AI-literate operators</strong>. Raise wages through efficiency and create higher quality service for communities. Channel the Boomer exit toward abundance instead of attrition.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity" />
                         <ExpandableCitation label="McKinsey" sourceUrl="https://www.mckinsey.com" sourceText="McKinsey Global Institute" />
                     </p>
                     <p className="text-lg font-light text-stone-400 leading-relaxed text-pretty max-w-2xl mx-auto mb-12">
                         At larger scale, Main Street Legacy becomes a translation layer between frontier AI and the real economy. Instead of AI gains concentrating only in software giants, it pushes them into HVAC shops, dental groups, brokerages, and neighborhood services. Large scale human flourishing that keeps communities economically alive.
                     </p>
-                    <div className="flex justify-center">
+                    <div className="flex justify-center flex-col items-center">
                         <InlineTags tags={initialTags?.outcomes} theme="amber" />
+
+                        <details className="mt-12 glass-panel rounded-[2rem] border border-amber-500/20 bg-amber-950/20 hover:bg-amber-950/30 hover:border-amber-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
+                            <summary className="p-6 list-none flex justify-between items-center outline-none">
+                                <div className="text-left">
+                                    <div className="text-4xl font-light text-white tracking-tight mb-1">68</div>
+                                    <div className="text-xs font-mono uppercase tracking-widest text-amber-500/80">Impact Score</div>
+                                </div>
+                                <ChevronDown className="w-5 h-5 text-amber-500/50 group-open:rotate-180 transition-transform duration-300" />
+                            </summary>
+                            <div className="px-6 pb-6 pt-2 border-t border-amber-500/10 text-left">
+                                <div className="space-y-3">
+                                    <div className="flex justify-between items-center text-sm">
+                                        <span className="text-amber-100/70 font-light">Economic Preservation</span>
+                                        <span className="text-amber-400 font-mono">85</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <span className="text-amber-100/70 font-light">Efficiency Gain</span>
+                                        <span className="text-amber-400 font-mono">75</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <span className="text-rose-100/70 font-light">Displacement Friction</span>
+                                        <span className="text-rose-400 font-mono">55</span>
+                                    </div>
+                                    <div className="flex justify-between items-center text-sm">
+                                        <span className="text-amber-100/70 font-light">Community Resilience</span>
+                                        <span className="text-amber-400 font-mono">82</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
                     </div>
                 </motion.section>
 
@@ -547,24 +615,34 @@ export default function ClientPage() {
                     variants={fadeInUp}
                     className="border-t border-white/10 pt-16 pb-24"
                 >
-                    <h3 className="text-xs font-mono uppercase tracking-widest text-stone-500 mb-6">Acronyms & References</h3>
-                    <ul className="grid md:grid-cols-2 gap-4">
-                        <li className="text-sm font-light text-stone-400">
-                            <strong className="text-stone-300 font-medium">DSCR:</strong> Debt Service Coverage Ratio
-                        </li>
-                        <li className="text-sm font-light text-stone-400">
-                            <strong className="text-stone-300 font-medium">NBER:</strong> National Bureau of Economic Research
-                        </li>
-                        <li className="text-sm font-light text-stone-400">
-                            <strong className="text-stone-300 font-medium">SBA:</strong> Small Business Administration
-                        </li>
-                        <li className="text-sm font-light text-stone-400">
-                            <strong className="text-stone-300 font-medium">SPV:</strong> Special Purpose Vehicle
-                        </li>
-                        <li className="text-sm font-light text-stone-400">
-                            <strong className="text-stone-300 font-medium">EBITDA:</strong> Earnings Before Interest, Taxes, Depreciation, and Amortization
-                        </li>
-                    </ul>
+                    <details className="group cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-stone-900/30 border border-white/5 rounded-3xl p-6 md:p-10 hover:bg-stone-900/50 hover:border-white/10 transition-all duration-300">
+                        <summary className="flex flex-col sm:flex-row justify-between items-start sm:items-center outline-none">
+                            <h3 className="text-xs font-mono uppercase tracking-widest text-stone-400 m-0 flex items-center gap-3">
+                                <LinkIcon className="w-4 h-4 text-stone-400" />
+                                Acronyms & References
+                            </h3>
+                            <ChevronDown className="w-5 h-5 text-stone-500 group-open:rotate-180 transition-transform duration-300 mt-4 sm:mt-0" />
+                        </summary>
+                        <div className="mt-10 pt-8 border-t border-white/5">
+                            <ul className="grid md:grid-cols-2 gap-6">
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">DSCR:</strong> Debt Service Coverage Ratio
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">NBER:</strong> National Bureau of Economic Research
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">SBA:</strong> Small Business Administration
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">SPV:</strong> Special Purpose Vehicle
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">EBITDA:</strong> Earnings Before Interest, Taxes, Depreciation, and Amortization
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
                 </motion.section>
             </article>
         </main>
