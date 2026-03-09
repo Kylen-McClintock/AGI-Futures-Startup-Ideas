@@ -209,6 +209,31 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Human Flourishing', 'Community Renewal', 'Resilience']
         }
+    },
+    {
+        slug: 'helm',
+        name: 'Helm',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 71 },
+            civilizational_impact_score: { ai_scored: 68 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 81 },
+                "Human Flourishing": { ai_scored: 66 },
+                "Social Trust": { ai_scored: 54 },
+                "Freedom": { ai_scored: 71 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Community', 'Media'],
+            bottleneck: ['Coordination', 'Trust', 'Talent Matching'],
+            customer: ['Founders', 'Startups'],
+            product_type: ['Platform', 'Agent'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Freedom']
+        }
     }
 ];
 
