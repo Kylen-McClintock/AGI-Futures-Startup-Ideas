@@ -11,7 +11,9 @@ export default async function PorchfrontPage() {
         .eq('slug', 'porchfront')
         .single();
 
-    const tags = project?.project_tags?.[0] || null;
+    const tags = Array.isArray(project?.project_tags)
+        ? project.project_tags[0]
+        : (project?.project_tags || null);
 
     return <PorchfrontClientPage initialTags={tags} />;
 }

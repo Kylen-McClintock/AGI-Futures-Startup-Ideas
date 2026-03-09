@@ -11,7 +11,9 @@ export default async function HomeQuotePage() {
         .eq('slug', 'homequote')
         .single();
 
-    const tags = project?.project_tags?.[0] || null;
+    const tags = Array.isArray(project?.project_tags)
+        ? project.project_tags[0]
+        : (project?.project_tags || null);
 
     return <HomeQuoteClientPage initialTags={tags} />;
 }
