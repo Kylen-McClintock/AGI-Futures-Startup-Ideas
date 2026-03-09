@@ -12,6 +12,10 @@ import { CoreLoopVisual } from "./components/CoreLoopVisual";
 import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 
+const citations = [
+  { number: 1, source: "PMC Study", title: "Evaluating the efficacy of a brief, recurring relationship checkup", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4115001/" }
+];
+
 export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-amber-500/30 selection:text-amber-100 pb-32">
@@ -45,7 +49,6 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             </p>
             <div className="mt-6 mb-12 flex flex-col items-start -space-y-4">
               <InlineTags tags={initialTags?.sector} theme="amber" />
-              <InlineTags tags={initialTags?.product_type} theme="amber" />
             </div>
             <div className="flex items-center gap-4">
               <button className="flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-full transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">
@@ -389,10 +392,10 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         <RevealSection>
           <div className="flex flex-col gap-4 mb-2 items-center">
-            <h2 className="text-4xl font-serif font-medium text-amber-50 text-center">Business Model & GTM</h2>
+            <h2 className="text-4xl font-serif font-medium text-amber-50 text-center">Business Model</h2>
           </div>
           <div className="mb-8 flex justify-center">
-            <InlineTags tags={initialTags?.founder_fit} theme="amber" />
+            <InlineTags tags={initialTags?.product_type} theme="amber" />
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="glass p-8 rounded-3xl">
@@ -418,6 +421,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               <h3 className="text-amber-400 font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
                 <Network className="w-4 h-4" /> Go-To-Market
               </h3>
+              <div className="mb-6">
+                <InlineTags tags={initialTags?.founder_fit} theme="amber" />
+              </div>
               <ul className="text-sm text-slate-300 space-y-6">
                 <li>
                   <strong className="text-amber-200 block mb-1">1. Woman-led invitation loop</strong>
@@ -502,6 +508,40 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             </p>
           </div>
         </RevealSection>
+
+        {/* References */}
+        <div className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto">
+          <h3 className="text-sm font-bold tracking-widest text-amber-500 uppercase mb-8">References</h3>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {citations.map((cite) => (
+              <div key={cite.number} className="flex gap-4 group">
+                <span className="text-amber-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                <div>
+                  <p className="text-slate-300 text-sm leading-relaxed">
+                    <span className="font-medium text-slate-100">{cite.source}</span>,{" "}
+                    {cite.url ? (
+                      <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-amber-300 transition-colors">
+                        {cite.title}
+                      </a>
+                    ) : (
+                      <span className="italic">{cite.title}</span>
+                    )}.
+                  </p>
+                  {cite.url && (
+                    <a
+                      href={cite.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-xs font-mono text-slate-400 hover:text-amber-400 transition-colors mt-1 inline-block"
+                    >
+                      View Source ↗
+                    </a>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
 
       </div>
     </main>

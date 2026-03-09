@@ -25,10 +25,10 @@ import dashImage from "./assets/afl_build_league_dashboard.png";
 
 // Citations Data
 const citations = [
-    { number: 1, source: "Federal Reserve", title: "Quarterly Report on Household Debt and Credit" },
-    { number: 2, source: "College Board", title: "Trends in College Pricing and Student Aid 2024" },
-    { number: 3, source: "Peng et al.", title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot" },
-    { number: 4, source: "NCES", title: "IPEDS and Digest of Education Statistics" }
+    { number: 1, source: "Federal Reserve", title: "Quarterly Report on Household Debt and Credit", url: "https://www.newyorkfed.org/microeconomics/hhdc" },
+    { number: 2, source: "College Board", title: "Trends in College Pricing and Student Aid 2024", url: "https://research.collegeboard.org/trends/college-pricing" },
+    { number: 3, source: "Peng et al.", title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", url: "https://arxiv.org/abs/2302.06590" },
+    { number: 4, source: "NCES", title: "IPEDS and Digest of Education Statistics", url: "https://nces.ed.gov/" }
 ];
 
 export default function AFLClientPage({ initialTags }: { initialTags: any }) {
@@ -72,7 +72,6 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
                             <InlineTags tags={initialTags?.sector} theme="blue" />
-                            <InlineTags tags={initialTags?.product_type} theme="blue" />
                         </div>
                     </motion.div>
 
@@ -225,6 +224,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     {/* MARKET & BUSINESS MODEL */}
                     <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Market & Business Model</h2>
+                        <InlineTags tags={initialTags?.product_type} theme="blue" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             This is not just education. It is the convergence of four budgets being repriced by AI: tuition, upskilling, startup formation, and recruiting spend. As model capability rises, the cost to build and test drops. The real opportunity is a new production system for turning high-agency people into repeat builders with verified execution data.
                         </p>
@@ -270,7 +270,6 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </div>
 
                         <div className="space-y-8">
-                            <InlineTags tags={initialTags?.founder_fit} theme="blue" />
                             <ScoreCard
                                 type="moat"
                                 title="Moat Score"
@@ -323,6 +322,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     {/* UNIQUE GTM */}
                     <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Unique Go-To-Market</h2>
+                        <InlineTags tags={initialTags?.founder_fit} theme="blue" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-12">
                             AFL should not market like a school. It should market like a live talent market and public venture engine.
                         </p>

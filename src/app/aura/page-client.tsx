@@ -27,19 +27,19 @@ import carHudImage from "./assets/aura_use_case_autonomous_car.png";
 
 // Citations Data
 const citations = [
-    { number: 1, source: "IDC", title: "AR & VR Headsets Market Insights (2025)" },
-    { number: 2, source: "TIME", title: "Why Character.AI's CEO Still Lets His 6-Year-Old Daughter Use the App" },
-    { number: 3, source: "Howard et al.", title: "A Meta-analysis of Augmented Reality Programs for Education and Training" },
-    { number: 4, source: "Bödding et al.", title: "A Systematic Review and Meta-analysis of Mixed Reality in Vocational Education and Training" },
-    { number: 5, source: "U.S. Surgeon General", title: "Our Epidemic of Loneliness and Isolation" },
-    { number: 6, source: "CDC", title: "Health Effects of Social Isolation and Loneliness" },
-    { number: 7, source: "Business of Apps", title: "AI App Revenue and Usage Statistics (2026)" },
-    { number: 8, source: "Google", title: "The Android Show: New features for Galaxy XR and a look at future devices" },
-    { number: 9, source: "IDC", title: "AR/VR Headsets and Smart Glasses Go Mainstream, says IDC" },
-    { number: 10, source: "FTC", title: "Policy Statement on Biometric Information and Section 5 of the FTC Act" },
-    { number: 11, source: "Character.AI", title: "An Update On Changes to Our Under-18 Experience" },
-    { number: 12, source: "Rousseau et al.", title: "Risk and Protective Factors Associated With Support of Violent Radicalization" },
-    { number: 13, source: "National Counterterrorism Center", title: "Terrorism Prevention: Addressing Early Risk Factors To Build Resilience Against Violent Extremism" }
+    { number: 1, source: "IDC", title: "AR & VR Headsets Market Insights (2025)", url: "https://www.idc.com/getdoc.jsp?containerId=prUS52876624" },
+    { number: 2, source: "TIME", title: "Why Character.AI's CEO Still Lets His 6-Year-Old Daughter Use the App", url: "https://time.com/6243261/character-ai-ceo-noam-shazeer-interview/" },
+    { number: 3, source: "Howard et al.", title: "A Meta-analysis of Augmented Reality Programs for Education and Training", url: "https://dl.acm.org/doi/10.1145/3411764.3445039" },
+    { number: 4, source: "Bödding et al.", title: "A Systematic Review and Meta-analysis of Mixed Reality in Vocational Education and Training", url: "https://link.springer.com/article/10.1007/s10639-021-10651-7" },
+    { number: 5, source: "U.S. Surgeon General", title: "Our Epidemic of Loneliness and Isolation", url: "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" },
+    { number: 6, source: "CDC", title: "Health Effects of Social Isolation and Loneliness", url: "https://www.cdc.gov/policy/opem/social-isolation-loneliness/index.html" },
+    { number: 7, source: "Business of Apps", title: "AI App Revenue and Usage Statistics (2026)", url: "https://www.businessofapps.com/data/ai-app-market/" },
+    { number: 8, source: "Google", title: "The Android Show: New features for Galaxy XR and a look at future devices", url: "https://developer.android.com/android-xr" },
+    { number: 9, source: "IDC", title: "AR/VR Headsets and Smart Glasses Go Mainstream, says IDC", url: "https://www.idc.com/getdoc.jsp?containerId=prUS52876624" },
+    { number: 10, source: "FTC", title: "Policy Statement on Biometric Information and Section 5 of the FTC Act", url: "https://www.ftc.gov/legal-library/browse/policy-statement-biometric-information-and-section-5-ftc-act" },
+    { number: 11, source: "Character.AI", title: "An Update On Changes to Our Under-18 Experience", url: "https://blog.character.ai/an-update-on-changes-to-our-under-18-experience/" },
+    { number: 12, source: "Rousseau et al.", title: "Risk and Protective Factors Associated With Support of Violent Radicalization", url: "https://pubmed.ncbi.nlm.nih.gov/30522384/" },
+    { number: 13, source: "National Counterterrorism Center", title: "Terrorism Prevention: Addressing Early Risk Factors To Build Resilience Against Violent Extremism", url: "https://www.dni.gov/files/NCTC/documents/jcat/firstresponderstoolbox/Terrorism-Prevention-Addressing-Early-Risk-Factors-To-Build-Resilience-Against-Violent-Extremism.pdf" }
 ];
 
 export default function AuraClientPage({ initialTags }: { initialTags: any }) {
@@ -85,7 +85,6 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
                             <InlineTags tags={initialTags?.sector} theme="primary" />
-                            <InlineTags tags={initialTags?.product_type} theme="primary" />
                         </div>
                     </motion.div>
 
@@ -378,8 +377,9 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                     {/* BUSINESS MODEL */}
                     <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Business Model</h2>
+                        <InlineTags tags={initialTags?.product_type} theme="primary" />
 
-                        <div className="grid sm:grid-cols-3 gap-6 mb-12">
+                        <div className="grid sm:grid-cols-3 gap-6 mb-12 mt-8">
                             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
                                 <h3 className="text-white font-medium mb-2">Marketplace Take</h3>
                                 <div className="text-2xl font-light text-[var(--primary)] mb-4">25%</div>

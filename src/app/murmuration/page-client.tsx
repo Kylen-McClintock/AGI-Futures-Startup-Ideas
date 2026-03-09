@@ -10,6 +10,12 @@ import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
 import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.png";
 
+const citations = [
+  { number: 1, source: "Stanford HAI", title: "AI Index Report 2025", url: "https://hai.stanford.edu/ai-index-report" },
+  { number: 2, source: "McKinsey", title: "The state of AI: How organizations are rewiring to capture value", url: "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" },
+  { number: 3, source: "Stanford HAI", title: "AI Index 2025, Technical Performance", url: "https://hai.stanford.edu/ai-index-report" }
+];
+
 export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-[var(--background)] overflow-hidden">
@@ -35,7 +41,6 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </p>
           <div className="mb-12 flex flex-col items-start -space-y-4">
             <InlineTags tags={initialTags?.sector} theme="blue" />
-            <InlineTags tags={initialTags?.product_type} theme="blue" />
           </div>
           <FadeIn delay={0.6} className="mt-16 flex items-center gap-4 text-xs tracking-widest uppercase text-white/40">
             <span>Scroll to discover</span>
@@ -280,7 +285,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> Business Model</div>
           </div>
           <div className="mb-8 flex">
-            <InlineTags tags={initialTags?.founder_fit} theme="blue" />
+            <InlineTags tags={initialTags?.product_type} theme="blue" />
           </div>
           <p className="text-xl text-white mb-6">
             The default model is aligned with upside. Murmuration Engine takes:
@@ -345,6 +350,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           <ScrollReveal delay={0.1}>
             <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-6 flex items-center gap-2">
               <span className="w-8 h-px bg-[var(--primary)]/50"></span> The Moat
+            </div>
+            <div className="mb-6 flex">
+              <InlineTags tags={initialTags?.founder_fit} theme="blue" />
             </div>
             <p className="text-2xl font-serif text-white mb-8">
               The moat is the learning loop.
@@ -454,13 +462,37 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             </p>
           </div>
 
-          <div className="mt-24 pt-12 border-t border-white/5 text-sm text-white/40 max-w-3xl opacity-60 hover:opacity-100 transition-opacity">
-            <h4 className="font-mono uppercase tracking-widest text-xs mb-4">References</h4>
-            <ol className="list-decimal list-inside space-y-2 font-light">
-              <li>Stanford HAI, <em className="text-white/60">AI Index Report 2025</em></li>
-              <li>McKinsey, <em className="text-white/60">The state of AI: How organizations are rewiring to capture value</em></li>
-              <li>Stanford HAI, <em className="text-white/60">AI Index 2025, Technical Performance</em></li>
-            </ol>
+          <div className="mt-24 pt-12 border-t border-white/5 max-w-3xl opacity-80 hover:opacity-100 transition-opacity">
+            <h4 className="font-mono uppercase tracking-widest text-xs mb-8 text-white/40">References</h4>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {citations.map((cite) => (
+                <div key={cite.number} className="flex gap-4 group">
+                  <span className="text-[var(--primary)] font-serif text-sm shrink-0">[{cite.number}]</span>
+                  <div>
+                    <p className="text-white/70 text-sm leading-relaxed">
+                      <span className="font-medium text-white/90">{cite.source}</span>,{" "}
+                      {cite.url ? (
+                        <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-[var(--primary)] transition-colors">
+                          {cite.title}
+                        </a>
+                      ) : (
+                        <span className="italic">{cite.title}</span>
+                      )}.
+                    </p>
+                    {cite.url && (
+                      <a
+                        href={cite.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs font-mono text-white/40 hover:text-[var(--primary)] transition-colors mt-1 inline-block"
+                      >
+                        View Source ↗
+                      </a>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
 

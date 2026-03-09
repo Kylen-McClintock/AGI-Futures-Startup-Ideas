@@ -16,6 +16,20 @@ import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184.png";
 import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671.png";
 import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109.png";
 
+const citations = [
+    { number: 1, source: "MARKSPARK SOLUTIONS", title: "U.S. Home Services Market", url: "https://marksparksolutions.com/reports/us-home-services-market" },
+    { number: 2, source: "HIPPO", title: "Where Homeowners Turn for Maintenance Advice", url: "https://www.hippo.com/blog/hippo-home-assist-differentiators-survey" },
+    { number: 3, source: "NATIONWIDE", title: "Home Un-Improvement", url: "https://news.nationwide.com/homeowners-putting-off-home-upkeep-risking-damage" },
+    { number: 4, source: "GUARDIAN SERVICE", title: "Economic Uncertainty Delaying Home Upgrades", url: "https://guardianservice.com/home-insurance/economic-uncertainty-delaying-home-upgrades/" },
+    { number: 5, source: "HOMESERVE", title: "Gap Between Homeowner Preparedness and Reality", url: "https://www.homeserve.com/en-us/media/homeserve-survey-reveals-alarming-gap-between-homeowner-preparedness-and-reality-of-home-repair-emergencies/" },
+    { number: 6, source: "GRAND VIEW", title: "Online On-demand Home Services 2030", url: "https://www.grandviewresearch.com/industry-analysis/online-on-demand-home-services-market-report" },
+    { number: 7, source: "MARKSPARK", title: "On Demand Home Services Market", url: "https://marksparksolutions.com/reports/on-demand-home-services-market" },
+    { number: 8, source: "GRAND VIEW", title: "U.S. Online On-demand Home Services Outlook", url: "https://www.grandviewresearch.com/horizon/outlook/online-on-demand-home-services-market/united-states" },
+    { number: 9, source: "IBM", title: "What Is Multimodal AI?", url: "https://www.ibm.com/think/topics/multimodal-ai" },
+    { number: 11, source: "BENTOML", title: "Open Source Vision Language Models", url: "https://www.bentoml.com/blog/multimodal-ai-a-guide-to-open-source-vision-language-models" },
+    { number: 19, source: "IPSOS", title: "Majority Hit with Unexpected Home Repair Costs", url: "https://www.ipsos.com/en-us/news-polls/majority-homeowners-hit-unexpected-home-repair-costs-past-year" }
+];
+
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
     <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -82,7 +96,6 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                     <div className="mt-8 flex flex-col items-center -space-y-4">
                         <InlineTags tags={initialTags?.sector} theme="emerald" />
-                        <InlineTags tags={initialTags?.product_type} theme="emerald" />
                     </div>
                 </div>
             </section>
@@ -378,7 +391,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         <div className="bg-[#0a0f14]/80 p-8 rounded-3xl border border-white/10 backdrop-blur-sm self-start sticky top-24">
                             <div className="flex flex-col gap-0 mb-6">
                                 <h2 className="text-3xl font-serif text-white">Business Model</h2>
-                                <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
+                                <InlineTags tags={initialTags?.product_type} theme="emerald" />
                             </div>
                             <ul className="space-y-6">
                                 <li className="border-b border-white/5 pb-4">
@@ -407,6 +420,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn className="space-y-6">
+                    <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
                     <InteractiveSection
                         title="Moat"
                         score={79}
@@ -491,6 +505,42 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <p className="text-2xl font-serif text-white text-center leading-relaxed m-0">
                                 “In an AGI future, one of the highest-leverage moves is turning chaotic physical work into software-defined coordination. That is exactly what this company does.”
                             </p>
+                        </div>
+                    </div>
+                </FadeIn>
+
+                {/* References */}
+                <FadeIn>
+                    <div className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto">
+                        <h3 className="text-sm font-bold tracking-widest text-emerald-500 uppercase mb-8">References</h3>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {citations.map((cite) => (
+                                <div key={cite.number} className="flex gap-4 group">
+                                    <span className="text-emerald-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                                    <div>
+                                        <p className="text-white/70 text-sm leading-relaxed">
+                                            <span className="font-medium text-white/90">{cite.source}</span>,{" "}
+                                            {cite.url ? (
+                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-emerald-300 transition-colors">
+                                                    {cite.title}
+                                                </a>
+                                            ) : (
+                                                <span className="italic">{cite.title}</span>
+                                            )}.
+                                        </p>
+                                        {cite.url && (
+                                            <a
+                                                href={cite.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xs font-mono text-white/40 hover:text-emerald-400 transition-colors mt-1 inline-block"
+                                            >
+                                                View Source ↗
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </FadeIn>

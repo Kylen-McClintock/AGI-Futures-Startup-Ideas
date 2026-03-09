@@ -18,6 +18,14 @@ import { LonelinessChart } from "./components/LonelinessChart";
 import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2 } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 
+const citations = [
+    { number: 1, source: "Surgeon General Advisory", title: "Our Epidemic of Loneliness and Isolation", url: "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" },
+    { number: 2, source: "ScienceDirect", title: "Pedestrianization and the economy.", url: "https://www.sciencedirect.com/science/article/am/pii/S026427512100367X" },
+    { number: 3, source: "California ADU Handbook", title: "ADU regulatory guidelines.", url: "https://ahcd.assembly.ca.gov/system/files/2025-03/adu-handbook-update.pdf" },
+    { number: 4, source: "Waymo", title: "Autonomous ride-hailing expansion context.", url: "https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/" },
+    { number: 5, source: "BMW", title: "Pilot program for humanoid robots.", url: "https://www.automotivedive.com/news/bmw-completes-sucessful-pilot-humanoid-robots-spartanburg-plant-figure-02/723574/" }
+];
+
 export default function PorchfrontClientPage({ initialTags }: { initialTags: any }) {
     const { scrollYProgress } = useScroll();
     const opacityHero = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
@@ -61,7 +69,6 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 </p>
                 <div className="relative z-10 mb-16 flex flex-col items-center -space-y-4">
                     <InlineTags tags={initialTags?.sector} theme="emerald" />
-                    <InlineTags tags={initialTags?.product_type} theme="emerald" />
                 </div>
 
                 <motion.div
@@ -389,7 +396,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <SectionHeading className="text-center text-white">Business model</SectionHeading>
                     </div>
                     <div className="mb-12 flex justify-center">
-                        <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
+                        <InlineTags tags={initialTags?.product_type} theme="emerald" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -412,7 +419,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             {/* Risks and Moat */}
             <section className="relative z-10 py-24 bg-zinc-50 dark:bg-zinc-900/30 border-b border-black/5 dark:border-white/5">
                 <GridContainer>
-                    <SectionHeading className="mb-12 text-center text-zinc-900 dark:text-zinc-100">Risks & Moats</SectionHeading>
+                    <SectionHeading className="mb-6 text-center text-zinc-900 dark:text-zinc-100">Risks & Moats</SectionHeading>
+                    <div className="mb-12 flex justify-center">
+                        <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
+                    </div>
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         <ExpandableCard
                             title="Zoning & Compliance Friction"
@@ -497,6 +507,39 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             </p>
                         </div>
                     </div>
+                    <div className="mt-24 pt-12 border-t border-black/10 dark:border-white/10 max-w-3xl mx-auto text-left">
+                        <h3 className="text-sm font-bold tracking-widest text-emerald-600 dark:text-emerald-500 uppercase mb-8">References</h3>
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {citations.map((cite) => (
+                                <div key={cite.number} className="flex gap-4 group">
+                                    <span className="text-emerald-600 dark:text-emerald-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                                    <div>
+                                        <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
+                                            <span className="font-medium text-zinc-900 dark:text-zinc-100">{cite.source}</span>,{" "}
+                                            {cite.url ? (
+                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                                                    {cite.title}
+                                                </a>
+                                            ) : (
+                                                <span className="italic">{cite.title}</span>
+                                            )}.
+                                        </p>
+                                        {cite.url && (
+                                            <a
+                                                href={cite.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xs font-mono text-zinc-400 dark:text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mt-1 inline-block"
+                                            >
+                                                View Source ↗
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
                 </GridContainer>
             </section>
 
