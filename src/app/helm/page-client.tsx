@@ -100,11 +100,12 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <h1 className="text-5xl sm:text-7xl font-serif text-white mb-6">
+                        <h1 className="text-5xl sm:text-7xl font-serif text-white mb-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
                             Helm
+                            <span className="text-2xl sm:text-4xl font-light text-indigo-300/60 font-sans tracking-tight">| The playful office OS for solo founders</span>
                         </h1>
                         <p className="text-xl sm:text-2xl text-indigo-100/80 leading-relaxed font-light mb-8 max-w-3xl">
-                            The playful office OS for solo founders. A virtual office where AI teammates, collaborators, and freelancers help you run your company while learning how to safely automate more of it over time.
+                            A virtual office where AI teammates, collaborators, and freelancers help you run your company while learning how to safely automate more of it over time.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
