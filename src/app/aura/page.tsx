@@ -1,5 +1,15 @@
+import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
 import AuraClientPage from './page-client';
+
+export const metadata: Metadata = {
+    title: 'AURA | Marketplace for AR AI Avatars - AGI Futures',
+    description: 'An SDK and marketplace that lets any developer drop lifelike, spatially aware AI companions into AR apps.',
+    openGraph: {
+        title: 'AURA | Marketplace for AR AI Avatars - AGI Futures',
+        description: 'An SDK and marketplace for dropping lifelike AI companions into AR apps.',
+    }
+};
 
 export default async function AuraPage() {
     const supabase = await createClient();

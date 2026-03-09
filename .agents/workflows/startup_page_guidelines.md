@@ -14,7 +14,8 @@ You are building a new startup idea prototype that will be integrated into the e
     *   When generating new images, always generate them at the maximum possible resolution allowed by the system (1024x1024), and ensure the aspect ratios fit the design intent.
     *   When using the Next.js `<Image />` component, ALWAYS include the `quality={100}` prop.
 4. **Styling**: We are using standard Tailwind CSS. Avoid making drastic changes to global HTML/Body tags in `globals.css` that might break other pages.
-5. **Final Step (Homepage Routing & UI)**: When the prototype is finished, your final task will be copying your entire `src/app/[idea-name]/` folder directly into the target repository. You must then update the target repository's homepage (`src/app/page.tsx`) to add a new Link card for your idea. 
+5. **SEO Metadata**: Every new `page.tsx` MUST export a custom `metadata` object (Title, Description, and OpenGraph parameters) that is specific to that startup idea. Do not rely on global `<RootLayout>` fallbacks.
+6. **Final Step (Homepage Routing & UI)**: When the prototype is finished, your final task will be copying your entire `src/app/[idea-name]/` folder directly into the target repository. You must then update the target repository's homepage (`src/app/page.tsx`) to add a new Link card for your idea. 
     *   The homepage preview cards use a special hover-reveal text effect over a 30%-opacity hero image background. You must provide two text strings in your card code: A) A short, 4–5 word descriptor visible by default, and B) The full multi-line thesis paragraph that fades in on hover (`group-hover:opacity-100`).
 
 ## Tag Placement Rules

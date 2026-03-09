@@ -1,5 +1,15 @@
+import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
 import AttuneClientPage from './page-client';
+
+export const metadata: Metadata = {
+    title: 'Attune | AI Relationship Coach - AGI Futures',
+    description: 'An AI relationship coach to make her feel heard, seen, and supported, consistently.',
+    openGraph: {
+        title: 'Attune | AI Relationship Coach - AGI Futures',
+        description: 'An AI relationship coach to make her feel heard, seen, and supported, consistently.',
+    }
+};
 
 export default async function AttunePage() {
     const supabase = await createClient();

@@ -1,5 +1,15 @@
+import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
 import HelmClientPage from './page-client';
+
+export const metadata: Metadata = {
+    title: 'Helm | AI Teammates for Solo Founders - AGI Futures',
+    description: 'A virtual office where AI teammates, collaborators, and freelancers help you run your company—driving toward increased automation over time.',
+    openGraph: {
+        title: 'Helm | AI Teammates for Solo Founders - AGI Futures',
+        description: 'A virtual office where AI teammates, collaborators, and freelancers help you run your company.',
+    }
+};
 
 export default async function HelmPage() {
     const supabase = await createClient();
