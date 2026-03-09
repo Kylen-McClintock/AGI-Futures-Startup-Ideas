@@ -394,9 +394,10 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 <Zap className="w-6 h-6 text-yellow-400" /> Why Now
                             </h3>
                             <ul className="space-y-4 text-white/70 font-light">
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Agent maturity.</strong> Data shows double-digit productivity lifts.</span></li>
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Open social graphs.</strong> Farcaster and AT enable portable identity.</span></li>
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Human-AI interaction.</strong> Coordination is designable <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Agent maturity.</strong> Field data shows double-digit productivity lifts in support and large gains in software tasks <ExpandableCitation label="[2][3]" sourceUrl="https://academic.oup.com/qje/article/140/2/889/7990658" sourceText="Brynjolfsson et al., Generative AI at Work" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Open social graphs.</strong> Protocols like Farcaster and AT enable portable identity and relationships across apps, making opted-in micro-advisory practical at scale <ExpandableCitation label="[8][9]" sourceUrl="https://docs.farcaster.xyz/learn/architecture/overview" sourceText="Farcaster and AT Protocol" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Human-AI interaction patterns.</strong> Coordination and oversight are now designable, not artisanal, thanks to multi-agent frameworks and decision-support taxonomies <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Cultural shift.</strong> Building in public is normal. Freelancing is mainstream and rising <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research/freelance-forward-2023" sourceText="Upwork, Freelance Forward 2023" />.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -410,65 +411,112 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
-                {/* Business Model & Moat */}
+                {/* Business Model & Moat & GTM */}
                 <RevealSection className="mb-32">
                     <div className="mb-12">
                         <div className="text-sm font-mono tracking-widest uppercase text-violet-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-violet-500/50 mr-4" /> Mechanics
+                            <span className="w-8 h-px bg-violet-500/50 mr-4" /> Mechanics & GTM
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-4">
-                            Business Model & Moat.
+                            Business Model, Moat & Market Entry.
                         </h2>
                         <InlineTags tags={tags.product_type} theme="indigo" />
                     </div>
 
-                    <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.02] mb-8">
-                        <h3 className="text-2xl font-light text-white mb-4 flex items-center gap-3">
+                    <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-white/5 relative overflow-hidden group mb-8">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-violet-500/10 blur-[80px] pointer-events-none" />
+                        <h3 className="text-2xl font-light text-white mb-4 flex items-center gap-3 relative z-10">
                             <Briefcase className="w-6 h-6 text-violet-400" /> Business Model
                         </h3>
-                        <p className="text-lg leading-relaxed text-white/70 font-light">
-                            SaaS tiers for Solo, Studio, Team. Usage-metered agent runs. Marketplace revenue share. Take rate on freelance reviews and implementations.
+                        <p className="text-lg leading-relaxed text-white/80 font-light relative z-10">
+                            Software-as-a-service tiers for Solo, Studio, Team. Usage-metered agent runs. Agent marketplace revenue share. Mentor subscriptions. Take rate on freelance reviews and implementations. Enterprise add-ons for advanced observability and private connectors.
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        <details className="glass-panel p-8 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 hover:bg-indigo-950/30 hover:border-indigo-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
-                            <summary className="list-none flex justify-between items-start outline-none">
-                                <div>
-                                    <h3 className="text-2xl font-light text-white mb-2 flex items-center gap-3">
-                                        Moat Score
-                                    </h3>
-                                    <div className="text-4xl font-light text-indigo-400 mt-2">{scores.moat_score} <span className="text-lg text-white/40">/ 100</span></div>
+                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 hover:border-indigo-500/40 transition-colors group">
+                            <div className="flex justify-between items-start mb-6 border-b border-indigo-500/20 pb-6">
+                                <h3 className="text-2xl font-light text-white flex items-center gap-3">Moat</h3>
+                                <div className="text-right">
+                                    <div className="text-3xl font-light text-indigo-400">{scores.moat_score} <span className="text-base text-white/40">/ 100</span></div>
+                                    <div className="text-xs uppercase tracking-widest text-indigo-400/60 font-mono mt-1">Potential</div>
                                 </div>
-                                <ChevronDown className="w-6 h-6 text-indigo-500/50 group-open:rotate-180 transition-transform duration-300" />
-                            </summary>
-                            <div className="pt-6 mt-6 border-t border-indigo-500/10">
-                                <p className="text-white/80 font-light leading-relaxed">
-                                    The moat is not the office metaphor. It is the compounding preference graph, workflow trace history, advisor outcome data, and cross-company agent reputation layer. Helm can become the system of record for how a founder actually makes decisions.
+                            </div>
+                            <div className="space-y-4">
+                                <p className="text-white/80 leading-relaxed font-light">
+                                    The moat is not the office metaphor. It is the compounding preference graph, workflow trace history, advisor outcome data, and cross-company agent reputation layer. Helm can become the system of record for how a founder actually makes decisions. That creates switching costs at the judgment layer, not just the interface layer. In an AGI world, generic intelligence becomes abundant, but proprietary context, trusted routing, and outcome-linked organizational memory stay scarce.
+                                </p>
+                                <p className="text-white/80 leading-relaxed font-light border-l-2 border-indigo-500 pl-4 mt-6">
+                                    The strongest moat vector is outcome-linked coordination data across humans, agents, advisors, and freelancers. If Helm becomes the place where work is routed, evaluated, and improved, it can own the highest-value feedback loops in founder execution.
                                 </p>
                             </div>
-                        </details>
+                        </div>
 
-                        <details className="glass-panel p-8 rounded-[2rem] border border-rose-500/20 bg-rose-950/20 hover:bg-rose-950/30 hover:border-rose-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
-                            <summary className="list-none flex justify-between items-start outline-none">
-                                <div>
-                                    <h3 className="text-2xl font-light text-white mb-2 flex items-center gap-3">
-                                        Difficulty Score
-                                    </h3>
-                                    <div className="text-4xl font-light text-rose-400 mt-2">{scores.difficulty_score} <span className="text-lg text-white/40">/ 100</span></div>
+                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-rose-500/20 bg-rose-950/20 hover:border-rose-500/40 transition-colors group">
+                            <div className="flex justify-between items-start mb-6 border-b border-rose-500/20 pb-6">
+                                <h3 className="text-2xl font-light text-white flex items-center gap-3">Difficulty</h3>
+                                <div className="text-right">
+                                    <div className="text-3xl font-light text-rose-400">{scores.difficulty_score} <span className="text-base text-white/40">/ 100</span></div>
+                                    <div className="text-xs uppercase tracking-widest text-rose-400/60 font-mono mt-1">To Market</div>
                                 </div>
-                                <ChevronDown className="w-6 h-6 text-rose-500/50 group-open:rotate-180 transition-transform duration-300" />
-                            </summary>
-                            <div className="pt-6 mt-6 border-t border-rose-500/10">
-                                <p className="text-white/80 font-light leading-relaxed mb-4">
-                                    Buildable now, but hard to make magical. The biggest risk is integrating enough value into one experience that founders change behavior.
-                                </p>
-                                <ul className="space-y-4 text-sm text-white/70">
-                                    <li><strong className="text-rose-300">Tech: Medium.</strong> Multi-agent systems fail silently. <em>Mitigation: Default-on human approval.</em></li>
-                                    <li><strong className="text-rose-300">Execution: High.</strong> Can become bloated. <em>Mitigation: Obsess over one killer workflow.</em></li>
+                            </div>
+                            <p className="text-white/80 leading-relaxed font-light">
+                                This is buildable now, but hard to make magical. The product crosses workflow infrastructure, agent orchestration, marketplace design, social trust systems, and high-expectation consumer software. The biggest risk is not technical possibility. It is integrating enough value into one experience that founders change behavior and keep coming back.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div className="mb-12">
+                        <h3 className="text-2xl font-light text-white mb-6 pl-2">Risk Ledger</h3>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                            <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
+                                <div className="flex justify-between mb-3"><strong className="text-white">Tech</strong> <span className="text-amber-400 font-mono text-sm">Medium</span></div>
+                                <ul className="space-y-3 text-sm font-light">
+                                    <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Multi-agent systems still fail silently, over-delegate, or create brittle handoffs in long workflows.</li>
+                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Start with narrow, repeatable founder workflows. Keep human approval gates default-on. Make traces replayable, benchmarked, and rollback-ready before expanding autonomy.</li>
                                 </ul>
                             </div>
-                        </details>
+                            <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
+                                <div className="flex justify-between mb-3"><strong className="text-white">Regulatory</strong> <span className="text-amber-400 font-mono text-sm">Low-Medium</span></div>
+                                <ul className="space-y-3 text-sm font-light">
+                                    <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Marketplace labor classification, adviser representations, and data handling create compliance surface area, especially if Helm starts resembling hiring infrastructure or financial advice.</li>
+                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Avoid regulated claims early. Position mentors as educational and decision-support tools, not fiduciaries. Keep clean terms, provenance, disclosures, and role boundaries from day one.</li>
+                                </ul>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
+                                <div className="flex justify-between mb-3"><strong className="text-white">Capital</strong> <span className="text-amber-400 font-mono text-sm">Medium</span></div>
+                                <ul className="space-y-3 text-sm font-light">
+                                    <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Great product design, agent infrastructure, and liquidity on both advisor and freelancer rails require meaningful upfront investment before the network is fully self-reinforcing.</li>
+                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Launch with one killer wedge workflow and a manually curated network. Earn revenue before building full marketplace breadth. Use services and concierge layers to bootstrap high-value traces.</li>
+                                </ul>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
+                                <div className="flex justify-between mb-3"><strong className="text-white">Execution</strong> <span className="text-rose-400 font-mono text-sm">High</span></div>
+                                <ul className="space-y-3 text-sm font-light">
+                                    <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> This product can easily become bloated, confusing, or gimmicky. If it feels like a toy, founders will churn. If it feels like enterprise software, they will also churn.</li>
+                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Obsess over one moment of undeniable relief. Make the first room feel like superpowers, not software. Build from repeated daily use cases outward, not from platform ambition inward.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 className="text-3xl font-light text-white mb-6">Unique Go To Market</h3>
+                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-emerald-500/20 bg-emerald-950/10 relative overflow-hidden">
+                            <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                <Zap className="w-6 h-6 text-emerald-400" />
+                                Founders Build Live, Fall in Love
+                            </h4>
+                            <p className="text-white/80 leading-relaxed font-light text-lg mb-8">
+                                Recruit a small cohort of well-known founders and creators to build a real micro-project in Helm over one week. Stream from inside rooms. Show delight moments when Jarvis anticipates a choice, an advisor debate lands a decision, or a freelance sprint ships overnight. Each participant gets a referral code and a transparent trace that fans can fork. Clips travel on X, YouTube, and Farcaster. The hook is simple. Building feels better here and you ship more. Their audiences try the exact trace that impressed them.
+                            </p>
+                            <div className="p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5">
+                                <h5 className="font-medium text-emerald-300 mb-2 font-mono uppercase tracking-widest text-sm">User Wedge</h5>
+                                <p className="text-white/80 font-light leading-relaxed">
+                                    Solo founders and very small startup teams buy first because they already feel the pain of fragmented tools, delayed judgment, and hiring before readiness. They cannot wait because every coordination mistake compounds into slower shipping, lower morale, and lost runway.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </RevealSection>
 
@@ -490,19 +538,43 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none" />
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 cursor-default">
-                            <h4 className="text-xl font-medium text-white mb-3">Launchpad for autonomous corporations</h4>
+                    <div className="grid sm:grid-cols-2 gap-6">
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                            <h4 className="text-xl font-medium text-white mb-3">Jarvis as autonomy engine</h4>
                             <p className="text-white/70 leading-relaxed font-light">
-                                As workflows hit L3 and L4 autonomy, Jarvis runs revenue lines end to end under policy constraints with auditable records. Over time, Helm graduates to a factory for legally bounded autonomous entities <ExpandableCitation label="[6][7][10][11]" sourceUrl="" sourceText="Decentralized IDs and Verifiable Credentials" />.
+                                Every run yields a trace of inputs, decisions, tests, and outcomes. Jarvis compresses traces into standard operating procedures and a living preference model of your taste and risk. It operates in shadow mode first, predicts your call, explains variance, and learns from deltas. Promotion on the autonomy ladder requires key performance indicator targets, low variance, clean audits, and rollback readiness. L0 Assist → L1 Recommend → L2 Approve with edits → L3 Auto with rollback → L4 Auto with guardrails. You set thresholds and kill switches <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
                             </p>
-                        </motion.div>
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-2xl border border-white/5 cursor-default">
+                        </div>
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                            <h4 className="text-xl font-medium text-white mb-3">Org-as-graph, Jarvis as conductor</h4>
+                            <p className="text-white/70 leading-relaxed font-light">
+                                Work is a graph across rooms. Agents critique, hand off, and self-check against explicit acceptance tests. Jarvis routes tasks to the best tool or teammate, injects missing context, and pauses runs for human judgment at policy gates. This beats isolated chat for multi-step, cross-functional work <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
                             <h4 className="text-xl font-medium text-white mb-3">Compound learning loop</h4>
                             <p className="text-white/70 leading-relaxed font-light">
-                                Shared traces become reusable playbooks with benchmarks. Jarvis runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges.
+                                Shared traces become reusable playbooks with benchmarks. Jarvis publishes competence scorecards per workflow and proposes upgrades. It runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges automatically <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
                             </p>
-                        </motion.div>
+                        </div>
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                            <h4 className="text-xl font-medium text-white mb-3">Network effects that matter</h4>
+                            <p className="text-white/70 leading-relaxed font-light">
+                                Portable identity and verifiable credentials let mentors, freelancers, and agents carry reputation across companies. Jarvis weights advisors and agents by outcome, not hype. Matching improves as proofs accumulate, without platform lock-in <ExpandableCitation label="[10][11]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="Decentralized IDs and Verifiable Credentials" />.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                            <h4 className="text-xl font-medium text-white mb-3">Human plus AI frontier</h4>
+                            <p className="text-white/70 leading-relaxed font-light">
+                                Keep human judgment where it moves the needle. Automate the rest under policy. Jarvis prepares board packets, contrasts viewpoints, previews diffs, and provides instant rollback. As models improve, you swap agents without losing observability or control.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                            <h4 className="text-xl font-medium text-white mb-3">Launchpad for autonomous corporations</h4>
+                            <p className="text-white/70 leading-relaxed font-light">
+                                This is the main prize. As more workflows hit L3 and L4 and unit economics clear, Jarvis runs revenue lines end to end under policy constraints with auditable records and programmatic payments. It replicates proven playbooks into new products and geographies, hires agents, contracts freelancers, and maintains books with verifiable logs. Over time, Helm graduates from an office operating system to a factory for legally bounded, truly autonomous entities <ExpandableCitation label="[6][7][10][11]" sourceUrl="" sourceText="Decentralized IDs and Verifiable Credentials" />.
+                            </p>
+                        </div>
                     </div>
                 </RevealSection>
 
@@ -521,8 +593,10 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                     <div className="grid md:grid-cols-2 gap-12 mb-16">
                         <div className="space-y-6 lg:pr-8">
-                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-indigo-500/50 pl-6">
-                                Reduce the coordination tax of entrepreneurship so more capable people can start, learn, and scale. Aggregate judgment and execution into legible, reusable traces.
+                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-indigo-500/50 pl-6 space-y-4 flex flex-col">
+                                <span>Reduce the coordination tax of entrepreneurship so more capable people can start, learn, and scale. Aggregate judgment and execution into legible, reusable traces. Push the economy toward higher throughput and better decisions while keeping humans in the loop.</span>
+
+                                <span className="text-base text-indigo-100/70 mt-4 leading-relaxed tracking-wide">At civilizational scale, Helm matters if it turns small teams into high-agency production units without requiring bureaucracy first. That expands the set of people who can build important things. It also creates a more legible interface between human judgment and machine execution, which is one of the core institutional design problems of the AGI transition. If done well, Helm does not just help founders work faster. It helps society discover better operating norms for human-guided autonomous systems.</span>
                             </p>
 
                             <details className="mt-8 glass-panel rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 hover:bg-indigo-950/30 hover:border-indigo-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px]">
