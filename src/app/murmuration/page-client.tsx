@@ -30,19 +30,13 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             AI Agent <br />
             <span className="italic text-white/70">Swarm Intelligence</span>
           </h1>
-          {initialTags?.sector?.length > 0 && (
-            <div className="mb-4">
-              <InlineTags tags={initialTags.sector} />
-            </div>
-          )}
-          {initialTags?.product_type?.length > 0 && (
-            <div className="mb-6">
-              <InlineTags tags={initialTags.product_type} />
-            </div>
-          )}
-          <p className="text-xl sm:text-2xl text-white/80 max-w-2xl leading-relaxed font-light">
+          <p className="text-xl sm:text-2xl text-white/80 max-w-2xl leading-relaxed font-light mb-8">
             An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments, learn across a private network, and compound those learnings into faster growth, lower cost, and category capture.
           </p>
+          <div className="mb-12 flex flex-col items-start -space-y-4">
+            <InlineTags tags={initialTags?.sector} theme="blue" />
+            <InlineTags tags={initialTags?.product_type} theme="blue" />
+          </div>
           <FadeIn delay={0.6} className="mt-16 flex items-center gap-4 text-xs tracking-widest uppercase text-white/40">
             <span>Scroll to discover</span>
             <ChevronDown className="w-4 h-4 animate-bounce" />
@@ -83,7 +77,6 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         <ScrollReveal className="py-24 max-w-3xl">
           <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-4 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> The Problem</div>
-            {initialTags?.bottleneck?.length > 0 && <InlineTags tags={initialTags.bottleneck} />}
           </div>
           <p className="text-2xl text-white leading-relaxed mb-6 font-serif">
             Most startups still treat AI like a feature or productivity layer on top of a human-first company.
@@ -106,9 +99,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* USER WEDGE */}
         <ScrollReveal className="py-24 max-w-3xl border-t border-white/10">
-          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-4 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> User Wedge</div>
-            {initialTags?.customer?.length > 0 && <InlineTags tags={initialTags.customer} />}
+          </div>
+          <div className="mb-8">
+            <InlineTags tags={initialTags?.customer} theme="blue" />
           </div>
           <p className="text-xl text-white mb-8">The first buyers are ambitious startups that:</p>
           <ul className="space-y-4">
@@ -129,9 +124,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* SOLUTION & THE LOOP */}
         <ScrollReveal className="py-24">
-          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-6 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-2 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> The Solution</div>
-            {initialTags?.enabling_technology?.length > 0 && <InlineTags tags={initialTags.enabling_technology} />}
+          </div>
+          <div className="mb-6">
+            <InlineTags tags={initialTags?.enabling_technology} theme="blue" />
           </div>
           <h3 className="text-3xl font-serif text-white mb-8">
             Murmuration Engine is a feedback loop for startups that want to move fast, learn faster than rivals, and turn the AGI transition into category capture.
@@ -236,9 +233,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </ScrollReveal>
 
           <ScrollReveal delay={0.3}>
-            <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-6 flex flex-col sm:flex-row sm:items-center gap-4">
+            <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-2 flex flex-col sm:flex-row sm:items-center gap-4">
               <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> Why Now</div>
-              {initialTags?.readiness?.length > 0 && <InlineTags tags={initialTags.readiness} />}
+            </div>
+            <div className="mb-6">
+              <InlineTags tags={initialTags?.readiness} theme="blue" />
             </div>
             <p className="text-xl text-white mb-6">Three curves crossed.</p>
             <p className="text-white/70 font-light leading-relaxed mb-8">
@@ -277,9 +276,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* BUSINESS MODEL */}
         <ScrollReveal className="py-24 max-w-3xl mx-auto border-t border-white/10">
-          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
+          <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-4 flex flex-col sm:flex-row sm:items-center gap-4">
             <div className="flex items-center gap-2"><span className="w-8 h-px bg-[var(--primary)]/50"></span> Business Model</div>
-            {initialTags?.founder_fit?.length > 0 && <InlineTags tags={initialTags.founder_fit} />}
+          </div>
+          <div className="mb-8 flex">
+            <InlineTags tags={initialTags?.founder_fit} theme="blue" />
           </div>
           <p className="text-xl text-white mb-6">
             The default model is aligned with upside. Murmuration Engine takes:
@@ -417,9 +418,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </div>
 
           <div className="pt-16">
-            <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-6 flex flex-col sm:flex-row sm:items-center justify-center gap-4">
+            <div className="uppercase tracking-widest text-[var(--primary)] text-xs font-mono mb-4 flex flex-col sm:flex-row sm:items-center justify-center gap-4">
               <div className="flex items-center gap-2"><span className="w-4 h-px bg-[var(--primary)]/50"></span> Civilizational Impact <span className="w-4 h-px bg-[var(--primary)]/50"></span></div>
-              {initialTags?.outcomes?.length > 0 && <InlineTags tags={initialTags.outcomes} />}
+            </div>
+            <div className="mb-8 flex justify-center">
+              <InlineTags tags={initialTags?.outcomes} theme="blue" />
             </div>
             <p className="text-xl text-white mb-8">
               Murmuration Engine matters for two reasons.

@@ -76,15 +76,17 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                         <div className="inline-block mb-8 text-xs font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-3 py-1 rounded-full bg-[var(--primary)]/5">
                             Startup Idea Prototype
                         </div>
-                        <InlineTags label="Sector" tags={initialTags?.sector} />
-                        <InlineTags label="Product Type" tags={initialTags?.product_type} />
                         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-serif leading-[1.1] tracking-tight mb-8">
                             AURA <br />
                             <span className="italic text-white/70">Embodied Intelligence Stack</span>
                         </h1>
-                        <p className="text-xl sm:text-3xl text-white/90 leading-relaxed font-light mb-12 max-w-3xl">
+                        <p className="text-xl sm:text-3xl text-white/90 leading-relaxed font-light max-w-3xl">
                             AURA is an <strong className="font-medium text-white">open-source software development kit</strong> plus <strong className="font-medium text-white">avatar marketplace</strong> that lets any developer drop lifelike, spatially aware AI companions into augmented reality apps.
                         </p>
+                        <div className="mt-6 mb-12 flex flex-col -space-y-4">
+                            <InlineTags tags={initialTags?.sector} theme="primary" />
+                            <InlineTags tags={initialTags?.product_type} theme="primary" />
+                        </div>
                     </motion.div>
 
                     {/* Hero Vision Image */}
@@ -146,8 +148,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* THE PROBLEM */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">The Problem</h2>
-                        <InlineTags label="Bottleneck" tags={initialTags?.bottleneck} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">The Problem</h2>
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             Today's AI is powerful, but still mostly disembodied. Voice assistants cannot reliably see what you are doing, point to the right object, read body language, or guide action in real time. Meanwhile, every augmented reality developer still ends up rebuilding scene understanding, occlusion, gesture systems, and safety rails from scratch.
                         </p>
@@ -183,8 +184,8 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* WHY NOW */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Why now</h2>
-                        <InlineTags label="Readiness" tags={initialTags?.readiness} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">Why now</h2>
+                        <InlineTags tags={initialTags?.readiness} theme="primary" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             Three curves are crossing.
                         </p>
@@ -235,8 +236,8 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* THE SOLUTION & CORE ARCHITECTURE */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Core Architecture</h2>
-                        <InlineTags label="Enabling Technology" tags={initialTags?.enabling_technology} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">Core Architecture</h2>
+                        <InlineTags tags={initialTags?.enabling_technology} theme="primary" />
                         <ul className="space-y-6 text-lg text-white/80 font-light leading-relaxed list-disc list-inside mb-16">
                             <li><strong className="font-medium text-white">Open-source software development kit, Apache 2.0:</strong> scene-graph application programming interface, behavior-graph domain-specific language, emotion and gesture library.</li>
                             <li><strong className="font-medium text-white">Cloud runtime, hosted and optional:</strong> spatial intelligence engine, memory kernel, consent-driven cloning pipeline.</li>
@@ -255,7 +256,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* USE CASES */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-12 text-center text-white">Core Use Cases</h2>
+                        <h2 className="text-4xl font-serif mb-12 text-center text-white">Core Use Cases</h2>
 
                         <div className="space-y-24">
                             {/* Learn and Perform */}
@@ -351,8 +352,8 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* MARKET */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">The Market Story</h2>
-                        <InlineTags label="Customer" tags={initialTags?.customer} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">The Market Story</h2>
+                        <InlineTags tags={initialTags?.customer} theme="primary" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             The right market story is not "avatars." It is <strong className="font-medium text-white">the default interaction layer for embodied software</strong>. IDC expects software, services, and related technologies around augmented and virtual reality to reach nearly $12 billion in 2025, while the broader AI app market is projected by Business of Apps to reach $156.9 billion by 2030. <ExpandableCitation number={7} source="Business of Apps" title="AI App Revenue and Usage Statistics" />
                         </p>
@@ -376,7 +377,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* BUSINESS MODEL */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Business Model</h2>
+                        <h2 className="text-4xl font-serif mb-8 text-white">Business Model</h2>
 
                         <div className="grid sm:grid-cols-3 gap-6 mb-12">
                             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
@@ -399,7 +400,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* SCORES AND RISKS */}
                     <section className="space-y-8">
-                        <InlineTags label="Founder Fit" tags={initialTags?.founder_fit} />
+                        <InlineTags tags={initialTags?.founder_fit} theme="primary" />
                         <ScoreCard
                             type="moat"
                             title="Moat Potential"
@@ -473,10 +474,10 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* CIVILIZATIONAL IMPACT */}
                     <section className="pt-12 border-t border-white/10">
-                        <div className="flex items-center gap-4 mb-8">
-                            <h2 className="text-3xl font-serif text-white">Civilizational Impact</h2>
+                        <div className="flex items-center gap-4 mb-4">
+                            <h2 className="text-4xl font-serif text-white">Civilizational Impact</h2>
                         </div>
-                        <InlineTags label="Civilizational Outcomes" tags={initialTags?.outcomes} />
+                        <InlineTags tags={initialTags?.outcomes} theme="primary" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             The white-pill case is obvious. AURA lowers the cost of coaching, skill formation, emotional support, and social rehearsal. It can help more people cook, train, learn, practice, regulate, and stay engaged with life.
                         </p>

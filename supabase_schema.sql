@@ -30,3 +30,10 @@ ALTER TABLE project_tags ENABLE ROW LEVEL SECURITY;
 -- 4. Create public read policies so our Next.js frontend can query the data securely
 CREATE POLICY "Allow public read access on projects" ON projects FOR SELECT USING (true);
 CREATE POLICY "Allow public read access on project_tags" ON project_tags FOR SELECT USING (true);
+
+-- 5. Add rating score fields (JSONB) to projects
+ALTER TABLE projects
+ADD COLUMN IF NOT EXISTS moat_score jsonb DEFAULT '{"ai_scored": 0}',
+ADD COLUMN IF NOT EXISTS difficulty_score jsonb DEFAULT '{"ai_scored": 0}',
+ADD COLUMN IF NOT EXISTS civilizational_impact_score jsonb DEFAULT '{"ai_scored": 0}',
+ADD COLUMN IF NOT EXISTS civilizational_impact_ratings jsonb DEFAULT '{}';

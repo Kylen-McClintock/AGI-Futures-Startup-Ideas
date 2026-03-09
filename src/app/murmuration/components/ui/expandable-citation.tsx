@@ -40,9 +40,17 @@ export function ExpandableCitation({
                         style={{ backdropFilter: 'blur(16px)' }}
                     >
                         <div className="flex justify-between items-start mb-2">
-                            <h4 className="text-sm font-serif text-[var(--foreground)] leading-tight">
-                                {children || source || title}
-                            </h4>
+                            {url ? (
+                                <a href={url} target="_blank" rel="noopener noreferrer" className="hover:underline text-[var(--foreground)] hover:text-white transition-colors group">
+                                    <h4 className="text-sm font-serif leading-tight">
+                                        {children || source || title}
+                                    </h4>
+                                </a>
+                            ) : (
+                                <h4 className="text-sm font-serif text-[var(--foreground)] leading-tight">
+                                    {children || source || title}
+                                </h4>
+                            )}
                             <button
                                 onClick={() => setIsOpen(false)}
                                 className="text-gray-400 hover:text-white shrink-0 ml-2"

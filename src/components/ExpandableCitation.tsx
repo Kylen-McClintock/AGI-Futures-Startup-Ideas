@@ -33,7 +33,13 @@ export function ExpandableCitation({ label, sourceUrl, sourceText }: ExpandableC
                         transition={{ duration: 0.2, ease: "easeOut" }}
                         className="absolute z-20 top-full mt-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-72 md:w-80 p-4 rounded-xl glass-panel text-left text-sm"
                     >
-                        <p className="text-slate-300 mb-3 leading-relaxed">{sourceText}</p>
+                        {sourceUrl ? (
+                            <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="block group mb-3">
+                                <p className="text-slate-300 leading-relaxed group-hover:underline group-hover:text-amber-200 transition-colors">{sourceText}</p>
+                            </a>
+                        ) : (
+                            <p className="text-slate-300 mb-3 leading-relaxed">{sourceText}</p>
+                        )}
                         <a
                             href={sourceUrl}
                             target="_blank"

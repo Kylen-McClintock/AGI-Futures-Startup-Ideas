@@ -64,14 +64,16 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <div className="inline-block mb-8 text-xs font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-3 py-1 rounded-full bg-[var(--primary)]/5">
                             Startup Idea Prototype
                         </div>
-                        <InlineTags label="Sector" tags={initialTags?.sector} />
-                        <InlineTags label="Product Type" tags={initialTags?.product_type} />
                         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-serif leading-[1.1] tracking-tight mb-8">
                             AI Founder Lab <br />
                         </h1>
-                        <p className="text-xl sm:text-3xl text-white/90 leading-relaxed font-light mb-12 max-w-3xl">
+                        <p className="text-xl sm:text-3xl text-white/90 leading-relaxed font-light max-w-3xl">
                             An AI-native startup studio and university alternative that turns ambitious builders into founder-grade operators by having them <strong className="font-medium text-white">build, sell, and own real ventures</strong>.
                         </p>
+                        <div className="mt-6 mb-12 flex flex-col -space-y-4">
+                            <InlineTags tags={initialTags?.sector} theme="blue" />
+                            <InlineTags tags={initialTags?.product_type} theme="blue" />
+                        </div>
                     </motion.div>
 
                     {/* Hero Vision Image */}
@@ -135,8 +137,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* THE PROBLEM */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">The Problem</h2>
-                        <InlineTags label="Bottleneck" tags={initialTags?.bottleneck} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">The Problem</h2>
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             Today, too many ambitious people pay a premium for lectures, credentials, and simulated projects, while the frontier economy increasingly rewards shipped products, customer insight, distribution, and judgment under uncertainty.
                         </p>
@@ -164,9 +165,8 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                                 <Image src={protoImage} alt="Prototyping Workspace" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
                             </div>
                         </div>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Why Now: Crossing Curves</h2>
-                        <InlineTags label="Readiness" tags={initialTags?.readiness} />
-                        <InlineTags label="Enabling Technology" tags={initialTags?.enabling_technology} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">Why Now: Crossing Curves</h2>
+                        <InlineTags tags={initialTags?.readiness} theme="blue" />
                         <ul className="space-y-6 text-lg text-white/80 font-light leading-relaxed list-none mb-4">
                             <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">01</span> The economic case for traditional higher education is under more scrutiny as costs remain high and outcomes vary sharply by major and path <ExpandableCitation number={1} source="Federal Reserve" title="Quarterly Report on Household Debt and Credit" /><ExpandableCitation number={2} source="College Board" title="Trends in College Pricing and Student Aid 2024" />.</li>
                             <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">02</span> Generative AI tools have already shown measurable productivity gains in real software workflows, shrinking the time from idea to prototype <ExpandableCitation number={3} source="Peng et al." title="The Impact of AI on Developer Productivity" />.</li>
@@ -179,8 +179,9 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* SOLUTION & ICP */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">The Solution</h2>
-                        <InlineTags label="Customer" tags={initialTags?.customer} />
+                        <h2 className="text-4xl font-serif mb-8 text-white">The Solution</h2>
+                        <InlineTags tags={initialTags?.customer} theme="blue" />
+                        <InlineTags tags={initialTags?.enabling_technology} theme="blue" />
 
                         <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/30 text-center mb-12 relative overflow-hidden">
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[var(--primary)]/10 blur-[100px] pointer-events-none" />
@@ -223,7 +224,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* MARKET & BUSINESS MODEL */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Market & Business Model</h2>
+                        <h2 className="text-4xl font-serif mb-8 text-white">Market & Business Model</h2>
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             This is not just education. It is the convergence of four budgets being repriced by AI: tuition, upskilling, startup formation, and recruiting spend. As model capability rises, the cost to build and test drops. The real opportunity is a new production system for turning high-agency people into repeat builders with verified execution data.
                         </p>
@@ -261,7 +262,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     {/* MOAT & SCORES */}
                     <section className="space-y-16">
                         <div>
-                            <h2 className="text-3xl font-serif mb-8 text-white">The Moat</h2>
+                            <h2 className="text-4xl font-serif mb-8 text-white">The Moat</h2>
                             <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                                 In an AGI world, content education gets commoditized first. The moat shifts to proprietary execution data, trusted networks, and capital-linked coordination.
                             </p>
@@ -269,7 +270,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </div>
 
                         <div className="space-y-8">
-                            <InlineTags label="Founder Fit" tags={initialTags?.founder_fit} />
+                            <InlineTags tags={initialTags?.founder_fit} theme="blue" />
                             <ScoreCard
                                 type="moat"
                                 title="Moat Score"
@@ -321,7 +322,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* UNIQUE GTM */}
                     <section>
-                        <h2 className="text-3xl font-serif mb-8 text-white">Unique Go-To-Market</h2>
+                        <h2 className="text-4xl font-serif mb-8 text-white">Unique Go-To-Market</h2>
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-12">
                             AFL should not market like a school. It should market like a live talent market and public venture engine.
                         </p>
@@ -352,7 +353,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* AGI EDGE & CIVILIZATIONAL IMPACT */}
                     <section className="pt-12 border-t border-white/10">
-                        <h2 className="text-3xl font-serif text-white mb-8">The AGI Future Edge</h2>
+                        <h2 className="text-4xl font-serif text-white mb-8">The AGI Future Edge</h2>
 
                         <p className="text-xl text-white font-light leading-relaxed mb-12 pl-6 border-l-2 border-[var(--primary)]">
                             As intelligence becomes abundant, raw instruction gets cheaper and less defensible. <strong className="font-medium text-[var(--primary)]">What stays scarce is coordinated action, judgment under uncertainty, taste, trust, and incentive alignment.</strong>
@@ -363,7 +364,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </p>
 
                         <h3 className="text-2xl font-serif text-white mb-6 mt-16">Civilizational Impact</h3>
-                        <InlineTags label="Civilizational Outcomes" tags={initialTags?.outcomes} />
+                        <InlineTags tags={initialTags?.outcomes} theme="blue" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             A civilization heading toward AGI needs more people who can build, coordinate, and deploy technology responsibly. It does not need more credential inflation.
                         </p>

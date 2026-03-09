@@ -57,19 +57,32 @@ export function ProjectTags({ tags }: ProjectTagsProps) {
     );
 }
 
-export function InlineTags({ label, tags }: { label?: string, tags?: string[] }) {
+export function InlineTags({ label, tags, theme = 'default' }: { label?: string, tags?: string[], theme?: 'emerald' | 'amber' | 'primary' | 'blue' | 'indigo' | 'rose' | 'zinc' | 'default' }) {
     if (!tags || tags.length === 0) return null;
+
+    const themeMap: Record<string, string> = {
+        emerald: "border-emerald-500/20 bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
+        amber: "border-amber-500/20 bg-amber-500/10 text-amber-700 dark:text-amber-400",
+        primary: "border-[var(--primary)]/20 bg-[var(--primary)]/10 text-[var(--primary)]",
+        blue: "border-blue-500/20 bg-blue-500/10 text-blue-700 dark:text-blue-400",
+        indigo: "border-indigo-500/20 bg-indigo-500/10 text-indigo-700 dark:text-indigo-400",
+        rose: "border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-400",
+        zinc: "border-zinc-500/20 bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
+        default: "border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-zinc-800 dark:text-zinc-200"
+    };
+
+    const themeClass = themeMap[theme] || themeMap['default'];
 
     return (
         <span className="my-6 block">
             {label && (
-                <span className="block text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-3 ml-1">
+                <span className="block text-[8px] sm:text-[10px] font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-2 ml-1">
                     {label}
                 </span>
             )}
-            <span className="inline-flex flex-wrap gap-2 items-center">
+            <span className="inline-flex flex-wrap gap-1.5 items-center">
                 {tags.map((tag, i) => (
-                    <span key={i} className="px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 backdrop-blur-md">
+                    <span key={i} className={`px-2 py-1 rounded-full border text-[10px] sm:text-xs backdrop-blur-md ${themeClass}`}>
                         {tag}
                     </span>
                 ))}

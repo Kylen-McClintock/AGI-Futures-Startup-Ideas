@@ -62,11 +62,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         Venture Thesis
                     </motion.div>
 
-                    {initialTags?.sector?.length > 0 && (
-                        <div className="mb-4">
-                            <InlineTags tags={initialTags.sector} />
-                        </div>
-                    )}
+
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -84,11 +80,10 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         The Scope-to-Quote Engine
                     </motion.p>
 
-                    {initialTags?.product_type?.length > 0 && (
-                        <div className="mt-8">
-                            <InlineTags tags={initialTags.product_type} />
-                        </div>
-                    )}
+                    <div className="mt-8 flex flex-col items-center -space-y-4">
+                        <InlineTags tags={initialTags?.sector} theme="emerald" />
+                        <InlineTags tags={initialTags?.product_type} theme="emerald" />
+                    </div>
                 </div>
             </section>
 
@@ -103,7 +98,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn>
-                    <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4">
+                    <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Headline Stat
                     </h2>
@@ -130,10 +125,9 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn>
-                    <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
+                    <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Problem
-                        {initialTags?.bottleneck?.length > 0 && <InlineTags tags={initialTags.bottleneck} />}
                     </h2>
                     <div className="prose prose-lg prose-invert text-white/70 max-w-none space-y-6">
                         <p className="text-xl text-white/90">Home services still run on a broken interface between demand and supply.</p>
@@ -178,11 +172,13 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn>
-                    <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
+                    <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Solution
-                        {initialTags?.enabling_technology?.length > 0 && <InlineTags tags={initialTags.enabling_technology} />}
                     </h2>
+                    <div className="mb-8">
+                        <InlineTags tags={initialTags?.enabling_technology} theme="emerald" />
+                    </div>
                     <div className="prose prose-lg prose-invert text-white/70 max-w-none space-y-6">
                         <p className="text-xl text-white/90">The mechanism comes first.</p>
                         <p>
@@ -239,9 +235,11 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[100px] rounded-full pointer-events-none" />
 
-                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                            <h2 className="text-2xl font-serif text-white">Specific Example per ICP</h2>
-                            {initialTags?.customer?.length > 0 && <InlineTags tags={initialTags.customer} />}
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
+                            <h2 className="text-3xl font-serif text-white">Specific Example per ICP</h2>
+                        </div>
+                        <div className="mb-6">
+                            <InlineTags tags={initialTags?.customer} theme="emerald" />
                         </div>
                         <div className="space-y-6 text-white/70">
                             <p>
@@ -298,7 +296,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn>
-                    <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4">
+                    <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Market
                     </h2>
@@ -354,11 +352,13 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 <FadeIn>
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>
-                            <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
+                            <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
                                 <span className="w-8 h-px bg-emerald-500/50 block" />
                                 Why Now
-                                {initialTags?.readiness?.length > 0 && <InlineTags tags={initialTags.readiness} />}
                             </h2>
+                            <div className="mb-8">
+                                <InlineTags tags={initialTags?.readiness} theme="emerald" />
+                            </div>
                             <div className="space-y-8 text-white/70">
                                 <div>
                                     <h3 className="text-xl text-white font-medium mb-2">1. Multimodal AI is usable now</h3>
@@ -376,9 +376,9 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         </div>
 
                         <div className="bg-[#0a0f14]/80 p-8 rounded-3xl border border-white/10 backdrop-blur-sm self-start sticky top-24">
-                            <div className="flex flex-col gap-4 mb-6">
-                                <h2 className="text-2xl font-serif text-white">Business Model</h2>
-                                {initialTags?.founder_fit?.length > 0 && <InlineTags tags={initialTags.founder_fit} />}
+                            <div className="flex flex-col gap-0 mb-6">
+                                <h2 className="text-3xl font-serif text-white">Business Model</h2>
+                                <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
                             </div>
                             <ul className="space-y-6">
                                 <li className="border-b border-white/5 pb-4">
@@ -472,11 +472,13 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 </FadeIn>
 
                 <FadeIn>
-                    <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
+                    <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
                         <span className="w-8 h-px bg-emerald-500/50 block" />
                         Civilizational Impact
-                        {initialTags?.outcomes?.length > 0 && <InlineTags tags={initialTags.outcomes} />}
                     </h2>
+                    <div className="mb-8">
+                        <InlineTags tags={initialTags?.outcomes} theme="emerald" />
+                    </div>
                     <div className="prose prose-lg prose-invert text-white/70 max-w-none space-y-6">
                         <p className="text-xl text-white/90">A lot of civilizational decay looks boring at first.</p>
                         <p>

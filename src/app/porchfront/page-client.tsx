@@ -49,25 +49,20 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     The open-garage culture OS
                 </div>
 
-                {initialTags?.sector?.length > 0 && (
-                    <div className="relative z-10 mb-4">
-                        <InlineTags tags={initialTags.sector} />
-                    </div>
-                )}
-                {initialTags?.product_type?.length > 0 && (
-                    <div className="relative z-10 mb-6">
-                        <InlineTags tags={initialTags.product_type} />
-                    </div>
-                )}
+
 
                 <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-emerald-950 dark:text-emerald-50 mb-8 max-w-5xl leading-[0.9] [text-wrap:balance] relative z-10">
                     Open doors.<br />
                     <span className="text-zinc-400 dark:text-zinc-600 font-light italic">Open minds.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl lg:text-3xl text-zinc-600 dark:text-zinc-300 max-w-3xl font-light leading-relaxed mb-16 relative z-10 [text-wrap:balance]">
+                <p className="text-xl md:text-2xl lg:text-3xl text-zinc-600 dark:text-zinc-300 max-w-3xl font-light leading-relaxed mb-8 relative z-10 [text-wrap:balance]">
                     Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map, shoppable builds, one-tap installers, and simple tools that reward real-world connection.
                 </p>
+                <div className="relative z-10 mb-16 flex flex-col items-center -space-y-4">
+                    <InlineTags tags={initialTags?.sector} theme="emerald" />
+                    <InlineTags tags={initialTags?.product_type} theme="emerald" />
+                </div>
 
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95, y: 40 }}
@@ -86,7 +81,6 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <div className="md:w-1/2">
                             <div className="text-sm font-bold tracking-widest uppercase text-emerald-600 mb-6 flex flex-col sm:flex-row sm:items-center gap-4">
                                 <div>The Turning Point</div>
-                                {initialTags?.bottleneck?.length > 0 && <InlineTags tags={initialTags.bottleneck} />}
                             </div>
                             <SectionHeading className="mb-8">
                                 The antidote to isolation is outside your front door.
@@ -113,9 +107,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             {/* Why This Movement Matters */}
             <section className="relative z-30 py-32">
                 <GridContainer>
-                    <div className="flex flex-col gap-4 mb-4 items-center">
+                    <div className="flex flex-col gap-2 mb-2 items-center">
                         <SectionHeading className="text-center">Why this movement matters (now)</SectionHeading>
-                        {initialTags?.readiness?.length > 0 && <InlineTags tags={initialTags.readiness} />}
+                    </div>
+                    <div className="mb-8 flex justify-center">
+                        <InlineTags tags={initialTags?.readiness} theme="emerald" />
                     </div>
                     <p className="text-xl text-zinc-500 dark:text-zinc-400 text-center max-w-3xl mx-auto mb-16 font-light [text-wrap:balance]">
                         Americans are lonelier and less civically engaged than we want to be. Re-activating our block-level “third places” measurably improves health and trust. The cultural kindling is there—we supply the spark and the system.
@@ -200,9 +196,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 <GridContainer className="relative z-10">
                     <div className="flex flex-col md:flex-row gap-12 mb-20 items-center">
                         <div className="md:w-1/2">
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-4">
+                            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
                                 <SectionHeading className="text-emerald-50">Product stack</SectionHeading>
-                                {initialTags?.enabling_technology?.length > 0 && <InlineTags tags={initialTags.enabling_technology} />}
+                            </div>
+                            <div className="mb-6">
+                                <InlineTags tags={initialTags?.enabling_technology} theme="emerald" />
                             </div>
                             <p className="text-xl text-emerald-200 font-light">Community first; compliance as guardrails.</p>
                         </div>
@@ -276,9 +274,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     <div className="flex flex-col md:flex-row gap-16">
                         <div className="md:w-1/3">
                             <div className="sticky top-32">
-                                <div className="flex flex-col gap-4 mb-4">
+                                <div className="flex flex-col gap-4 mb-2">
                                     <SectionHeading>Micro-venture idea bank</SectionHeading>
-                                    {initialTags?.customer?.length > 0 && <InlineTags tags={initialTags.customer} />}
+                                </div>
+                                <div className="mb-6">
+                                    <InlineTags tags={initialTags?.customer} theme="emerald" />
                                 </div>
                                 <p className="text-lg text-zinc-500 dark:text-zinc-400 font-light mb-8">
                                     What people already do (home bars, gyms, maker spaces)—supercharged. Start with our starter list.
@@ -385,9 +385,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             {/* Business Model */}
             <section className="relative z-10 py-32 bg-emerald-900 dark:bg-emerald-950 text-emerald-50">
                 <GridContainer>
-                    <div className="flex flex-col items-center gap-4 mb-12">
+                    <div className="flex flex-col items-center gap-4 mb-2">
                         <SectionHeading className="text-center text-white">Business model</SectionHeading>
-                        {initialTags?.founder_fit?.length > 0 && <InlineTags tags={initialTags.founder_fit} />}
+                    </div>
+                    <div className="mb-12 flex justify-center">
+                        <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -447,9 +449,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             {/* AGI Futures */}
             <section className="relative z-10 py-32 overflow-hidden">
                 <GridContainer className="relative z-10">
-                    <div className="flex flex-col items-center gap-4 mb-4">
+                    <div className="flex flex-col items-center gap-4 mb-2">
                         <SectionHeading className="text-center">AGI Futures</SectionHeading>
-                        {initialTags?.outcomes?.length > 0 && <InlineTags tags={initialTags.outcomes} />}
+                    </div>
+                    <div className="mb-8 flex justify-center">
+                        <InlineTags tags={initialTags?.outcomes} theme="emerald" />
                     </div>
                     <p className="text-xl text-zinc-500 dark:text-zinc-400 font-light text-center mb-16">Why this movement compounds exponentially.</p>
 

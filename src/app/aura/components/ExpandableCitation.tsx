@@ -55,7 +55,13 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                                     </a>
                                 )}
                             </div>
-                            <p className="text-sm text-white/90 leading-snug">{title}</p>
+                            {url ? (
+                                <a href={url} target="_blank" rel="noopener noreferrer" className="block group">
+                                    <p className="text-sm text-white/90 leading-snug group-hover:underline group-hover:text-white transition-colors">{title}</p>
+                                </a>
+                            ) : (
+                                <p className="text-sm text-white/90 leading-snug">{title}</p>
+                            )}
 
                             {/* Arrow down */}
                             <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-solid border-t-gray-900 border-x-transparent border-b-transparent border-t-8 border-x-8 border-b-0" />
@@ -78,7 +84,13 @@ export function CitationSection({ citations }: { citations: CitationProps[] }) {
                         <div>
                             <p className="text-white/80 text-sm leading-relaxed">
                                 <span className="font-medium text-white">{cite.source}</span>,{" "}
-                                <span className="italic">{cite.title}</span>.
+                                {cite.url ? (
+                                    <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-white transition-colors">
+                                        {cite.title}
+                                    </a>
+                                ) : (
+                                    <span className="italic">{cite.title}</span>
+                                )}.
                             </p>
                             {cite.url && (
                                 <a

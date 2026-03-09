@@ -20,6 +20,17 @@ const startups = [
     {
         slug: 'aura',
         name: 'AURA',
+        scores: {
+            moat_score: { ai_scored: 85 },
+            difficulty_score: { ai_scored: 90 },
+            civilizational_impact_score: { ai_scored: 95 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 90 },
+                "Social Trust": { ai_scored: 85 },
+                "Ender Prevention": { ai_scored: 95 },
+                "Existential Risk Reduction": { ai_scored: 95 }
+            }
+        },
         tags: {
             sector: ['AI', 'Education', 'Security', 'Existential Risk Mitigation'],
             bottleneck: ['Trust', 'Loneliness', 'Social Fragmentation'],
@@ -34,6 +45,12 @@ const startups = [
     {
         slug: 'afl',
         name: 'AI Founder Lab',
+        scores: {
+            moat_score: { ai_scored: 80 },
+            difficulty_score: { ai_scored: 85 },
+            civilizational_impact_score: { ai_scored: 88 },
+            civilizational_impact_ratings: {}
+        },
         tags: {
             sector: ['AI', 'Education', 'Community', 'Media'],
             bottleneck: ['Talent Matching', 'Trust', 'Cultural Resistance'],
@@ -44,6 +61,19 @@ const startups = [
     {
         slug: 'homequote',
         name: 'HomeQuote AI',
+        scores: {
+            moat_score: { ai_scored: 75 },
+            difficulty_score: { ai_scored: 80 },
+            civilizational_impact_score: { ai_scored: 85 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 85 },
+                "Resilience": { ai_scored: 80 },
+                "Social Trust": { ai_scored: 85 },
+                "Human Flourishing": { ai_scored: 90 },
+                "Scientific Acceleration": { ai_scored: 75 },
+                "Societal Cohesion": { ai_scored: 85 }
+            }
+        },
         tags: {
             sector: ['AI', 'Housing'],
             bottleneck: ['Trust', 'Coordination'],
@@ -58,6 +88,17 @@ const startups = [
     {
         slug: 'attune',
         name: 'Attune',
+        scores: {
+            moat_score: { ai_scored: 80 },
+            difficulty_score: { ai_scored: 75 },
+            civilizational_impact_score: { ai_scored: 95 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 95 },
+                "Societal Cohesion": { ai_scored: 90 },
+                "Social Trust": { ai_scored: 90 },
+                "Community Renewal": { ai_scored: 88 }
+            }
+        },
         tags: {
             sector: ['Relationships', 'Community', 'AI'],
             bottleneck: ['Trust', 'Loneliness', 'Social Fragmentation'],
@@ -72,6 +113,17 @@ const startups = [
     {
         slug: 'murmuration',
         name: 'Murmuration Engine',
+        scores: {
+            moat_score: { ai_scored: 95 },
+            difficulty_score: { ai_scored: 95 },
+            civilizational_impact_score: { ai_scored: 98 },
+            civilizational_impact_ratings: {
+                "Resilience": { ai_scored: 95 },
+                "Better Governance": { ai_scored: 95 },
+                "Existential Risk Reduction": { ai_scored: 98 },
+                "Differentially Defensive": { ai_scored: 95 }
+            }
+        },
         tags: {
             sector: ['AI', 'Governance', 'Security', 'Existential Risk Mitigation'],
             bottleneck: ['Coordination', 'Regulatory Friction', 'Trust'],
@@ -86,6 +138,17 @@ const startups = [
     {
         slug: 'porchfront',
         name: 'Porchfront',
+        scores: {
+            moat_score: { ai_scored: 70 },
+            difficulty_score: { ai_scored: 65 },
+            civilizational_impact_score: { ai_scored: 92 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 95 },
+                "Social Trust": { ai_scored: 95 },
+                "Societal Cohesion": { ai_scored: 90 },
+                "Community Renewal": { ai_scored: 95 }
+            }
+        },
         tags: {
             sector: ['Community', 'Cities', 'Relationships'],
             bottleneck: ['Loneliness', 'Trust', 'Coordination'],
@@ -108,7 +171,14 @@ async function seed() {
         // 1. Insert or get project
         const { data: projectRes, error: projectErr } = await supabase
             .from('projects')
-            .upsert({ slug: startup.slug, name: startup.name }, { onConflict: 'slug' })
+            .upsert({
+                slug: startup.slug,
+                name: startup.name,
+                moat_score: startup.scores?.moat_score || { ai_scored: 0 },
+                difficulty_score: startup.scores?.difficulty_score || { ai_scored: 0 },
+                civilizational_impact_score: startup.scores?.civilizational_impact_score || { ai_scored: 0 },
+                civilizational_impact_ratings: startup.scores?.civilizational_impact_ratings || {}
+            }, { onConflict: 'slug' })
             .select('id')
             .single();
 

@@ -36,22 +36,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <RevealSection delay={0.2} className="max-w-2xl">
-            {initialTags?.sector?.length > 0 && (
-              <div className="mb-4">
-                <InlineTags tags={initialTags.sector} />
-              </div>
-            )}
+
             <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1] mb-6 tracking-tight text-white drop-shadow-2xl">
               An AI relationship coach to Make her feel <span className="text-amber-400 font-serif italic">heard, seen, and supported,</span> consistently.
             </h1>
-            {initialTags?.product_type?.length > 0 && (
-              <div className="mb-6">
-                <InlineTags tags={initialTags.product_type} />
-              </div>
-            )}
-            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light mb-10 max-w-xl">
+            <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-xl">
               It turns a <strong className="font-semibold text-amber-200">weekly couple sync, persistent relationship memory, and daily skill reps</strong> into a compounding loop for becoming a meaningfully better boyfriend or husband.
             </p>
+            <div className="mt-6 mb-12 flex flex-col items-start -space-y-4">
+              <InlineTags tags={initialTags?.sector} theme="amber" />
+              <InlineTags tags={initialTags?.product_type} theme="amber" />
+            </div>
             <div className="flex items-center gap-4">
               <button className="flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-full transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">
                 See the Prototype <ArrowRight className="w-5 h-5" />
@@ -98,9 +93,8 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* Problem */}
         <RevealSection>
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
             <h2 className="text-4xl font-serif font-medium text-amber-50">The Problem</h2>
-            {initialTags?.bottleneck?.length > 0 && <InlineTags tags={initialTags.bottleneck} />}
           </div>
           <div className="prose prose-invert prose-amber prose-lg max-w-none">
             <p>
@@ -141,9 +135,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         <RevealSection>
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div>
-              <div className="flex flex-col gap-4 mb-6">
+              <div className="flex flex-col gap-4 mb-2">
                 <h2 className="text-4xl font-serif font-medium text-amber-50">The Solution</h2>
-                {initialTags?.enabling_technology?.length > 0 && <InlineTags tags={initialTags.enabling_technology} />}
+              </div>
+              <div className="mb-6">
+                <InlineTags tags={initialTags?.enabling_technology} theme="amber" />
               </div>
               <p className="text-lg text-slate-300 leading-relaxed">
                 <strong>Attune</strong> starts with a clear wedge: help the guy become a meaningfully better boyfriend or husband in the ways that most commonly drive disconnection.
@@ -191,7 +187,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* Optional Woman-side Mode */}
         <RevealSection>
-          <h2 className="text-3xl font-serif font-medium mb-8 text-amber-50">Optional Woman-Side Mode</h2>
+          <h2 className="text-4xl font-serif font-medium mb-8 text-amber-50">Optional Woman-Side Mode</h2>
           <div className="prose prose-invert prose-lg max-w-none">
             <p>
               The woman-side experience is important because it makes the product feel like <strong>both partners are improving the relationship</strong>, not like one person is being "managed." But the product should stay honest about the wedge: in many heterosexual relationships, the larger early deficit is still the guy needing to become more present, responsive, emotionally intelligent, and proactive.
@@ -232,9 +228,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         {/* ICP */}
         <RevealSection>
           <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
-            <div className="flex flex-col gap-4 mb-12 items-center">
-              <h2 className="text-3xl font-serif font-medium text-center text-amber-50">Ideal Customer Profile</h2>
-              {initialTags?.customer?.length > 0 && <InlineTags tags={initialTags.customer} />}
+            <div className="flex flex-col gap-4 mb-2 items-center">
+              <h2 className="text-4xl font-serif font-medium text-center text-amber-50">Ideal Customer Profile</h2>
+            </div>
+            <div className="mb-12 flex justify-center">
+              <InlineTags tags={initialTags?.customer} theme="amber" />
             </div>
             <div className="space-y-12">
               <div>
@@ -361,9 +359,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         <RevealSection>
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <div className="flex flex-col gap-4 mb-6">
-                <h2 className="text-3xl font-serif font-medium text-amber-50">Why Now</h2>
-                {initialTags?.readiness?.length > 0 && <InlineTags tags={initialTags.readiness} />}
+              <div className="flex flex-col gap-4 mb-2">
+                <h2 className="text-4xl font-serif font-medium text-amber-50">Why Now</h2>
+              </div>
+              <div className="mb-6">
+                <InlineTags tags={initialTags?.readiness} theme="amber" />
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed">
                 Men and women are equally likely to say they would turn to a spouse or partner for emotional support, but women are much more likely than men to also turn to friends, mothers, and other family members. A recent interdisciplinary review argues that romantic relationships may matter more to men on average partly because men often have narrower alternative emotional-support networks.
@@ -373,7 +373,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </p>
             </div>
             <div>
-              <h2 className="text-3xl font-serif font-medium mb-6 text-amber-50">Market</h2>
+              <h2 className="text-4xl font-serif font-medium mb-6 text-amber-50">Market</h2>
               <p className="text-slate-300 mb-6">This sits at the intersection of:</p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {['Relationship wellness', 'Couples therapy light', 'Men’s self-improvement', 'AI coaching', 'Communication training', 'Intimacy & partnership'].map(t => (
@@ -388,9 +388,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         </RevealSection>
 
         <RevealSection>
-          <div className="flex flex-col gap-4 mb-8 items-center">
-            <h2 className="text-3xl font-serif font-medium text-amber-50 text-center">Business Model & GTM</h2>
-            {initialTags?.founder_fit?.length > 0 && <InlineTags tags={initialTags.founder_fit} />}
+          <div className="flex flex-col gap-4 mb-2 items-center">
+            <h2 className="text-4xl font-serif font-medium text-amber-50 text-center">Business Model & GTM</h2>
+          </div>
+          <div className="mb-8 flex justify-center">
+            <InlineTags tags={initialTags?.founder_fit} theme="amber" />
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="glass p-8 rounded-3xl">
@@ -486,9 +488,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
           <div className="pt-16 border-t border-white/10 relative">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-amber-500/20 rounded-full blur-[40px] pointer-events-none" />
-            <div className="flex flex-col gap-4 mb-8 items-center">
+            <div className="flex flex-col gap-4 mb-2 items-center">
               <h2 className="text-5xl font-serif text-white text-center">Civilizational Impact</h2>
-              {initialTags?.outcomes?.length > 0 && <InlineTags tags={initialTags.outcomes} />}
+            </div>
+            <div className="mb-8 flex justify-center">
+              <InlineTags tags={initialTags?.outcomes} theme="amber" />
             </div>
             <p className="text-xl text-slate-300 leading-relaxed mb-6 font-light">
               Strong pair bonds are a foundational human technology. They shape family formation, child outcomes, mental health, life satisfaction, social trust, and long-term flourishing.
