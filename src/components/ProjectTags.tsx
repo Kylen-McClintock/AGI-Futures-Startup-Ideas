@@ -3,29 +3,35 @@ import { Layers, Crosshair, Zap, Users, Globe, Briefcase } from "lucide-react";
 
 interface TagInfo {
     label: string;
-    value: string;
+    value: string[];
     icon: React.ReactNode;
 }
 
-interface ProjectTagsProps {
+export interface ProjectTagsProps {
     tags: {
-        sector?: string;
-        bottleneck?: string;
-        readiness?: string;
-        customer?: string;
-        outcomes?: string;
-        productType?: string;
-    }
+        sector?: string[];
+        bottleneck?: string[];
+        readiness?: string[];
+        customer?: string[];
+        outcomes?: string[];
+        product_type?: string[];
+        enabling_technology?: string[];
+        founder_fit?: string[];
+    } | null
 }
 
 export function ProjectTags({ tags }: ProjectTagsProps) {
+    if (!tags) return null;
+
     const list: TagInfo[] = [];
-    if (tags.sector) list.push({ label: "Sector", value: tags.sector, icon: <Layers className="w-4 h-4" /> });
-    if (tags.productType) list.push({ label: "Product Type", value: tags.productType, icon: <Briefcase className="w-4 h-4" /> });
-    if (tags.customer) list.push({ label: "Customer", value: tags.customer, icon: <Users className="w-4 h-4" /> });
-    if (tags.bottleneck) list.push({ label: "Bottleneck", value: tags.bottleneck, icon: <Crosshair className="w-4 h-4" /> });
-    if (tags.readiness) list.push({ label: "Readiness", value: tags.readiness, icon: <Zap className="w-4 h-4" /> });
-    if (tags.outcomes) list.push({ label: "Civilizational Outcomes", value: tags.outcomes, icon: <Globe className="w-4 h-4" /> });
+    if (tags.sector && tags.sector.length > 0) list.push({ label: "Sector", value: tags.sector, icon: <Layers className="w-4 h-4" /> });
+    if (tags.product_type && tags.product_type.length > 0) list.push({ label: "Product Type", value: tags.product_type, icon: <Briefcase className="w-4 h-4" /> });
+    if (tags.customer && tags.customer.length > 0) list.push({ label: "Customer", value: tags.customer, icon: <Users className="w-4 h-4" /> });
+    if (tags.bottleneck && tags.bottleneck.length > 0) list.push({ label: "Bottleneck", value: tags.bottleneck, icon: <Crosshair className="w-4 h-4" /> });
+    if (tags.readiness && tags.readiness.length > 0) list.push({ label: "Readiness", value: tags.readiness, icon: <Zap className="w-4 h-4" /> });
+    if (tags.enabling_technology && tags.enabling_technology.length > 0) list.push({ label: "Enabling Technology", value: tags.enabling_technology, icon: <Zap className="w-4 h-4" /> });
+    if (tags.founder_fit && tags.founder_fit.length > 0) list.push({ label: "Founder Fit", value: tags.founder_fit, icon: <Users className="w-4 h-4" /> });
+    if (tags.outcomes && tags.outcomes.length > 0) list.push({ label: "Civilizational Outcomes", value: tags.outcomes, icon: <Globe className="w-4 h-4" /> });
 
     if (list.length === 0) return null;
 
@@ -42,11 +48,32 @@ export function ProjectTags({ tags }: ProjectTagsProps) {
                             <span>{t.label}</span>
                         </div>
                         <div className="text-white/90 font-light text-sm leading-relaxed">
-                            {t.value}
+                            {t.value.join(', ')}
                         </div>
                     </div>
                 ))}
             </div>
         </section>
+    );
+}
+
+export function InlineTags({ label, tags }: { label?: string, tags?: string[] }) {
+    if (!tags || tags.length === 0) return null;
+
+    return (
+        <span className="my-6 block">
+            {label && (
+                <span className="block text-[10px] sm:text-xs font-mono uppercase tracking-widest text-zinc-500 dark:text-zinc-400 mb-3 ml-1">
+                    {label}
+                </span>
+            )}
+            <span className="inline-flex flex-wrap gap-2 items-center">
+                {tags.map((tag, i) => (
+                    <span key={i} className="px-3 py-1.5 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-xs sm:text-sm text-zinc-800 dark:text-zinc-200 backdrop-blur-md">
+                        {tag}
+                    </span>
+                ))}
+            </span>
+        </span>
     );
 }
