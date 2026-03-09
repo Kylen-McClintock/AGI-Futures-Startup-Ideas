@@ -159,6 +159,31 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Human Flourishing', 'Social Trust', 'Societal Cohesion', 'Community Renewal']
         }
+    },
+    {
+        slug: 'deepguide',
+        name: 'DeepGuide',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 72 },
+            civilizational_impact_score: { ai_scored: 63 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 82 },
+                "Scientific Acceleration": { ai_scored: 74 },
+                "Social Trust": { ai_scored: 51 },
+                "Resilience": { ai_scored: 46 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Healthcare', 'Psychedelics', 'Science'],
+            bottleneck: ['Trust', 'Regulatory Friction', 'Scientific Slowdown'],
+            customer: ['Caregivers', 'Scientists'],
+            product_type: ['SaaS', 'Agent'],
+            enabling_technology: ['Large Language Models', 'Voice AI', 'Knowledge Graphs', 'Autonomous Agents'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Human Flourishing', 'Scientific Acceleration', 'Social Trust', 'Resilience']
+        }
     }
 ];
 
