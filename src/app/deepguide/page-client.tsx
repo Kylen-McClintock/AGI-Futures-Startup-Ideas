@@ -6,7 +6,7 @@ import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { ShortageChart } from "./components/ShortageChart";
-import { Layers, Activity, Shield, Users, Sparkles, Brain, FileText, Lock, Target, FlaskConical, Link as LinkIcon } from "lucide-react";
+import { Layers, Activity, Shield, Users, Sparkles, Brain, FileText, Lock, Target, FlaskConical, Link as LinkIcon, ChevronDown } from "lucide-react";
 
 // Assets
 import heroImage from './assets/deepguide_hero.png';
@@ -454,45 +454,77 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
-                {/* Training Image & Future */}
+                {/* AGI Future Edge */}
                 <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-16 shadow-2xl border border-white/5 group">
+                    <div className="mb-12">
+                        <div className="text-sm font-mono tracking-widest uppercase text-purple-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-purple-500/50 mr-4" /> AGI Future Edge
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                            The enduring advantage is <br className="hidden sm:block" /><span className="text-white/50">a permissioned dataset.</span>
+                        </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 group">
                         <Image src={clinicalTrainingImage} alt="Clinical training with immersive dashboard" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950/90 pointer-events-none flex items-end p-8 md:p-12">
                             <div className="max-w-2xl">
-                                <h3 className="text-3xl md:text-4xl font-light text-white mb-4">AGI Future Edge</h3>
-                                <p className="text-lg text-white/80 font-light leading-relaxed drop-shadow-lg">
-                                    Humans will remain central for trust, attunement, and meaning. The enduring advantage is a permissioned, longitudinal dataset that maps subjective states to interventions and outcomes.
+                                <p className="text-xl text-white/90 font-light leading-relaxed drop-shadow-lg">
+                                    Humans will remain central for trust, attunement, and meaning. The enduring advantage is a longitudinal dataset that maps subjective states to interventions and outcomes.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500 mt-8 group">
+                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500 group">
                         <h3 className="text-2xl font-light text-white mb-6 flex items-center gap-3">
-                            <Brain className="w-6 h-6 text-purple-400" /> AGI Roadmap & Experiments
+                            <Brain className="w-6 h-6 text-purple-400" /> AGI Roadmap
                         </h3>
-                        <p className="text-lg text-white/70 leading-relaxed font-light mb-8">
+                        <p className="text-lg text-white/70 leading-relaxed font-light">
                             Future roadmap: agentic preparation plans, supervision copilots for facilitator training, safety-monitoring layers for hybrid in-person and remote care, and research copilots that surface candidate best practices from de-identified data faster than conventional literature cycles.
                         </p>
+                    </div>
+                </motion.section>
 
-                        <div className="bg-purple-950/20 rounded-2xl p-6 sm:p-8 border border-purple-500/20 group-hover:border-purple-500/40 transition-colors">
-                            <h4 className="text-xl font-medium text-purple-400 mb-4 flex items-center gap-3">
-                                <FlaskConical className="w-6 h-6" /> First Experiment
-                            </h4>
-                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-purple-500/40 pl-6 mb-4">
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* First Experiment */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-8">
+                        <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Validation
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                            First Experiment
+                        </h2>
+                    </div>
+
+                    <details className="glass-panel rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.03] transition-all duration-500 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="p-8 sm:p-10 list-none flex justify-between items-center outline-none">
+                            <h3 className="text-2xl font-light text-white flex items-center gap-3">
+                                <FlaskConical className="w-6 h-6 text-emerald-400" /> View Initial Validation Pilot
+                            </h3>
+                            <ChevronDown className="w-6 h-6 text-white/50 group-open:rotate-180 transition-transform duration-300" />
+                        </summary>
+                        <div className="p-8 sm:p-10 pt-0 border-t border-white/5 bg-zinc-950/30">
+                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-emerald-500/40 pl-6 mb-8 mt-6">
                                 <strong>Quick falsifiable hypothesis:</strong> If 10 legal-care facilitators use DeepGuide for 100 sessions, then at least 70% will report that it reduces documentation burden without meaningfully reducing felt presence, and at least 50% will want to continue using it after the pilot.
                             </p>
                             <p className="text-lg text-white/80 font-light leading-relaxed pl-6">
                                 Build the narrowest version around live transcription, structured notes, post-session summaries, and a lightweight prompt library. Do not start with autonomous in-session recommendations unless users ask for them after seeing value in the workflow layer.
                             </p>
                         </div>
-                    </div>
+                    </details>
                 </motion.section>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
