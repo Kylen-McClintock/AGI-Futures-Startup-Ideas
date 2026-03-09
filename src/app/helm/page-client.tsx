@@ -434,14 +434,25 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
-                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 hover:border-indigo-500/40 transition-colors group">
-                            <div className="flex justify-between items-start mb-6 border-b border-indigo-500/20 pb-6">
-                                <h3 className="text-2xl font-light text-white flex items-center gap-3">Moat</h3>
-                                <div className="text-right">
-                                    <div className="text-3xl font-light text-indigo-400">{scores.moat_score} <span className="text-base text-white/40">/ 100</span></div>
-                                    <div className="text-xs uppercase tracking-widest text-indigo-400/60 font-mono mt-1">Potential</div>
+                        <details className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 hover:border-indigo-500/40 transition-colors group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                            <summary className="list-none outline-none">
+                                <div className="flex justify-between items-start mb-6 border-b border-indigo-500/20 pb-6">
+                                    <h3 className="text-2xl font-light text-white flex items-center gap-3">Moat</h3>
+                                    <div className="text-right flex items-center gap-4">
+                                        <ChevronDown className="w-6 h-6 text-indigo-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                        <div>
+                                            <div className="text-3xl font-light text-indigo-400">{scores.moat_score} <span className="text-base text-white/40">/ 100</span></div>
+                                            <div className="text-xs uppercase tracking-widest text-indigo-400/60 font-mono mt-1">Potential</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
+                                <div className="group-open:hidden">
+                                    <p className="text-white/80 leading-relaxed font-light line-clamp-3">
+                                        The moat is not the office metaphor. It is the compounding preference graph, workflow trace history, advisor outcome data...
+                                    </p>
+                                    <div className="text-indigo-400 text-sm mt-4 font-medium flex items-center gap-2">Read full evaluation</div>
+                                </div>
+                            </summary>
                             <div className="space-y-4">
                                 <p className="text-white/80 leading-relaxed font-light">
                                     The moat is not the office metaphor. It is the compounding preference graph, workflow trace history, advisor outcome data, and cross-company agent reputation layer. Helm can become the system of record for how a founder actually makes decisions. That creates switching costs at the judgment layer, not just the interface layer. In an AGI world, generic intelligence becomes abundant, but proprietary context, trusted routing, and outcome-linked organizational memory stay scarce.
@@ -450,25 +461,54 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                     The strongest moat vector is outcome-linked coordination data across humans, agents, advisors, and freelancers. If Helm becomes the place where work is routed, evaluated, and improved, it can own the highest-value feedback loops in founder execution.
                                 </p>
                             </div>
-                        </div>
+                        </details>
 
-                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-rose-500/20 bg-rose-950/20 hover:border-rose-500/40 transition-colors group">
-                            <div className="flex justify-between items-start mb-6 border-b border-rose-500/20 pb-6">
-                                <h3 className="text-2xl font-light text-white flex items-center gap-3">Difficulty</h3>
-                                <div className="text-right">
-                                    <div className="text-3xl font-light text-rose-400">{scores.difficulty_score} <span className="text-base text-white/40">/ 100</span></div>
-                                    <div className="text-xs uppercase tracking-widest text-rose-400/60 font-mono mt-1">To Market</div>
+                        <details className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-rose-500/20 bg-rose-950/20 hover:border-rose-500/40 transition-colors group [&_summary::-webkit-details-marker]:hidden cursor-pointer">
+                            <summary className="list-none outline-none">
+                                <div className="flex justify-between items-start mb-6 border-b border-rose-500/20 pb-6">
+                                    <h3 className="text-2xl font-light text-white flex items-center gap-3">Difficulty</h3>
+                                    <div className="text-right flex items-center gap-4">
+                                        <ChevronDown className="w-6 h-6 text-rose-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                        <div>
+                                            <div className="text-3xl font-light text-rose-400">{scores.difficulty_score} <span className="text-base text-white/40">/ 100</span></div>
+                                            <div className="text-xs uppercase tracking-widest text-rose-400/60 font-mono mt-1">To Market</div>
+                                        </div>
+                                    </div>
                                 </div>
+                                <div className="group-open:hidden">
+                                    <p className="text-white/80 leading-relaxed font-light line-clamp-3">
+                                        This is buildable now, but hard to make magical. The product crosses workflow infrastructure, agent orchestration, marketplace design...
+                                    </p>
+                                    <div className="text-rose-400 text-sm mt-4 font-medium flex items-center gap-2">Read full evaluation</div>
+                                </div>
+                            </summary>
+                            <div>
+                                <p className="text-white/80 leading-relaxed font-light">
+                                    This is buildable now, but hard to make magical. The product crosses workflow infrastructure, agent orchestration, marketplace design, social trust systems, and high-expectation consumer software. The biggest risk is not technical possibility. It is integrating enough value into one experience that founders change behavior and keep coming back.
+                                </p>
                             </div>
-                            <p className="text-white/80 leading-relaxed font-light">
-                                This is buildable now, but hard to make magical. The product crosses workflow infrastructure, agent orchestration, marketplace design, social trust systems, and high-expectation consumer software. The biggest risk is not technical possibility. It is integrating enough value into one experience that founders change behavior and keep coming back.
-                            </p>
-                        </div>
+                        </details>
                     </div>
 
-                    <div className="mb-12">
-                        <h3 className="text-2xl font-light text-white mb-6 pl-2">Risk Ledger</h3>
-                        <div className="grid sm:grid-cols-2 gap-4">
+                    <details className="mb-12 glass-panel p-8 sm:p-10 rounded-[2rem] border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="list-none outline-none">
+                            <div className="flex justify-between items-center mb-6">
+                                <h3 className="text-2xl font-light text-white flex items-center gap-3">Risk Ledger</h3>
+                                <div className="flex items-center gap-3">
+                                    <span className="hidden sm:inline-block px-3 py-1 rounded-full border border-rose-500/30 bg-rose-500/10 text-rose-400 font-mono text-xs tracking-widest font-bold">HIGH EXECUTION RISK</span>
+                                    <ChevronDown className="w-6 h-6 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+                                </div>
+                            </div>
+
+                            <div className="grid sm:grid-cols-4 gap-4 group-open:hidden">
+                                <div className="p-4 rounded-xl border border-white/5 bg-black/20 text-center"><span className="block text-white font-medium mb-1">Tech</span><span className="text-amber-400 font-mono text-xs">Medium</span></div>
+                                <div className="p-4 rounded-xl border border-white/5 bg-black/20 text-center"><span className="block text-white font-medium mb-1">Regulatory</span><span className="text-amber-400 font-mono text-xs">Low-Med</span></div>
+                                <div className="p-4 rounded-xl border border-white/5 bg-black/20 text-center"><span className="block text-white font-medium mb-1">Capital</span><span className="text-amber-400 font-mono text-xs">Medium</span></div>
+                                <div className="p-4 rounded-xl border border-rose-500/30 bg-rose-950/30 text-center shadow-[inset_0_0_20px_rgba(225,29,72,0.1)]"><span className="block text-rose-100 font-medium mb-1">Execution</span><span className="text-rose-400 font-mono text-xs font-bold">High</span></div>
+                            </div>
+                        </summary>
+
+                        <div className="grid sm:grid-cols-2 gap-4 pt-8 border-t border-white/10 mt-6">
                             <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
                                 <div className="flex justify-between mb-3"><strong className="text-white">Tech</strong> <span className="text-amber-400 font-mono text-sm">Medium</span></div>
                                 <ul className="space-y-3 text-sm font-light">
@@ -498,7 +538,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </details>
 
                     <div>
                         <h3 className="text-3xl font-light text-white mb-6">Unique Go To Market</h3>
@@ -538,7 +578,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none" />
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-6">
+                    <div className="grid sm:grid-cols-2 gap-6 mb-6">
                         <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
                             <h4 className="text-xl font-medium text-white mb-3">Jarvis as autonomy engine</h4>
                             <p className="text-white/70 leading-relaxed font-light">
@@ -551,31 +591,43 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 Work is a graph across rooms. Agents critique, hand off, and self-check against explicit acceptance tests. Jarvis routes tasks to the best tool or teammate, injects missing context, and pauses runs for human judgment at policy gates. This beats isolated chat for multi-step, cross-functional work <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
                             </p>
                         </div>
-                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
-                            <h4 className="text-xl font-medium text-white mb-3">Compound learning loop</h4>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                Shared traces become reusable playbooks with benchmarks. Jarvis publishes competence scorecards per workflow and proposes upgrades. It runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges automatically <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
-                            </p>
-                        </div>
-                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
-                            <h4 className="text-xl font-medium text-white mb-3">Network effects that matter</h4>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                Portable identity and verifiable credentials let mentors, freelancers, and agents carry reputation across companies. Jarvis weights advisors and agents by outcome, not hype. Matching improves as proofs accumulate, without platform lock-in <ExpandableCitation label="[10][11]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="Decentralized IDs and Verifiable Credentials" />.
-                            </p>
-                        </div>
-                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
-                            <h4 className="text-xl font-medium text-white mb-3">Human plus AI frontier</h4>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                Keep human judgment where it moves the needle. Automate the rest under policy. Jarvis prepares board packets, contrasts viewpoints, previews diffs, and provides instant rollback. As models improve, you swap agents without losing observability or control.
-                            </p>
-                        </div>
-                        <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
-                            <h4 className="text-xl font-medium text-white mb-3">Launchpad for autonomous corporations</h4>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                This is the main prize. As more workflows hit L3 and L4 and unit economics clear, Jarvis runs revenue lines end to end under policy constraints with auditable records and programmatic payments. It replicates proven playbooks into new products and geographies, hires agents, contracts freelancers, and maintains books with verifiable logs. Over time, Helm graduates from an office operating system to a factory for legally bounded, truly autonomous entities <ExpandableCitation label="[6][7][10][11]" sourceUrl="" sourceText="Decentralized IDs and Verifiable Credentials" />.
-                            </p>
-                        </div>
                     </div>
+
+                    <details className="group [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="list-none outline-none cursor-pointer">
+                            <div className="flex justify-center items-center py-4 border border-teal-500/20 bg-teal-950/20 hover:bg-teal-950/30 rounded-2xl transition-colors group-open:hidden gap-3 shadow-[0_0_15px_rgba(20,184,166,0.1)]">
+                                <span className="text-teal-400 font-medium">Reveal 4 more Trajectory edges</span>
+                                <ChevronDown className="w-5 h-5 text-teal-400" />
+                            </div>
+                        </summary>
+
+                        <div className="grid sm:grid-cols-2 gap-6 pb-6 pt-4">
+                            <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                                <h4 className="text-xl font-medium text-white mb-3">Compound learning loop</h4>
+                                <p className="text-white/70 leading-relaxed font-light">
+                                    Shared traces become reusable playbooks with benchmarks. Jarvis publishes competence scorecards per workflow and proposes upgrades. It runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges automatically <ExpandableCitation label="[6][7]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen and CAMEL" />.
+                                </p>
+                            </div>
+                            <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                                <h4 className="text-xl font-medium text-white mb-3">Network effects that matter</h4>
+                                <p className="text-white/70 leading-relaxed font-light">
+                                    Portable identity and verifiable credentials let mentors, freelancers, and agents carry reputation across companies. Jarvis weights advisors and agents by outcome, not hype. Matching improves as proofs accumulate, without platform lock-in <ExpandableCitation label="[10][11]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="Decentralized IDs and Verifiable Credentials" />.
+                                </p>
+                            </div>
+                            <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                                <h4 className="text-xl font-medium text-white mb-3">Human plus AI frontier</h4>
+                                <p className="text-white/70 leading-relaxed font-light">
+                                    Keep human judgment where it moves the needle. Automate the rest under policy. Jarvis prepares board packets, contrasts viewpoints, previews diffs, and provides instant rollback. As models improve, you swap agents without losing observability or control.
+                                </p>
+                            </div>
+                            <div className="glass-panel p-8 rounded-[2rem] border border-teal-500/20 hover:border-teal-500/40 transition-colors bg-teal-950/5">
+                                <h4 className="text-xl font-medium text-white mb-3">Launchpad for autonomous corporations</h4>
+                                <p className="text-white/70 leading-relaxed font-light">
+                                    This is the main prize. As more workflows hit L3 and L4 and unit economics clear, Jarvis runs revenue lines end to end under policy constraints with auditable records and programmatic payments. It replicates proven playbooks into new products and geographies, hires agents, contracts freelancers, and maintains books with verifiable logs. Over time, Helm graduates from an office operating system to a factory for legally bounded, truly autonomous entities <ExpandableCitation label="[6][7][10][11]" sourceUrl="" sourceText="Decentralized IDs and Verifiable Credentials" />.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
                 </RevealSection>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
