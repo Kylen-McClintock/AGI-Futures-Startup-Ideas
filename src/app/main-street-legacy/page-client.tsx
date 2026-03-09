@@ -684,10 +684,34 @@ export default function ClientPage() {
                                     <span className="text-stone-500 font-mono uppercase tracking-widest text-xs">Acronyms Reference</span>
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
-                                    <strong className="text-stone-200 font-medium block mb-1">DSCR:</strong> Debt Service Coverage Ratio
+                                    <strong className="text-stone-200 font-medium block mb-1">AR:</strong> accounts receivable.
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
-                                    <strong className="text-stone-200 font-medium block mb-1">SPV:</strong> Special Purpose Vehicle
+                                    <strong className="text-stone-200 font-medium block mb-1">CPA:</strong> certified public accountant.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">CRM:</strong> customer relationship management.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">DSCR:</strong> debt service coverage ratio.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">HVAC:</strong> heating, ventilation, and air conditioning.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">KPI:</strong> key performance indicator.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">RPA:</strong> robotic process automation.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">SBA 7(a):</strong> U.S. Small Business Administration loan program for acquisitions.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">SOP:</strong> standard operating procedure.
+                                </li>
+                                <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5">
+                                    <strong className="text-stone-200 font-medium block mb-1">SPV:</strong> special purpose vehicle.
                                 </li>
                             </ul>
                         </div>
