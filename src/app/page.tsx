@@ -67,7 +67,8 @@ export default async function Home() {
             description: "An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.",
             image: murmuration_hero,
             href: "/murmuration",
-            themeColor: "hover:border-[var(--primary)]/50 text-[var(--primary)]"
+            themeColor: "hover:border-[var(--primary)]/50 text-[var(--primary)]",
+            hoverTextColor: "group-hover:text-[var(--primary)]",
         }),
         createProject({
             slug: "attune",
@@ -76,7 +77,8 @@ export default async function Home() {
             description: "An AI relationship coach to make her feel heard, seen, and supported, consistently.",
             image: attune_hero,
             href: "/attune",
-            themeColor: "hover:border-[var(--primary)]/50 text-[var(--primary)]"
+            themeColor: "hover:border-[var(--primary)]/50 text-[var(--primary)]",
+            hoverTextColor: "group-hover:text-[var(--primary)]",
         }),
         createProject({
             slug: "porchfront",
@@ -85,7 +87,8 @@ export default async function Home() {
             description: "Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.",
             image: porchfront_hero,
             href: "/porchfront",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400"
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         }),
         createProject({
             slug: "homequote",
@@ -94,7 +97,8 @@ export default async function Home() {
             description: "Turns a user-filmed walkthrough into a structured job object, an exact quote, and infinitely bookable offers from service providers.",
             image: homequote_hero,
             href: "/homequote",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400"
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         }),
         createProject({
             slug: "aura",
@@ -103,7 +107,8 @@ export default async function Home() {
             description: "An SDK and marketplace that lets any developer drop lifelike, spatially aware AI companions into AR apps.",
             image: aura_hero,
             href: "/aura",
-            themeColor: "hover:border-blue-500/50 text-blue-400"
+            themeColor: "hover:border-blue-500/50 text-blue-400",
+            hoverTextColor: "group-hover:text-blue-400",
         }),
         createProject({
             slug: "afl",
@@ -112,7 +117,8 @@ export default async function Home() {
             description: "Turns ambitious builders into founder-grade operators by having them build, sell, and own real ventures.",
             image: afl_hero,
             href: "/afl",
-            themeColor: "hover:border-orange-500/50 text-orange-400"
+            themeColor: "hover:border-orange-500/50 text-orange-400",
+            hoverTextColor: "group-hover:text-orange-400",
         }),
         createProject({
             slug: "deepguide",
@@ -121,7 +127,8 @@ export default async function Home() {
             description: "Keeps facilitators present, captures structured notes, recommends the right exercise at the right moment, and turns outcomes into evolving best practices.",
             image: deepguide_hero,
             href: "/deepguide",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400"
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         }),
         createProject({
             slug: "main-street-legacy",
@@ -130,7 +137,8 @@ export default async function Home() {
             description: "Equipping a new generation of founders with AI-native operational stacks to acquire, optimize, and scale retiring baby boomer businesses into compounding cash-flow machines.",
             image: msl_hero,
             href: "/main-street-legacy",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400"
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         }),
         createProject({
             slug: "helm",
@@ -139,7 +147,8 @@ export default async function Home() {
             description: "A virtual office where AI teammates, collaborators, and freelancers help you run your company—driving toward increased automation over time.",
             image: helm_hero,
             href: "/helm",
-            themeColor: "hover:border-indigo-500/50 text-indigo-400"
+            themeColor: "hover:border-indigo-500/50 text-indigo-400",
+            hoverTextColor: "group-hover:text-indigo-400",
         }),
         createProject({
             slug: "agentable",
@@ -148,7 +157,8 @@ export default async function Home() {
             description: "Turns websites and apps into a machine-readable UI map, guides humans in-flow, and lets AI agents complete the same tasks.",
             image: agentable_hero,
             href: "/agentable",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400"
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         })
     ];
 

@@ -11,7 +11,8 @@ export type ProjectData = {
     description: string;
     image: StaticImageData;
     href: string;
-    themeColor: string; // Tailwind class name or custom logic
+    themeColor: string; // Tailwind class name for borders
+    hoverTextColor?: string; // Tailwind class name for hover text
     scoreTitle: string;
     created_at: string;
     moat_score: number;
@@ -47,7 +48,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                 Startup Ideas <br />
                 <span className="italic text-white/70">Library</span>
             </h1>
-            
+
             <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 border-b border-white/10 pb-6 gap-6">
                 <p className="text-xl sm:text-2xl text-white/80 max-w-xl leading-relaxed font-light">
                     A collection of premium speculative venture theses and product storytelling prototypes.
@@ -74,7 +75,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                             <option value="moat">Moat Potential</option>
                             <option value="difficulty">Difficulty to Build</option>
                         </select>
-                        <button 
+                        <button
                             onClick={() => setSortDirection(d => d === "desc" ? "asc" : "desc")}
                             className="bg-black/50 border border-white/20 text-white p-2 rounded-lg hover:border-[var(--primary)] transition-colors flex items-center justify-center"
                             aria-label={`Sort ${sortDirection === 'desc' ? 'Ascending' : 'Descending'}`}
@@ -117,7 +118,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                         </div>
 
                         <div className="relative z-10 flex flex-col h-full mt-2">
-                            <h2 className="text-2xl font-serif text-white mb-3 group-hover:text-currentColor transition-colors">{project.title}</h2>
+                            <h2 className={`text-2xl font-serif text-white mb-3 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors`}>{project.title}</h2>
                             <div className="relative mb-6 flex-1">
                                 <p className="text-white/80 font-medium absolute top-0 left-0 w-full transition-opacity duration-500 opacity-100 group-hover:opacity-0">
                                     {project.scoreTitle}
@@ -126,7 +127,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                                     {project.description}
                                 </p>
                             </div>
-                            <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-currentColor transition-colors mt-auto pt-4 relative isolate">
+                            <div className={`flex items-center text-sm font-mono uppercase tracking-widest text-white/40 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors mt-auto pt-4 relative isolate`}>
                                 View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
                             </div>
                         </div>
