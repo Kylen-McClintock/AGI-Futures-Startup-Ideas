@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
-import { RevealSection, FadeIn } from "./components/RevealSection";
+import { RevealSection } from "./components/RevealSection";
 import {
-    Layers, Users, Sparkles, Brain, Network,
+    Users, Brain, Network,
     ArrowRight, Activity, ChevronDown, CheckCircle2, Globe,
     Building2, Zap, Briefcase
 } from "lucide-react";
@@ -75,6 +75,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-indigo-900/20 group border border-indigo-500/20"
                     >
                         <Image
+                            unoptimized
                             src={heroImage}
                             alt="Retro-futurist Tomorrowland-style interior of a high-end virtual office"
                             fill
@@ -176,7 +177,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </div>
 
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
-                        <Image src={jarvisImage} alt="AI chief of staff desk orchestrating tasks" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <Image unoptimized src={jarvisImage} alt="AI chief of staff desk orchestrating tasks" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent pointer-events-none" />
                         <div className="absolute bottom-6 left-6 right-6">
                             <p className="text-lg text-white/90 font-light drop-shadow-md">
@@ -217,7 +218,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <Network className="w-8 h-8 text-fuchsia-400 mb-4" />
                             <h4 className="text-xl font-medium text-white mb-2">Opt-in network rail</h4>
                             <p className="text-white/60 leading-relaxed font-light text-sm">
-                                Connect Farcaster <ExpandableCitation label="[8]" sourceUrl="https://docs.farcaster.xyz/learn/architecture/overview" sourceText="Farcaster Docs" /> and AT Protocol <ExpandableCitation label="[9]" sourceUrl="https://atproto.com/guides/overview" sourceText="AT Protocol" /> for portable social graphs. Helm routes asks with context, constraints, and an acceptance test.
+                                Connect Farcaster <ExpandableCitation label="[8]" sourceUrl="https://docs.farcaster.xyz/learn/architecture/overview" sourceText="Farcaster Docs" /> and AT Protocol <ExpandableCitation label="[9]" sourceUrl="https://atproto.com/guides/overview" sourceText="AT Protocol" /> for your portable social graph. Rather than shouting into the void, Helm routes discrete asks with deep context, tight constraints, and frictionless acceptance tests. Your network becomes a liquid talent pool of on-demand brilliance.
                             </p>
                         </motion.div>
                     </div>
@@ -287,12 +288,21 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                 </RevealSection>
 
                 {/* Network Graph Visual */}
-                <RevealSection className="mb-32 w-full aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 relative">
-                    <Image src={networkImage} alt="Social graph wall displaying advisors and freelancers" fill quality={100} className="object-cover transition-transform duration-1000 hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none" />
-                    <div className="absolute bottom-6 left-6 max-w-lg">
-                        <h4 className="text-white font-serif text-2xl mb-2 drop-shadow-lg">Opt-in Network Rail</h4>
-                        <p className="text-white/80 font-light drop-shadow-md">Connect your portable social graphs to orchestrate micro-advisory and execution without spamming your network.</p>
+                <RevealSection className="mb-32 w-full aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 relative group">
+                    <Image unoptimized src={networkImage} alt="Social graph wall displaying advisors and freelancers" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent pointer-events-none" />
+                    <div className="absolute bottom-10 left-10 max-w-2xl pr-10">
+                        <h4 className="text-white font-serif text-3xl sm:text-4xl mb-4 drop-shadow-lg flex items-center gap-4">
+                            <Network className="w-8 h-8 text-fuchsia-400" /> Opt-in Network Rail
+                        </h4>
+                        <div className="space-y-4 border-l-2 border-fuchsia-500/50 pl-6">
+                            <p className="text-white/90 text-lg font-light drop-shadow-md leading-relaxed">
+                                Most of your brilliant peers are too busy to take a 30-minute networking call, but they have 5 minutes to review a beautifully scoped problem.
+                            </p>
+                            <p className="text-white/70 font-light drop-shadow-md leading-relaxed">
+                                Connect your portable social graphs (Farcaster, AT Protocol) and let Helm orchestrate micro-advisory and execution tasks effortlessly. It routes your hardest challenges to the exact person in your network who has solved it before, attaching full context and a predefined bounty or equity micro-grant. No spam. No context drain. Just frictionless, on-demand genius.
+                            </p>
+                        </div>
                     </div>
                 </RevealSection>
 
@@ -374,7 +384,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </div>
 
                     <div className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5">
-                        <Image src={graphImage} alt="Conceptual data visualization of a multi-agent company network" fill quality={100} className="object-cover" />
+                        <Image unoptimized src={graphImage} alt="Conceptual data visualization of a multi-agent company network" fill quality={100} className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent pointer-events-none" />
                     </div>
 
@@ -449,15 +459,23 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="glass-panel p-10 rounded-[2rem] border border-white/5">
-                            <h3 className="text-2xl font-light text-white mb-6">First Experiment</h3>
-                            <p className="text-white/70 font-light leading-relaxed mb-4">
-                                <strong className="text-indigo-300">Design:</strong> 10 founders, one Marketing room, ship a landing page plus three ad variants using a Copywriter agent, an Analyst agent, and one vetted micro-review in 48 hours.
-                            </p>
-                            <p className="text-white/70 font-light leading-relaxed">
-                                <strong className="text-indigo-300">Hypothesis:</strong> If Helm cuts time-to-ship by at least 30% while holding or improving quality, then public traces from credible builders convert at least 10%.
-                            </p>
-                        </div>
+                        <details className="glass-panel rounded-[2rem] border border-white/5 hover:border-indigo-500/30 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-white/[0.01]">
+                            <summary className="p-8 outline-none flex justify-between items-center">
+                                <div>
+                                    <h3 className="text-2xl font-light text-white mb-2 group-hover:text-indigo-300 transition-colors">First Experiment</h3>
+                                    <p className="text-white/50 font-light text-sm italic">Validation via a 48-hour challenge using multi-agent output.</p>
+                                </div>
+                                <ChevronDown className="w-6 h-6 text-indigo-500/50 group-open:rotate-180 transition-transform duration-300" />
+                            </summary>
+                            <div className="px-8 pb-8 pt-4 border-t border-white/10 bg-zinc-950/50">
+                                <p className="text-white/80 font-light leading-relaxed mb-6 border-l-2 border-indigo-500/30 pl-4">
+                                    <strong className="text-indigo-300 font-medium">Design:</strong> 10 founders, one Marketing room, ship a landing page plus three ad variants using a Copywriter agent, an Analyst agent, and one vetted micro-review in 48 hours.
+                                </p>
+                                <p className="text-white/80 font-light leading-relaxed pl-4">
+                                    <strong className="text-indigo-300 font-medium">Hypothesis:</strong> If Helm cuts time-to-ship by at least 30% while holding or improving quality, then public traces from credible builders convert at least 10%.
+                                </p>
+                            </div>
+                        </details>
 
                         <div className="glass-panel p-10 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/10">
                             <h3 className="text-sm font-mono text-indigo-400 uppercase tracking-widest mb-6">Transferable Insight</h3>
@@ -480,20 +498,57 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <ChevronDown className="w-5 h-5 text-white/40 group-hover:text-indigo-400 group-open:rotate-180 transition-all duration-300" />
                         </summary>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                            {citations.map((cite) => (
-                                <div key={cite.number} className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                                    <span className="text-indigo-400/70 font-mono text-lg shrink-0">[{cite.number}]</span>
-                                    <div className="text-sm text-white/50 font-light leading-relaxed w-full flex flex-col md:flex-row md:justify-between md:items-center">
-                                        <span><strong className="text-white/80">{cite.source}</strong>, {cite.title}</span>
-                                        {cite.url && (
-                                            <a href={cite.url} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 hover:underline mt-2 md:mt-0 font-medium whitespace-nowrap md:ml-4 flex items-center gap-1">
-                                                Link <ArrowRight className="w-3 h-3" />
-                                            </a>
-                                        )}
+                        <div className="mt-8 space-y-12">
+                            {/* Definitions */}
+                            <div>
+                                <h4 className="text-sm font-mono tracking-widest uppercase text-white/30 mb-6 border-b border-white/5 pb-2">Acronyms</h4>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">OS</div>
+                                        <div className="text-white/60 text-sm font-light">Operating System</div>
+                                    </div>
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">SaaS</div>
+                                        <div className="text-white/60 text-sm font-light">Software as a Service</div>
+                                    </div>
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">PRD</div>
+                                        <div className="text-white/60 text-sm font-light">Product Requirements Document</div>
+                                    </div>
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">SMEs</div>
+                                        <div className="text-white/60 text-sm font-light">Small and Medium-sized Enterprises</div>
+                                    </div>
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">ICP</div>
+                                        <div className="text-white/60 text-sm font-light">Ideal Customer Profile</div>
+                                    </div>
+                                    <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
+                                        <div className="text-indigo-400 font-mono text-sm mb-1">L3/L4</div>
+                                        <div className="text-white/60 text-sm font-light">Levels 3 and 4 of system autonomy</div>
                                     </div>
                                 </div>
-                            ))}
+                            </div>
+
+                            {/* Citations */}
+                            <div>
+                                <h4 className="text-sm font-mono tracking-widest uppercase text-white/30 mb-6 border-b border-white/5 pb-2">Sources</h4>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {citations.map((cite) => (
+                                        <div key={cite.number} className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                            <span className="text-indigo-400/70 font-mono text-lg shrink-0">[{cite.number}]</span>
+                                            <div className="text-sm text-white/50 font-light leading-relaxed w-full flex flex-col md:flex-row md:justify-between md:items-center">
+                                                <span><strong className="text-white/80">{cite.source}</strong>, {cite.title}</span>
+                                                {cite.url && (
+                                                    <a href={cite.url} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300 hover:underline mt-2 md:mt-0 font-medium whitespace-nowrap md:ml-4 flex items-center gap-1">
+                                                        Link <ArrowRight className="w-3 h-3" />
+                                                    </a>
+                                                )}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </details>
                 </RevealSection>

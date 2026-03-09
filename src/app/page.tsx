@@ -275,7 +275,7 @@ export default function Home() {
                                     The playful office OS for solo founders
                                 </p>
                                 <p className="text-white/70 font-light transition-opacity duration-500 opacity-0 group-hover:opacity-100 line-clamp-none">
-                                    A virtual office where AI teammates, collaborators, and freelancers help you run your company.
+                                    A virtual office where AI teammates, collaborators, and freelancers help you run your company—driving toward increased automation over time.
                                 </p>
                             </div>
                             <div className="flex items-center text-sm font-mono uppercase tracking-widest text-white/40 group-hover:text-indigo-400 transition-colors mt-auto pt-4">
