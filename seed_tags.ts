@@ -234,6 +234,31 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Freedom']
         }
+    },
+    {
+        slug: 'agentable',
+        name: 'Agentable',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 71 },
+            civilizational_impact_score: { ai_scored: 54 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 61 },
+                "Social Trust": { ai_scored: 58 },
+                "Alignment": { ai_scored: 49 },
+                "Differentially Defensive": { ai_scored: 47 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Security'],
+            bottleneck: ['Trust', 'Coordination'],
+            customer: ['Consumers', 'Enterprises'],
+            product_type: ['Platform', 'Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Vision AI'],
+            readiness: ['Build Now'],
+            founder_fit: ['Technical Founder', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Social Trust', 'Alignment', 'Differentially Defensive']
+        }
     }
 ];
 
