@@ -246,8 +246,17 @@ export function PageClient() {
             </section>
 
             {/* ICP SECTION */}
-            <section className="px-6 py-24 max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <section className="px-6 py-24 max-w-7xl mx-auto border-t border-white/5">
+                <div className="mb-16">
+                    <h2 className="text-sm font-mono tracking-widest uppercase text-emerald-500/70 mb-6 flex items-center">
+                        <span className="w-8 h-px bg-emerald-500/30 mr-4" /> Ideal Customer Profile
+                    </h2>
+                    <h3 className="text-3xl md:text-5xl font-light text-white mb-8 font-serif">
+                        A specific example.
+                    </h3>
+                </div>
+
+                <div className="grid lg:grid-cols-2 gap-16 items-start">
                     <motion.div
                         {...FADE_UP}
                         className="relative aspect-square lg:aspect-[4/3] rounded-[2rem] overflow-hidden"
@@ -260,46 +269,72 @@ export function PageClient() {
                             quality={100}
                         />
                     </motion.div>
-                    <motion.div {...FADE_UP}>
-                        <h2 className="text-sm font-mono tracking-widest uppercase text-emerald-500/70 mb-6 flex items-center">
-                            <span className="w-8 h-px bg-emerald-500/30 mr-4" /> Ideal Customer Profile
-                        </h2>
-                        <h3 className="text-3xl md:text-5xl font-light text-white mb-8 font-serif">
-                            A specific example.
-                        </h3>
-                        <p className="text-xl text-zinc-400 leading-relaxed font-light mb-8">
-                            A subscription software company maps three painful account tasks: Reset Password, Update Billing, and Change Plan.
-                        </p>
-                        <p className="text-xl text-zinc-400 leading-relaxed font-light mb-8">
-                            A confused admin asks for help, the overlay points to the exact control and explains the next step, and the same underlying map exposes a tool that the company’s support copilot can call directly. Support volume drops, retries fall, and the product team gets screenshots plus transcript snippets showing exactly where the flow broke.
-                        </p>
 
+                    <motion.div {...FADE_UP} className="space-y-8">
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 relative overflow-hidden group">
+                            <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-6">
+                                <span className="font-mono text-zinc-400 font-bold">1</span>
+                            </div>
+                            <h4 className="text-xl text-white font-medium mb-3">The Problem</h4>
+                            <p className="text-zinc-400 leading-relaxed font-light">
+                                A subscription software company maps three painful account tasks: Reset Password, Update Billing, and Change Plan.
+                            </p>
+                        </div>
+
+                        <div className="glass-panel p-8 rounded-3xl border border-emerald-500/20 bg-emerald-500/5 relative overflow-hidden group">
+                            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent pointer-events-none" />
+                            <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center mb-6 relative z-10">
+                                <span className="font-mono text-emerald-400 font-bold">2</span>
+                            </div>
+                            <h4 className="text-xl text-emerald-400 font-medium mb-3 relative z-10">The Resolution</h4>
+                            <p className="text-zinc-300 leading-relaxed font-light relative z-10 pb-4 border-b border-emerald-500/10 mb-4">
+                                A confused admin asks for help, the overlay points to the exact control and explains the next step, and the same underlying map exposes a tool that the company’s support copilot can call directly.
+                            </p>
+                            <p className="text-zinc-300 leading-relaxed font-light relative z-10">
+                                Support volume drops, retries fall, and the product team gets screenshots plus transcript snippets showing exactly where the flow broke.
+                            </p>
+                        </div>
                     </motion.div>
                 </div>
             </section>
 
-            {/* UNIVERSAL ACCESSIBILITY IMAGE SECTION */}
-            <section className="px-6 py-2 pb-24 max-w-7xl mx-auto">
-                <motion.div {...FADE_UP} className="relative w-full aspect-[2/1] md:aspect-[21/9] rounded-[2rem] overflow-hidden">
-                    <Image src={agingAssistedImg} fill className="object-cover" alt="Older person guided by AI agent through a website" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
-                        <p className="text-2xl md:text-3xl text-white font-serif max-w-2xl leading-snug font-light">
+            {/* EXPANDED USE CASES */}
+            <section className="px-6 py-12 pb-24 max-w-7xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8">
+                    {/* Universal Accessibility */}
+                    <motion.div {...FADE_UP} className="group cursor-pointer">
+                        <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 border border-white/5 group-hover:border-emerald-500/30 transition-colors duration-500">
+                            <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
+                            <Image
+                                src={agingAssistedImg}
+                                fill
+                                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                alt="Older person guided by AI agent through a website"
+                            />
+                        </div>
+                        <h4 className="text-2xl text-white font-serif mb-3 group-hover:text-emerald-400 transition-colors">Universal Accessibility</h4>
+                        <p className="text-zinc-400 font-light leading-relaxed">
                             Making complex software accessible to everyone, from enterprise admins to elderly users.
                         </p>
-                    </div>
-                </motion.div>
-            </section>
+                    </motion.div>
 
-            {/* AUTONOMOUS NAVIGATION IMAGE SECTION */}
-            <section className="px-6 py-2 pb-24 max-w-7xl mx-auto">
-                <motion.div {...FADE_UP} className="relative w-full aspect-[2/1] md:aspect-[21/9] rounded-[2rem] overflow-hidden">
-                    <Image src={autonomousNavImg} fill className="object-cover" alt="AI agents autonomously navigating through deep, complex software architectures" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
-                        <p className="text-2xl md:text-3xl text-emerald-100 font-serif max-w-2xl leading-snug font-light">
+                    {/* Autonomous Navigation */}
+                    <motion.div {...FADE_UP} className="group cursor-pointer">
+                        <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden mb-6 border border-white/5 group-hover:border-emerald-500/30 transition-colors duration-500">
+                            <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 mix-blend-overlay" />
+                            <Image
+                                src={autonomousNavImg}
+                                fill
+                                className="object-cover transform group-hover:scale-105 transition-transform duration-700"
+                                alt="AI agents autonomously navigating through deep, complex software architectures"
+                            />
+                        </div>
+                        <h4 className="text-2xl text-white font-serif mb-3 group-hover:text-emerald-400 transition-colors">Autonomous Navigation</h4>
+                        <p className="text-zinc-400 font-light leading-relaxed">
                             Exposing structural architecture so autonomous agents can navigate deep software reliably at scale.
                         </p>
-                    </div>
-                </motion.div>
+                    </motion.div>
+                </div>
             </section>
 
             {/* MARKET EVOLUTION */}
