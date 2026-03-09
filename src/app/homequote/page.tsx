@@ -6,6 +6,7 @@ import { useRef } from "react";
 import ExpandableCitation from "./components/ExpandableCitation";
 import InteractiveSection from "./components/InteractiveSection";
 import MarketChart from "./components/MarketChart";
+import { ProjectTags } from "@/components/ProjectTags";
 
 import heroImg from "./assets/hq_hero_scan_1772949695780.png";
 import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
@@ -78,6 +79,18 @@ export default function HomeQuotePage() {
                     </motion.p>
                 </div>
             </section>
+
+            <div className="-mt-12 md:-mt-16 z-20 relative">
+                <ProjectTags
+                    tags={{
+                        sector: "Real Estate Tech & Home Services",
+                        bottleneck: "Converting messy physical reality into a scoped, priced job",
+                        readiness: "Multimodal AI is cheap and fast enough to interpret videos/photos",
+                        customer: "Owner-operated service companies and homeowners",
+                        outcomes: "Software-defined coordination prevents deferred maintenance and decay"
+                    }}
+                />
+            </div>
 
             <div className="container mx-auto px-6 md:px-12 max-w-4xl pt-16 md:pt-24 space-y-32">
 

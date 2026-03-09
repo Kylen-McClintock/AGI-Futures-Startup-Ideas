@@ -11,6 +11,7 @@ import { InteractiveSection } from "./components/InteractiveSection";
 import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { AFLChart } from "./components/AFLChart";
 import { EcosystemDiagram } from "./components/EcosystemDiagram";
+import { ProjectTags } from "@/components/ProjectTags";
 
 // Hooks
 import { useInView } from "react-intersection-observer";
@@ -98,6 +99,16 @@ export default function AFLPage() {
                         Imagine skipping years of lectures and moving straight into the real game. You ship products with modern AI tools, talk to customers, grow an audience, earn equity, and graduate with proof that you can create value, not just talk about it. Instead of leaving with debt and vague potential, you leave with reps, signal, network, and upside.
                     </motion.div>
                 </header>
+
+                <ProjectTags
+                    tags={{
+                        sector: "Higher Education & Venture Formations",
+                        bottleneck: "Information is abundant, credibility-weighted execution is scarce",
+                        readiness: "AI builds are faster, college debt is peaking at $1.7T",
+                        customer: "High-agency builders and early-career operators",
+                        outcomes: "Channels elite ambition toward abundance tools instead of status games"
+                    }}
+                />
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
 

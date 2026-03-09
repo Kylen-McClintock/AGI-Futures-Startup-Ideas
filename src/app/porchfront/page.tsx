@@ -16,6 +16,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { ExpandableCard } from "./components/ExpandableCard";
 import { LonelinessChart } from "./components/LonelinessChart";
 import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2 } from "lucide-react";
+import { ProjectTags } from "@/components/ProjectTags";
 
 export default function PorchfrontPage() {
     const { scrollYProgress } = useScroll();
@@ -66,6 +67,18 @@ export default function PorchfrontPage() {
                     <Image src={us_block_party} alt="A lively block party in a typical US suburban cul-de-sac with a Homegrown Ales banner" fill quality={100} className="object-cover" priority />
                 </motion.div>
             </motion.section>
+
+            <div className="relative z-50 mb-12">
+                <ProjectTags
+                    tags={{
+                        sector: "Social Infrastructure & Neighborhood Commerce",
+                        bottleneck: "Zoning laws and default habits trap square-footage as vehicle storage",
+                        readiness: "Loneliness epidemic meets autonomous driving (less car storage)",
+                        customer: "Neighborhood captains, hobbyists, and local families",
+                        outcomes: "Measurably improves health and trust by re-activating third places"
+                    }}
+                />
+            </div>
 
             {/* Problem / Opportunity Statement */}
             <section className="relative z-40 py-24 bg-white/60 dark:bg-black/40 backdrop-blur-3xl border-y border-black/5 dark:border-white/5">

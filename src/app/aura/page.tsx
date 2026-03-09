@@ -11,6 +11,7 @@ import { InteractiveSection } from "./components/InteractiveSection";
 import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { StackDiagram } from "./components/StackDiagram";
 import { MarketChart } from "./components/MarketChart";
+import { ProjectTags } from "@/components/ProjectTags";
 
 // Hooks
 import { useInView } from "react-intersection-observer";
@@ -112,6 +113,16 @@ export default function AuraPage() {
                     </motion.div>
                 </header>
 
+                <ProjectTags
+                    tags={{
+                        sector: "Spatial Computing & Applied AI",
+                        bottleneck: "Disembodied UX and rebuilt-from-scratch AR developer stacks",
+                        readiness: "XR headsets are scaling up, demand signal proved by Character.AI",
+                        customer: "Everyday Consumers (loneliness/training) and XR Developers",
+                        outcomes: "Early, consent-based interruption of isolation and grievance spirals"
+                    }}
+                />
+
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
 
                 {/* THESIS CONTENT MAX WIDTH */}
@@ -175,6 +186,57 @@ export default function AuraPage() {
                                 </div>
                             </div>
                         </div>
+                    </section>
+
+                    {/* WHY NOW */}
+                    <section>
+                        <h2 className="text-3xl font-serif mb-8 text-white">Why now</h2>
+                        <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
+                            Three curves are crossing.
+                        </p>
+
+                        <div className="space-y-6">
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-[var(--primary)]" />
+                                <h3 className="text-white font-medium mb-2 flex items-center gap-3">
+                                    <span className="text-[var(--primary)] font-mono text-sm">1.</span>
+                                    Hardware is getting real.
+                                </h3>
+                                <p className="text-white/70 font-light leading-relaxed pl-8">
+                                    IDC now projects <strong className="text-white font-medium">43.1 million</strong> annual units by 2029, led by display-less and lightweight smart glasses.
+                                    <ExpandableCitation number={1} source="IDC" title="AR & VR Headsets Market Insights (2025)" />
+                                </p>
+                            </div>
+
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-blue-400" />
+                                <h3 className="text-white font-medium mb-2 flex items-center gap-3">
+                                    <span className="text-blue-400 font-mono text-sm">2.</span>
+                                    The developer stack is maturing.
+                                </h3>
+                                <p className="text-white/70 font-light leading-relaxed pl-8">
+                                    Google says <strong className="text-white font-medium">Developer Preview 3</strong> of the Android XR software development kit opens development for AI glasses, headsets, and wired XR glasses, while OpenXR continues to reduce cross-platform fragmentation.
+                                    <ExpandableCitation number={8} source="Google" title="The Android Show: New features for Galaxy XR" />
+                                    <ExpandableCitation number={9} source="IDC" title="AR/VR Headsets and Smart Glasses Go Mainstream" />
+                                </p>
+                            </div>
+
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 relative overflow-hidden group">
+                                <div className="absolute top-0 left-0 w-1 h-full bg-emerald-400" />
+                                <h3 className="text-white font-medium mb-2 flex items-center gap-3">
+                                    <span className="text-emerald-400 font-mono text-sm">3.</span>
+                                    The demand signal already exists.
+                                </h3>
+                                <p className="text-white/70 font-light leading-relaxed pl-8">
+                                    Character.AI's usage shows that millions of people already spend social-product levels of time with personable AI.
+                                    <ExpandableCitation number={2} source="TIME" title="Why Character.AI's CEO Still Lets His Daughter Use the App" />
+                                </p>
+                            </div>
+                        </div>
+
+                        <p className="text-xl text-white font-light leading-relaxed mt-10 p-8 glass-panel rounded-3xl border border-[var(--primary)]/20 text-center italic">
+                            This is exactly the kind of inflection where a new interface layer can become the standard before incumbents fully organize around it.
+                        </p>
                     </section>
 
                     {/* THE SOLUTION & CORE ARCHITECTURE */}

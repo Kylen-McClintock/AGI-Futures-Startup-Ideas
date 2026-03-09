@@ -10,6 +10,7 @@ import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
 import { CoreLoopVisual } from "./components/CoreLoopVisual";
 import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp } from "lucide-react";
+import { ProjectTags } from "@/components/ProjectTags";
 
 export default function Home() {
   return (
@@ -65,6 +66,16 @@ export default function Home() {
       </section>
 
       <div className="max-w-4xl mx-auto px-6 md:px-12 mt-20 space-y-32">
+
+        <ProjectTags
+          tags={{
+            sector: "Relational Health & AI Coaching",
+            bottleneck: "Feedback is too generic, delayed, and emotionally messy to drive behavioral change",
+            readiness: "AI's ability to maintain persistent state and relational memory over time",
+            customer: "Women seeking emotional responsiveness & men looking for actionable coaching",
+            outcomes: "Upgrades the foundational social fabric by strengthening pair bonds"
+          }}
+        />
 
         {/* Headline Stat */}
         <RevealSection>

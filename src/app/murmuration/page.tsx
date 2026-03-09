@@ -4,6 +4,7 @@ import { ExpandableCitation } from "./components/ui/expandable-citation";
 import { StatChart } from "./components/charts/stat-chart";
 import { InteractiveLoop } from "./components/ui/interactive-loop";
 import { ArrowRight, CheckCircle2, ChevronDown, Layers, Target, Activity } from "lucide-react";
+import { ProjectTags } from "@/components/ProjectTags";
 
 import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
@@ -37,6 +38,18 @@ export default function Home() {
             <ChevronDown className="w-4 h-4 animate-bounce" />
           </FadeIn>
         </ScrollReveal>
+
+        <div className="py-12 relative z-50">
+          <ProjectTags
+            tags={{
+              sector: "Enterprise AI & Strategy Automation",
+              bottleneck: "Treating AI as a bolted-on feature instead of an organizational redesign",
+              readiness: "Swarms can now perform complex non-trivial research/coding with collapsing inference costs",
+              customer: "Ambitious startup founders aiming for rapid agent-driven category capture",
+              outcomes: "Spreads gains of intelligence broadly and builds simulation infrastructure for safety"
+            }}
+          />
+        </div>
 
         {/* HEADLINE STAT */}
         <ScrollReveal className="py-24 border-t border-white/10">
