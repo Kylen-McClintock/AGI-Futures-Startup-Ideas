@@ -184,6 +184,31 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Human Flourishing', 'Scientific Acceleration', 'Social Trust', 'Resilience']
         }
+    },
+    {
+        slug: 'main-street-legacy',
+        name: 'Main Street Legacy',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 74 },
+            civilizational_impact_score: { ai_scored: 61 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 76 },
+                "Human Flourishing": { ai_scored: 58 },
+                "Community Renewal": { ai_scored: 68 },
+                "Resilience": { ai_scored: 54 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Finance', 'Education'],
+            bottleneck: ['Trust', 'Coordination', 'Talent Matching'],
+            customer: ['Founders', 'Enterprises'],
+            product_type: ['Platform', 'Coordination Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Knowledge Graphs'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Community Renewal', 'Resilience']
+        }
     }
 ];
 
