@@ -31,7 +31,7 @@ export function ExpandableCitation({ label, sourceUrl, sourceText }: ExpandableC
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 10, scale: 0.95 }}
                         transition={{ duration: 0.2, ease: "easeOut" }}
-                        className="absolute z-20 top-full mt-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-72 md:w-80 p-4 rounded-xl glass-panel text-left text-sm"
+                        className="absolute z-50 top-full mt-2 left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 w-72 md:w-80 p-5 rounded-xl bg-zinc-950/95 backdrop-blur-xl border border-amber-500/20 shadow-2xl text-left text-sm"
                     >
                         {sourceUrl ? (
                             <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="block group mb-3">
