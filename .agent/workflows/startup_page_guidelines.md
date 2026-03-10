@@ -19,8 +19,14 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 ## 3. Ideal Customer Profile (ICP) Use Cases
 - **Visual Value Flows**: The "Specific Example per ICP" section must NEVER be a static block of text.
 - **Interactive Component**: ALWAYS build this section as an interactive, multi-tab selector component (reference `src/app/handraise/components/ICPUseCases.tsx`).
+- **Data Structure**: Use an array of objects to define the tabs, where each object contains an `id`, `title`, `icon` (from Lucide), `text` (JSX), an array of `flow` steps, and a `reward` object.
+- **Tab Layout**: Render the tabs as a horizontal flex list of buttons. The active button should be styled with the `--primary` color, a subtle background tint (`bg-[var(--primary)]/20`), and a glow effect (`shadow-[var(--primary)]/20`). Inactive buttons should be dimmed (`text-slate-400`).
 - **Stakeholder Flow**: For each use case, include an animated "Value Flow Architecture" graphic that explicitly maps the step-by-step flow between stakeholders (e.g., Founder -> Agent -> Experts -> Founder).
-- **Contributor Rewards**: Explicitly include a "Contributor Reward" section at the end of the flow detailing the exact value (e.g., USDC, Reputation points) earned by the participants in the network.
+  - Use `framer-motion` (`<AnimatePresence>` and `<motion.div>`) to swap between the use-cases with a smooth fade/slide transition.
+  - Draw a connecting dashed line down the left side of the flow steps.
+  - Animate an overlay glowing line segment sliding down to represent active flow.
+  - Use distinct styling to highlight "Agent" roles vs "Human" roles in the step icons.
+- **Contributor Rewards**: Explicitly include a "Contributor Reward" section at the end of the flow detailing the exact value (e.g., USDC, Reputation points) earned by the participants in the network. Include a `Gift` icon for this block.
 
 ## 4. Civilizational Impact Score Box ("DeepGuide Style")
 - Treat the "Civilizational Impact" section as an interactive data visualization.
