@@ -36,6 +36,7 @@ The global `<ProjectTags />` block should NEVER be used. Instead, use the `<Inli
 - **Theming**: Each startup idea should use a custom `colorTheme` for its tags (passed to `<InlineTags theme="emerald" />`) that matches the vibe of the idea.
 
 ## Interactivity
+- **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme color should correspond to the overall color theme of the page.
 - **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
 - **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
 

@@ -12,6 +12,7 @@ import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { StackDiagram } from "./components/StackDiagram";
 import { MarketChart } from "./components/MarketChart";
 import { ProjectTags, InlineTags } from "@/components/ProjectTags";
+import { ScrollProgress } from "@/components/ScrollProgress"; // Added by user instruction
 
 // Hooks
 import { useInView } from "react-intersection-observer";
@@ -48,6 +49,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
     return (
         <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden selection:bg-[var(--primary)] selection:text-white pb-32">
+            <ScrollProgress title="AURA" theme="blue" /> {/* Added by user instruction */}
             {/* Ambient Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />

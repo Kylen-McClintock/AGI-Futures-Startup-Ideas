@@ -7,6 +7,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { ShortageChart } from "./components/ShortageChart";
 import { Layers, Activity, Shield, Users, Sparkles, Brain, FileText, Lock, Target, FlaskConical, Link as LinkIcon, ChevronDown } from "lucide-react";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 // Assets
 import heroImage from './assets/deepguide_hero.png';
@@ -29,7 +30,9 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
     };
 
     return (
-        <main className="min-h-screen bg-zinc-950 text-slate-200 selection:bg-emerald-500/30 font-sans pb-32">
+        <main className="min-h-screen bg-zinc-950 text-zinc-300 selection:bg-emerald-500/30 overflow-x-hidden font-sans pb-32">
+            <ScrollProgress title="DeepGuide" theme="emerald" />
+
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px]" />

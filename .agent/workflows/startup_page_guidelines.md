@@ -23,6 +23,11 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - When clicked/expanded, it must reveal a cleanly styled list of the specific sub-scores (e.g., Abundance, Human Flourishing, Community Renewal, Resilience).
 - **CRITICAL**: The scores must perfectly match the exact values defined for the startup within `seed_tags.ts`.
 
+## Interactivity
+- **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme color should correspond to the overall color theme of the page.
+- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
+- **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
+
 ## 4. Explicit & Collapsible Citations
 - Always include an explicit **Acronyms & References** section at the very bottom of the page.
 - Wrap this entire section in a default-collapsed `<details>` block to save visual space and present a clean end-of-page experience.

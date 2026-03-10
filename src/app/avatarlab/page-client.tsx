@@ -35,6 +35,7 @@ import cellbankImage from './assets/avatarlab_cellbank_v2.png';
 // Components
 import ProductStackFlow from './components/ProductStackFlow';
 import { HoverAcronym } from '@/components/HoverAcronym';
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -51,6 +52,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
     return (
         <main className="min-h-screen bg-zinc-950 text-slate-200 selection:bg-cyan-500/30 font-sans pb-32">
+            <ScrollProgress title="AvatarLab" theme="cyan" />
+
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />

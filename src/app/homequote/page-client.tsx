@@ -7,6 +7,7 @@ import ExpandableCitation from "./components/ExpandableCitation";
 import InteractiveSection from "./components/InteractiveSection";
 import MarketChart from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 import heroImg from "./assets/hq_hero_scan_1772949695780.png";
 import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
@@ -50,6 +51,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
     return (
         <main className="min-h-screen bg-[#06090c] text-white/80 font-sans selection:bg-emerald-500/30 selection:text-white pb-32">
+            <ScrollProgress title="HomeQuote AI" theme="emerald" />
             {/* Hero Section */}
             <section ref={containerRef} className="relative h-[90vh] md:h-screen w-full overflow-hidden flex items-end justify-center pb-24 md:pb-32">
                 <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">

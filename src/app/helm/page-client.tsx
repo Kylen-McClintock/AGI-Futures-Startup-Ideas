@@ -6,6 +6,7 @@ import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { RevealSection } from "./components/RevealSection";
 import {
     Users, Brain, Network,
@@ -69,6 +70,8 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
     return (
         <main className="min-h-screen bg-zinc-950 text-slate-200 selection:bg-indigo-500/30 font-sans pb-32">
+            <ScrollProgress title="Helm" theme="indigo" />
+
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-indigo-500/10 rounded-full blur-[120px]" />

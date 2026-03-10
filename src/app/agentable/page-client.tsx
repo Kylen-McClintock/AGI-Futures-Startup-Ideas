@@ -7,6 +7,8 @@ import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "./components/ExpandableCitation";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { AgentableArchitecture } from "./components/AgentableArchitecture";
+import { HoverAcronym } from "@/components/HoverAcronym";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { useState } from "react";
 
 import heroImg from "./assets/hero.png";
@@ -41,7 +43,12 @@ const STAGGER_ITEM: any = {
 
 export function PageClient() {
     return (
-        <main className="min-h-screen bg-[#0A0A0A] text-zinc-300 selection:bg-emerald-500/30 selection:text-emerald-200">
+        <main className="min-h-screen bg-stone-950 text-stone-300 font-sans selection:bg-emerald-500/30 relative">
+            <ScrollProgress title="Agentable" theme="emerald" />
+
+            {/* AMBIENT BACKGROUND */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden"></div>
+
             {/* Nav Space */}
             <div className="h-24 w-full" />
 

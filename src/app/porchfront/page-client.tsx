@@ -17,6 +17,7 @@ import { ExpandableCard } from "./components/ExpandableCard";
 import { LonelinessChart } from "./components/LonelinessChart";
 import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2 } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const citations = [
     { number: 1, source: "Surgeon General Advisory", title: "Our Epidemic of Loneliness and Isolation", url: "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" },
@@ -32,7 +33,8 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
     const scaleHero = useTransform(scrollYProgress, [0, 0.1], [1, 0.95]);
 
     return (
-        <div className="min-h-screen bg-[#f8fcf5] dark:bg-[#070c08] text-zinc-900 dark:text-zinc-100 font-sans selection:bg-emerald-200 dark:selection:bg-emerald-900 overflow-x-hidden relative">
+        <main className="min-h-screen bg-[#06090c] text-neutral-300 selection:bg-emerald-500/30 font-sans overflow-x-hidden">
+            <ScrollProgress title="Porchfront" theme="emerald" />
 
             {/* Background Ambience */}
             <div className="fixed inset-0 pointer-events-none z-0">
@@ -543,6 +545,6 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 </GridContainer>
             </section>
 
-        </div>
+        </main>
     );
 }

@@ -11,7 +11,9 @@ import { InteractiveSection } from "./components/InteractiveSection";
 import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { AFLChart } from "./components/AFLChart";
 import { EcosystemDiagram } from "./components/EcosystemDiagram";
-import { ProjectTags, InlineTags } from "@/components/ProjectTags";
+import { ProjectTags, InlineTags, ProjectTagsProps } from "@/components/ProjectTags";
+import { HoverAcronym } from "@/components/HoverAcronym";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 // Hooks
 import { useInView } from "react-intersection-observer";
@@ -35,9 +37,11 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
     const { ref: chartRef, inView: chartInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
-        <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden selection:bg-[var(--primary)] selection:text-white pb-32">
-            {/* Ambient Background layer */}
-            <div className="fixed inset-0 z-0 pointer-events-none">
+        <main className="min-h-screen bg-neutral-950 text-neutral-200 selection:bg-orange-500/30 overflow-x-hidden relative">
+            <ScrollProgress title="AI Founder Lab" theme="orange" />
+
+            {/* Ambient Background Glow */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
                 <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-emerald-500/5 blur-[120px] rounded-full mix-blend-screen opacity-30" />
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />

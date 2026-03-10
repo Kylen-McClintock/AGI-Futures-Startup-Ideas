@@ -5,6 +5,7 @@ import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { ImpactScoreBox } from "./components/ImpactScoreBox";
 import { InteractiveGrid } from "./components/InteractiveGrid";
@@ -34,7 +35,9 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
     };
 
     return (
-        <main className="min-h-screen bg-stone-950 text-stone-200 selection:bg-amber-500/30 font-sans pb-32">
+        <main className="min-h-screen bg-[#0b0a09] text-stone-200 selection:bg-amber-500/30 font-sans antialiased overflow-x-hidden pb-32">
+            <ScrollProgress title="ProofRun" theme="amber" />
+
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
                 <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px]" />
