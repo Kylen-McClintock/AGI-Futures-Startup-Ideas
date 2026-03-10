@@ -543,18 +543,42 @@ export default function HandraiseClientPage() {
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12 mb-12">
-                        <div className="space-y-6">
-                            <div className="text-xl leading-relaxed text-white/80 font-light pr-8">
-                                <p className="mb-6">
-                                    Networks get stronger when help is easy to give and safe to ask for. Handraise lowers the social cost of asking, raises the quality of giving, and turns contribution into a portable asset.
-                                </p>
-                                <p className="mb-6">
-                                    In an <HoverAcronym acronym="AGI" definition="Artificial General Intelligence, an AI system with general-purpose reasoning ability across many tasks." /> world, this pushes the frontier toward <strong>abundance</strong> by accelerating diffusion of judgment and know-how, while preserving human trust and taste at the center of high-impact decisions. The result is more builders shipping better work, faster, with less waste.
-                                </p>
-                                <p>
-                                    At civilization scale, the upside is not just founder productivity. It is stronger <strong>social trust</strong> infrastructure. More good judgment gets routed where it is needed. More people with real expertise become legible. More communities coordinate without drowning in noise. That is a meaningful move away from fragmentation and toward compounding progress.
-                                </p>
+                    <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">
+                        <div className="space-y-8 pr-4">
+                            <div className="flex gap-5 items-start group">
+                                <div className="mt-1 p-3 bg-[var(--primary)]/10 group-hover:bg-[var(--primary)]/20 transition-colors rounded-2xl text-[var(--primary)] border border-[var(--primary)]/20 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <Network className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-medium text-white mb-2">Network Effects of Trust</h4>
+                                    <p className="text-lg leading-relaxed text-[var(--secondary)]/80 font-light">
+                                        Networks get stronger when help is easy to give and safe to ask for. Handraise lowers the social cost of asking, raises the quality of giving, and turns contribution into a portable asset.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-5 items-start group">
+                                <div className="mt-1 p-3 bg-[var(--primary)]/10 group-hover:bg-[var(--primary)]/20 transition-colors rounded-2xl text-[var(--primary)] border border-[var(--primary)]/20 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <Zap className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-medium text-white mb-2">Accelerating Abundance</h4>
+                                    <p className="text-lg leading-relaxed text-[var(--secondary)]/80 font-light">
+                                        In an <HoverAcronym acronym="AGI" definition="Artificial General Intelligence, an AI system with general-purpose reasoning ability across many tasks." /> world, this pushes the frontier toward <strong className="text-white font-medium">abundance</strong> by accelerating diffusion of judgment and know-how, while preserving human trust at the center.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-5 items-start group">
+                                <div className="mt-1 p-3 bg-[var(--primary)]/10 group-hover:bg-[var(--primary)]/20 transition-colors rounded-2xl text-[var(--primary)] border border-[var(--primary)]/20 shadow-[0_0_15px_rgba(0,0,0,0.2)]">
+                                    <Users className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <h4 className="text-xl font-medium text-white mb-2">Civilization-Scale Coordination</h4>
+                                    <p className="text-lg leading-relaxed text-[var(--secondary)]/80 font-light">
+                                        The upside is stronger <strong className="text-white font-medium">social trust</strong> infrastructure. More good judgment gets routed where it is needed, moving away from fragmentation and toward compounding progress.
+                                    </p>
+                                </div>
                             </div>
                         </div>
 
