@@ -36,14 +36,16 @@ export default function ExpandableCitation({ id, sourceLabel, fullUrl, title }: 
           >
             <div className="text-xs font-medium text-[var(--primary)] mb-1 font-mono uppercase tracking-wider">{sourceLabel}</div>
             <div className="text-sm text-white/90 mb-3">{title}</div>
-            <a 
-              href={fullUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="text-xs font-mono text-[var(--secondary)]/70 hover:text-[var(--tertiary)] break-all transition-colors inline-block underline decoration-[var(--primary)]/30 underline-offset-2"
-            >
-              {fullUrl}
-            </a>
+            {fullUrl && (
+              <a
+                href={fullUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-mono text-[var(--secondary)]/70 hover:text-[var(--tertiary)] break-all transition-colors inline-block underline decoration-[var(--primary)]/30 underline-offset-2"
+              >
+                {fullUrl}
+              </a>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

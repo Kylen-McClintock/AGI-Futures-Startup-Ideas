@@ -10,7 +10,7 @@ import { InteractiveGridCard } from "./components/InteractiveGridCard";
 import { themeMap } from "@/utils/themeMap";
 import {
     ActivitySquare, Shield, Microscope, Database, Network, FileText,
-    Crosshair, Link as LinkIcon, ChevronDown, Zap, Lightbulb, Users, CheckCircle, TrendingUp, Handshake, Route, Globe
+    Crosshair, Link as LinkIcon, ChevronDown, Zap, Lightbulb, Users, CheckCircle, TrendingUp, Handshake, Route, Globe, MessageSquare
 } from "lucide-react";
 
 // Assets
@@ -18,7 +18,7 @@ import heroImage from './assets/handraise_hero.png';
 import graphImage from './assets/handraise_graph.png';
 import productImage from "./assets/handraise_product.png";
 import collab_1 from "./assets/collab_1.png";
-import collab_2 from "./assets/collab_2.png";
+import networkImage from "./assets/handraise_network.png";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -214,9 +214,13 @@ export default function HandraiseClientPage() {
                         <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Features
                         </div>
-                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-4 leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-8 leading-tight">
                             Product
                         </h2>
+
+                        <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-[var(--primary)]/20 group">
+                            <Image src={networkImage} alt="Glowing interconnected network representing the Handraise product" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -270,18 +274,25 @@ export default function HandraiseClientPage() {
                         <h3 className="text-2xl font-light text-white">Specific Example per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
                         <InlineTags tags={tags.customer} theme="indigo" />
                     </div>
-                    <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-white/[0.02] to-[var(--primary)]/10 mb-8">
-                        <p className="text-xl text-white/80 font-light leading-relaxed">
-                            A seed-stage founder needs to decide whether to raise price before launch. They post a brief with current pricing, target customer, objections heard, and the exact decision they need made by tomorrow. Handraise routes it to opted-in pricing operators, <HoverAcronym acronym="SaaS" definition="Software as a Service, software sold as an ongoing subscription." /> founders, and two friendly angels. Five responses come back in parallel. Two say raise now, two say segment pricing, one says keep price and tighten packaging. Handraise summarizes the tradeoffs, recommends a segmented test, drafts the outbound copy, and credits the contributors whose advice was used.
-                        </p>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
+                    <div className="grid lg:grid-cols-12 gap-8 items-stretch mb-8">
+                        <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-full rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
                             <Image src={collab_1} alt="Virtually asking colleagues for help in a Tomorrowland aesthetic" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         </div>
-                        <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
-                            <Image src={collab_2} alt="Collaborating virtually across a vast glowing network" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-white/[0.02] to-[var(--primary)]/10 flex flex-col justify-center relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[80px] rounded-full mix-blend-screen pointer-events-none" />
+                            <div className="flex items-center gap-4 mb-6 relative z-10">
+                                <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-[var(--secondary)]">
+                                    <MessageSquare className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <div className="text-sm font-mono text-[var(--primary)] uppercase tracking-wider mb-1">Use Case</div>
+                                    <div className="text-xl font-medium text-white">Pricing Strategy Feedback</div>
+                                </div>
+                            </div>
+                            <p className="text-lg text-white/80 font-light leading-relaxed relative z-10">
+                                A seed-stage founder needs to decide whether to raise price before launch. They post a brief with current pricing, target customer, objections heard, and the exact decision they need made by tomorrow. Handraise routes it to opted-in pricing operators, <HoverAcronym acronym="SaaS" definition="Software as a Service, software sold as an ongoing subscription." /> founders, and two friendly angels. Five responses come back in parallel. Two say raise now, two say segment pricing, one says keep price and tighten packaging. Handraise summarizes the tradeoffs, recommends a segmented test, drafts the outbound copy, and credits the contributors whose advice was used.
+                            </p>
                         </div>
                     </div>
                 </motion.section>

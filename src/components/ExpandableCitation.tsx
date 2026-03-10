@@ -43,14 +43,16 @@ export function ExpandableCitation({ label, sourceUrl, sourceText, theme = 'defa
                         ) : (
                             <p className="text-slate-300 mb-3 leading-relaxed">{sourceText}</p>
                         )}
-                        <a
-                            href={sourceUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className={`inline-flex items-center gap-1.5 text-xs font-semibold hover:underline ${themeClass.citationPopupLabel}`}
-                        >
-                            View Source <ExternalLink className="w-3 h-3" />
-                        </a>
+                        {sourceUrl && (
+                            <a
+                                href={sourceUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={`inline-flex items-center gap-1.5 text-xs font-semibold hover:underline ${themeClass.citationPopupLabel}`}
+                            >
+                                View Source <ExternalLink className="w-3 h-3" />
+                            </a>
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>
