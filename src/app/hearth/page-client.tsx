@@ -12,6 +12,7 @@ import { InteractiveSection } from "./components/InteractiveSection";
 import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { InteractiveScoreBox } from "./components/InteractiveScoreBox";
 import { CoreProductStack } from "./components/CoreProductStack";
+import { ValueFlow } from "./components/ValueFlow";
 import { MarketChart } from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -326,6 +327,7 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                                 Members pay less for a better social life. Communities fill faster and operate better. Property owners increase occupancy and resident fit. Builders and brokers get higher-intent cohorts. Hearth gets recurring software revenue plus higher-margin transaction and supply-side economics.
                             </p>
                         </div>
+                        <ValueFlow />
                     </section>
 
                     {/* SCORES AND RISKS */}
@@ -442,6 +444,14 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                                 </div>
                             }
                         />
+
+                        <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-white/10 bg-gradient-to-br from-[var(--primary)]/5 to-transparent mt-12 hover:border-[var(--primary)]/30 transition-colors duration-500 relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-2 h-full bg-[var(--secondary)]" />
+                            <h3 className="text-sm font-mono text-[var(--secondary)] uppercase tracking-widest mb-6">Transferable Insight</h3>
+                            <p className="text-white font-serif text-2xl sm:text-3xl leading-relaxed">
+                                "A surprising number of huge markets are blocked less by lack of demand than by <strong className="text-white">multi-party coordination failure</strong>. When several people need to align on money, trust, timing, and norms, the winning company is often the one that turns ambiguity into a step-by-step process."
+                            </p>
+                        </div>
                     </section>
 
                     {/* ORIGINAL HERO IMAGE - REVEALED */}

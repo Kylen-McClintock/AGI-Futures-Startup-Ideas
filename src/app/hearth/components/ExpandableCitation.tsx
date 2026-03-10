@@ -37,32 +37,17 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
         setMounted(true);
     }, []);
 
-    const triggerContent = (
-        <span
-            ref={buttonRef}
-            className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-[10px] font-mono hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50"
-            aria-expanded={isExpanded}
-            aria-label={`Citation ${number}: ${source}`}
-        >
-            {number}
-        </span>
-    );
+    const triggerClassName = "inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-[10px] font-mono hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50 cursor-pointer pointer-events-auto relative z-50";
 
     return (
-        <span className="inline-block relative z-20 align-baseline mx-0.5" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <span className="inline-block relative z-20 align-baseline mx-0.5" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} ref={buttonRef}>
             {url ? (
-                <a href={url} target="_blank" rel="noopener noreferrer" onClick={(e) => {
-                    // If they click on touch devices, toggle instead of immediate navigation if it wasn't expanded
-                    if (window.matchMedia("(pointer: coarse)").matches && !isExpanded) {
-                        e.preventDefault();
-                        setIsExpanded(true);
-                    }
-                }}>
-                    {triggerContent}
+                <a href={url} target="_blank" rel="noopener noreferrer" className={triggerClassName} aria-expanded={isExpanded} aria-label={`Citation ${number}: ${source}`}>
+                    {number}
                 </a>
             ) : (
-                <button onClick={() => setIsExpanded(!isExpanded)} className="focus:outline-none">
-                    {triggerContent}
+                <button onClick={() => setIsExpanded(!isExpanded)} className={triggerClassName} aria-expanded={isExpanded} aria-label={`Citation ${number}: ${source}`}>
+                    {number}
                 </button>
             )}
 
@@ -87,28 +72,25 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                                     pointerEvents: 'auto',
                                     ...cssVars,
                                 }}
-                                className="z-[9999] -translate-x-1/2 mb-2 w-64 p-3 rounded-xl bg-black/95 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] text-left cursor-default"
-                                onClick={(e) => e.stopPropagation()}
+                                className="z-[9999] -translate-x-1/2 mb-2 w-64 rounded-xl bg-black/95 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] text-left cursor-pointer overflow-hidden group"
                             >
-                                <div className="flex items-start justify-between gap-2 mb-1">
-                                    <span className="text-xs font-mono uppercase tracking-wider text-[var(--primary)]">{source}</span>
-                                    {url && (
-                                        <a
-                                            href={url}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="text-white/40 hover:text-white transition-colors"
-                                        >
-                                            <ExternalLink className="w-3 h-3" />
-                                        </a>
-                                    )}
-                                </div>
                                 {url ? (
-                                    <a href={url} target="_blank" rel="noopener noreferrer" className="block group">
+                                    <a href={url} target="_blank" rel="noopener noreferrer" className="block w-full h-full p-3 pointer-events-auto">
+                                        <div className="flex items-start justify-between gap-2 mb-1">
+                                            <span className="text-xs font-mono uppercase tracking-wider text-[var(--primary)]">{source}</span>
+                                            <span className="text-white/40 group-hover:text-white transition-colors">
+                                                <ExternalLink className="w-3 h-3" />
+                                            </span>
+                                        </div>
                                         <p className="text-sm text-white/90 leading-snug group-hover:underline group-hover:text-white transition-colors">{title}</p>
                                     </a>
                                 ) : (
-                                    <p className="text-sm text-white/90 leading-snug">{title}</p>
+                                    <div className="block w-full h-full p-3">
+                                        <div className="flex items-start justify-between gap-2 mb-1">
+                                            <span className="text-xs font-mono uppercase tracking-wider text-[var(--primary)]">{source}</span>
+                                        </div>
+                                        <p className="text-sm text-white/90 leading-snug">{title}</p>
+                                    </div>
                                 )}
                                 <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-[1px] border-solid border-t-gray-900 border-x-transparent border-b-transparent border-t-8 border-x-8 border-b-0" />
                             </motion.div>
