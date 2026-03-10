@@ -17,12 +17,12 @@ import {
 import heroImage from './assets/handraise_hero.png';
 import graphImage from './assets/handraise_graph.png';
 import productImage from "./assets/handraise_product.png";
-import collab_1 from "./assets/collab_1.png";
 import networkImage from "./assets/handraise_network.png";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ICPUseCases } from "./components/ICPUseCases";
 
 export default function HandraiseClientPage() {
     const tags = {
@@ -271,30 +271,11 @@ export default function HandraiseClientPage() {
                     className="mb-32"
                 >
                     <div className="flex justify-between items-end border-b border-white/10 pb-4 mb-8">
-                        <h3 className="text-2xl font-light text-white">Specific Example per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
+                        <h3 className="text-2xl font-light text-white">Specific Examples per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
                         <InlineTags tags={tags.customer} theme="indigo" />
                     </div>
 
-                    <div className="grid lg:grid-cols-12 gap-8 items-stretch mb-8">
-                        <div className="lg:col-span-5 relative min-h-[300px] lg:min-h-full rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
-                            <Image src={collab_1} alt="Virtually asking colleagues for help in a Tomorrowland aesthetic" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                        </div>
-                        <div className="lg:col-span-7 glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-white/[0.02] to-[var(--primary)]/10 flex flex-col justify-center relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[80px] rounded-full mix-blend-screen pointer-events-none" />
-                            <div className="flex items-center gap-4 mb-6 relative z-10">
-                                <div className="p-3 bg-white/5 rounded-xl border border-white/10 text-[var(--secondary)]">
-                                    <MessageSquare className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <div className="text-sm font-mono text-[var(--primary)] uppercase tracking-wider mb-1">Use Case</div>
-                                    <div className="text-xl font-medium text-white">Pricing Strategy Feedback</div>
-                                </div>
-                            </div>
-                            <p className="text-lg text-white/80 font-light leading-relaxed relative z-10">
-                                A seed-stage founder needs to decide whether to raise price before launch. They post a brief with current pricing, target customer, objections heard, and the exact decision they need made by tomorrow. Handraise routes it to opted-in pricing operators, <HoverAcronym acronym="SaaS" definition="Software as a Service, software sold as an ongoing subscription." /> founders, and two friendly angels. Five responses come back in parallel. Two say raise now, two say segment pricing, one says keep price and tighten packaging. Handraise summarizes the tradeoffs, recommends a segmented test, drafts the outbound copy, and credits the contributors whose advice was used.
-                            </p>
-                        </div>
-                    </div>
+                    <ICPUseCases />
                 </motion.section>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
