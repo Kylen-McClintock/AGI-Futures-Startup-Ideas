@@ -31,7 +31,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
     };
 
     return (
-        <main className="min-h-screen bg-[var(--primary)] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['purple'].hexPrimary, "--secondary": themeMap['purple'].hexSecondary, "--tertiary": themeMap['purple'].hexTertiary } as React.CSSProperties}>
+        <main className="min-h-screen bg-[#06090c] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['purple'].hexPrimary, "--secondary": themeMap['purple'].hexSecondary, "--tertiary": themeMap['purple'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="DeepGuide" theme="purple" />
 
             {/* Ambient Background Glow */}

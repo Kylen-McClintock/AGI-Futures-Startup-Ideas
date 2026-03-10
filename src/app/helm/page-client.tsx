@@ -70,7 +70,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
     };
 
     return (
-        <main className="min-h-screen bg-[var(--primary)] text-slate-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['indigo'].hexPrimary, "--secondary": themeMap['indigo'].hexSecondary, "--tertiary": themeMap['indigo'].hexTertiary } as React.CSSProperties}>
+        <main className="min-h-screen bg-[#06090c] text-slate-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['indigo'].hexPrimary, "--secondary": themeMap['indigo'].hexSecondary, "--tertiary": themeMap['indigo'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Helm" theme="indigo" />
 
             {/* Ambient Background Glow */}
