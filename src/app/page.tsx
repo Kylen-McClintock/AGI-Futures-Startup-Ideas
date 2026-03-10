@@ -11,6 +11,7 @@ import deepguide_hero from "./deepguide/assets/deepguide_hero.png";
 import msl_hero from "./main-street-legacy/assets/hero.png";
 import helm_hero from "./helm/assets/helm_hero.png";
 import agentable_hero from "./agentable/assets/hero.png";
+import avatarlab_hero from "./avatarlab/assets/avatarlab_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -33,7 +34,8 @@ export default async function Home() {
         "deepguide": { moat: 78, difficulty: 72, impact: 83, created_at: "2024-03-03T10:00:00Z" },
         "main-street-legacy": { moat: 78, difficulty: 74, impact: 81, created_at: "2024-03-02T10:00:00Z" },
         "helm": { moat: 78, difficulty: 71, impact: 68, created_at: "2024-03-01T10:00:00Z" },
-        "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z" }
+        "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z" },
+        "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z" }
     };
 
     // Helper to merge static data with DB data
@@ -159,6 +161,16 @@ export default async function Home() {
             href: "/agentable",
             themeColor: "hover:border-emerald-500/50 text-emerald-400",
             hoverTextColor: "group-hover:text-emerald-400",
+        }),
+        createProject({
+            slug: "avatarlab",
+            title: "AvatarLab",
+            scoreTitle: "Organoid Avatars for Safe Personalized Therapy Testing",
+            description: "Bank your youngest cells. Grow mini-organs from your DNA. Test therapies on your own biology before you try them.",
+            image: avatarlab_hero,
+            href: "/avatarlab",
+            themeColor: "hover:border-cyan-500/50 text-cyan-400",
+            hoverTextColor: "group-hover:text-cyan-400",
         })
     ];
 

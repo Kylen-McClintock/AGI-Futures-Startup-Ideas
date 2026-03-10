@@ -259,8 +259,34 @@ const startups = [
             founder_fit: ['Technical Founder', 'Venture-Scale'],
             outcomes: ['Abundance', 'Social Trust', 'Alignment', 'Differentially Defensive']
         }
+    },
+    {
+        slug: 'avatarlab',
+        name: 'AvatarLab',
+        scores: {
+            moat_score: { ai_scored: 92 },
+            difficulty_score: { ai_scored: 89 },
+            civilizational_impact_score: { ai_scored: 78 },
+            civilizational_impact_ratings: {
+                "Longevity": { ai_scored: 86 },
+                "Human Flourishing": { ai_scored: 73 },
+                "Scientific Acceleration": { ai_scored: 84 },
+                "Resilience": { ai_scored: 58 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Biotech', 'Healthcare', 'Longevity'],
+            bottleneck: ['Aging', 'Disease', 'Scientific Slowdown'],
+            customer: ['Consumers', 'Doctors'],
+            product_type: ['Platform', 'Personalized AI'],
+            enabling_technology: ['Large Language Models', 'Wearables', 'Knowledge Graphs', 'Synthetic Biology', 'Simulations'],
+            readiness: ['Build Now'],
+            founder_fit: ['Technical Founder', 'Capital Intensive'],
+            outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience']
+        }
     }
 ];
+
 
 async function seed() {
     console.log("Starting seed process...");
@@ -273,11 +299,7 @@ async function seed() {
             .from('projects')
             .upsert({
                 slug: startup.slug,
-                name: startup.name,
-                moat_score: startup.scores?.moat_score || { ai_scored: 0 },
-                difficulty_score: startup.scores?.difficulty_score || { ai_scored: 0 },
-                civilizational_impact_score: startup.scores?.civilizational_impact_score || { ai_scored: 0 },
-                civilizational_impact_ratings: startup.scores?.civilizational_impact_ratings || {}
+                name: startup.name
             }, { onConflict: 'slug' })
             .select('id')
             .single();
