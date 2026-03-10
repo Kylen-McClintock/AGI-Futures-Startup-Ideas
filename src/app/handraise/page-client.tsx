@@ -16,7 +16,9 @@ import {
 // Assets
 import heroImage from './assets/handraise_hero.png';
 import graphImage from './assets/handraise_graph.png';
-import productImage from './assets/handraise_product.png';
+import productImage from "./assets/handraise_product.png";
+import collab_1 from "./assets/collab_1.png";
+import collab_2 from "./assets/collab_2.png";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -268,10 +270,19 @@ export default function HandraiseClientPage() {
                         <h3 className="text-2xl font-light text-white">Specific Example per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
                         <InlineTags tags={tags.customer} theme="indigo" />
                     </div>
-                    <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-white/[0.02] to-[var(--primary)]/10">
+                    <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-white/[0.02] to-[var(--primary)]/10 mb-8">
                         <p className="text-xl text-white/80 font-light leading-relaxed">
                             A seed-stage founder needs to decide whether to raise price before launch. They post a brief with current pricing, target customer, objections heard, and the exact decision they need made by tomorrow. Handraise routes it to opted-in pricing operators, <HoverAcronym acronym="SaaS" definition="Software as a Service, software sold as an ongoing subscription." /> founders, and two friendly angels. Five responses come back in parallel. Two say raise now, two say segment pricing, one says keep price and tighten packaging. Handraise summarizes the tradeoffs, recommends a segmented test, drafts the outbound copy, and credits the contributors whose advice was used.
                         </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-8">
+                        <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
+                            <Image src={collab_1} alt="Virtually asking colleagues for help in a Tomorrowland aesthetic" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        </div>
+                        <div className="relative aspect-video rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
+                            <Image src={collab_2} alt="Collaborating virtually across a vast glowing network" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        </div>
                     </div>
                 </motion.section>
 
