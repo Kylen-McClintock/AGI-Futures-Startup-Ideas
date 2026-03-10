@@ -37,17 +37,34 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
         setMounted(true);
     }, []);
 
+    const triggerContent = (
+        <span
+            ref={buttonRef}
+            className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-[10px] font-mono hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50"
+            aria-expanded={isExpanded}
+            aria-label={`Citation ${number}: ${source}`}
+        >
+            {number}
+        </span>
+    );
+
     return (
         <span className="inline-block relative z-20 align-baseline mx-0.5" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-            <button
-                ref={buttonRef}
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-[var(--primary)]/10 text-[var(--primary)] text-[10px] font-mono hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/30 focus:outline-none focus:ring-2 focus:ring-[var(--primary)]/50"
-                aria-expanded={isExpanded}
-                aria-label={`Citation ${number}: ${source}`}
-            >
-                {number}
-            </button>
+            {url ? (
+                <a href={url} target="_blank" rel="noopener noreferrer" onClick={(e) => {
+                    // If they click on touch devices, toggle instead of immediate navigation if it wasn't expanded
+                    if (window.matchMedia("(pointer: coarse)").matches && !isExpanded) {
+                        e.preventDefault();
+                        setIsExpanded(true);
+                    }
+                }}>
+                    {triggerContent}
+                </a>
+            ) : (
+                <button onClick={() => setIsExpanded(!isExpanded)} className="focus:outline-none">
+                    {triggerContent}
+                </button>
+            )}
 
             {mounted && typeof document !== 'undefined' && createPortal(
                 <AnimatePresence>

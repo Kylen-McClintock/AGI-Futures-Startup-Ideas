@@ -12,12 +12,14 @@ import { InteractiveSection } from "./components/InteractiveSection";
 import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { InteractiveScoreBox } from "./components/InteractiveScoreBox";
 import { CoreProductStack } from "./components/CoreProductStack";
+import { MarketChart } from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from "@/components/HoverAcronym";
 
 // Assets
-import heroImage from "./assets/use_case_nomad.png";
+import heroImage from "./assets/hero_new.png";
+import originalHeroImage from "./assets/hero.png";
 import nomadImage from "./assets/use_case_nomad.png";
 import familyImage from "./assets/use_case_family.png";
 import founderImage from "./assets/use_case_founder.png";
@@ -240,6 +242,7 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                             <p>
                                 The expansion case is much bigger. Housing affordability is worsening, home prices remain near five times median household income, home sales hit a 30-year low, and only a small fraction of renters can afford the median-priced home. Meanwhile, remote and hybrid work sustain demand for more flexible living patterns. Hearth is a coordination layer for turning underused bedrooms, second homes, small multifamily properties, and community-suitable land into higher-value social infrastructure. <ExpandableCitation number={4} source="Harvard JCHS" title="Housing Unaffordability Soared to New Highs in 2024" /> <ExpandableCitation number={5} source="Harvard JCHS" title="Unease in the Housing Market" /> <ExpandableCitation number={6} source="Pew Research Center" title="Remote Workers' Views of Returning to Office" />
                             </p>
+                            <MarketChart inView={true} />
                             <div className="p-8 rounded-3xl border border-[var(--primary)]/30 bg-[var(--primary)]/5 mt-8">
                                 <p className="text-[var(--primary)] font-medium italic">
                                     The honest take: software alone is probably not a massive company here. The venture-scale outcome appears if Hearth becomes the default formation and operating layer, then captures transaction flow, financing, property supply, and network mobility on top.
@@ -441,8 +444,32 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                         />
                     </section>
 
+                    {/* ORIGINAL HERO IMAGE - REVEALED */}
+                    <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-24" />
+
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden glass-panel border border-[var(--primary)]/20"
+                    >
+                        <Image
+                            src={originalHeroImage}
+                            alt="The Vision of Hearth"
+                            fill
+                            quality={100}
+                            className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <div className="absolute bottom-8 left-8 right-8 text-center sm:text-left">
+                            <h3 className="text-3xl font-serif text-white mb-2">A New Physical Default</h3>
+                            <p className="text-white/80 font-light max-w-2xl">Building a life with your people intentionally, not accidentally.</p>
+                        </div>
+                    </motion.div>
+
                     {/* CIVILIZATIONAL IMPACT */}
-                    <section className="pt-12 border-t border-white/10">
+                    <section className="pt-12 border-t border-white/10 mt-24">
                         <div className="flex items-center gap-4 mb-4">
                             <h2 className="text-4xl font-serif text-white">Civilizational Impact</h2>
                         </div>
