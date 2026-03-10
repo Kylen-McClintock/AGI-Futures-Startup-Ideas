@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
@@ -9,7 +10,7 @@ import { InteractiveGridCard } from "./components/InteractiveGridCard";
 import { themeMap } from "@/utils/themeMap";
 import {
     ActivitySquare, Shield, Microscope, Database, Network, FileText,
-    Crosshair, Link as LinkIcon, ChevronDown, Zap, Lightbulb, Users, CheckCircle, TrendingUp, Handshake, Route
+    Crosshair, Link as LinkIcon, ChevronDown, Zap, Lightbulb, Users, CheckCircle, TrendingUp, Handshake, Route, Globe
 } from "lucide-react";
 
 // Assets
@@ -557,31 +558,7 @@ export default function HandraiseClientPage() {
                             </div>
                         </div>
 
-                        <details className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 hover:border-[var(--primary)]/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px] self-start md:ml-auto">
-                            <summary className="p-6 list-none flex justify-between items-center outline-none">
-                                <div>
-                                    <div className="text-4xl font-light text-white tracking-tight mb-1">65</div>
-                                    <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)]/80">Impact Score</div>
-                                </div>
-                                <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 group-open:rotate-180 transition-transform duration-300" />
-                            </summary>
-                            <div className="px-6 pb-6 pt-2 border-t border-[var(--primary)]/10">
-                                <div className="space-y-3">
-                                    <div className="flex justify-between items-center text-sm">
-                                        <span className="text-[var(--primary)]/70 font-light">Abundance</span>
-                                        <span className="text-[var(--secondary)] font-mono">64</span>
-                                    </div>
-                                    <div className="flex justify-between items-center text-sm">
-                                        <span className="text-[var(--primary)]/70 font-light">Social Trust</span>
-                                        <span className="text-[var(--secondary)] font-mono">82</span>
-                                    </div>
-                                    <div className="flex justify-between items-center text-sm">
-                                        <span className="text-[var(--primary)]/70 font-light">Societal Cohesion</span>
-                                        <span className="text-[var(--secondary)] font-mono">58</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </details>
+                        <CivilizationalImpactCard />
                     </div>
 
                     <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/20 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 transition-colors mb-12">
@@ -688,5 +665,77 @@ export default function HandraiseClientPage() {
 
             </div >
         </main >
+    );
+}
+
+function CivilizationalImpactCard() {
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    return (
+        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--primary)]/20 relative overflow-hidden group w-full self-start md:ml-auto md:w-[480px]">
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 to-transparent pointer-events-none" />
+            <div className="relative z-10">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
+                    <h4 className="text-xl text-[var(--secondary)] font-mono uppercase tracking-widest flex items-center gap-2">
+                        <Globe className="w-5 h-5" /> Overall Impact Score
+                    </h4>
+                    <div className="flex items-baseline gap-1 text-[var(--secondary)]">
+                        <span className="text-5xl font-light tracking-tighter">65</span>
+                        <span className="text-[var(--secondary)]/40 font-mono text-sm">/ 100</span>
+                    </div>
+                </div>
+
+                <div className="flex items-center justify-between mt-6">
+                    <InlineTags tags={['Abundance', 'Social Trust', 'Cohesion']} theme="indigo" />
+                    <button
+                        onClick={() => setIsExpanded(!isExpanded)}
+                        className="text-[var(--secondary)]/80 hover:text-[var(--secondary)] text-sm font-mono uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-colors"
+                    >
+                        {isExpanded ? "Hide Sub-scores" : "View Breakdown"}
+                        <motion.div animate={{ rotate: isExpanded ? 180 : 0 }}>
+                            <ChevronDown className="w-4 h-4" />
+                        </motion.div>
+                    </button>
+                </div>
+
+                <AnimatePresence>
+                    {isExpanded && (
+                        <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="pt-8 mt-6 border-t border-[var(--primary)]/20 grid gap-4">
+                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+                                    <motion.div
+                                        initial={{ width: 0 }} animate={{ width: "64%" }} transition={{ duration: 1, delay: 0.1 }}
+                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                    />
+                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Abundance</span>
+                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">64</span>
+                                </div>
+                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+                                    <motion.div
+                                        initial={{ width: 0 }} animate={{ width: "82%" }} transition={{ duration: 1, delay: 0.2 }}
+                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                    />
+                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Social Trust</span>
+                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">82</span>
+                                </div>
+                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+                                    <motion.div
+                                        initial={{ width: 0 }} animate={{ width: "58%" }} transition={{ duration: 1, delay: 0.3 }}
+                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                    />
+                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Societal Cohesion</span>
+                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">58</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+        </div>
     );
 }

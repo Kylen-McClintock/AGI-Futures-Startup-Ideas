@@ -131,7 +131,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-100px" }}
-                        className="w-full relative rounded-3xl overflow-hidden shadow-xl mb-20 aspect-[16/9] md:aspect-[21/9] bg-[var(--primary)] dark:bg-[var(--primary)] border border-black/5 dark:border-white/5"
+                        className="w-full relative rounded-3xl overflow-hidden shadow-xl mb-20 aspect-[16/9] md:aspect-[21/9] bg-[var(--primary)]/10 dark:bg-[var(--primary)]/10 border border-black/5 dark:border-white/5"
                     >
                         <Image src={lush_neighborhood_street} alt="A lush pedestrianized futuristic street with open garages" fill quality={100} className="object-cover" />
                     </motion.div>
@@ -141,7 +141,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/50 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
                         >
                             <HeartHandshake className="w-8 h-8 text-[var(--primary)] mb-6" />
                             <h3 className="font-serif text-2xl font-medium mb-3">Connection is health.</h3>
@@ -155,7 +155,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.1 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/50 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
                         >
                             <Users className="w-8 h-8 text-[var(--primary)] mb-6" />
                             <h3 className="font-serif text-2xl font-medium mb-3">Walkable Europe shows the appetite.</h3>
@@ -170,7 +170,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.2 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/50 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
                         >
                             <MapPin className="w-8 h-8 text-[var(--primary)] mb-6" />
                             <h3 className="font-serif text-2xl font-medium mb-3">Policy tailwinds.</h3>
@@ -185,7 +185,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.3 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/50 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
                         >
                             <svg className="w-8 h-8 text-[var(--primary)] mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a2 2 0 00-1.6-.8H8.3a2 2 0 00-1.6.8L4 11l-5.16.86a1 1 0 00-.84.99V16h3m10 0a2 2 0 10-4 0m4 0a2 2 0 11-4 0m-6 0a2 2 0 10-4 0m4 0a2 2 0 11-4 0" />
@@ -201,18 +201,18 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Product Stack */}
-            <section className="relative z-20 py-24 md:py-32 bg-[var(--primary)] text-white rounded-[3rem] mx-4 md:mx-8 mb-24 overflow-hidden border border-[var(--primary)]">
+            <section className="relative z-20 py-24 md:py-32 bg-[var(--primary)]/10 text-neutral-800 dark:text-neutral-200 rounded-[3rem] mx-4 md:mx-8 mb-24 overflow-hidden border border-[var(--primary)]/30 backdrop-blur-md">
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.2),transparent_50%)]" />
                 <GridContainer className="relative z-10">
                     <div className="flex flex-col md:flex-row gap-12 mb-20 items-center">
                         <div className="md:w-1/2">
                             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
-                                <SectionHeading className="text-[var(--primary)]">Product stack</SectionHeading>
+                                <SectionHeading className="text-[var(--primary)] dark:text-white">Product stack</SectionHeading>
                             </div>
                             <div className="mb-6">
                                 <InlineTags tags={initialTags?.enabling_technology} theme="amber" />
                             </div>
-                            <p className="text-xl text-[var(--primary)] font-light">Community first; compliance as guardrails.</p>
+                            <p className="text-xl text-[var(--primary)] dark:text-[var(--secondary)] font-light">Community first; compliance as guardrails.</p>
                         </div>
                         <div className="md:w-1/2 w-full">
                             <motion.div
@@ -326,7 +326,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                     <motion.div
                                         key={i}
                                         whileHover={{ y: -4, scale: 1.02 }}
-                                        className="flex flex-col justify-center p-6 bg-white dark:bg-[var(--primary)] border border-black/5 dark:border-white/5 rounded-2xl shadow-sm hover:shadow-md hover:border-[var(--primary)] dark:hover:border-[var(--primary)] transition-colors cursor-pointer"
+                                        className="flex flex-col justify-center p-6 bg-white dark:bg-[var(--primary)]/10 border border-black/5 dark:border-white/5 rounded-2xl shadow-sm hover:shadow-md hover:border-[var(--primary)]/50 dark:hover:border-[var(--primary)]/50 transition-colors cursor-pointer"
                                     >
                                         <span className="text-[var(--primary)] text-xs font-mono mb-2">0{i + 1}</span>
                                         <span className="font-serif text-lg leading-tight">{idea}</span>
@@ -347,11 +347,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Badges & Block Parties */}
-            <section className="relative z-0 py-24 bg-[var(--primary)] dark:bg-[var(--primary)] border-y border-black/5 dark:border-white/5">
+            <section className="relative z-0 py-24 bg-[var(--primary)]/5 border-y border-black/5 dark:border-white/5">
                 <GridContainer>
                     <div className="grid md:grid-cols-2 gap-16 md:gap-24">
                         <div>
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] mb-6">
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--secondary)] mb-6 border border-[var(--primary)]/20">
                                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3.85 8.62a4 4 0 014.78-4.77 4 4 0 016.74 0 4 4 0 014.78 4.78 4 4 0 010 6.74 4 4 0 01-4.77 4.78 4 4 0 01-6.75 0 4 4 0 01-4.78-4.77 4 4 0 010-6.76z" /><path d="M9 12l2 2 4-4" /></svg>
                             </div>
                             <h2 className="font-serif text-3xl font-medium mb-4">Real-world Connection Badges</h2>
@@ -367,7 +367,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
 
                         <div>
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] mb-6">
+                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--secondary)] mb-6 border border-[var(--primary)]/20">
                                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                             </div>
                             <h2 className="font-serif text-3xl font-medium mb-4">Brand-powered block parties</h2>
@@ -393,10 +393,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Business Model */}
-            <section className="relative z-10 py-32 bg-[var(--primary)] dark:bg-[var(--primary)] text-[var(--primary)]">
+            <section className="relative z-10 py-32 bg-black/5 dark:bg-black/40 border-y border-white/5">
                 <GridContainer>
                     <div className="flex flex-col items-center gap-4 mb-2">
-                        <SectionHeading className="text-center text-white">Business model</SectionHeading>
+                        <SectionHeading className="text-center text-[var(--primary)] dark:text-white">Business model</SectionHeading>
                     </div>
                     <div className="mb-12 flex justify-center">
                         <InlineTags tags={initialTags?.product_type} theme="amber" />
@@ -410,7 +410,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             { title: "Studio SaaS", desc: "Free community tier; $19–$79/mo for micro-biz tools." },
                             { title: "Sponsors/City", desc: "Funded block-party circuits + “Porchfront District” activations." }
                         ].map((item, i) => (
-                            <div key={i} className="bg-[var(--primary)]/50 p-6 rounded-2xl border border-[var(--primary)]/50 text-center flex flex-col items-center justify-center">
+                            <div key={i} className="bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/20 text-center flex flex-col items-center justify-center">
                                 <h4 className="font-sans font-medium text-[var(--tertiary)] mb-2">{item.title}</h4>
                                 <p className="text-sm text-[var(--primary)]/80 font-light leading-relaxed">{item.desc}</p>
                             </div>
@@ -420,7 +420,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Risks and Moat */}
-            <section className="relative z-10 py-24 bg-[var(--primary)] dark:bg-[var(--primary)]/30 border-b border-black/5 dark:border-white/5">
+            <section className="relative z-10 py-24 bg-[var(--primary)]/5 border-b border-black/5 dark:border-white/5">
                 <GridContainer>
                     <SectionHeading className="mb-6 text-center text-[var(--primary)] dark:text-[var(--primary)]">Risks & Moats</SectionHeading>
                     <div className="mb-12 flex justify-center">
@@ -501,7 +501,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
                     </div>
 
-                    <div className="mt-24 p-12 bg-[var(--primary)] text-white rounded-[3rem] text-center relative overflow-hidden">
+                    <div className="mt-24 p-12 bg-[var(--primary)]/10 text-[var(--primary)] dark:text-white border border-[var(--primary)]/20 rounded-[3rem] text-center relative overflow-hidden backdrop-blur-md">
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
                         <div className="relative z-10 max-w-3xl mx-auto">
                             <div className="text-sm font-bold tracking-widest uppercase text-[var(--primary)] mb-6">Transferable insight</div>
