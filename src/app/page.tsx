@@ -81,8 +81,8 @@ export default async function Home() {
             description: "An AI relationship coach to make her feel heard, seen, and supported, consistently.",
             image: attune_hero,
             href: "/attune",
-            themeColor: "hover:border-[var(--primary)]/50 text-[var(--primary)]",
-            hoverTextColor: "group-hover:text-[var(--primary)]",
+            themeColor: "hover:border-rose-500/50 text-rose-400",
+            hoverTextColor: "group-hover:text-rose-400",
         }),
         createProject({
             slug: "porchfront",
@@ -91,8 +91,8 @@ export default async function Home() {
             description: "Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.",
             image: porchfront_hero,
             href: "/porchfront",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400",
-            hoverTextColor: "group-hover:text-emerald-400",
+            themeColor: "hover:border-amber-500/50 text-amber-400",
+            hoverTextColor: "group-hover:text-amber-400",
         }),
         createProject({
             slug: "homequote",
@@ -101,8 +101,8 @@ export default async function Home() {
             description: "Turns a user-filmed walkthrough into a structured job object, an exact quote, and infinitely bookable offers from service providers.",
             image: homequote_hero,
             href: "/homequote",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400",
-            hoverTextColor: "group-hover:text-emerald-400",
+            themeColor: "hover:border-blue-500/50 text-blue-400",
+            hoverTextColor: "group-hover:text-blue-400",
         }),
         createProject({
             slug: "aura",
@@ -111,8 +111,8 @@ export default async function Home() {
             description: "An SDK and marketplace that lets any developer drop lifelike, spatially aware AI companions into AR apps.",
             image: aura_hero,
             href: "/aura",
-            themeColor: "hover:border-blue-500/50 text-blue-400",
-            hoverTextColor: "group-hover:text-blue-400",
+            themeColor: "hover:border-fuchsia-500/50 text-fuchsia-400",
+            hoverTextColor: "group-hover:text-fuchsia-400",
         }),
         createProject({
             slug: "afl",
@@ -131,8 +131,8 @@ export default async function Home() {
             description: "Keeps facilitators present, captures structured notes, recommends the right exercise at the right moment, and turns outcomes into evolving best practices.",
             image: deepguide_hero,
             href: "/deepguide",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400",
-            hoverTextColor: "group-hover:text-emerald-400",
+            themeColor: "hover:border-purple-500/50 text-purple-400",
+            hoverTextColor: "group-hover:text-purple-400",
         }),
         createProject({
             slug: "main-street-legacy",
@@ -161,8 +161,8 @@ export default async function Home() {
             description: "Turns websites and apps into a machine-readable UI map, guides humans in-flow, and lets AI agents complete the same tasks.",
             image: agentable_hero,
             href: "/agentable",
-            themeColor: "hover:border-emerald-500/50 text-emerald-400",
-            hoverTextColor: "group-hover:text-emerald-400",
+            themeColor: "hover:border-cyan-500/50 text-cyan-400",
+            hoverTextColor: "group-hover:text-cyan-400",
         }),
         createProject({
             slug: "avatarlab",
@@ -171,8 +171,8 @@ export default async function Home() {
             description: "Bank your youngest cells. Grow mini-organs from your DNA. Test therapies on your own biology before you try them.",
             image: avatarlab_hero,
             href: "/avatarlab",
-            themeColor: "hover:border-cyan-500/50 text-cyan-400",
-            hoverTextColor: "group-hover:text-cyan-400",
+            themeColor: "hover:border-teal-500/50 text-teal-400",
+            hoverTextColor: "group-hover:text-teal-400",
         }),
         createProject({
             slug: "proofrun",
@@ -181,8 +181,8 @@ export default async function Home() {
             description: "ProofRun lets companies turn real backlog work into mini missions so candidates can prove their resourcefulness and AI-native skills.",
             image: proofrun_hero,
             href: "/proofrun",
-            themeColor: "hover:border-amber-500/50 text-amber-400",
-            hoverTextColor: "group-hover:text-amber-400",
+            themeColor: "hover:border-violet-500/50 text-violet-400",
+            hoverTextColor: "group-hover:text-violet-400",
         })
     ];
 

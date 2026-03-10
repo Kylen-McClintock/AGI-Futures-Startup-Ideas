@@ -33,18 +33,18 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
     const scaleHero = useTransform(scrollYProgress, [0, 0.1], [1, 0.95]);
 
     return (
-        <main className="min-h-screen bg-[#06090c] text-neutral-300 selection:bg-emerald-500/30 font-sans overflow-x-hidden">
-            <ScrollProgress title="Porchfront" theme="emerald" />
+        <main className="min-h-screen bg-[#06090c] text-neutral-300 selection:bg-amber-500/30 font-sans overflow-x-hidden">
+            <ScrollProgress title="Porchfront" theme="amber" />
 
             {/* Background Ambience */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-emerald-300/20 dark:bg-emerald-900/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-50" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-amber-300/20 dark:bg-amber-900/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-50" />
                 <div className="absolute bottom-[0%] right-[-10%] w-[60%] h-[60%] bg-amber-200/20 dark:bg-amber-900/10 blur-[140px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-40" />
             </div>
 
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center bg-white/50 dark:bg-black/50 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
-                <div className="font-serif font-bold text-xl tracking-tight text-emerald-900 dark:text-emerald-50">Porchfront</div>
-                <button className="bg-emerald-700 hover:bg-emerald-800 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm dark:bg-emerald-600 dark:hover:bg-emerald-500">
+                <div className="font-serif font-bold text-xl tracking-tight text-amber-900 dark:text-amber-50">Porchfront</div>
+                <button className="bg-amber-700 hover:bg-amber-800 text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm dark:bg-amber-600 dark:hover:bg-amber-500">
                     Join the waitlist
                 </button>
             </nav>
@@ -54,14 +54,14 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 z-50 flex flex-col items-center text-center header-section"
                 style={{ opacity: opacityHero, scale: scaleHero }}
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/50 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 text-sm font-medium mb-8 border border-emerald-200/50 dark:border-emerald-800/50 shadow-sm backdrop-blur-md relative z-10">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100/50 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 text-sm font-medium mb-8 border border-amber-200/50 dark:border-amber-800/50 shadow-sm backdrop-blur-md relative z-10">
+                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
                     The open-garage culture OS
                 </div>
 
 
 
-                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-emerald-950 dark:text-emerald-50 mb-8 max-w-5xl leading-[0.9] [text-wrap:balance] relative z-10">
+                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-amber-950 dark:text-amber-50 mb-8 max-w-5xl leading-[0.9] [text-wrap:balance] relative z-10">
                     Open doors.<br />
                     <span className="text-zinc-400 dark:text-zinc-600 font-light italic">Open minds.</span>
                 </h1>
@@ -70,7 +70,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map, shoppable builds, one-tap installers, and simple tools that reward real-world connection.
                 </p>
                 <div className="relative z-10 mb-16 flex flex-col items-center -space-y-4">
-                    <InlineTags tags={initialTags?.sector} theme="emerald" />
+                    <InlineTags tags={initialTags?.sector} theme="amber" />
                 </div>
 
                 <motion.div
@@ -88,7 +88,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 <GridContainer>
                     <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
                         <div className="md:w-1/2">
-                            <div className="text-sm font-bold tracking-widest uppercase text-emerald-600 mb-6 flex flex-col sm:flex-row sm:items-center gap-4">
+                            <div className="text-sm font-bold tracking-widest uppercase text-amber-600 mb-6 flex flex-col sm:flex-row sm:items-center gap-4">
                                 <div>The Turning Point</div>
                             </div>
                             <SectionHeading className="mb-8">
@@ -120,7 +120,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <SectionHeading className="text-center">Why this movement matters (now)</SectionHeading>
                     </div>
                     <div className="mb-8 flex justify-center">
-                        <InlineTags tags={initialTags?.readiness} theme="emerald" />
+                        <InlineTags tags={initialTags?.readiness} theme="amber" />
                     </div>
                     <p className="text-xl text-zinc-500 dark:text-zinc-400 text-center max-w-3xl mx-auto mb-16 font-light [text-wrap:balance]">
                         Americans are lonelier and less civically engaged than we want to be. Re-activating our block-level “third places” measurably improves health and trust. The cultural kindling is there—we supply the spark and the system.
@@ -142,7 +142,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             viewport={{ once: true, margin: "-100px" }}
                             className="bg-white/50 dark:bg-zinc-900/50 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
                         >
-                            <HeartHandshake className="w-8 h-8 text-emerald-600 mb-6" />
+                            <HeartHandshake className="w-8 h-8 text-amber-600 mb-6" />
                             <h3 className="font-serif text-2xl font-medium mb-3">Connection is health.</h3>
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed">
                                 Small, repeated, face-to-face interactions measurably help combat the social disconnection epidemic.
@@ -200,25 +200,25 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Product Stack */}
-            <section className="relative z-20 py-24 md:py-32 bg-emerald-950 text-white rounded-[3rem] mx-4 md:mx-8 mb-24 overflow-hidden border border-emerald-800">
+            <section className="relative z-20 py-24 md:py-32 bg-amber-950 text-white rounded-[3rem] mx-4 md:mx-8 mb-24 overflow-hidden border border-amber-800">
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.2),transparent_50%)]" />
                 <GridContainer className="relative z-10">
                     <div className="flex flex-col md:flex-row gap-12 mb-20 items-center">
                         <div className="md:w-1/2">
                             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-2">
-                                <SectionHeading className="text-emerald-50">Product stack</SectionHeading>
+                                <SectionHeading className="text-amber-50">Product stack</SectionHeading>
                             </div>
                             <div className="mb-6">
-                                <InlineTags tags={initialTags?.enabling_technology} theme="emerald" />
+                                <InlineTags tags={initialTags?.enabling_technology} theme="amber" />
                             </div>
-                            <p className="text-xl text-emerald-200 font-light">Community first; compliance as guardrails.</p>
+                            <p className="text-xl text-amber-200 font-light">Community first; compliance as guardrails.</p>
                         </div>
                         <div className="md:w-1/2 w-full">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 viewport={{ once: true }}
-                                className="w-full relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-emerald-800"
+                                className="w-full relative aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden shadow-2xl border border-amber-800"
                             >
                                 <Image src={us_suburb_bakery} alt="A typical American suburban garage converted into a neighborhood micro-bakery" fill quality={100} className="object-cover" />
                             </motion.div>
@@ -228,23 +228,23 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-emerald-800 flex items-center justify-center text-emerald-400"><MapPin size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Neighbors <span className="text-emerald-400/50 text-base font-sans ml-2">(social + discovery)</span></h3>
+                                <div className="w-10 h-10 rounded-full bg-amber-800 flex items-center justify-center text-amber-400"><MapPin size={20} /></div>
+                                <h3 className="text-2xl font-serif font-medium">Neighbors <span className="text-amber-400/50 text-base font-sans ml-2">(social + discovery)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-emerald-100/80 font-light">
-                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-emerald-500 mt-1" size={18} /> <span><strong>Live map + notifications:</strong> follow your block; opt into pings when a neighbor “opens”.</span></li>
-                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-emerald-500 mt-1" size={18} /> <span><strong>Channels:</strong> “who’s open tonight,” family-friendly tags, music/arts, maker hours.</span></li>
-                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-emerald-500 mt-1" size={18} /> <span><strong>Reputation that matters:</strong> “Great Host,” “Kid-Friendly,” “Quiet-Hours Champ.”</span></li>
-                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-emerald-500 mt-1" size={18} /> <span><strong>Block dashboard:</strong> visits, new connections, return-visitor rate—privacy-respecting metrics.</span></li>
+                            <ul className="space-y-4 text-amber-100/80 font-light">
+                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Live map + notifications:</strong> follow your block; opt into pings when a neighbor “opens”.</span></li>
+                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Channels:</strong> “who’s open tonight,” family-friendly tags, music/arts, maker hours.</span></li>
+                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Reputation that matters:</strong> “Great Host,” “Kid-Friendly,” “Quiet-Hours Champ.”</span></li>
+                                <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Block dashboard:</strong> visits, new connections, return-visitor rate—privacy-respecting metrics.</span></li>
                             </ul>
                         </div>
 
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-10 h-10 rounded-full bg-amber-900/50 flex items-center justify-center text-amber-400"><Store size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Market <span className="text-emerald-400/50 text-base font-sans ml-2">(inspiration → cart → install)</span></h3>
+                                <h3 className="text-2xl font-serif font-medium">Market <span className="text-amber-400/50 text-base font-sans ml-2">(inspiration → cart → install)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-emerald-100/80 font-light">
+                            <ul className="space-y-4 text-amber-100/80 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Shoppable inspiration:</strong> hosts tag their build; viewers can buy the same gear; creators auto-earn referral revenue.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-amber-500 mt-1" size={18} /> <span><strong>Compliance badges:</strong> egress/ADA/noise options reduce friction without killing the vibe.</span></li>
                             </ul>
@@ -253,9 +253,9 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-10 h-10 rounded-full bg-blue-900/50 flex items-center justify-center text-blue-400"><Box size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Kits <span className="text-emerald-400/50 text-base font-sans ml-2">(our hero SKUs)</span></h3>
+                                <h3 className="text-2xl font-serif font-medium">Kits <span className="text-amber-400/50 text-base font-sans ml-2">(our hero SKUs)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-emerald-100/80 font-light">
+                            <ul className="space-y-4 text-amber-100/80 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-blue-500 mt-1" size={18} /> <span><strong>Social Core:</strong> fold-out seating + warm lighting + quick-close privacy screen.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-blue-500 mt-1" size={18} /> <span><strong>Micro-Biz Shells:</strong> lockable service wall, QR window, compact storage.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-blue-500 mt-1" size={18} /> <span><strong>Quiet-hour assist:</strong> soft caps on light/sound the host can set.</span></li>
@@ -265,9 +265,9 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <div>
                             <div className="flex items-center gap-3 mb-6">
                                 <div className="w-10 h-10 rounded-full bg-purple-900/50 flex items-center justify-center text-purple-400"><Store size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Studio <span className="text-emerald-400/50 text-base font-sans ml-2">(garage business software)</span></h3>
+                                <h3 className="text-2xl font-serif font-medium">Studio <span className="text-amber-400/50 text-base font-sans ml-2">(garage business software)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-emerald-100/80 font-light">
+                            <ul className="space-y-4 text-amber-100/80 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-purple-500 mt-1" size={18} /> <span><strong>Neighbor-only POS:</strong> discounts, tip-jar, shared revenue splits.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-purple-500 mt-1" size={18} /> <span><strong>Soft-touch compliance:</strong> city-tuned checklists for fire egress/home-occupation rules.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-purple-500 mt-1" size={18} /> <span><strong>Analytics:</strong> repeat neighbors, dwell time, neighborhood NPS, local spend.</span></li>
@@ -287,7 +287,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                     <SectionHeading>Micro-venture idea bank</SectionHeading>
                                 </div>
                                 <div className="mb-6">
-                                    <InlineTags tags={initialTags?.customer} theme="emerald" />
+                                    <InlineTags tags={initialTags?.customer} theme="amber" />
                                 </div>
                                 <p className="text-lg text-zinc-500 dark:text-zinc-400 font-light mb-8">
                                     What people already do (home bars, gyms, maker spaces)—supercharged. Start with our starter list.
@@ -325,9 +325,9 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                     <motion.div
                                         key={i}
                                         whileHover={{ y: -4, scale: 1.02 }}
-                                        className="flex flex-col justify-center p-6 bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/5 rounded-2xl shadow-sm hover:shadow-md hover:border-emerald-200 dark:hover:border-emerald-800 transition-colors cursor-pointer"
+                                        className="flex flex-col justify-center p-6 bg-white dark:bg-zinc-900 border border-black/5 dark:border-white/5 rounded-2xl shadow-sm hover:shadow-md hover:border-amber-200 dark:hover:border-amber-800 transition-colors cursor-pointer"
                                     >
-                                        <span className="text-emerald-500 text-xs font-mono mb-2">0{i + 1}</span>
+                                        <span className="text-amber-500 text-xs font-mono mb-2">0{i + 1}</span>
                                         <span className="font-serif text-lg leading-tight">{idea}</span>
                                     </motion.div>
                                 ))}
@@ -392,13 +392,13 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Business Model */}
-            <section className="relative z-10 py-32 bg-emerald-900 dark:bg-emerald-950 text-emerald-50">
+            <section className="relative z-10 py-32 bg-amber-900 dark:bg-amber-950 text-amber-50">
                 <GridContainer>
                     <div className="flex flex-col items-center gap-4 mb-2">
                         <SectionHeading className="text-center text-white">Business model</SectionHeading>
                     </div>
                     <div className="mb-12 flex justify-center">
-                        <InlineTags tags={initialTags?.product_type} theme="emerald" />
+                        <InlineTags tags={initialTags?.product_type} theme="amber" />
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -409,9 +409,9 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             { title: "Studio SaaS", desc: "Free community tier; $19–$79/mo for micro-biz tools." },
                             { title: "Sponsors/City", desc: "Funded block-party circuits + “Porchfront District” activations." }
                         ].map((item, i) => (
-                            <div key={i} className="bg-emerald-800/50 p-6 rounded-2xl border border-emerald-700/50 text-center flex flex-col items-center justify-center">
-                                <h4 className="font-sans font-medium text-emerald-300 mb-2">{item.title}</h4>
-                                <p className="text-sm text-emerald-100/80 font-light leading-relaxed">{item.desc}</p>
+                            <div key={i} className="bg-amber-800/50 p-6 rounded-2xl border border-amber-700/50 text-center flex flex-col items-center justify-center">
+                                <h4 className="font-sans font-medium text-amber-300 mb-2">{item.title}</h4>
+                                <p className="text-sm text-amber-100/80 font-light leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -423,7 +423,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 <GridContainer>
                     <SectionHeading className="mb-6 text-center text-zinc-900 dark:text-zinc-100">Risks & Moats</SectionHeading>
                     <div className="mb-12 flex justify-center">
-                        <InlineTags tags={initialTags?.founder_fit} theme="emerald" />
+                        <InlineTags tags={initialTags?.founder_fit} theme="amber" />
                     </div>
                     <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                         <ExpandableCard
@@ -465,7 +465,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         <SectionHeading className="text-center">AGI Futures</SectionHeading>
                     </div>
                     <div className="mb-8 flex justify-center">
-                        <InlineTags tags={initialTags?.outcomes} theme="emerald" />
+                        <InlineTags tags={initialTags?.outcomes} theme="amber" />
                     </div>
                     <p className="text-xl text-zinc-500 dark:text-zinc-400 font-light text-center mb-16">Why this movement compounds exponentially.</p>
 
@@ -491,7 +491,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
 
                         <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 shadow-lg relative group overflow-hidden">
-                            <div className="absolute -right-12 -top-12 w-48 h-48 bg-emerald-500/20 blur-[50px] rounded-full group-hover:bg-emerald-400/30 transition-colors" />
+                            <div className="absolute -right-12 -top-12 w-48 h-48 bg-amber-500/20 blur-[50px] rounded-full group-hover:bg-amber-400/30 transition-colors" />
                             <div className="text-4xl mb-6 relative z-10">🌿</div>
                             <h3 className="font-serif text-2xl font-medium mb-4 relative z-10">Curb appeal, upgraded</h3>
                             <p className="text-zinc-600 dark:text-zinc-400 font-light leading-relaxed relative z-10">
@@ -503,23 +503,23 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     <div className="mt-24 p-12 bg-zinc-900 text-white rounded-[3rem] text-center relative overflow-hidden">
                         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay"></div>
                         <div className="relative z-10 max-w-3xl mx-auto">
-                            <div className="text-sm font-bold tracking-widest uppercase text-emerald-500 mb-6">Transferable insight</div>
+                            <div className="text-sm font-bold tracking-widest uppercase text-amber-500 mb-6">Transferable insight</div>
                             <p className="text-2xl md:text-3xl font-serif font-medium leading-relaxed [text-wrap:balance]">
                                 New technologies change culture, and culture creates newly underutilized space. The opportunity is to identify that space early and build the products, norms, and coordination layer that convert it into the next valuable social and economic frontier.
                             </p>
                         </div>
                     </div>
                     <div className="mt-24 pt-12 border-t border-black/10 dark:border-white/10 max-w-3xl mx-auto text-left">
-                        <h3 className="text-sm font-bold tracking-widest text-emerald-600 dark:text-emerald-500 uppercase mb-8">References</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-amber-600 dark:text-amber-500 uppercase mb-8">References</h3>
                         <div className="grid gap-4 sm:grid-cols-2">
                             {citations.map((cite) => (
                                 <div key={cite.number} className="flex gap-4 group">
-                                    <span className="text-emerald-600 dark:text-emerald-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                                    <span className="text-amber-600 dark:text-amber-400 font-serif text-sm shrink-0">[{cite.number}]</span>
                                     <div>
                                         <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed">
                                             <span className="font-medium text-zinc-900 dark:text-zinc-100">{cite.source}</span>,{" "}
                                             {cite.url ? (
-                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-amber-600 dark:hover:text-amber-400 transition-colors">
                                                     {cite.title}
                                                 </a>
                                             ) : (
@@ -531,7 +531,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                                 href={cite.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-xs font-mono text-zinc-400 dark:text-zinc-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors mt-1 inline-block"
+                                                className="text-xs font-mono text-zinc-400 dark:text-zinc-500 hover:text-amber-600 dark:hover:text-amber-400 transition-colors mt-1 inline-block"
                                             >
                                                 View Source ↗
                                             </a>

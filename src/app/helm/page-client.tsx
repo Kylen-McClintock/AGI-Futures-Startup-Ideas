@@ -297,9 +297,9 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                             {/* 6 & 7. Freelance rail & Seamless human teammates */}
                             <div className="grid md:grid-cols-2 gap-8">
-                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-colors">
+                                <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 hover:border-indigo-500/30 transition-colors">
                                     <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
-                                        <Briefcase className="w-7 h-7 text-emerald-400" />
+                                        <Briefcase className="w-7 h-7 text-indigo-400" />
                                         Freelance rail
                                     </h4>
                                     <p className="text-white/80 leading-relaxed font-light text-lg">
@@ -517,28 +517,28 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 <div className="flex justify-between mb-3"><strong className="text-white">Tech</strong> <span className="text-amber-400 font-mono text-sm">Medium</span></div>
                                 <ul className="space-y-3 text-sm font-light">
                                     <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Multi-agent systems still fail silently, over-delegate, or create brittle handoffs in long workflows.</li>
-                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Start with narrow, repeatable founder workflows. Keep human approval gates default-on. Make traces replayable, benchmarked, and rollback-ready before expanding autonomy.</li>
+                                    <li className="text-white/70"><strong className="text-indigo-300 font-medium">Mitigation:</strong> Start with narrow, repeatable founder workflows. Keep human approval gates default-on. Make traces replayable, benchmarked, and rollback-ready before expanding autonomy.</li>
                                 </ul>
                             </div>
                             <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
                                 <div className="flex justify-between mb-3"><strong className="text-white">Regulatory</strong> <span className="text-amber-400 font-mono text-sm">Low-Medium</span></div>
                                 <ul className="space-y-3 text-sm font-light">
                                     <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Marketplace labor classification, adviser representations, and data handling create compliance surface area, especially if Helm starts resembling hiring infrastructure or financial advice.</li>
-                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Avoid regulated claims early. Position mentors as educational and decision-support tools, not fiduciaries. Keep clean terms, provenance, disclosures, and role boundaries from day one.</li>
+                                    <li className="text-white/70"><strong className="text-indigo-300 font-medium">Mitigation:</strong> Avoid regulated claims early. Position mentors as educational and decision-support tools, not fiduciaries. Keep clean terms, provenance, disclosures, and role boundaries from day one.</li>
                                 </ul>
                             </div>
                             <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
                                 <div className="flex justify-between mb-3"><strong className="text-white">Capital</strong> <span className="text-amber-400 font-mono text-sm">Medium</span></div>
                                 <ul className="space-y-3 text-sm font-light">
                                     <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> Great product design, agent infrastructure, and liquidity on both advisor and freelancer rails require meaningful upfront investment before the network is fully self-reinforcing.</li>
-                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Launch with one killer wedge workflow and a manually curated network. Earn revenue before building full marketplace breadth. Use services and concierge layers to bootstrap high-value traces.</li>
+                                    <li className="text-white/70"><strong className="text-indigo-300 font-medium">Mitigation:</strong> Launch with one killer wedge workflow and a manually curated network. Earn revenue before building full marketplace breadth. Use services and concierge layers to bootstrap high-value traces.</li>
                                 </ul>
                             </div>
                             <div className="glass-panel p-6 rounded-2xl border border-rose-500/10 hover:border-rose-500/30 transition-colors">
                                 <div className="flex justify-between mb-3"><strong className="text-white">Execution</strong> <span className="text-rose-400 font-mono text-sm">High</span></div>
                                 <ul className="space-y-3 text-sm font-light">
                                     <li className="text-white/70"><strong className="text-rose-300 font-medium">Risk:</strong> This product can easily become bloated, confusing, or gimmicky. If it feels like a toy, founders will churn. If it feels like enterprise software, they will also churn.</li>
-                                    <li className="text-white/70"><strong className="text-emerald-300 font-medium">Mitigation:</strong> Obsess over one moment of undeniable relief. Make the first room feel like superpowers, not software. Build from repeated daily use cases outward, not from platform ambition inward.</li>
+                                    <li className="text-white/70"><strong className="text-indigo-300 font-medium">Mitigation:</strong> Obsess over one moment of undeniable relief. Make the first room feel like superpowers, not software. Build from repeated daily use cases outward, not from platform ambition inward.</li>
                                 </ul>
                             </div>
                         </div>
@@ -546,16 +546,16 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                     <div>
                         <h3 className="text-3xl font-light text-white mb-6">Unique Go To Market</h3>
-                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-emerald-500/20 bg-emerald-950/10 relative overflow-hidden">
+                        <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/10 relative overflow-hidden">
                             <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
-                                <Zap className="w-6 h-6 text-emerald-400" />
+                                <Zap className="w-6 h-6 text-indigo-400" />
                                 Founders Build Live, Fall in Love
                             </h4>
                             <p className="text-white/80 leading-relaxed font-light text-lg mb-8">
                                 Recruit a small cohort of well-known founders and creators to build a real micro-project in Helm over one week. Stream from inside rooms. Show delight moments when Jarvis anticipates a choice, an advisor debate lands a decision, or a freelance sprint ships overnight. Each participant gets a referral code and a transparent trace that fans can fork. Clips travel on X, YouTube, and Farcaster. The hook is simple. Building feels better here and you ship more. Their audiences try the exact trace that impressed them.
                             </p>
-                            <div className="p-6 rounded-2xl border border-emerald-500/20 bg-emerald-500/5">
-                                <h5 className="font-medium text-emerald-300 mb-2 font-mono uppercase tracking-widest text-sm">User Wedge</h5>
+                            <div className="p-6 rounded-2xl border border-indigo-500/20 bg-indigo-500/5">
+                                <h5 className="font-medium text-indigo-300 mb-2 font-mono uppercase tracking-widest text-sm">User Wedge</h5>
                                 <p className="text-white/80 font-light leading-relaxed">
                                     Solo founders and very small startup teams buy first because they already feel the pain of fragmented tools, delayed judgment, and hiring before readiness. They cannot wait because every coordination mistake compounds into slower shipping, lower morale, and lost runway.
                                 </p>
@@ -640,8 +640,8 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                 <RevealSection className="mb-32">
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 flex items-center">
-                                <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Civilizational Impact
+                            <div className="text-sm font-mono tracking-widest uppercase text-indigo-400 flex items-center">
+                                <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Civilizational Impact
                             </div>
                             <InlineTags tags={tags.outcomes} theme="indigo" />
                         </div>

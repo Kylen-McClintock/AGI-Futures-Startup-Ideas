@@ -11,39 +11,39 @@ interface SubRating {
 interface ImpactScoreBoxProps {
     overallScore: number;
     subRatings: SubRating[];
-    colorTheme?: "amber" | "emerald" | "blue" | "purple";
+    colorTheme?: string;
 }
 
 export function ImpactScoreBox({ overallScore, subRatings, colorTheme = "amber" }: ImpactScoreBoxProps) {
-    const borders = {
+    const borders: Record<string, string> = {
         amber: "border-amber-500/20 hover:border-amber-500/40",
         emerald: "border-emerald-500/20 hover:border-emerald-500/40",
         blue: "border-blue-500/20 hover:border-blue-500/40",
         purple: "border-purple-500/20 hover:border-purple-500/40",
     };
 
-    const bgs = {
+    const bgs: Record<string, string> = {
         amber: "bg-amber-950/20 hover:bg-amber-950/30",
         emerald: "bg-emerald-950/20 hover:bg-emerald-950/30",
         blue: "bg-blue-950/20 hover:bg-blue-950/30",
         purple: "bg-purple-950/20 hover:bg-purple-950/30",
     };
 
-    const texts = {
+    const texts: Record<string, string> = {
         amber: "text-amber-400 font-mono",
         emerald: "text-emerald-400 font-mono",
         blue: "text-blue-400 font-mono",
         purple: "text-purple-400 font-mono",
     };
 
-    const mutedTexts = {
+    const mutedTexts: Record<string, string> = {
         amber: "text-amber-100/70",
         emerald: "text-emerald-100/70",
         blue: "text-blue-100/70",
         purple: "text-purple-100/70",
     };
 
-    const textHighlights = {
+    const textHighlights: Record<string, string> = {
         amber: "text-amber-400/80",
         emerald: "text-emerald-400/80",
         blue: "text-blue-400/80",

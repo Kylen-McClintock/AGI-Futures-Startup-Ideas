@@ -9,20 +9,20 @@ interface ExpandableCardProps {
     score: string;
     summary: string;
     details: string;
-    colorTheme: "amber" | "emerald" | "blue" | "purple";
+    colorTheme: string;
 }
 
 export function ExpandableCard({ title, score, summary, details, colorTheme }: ExpandableCardProps) {
     const [isOpen, setIsOpen] = useState(false);
 
-    const colors = {
+    const colors: Record<string, string> = {
         amber: "border-amber-200/50 dark:border-amber-800/50 bg-amber-50/50 dark:bg-amber-900/10 text-amber-900 dark:text-amber-100",
         emerald: "border-emerald-200/50 dark:border-emerald-800/50 bg-emerald-50/50 dark:bg-emerald-900/10 text-emerald-900 dark:text-emerald-100",
         blue: "border-blue-200/50 dark:border-blue-800/50 bg-blue-50/50 dark:bg-blue-900/10 text-blue-900 dark:text-blue-100",
         purple: "border-purple-200/50 dark:border-purple-800/50 bg-purple-50/50 dark:bg-purple-900/10 text-purple-900 dark:text-purple-100",
     };
 
-    const badgeColors = {
+    const badgeColors: Record<string, string> = {
         amber: "bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 border-amber-200 dark:border-amber-700",
         emerald: "bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-400 border-emerald-200 dark:border-emerald-700",
         blue: "bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-400 border-blue-200 dark:border-blue-700",

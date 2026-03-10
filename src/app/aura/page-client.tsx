@@ -49,7 +49,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
     return (
         <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden selection:bg-[var(--primary)] selection:text-white pb-32">
-            <ScrollProgress title="AURA" theme="blue" /> {/* Added by user instruction */}
+            <ScrollProgress title="AURA" theme="fuchsia" /> {/* Added by user instruction */}
             {/* Ambient Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
@@ -134,7 +134,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                                 <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">XR headsets & smart glasses<br />annual projection by 2029</p>
                             </div>
                             <div>
-                                <p className="text-5xl font-light text-blue-400 tracking-tighter mb-2">70-80</p>
+                                <p className="text-5xl font-light text-fuchsia-400 tracking-tighter mb-2">70-80</p>
                                 <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">Minutes per day spent<br />on Character.AI</p>
                             </div>
                         </div>
@@ -205,9 +205,9 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             </div>
 
                             <div className="glass-panel p-6 rounded-2xl border border-white/5 relative overflow-hidden group">
-                                <div className="absolute top-0 left-0 w-1 h-full bg-blue-400" />
+                                <div className="absolute top-0 left-0 w-1 h-full bg-fuchsia-400" />
                                 <h3 className="text-white font-medium mb-2 flex items-center gap-3">
-                                    <span className="text-blue-400 font-mono text-sm">2.</span>
+                                    <span className="text-fuchsia-400 font-mono text-sm">2.</span>
                                     The developer stack is maturing.
                                 </h3>
                                 <p className="text-white/70 font-light leading-relaxed pl-8">
@@ -329,7 +329,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                             {/* Connect */}
                             <div>
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-blue-400 mb-6 text-center">Connect & Mind</h3>
+                                <h3 className="text-sm font-mono uppercase tracking-widest text-fuchsia-400 mb-6 text-center">Connect & Mind</h3>
                                 <div className="glass-panel p-2 rounded-3xl border border-white/5 relative overflow-hidden group max-w-2xl mx-auto">
                                     <div className="aspect-[21/9] rounded-2xl overflow-hidden relative mb-4">
                                         <Image src={connectImage} alt="Connection Avatar" fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
@@ -389,7 +389,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             </div>
                             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">
                                 <h3 className="text-white font-medium mb-2">Cloud Runtime</h3>
-                                <div className="text-2xl font-light text-blue-400 mb-4">Usage</div>
+                                <div className="text-2xl font-light text-fuchsia-400 mb-4">Usage</div>
                                 <p className="text-white/60 text-sm font-light">Optional pay-as-you-go for spatial engine, memory kernel, and cloning services.</p>
                             </div>
                             <div className="p-6 rounded-2xl bg-white/5 border border-white/10">

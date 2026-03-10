@@ -57,7 +57,7 @@ export function ProjectTags({ tags }: ProjectTagsProps) {
     );
 }
 
-export function InlineTags({ label, tags, theme = 'default' }: { label?: string, tags?: string[], theme?: 'emerald' | 'amber' | 'primary' | 'blue' | 'indigo' | 'rose' | 'zinc' | 'default' }) {
+export function InlineTags({ label, tags, theme = 'default' }: { label?: string, tags?: string[], theme?: "amber" | "emerald" | "blue" | "purple" | "cyan" | "indigo" | "orange" | "zinc" | "rose" | "primary" | "fuchsia" | "teal" | "violet" | "default" }) {
     if (!tags || tags.length === 0) return null;
 
     const themeMap: Record<string, string> = {
@@ -68,6 +68,12 @@ export function InlineTags({ label, tags, theme = 'default' }: { label?: string,
         indigo: "border-indigo-500/20 bg-indigo-500/10 text-indigo-700 dark:text-indigo-400",
         rose: "border-rose-500/20 bg-rose-500/10 text-rose-700 dark:text-rose-400",
         zinc: "border-zinc-500/20 bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
+        purple: "border-purple-500/20 bg-purple-500/10 text-purple-700 dark:text-purple-400",
+        fuchsia: "border-fuchsia-500/20 bg-fuchsia-500/10 text-fuchsia-700 dark:text-fuchsia-400",
+        teal: "border-teal-500/20 bg-teal-500/10 text-teal-700 dark:text-teal-400",
+        violet: "border-violet-500/20 bg-violet-500/10 text-violet-700 dark:text-violet-400",
+        orange: "border-orange-500/20 bg-orange-500/10 text-orange-700 dark:text-orange-400",
+        cyan: "border-cyan-500/20 bg-cyan-500/10 text-cyan-700 dark:text-cyan-400",
         default: "border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-zinc-800 dark:text-zinc-200"
     };
 

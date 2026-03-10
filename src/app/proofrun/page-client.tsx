@@ -35,12 +35,12 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
     };
 
     return (
-        <main className="min-h-screen bg-[#0b0a09] text-stone-200 selection:bg-amber-500/30 font-sans antialiased overflow-x-hidden pb-32">
-            <ScrollProgress title="ProofRun" theme="amber" />
+        <main className="min-h-screen bg-[#0b0a09] text-stone-200 selection:bg-violet-500/30 font-sans antialiased overflow-x-hidden pb-32">
+            <ScrollProgress title="ProofRun" theme="violet" />
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-emerald-500/10 rounded-full blur-[150px]" />
             </div>
 
@@ -51,7 +51,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-amber-900/20 group border border-white/5"
+                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-violet-900/20 group border border-white/5"
                     >
                         <Image
                             src={heroImage}
@@ -72,13 +72,13 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
                             ProofRun <span className="text-white/40 font-serif text-3xl sm:text-5xl">| Proof-of-Work Hiring</span>
                         </h1>
-                        <p className="text-xl sm:text-2xl text-amber-100/80 leading-relaxed font-light mb-8 max-w-3xl">
+                        <p className="text-xl sm:text-2xl text-violet-100/80 leading-relaxed font-light mb-8 max-w-3xl">
                             ProofRun lets companies turn real backlog work into mini missions so candidates can prove their resourcefulness and artificial intelligence (<HoverAcronym acronym="AI" definition="Artificial intelligence" />)-native skills, earn real performance metrics on their portfolio, and flow directly into a recruiter's talent pipeline.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                            <span className="font-mono text-[10px] uppercase tracking-widest text-amber-500/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="amber" />
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-violet-500/60">Sector</span>
+                            <InlineTags tags={tags.sector} theme="violet" />
                         </div>
                     </motion.div>
                 </header>
@@ -94,7 +94,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     className="mb-32"
                 >
                     <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 mb-12 group">
-                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-amber-500/30 pl-6 group-hover:border-amber-500/60 transition-colors">
+                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-violet-500/30 pl-6 group-hover:border-violet-500/60 transition-colors">
                             Instead of asking candidates to narrate why they might be good, ProofRun lets them show it on bounded, real work. A founder gets backlog leverage, a candidate gets verified proof, and the hiring manager gets a much higher-signal filter than a resume, degree, or generic take-home.
                         </p>
                     </div>
@@ -108,7 +108,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                 Meanwhile, only about half of bachelor's degree graduates secure a college-level job within a year of graduation.<ExpandableCitation label="[3]" sourceUrl="" sourceText="Strada Institute (2024)" /> <strong>AI raised the bar. The on-ramps for new talent did not.</strong>
                             </p>
                         </div>
-                        <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-amber-500/30 transition-colors">
+                        <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-violet-500/30 transition-colors">
                             <Image src={missionDashboardImage} alt="Premium dashboard UI showing Mini Mission" fill quality={100} className="object-cover transition-transform duration-700 hover:scale-105" />
                         </div>
                     </div>
@@ -124,22 +124,22 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     className="mb-32"
                 >
                     <div className="mb-12 cursor-default">
-                        <div className="text-sm font-mono tracking-widest uppercase text-amber-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-amber-500/50 mr-4" /> The Problem
+                        <div className="text-sm font-mono tracking-widest uppercase text-violet-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-violet-500/50 mr-4" /> The Problem
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             It is now cheaper to train an AI on junior work <br className="hidden sm:block" />
                             <span className="text-white/50">than to train a junior on the job.</span>
                         </h2>
-                        <p className="text-xl text-amber-500/90 font-medium tracking-wide mt-4">
+                        <p className="text-xl text-violet-500/90 font-medium tracking-wide mt-4">
                             Companies still cannot see who is worth betting on.
                         </p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-amber-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-violet-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
                             <h3 className="text-2xl font-light text-white flex items-center gap-3 mb-6">
-                                <Building className="w-6 h-6 text-amber-400" /> Company Side
+                                <Building className="w-6 h-6 text-violet-400" /> Company Side
                             </h3>
                             <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
                                 Repetitive early-career tasks in marketing, sales ops, support, and basic analysis are the easiest to hand to AI, so those roles vanish first.
@@ -165,14 +165,14 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         </div>
                     </div>
 
-                    <div className="mt-8 glass-panel p-8 rounded-3xl border border-white/10 bg-amber-950/20 ring-1 ring-amber-500/20 text-center space-y-4 max-w-2xl mx-auto">
+                    <div className="mt-8 glass-panel p-8 rounded-3xl border border-white/10 bg-violet-950/20 ring-1 ring-violet-500/20 text-center space-y-4 max-w-2xl mx-auto">
                         <p className="text-lg text-white/80 font-light">
                             So: Companies can increasingly get "junior level output" from AI plus a few senior operators.
                         </p>
                         <p className="text-lg text-white/80 font-light">
                             Candidates have almost no structured way to touch real problems, get real feedback, and build a track record that hiring managers actually trust.
                         </p>
-                        <p className="text-xl font-medium text-amber-500 mt-4">
+                        <p className="text-xl font-medium text-violet-500 mt-4">
                             That is the gap ProofRun exists to close.
                         </p>
                     </div>
@@ -206,7 +206,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         <div className="glass-panel p-6 border border-white/5 rounded-3xl">
-                            <Briefcase className="w-8 h-8 text-amber-400 mb-4" />
+                            <Briefcase className="w-8 h-8 text-violet-400 mb-4" />
                             <h4 className="text-lg text-white font-medium mb-2">1. Mini Missions</h4>
                             <p className="text-white/60 leading-relaxed font-light text-sm">Carved from real backlog. Includes project spec, <HoverAcronym acronym="ICP" definition="Ideal customer profile" />, brand guidelines, and historical data.</p>
                         </div>
@@ -241,7 +241,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                     </p>
                                 </li>
                                 <li className="flex gap-4">
-                                    <Award className="w-6 h-6 text-amber-400 shrink-0 mt-1" />
+                                    <Award className="w-6 h-6 text-violet-400 shrink-0 mt-1" />
                                     <p className="text-lg text-white/70 leading-relaxed font-light">
                                         <strong className="text-white font-medium mr-2">Unified Pipeline:</strong> Each completed mission becomes a card showing company, role type, difficulty, rubric score, and attached metrics. Recruiters search across these cards and pull candidates directly from the artifacts.
                                     </p>
@@ -270,13 +270,13 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     </div>
 
                     <InteractiveGrid
-                        colorTheme="amber"
+                        colorTheme="violet"
                         items={[
                             {
                                 title: "1. Growth & Creative (Seed/Series A)",
                                 description: "Mission: Paid social and content for a B2B SaaS startup wanting better paid acquisition.",
                                 icon: Sparkles,
-                                colorTheme: "amber",
+                                colorTheme: "violet",
                                 details: "Propose 3 concepts for Meta/LinkedIn. Outline a 7-day test plan. Top candidates get $100-$300 real budget in a sandbox to launch, monitor, and adjust. Postmortem reporting required.",
                                 outputs: "Startup gets new creative. Candidate gets a portfolio card: '2.3x ROAS vs control on $200 spend; CPA down 32%'"
                             },
@@ -325,12 +325,12 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>
                             <h2 className="text-3xl font-light text-white tracking-tight mb-8 flex items-center gap-3">
-                                <Database className="w-8 h-8 text-amber-500" /> Market Dynamics
+                                <Database className="w-8 h-8 text-violet-500" /> Market Dynamics
                             </h2>
                             <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
                                 Three big systems are misaligned: Early talent need a way to buy into trajectories with artifacts rather than credentials. Hiring software treats static resumes as objects instead of measuring <span className="italic">tool-assisted capability</span>. Remote culture normalized async work, but not structured <span className="italic">hiring missions</span>.
                             </p>
-                            <p className="text-lg leading-relaxed text-white/90 font-medium bg-amber-950/20 border border-amber-500/20 p-5 rounded-2xl">
+                            <p className="text-lg leading-relaxed text-white/90 font-medium bg-violet-950/20 border border-violet-500/20 p-5 rounded-2xl">
                                 First principles: when experimentation and automation get cheaper, it becomes rational to let outsiders touch real work in small, well-bounded ways.
                             </p>
                         </div>
@@ -388,11 +388,11 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                 >
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-amber-400 flex items-center">
-                                <span className="w-8 h-px bg-amber-500/50 mr-4" /> Evaluation Metrics
+                            <div className="text-sm font-mono tracking-widest uppercase text-violet-400 flex items-center">
+                                <span className="w-8 h-px bg-violet-500/50 mr-4" /> Evaluation Metrics
                             </div>
                             <div className="mt-4 sm:mt-0">
-                                <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="amber" />
+                                <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="violet" />
                             </div>
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
@@ -495,11 +495,11 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                 >
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-amber-400 flex items-center">
-                                <span className="w-8 h-px bg-amber-500/50 mr-4" /> Final Assessment
+                            <div className="text-sm font-mono tracking-widest uppercase text-violet-400 flex items-center">
+                                <span className="w-8 h-px bg-violet-500/50 mr-4" /> Final Assessment
                             </div>
                             <div className="mt-4 sm:mt-0">
-                                <InlineTags tags={tags.outcomes} theme="amber" />
+                                <InlineTags tags={tags.outcomes} theme="violet" />
                             </div>
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
@@ -509,7 +509,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div className="space-y-6">
-                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-amber-500/30 pl-6">
+                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-violet-500/30 pl-6">
                                 Left alone, AI chews through the apprentice work where people used to learn judgment. That is how you produce a generation with tool access but without enough real reps in judgment, prioritization, and ownership.
                             </p>
                             <p className="text-lg leading-relaxed text-white/60 font-light pl-6 relative">
@@ -520,7 +520,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                             </p>
 
                             <ImpactScoreBox
-                                colorTheme="amber"
+                                colorTheme="violet"
                                 overallScore={64}
                                 subRatings={[
                                     { label: "Abundance", score: 68 },
@@ -531,18 +531,18 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                             />
                         </div>
 
-                        <div className="glass-panel relative rounded-3xl overflow-hidden border border-amber-500/20 bg-amber-950/10">
+                        <div className="glass-panel relative rounded-3xl overflow-hidden border border-violet-500/20 bg-violet-950/10">
                             <Image src={aiOrchestrationImage} alt="Candidate supervising node-based AI orchestration" fill quality={100} className="object-cover opacity-60" />
                             <div className="absolute inset-0 bg-gradient-to-t from-stone-900 via-stone-900/80 to-transparent p-8 flex flex-col justify-end">
                                 <h3 className="text-xl text-white font-medium mb-4 flex items-center gap-3">
-                                    <Activity className="w-6 h-6 text-amber-400" /> Key Performance Indicators
+                                    <Activity className="w-6 h-6 text-violet-400" /> Key Performance Indicators
                                 </h3>
                                 <ul className="space-y-3 text-white/80 font-light text-base z-10 block">
-                                    <li className="flex items-start gap-4"><span className="text-amber-500 font-bold mt-1">✓</span> Active companies posting monthly</li>
-                                    <li className="flex items-start gap-4"><span className="text-amber-500 font-bold mt-1">✓</span> Mission completion rate</li>
-                                    <li className="flex items-start gap-4"><span className="text-amber-500 font-bold mt-1">✓</span> Percentage of missions leading to interviews</li>
-                                    <li className="flex items-start gap-4"><span className="text-amber-500 font-bold mt-1">✓</span> Median time from mission post to shortlist</li>
-                                    <li className="flex items-start gap-4"><span className="text-amber-500 font-bold mt-1">✓</span> Candidate portfolio public visibility rate</li>
+                                    <li className="flex items-start gap-4"><span className="text-violet-500 font-bold mt-1">✓</span> Active companies posting monthly</li>
+                                    <li className="flex items-start gap-4"><span className="text-violet-500 font-bold mt-1">✓</span> Mission completion rate</li>
+                                    <li className="flex items-start gap-4"><span className="text-violet-500 font-bold mt-1">✓</span> Percentage of missions leading to interviews</li>
+                                    <li className="flex items-start gap-4"><span className="text-violet-500 font-bold mt-1">✓</span> Median time from mission post to shortlist</li>
+                                    <li className="flex items-start gap-4"><span className="text-violet-500 font-bold mt-1">✓</span> Candidate portfolio public visibility rate</li>
                                 </ul>
                             </div>
                         </div>
@@ -577,7 +577,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         </summary>
                         <div className="p-6 pt-0 border-t border-white/5 bg-black/20">
 
-                            <h4 className="text-sm font-semibold uppercase text-amber-500/80 mb-4 tracking-wider">Acronyms</h4>
+                            <h4 className="text-sm font-semibold uppercase text-violet-500/80 mb-4 tracking-wider">Acronyms</h4>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                                 <div className="text-sm"><strong className="text-white/80 select-all">AI:</strong> <span className="text-white/50">Artificial intelligence</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">AI-native:</strong> <span className="text-white/50">Designed to work with AI tools as a normal part of the workflow</span></div>
@@ -598,7 +598,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                 <div className="text-sm"><strong className="text-white/80 select-all">A/B test:</strong> <span className="text-white/50">Controlled experiment comparing two versions</span></div>
                             </div>
 
-                            <h4 className="text-sm font-semibold uppercase text-amber-500/80 mb-4 tracking-wider mt-6">References</h4>
+                            <h4 className="text-sm font-semibold uppercase text-violet-500/80 mb-4 tracking-wider mt-6">References</h4>
                             <div className="space-y-4">
                                 <div className="flex gap-4">
                                     <span className="text-amber-400/70 font-mono text-sm shrink-0">[1]</span>

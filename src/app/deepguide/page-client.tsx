@@ -30,12 +30,12 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
     };
 
     return (
-        <main className="min-h-screen bg-zinc-950 text-zinc-300 selection:bg-emerald-500/30 overflow-x-hidden font-sans pb-32">
-            <ScrollProgress title="DeepGuide" theme="emerald" />
+        <main className="min-h-screen bg-zinc-950 text-zinc-300 selection:bg-purple-500/30 overflow-x-hidden font-sans pb-32">
+            <ScrollProgress title="DeepGuide" theme="purple" />
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-purple-500/10 rounded-full blur-[120px]" />
                 <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[150px]" />
             </div>
 
@@ -46,7 +46,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-emerald-900/20 group"
+                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-purple-900/20 group"
                     >
                         <Image
                             src={heroImage}
@@ -67,13 +67,13 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
                             DeepGuide
                         </h1>
-                        <p className="text-xl sm:text-2xl text-emerald-100/80 leading-relaxed font-light mb-8 max-w-3xl">
+                        <p className="text-xl sm:text-2xl text-purple-100/80 leading-relaxed font-light mb-8 max-w-3xl">
                             AI copilot for psychedelic therapy that keeps facilitators present, captures structured notes, recommends the right exercise at the right moment, brings trained backup when a trip turns difficult, and turns outcomes into evolving best practices.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                            <span className="font-mono text-[10px] uppercase tracking-widest text-emerald-500/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="emerald" />
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-purple-500/60">Sector</span>
+                            <InlineTags tags={tags.sector} theme="purple" />
                         </div>
                     </motion.div>
                 </header>
@@ -89,7 +89,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 mb-12 group">
-                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-emerald-500/30 pl-6 group-hover:border-emerald-500/60 transition-colors">
+                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-purple-500/30 pl-6 group-hover:border-purple-500/60 transition-colors">
                             A facilitator is fully with the client instead of half in the room and half in documentation. A clinic gets cleaner records, faster learning loops, and a safer way to handle hard turns. A training program gets a living map of what actually works, for whom, in which state, under which conditions.
                         </p>
                     </div>
@@ -115,8 +115,8 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="mb-12 cursor-default">
-                        <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-emerald-500/50 mr-4" /> The Problem
+                        <div className="text-sm font-mono tracking-widest uppercase text-purple-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-purple-500/50 mr-4" /> The Problem
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             High stakes, manual workflows, <br className="hidden sm:block" />
@@ -125,7 +125,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-purple-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
                             <p className="text-lg leading-relaxed text-white/80 font-light">
                                 Psychedelic therapy is young. Best practices are still being discovered. Facilitators juggle presence, note-taking, protocol recall, and safety. Difficult experiences are not rare in naturalistic use, which raises the need for real-time de-escalation and expert backup
                                 <ExpandableCitation
@@ -135,7 +135,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                                 />.
                             </p>
                         </div>
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-purple-500/20 hover:bg-white/[0.04] transition-all duration-300 group">
                             <p className="text-lg leading-relaxed text-white/80 font-light">
                                 Regulators and professional groups are pushing toward clearer documentation and safety standards, which many clinics cannot meet with manual workflows
                                 <ExpandableCitation
@@ -164,18 +164,18 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 flex items-center">
-                                <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Solution Hypothesis
+                            <div className="text-sm font-mono tracking-widest uppercase text-purple-400 flex items-center">
+                                <span className="w-8 h-px bg-purple-500/50 mr-4" /> Solution Hypothesis
                             </div>
                             <div className="mt-4 sm:mt-0">
-                                <InlineTags label="Enabling Tech" tags={tags.enabling_technology} theme="emerald" />
+                                <InlineTags label="Enabling Tech" tags={tags.enabling_technology} theme="purple" />
                             </div>
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight mb-8 leading-tight">
                             Uncover and spread <br className="hidden sm:block" /><span className="text-white/50">best practices faster.</span>
                         </h2>
 
-                        <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-emerald-900/10 group border border-white/10">
+                        <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-purple-900/10 group border border-white/10">
                             <Image src={hologramTherapyImage} alt="Holographic visualization in an advanced therapy session" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         </div>
 
@@ -187,7 +187,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
                         {/* Values */}
                         <div className="glass-panel p-8 border border-white/5 rounded-3xl hover:-translate-y-2 hover:bg-white/[0.04] transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                            <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
                                 <Layers className="w-6 h-6" />
                             </div>
                             <h4 className="text-xl text-white font-medium mb-3">Preparation</h4>
@@ -195,7 +195,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         </div>
 
                         <div className="glass-panel p-8 border border-white/5 rounded-3xl hover:-translate-y-2 hover:bg-white/[0.04] transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                            <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
                                 <Activity className="w-6 h-6" />
                             </div>
                             <h4 className="text-xl text-white font-medium mb-3">In-session</h4>
@@ -203,7 +203,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         </div>
 
                         <div className="glass-panel p-8 border border-white/5 rounded-3xl hover:-translate-y-2 hover:bg-white/[0.04] transition-all duration-300">
-                            <div className="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6">
+                            <div className="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center text-purple-400 mb-6">
                                 <Sparkles className="w-6 h-6" />
                             </div>
                             <h4 className="text-xl text-white font-medium mb-3">Integration</h4>
@@ -214,15 +214,15 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     <div className="space-y-24">
                         <div className="grid md:grid-cols-2 gap-12 items-center group cursor-default">
                             <div>
-                                <h3 className="text-3xl font-light text-white mb-6 flex items-center gap-4 group-hover:text-emerald-300 transition-colors">
-                                    <FileText className="w-8 h-8 text-emerald-400" />
+                                <h3 className="text-3xl font-light text-white mb-6 flex items-center gap-4 group-hover:text-purple-300 transition-colors">
+                                    <FileText className="w-8 h-8 text-purple-400" />
                                     Presence Engine
                                 </h3>
-                                <p className="text-lg text-white/70 leading-relaxed font-light bg-emerald-500/5 p-6 rounded-2xl border border-emerald-500/10">
+                                <p className="text-lg text-white/70 leading-relaxed font-light bg-purple-500/5 p-6 rounded-2xl border border-purple-500/10">
                                     Live transcription, semantic tagging, outcome tracking. The facilitator stays eyes on the client while DeepGuide builds the structured record.
                                 </p>
                             </div>
-                            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-emerald-500/30 transition-colors">
+                            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group-hover:border-purple-500/30 transition-colors">
                                 <Image src={modalityGraphImage} alt="Modality graph visualization" fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                         </div>
@@ -262,11 +262,11 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                                 Severe shortages meet <br className="hidden sm:block" /><span className="text-white/50">capable intelligence.</span>
                             </h2>
                             <div className="hidden sm:block">
-                                <InlineTags label="Readiness" tags={tags.readiness} theme="emerald" />
+                                <InlineTags label="Readiness" tags={tags.readiness} theme="purple" />
                             </div>
                         </div>
                         <div className="sm:hidden mt-4">
-                            <InlineTags label="Readiness" tags={tags.readiness} theme="emerald" />
+                            <InlineTags label="Readiness" tags={tags.readiness} theme="purple" />
                         </div>
                     </div>
 
@@ -368,11 +368,11 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     {/* Specific examples */}
                     <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.02] transition-colors mt-8 group">
                         <h3 className="text-2xl font-light text-white mb-8 flex items-center gap-3">
-                            <Target className="w-6 h-6 text-emerald-400" /> Unique Go-To-Market
+                            <Target className="w-6 h-6 text-purple-400" /> Unique Go-To-Market
                         </h3>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h4 className="text-lg font-medium text-white mb-3 flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-emerald-400" /> Legal Operators First</h4>
+                                <h4 className="text-lg font-medium text-white mb-3 flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-purple-400" /> Legal Operators First</h4>
                                 <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
                                     The sharpest wedge is legal psychedelic-adjacent care (e.g., ketamine clinics, high-end facilitators) who already feel the pain of charting, supervision, and safety variance. They buy first because it improves perceived quality & safety immediately.
                                 </p>
@@ -399,11 +399,11 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 flex items-center">
-                                <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Evaluation Metrics
+                            <div className="text-sm font-mono tracking-widest uppercase text-purple-400 flex items-center">
+                                <span className="w-8 h-px bg-purple-500/50 mr-4" /> Evaluation Metrics
                             </div>
                             <div className="mt-4 sm:mt-0">
-                                <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="emerald" />
+                                <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="purple" />
                             </div>
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
@@ -448,7 +448,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         type="moat"
                         defaultVisibleText="The core moat is a permissioned, longitudinal, outcomes-linked modality graph built from real sessions across preparation, session, and integration."
                         expandableText={
-                            <p className="text-lg bg-emerald-950/20 p-6 rounded-2xl border border-emerald-900/40 leading-relaxed font-light text-emerald-50">
+                            <p className="text-lg bg-purple-950/20 p-6 rounded-2xl border border-purple-900/40 leading-relaxed font-light text-purple-50">
                                 That dataset gets stronger as volume grows and as facilitators label what actually worked in context. On top of that sits workflow lock-in: note structures, supervision records, safety logs, individualized facilitator priors, and clinic-level benchmarking. In an AGI world, raw intelligence becomes cheap. Trusted, permissioned, domain-specific feedback loops do not.
                             </p>
                         }
@@ -504,23 +504,23 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="mb-8">
-                        <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Validation
+                        <div className="text-sm font-mono tracking-widest uppercase text-purple-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-purple-500/50 mr-4" /> Validation
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             First Experiment
                         </h2>
                     </div>
 
-                    <details className="glass-panel rounded-3xl border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.03] transition-all duration-500 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <details className="glass-panel rounded-3xl border border-white/5 hover:border-purple-500/30 hover:bg-white/[0.03] transition-all duration-500 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
                         <summary className="p-8 sm:p-10 list-none flex justify-between items-center outline-none">
                             <h3 className="text-2xl font-light text-white flex items-center gap-3">
-                                <FlaskConical className="w-6 h-6 text-emerald-400" /> View Initial Validation Pilot
+                                <FlaskConical className="w-6 h-6 text-purple-400" /> View Initial Validation Pilot
                             </h3>
                             <ChevronDown className="w-6 h-6 text-white/50 group-open:rotate-180 transition-transform duration-300" />
                         </summary>
                         <div className="p-8 sm:p-10 pt-0 border-t border-white/5 bg-zinc-950/30">
-                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-emerald-500/40 pl-6 mb-8 mt-6">
+                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-purple-500/40 pl-6 mb-8 mt-6">
                                 <strong>Quick falsifiable hypothesis:</strong> If 10 legal-care facilitators use DeepGuide for 100 sessions, then at least 70% will report that it reduces documentation burden without meaningfully reducing felt presence, and at least 50% will want to continue using it after the pilot.
                             </p>
                             <p className="text-lg text-white/80 font-light leading-relaxed pl-6">
@@ -541,11 +541,11 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12">
                         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
-                            <div className="text-sm font-mono tracking-widest uppercase text-emerald-400 flex items-center">
-                                <span className="w-8 h-px bg-emerald-500/50 mr-4" /> Final Assessment
+                            <div className="text-sm font-mono tracking-widest uppercase text-purple-400 flex items-center">
+                                <span className="w-8 h-px bg-purple-500/50 mr-4" /> Final Assessment
                             </div>
                             <div className="mt-4 sm:mt-0">
-                                <InlineTags tags={tags.outcomes} theme="emerald" />
+                                <InlineTags tags={tags.outcomes} theme="purple" />
                             </div>
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
@@ -555,30 +555,30 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div className="space-y-6">
-                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-emerald-500/30 pl-6">
+                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-purple-500/30 pl-6">
                                 Mental health infrastructure is civilization infrastructure. If psychedelic therapies work for a meaningful subset of depression, trauma, addiction, and existential distress, then the bottleneck shifts from molecule discovery to safe, scalable delivery. DeepGuide directly attacks that bottleneck.
                             </p>
                             <p className="text-lg leading-relaxed text-white/60 font-light pl-6 relative">
                                 The upside is larger than clinic software. A trusted intelligence layer for high-variance healing work could accelerate protocol discovery, reduce preventable harm, and make one of the most promising therapeutic categories more legible to institutions.
                             </p>
 
-                            <details className="mt-8 glass-panel rounded-[2rem] border border-emerald-500/20 bg-emerald-950/20 hover:bg-emerald-950/30 hover:border-emerald-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[300px]">
+                            <details className="mt-8 glass-panel rounded-[2rem] border border-purple-500/20 bg-purple-950/20 hover:bg-purple-950/30 hover:border-purple-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[300px]">
                                 <summary className="p-6 list-none flex justify-between items-center outline-none">
                                     <div>
                                         <div className="text-4xl font-light text-white tracking-tight mb-1">63</div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-emerald-400/80">Impact Score</div>
+                                        <div className="text-xs font-mono uppercase tracking-widest text-purple-400/80">Impact Score</div>
                                     </div>
-                                    <ChevronDown className="w-5 h-5 text-emerald-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                    <ChevronDown className="w-5 h-5 text-purple-500/50 group-open:rotate-180 transition-transform duration-300" />
                                 </summary>
-                                <div className="px-6 pb-6 pt-2 border-t border-emerald-500/10">
+                                <div className="px-6 pb-6 pt-2 border-t border-purple-500/10">
                                     <div className="space-y-3">
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-emerald-100/70 font-light">Human Flourishing</span>
-                                            <span className="text-emerald-400 font-mono">82</span>
+                                            <span className="text-purple-100/70 font-light">Human Flourishing</span>
+                                            <span className="text-purple-400 font-mono">82</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-emerald-100/70 font-light">Scientific Acceleration</span>
-                                            <span className="text-emerald-400 font-mono">74</span>
+                                            <span className="text-purple-100/70 font-light">Scientific Acceleration</span>
+                                            <span className="text-purple-400 font-mono">74</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-rose-100/70 font-light">Social Trust</span>
@@ -593,24 +593,24 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                             </details>
                         </div>
 
-                        <div className="glass-panel p-8 rounded-3xl border border-emerald-500/20 bg-emerald-950/10 hover:bg-emerald-950/20 transition-colors">
+                        <div className="glass-panel p-8 rounded-3xl border border-purple-500/20 bg-purple-950/10 hover:bg-purple-950/20 transition-colors">
                             <h3 className="text-xl text-white font-medium mb-8 flex items-center gap-3">
-                                <Activity className="w-6 h-6 text-emerald-400" /> Key Performance Indicators
+                                <Activity className="w-6 h-6 text-purple-400" /> Key Performance Indicators
                             </h3>
                             <ul className="space-y-4 text-white/80 font-light text-lg">
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Weekly active facilitators</li>
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Sessions run through live mode / month</li>
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Average documentation time saved</li>
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Recommendation acceptance rate</li>
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Distress-escalation response time</li>
-                                <li className="flex items-start gap-4"><span className="text-emerald-500 font-bold mt-1">✓</span> Clinic retention after 90 days</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Weekly active facilitators</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Sessions run through live mode / month</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Average documentation time saved</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Recommendation acceptance rate</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Distress-escalation response time</li>
+                                <li className="flex items-start gap-4"><span className="text-purple-500 font-bold mt-1">✓</span> Clinic retention after 90 days</li>
                             </ul>
                         </div>
                     </div>
 
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent mt-12 hover:border-white/20 transition-colors duration-500 group relative overflow-hidden">
-                        <div className="absolute top-0 left-0 w-2 h-full bg-emerald-500" />
-                        <h3 className="text-sm font-mono text-emerald-400 uppercase tracking-widest mb-6">Transferable Insight</h3>
+                        <div className="absolute top-0 left-0 w-2 h-full bg-purple-500" />
+                        <h3 className="text-sm font-mono text-purple-400 uppercase tracking-widest mb-6">Transferable Insight</h3>
                         <p className="text-white font-serif text-2xl sm:text-3xl leading-relaxed">
                             "In high-trust human services, the first winning artificial intelligence product usually does not replace judgment. It makes judgment more legible, more consistent, and easier to improve. Documentation and safety are often the wedge that unlocks the data moat."
                         </p>
@@ -631,52 +631,52 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[1]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[1]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed">
                                 HRSA. Designated Health Professional Shortage Areas. Data as of Oct 1, 2025.<br />
-                                <a href="https://data.hrsa.gov/default/generatehpsaquarterlyreport" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline inline-block mt-2 font-medium">HRSA Data →</a>
+                                <a href="https://data.hrsa.gov/default/generatehpsaquarterlyreport" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline inline-block mt-2 font-medium">HRSA Data →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[2]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[2]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed">
                                 Carbonaro TM et al. Survey of challenging experiences after psilocybin ingestion. <em>Journal of Psychopharmacology</em>. 2016. Key findings include 11% reporting risk of harm and 2.7% receiving medical help.<br />
-                                <a href="https://pubmed.ncbi.nlm.nih.gov/27578767/" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline inline-block mt-2 font-medium">PubMed →</a>
+                                <a href="https://pubmed.ncbi.nlm.nih.gov/27578767/" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline inline-block mt-2 font-medium">PubMed →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[3]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[3]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed">
                                 <em>Psychiatric Times</em>. FDA releases MDMA Complete Response Letter details. Sep 2025.<br />
-                                <a href="https://www.psychiatrictimes.com/view/fda-releases-complete-response-letter-on-declining-mdma-assisted-therapy-for-ptsd" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline inline-block mt-2 font-medium">Psychiatric Times →</a>
+                                <a href="https://www.psychiatrictimes.com/view/fda-releases-complete-response-letter-on-declining-mdma-assisted-therapy-for-ptsd" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline inline-block mt-2 font-medium">Psychiatric Times →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[4]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[4]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed">
                                 BrainFutures and American Psychedelic Practitioners Association. Professional Practice Guidelines for Psychedelic-Assisted Therapy. 2023–2024.<br />
-                                <a href="https://www.brainfutures.org/mental-health-treatment/professional-practice-guidelines/" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline inline-block mt-2 font-medium">BrainFutures →</a>
+                                <a href="https://www.brainfutures.org/mental-health-treatment/professional-practice-guidelines/" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline inline-block mt-2 font-medium">BrainFutures →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[5]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[5]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed">
                                 National Institute of Mental Health. Any mental illness prevalence and treatment rates. (2024). About half with any mental illness receive care yearly.<br />
-                                <a href="https://www.nimh.nih.gov/health/statistics/mental-illness" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline inline-block mt-2 font-medium">NIMH →</a>
+                                <a href="https://www.nimh.nih.gov/health/statistics/mental-illness" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline inline-block mt-2 font-medium">NIMH →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4 col-span-1 md:col-span-2">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[6]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[6]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed w-full flex flex-col md:flex-row md:justify-between md:items-center">
                                 <span>Fortune Business Insights. U.S. Behavioral Health Market forecast 2025 to 2032.</span>
-                                <a href="https://www.fortunebusinessinsights.com/u-s-behavioral-health-market-105298" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline mt-2 md:mt-0 font-medium">Fortune Business Insights →</a>
+                                <a href="https://www.fortunebusinessinsights.com/u-s-behavioral-health-market-105298" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline mt-2 md:mt-0 font-medium">Fortune Business Insights →</a>
                             </div>
                         </div>
                         <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4 col-span-1 md:col-span-2">
-                            <span className="text-emerald-400/70 font-mono text-lg shrink-0">[7]</span>
+                            <span className="text-purple-400/70 font-mono text-lg shrink-0">[7]</span>
                             <div className="text-sm text-white/50 font-light leading-relaxed w-full flex flex-col md:flex-row md:justify-between md:items-center">
                                 <span>Grand View Research. U.S. Ketamine Clinics Market outlook to 2030.</span>
-                                <a href="https://www.grandviewresearch.com/industry-analysis/us-ketamine-clinics-market-report" target="_blank" rel="noreferrer" className="text-emerald-400 hover:text-emerald-300 hover:underline mt-2 md:mt-0 font-medium">Grand View Research →</a>
+                                <a href="https://www.grandviewresearch.com/industry-analysis/us-ketamine-clinics-market-report" target="_blank" rel="noreferrer" className="text-purple-400 hover:text-purple-300 hover:underline mt-2 md:mt-0 font-medium">Grand View Research →</a>
                             </div>
                         </div>
                     </div>

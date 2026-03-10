@@ -51,12 +51,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
     };
 
     return (
-        <main className="min-h-screen bg-zinc-950 text-slate-200 selection:bg-cyan-500/30 font-sans pb-32">
-            <ScrollProgress title="AvatarLab" theme="cyan" />
+        <main className="min-h-screen bg-zinc-950 text-slate-200 selection:bg-teal-500/30 font-sans pb-32">
+            <ScrollProgress title="AvatarLab" theme="teal" />
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]" />
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-teal-500/10 rounded-full blur-[120px]" />
                 <div className="absolute top-[40%] left-[-10%] w-[600px] h-[600px] bg-teal-500/10 rounded-full blur-[150px]" />
             </div>
 
@@ -67,7 +67,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-cyan-900/20 group border border-white/5"
+                        className="relative w-full aspect-[2/1] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-teal-900/20 group border border-white/5"
                     >
                         <Image
                             src={heroImage}
@@ -86,21 +86,21 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
-                            AvatarLab<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-cyan-200/80 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-cyan-500/30 sm:pl-6">Organoid Avatars for Safe Personalized Therapy Testing</span>
+                            AvatarLab<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-teal-200/80 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-teal-500/30 sm:pl-6">Organoid Avatars for Safe Personalized Therapy Testing</span>
                         </h1>
-                        <p className="text-xl sm:text-2xl text-cyan-100/90 leading-relaxed font-light mb-8 max-w-3xl">
+                        <p className="text-xl sm:text-2xl text-teal-100/90 leading-relaxed font-light mb-8 max-w-3xl">
                             Bank your youngest cells. Grow mini-organs from your DNA, including skin. Test drugs, nutraceuticals, peptides, and combinations on your own biology before you try them. A personal digital twin ranks what works and what is safe for you.
                             <ExpandableCitation label="[1][2][4]" sourceUrl="" sourceText="Ingber 2022; Leung 2022; Katsoulakis 2024" />
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-                            <span className="font-mono text-[10px] uppercase tracking-widest text-cyan-500/60">Sector</span>
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-teal-500/60">Sector</span>
                             <InlineTags tags={tags.sector} theme="blue" />
                         </div>
                     </motion.div>
                 </header>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Headline Stat and Hook */}
                 <motion.section
@@ -111,7 +111,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 group relative overflow-hidden">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-cyan-400 to-teal-500 opacity-50 group-hover:opacity-100 transition-opacity" />
+                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-400 to-teal-500 opacity-50 group-hover:opacity-100 transition-opacity" />
                         <h3 className="text-2xl sm:text-3xl font-light text-white mb-6 leading-tight">
                             About 90% of drugs that enter clinical trials fail, largely because efficacy or safety breaks too late in the process.
                             <ExpandableCitation
@@ -121,7 +121,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             />
                         </h3>
                         <p className="text-lg text-white/70 leading-relaxed font-light">
-                            <strong className="text-cyan-300 font-medium">Test on your biology first.</strong> Before you start a <HoverAcronym acronym="GLP-1" definition="glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity." />, a peptide stack, a cosmetic routine, or a multi-drug change, you run the choice against tissue grown from your own cells. Instead of guessing from population averages, anecdotes, or animal data, you get a ranked readout of likely benefit, likely downside, and what to test next. The premium wedge is personalized wet-lab testing. The larger company is a compounding recommendation engine that learns from genotype-linked tissue response, then generalizes outward to people with genome, lab, and wearable data who never need a full custom assay.
+                            <strong className="text-teal-300 font-medium">Test on your biology first.</strong> Before you start a <HoverAcronym acronym="GLP-1" definition="glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity." />, a peptide stack, a cosmetic routine, or a multi-drug change, you run the choice against tissue grown from your own cells. Instead of guessing from population averages, anecdotes, or animal data, you get a ranked readout of likely benefit, likely downside, and what to test next. The premium wedge is personalized wet-lab testing. The larger company is a compounding recommendation engine that learns from genotype-linked tissue response, then generalizes outward to people with genome, lab, and wearable data who never need a full custom assay.
                         </p>
                     </div>
                 </motion.section>
@@ -134,8 +134,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="mb-12 cursor-default">
-                        <div className="text-sm font-mono tracking-widest uppercase text-cyan-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-cyan-500/50 mr-4" /> Context
+                        <div className="text-sm font-mono tracking-widest uppercase text-teal-400 mb-4 flex items-center">
+                            <span className="w-8 h-px bg-teal-500/50 mr-4" /> Context
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
                             The Problem
@@ -144,8 +144,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-cyan-500/20 hover:bg-white/[0.02] transition-colors">
-                            <Dna className="w-8 h-8 text-cyan-500 mb-6 opacity-80" />
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-teal-500/20 hover:bg-white/[0.02] transition-colors">
+                            <Dna className="w-8 h-8 text-teal-500 mb-6 opacity-80" />
                             <p className="text-lg leading-relaxed text-white/70 font-light">
                                 Population averages rarely fit an individual. Animal models miss human-specific failure modes. Most surprises show up late, after time and money are already burned. Aging also adds molecular drift over time, which weakens the case for waiting decades before banking source cells.
                             </p>
@@ -153,7 +153,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <ExpandableCitation label="[10][11]" sourceUrl="" sourceText="Fan 2025; Martins 2025" />
                             </div>
                         </div>
-                        <div className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-cyan-500/20 hover:bg-white/[0.02] transition-colors">
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-teal-500/20 hover:bg-white/[0.02] transition-colors">
                             <Network className="w-8 h-8 text-teal-500 mb-6 opacity-80" />
                             <p className="text-lg leading-relaxed text-white/70 font-light">
                                 Civilizational problem: We discover and adopt therapies through a painfully lossy system: weak preclinical translation, expensive trial-and-error in humans, and almost no individualized feedback loop once products hit the market. The world learns too slowly about what works for whom.
@@ -162,7 +162,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Solution Hypothesis */}
                 <motion.section
@@ -193,7 +193,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </div>
                     </div>
                     <div className="mt-8 glass-panel p-6 rounded-2xl border border-white/5 bg-white/5 flex items-start gap-4">
-                        <AlertCircle className="w-6 h-6 text-cyan-400 shrink-0 mt-1" />
+                        <AlertCircle className="w-6 h-6 text-teal-400 shrink-0 mt-1" />
                         <p className="text-white/70 font-light text-sm leading-relaxed max-w-4xl">
                             Drug-induced liver injury (<HoverAcronym acronym="DILI" definition="drug-induced liver injury." />) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
                         </p>
@@ -219,8 +219,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             <InlineTags tags={tags.customer} theme="emerald" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-cyan-500/10 bg-cyan-950/10">
-                                <strong className="text-cyan-300 block mb-2 font-medium">Individuals</strong>
+                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-teal-500/10 bg-teal-950/10">
+                                <strong className="text-teal-300 block mb-2 font-medium">Individuals</strong>
                                 <p className="text-white/70 font-light leading-relaxed">Compare a <HoverAcronym acronym="GLP-1" definition="glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity." />, a nootropic stack, and a peptide combo on your mini-organs first. Pick what helps most with the least risk for your biology.</p>
                             </motion.div>
 
@@ -242,7 +242,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Market & Business Model */}
                 <motion.section
@@ -269,7 +269,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                     <div className="space-y-4 mb-16 relative">
                         {/* Connecting line for visual grounding */}
-                        <div className="absolute left-10 sm:left-[3.25rem] top-10 bottom-10 w-px bg-gradient-to-b from-emerald-500/50 via-cyan-500/50 to-indigo-500/50 hidden sm:block" />
+                        <div className="absolute left-10 sm:left-[3.25rem] top-10 bottom-10 w-px bg-gradient-to-b from-emerald-500/50 via-teal-500/50 to-indigo-500/50 hidden sm:block" />
 
                         {/* Layer 1 */}
                         <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-emerald-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
@@ -302,13 +302,13 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </motion.div>
 
                         {/* Layer 3 */}
-                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/20 bg-cyan-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
-                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-teal-500/20 bg-teal-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
                                 <Building2 className="w-6 h-6" />
                             </div>
                             <div>
-                                <h4 className="text-xl text-cyan-200 font-medium mb-3 flex items-center gap-3">
-                                    Layer 3: Enterprise decision market <span className="text-xs font-mono uppercase tracking-widest text-cyan-500/50 border border-cyan-500/20 rounded-full px-2 py-0.5">B2B Extension</span>
+                                <h4 className="text-xl text-teal-200 font-medium mb-3 flex items-center gap-3">
+                                    Layer 3: Enterprise decision market <span className="text-xs font-mono uppercase tracking-widest text-teal-500/50 border border-teal-500/20 rounded-full px-2 py-0.5">B2B Extension</span>
                                 </h4>
                                 <p className="text-lg text-white/70 font-light leading-relaxed">
                                     Adverse drug reactions frequently cause hospital admissions. Meaningfully reducing unpredictable real-world toxicity creates immense value for clinics, payers, and pharma before the consumer business even fully scales. <ExpandableCitation label="[16]" sourceUrl="https://pubmed.ncbi.nlm.nih.gov/39832731/" sourceText="Cosgrave, N. et al. 'Hospital admissions due to adverse drug reactions in older adults.' Age and Ageing. 2025." />
@@ -352,10 +352,10 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags tags={tags.product_type} theme="indigo" />
                             </div>
                             <ul className="space-y-4 text-white/70 font-light">
-                                <li className="flex gap-3"><span className="text-cyan-400 mt-1">•</span> One-time fee for cell banking. Pay-per-assay or premium reports.</li>
-                                <li className="flex gap-3"><span className="text-cyan-400 mt-1">•</span> Seats for TwinOS, assay credits, and evidence packs for clinics.</li>
-                                <li className="flex gap-3"><span className="text-cyan-400 mt-1">•</span> Biopharma preclinical decision support pricing tied to cycle-time savings.</li>
-                                <li className="flex gap-3"><span className="text-cyan-400 mt-1">•</span> Genome Tier lower-cost subscription.</li>
+                                <li className="flex gap-3"><span className="text-teal-400 mt-1">•</span> One-time fee for cell banking. Pay-per-assay or premium reports.</li>
+                                <li className="flex gap-3"><span className="text-teal-400 mt-1">•</span> Seats for TwinOS, assay credits, and evidence packs for clinics.</li>
+                                <li className="flex gap-3"><span className="text-teal-400 mt-1">•</span> Biopharma preclinical decision support pricing tied to cycle-time savings.</li>
+                                <li className="flex gap-3"><span className="text-teal-400 mt-1">•</span> Genome Tier lower-cost subscription.</li>
                             </ul>
                             <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
                                 <p className="text-sm font-medium text-white/90 italic">
@@ -366,7 +366,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Scorecards */}
                 <motion.section
@@ -429,23 +429,23 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         type="moat"
                         defaultVisibleText="If AvatarLab gets to market first with a credible, validated product, the moat is extremely strong. It is not just a lab-services business. It is a compounding biology intelligence business."
                         expandableText={
-                            <div className="space-y-6 text-lg text-cyan-50 font-light leading-relaxed">
+                            <div className="space-y-6 text-lg text-teal-50 font-light leading-relaxed">
                                 <p>If executed well, the moat compounds along multiple dimensions at once:</p>
                                 <ul className="space-y-4">
-                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
-                                        <strong className="text-cyan-300 block mb-2">Data compounding.</strong> More assays improve predictive power.
+                                    <li className="bg-teal-950/20 p-5 rounded-2xl border border-teal-900/40">
+                                        <strong className="text-teal-300 block mb-2">Data compounding.</strong> More assays improve predictive power.
                                     </li>
-                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
-                                        <strong className="text-cyan-300 block mb-2">Model compounding.</strong> Better predictions attract more customers and partners.
+                                    <li className="bg-teal-950/20 p-5 rounded-2xl border border-teal-900/40">
+                                        <strong className="text-teal-300 block mb-2">Model compounding.</strong> Better predictions attract more customers and partners.
                                     </li>
-                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
-                                        <strong className="text-cyan-300 block mb-2">Workflow compounding.</strong> More runs improve protocols, automation, turnaround time, and cost.
+                                    <li className="bg-teal-950/20 p-5 rounded-2xl border border-teal-900/40">
+                                        <strong className="text-teal-300 block mb-2">Workflow compounding.</strong> More runs improve protocols, automation, turnaround time, and cost.
                                     </li>
-                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
-                                        <strong className="text-cyan-300 block mb-2">Trust compounding.</strong> More validated wins make clinicians, consumers, and brands more willing to rely on the system.
+                                    <li className="bg-teal-950/20 p-5 rounded-2xl border border-teal-900/40">
+                                        <strong className="text-teal-300 block mb-2">Trust compounding.</strong> More validated wins make clinicians, consumers, and brands more willing to rely on the system.
                                     </li>
-                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
-                                        <strong className="text-cyan-300 block mb-2">Distribution compounding.</strong> The premium assay business seeds the data that unlocks a much larger recommendation platform.
+                                    <li className="bg-teal-950/20 p-5 rounded-2xl border border-teal-900/40">
+                                        <strong className="text-teal-300 block mb-2">Distribution compounding.</strong> The premium assay business seeds the data that unlocks a much larger recommendation platform.
                                     </li>
                                 </ul>
                                 <p>
@@ -462,7 +462,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     />
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Go To Market & AGI Edge */}
                 <motion.section
@@ -520,7 +520,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Validation & First Experiment */}
                 <motion.section
@@ -531,8 +531,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="grid md:grid-cols-2 gap-12 items-center group cursor-default mb-16">
                         <div>
-                            <div className="text-sm font-mono tracking-widest uppercase text-cyan-400 mb-4 flex items-center">
-                                <span className="w-8 h-px bg-cyan-500/50 mr-4" /> Thesis
+                            <div className="text-sm font-mono tracking-widest uppercase text-teal-400 mb-4 flex items-center">
+                                <span className="w-8 h-px bg-teal-500/50 mr-4" /> Thesis
                             </div>
                             <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-4">
                                 Validation <br className="hidden sm:block" />& First Experiment
@@ -544,33 +544,33 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 The foundation of the platform relies on secure, viable cryogenic storage combined with perfectly calibrated reprogramming and differentiation pipelines.
                             </p>
                         </div>
-                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-cyan-500/20">
+                        <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-teal-500/20">
                             <Image src={cellbankImage} alt="Futuristic cell banking storage" fill quality={100} className="object-cover" />
                         </div>
                     </div>
 
-                    <details className="glass-panel rounded-3xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.03] transition-all duration-500 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                    <details className="glass-panel rounded-3xl border border-white/5 hover:border-teal-500/30 hover:bg-white/[0.03] transition-all duration-500 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
                         <summary className="p-8 sm:p-10 list-none flex justify-between items-center outline-none">
                             <h3 className="text-2xl font-light text-white flex items-center gap-3">
-                                <Microscope className="w-6 h-6 text-cyan-400" /> First experiment
+                                <Microscope className="w-6 h-6 text-teal-400" /> First experiment
                             </h3>
                             <ChevronDown className="w-6 h-6 text-white/50 group-open:rotate-180 transition-transform duration-300" />
                         </summary>
                         <div className="p-8 sm:p-10 pt-0 border-t border-white/5 bg-zinc-950/30">
-                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-cyan-500/40 pl-6 mb-8 mt-6">
+                            <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-teal-500/40 pl-6 mb-8 mt-6">
                                 Recruit 50 donors across age bands. Create <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> lines with one protocol. Primary endpoints: line creation success rate, genomic stability, differentiation yield for liver, gut, and skin organoids, and bank viability at 3 months. <ExpandableCitation label="[1][2][11]" sourceUrl="" sourceText="Ingber; Leung; Martins" />
                             </p>
                             <p className="text-lg text-white/80 font-light leading-relaxed pl-6">
                                 Secondary endpoint: a blinded panel shows that donor-matched liver or liver-gut systems predict a predefined set of known hepatotoxic and non-hepatotoxic agents better than historical animal benchmarks. Pre-register metrics. Publish reproducibility first.
                             </p>
-                            <p className="text-lg text-cyan-200 mt-6 font-medium pl-6">
+                            <p className="text-lg text-teal-200 mt-6 font-medium pl-6">
                                 Quick falsifiable hypothesis: a standardized blood-to-<HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." />-to-liver assay pipeline can produce reproducible, clinically relevant toxicity signal across donors well enough to support a premium commercial testing service.
                             </p>
                         </div>
                     </details>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent my-20" />
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-teal-500/20 to-transparent my-20" />
 
                 {/* Civilizational Impact */}
                 <motion.section
@@ -595,18 +595,18 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div className="space-y-6">
-                            <details className="group cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-cyan-950/10 border border-cyan-500/20 rounded-3xl overflow-hidden transition-all duration-300">
+                            <details className="group cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-teal-950/10 border border-teal-500/20 rounded-3xl overflow-hidden transition-all duration-300">
                                 <summary className="p-8 list-none flex justify-between items-start outline-none">
-                                    <div className="text-xl leading-relaxed text-cyan-50 font-light pr-8">
-                                        <p className="mb-3 font-medium text-cyan-300">Democratizing personalized medicine</p>
+                                    <div className="text-xl leading-relaxed text-teal-50 font-light pr-8">
+                                        <p className="mb-3 font-medium text-teal-300">Democratizing personalized medicine</p>
                                         <p className="text-lg text-white/80">AvatarLab could compress the discovery-to-decision loop. If the organoid layer becomes a truth engine, the benefits extend beyond wealthy users—a few high-quality assays improve therapeutic suggestions for millions.</p>
                                     </div>
-                                    <div className="shrink-0 mt-2 w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400 group-open:bg-cyan-500/20 group-open:text-cyan-300 transition-colors">
+                                    <div className="shrink-0 mt-2 w-10 h-10 rounded-full bg-teal-500/10 flex items-center justify-center border border-teal-500/20 text-teal-400 group-open:bg-teal-500/20 group-open:text-teal-300 transition-colors">
                                         <Network className="w-5 h-5 group-open:hidden" />
                                         <ChevronDown className="w-5 h-5 hidden group-open:block" />
                                     </div>
                                 </summary>
-                                <div className="px-8 pb-8 pt-4 border-t border-cyan-500/10 text-lg leading-relaxed text-white/70 font-light space-y-6">
+                                <div className="px-8 pb-8 pt-4 border-t border-teal-500/10 text-lg leading-relaxed text-white/70 font-light space-y-6">
                                     <p>First, it makes high-stakes experimentation safer for the people who use it directly. More signal, less roulette. Fewer harmful self-experiments. Faster learning about which interventions work for which biological profiles.</p>
                                     <p>Second, and more importantly, it democratizes the value of that learning. A relatively small number of high-quality personalized assays could improve therapeutic suggestions for millions of people with sequencing, bloodwork, phenotype, and wearable data. That turns a luxury service into a general intelligence layer for personalized medicine.</p>
                                     <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" /></p>
@@ -616,27 +616,27 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 </div>
                             </details>
 
-                            <details className="mt-8 glass-panel rounded-[2rem] border border-cyan-500/20 bg-cyan-950/20 hover:bg-cyan-950/30 hover:border-cyan-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px]">
+                            <details className="mt-8 glass-panel rounded-[2rem] border border-teal-500/20 bg-teal-950/20 hover:bg-teal-950/30 hover:border-teal-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px]">
                                 <summary className="p-6 list-none flex justify-between items-center outline-none">
                                     <div>
                                         <div className="text-4xl font-light text-white tracking-tight mb-1">78</div>
-                                        <div className="text-xs font-mono uppercase tracking-widest text-cyan-400/80">Impact Score</div>
+                                        <div className="text-xs font-mono uppercase tracking-widest text-teal-400/80">Impact Score</div>
                                     </div>
-                                    <ChevronDown className="w-5 h-5 text-cyan-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                    <ChevronDown className="w-5 h-5 text-teal-500/50 group-open:rotate-180 transition-transform duration-300" />
                                 </summary>
-                                <div className="px-6 pb-6 pt-2 border-t border-cyan-500/10">
+                                <div className="px-6 pb-6 pt-2 border-t border-teal-500/10">
                                     <div className="space-y-3">
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-cyan-100/70 font-light">Longevity</span>
-                                            <span className="text-cyan-400 font-mono">86</span>
+                                            <span className="text-teal-100/70 font-light">Longevity</span>
+                                            <span className="text-teal-400 font-mono">86</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-teal-100/70 font-light">Human Flourishing</span>
                                             <span className="text-teal-400 font-mono">73</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
-                                            <span className="text-cyan-100/70 font-light">Scientific Acceleration</span>
-                                            <span className="text-cyan-400 font-mono">84</span>
+                                            <span className="text-teal-100/70 font-light">Scientific Acceleration</span>
+                                            <span className="text-teal-400 font-mono">84</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-rose-100/70 font-light">Resilience</span>

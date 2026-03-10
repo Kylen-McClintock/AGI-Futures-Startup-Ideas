@@ -7,25 +7,25 @@ interface MissionProps {
     title: string;
     description: string;
     icon: LucideIcon;
-    colorTheme?: "amber" | "emerald" | "blue" | "purple";
+    colorTheme?: string;
     details?: string;
     outputs?: string;
 }
 
 interface InteractiveGridProps {
     items: MissionProps[];
-    colorTheme?: "amber" | "emerald" | "blue" | "purple";
+    colorTheme?: string;
 }
 
 export function InteractiveGrid({ items, colorTheme = "amber" }: InteractiveGridProps) {
-    const iconBgs = {
+    const iconBgs: Record<string, string> = {
         amber: "bg-amber-500/10 text-amber-400",
         emerald: "bg-emerald-500/10 text-emerald-400",
         blue: "bg-blue-500/10 text-blue-400",
         purple: "bg-purple-500/10 text-purple-400",
     };
 
-    const borders = {
+    const borders: Record<string, string> = {
         amber: "hover:border-amber-500/30",
         emerald: "hover:border-emerald-500/30",
         blue: "hover:border-blue-500/30",

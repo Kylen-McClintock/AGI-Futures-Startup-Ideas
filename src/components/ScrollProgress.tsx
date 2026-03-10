@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 interface ScrollProgressProps {
     title: string;
-    theme?: "amber" | "emerald" | "blue" | "purple" | "cyan" | "indigo" | "orange" | "zinc" | "rose" | "primary";
+    theme?: "amber" | "emerald" | "blue" | "purple" | "cyan" | "indigo" | "orange" | "zinc" | "rose" | "primary" | "fuchsia" | "teal" | "violet";
 }
 
 export function ScrollProgress({ title, theme = "emerald" }: ScrollProgressProps) {
@@ -75,6 +75,21 @@ export function ScrollProgress({ title, theme = "emerald" }: ScrollProgressProps
             bg: "bg-[var(--primary)]",
             border: "border-[var(--primary)]/50",
             circleBg: "bg-[var(--primary)]/10"
+        },
+        fuchsia: {
+            bg: "bg-fuchsia-400",
+            border: "border-fuchsia-500/50",
+            circleBg: "bg-fuchsia-500/20"
+        },
+        teal: {
+            bg: "bg-teal-400",
+            border: "border-teal-500/50",
+            circleBg: "bg-teal-500/20"
+        },
+        violet: {
+            bg: "bg-violet-400",
+            border: "border-violet-500/50",
+            circleBg: "bg-violet-500/20"
         }
     };
 

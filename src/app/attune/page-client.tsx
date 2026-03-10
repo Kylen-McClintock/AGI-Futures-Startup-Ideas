@@ -19,14 +19,14 @@ const citations = [
 
 export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
-    <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-amber-500/30 selection:text-amber-100 pb-32">
+    <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-rose-500/30 selection:text-rose-100 pb-32">
       <ScrollProgress title="Attune" theme="primary" />
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 p-6 flex justify-between items-center bg-black/50 backdrop-blur-xl border-b border-white/5">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-black font-bold">A</div>
-          <span className="font-serif text-xl tracking-wide font-medium text-amber-50">ATTUNE</span>
+          <div className="w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-black font-bold">A</div>
+          <span className="font-serif text-xl tracking-wide font-medium text-rose-50">ATTUNE</span>
         </div>
         <button className="text-sm px-5 py-2 glass-panel hover:bg-white/10 transition-colors rounded-full font-medium">
           Request Access
@@ -36,24 +36,24 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 px-6 md:px-12 lg:px-24">
         {/* Background glow and image wrapper */}
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-amber-900/20 via-[#060913] to-[#060913]">
-          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rose-900/20 via-[#060913] to-[#060913]">
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-rose-500/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
         </div>
 
         <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <RevealSection delay={0.2} className="max-w-2xl">
 
             <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1] mb-6 tracking-tight text-white drop-shadow-2xl">
-              An AI relationship coach to Make her feel <span className="text-amber-400 font-serif italic">heard, seen, and supported,</span> consistently.
+              An AI relationship coach to Make her feel <span className="text-rose-400 font-serif italic">heard, seen, and supported,</span> consistently.
             </h1>
             <p className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-xl">
-              It turns a <strong className="font-semibold text-amber-200">weekly couple sync, persistent relationship memory, and daily skill reps</strong> into a compounding loop for becoming a meaningfully better boyfriend or husband.
+              It turns a <strong className="font-semibold text-rose-200">weekly couple sync, persistent relationship memory, and daily skill reps</strong> into a compounding loop for becoming a meaningfully better boyfriend or husband.
             </p>
             <div className="mt-6 mb-12 flex flex-col items-start -space-y-4">
-              <InlineTags tags={initialTags?.sector} theme="amber" />
+              <InlineTags tags={initialTags?.sector} theme="rose" />
             </div>
             <div className="flex items-center gap-4">
-              <button className="flex items-center gap-2 px-8 py-4 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-full transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">
+              <button className="flex items-center gap-2 px-8 py-4 bg-rose-500 hover:bg-rose-400 text-black font-semibold rounded-full transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">
                 See the Prototype <ArrowRight className="w-5 h-5" />
               </button>
             </div>
@@ -80,12 +80,12 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         {/* Headline Stat */}
         <RevealSection>
           <div className="glass-panel p-8 md:p-12 rounded-3xl relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/20 rounded-full blur-[80px] -z-10 group-hover:bg-amber-400/30 transition-all duration-700" />
-            <h2 className="text-sm font-bold tracking-widest text-amber-400 uppercase mb-8 flex items-center gap-2">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-rose-400/20 rounded-full blur-[80px] -z-10 group-hover:bg-rose-400/30 transition-all duration-700" />
+            <h2 className="text-sm font-bold tracking-widest text-rose-400 uppercase mb-8 flex items-center gap-2">
               <Activity className="w-4 h-4" /> Headline Stat
             </h2>
             <div className="text-2xl md:text-3xl lg:text-4xl font-serif leading-tight text-slate-100">
-              In a randomized trial of <strong className="text-amber-300 font-medium">215 couples</strong>, a brief recurring relationship checkup improved <strong className="text-amber-300 font-medium">intimacy for the full 2-year follow-up</strong>, and also improved <strong className="text-amber-300 font-medium">satisfaction and acceptance</strong>.
+              In a randomized trial of <strong className="text-rose-300 font-medium">215 couples</strong>, a brief recurring relationship checkup improved <strong className="text-rose-300 font-medium">intimacy for the full 2-year follow-up</strong>, and also improved <strong className="text-rose-300 font-medium">satisfaction and acceptance</strong>.
               <ExpandableCitation
                 label="PMC Study"
                 sourceUrl="https://pmc.ncbi.nlm.nih.gov/articles/PMC4115001/"
@@ -99,9 +99,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         {/* Problem */}
         <RevealSection>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-            <h2 className="text-4xl font-serif font-medium text-amber-50">The Problem</h2>
+            <h2 className="text-4xl font-serif font-medium text-rose-50">The Problem</h2>
           </div>
-          <div className="prose prose-invert prose-amber prose-lg max-w-none">
+          <div className="prose prose-invert prose-rose prose-lg max-w-none">
             <p>
               Most heterosexual relationships do not fail because the man does not care in the abstract. They fail because the woman repeatedly feels some combination of:
             </p>
@@ -115,8 +115,8 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                 "Frustrated that the same issues recur without real behavioral change",
               ].map((item, i) => (
                 <li key={i} className="flex gap-4 items-start bg-white/5 p-4 rounded-xl border border-white/5">
-                  <div className="w-6 h-6 rounded-full bg-amber-900/50 border border-amber-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <div className="w-6 h-6 rounded-full bg-rose-900/50 border border-rose-500/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-rose-400" />
                   </div>
                   <span className="text-slate-200">{item}</span>
                 </li>
@@ -128,9 +128,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <p>
               The cleanest relationship-science framing is not a cartoon binary like "women want feelings, men want sex." In established heterosexual relationships, men and women generally want change in the <strong>same directions</strong>, but women tend to want larger increases in emotional and companionate behaviors, instrumental support, and parenting involvement, while men tend to want larger increases in sex.
             </p>
-            <div className="bg-amber-950/30 border-l-4 border-amber-500 p-6 my-10 rounded-r-xl">
-              <p className="text-xl font-serif text-amber-100 m-0">
-                So the core problem is not lack of love. It is lack of <strong className="text-amber-400 font-semibold">partner-specific relational skill</strong>, reinforced by weak feedback loops.
+            <div className="bg-rose-950/30 border-l-4 border-rose-500 p-6 my-10 rounded-r-xl">
+              <p className="text-xl font-serif text-rose-100 m-0">
+                So the core problem is not lack of love. It is lack of <strong className="text-rose-400 font-semibold">partner-specific relational skill</strong>, reinforced by weak feedback loops.
               </p>
             </div>
           </div>
@@ -141,10 +141,10 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           <div className="grid md:grid-cols-2 gap-12 items-center mb-12">
             <div>
               <div className="flex flex-col gap-4 mb-2">
-                <h2 className="text-4xl font-serif font-medium text-amber-50">The Solution</h2>
+                <h2 className="text-4xl font-serif font-medium text-rose-50">The Solution</h2>
               </div>
               <div className="mb-6">
-                <InlineTags tags={initialTags?.enabling_technology} theme="amber" />
+                <InlineTags tags={initialTags?.enabling_technology} theme="rose" />
               </div>
               <p className="text-lg text-slate-300 leading-relaxed">
                 <strong>Attune</strong> starts with a clear wedge: help the guy become a meaningfully better boyfriend or husband in the ways that most commonly drive disconnection.
@@ -161,12 +161,12 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             </div>
           </div>
 
-          <div className="prose prose-invert prose-amber prose-lg max-w-none">
+          <div className="prose prose-invert prose-rose prose-lg max-w-none">
             <p>Each week, the couple completes a guided sync. That sync captures:</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
               {['What felt good this week', 'Where either person felt disconnected', 'Upcoming stressors', 'One thing to improve next week', 'Shared goals', 'Intimacy and planning alignment', 'Preference updates'].map((item) => (
-                <div key={item} className="px-4 py-3 glass rounded-lg text-sm font-medium text-amber-50 flex items-center gap-2">
-                  <ArrowRight className="w-4 h-4 text-amber-500" /> {item}
+                <div key={item} className="px-4 py-3 glass rounded-lg text-sm font-medium text-rose-50 flex items-center gap-2">
+                  <ArrowRight className="w-4 h-4 text-rose-500" /> {item}
                 </div>
               ))}
             </div>
@@ -181,10 +181,10 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <p className="mt-8">
               This is grounded in a simple research-backed principle: <strong>feeling known and feeling responded to matter enormously</strong>. Recent work finds that feeling known by a partner predicts relationship satisfaction more strongly than merely feeling like you know your partner, and longitudinal work on partner responsiveness defines it as being met with understanding, validation, and care, with lower responsiveness linked to declines in relationship satisfaction.
             </p>
-            <div className="relative mt-12 p-8 rounded-2xl glass-panel border border-amber-500/20 text-center">
-              <Brain className="w-10 h-10 text-amber-400 mx-auto mb-4" />
+            <div className="relative mt-12 p-8 rounded-2xl glass-panel border border-rose-500/20 text-center">
+              <Brain className="w-10 h-10 text-rose-400 mx-auto mb-4" />
               <p className="text-xl text-slate-200">
-                The app is not just a content library. It is a <strong className="text-amber-400">relationship memory system</strong> that remembers what matters to <em>this</em> woman, where <em>this</em> man keeps missing, and which interventions actually improve the relationship.
+                The app is not just a content library. It is a <strong className="text-rose-400">relationship memory system</strong> that remembers what matters to <em>this</em> woman, where <em>this</em> man keeps missing, and which interventions actually improve the relationship.
               </p>
             </div>
           </div>
@@ -192,14 +192,14 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* Optional Woman-side Mode */}
         <RevealSection>
-          <h2 className="text-4xl font-serif font-medium mb-8 text-amber-50">Optional Woman-Side Mode</h2>
+          <h2 className="text-4xl font-serif font-medium mb-8 text-rose-50">Optional Woman-Side Mode</h2>
           <div className="prose prose-invert prose-lg max-w-none">
             <p>
               The woman-side experience is important because it makes the product feel like <strong>both partners are improving the relationship</strong>, not like one person is being "managed." But the product should stay honest about the wedge: in many heterosexual relationships, the larger early deficit is still the guy needing to become more present, responsive, emotionally intelligent, and proactive.
             </p>
             <div className="grid md:grid-cols-2 gap-6 my-10">
-              <div className="p-6 glass rounded-2xl border-t-2 border-t-amber-500">
-                <h3 className="text-amber-400 font-bold mb-2 uppercase text-xs tracking-wider">Primary Mode</h3>
+              <div className="p-6 glass rounded-2xl border-t-2 border-t-rose-500">
+                <h3 className="text-rose-400 font-bold mb-2 uppercase text-xs tracking-wider">Primary Mode</h3>
                 <p className="text-sm text-slate-300">Woman contributes feedback, goals, and weekly sync input; man receives the main daily coaching.</p>
               </div>
               <div className="p-6 glass rounded-2xl border-t-2 border-t-blue-400">
@@ -234,15 +234,15 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         <RevealSection>
           <div className="bg-white/5 rounded-3xl p-8 md:p-12 border border-white/10">
             <div className="flex flex-col gap-4 mb-2 items-center">
-              <h2 className="text-4xl font-serif font-medium text-center text-amber-50">Ideal Customer Profile</h2>
+              <h2 className="text-4xl font-serif font-medium text-center text-rose-50">Ideal Customer Profile</h2>
             </div>
             <div className="mb-12 flex justify-center">
-              <InlineTags tags={initialTags?.customer} theme="amber" />
+              <InlineTags tags={initialTags?.customer} theme="rose" />
             </div>
             <div className="space-y-12">
               <div>
-                <h3 className="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">
-                  <span className="w-8 h-8 rounded-full bg-amber-950 flex items-center justify-center text-sm">1</span>
+                <h3 className="text-xl font-bold text-rose-400 mb-4 flex items-center gap-2">
+                  <span className="w-8 h-8 rounded-full bg-rose-950 flex items-center justify-center text-sm">1</span>
                   Primary ICP
                 </h3>
                 <p className="text-slate-300 leading-relaxed mb-4">
@@ -252,11 +252,11 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </div>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="p-6 bg-black/30 rounded-2xl">
-                  <h4 className="text-amber-300 font-semibold mb-2 text-sm uppercase tracking-wider">Economic Buyer Wedge</h4>
+                  <h4 className="text-rose-300 font-semibold mb-2 text-sm uppercase tracking-wider">Economic Buyer Wedge</h4>
                   <p className="text-sm text-slate-400">Usually the woman is the one most motivated to seek a solution, invite him in, and push for consistent usage.</p>
                 </div>
                 <div className="p-6 bg-black/30 rounded-2xl">
-                  <h4 className="text-amber-300 font-semibold mb-2 text-sm uppercase tracking-wider">Secondary ICP</h4>
+                  <h4 className="text-rose-300 font-semibold mb-2 text-sm uppercase tracking-wider">Secondary ICP</h4>
                   <p className="text-sm text-slate-400">Premarital couples who want to build elite relationship habits early instead of waiting until resentment calcifies.</p>
                 </div>
               </div>
@@ -268,7 +268,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                     "“I feel like I'm trying, but we keep having the same fights.”",
                     "“I want to be better at this, I just need practical help.”"
                   ].map((quote, i) => (
-                    <div key={i} className="text-sm italic text-slate-300 p-4 border-l-2 border-amber-500/50 bg-amber-500/5">
+                    <div key={i} className="text-sm italic text-slate-300 p-4 border-l-2 border-rose-500/50 bg-rose-500/5">
                       {quote}
                     </div>
                   ))}
@@ -280,22 +280,22 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* Product Component breakdown */}
         <RevealSection>
-          <h2 className="text-4xl font-serif font-medium mb-4 text-center text-amber-50">The Product</h2>
-          <p className="text-center text-amber-200/60 mb-16 uppercase tracking-widest text-sm font-bold">The Core Loop is the Company</p>
+          <h2 className="text-4xl font-serif font-medium mb-4 text-center text-rose-50">The Product</h2>
+          <p className="text-center text-rose-200/60 mb-16 uppercase tracking-widest text-sm font-bold">The Core Loop is the Company</p>
 
           <CoreLoopVisual />
 
           <div className="mt-20 space-y-16">
-            <h3 className="text-2xl font-serif text-amber-300 mb-8 border-b border-white/10 pb-4">Product Layers</h3>
+            <h3 className="text-2xl font-serif text-rose-300 mb-8 border-b border-white/10 pb-4">Product Layers</h3>
 
             <div className="grid md:grid-cols-2 gap-8">
               <FadeIn delay={0.1} className="glass p-6 rounded-2xl">
-                <h4 className="text-amber-400 font-medium mb-3">1. Dual Onboarding</h4>
+                <h4 className="text-rose-400 font-medium mb-3">1. Dual Onboarding</h4>
                 <p className="text-sm text-slate-300">Each partner separately maps strengths, pain points, conflict style, affection/intimacy preferences, planning friction, emotional triggers, appreciation preferences, future goals, what makes them feel cared for or shut down.</p>
               </FadeIn>
 
               <FadeIn delay={0.2} className="glass p-6 rounded-2xl">
-                <h4 className="text-amber-400 font-medium mb-3">2. Weekly Couple Sync</h4>
+                <h4 className="text-rose-400 font-medium mb-3">2. Weekly Couple Sync</h4>
                 <p className="text-sm text-slate-300 mb-2">A 10 to 15 minute guided ritual that updates the relationship state.</p>
                 <div className="flex gap-2 flex-wrap mt-3">
                   {['Top priorities', 'New preferences', 'Progress', 'Drift'].map(t => (
@@ -305,7 +305,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </FadeIn>
 
               <FadeIn delay={0.3} className="glass p-6 rounded-2xl">
-                <h4 className="text-amber-400 font-medium mb-3">3. Personalized Micro-lessons (For Him)</h4>
+                <h4 className="text-rose-400 font-medium mb-3">3. Personalized Micro-lessons (For Him)</h4>
                 <ul className="text-sm text-slate-300 list-disc pl-5 space-y-1">
                   <li>Validate before solving</li>
                   <li>Ask one clarifying question before responding</li>
@@ -316,7 +316,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </FadeIn>
 
               <FadeIn delay={0.4} className="glass p-6 rounded-2xl">
-                <h4 className="text-amber-400 font-medium mb-3">4. Role-specific Coaching (For Her)</h4>
+                <h4 className="text-rose-400 font-medium mb-3">4. Role-specific Coaching (For Her)</h4>
                 <ul className="text-sm text-slate-300 list-disc pl-5 space-y-1">
                   <li>Convert vague frustration into one concrete ask</li>
                   <li>Express appreciation for one thing he carried this week</li>
@@ -327,20 +327,20 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </FadeIn>
 
               <FadeIn delay={0.5} className="glass p-6 rounded-2xl">
-                <h4 className="text-amber-400 font-medium mb-3">5. In-the-moment Coaching</h4>
+                <h4 className="text-rose-400 font-medium mb-3">5. In-the-moment Coaching</h4>
                 <p className="text-sm text-slate-300">Before conflict, after conflict, before date night, before family events, after missed bids for connection, before intimacy conversations.</p>
               </FadeIn>
 
               <FadeIn delay={0.6} className="glass p-6 rounded-xl col-span-1 md:col-span-2 relative overflow-hidden group">
-                <div className="absolute inset-0 bg-amber-900/40 -z-10 group-hover:bg-amber-900/60 transition-colors" />
-                <h4 className="text-amber-300 font-medium mb-3 text-lg flex items-center gap-2">
+                <div className="absolute inset-0 bg-rose-900/40 -z-10 group-hover:bg-rose-900/60 transition-colors" />
+                <h4 className="text-rose-300 font-medium mb-3 text-lg flex items-center gap-2">
                   <Shield className="w-5 h-5" /> 6. Relationship Memory Engine
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <p className="text-slate-300 leading-relaxed text-sm">
                     Attune remembers what she has explicitly said matters, what he keeps forgetting, which gestures land, which conflicts repeat, which repair attempts work, and which goals were set and whether they were honored.
                   </p>
-                  <p className="text-amber-100 font-semibold italic flex items-center text-sm md:text-base p-4 bg-amber-500/10 rounded-lg">
+                  <p className="text-rose-100 font-semibold italic flex items-center text-sm md:text-base p-4 bg-rose-500/10 rounded-lg">
                     This is the moat. Not prompts. Not chat. Structured relationship memory plus behavior change.
                   </p>
                 </div>
@@ -350,7 +350,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         </RevealSection>
 
         {/* Cinematic Break */}
-        <RevealSection className="w-full relative aspect-video rounded-[2rem] overflow-hidden my-24 border border-amber-500/20 shadow-2xl">
+        <RevealSection className="w-full relative aspect-video rounded-[2rem] overflow-hidden my-24 border border-rose-500/20 shadow-2xl">
           <Image
             src={attune_memory_engine}
             alt="Relationship memory engine UI displaying compounding graphs in a nature-filled room"
@@ -365,10 +365,10 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           <div className="grid md:grid-cols-2 gap-16">
             <div>
               <div className="flex flex-col gap-4 mb-2">
-                <h2 className="text-4xl font-serif font-medium text-amber-50">Why Now</h2>
+                <h2 className="text-4xl font-serif font-medium text-rose-50">Why Now</h2>
               </div>
               <div className="mb-6">
-                <InlineTags tags={initialTags?.readiness} theme="amber" />
+                <InlineTags tags={initialTags?.readiness} theme="rose" />
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed">
                 Men and women are equally likely to say they would turn to a spouse or partner for emotional support, but women are much more likely than men to also turn to friends, mothers, and other family members. A recent interdisciplinary review argues that romantic relationships may matter more to men on average partly because men often have narrower alternative emotional-support networks.
@@ -378,14 +378,14 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </p>
             </div>
             <div>
-              <h2 className="text-4xl font-serif font-medium mb-6 text-amber-50">Market</h2>
+              <h2 className="text-4xl font-serif font-medium mb-6 text-rose-50">Market</h2>
               <p className="text-slate-300 mb-6">This sits at the intersection of:</p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {['Relationship wellness', 'Couples therapy light', 'Men’s self-improvement', 'AI coaching', 'Communication training', 'Intimacy & partnership'].map(t => (
-                  <span key={t} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded font-mono text-xs text-amber-200">{t}</span>
+                  <span key={t} className="px-3 py-1.5 bg-white/5 border border-white/10 rounded font-mono text-xs text-rose-200">{t}</span>
                 ))}
               </div>
-              <p className="text-amber-500 font-medium italic border-l-2 border-amber-500 pl-4 py-2 bg-amber-950/20 rounded-r-lg">
+              <p className="text-rose-500 font-medium italic border-l-2 border-rose-500 pl-4 py-2 bg-rose-950/20 rounded-r-lg">
                 The immediate wedge is not "all couples." It is women who want their male partner to improve, and men who are willing to become more skillful if the path is personalized, specific, and low-friction.
               </p>
             </div>
@@ -394,22 +394,22 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         <RevealSection>
           <div className="flex flex-col gap-4 mb-2 items-center">
-            <h2 className="text-4xl font-serif font-medium text-amber-50 text-center">Business Model</h2>
+            <h2 className="text-4xl font-serif font-medium text-rose-50 text-center">Business Model</h2>
           </div>
           <div className="mb-8 flex justify-center">
-            <InlineTags tags={initialTags?.product_type} theme="amber" />
+            <InlineTags tags={initialTags?.product_type} theme="rose" />
           </div>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-amber-400 font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
+              <h3 className="text-rose-400 font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
                 <TrendingUp className="w-4 h-4" /> Subscription & Expansion
               </h3>
               <div className="space-y-6">
                 <div>
                   <h4 className="text-white font-medium mb-1">Core Subscription</h4>
                   <ul className="text-sm text-slate-300 space-y-2">
-                    <li><strong className="text-amber-200">Attune for Him:</strong> personalized daily coaching based on weekly couple input</li>
-                    <li><strong className="text-amber-200">Attune Couple:</strong> guided weekly sync plus coaching and shared progress dashboards</li>
+                    <li><strong className="text-rose-200">Attune for Him:</strong> personalized daily coaching based on weekly couple input</li>
+                    <li><strong className="text-rose-200">Attune Couple:</strong> guided weekly sync plus coaching and shared progress dashboards</li>
                   </ul>
                 </div>
                 <div>
@@ -420,27 +420,27 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             </div>
 
             <div className="glass p-8 rounded-3xl">
-              <h3 className="text-amber-400 font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
+              <h3 className="text-rose-400 font-bold mb-6 text-sm uppercase tracking-widest flex items-center gap-2">
                 <Network className="w-4 h-4" /> Go-To-Market
               </h3>
               <div className="mb-6">
-                <InlineTags tags={initialTags?.founder_fit} theme="amber" />
+                <InlineTags tags={initialTags?.founder_fit} theme="rose" />
               </div>
               <ul className="text-sm text-slate-300 space-y-6">
                 <li>
-                  <strong className="text-amber-200 block mb-1">1. Woman-led invitation loop</strong>
+                  <strong className="text-rose-200 block mb-1">1. Woman-led invitation loop</strong>
                   "Here's an app I want us to try" is a more natural wedge than cold-start acquisition aimed only at men.
                 </li>
                 <li>
-                  <strong className="text-amber-200 block mb-1">2. Men's self-improvement framing</strong>
+                  <strong className="text-rose-200 block mb-1">2. Men's self-improvement framing</strong>
                   The product should feel like a high-leverage life upgrade, not a scolding.
                 </li>
                 <li>
-                  <strong className="text-amber-200 block mb-1">3. Creator-led acquisition</strong>
+                  <strong className="text-rose-200 block mb-1">3. Creator-led acquisition</strong>
                   Therapists, couples creators, women explaining what "feeling heard" actually means.
                 </li>
                 <li>
-                  <strong className="text-amber-200 block mb-1">4. Viral content engine</strong>
+                  <strong className="text-rose-200 block mb-1">4. Viral content engine</strong>
                   Hooks like: "Your girlfriend should not have to be the relationship project manager."
                 </li>
               </ul>
@@ -457,7 +457,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <p className="text-lg text-slate-300">
-                  In an AGI-saturated world, the scarce value is not generic advice. It is: <span className="text-amber-300">persistent state, accurate diagnosis, contextual coaching, and measurable behavior change.</span>
+                  In an AGI-saturated world, the scarce value is not generic advice. It is: <span className="text-rose-300">persistent state, accurate diagnosis, contextual coaching, and measurable behavior change.</span>
                 </p>
                 <p className="text-slate-300">
                   Attune wins because it does not just generate relationship content. It maintains a living model of the relationship, translates messy weekly feedback into role-specific behavioral training, and updates the curriculum continuously.
@@ -466,15 +466,15 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
               <div className="space-y-6">
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-amber-400 font-medium mb-2 text-sm uppercase tracking-widest">Data Moat</h4>
+                  <h4 className="text-rose-400 font-medium mb-2 text-sm uppercase tracking-widest">Data Moat</h4>
                   <p className="text-sm text-slate-300">Over time Attune learns which deficits are most common, which interventions change behavior fastest, which patterns predict resentment, and which prompts improve connection.</p>
                 </div>
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-amber-400 font-medium mb-2 text-sm uppercase tracking-widest">Memory Moat</h4>
+                  <h4 className="text-rose-400 font-medium mb-2 text-sm uppercase tracking-widest">Memory Moat</h4>
                   <p className="text-sm text-slate-300">A generic chatbot cannot easily replicate a persistent relationship graph with weekly updates, partner-specific preferences, and measurable growth trajectories.</p>
                 </div>
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-amber-400 font-medium mb-2 text-sm uppercase tracking-widest">Trust Moat</h4>
+                  <h4 className="text-rose-400 font-medium mb-2 text-sm uppercase tracking-widest">Trust Moat</h4>
                   <p className="text-sm text-slate-300">If Attune becomes the product that most accurately captures "what my partner actually needs from me," switching costs become high.</p>
                 </div>
               </div>
@@ -485,9 +485,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         {/* Transferable Insight & Civilizational Impact */}
         <RevealSection className="text-center max-w-3xl mx-auto space-y-16">
           <div>
-            <h2 className="text-sm font-bold tracking-widest text-amber-500 uppercase mb-6">Transferable Insight</h2>
+            <h2 className="text-sm font-bold tracking-widest text-rose-500 uppercase mb-6">Transferable Insight</h2>
             <p className="text-2xl font-serif text-slate-100 leading-relaxed mb-8">
-              "Most human relationships break down not because people do not care, but because feedback is <span className="text-amber-400">too generic, too delayed, too emotionally messy,</span> and never converted into role-specific practice."
+              "Most human relationships break down not because people do not care, but because feedback is <span className="text-rose-400">too generic, too delayed, too emotionally messy,</span> and never converted into role-specific practice."
             </p>
             <p className="text-slate-400 text-sm">
               Attune's reusable product pattern: shared state capture → persistent memory of goals, preferences, and friction → asymmetric coaching for the bigger performance gap → bilateral coaching when useful → visible behavior change → new feedback. Generalizes to co-founders, managers, and parents.
@@ -495,17 +495,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </div>
 
           <div className="pt-16 border-t border-white/10 relative">
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-amber-500/20 rounded-full blur-[40px] pointer-events-none" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-rose-500/20 rounded-full blur-[40px] pointer-events-none" />
             <div className="flex flex-col gap-4 mb-2 items-center">
               <h2 className="text-5xl font-serif text-white text-center">Civilizational Impact</h2>
             </div>
             <div className="mb-8 flex justify-center">
-              <InlineTags tags={initialTags?.outcomes} theme="amber" />
+              <InlineTags tags={initialTags?.outcomes} theme="rose" />
             </div>
             <p className="text-xl text-slate-300 leading-relaxed mb-6 font-light">
               Strong pair bonds are a foundational human technology. They shape family formation, child outcomes, mental health, life satisfaction, social trust, and long-term flourishing.
             </p>
-            <p className="text-amber-400 text-xl font-medium px-8 py-6 rounded-2xl glass-panel inline-block border-amber-500/30">
+            <p className="text-rose-400 text-xl font-medium px-8 py-6 rounded-2xl glass-panel inline-block border-rose-500/30">
               If AI can help millions of men become more emotionally competent, more attentive, and more trustworthy as partners, that is not just a consumer app. <span className="text-white">It is an upgrade to the social fabric.</span>
             </p>
           </div>
@@ -513,16 +513,16 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* References */}
         <div className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto">
-          <h3 className="text-sm font-bold tracking-widest text-amber-500 uppercase mb-8">References</h3>
+          <h3 className="text-sm font-bold tracking-widest text-rose-500 uppercase mb-8">References</h3>
           <div className="grid gap-4 sm:grid-cols-2">
             {citations.map((cite) => (
               <div key={cite.number} className="flex gap-4 group">
-                <span className="text-amber-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                <span className="text-rose-400 font-serif text-sm shrink-0">[{cite.number}]</span>
                 <div>
                   <p className="text-slate-300 text-sm leading-relaxed">
                     <span className="font-medium text-slate-100">{cite.source}</span>,{" "}
                     {cite.url ? (
-                      <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-amber-300 transition-colors">
+                      <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-rose-300 transition-colors">
                         {cite.title}
                       </a>
                     ) : (
@@ -534,7 +534,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                       href={cite.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs font-mono text-slate-400 hover:text-amber-400 transition-colors mt-1 inline-block"
+                      className="text-xs font-mono text-slate-400 hover:text-rose-400 transition-colors mt-1 inline-block"
                     >
                       View Source ↗
                     </a>
