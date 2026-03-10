@@ -39,8 +39,8 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
             {/* Background Ambience */}
             <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[var(--tertiary)]/20 dark:bg-[var(--primary)]/10 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-50" />
-                <div className="absolute bottom-[0%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary)]/20 dark:bg-[var(--primary)]/10 blur-[140px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-40" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[var(--tertiary)]/10 dark:bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-30" />
+                <div className="absolute bottom-[0%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary)]/10 dark:bg-[var(--primary)]/5 blur-[140px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-20" />
             </div>
 
             <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center bg-white/50 dark:bg-black/50 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
@@ -55,7 +55,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 className="relative pt-40 pb-24 md:pt-48 md:pb-32 px-6 z-50 flex flex-col items-center text-center header-section"
                 style={{ opacity: opacityHero, scale: scaleHero }}
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--primary)]/50 dark:bg-[var(--primary)]/30 text-[var(--primary)] dark:text-[var(--tertiary)] text-sm font-medium mb-8 border border-[var(--primary)]/50 dark:border-[var(--primary)]/50 shadow-sm backdrop-blur-md relative z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[var(--primary)]/10 dark:bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--secondary)] text-sm font-medium mb-8 border border-[var(--primary)]/20 dark:border-[var(--primary)]/20 shadow-sm backdrop-blur-md relative z-10">
                     <span className="w-2 h-2 rounded-full bg-[var(--primary)] animate-pulse" />
                     The open-garage culture OS
                 </div>
@@ -106,7 +106,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
 
                         <div className="md:w-1/2 w-full">
-                            <div className="bg-[var(--primary)] dark:bg-[var(--primary)] rounded-3xl p-8 border border-black/5 dark:border-white/5 shadow-inner">
+                            <div className="bg-[var(--primary)]/10 dark:bg-[var(--primary)]/10 rounded-3xl p-8 border border-[var(--primary)]/20 shadow-inner backdrop-blur-sm">
                                 <LonelinessChart />
                             </div>
                         </div>

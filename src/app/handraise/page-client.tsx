@@ -672,26 +672,45 @@ function CivilizationalImpactCard() {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
-        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--primary)]/20 relative overflow-hidden group w-full self-start md:ml-auto md:w-[480px]">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 to-transparent pointer-events-none" />
+        <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--primary)]/30 relative overflow-hidden group w-full self-start md:ml-auto md:w-[480px] bg-black/40 backdrop-blur-xl shadow-2xl"
+        >
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/10 via-transparent to-[var(--primary)]/5 pointer-events-none" />
+
+            <motion.div
+                animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.4, 0.2] }}
+                transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-24 -right-24 w-64 h-64 bg-[var(--primary)]/40 blur-[80px] rounded-full pointer-events-none mix-blend-screen"
+            />
+            <motion.div
+                animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.3, 0.1] }}
+                transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                className="absolute -bottom-24 -left-24 w-80 h-80 bg-[var(--secondary)]/30 blur-[80px] rounded-full pointer-events-none mix-blend-screen"
+            />
+
             <div className="relative z-10">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-2">
                     <h4 className="text-xl text-[var(--secondary)] font-mono uppercase tracking-widest flex items-center gap-2">
-                        <Globe className="w-5 h-5" /> Overall Impact Score
+                        <motion.div animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }}>
+                            <Globe className="w-5 h-5" />
+                        </motion.div>
+                        Impact Score
                     </h4>
-                    <div className="flex items-baseline gap-1 text-[var(--secondary)]">
-                        <span className="text-5xl font-light tracking-tighter">65</span>
-                        <span className="text-[var(--secondary)]/40 font-mono text-sm">/ 100</span>
+                    <div className="flex items-baseline gap-1 text-white">
+                        <span className="text-6xl font-light tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">65</span>
+                        <span className="text-[var(--secondary)]/50 font-mono text-sm">/ 100</span>
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between mt-6">
+                <div className="flex items-center justify-between mt-8">
                     <InlineTags tags={['Abundance', 'Social Trust', 'Cohesion']} theme="indigo" />
                     <button
                         onClick={() => setIsExpanded(!isExpanded)}
-                        className="text-[var(--secondary)]/80 hover:text-[var(--secondary)] text-sm font-mono uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-colors"
+                        className="text-[var(--primary)] hover:text-white bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 px-3 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest flex items-center gap-2 cursor-pointer transition-all border border-[var(--primary)]/20 hover:border-[var(--primary)]/50"
                     >
-                        {isExpanded ? "Hide Sub-scores" : "View Breakdown"}
+                        {isExpanded ? "Hide" : "Breakdown"}
                         <motion.div animate={{ rotate: isExpanded ? 180 : 0 }}>
                             <ChevronDown className="w-4 h-4" />
                         </motion.div>
@@ -707,35 +726,64 @@ function CivilizationalImpactCard() {
                             className="overflow-hidden"
                         >
                             <div className="pt-8 mt-6 border-t border-[var(--primary)]/20 grid gap-4">
-                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+                                <div className="p-4 rounded-xl bg-black/60 border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-colors flex justify-between items-center relative overflow-hidden group/bar cursor-default shadow-inner">
                                     <motion.div
-                                        initial={{ width: 0 }} animate={{ width: "64%" }} transition={{ duration: 1, delay: 0.1 }}
-                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                        initial={{ width: 0 }} animate={{ width: "64%" }} transition={{ duration: 1.5, delay: 0.1, type: "spring" }}
+                                        className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-[var(--primary)]/10 to-[var(--primary)]/40 border-r border-[var(--primary)]"
                                     />
-                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Abundance</span>
-                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">64</span>
+                                    <motion.div
+                                        initial={{ left: 0, opacity: 0 }} animate={{ left: "64%", opacity: [0, 1, 0] }}
+                                        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1, delay: 1.6 }}
+                                        className="absolute top-0 bottom-0 w-2 bg-white blur-[4px]"
+                                    />
+                                    <span className="text-[var(--primary)] group-hover/bar:text-white transition-colors font-medium relative z-10 flex items-center gap-2">
+                                        <Zap className="w-4 h-4" /> Abundance
+                                    </span>
+                                    <span className="text-2xl font-light text-white relative z-10 flex items-baseline gap-1">
+                                        64 <span className="text-xs text-white/30 font-mono">/100</span>
+                                    </span>
                                 </div>
-                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+
+                                <div className="p-4 rounded-xl bg-black/60 border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-colors flex justify-between items-center relative overflow-hidden group/bar cursor-default shadow-inner">
                                     <motion.div
-                                        initial={{ width: 0 }} animate={{ width: "82%" }} transition={{ duration: 1, delay: 0.2 }}
-                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                        initial={{ width: 0 }} animate={{ width: "82%" }} transition={{ duration: 1.5, delay: 0.2, type: "spring" }}
+                                        className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-[var(--primary)]/10 to-[var(--primary)]/40 border-r border-[var(--primary)]"
                                     />
-                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Social Trust</span>
-                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">82</span>
+                                    <motion.div
+                                        initial={{ left: 0, opacity: 0 }} animate={{ left: "82%", opacity: [0, 1, 0] }}
+                                        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1.2, delay: 1.7 }}
+                                        className="absolute top-0 bottom-0 w-2 bg-white blur-[4px]"
+                                    />
+                                    <span className="text-[var(--primary)] group-hover/bar:text-white transition-colors font-medium relative z-10 flex items-center gap-2">
+                                        <Users className="w-4 h-4" /> Social Trust
+                                    </span>
+                                    <span className="text-2xl font-light text-white relative z-10 flex items-baseline gap-1">
+                                        82 <span className="text-xs text-white/30 font-mono">/100</span>
+                                    </span>
                                 </div>
-                                <div className="p-4 rounded-xl bg-black/20 border border-white/5 flex justify-between items-center relative overflow-hidden group/bar">
+
+                                <div className="p-4 rounded-xl bg-black/60 border border-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-colors flex justify-between items-center relative overflow-hidden group/bar cursor-default shadow-inner">
                                     <motion.div
-                                        initial={{ width: 0 }} animate={{ width: "58%" }} transition={{ duration: 1, delay: 0.3 }}
-                                        className="absolute top-0 left-0 bottom-0 bg-[var(--primary)]/20"
+                                        initial={{ width: 0 }} animate={{ width: "58%" }} transition={{ duration: 1.5, delay: 0.3, type: "spring" }}
+                                        className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-[var(--primary)]/10 to-[var(--primary)]/40 border-r border-[var(--primary)]"
                                     />
-                                    <span className="text-[var(--tertiary)] font-medium relative z-10">Societal Cohesion</span>
-                                    <span className="text-2xl font-light text-[var(--secondary)] relative z-10">58</span>
+                                    <motion.div
+                                        initial={{ left: 0, opacity: 0 }} animate={{ left: "58%", opacity: [0, 1, 0] }}
+                                        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 0.8, delay: 1.8 }}
+                                        className="absolute top-0 bottom-0 w-2 bg-white blur-[4px]"
+                                    />
+                                    <span className="text-[var(--primary)] group-hover/bar:text-white transition-colors font-medium relative z-10 flex items-center gap-2">
+                                        <LinkIcon className="w-4 h-4" /> Societal Cohesion
+                                    </span>
+                                    <span className="text-2xl font-light text-white relative z-10 flex items-baseline gap-1">
+                                        58 <span className="text-xs text-white/30 font-mono">/100</span>
+                                    </span>
                                 </div>
                             </div>
                         </motion.div>
                     )}
                 </AnimatePresence>
             </div>
-        </div>
+        </motion.div>
     );
 }
