@@ -1,33 +1,34 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ActivitySquare, BrainCircuit, Database, FileText, Layers, ArrowRight } from 'lucide-react';
+import { ActivitySquare, BrainCircuit, Database, FileText, Layers, ArrowRight, Network } from 'lucide-react';
+import { HoverAcronym } from '@/components/HoverAcronym';
 
 export default function ProductStackFlow() {
     const steps = [
         {
             icon: Database,
             color: 'emerald',
-            title: 'Cell Bank',
-            desc: 'One-time creation and storage of a therapy-intent iPSC line, kept ready for emerging treatments.',
+            title: 'Bank & Reprogram (Cell Bank)',
+            desc: <span className="text-white/70 font-light leading-relaxed">Bank the youngest viable cells under clinical-grade conditions. Create a therapy-intent <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> line with quality control and immune-type profiling.</span>,
         },
         {
             icon: ActivitySquare,
             color: 'cyan',
-            title: 'Avatar Lab',
-            desc: 'On-demand tests on your genotype-matched mini-organs, single or multi-organ.',
+            title: 'Grow Mini-Organs (Avatar Lab)',
+            desc: <span className="text-white/70 font-light leading-relaxed">From a small blood draw, reprogram cells into <HoverAcronym acronym="iPSCs" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." />. Differentiate them into mini-organs for liver, gut, brain, heart, immune co-cultures, and skin.</span>,
+        },
+        {
+            icon: Network,
+            color: 'blue',
+            title: 'Network on a Chip',
+            desc: <span className="text-white/70 font-light leading-relaxed">Link tissues on a microfluidic chip so the mini-organs communicate. Measure metabolism, barrier integrity, electrical activity, imaging phenotypes, and multi-omics.</span>,
         },
         {
             icon: BrainCircuit,
-            color: 'teal',
-            title: 'TwinOS',
-            desc: 'Your digital twin ranks options with confidence scores and assay provenance.',
-        },
-        {
-            icon: FileText,
-            color: 'blue',
-            title: 'Evidence Packs',
-            desc: 'Clinician-, partner-, and regulator-friendly summaries for claims and decisions.',
+            color: 'indigo',
+            title: 'Digital Twin Feedback (TwinOS)',
+            desc: <span className="text-white/70 font-light leading-relaxed">Train a personal digital twin that fuses organoid readouts with wearables and lab data to forecast outcomes, side-effect risk, and next best action.</span>,
         },
     ];
 
@@ -75,7 +76,7 @@ export default function ProductStackFlow() {
                             {/* Content Card */}
                             <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-zinc-950/50 hover:bg-white/[0.04] transition-colors w-full h-full text-center">
                                 <strong className="block text-white mb-3 font-medium text-lg">{step.title}</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">{step.desc}</span>
+                                <div className="text-sm block">{step.desc}</div>
                             </div>
                         </motion.div>
                     )
