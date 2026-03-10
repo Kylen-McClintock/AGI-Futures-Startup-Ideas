@@ -12,6 +12,7 @@ import msl_hero from "./main-street-legacy/assets/hero.png";
 import helm_hero from "./helm/assets/helm_hero.png";
 import agentable_hero from "./agentable/assets/hero.png";
 import avatarlab_hero from "./avatarlab/assets/avatarlab_hero.png";
+import proofrun_hero from "./proofrun/assets/proofrun_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -35,7 +36,8 @@ export default async function Home() {
         "main-street-legacy": { moat: 78, difficulty: 74, impact: 81, created_at: "2024-03-02T10:00:00Z" },
         "helm": { moat: 78, difficulty: 71, impact: 68, created_at: "2024-03-01T10:00:00Z" },
         "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z" },
-        "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z" }
+        "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z" },
+        "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z" }
     };
 
     // Helper to merge static data with DB data
@@ -171,6 +173,16 @@ export default async function Home() {
             href: "/avatarlab",
             themeColor: "hover:border-cyan-500/50 text-cyan-400",
             hoverTextColor: "group-hover:text-cyan-400",
+        }),
+        createProject({
+            slug: "proofrun",
+            title: "ProofRun",
+            scoreTitle: "Proof-of-Work Hiring",
+            description: "ProofRun lets companies turn real backlog work into mini missions so candidates can prove their resourcefulness and AI-native skills.",
+            image: proofrun_hero,
+            href: "/proofrun",
+            themeColor: "hover:border-amber-500/50 text-amber-400",
+            hoverTextColor: "group-hover:text-amber-400",
         })
     ];
 

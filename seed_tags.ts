@@ -284,6 +284,31 @@ const startups = [
             founder_fit: ['Technical Founder', 'Capital Intensive'],
             outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience']
         }
+    },
+    {
+        slug: 'proofrun',
+        name: 'ProofRun',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 67 },
+            civilizational_impact_score: { ai_scored: 64 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 68 },
+                "Human Flourishing": { ai_scored: 74 },
+                "Social Trust": { ai_scored: 54 },
+                "Societal Cohesion": { ai_scored: 58 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Education'],
+            bottleneck: ['Talent Matching', 'Trust', 'Coordination'],
+            customer: ['Startups', 'Enterprises'],
+            product_type: ['Platform', 'Marketplace'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Societal Cohesion']
+        }
     }
 ];
 
