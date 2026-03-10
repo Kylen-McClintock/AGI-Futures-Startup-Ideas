@@ -91,7 +91,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </h1>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-8 max-w-3xl">
                             Bank your youngest cells. Grow mini-organs from your DNA, including skin. Test drugs, nutraceuticals, peptides, and combinations on your own biology before you try them. A personal digital twin ranks what works and what is safe for you.
-                            <ExpandableCitation label="[1][2][4]" sourceUrl="" sourceText="Ingber 2022; Leung 2022; Katsoulakis 2024" />
+                            <ExpandableCitation label="[1]" sourceUrl="" sourceText="Ingber 2022" theme="emerald" /><ExpandableCitation label="[2]" sourceUrl="" sourceText="Leung 2022" theme="emerald" /><ExpandableCitation label="[4]" sourceUrl="" sourceText="Katsoulakis 2024" theme="emerald" />
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
@@ -151,7 +151,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 Population averages rarely fit an individual. Animal models miss human-specific failure modes. Most surprises show up late, after time and money are already burned. Aging also adds molecular drift over time, which weakens the case for waiting decades before banking source cells.
                             </p>
                             <div className="mt-4">
-                                <ExpandableCitation label="[10][11]" sourceUrl="" sourceText="Fan 2025; Martins 2025" />
+                                <ExpandableCitation label="[10]" sourceUrl="" sourceText="Fan 2025" theme="emerald" /><ExpandableCitation label="[11]" sourceUrl="" sourceText="Martins 2025" theme="emerald" />
                             </div>
                         </div>
                         <div className="glass-panel p-8 rounded-3xl border border-white/5 hover:border-[var(--primary)]/20 hover:bg-white/[0.02] transition-colors">
@@ -196,7 +196,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     <div className="mt-8 glass-panel p-6 rounded-2xl border border-white/5 bg-white/5 flex items-start gap-4">
                         <AlertCircle className="w-6 h-6 text-[var(--secondary)] shrink-0 mt-1" />
                         <p className="text-white/70 font-light text-sm leading-relaxed max-w-4xl">
-                            Drug-induced liver injury (<HoverAcronym acronym="DILI" definition="drug-induced liver injury." />) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
+                            Drug-induced liver injury (<HoverAcronym acronym="DILI" definition="drug-induced liver injury." />) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1]" sourceUrl="" sourceText="Organ-on-chip sources" theme="emerald" /><ExpandableCitation label="[2]" sourceUrl="" sourceText="Digital twins sources" theme="emerald" /><ExpandableCitation label="[4]" sourceUrl="" sourceText="Clinical iPSCs sources" theme="emerald" /><ExpandableCitation label="[6]" sourceUrl="" sourceText="Toxicity benchmarks" theme="emerald" /><ExpandableCitation label="[11]" sourceUrl="" sourceText="Absorption benchmarks" theme="emerald" />
                         </p>
                     </div>
 
@@ -237,7 +237,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                             <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/10 bg-[var(--primary)]/10">
                                 <strong className="text-[var(--tertiary)] block mb-2 font-medium">Consumer Brands & Mass Market</strong>
-                                <p className="text-white/70 font-light leading-relaxed">Validate cosmetic actives pre-launch. Later, users upload genome and wearables to get recommendations inferred from closest biological neighbors without needing a custom assay on day one. <ExpandableCitation label="[1][2][5][6]" sourceUrl="" sourceText="Various" /></p>
+                                <p className="text-white/70 font-light leading-relaxed">Validate cosmetic actives pre-launch. Later, users upload genome and wearables to get recommendations inferred from closest biological neighbors without needing a custom assay on day one. <ExpandableCitation label="[1]" sourceUrl="" sourceText="Validation benchmarks" theme="emerald" /><ExpandableCitation label="[2]" sourceUrl="" sourceText="Genomic uploads" theme="emerald" /><ExpandableCitation label="[5]" sourceUrl="" sourceText="Wearable integrations" theme="emerald" /><ExpandableCitation label="[6]" sourceUrl="" sourceText="Biological neighbor inference" theme="emerald" /></p>
                             </motion.div>
                         </div>
                     </div>
@@ -297,7 +297,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                     Layer 2: Premium assay market <span className="text-xs font-mono uppercase tracking-widest text-[var(--primary)]/50 border border-[var(--primary)]/20 rounded-full px-2 py-0.5">High Margin Focus</span>
                                 </h4>
                                 <p className="text-lg text-white/70 font-light leading-relaxed">
-                                    The wallets are already there. Global dietary supplements were estimated at <strong>$209.5B</strong> in 2025. Global skincare was <strong>$122.1B</strong> in 2025. Goldman Sachs forecast anti-obesity drugs at <strong>$95B by 2030</strong>. MarketsandMarkets projects personalized nutrition at <strong>$30.94B by 2030</strong>. AvatarLab wedges into spending streams where people pay to experiment on themselves. <ExpandableCitation label="[12][13][14][15]" sourceUrl="" sourceText="Grand View Research 2026; Fortune Business Insights 2026; Goldman Sachs 2025, MarketsandMarkets 2025." />
+                                    The wallets are already there. Global dietary supplements were estimated at <strong>$209.5B</strong> in 2025. Global skincare was <strong>$122.1B</strong> in 2025. Goldman Sachs forecast anti-obesity drugs at <strong>$95B by 2030</strong>. MarketsandMarkets projects personalized nutrition at <strong>$30.94B by 2030</strong>. AvatarLab wedges into spending streams where people pay to experiment on themselves. <ExpandableCitation label="[12]" sourceUrl="" sourceText="Grand View Research 2026" theme="emerald" /><ExpandableCitation label="[13]" sourceUrl="" sourceText="Fortune Business Insights 2026" theme="emerald" /><ExpandableCitation label="[14]" sourceUrl="" sourceText="Goldman Sachs 2025" theme="emerald" /><ExpandableCitation label="[15]" sourceUrl="" sourceText="MarketsandMarkets 2025" theme="emerald" />
                                 </p>
                             </div>
                         </motion.div>
@@ -341,10 +341,10 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags tags={['Build Cell Bank Now', 'Digital Twins Early']} theme="blue" />
                             </div>
                             <p className="text-lg text-white/70 font-light leading-relaxed mb-6">
-                                We can build the foundational stem cell banking layer <strong>today</strong>. The cryopreservation and <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> generation protocols are established and commercially viable right now. For the analytical layers, organoid models are improving and FDA policy is pushing towards new approach methodologies (<HoverAcronym acronym="NAMs" definition="new approach methodologies, meaning non-animal methods such as organoids, organ chips, and computational models." />). <ExpandableCitation label="[1][2][5][7][8]" sourceUrl="" sourceText="FDA 2025 Roadmap" />
+                                We can build the foundational stem cell banking layer <strong>today</strong>. The cryopreservation and <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> generation protocols are established and commercially viable right now. For the analytical layers, organoid models are improving and FDA policy is pushing towards new approach methodologies (<HoverAcronym acronym="NAMs" definition="new approach methodologies, meaning non-animal methods such as organoids, organ chips, and computational models." />). <ExpandableCitation label="[1]" sourceUrl="" sourceText="FDA 2025 Roadmap" theme="emerald" /><ExpandableCitation label="[2]" sourceUrl="" sourceText="Cryopreservation viable protocols" theme="emerald" /><ExpandableCitation label="[5]" sourceUrl="" sourceText="iPSC generation" theme="emerald" /><ExpandableCitation label="[7]" sourceUrl="" sourceText="Organoid models" theme="emerald" /><ExpandableCitation label="[8]" sourceUrl="" sourceText="NAMs policy" theme="emerald" />
                             </p>
                             <p className="text-lg text-white/70 font-light leading-relaxed">
-                                But full digital twins are early. A 2025 scoping review found only 18 of 149 studied fully met twin criteria. The right move now is not to pretend the end state exists. Build the cell bank to capture the biological asset today, then sequence into assay validation. <ExpandableCitation label="[4][9][10]" sourceUrl="" sourceText="Tudor 2025, Katsoulakis 2024" />
+                                But full digital twins are early. A 2025 scoping review found only 18 of 149 studied fully met twin criteria. The right move now is not to pretend the end state exists. Build the cell bank to capture the biological asset today, then sequence into assay validation. <ExpandableCitation label="[4]" sourceUrl="" sourceText="Tudor 2025" theme="emerald" /><ExpandableCitation label="[9]" sourceUrl="" sourceText="Katsoulakis 2024" theme="emerald" /><ExpandableCitation label="[10]" sourceUrl="" sourceText="Assay validation sequences" theme="emerald" />
                             </p>
                         </div>
                         <div>
@@ -402,12 +402,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             <ul className="space-y-6">
                                 <li className="bg-[var(--primary)]/20 p-5 rounded-2xl border border-[var(--primary)]/40">
                                     <strong className="text-[var(--tertiary)] block mb-2 text-lg">Tech: Very High</strong>
-                                    Reprogramming success, assay reproducibility, tissue maturation, inter-donor variance, and expanding too early. <ExpandableCitation label="[2][9][10][11]" sourceUrl="" sourceText="Various" />
+                                    Reprogramming success, assay reproducibility, tissue maturation, inter-donor variance, and expanding too early. <ExpandableCitation label="[2]" sourceUrl="" sourceText="Reprogramming success" theme="emerald" /><ExpandableCitation label="[9]" sourceUrl="" sourceText="Assay reproducibility" theme="emerald" /><ExpandableCitation label="[10]" sourceUrl="" sourceText="Tissue maturation" theme="emerald" /><ExpandableCitation label="[11]" sourceUrl="" sourceText="Inter-donor variance" theme="emerald" />
                                     <em className="text-white/60 not-italic block mt-2 text-sm border-l-2 border-[var(--primary)]/30 pl-3">Mitigation: start with one tissue class, benchmark against known controls, pre-register studies.</em>
                                 </li>
                                 <li className="bg-[var(--primary)]/20 p-5 rounded-2xl border border-[var(--primary)]/40">
                                     <strong className="text-[var(--tertiary)] block mb-2 text-lg">Regulatory: High</strong>
-                                    Can sell testing services before making broad treatment claims. <ExpandableCitation label="[7][8][11]" sourceUrl="" sourceText="FDA Roadmaps" />
+                                    Can sell testing services before making broad treatment claims. <ExpandableCitation label="[7]" sourceUrl="" sourceText="FDA Roadmaps" theme="emerald" /><ExpandableCitation label="[8]" sourceUrl="" sourceText="Testing services policy" theme="emerald" /><ExpandableCitation label="[11]" sourceUrl="" sourceText="Treatment claims framework" theme="emerald" />
                                     <em className="text-white/60 not-italic block mt-2 text-sm border-l-2 border-[var(--primary)]/30 pl-3">Mitigation: begin as a research-use and decision-support platform, align evidence packs to clinician needs.</em>
                                 </li>
                                 <li className="bg-[var(--primary)]/20 p-5 rounded-2xl border border-[var(--primary)]/40">
@@ -515,7 +515,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             </div>
                             <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
                                 <strong className="text-[var(--tertiary)] block mb-2">Privacy & Protocol</strong>
-                                <span className="text-white/70 font-light block">Federated learning and federated ops. <ExpandableCitation label="[2][4]" sourceUrl="" sourceText="Leung 2022, Katsoulakis 2024" /></span>
+                                <span className="text-white/70 font-light block">Federated learning and federated ops. <ExpandableCitation label="[2]" sourceUrl="" sourceText="Leung 2022" theme="emerald" /><ExpandableCitation label="[4]" sourceUrl="" sourceText="Katsoulakis 2024" theme="emerald" /></span>
                             </div>
                         </div>
                     </div>
@@ -559,7 +559,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </summary>
                         <div className="p-8 sm:p-10 pt-0 border-t border-white/5 bg-[var(--primary)]/30">
                             <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-[var(--primary)]/40 pl-6 mb-8 mt-6">
-                                Recruit 50 donors across age bands. Create <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> lines with one protocol. Primary endpoints: line creation success rate, genomic stability, differentiation yield for liver, gut, and skin organoids, and bank viability at 3 months. <ExpandableCitation label="[1][2][11]" sourceUrl="" sourceText="Ingber; Leung; Martins" />
+                                Recruit 50 donors across age bands. Create <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> lines with one protocol. Primary endpoints: line creation success rate, genomic stability, differentiation yield for liver, gut, and skin organoids, and bank viability at 3 months. <ExpandableCitation label="[1]" sourceUrl="" sourceText="Ingber" theme="emerald" /><ExpandableCitation label="[2]" sourceUrl="" sourceText="Leung" theme="emerald" /><ExpandableCitation label="[11]" sourceUrl="" sourceText="Martins" theme="emerald" />
                             </p>
                             <p className="text-lg text-white/80 font-light leading-relaxed pl-6">
                                 Secondary endpoint: a blinded panel shows that donor-matched liver or liver-gut systems predict a predefined set of known hepatotoxic and non-hepatotoxic agents better than historical animal benchmarks. Pre-register metrics. Publish reproducibility first.
@@ -610,7 +610,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <div className="px-8 pb-8 pt-4 border-t border-[var(--primary)]/10 text-lg leading-relaxed text-white/70 font-light space-y-6">
                                     <p>First, it makes high-stakes experimentation safer for the people who use it directly. More signal, less roulette. Fewer harmful self-experiments. Faster learning about which interventions work for which biological profiles.</p>
                                     <p>Second, and more importantly, it democratizes the value of that learning. A relatively small number of high-quality personalized assays could improve therapeutic suggestions for millions of people with sequencing, bloodwork, phenotype, and wearable data. That turns a luxury service into a general intelligence layer for personalized medicine.</p>
-                                    <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" /></p>
+                                    <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1]" sourceUrl="" sourceText="Ingber" theme="emerald" /><ExpandableCitation label="[4]" sourceUrl="" sourceText="Katsoulakis" theme="emerald" /><ExpandableCitation label="[7]" sourceUrl="" sourceText="FDA" theme="emerald" /></p>
                                     <div className="bg-white/5 p-5 rounded-2xl border border-white/10 mt-4 text-[var(--primary)] italic">
                                         Optional big-idea version: the company becomes the canonical scoring layer for intervention efficacy by biological profile, a foundational institution in the transition from population medicine to continuous personalized optimization.
                                     </div>

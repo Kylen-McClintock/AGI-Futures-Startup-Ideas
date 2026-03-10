@@ -16,6 +16,16 @@ interface CitationProps {
 
 export function ExpandableCitation({ number, source, title, url }: CitationProps) {
     const [isExpanded, setIsExpanded] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsExpanded(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsExpanded(false);
+    }, 300);
+  };
     const [mounted, setMounted] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const { coords, cssVars } = usePortalPosition(buttonRef, isExpanded, 'top');
@@ -25,7 +35,7 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
     }, []);
 
     return (
-        <span className="inline-block relative z-20 align-baseline mx-0.5">
+        <span className="inline-block relative z-20 align-baseline mx-0.5" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <button
                 ref={buttonRef}
                 onClick={() => setIsExpanded(!isExpanded)}

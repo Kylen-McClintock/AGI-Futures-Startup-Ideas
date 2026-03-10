@@ -18,8 +18,20 @@ interface ExpandableCitationProps {
 export function ExpandableCitation({ label, sourceUrl, sourceText, theme = 'default' }: ExpandableCitationProps) {
     const [isExpanded, setIsExpanded] = useState(false);
     const themeClass = themeMap[theme] || themeMap['default'];
-
     const [mounted, setMounted] = useState(false);
+    const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+
+    const handleMouseEnter = () => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setIsExpanded(true);
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setIsExpanded(false);
+        }, 300); // 300ms delay to allow moving mouse to popup
+    };
+
     const buttonRef = useRef<HTMLButtonElement>(null);
     const { coords, cssVars } = usePortalPosition(buttonRef, isExpanded);
 
@@ -67,7 +79,11 @@ export function ExpandableCitation({ label, sourceUrl, sourceText, theme = 'defa
     );
 
     return (
-        <span className="inline-block">
+        <span
+            className="inline-block relative"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <button
                 ref={buttonRef}
                 onClick={() => setIsExpanded(!isExpanded)}

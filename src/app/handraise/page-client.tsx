@@ -108,7 +108,7 @@ export default function HandraiseClientPage() {
                             Research on interrupted work found that people compensate by working faster under interruption, but at the cost of more stress, frustration, time pressure, and effort. <ExpandableCitation label="[2]" sourceUrl="" sourceText="Gloria Mark, Daniela Gudith, and Ulrich Klocke, 'The Cost of Interrupted Work: More Speed and Stress,' CHI 2008." />
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed font-light">
-                            Referral channels also tend to lower screening costs and improve match quality versus other recruiting channels. <ExpandableCitation label="[3][4][10]" sourceUrl="" sourceText="Gürtzgen 2024; HBR 2020; SHRM 2025" />
+                            Referral channels also tend to lower screening costs and improve match quality versus other recruiting channels. <ExpandableCitation label="[3]" sourceUrl="https://www.iza.org/publications/dp/16843/the-value-of-employee-referrals" sourceText="Gürtzgen 2024" theme="rose" /><ExpandableCitation label="[4]" sourceUrl="https://hbr.org/2020/03/how-to-use-employee-referrals-effectively" sourceText="HBR 2020" theme="rose" /><ExpandableCitation label="[10]" sourceUrl="https://www.shrm.org/topics-tools/tools/toolkits/designing-managing-employee-referral-programs" sourceText="SHRM 2025" theme="rose" />
                         </p>
                     </div>
                 </motion.section>
@@ -258,7 +258,7 @@ export default function HandraiseClientPage() {
 
                     <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-[var(--primary)]/20 bg-[var(--primary)]/5">
                         <p className="text-lg text-white/80 font-light leading-relaxed">
-                            Farcaster already supports sign-in flows that let apps leverage social data, and <HoverAcronym acronym="AT Protocol" definition="the open social networking protocol behind Bluesky, designed around identity and account portability." /> is explicitly designed around identity and account portability. W3C standards now provide mature primitives for decentralized identifiers and machine-verifiable credentials. That makes the "portable contribution ledger" piece materially more buildable than it was a few years ago. <ExpandableCitation label="[5][6][7][8]" sourceUrl="" sourceText="Farcaster Docs; AT Protocol Docs; W3C DIDs v1.0; W3C VC Data Model v2.0" />
+                            Farcaster already supports sign-in flows that let apps leverage social data, and <HoverAcronym acronym="AT Protocol" definition="the open social networking protocol behind Bluesky, designed around identity and account portability." /> is explicitly designed around identity and account portability. W3C standards now provide mature primitives for decentralized identifiers and machine-verifiable credentials. That makes the "portable contribution ledger" piece materially more buildable than it was a few years ago. <ExpandableCitation label="[5]" sourceUrl="https://docs.farcaster.xyz" sourceText="Farcaster Docs" theme="rose" /><ExpandableCitation label="[6]" sourceUrl="https://atproto.com" sourceText="AT Protocol Docs" theme="rose" /><ExpandableCitation label="[7]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="W3C DIDs v1.0" theme="rose" /><ExpandableCitation label="[8]" sourceUrl="https://www.w3.org/TR/vc-data-model-2.0/" sourceText="W3C VC Data Model v2.0" theme="rose" />
                         </p>
                     </div>
                 </motion.section>
@@ -346,11 +346,11 @@ export default function HandraiseClientPage() {
                             <ul className="space-y-6 text-white/70 font-light">
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Portable social graphs are real enough to matter.</strong>
-                                    Farcaster sign-in lets apps use social data, and <HoverAcronym acronym="AT Protocol" definition="the open social networking protocol behind Bluesky, designed around identity and account portability." /> is built around account migration and portable identity. <ExpandableCitation label="[5][6]" sourceUrl="" sourceText="Farcaster Docs; AT Protocol Docs" />
+                                    Farcaster sign-in lets apps use social data, and <HoverAcronym acronym="AT Protocol" definition="the open social networking protocol behind Bluesky, designed around identity and account portability." /> is built around account migration and portable identity. <ExpandableCitation label="[5]" sourceUrl="https://docs.farcaster.xyz" sourceText="Farcaster Docs" theme="rose" /><ExpandableCitation label="[6]" sourceUrl="https://atproto.com" sourceText="AT Protocol Docs" theme="rose" />
                                 </li>
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Referral economics are well established.</strong>
-                                    Referrals lower screening costs and improve hiring outcomes, which is a strong proof point that warm, trusted routing beats generic distribution for many professional decisions. <ExpandableCitation label="[3][4][10]" sourceUrl="" sourceText="Gürtzgen 2024; HBR 2020; SHRM 2025" />
+                                    Referrals lower screening costs and improve hiring outcomes, which is a strong proof point that warm, trusted routing beats generic distribution for many professional decisions. <ExpandableCitation label="[3]" sourceUrl="https://www.iza.org/publications/dp/16843/the-value-of-employee-referrals" sourceText="Gürtzgen 2024" theme="rose" /><ExpandableCitation label="[4]" sourceUrl="https://hbr.org/2020/03/how-to-use-employee-referrals-effectively" sourceText="HBR 2020" theme="rose" /><ExpandableCitation label="[10]" sourceUrl="https://www.shrm.org/topics-tools/tools/toolkits/designing-managing-employee-referral-programs" sourceText="SHRM 2025" theme="rose" />
                                 </li>
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Interrupted work is expensive.</strong>
@@ -358,7 +358,7 @@ export default function HandraiseClientPage() {
                                 </li>
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Portable reputation has standards now.</strong>
-                                    <HoverAcronym acronym="DIDs" definition="Decentralized Identifier, a standards-based identifier a user can control without depending on one central platform." /> and <HoverAcronym acronym="Verifiable Credentials" definition="a machine-verifiable digital credential, like portable proof that someone made a useful contribution." /> provide a standards-based path for contribution records that are machine-verifiable and portable across tools. <ExpandableCitation label="[7][8]" sourceUrl="" sourceText="W3C DIDs; W3C Verifiable Credentials" />
+                                    <HoverAcronym acronym="DIDs" definition="Decentralized Identifier, a standards-based identifier a user can control without depending on one central platform." /> and <HoverAcronym acronym="Verifiable Credentials" definition="a machine-verifiable digital credential, like portable proof that someone made a useful contribution." /> provide a standards-based path for contribution records that are machine-verifiable and portable across tools. <ExpandableCitation label="[7]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="W3C DIDs" theme="rose" /><ExpandableCitation label="[8]" sourceUrl="https://www.w3.org/TR/vc-data-model-2.0/" sourceText="W3C Verifiable Credentials" theme="rose" />
                                 </li>
                             </ul>
                         </div>

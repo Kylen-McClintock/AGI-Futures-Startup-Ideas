@@ -103,7 +103,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     <div className="grid md:grid-cols-2 gap-8 items-center cursor-default">
                         <div>
                             <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
-                                Modern AI can already automate or significantly speed up roughly 40 to 60 percent of tasks in many knowledge roles.<ExpandableCitation label="[1][4]" sourceUrl="" sourceText="Eloundou et al. (2023), McKinsey (2023)" /> Since late 2022, workers aged 22 to 25 in the most AI-exposed occupations have seen roughly a 15 to 16 percent relative employment decline, while older workers in the same occupations were broadly stable.<ExpandableCitation label="[2]" sourceUrl="" sourceText="Brynjolfsson et al., Stanford Digital Economy Lab (2025)" />
+                                Modern AI can already automate or significantly speed up roughly 40 to 60 percent of tasks in many knowledge roles.<ExpandableCitation label="[1]" sourceUrl="" sourceText="Eloundou et al. (2023)" theme="amber" /><ExpandableCitation label="[4]" sourceUrl="" sourceText="McKinsey (2023)" theme="amber" /> Since late 2022, workers aged 22 to 25 in the most AI-exposed occupations have seen roughly a 15 to 16 percent relative employment decline, while older workers in the same occupations were broadly stable.<ExpandableCitation label="[2]" sourceUrl="" sourceText="Brynjolfsson et al., Stanford Digital Economy Lab (2025)" theme="amber" />
                             </p>
                             <p className="text-lg leading-relaxed text-white/70 font-light bg-stone-900 p-6 rounded-2xl border border-white/5">
                                 Meanwhile, only about half of bachelor's degree graduates secure a college-level job within a year of graduation.<ExpandableCitation label="[3]" sourceUrl="" sourceText="Strada Institute (2024)" /> <strong>AI raised the bar. The on-ramps for new talent did not.</strong>
@@ -440,7 +440,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         expandableText={
                             <p className="text-lg bg-[var(--primary)]/20 p-6 rounded-2xl border border-[var(--primary)]/40 leading-relaxed font-light text-[var(--primary)]">
                                 If ProofRun becomes the system of record for mission specs, candidate artifacts, evaluator scores, mentor feedback, and downstream metrics, it builds a proprietary performance graph that generic hiring software cannot easily replicate. It links company context, problem archetype, tool stack, candidate workflow, judgment, and live business outcome.<br /><br />
-                                Data moat, benchmark moat, and portfolio switching costs prevent candidates from abandoning their verified record. It is backed by industrial-organizational psychology priors on work-sample validities.<ExpandableCitation label="[5][6]" sourceUrl="" sourceText="Roth et al. (2005), SIOP (2018)" />
+                                Data moat, benchmark moat, and portfolio switching costs prevent candidates from abandoning their verified record. It is backed by industrial-organizational psychology priors on work-sample validities.<ExpandableCitation label="[5]" sourceUrl="" sourceText="Roth et al. (2005)" theme="amber" /><ExpandableCitation label="[6]" sourceUrl="" sourceText="SIOP (2018)" theme="amber" />
                             </p>
                         }
                     />

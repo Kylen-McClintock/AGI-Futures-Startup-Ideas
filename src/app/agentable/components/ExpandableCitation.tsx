@@ -21,6 +21,16 @@ export function ExpandableCitation({
     className?: string;
 }) {
     const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsOpen(true);
+  };
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 300);
+  };
     const [mounted, setMounted] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
     const { coords, cssVars } = usePortalPosition(buttonRef, isOpen);

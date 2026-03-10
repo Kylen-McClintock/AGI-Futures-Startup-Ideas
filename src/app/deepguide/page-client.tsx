@@ -276,7 +276,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                             <h3 className="text-2xl font-light text-white mb-6">Market</h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
                                 The U.S. behavioral health market is projected to grow from about <strong>$92.1B in 2025</strong> to <strong>$132.5B by 2032</strong>. Ketamine clinic revenues are growing at double-digit compound annual growth rates. Psychedelic-assisted care can take share from standard services and convert untreated need into active care
-                                <ExpandableCitation label="[5][6][7]" sourceUrl="" sourceText="NIMH (2024), Fortune Business Insights, Grand View Research." />.
+                                <ExpandableCitation label="[5]" sourceUrl="" sourceText="NIMH (2024)" theme="violet" /><ExpandableCitation label="[6]" sourceUrl="" sourceText="Fortune Business Insights" theme="violet" /><ExpandableCitation label="[7]" sourceUrl="" sourceText="Grand View Research" theme="violet" />.
                             </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
                                 The category will move from artisanal practice to software-supported care, then to continuously learning care. The winner is the intelligence layer that sits between session data, clinical judgment, safety protocols, and outcome improvement.
