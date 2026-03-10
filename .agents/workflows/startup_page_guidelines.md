@@ -11,7 +11,7 @@ You are building a new startup idea prototype that will be integrated into the e
 1. **Routing**: Build your core page inside a named directory (e.g., `src/app/[idea-name]/page.tsx`). Do not build in the global `app/page.tsx`
 2. **Components**: Place all custom components specific to this idea inside the route directory: `src/app/[idea-name]/components/`. Do not pollute the global root `src/components/` folder.
 3. **Assets**: Place all images and static assets inside an assets folder within the route directory: `src/app/[idea-name]/assets/`. Use Next.js static imports for images (e.g., `import heroImage from './assets/hero.png'`) rather than referencing string paths from the global public folder.
-    *   When generating new images, always generate them at the maximum possible resolution allowed by the system (1024x1024), and ensure the aspect ratios fit the design intent.
+    *   When generating new images, always generate them at the maximum possible resolution allowed by the system (2048x2048), and ensure the aspect ratios fit the design intent.
     *   When using the Next.js `<Image />` component, ALWAYS include the `quality={100}` prop.
 4. **Styling**: We are using standard Tailwind CSS. Avoid making drastic changes to global HTML/Body tags in `globals.css` that might break other pages.
 5. **SEO Metadata**: Every new `page.tsx` MUST export a custom `metadata` object (Title, Description, and OpenGraph parameters) that is specific to that startup idea. Do not rely on global `<RootLayout>` fallbacks.
