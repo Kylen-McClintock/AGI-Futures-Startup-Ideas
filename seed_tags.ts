@@ -211,6 +211,31 @@ const startups = [
         }
     },
     {
+        slug: 'hearth',
+        name: 'Hearth',
+        scores: {
+            moat_score: { ai_scored: 78 },
+            difficulty_score: { ai_scored: 73 },
+            civilizational_impact_score: { ai_scored: 76 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 68 },
+                "Human Flourishing": { ai_scored: 84 },
+                "Social Trust": { ai_scored: 79 },
+                "Community Renewal": { ai_scored: 88 }
+            }
+        },
+        tags: {
+            sector: ['Real Estate', 'Community', 'Software'],
+            bottleneck: ['Coordination', 'Financing', 'Trust'],
+            customer: ['Founders', 'Families', 'Digital Nomads'],
+            product_type: ['Platform', 'Marketplace', 'Services'],
+            enabling_technology: ['Large Language Models', 'Knowledge Graphs', 'Autonomous Agents'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Capital Intensive'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Community Renewal']
+        }
+    },
+    {
         slug: 'helm',
         name: 'Helm',
         scores: {

@@ -14,6 +14,7 @@ import agentable_hero from "./agentable/assets/hero.png";
 import avatarlab_hero from "./avatarlab/assets/avatarlab_hero.png";
 import proofrun_hero from "./proofrun/assets/proofrun_hero.png";
 import handraise_hero from "./handraise/assets/handraise_hero.png";
+import hearth_hero from "./hearth/assets/hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -32,6 +33,7 @@ export default async function Home() {
         "porchfront": { moat: 88, difficulty: 75, impact: 82, created_at: "2024-03-07T10:00:00Z" },
         "homequote": { moat: 79, difficulty: 67, impact: 75, created_at: "2024-03-06T10:00:00Z" },
         "aura": { moat: 72, difficulty: 81, impact: 85, created_at: "2024-03-05T10:00:00Z" },
+        "hearth": { moat: 78, difficulty: 73, impact: 76, created_at: "2024-03-05T10:00:00Z" },
         "afl": { moat: 78, difficulty: 61, impact: 80, created_at: "2024-03-04T10:00:00Z" },
         "deepguide": { moat: 78, difficulty: 72, impact: 83, created_at: "2024-03-03T10:00:00Z" },
         "main-street-legacy": { moat: 78, difficulty: 74, impact: 81, created_at: "2024-03-02T10:00:00Z" },
@@ -93,6 +95,16 @@ export default async function Home() {
             description: "Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.",
             image: porchfront_hero,
             href: "/porchfront",
+            themeColor: "hover:border-amber-500/50 text-amber-400",
+            hoverTextColor: "group-hover:text-amber-400",
+        }),
+        createProject({
+            slug: "hearth",
+            title: "Hearth",
+            scoreTitle: "Friend-Native Housing",
+            description: "Hearth makes it radically easier to start, join, and operate intentional living communities with people you actually want to share life with.",
+            image: hearth_hero,
+            href: "/hearth",
             themeColor: "hover:border-amber-500/50 text-amber-400",
             hoverTextColor: "group-hover:text-amber-400",
         }),
