@@ -102,10 +102,10 @@ export default function HandraiseClientPage() {
                         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[var(--secondary)] to-[var(--primary)] opacity-50 group-hover:opacity-100 transition-opacity" />
                         <h3 className="text-2xl sm:text-3xl font-light text-white mb-6 leading-tight">
                             LinkedIn reports more than 1 billion members across 200+ countries and territories, which means most founders already sit inside a massive latent expert graph.
-                            <ExpandableCitation label="[1]" sourceUrl="" sourceText="LinkedIn, 'About LinkedIn.'" />
+                            <ExpandableCitation label="[1]" sourceUrl="https://about.linkedin.com/" sourceText="LinkedIn, 'About LinkedIn.'" theme="rose" />
                         </h3>
                         <p className="text-lg text-white/70 leading-relaxed font-light mb-4">
-                            Research on interrupted work found that people compensate by working faster under interruption, but at the cost of more stress, frustration, time pressure, and effort. <ExpandableCitation label="[2]" sourceUrl="" sourceText="Gloria Mark, Daniela Gudith, and Ulrich Klocke, 'The Cost of Interrupted Work: More Speed and Stress,' CHI 2008." />
+                            Research on interrupted work found that people compensate by working faster under interruption, but at the cost of more stress, frustration, time pressure, and effort. <ExpandableCitation label="[2]" sourceUrl="https://ics.uci.edu/~gmark/chi08-mark.pdf" sourceText="Gloria Mark, Daniela Gudith, and Ulrich Klocke, 'The Cost of Interrupted Work: More Speed and Stress,' CHI 2008." theme="rose" />
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed font-light">
                             Referral channels also tend to lower screening costs and improve match quality versus other recruiting channels. <ExpandableCitation label="[3]" sourceUrl="https://www.iza.org/publications/dp/16843/the-value-of-employee-referrals" sourceText="Gürtzgen 2024" theme="rose" /><ExpandableCitation label="[4]" sourceUrl="https://hbr.org/2020/03/how-to-use-employee-referrals-effectively" sourceText="HBR 2020" theme="rose" /><ExpandableCitation label="[10]" sourceUrl="https://www.shrm.org/topics-tools/tools/toolkits/designing-managing-employee-referral-programs" sourceText="SHRM 2025" theme="rose" />
@@ -332,7 +332,7 @@ export default function HandraiseClientPage() {
                                 Professional help already lives inside existing graphs. The opportunity is a horizontal <strong>precision-help <HoverAcronym acronym="OS" definition="Operating System. Here it is used metaphorically to mean the default coordination layer for a category of work." /></strong> that converts social capital into measurable decisions at low coordination cost. Direction of travel: larger graphs, more independent work, more agent-prepared briefs, more trust riding on warm routes. First principles: output is bottlenecked by decision time and interruption cost. Handraise attacks both with structure and routing.
                             </p>
                             <p className="text-lg text-white/80 leading-relaxed font-light">
-                                There is already a large software market around professional graph utility. Reuters reported LinkedIn generated $15 billion in fiscal 2023 revenue, including $7 billion from hiring software and $1.7 billion from premium subscriptions. Handraise is not "another network." It is a decision layer on top of networks that already exist. That is a better place to start, because the graph is already there and the pain is coordination, not account creation. <ExpandableCitation label="[9]" sourceUrl="" sourceText="Reuters 2024" />
+                                There is already a large software market around professional graph utility. Reuters reported LinkedIn generated $15 billion in fiscal 2023 revenue, including $7 billion from hiring software and $1.7 billion from premium subscriptions. Handraise is not "another network." It is a decision layer on top of networks that already exist. That is a better place to start, because the graph is already there and the pain is coordination, not account creation. <ExpandableCitation label="[9]" sourceUrl="https://www.reuters.com" sourceText="Reuters 2024" theme="rose" />
                             </p>
                         </div>
                     </div>
@@ -354,7 +354,7 @@ export default function HandraiseClientPage() {
                                 </li>
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Interrupted work is expensive.</strong>
-                                    Even when output speed holds up, interruption raises stress and time pressure. Structured asks are not just cleaner, they are cognitively cheaper. <ExpandableCitation label="[2]" sourceUrl="" sourceText="Mark 2008" />
+                                    Even when output speed holds up, interruption raises stress and time pressure. Structured asks are not just cleaner, they are cognitively cheaper. <ExpandableCitation label="[2]" sourceUrl="https://ics.uci.edu/~gmark/chi08-mark.pdf" sourceText="Mark 2008" theme="rose" />
                                 </li>
                                 <li>
                                     <strong className="text-[var(--tertiary)] block mb-1">Portable reputation has standards now.</strong>
