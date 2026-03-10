@@ -11,6 +11,7 @@ import { RevealSection, FadeIn } from "./components/RevealSection";
 import { CoreLoopVisual } from "./components/CoreLoopVisual";
 import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const citations = [
   { number: 1, source: "PMC Study", title: "Evaluating the efficacy of a brief, recurring relationship checkup", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4115001/" }
@@ -19,6 +20,7 @@ const citations = [
 export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-amber-500/30 selection:text-amber-100 pb-32">
+      <ScrollProgress title="Attune" theme="primary" />
 
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 p-6 flex justify-between items-center bg-black/50 backdrop-blur-xl border-b border-white/5">

@@ -5,6 +5,7 @@ import { StatChart } from "./components/charts/stat-chart";
 import { InteractiveLoop } from "./components/ui/interactive-loop";
 import { ArrowRight, CheckCircle2, ChevronDown, Layers, Target, Activity } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
@@ -19,6 +20,7 @@ const citations = [
 export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-[var(--background)] overflow-hidden">
+      <ScrollProgress title="Murmuration" theme="primary" />
       {/* Ambient background glows */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/10 blur-[150px] rounded-full mix-blend-screen opacity-50" />

@@ -9,6 +9,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { ExpandableSection } from "./components/ExpandableSection";
 import { UpliftChart } from "./components/UpliftChart";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 import heroImg from "./assets/hero.png";
 import operatorHubImg from "./assets/operator-hub.png";
@@ -39,12 +40,6 @@ const staggerContainer: Variants = {
 
 export default function ClientPage() {
     const containerRef = useRef<HTMLDivElement>(null);
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"]
-    });
-
-    const headerOpacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]);
 
     const initialTags = {
         sector: ['AI', 'Finance', 'Education'],
@@ -59,24 +54,7 @@ export default function ClientPage() {
 
     return (
         <main ref={containerRef} className="min-h-screen bg-stone-950 text-stone-100 selection:bg-amber-500/30 font-sans antialiased overflow-x-hidden">
-            {/* Sticky Header Progress */}
-            <motion.header
-                style={{ opacity: headerOpacity }}
-                className="fixed top-0 left-0 right-0 h-16 bg-stone-950/80 backdrop-blur-md border-b border-white/5 z-50 flex items-center px-6 transition-opacity duration-300 pointer-events-none"
-            >
-                <div className="flex items-center gap-3">
-                    <div className="w-6 h-6 rounded-full bg-amber-500/20 border border-amber-500/50 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-amber-400"></div>
-                    </div>
-                    <span className="font-mono text-xs tracking-widest uppercase text-white/50">Main Street Legacy</span>
-                </div>
-                <div className="ml-auto w-32 h-1 bg-white/5 rounded-full overflow-hidden">
-                    <motion.div
-                        className="h-full bg-amber-400"
-                        style={{ width: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]) }}
-                    />
-                </div>
-            </motion.header>
+            <ScrollProgress title="Main Street Legacy" theme="emerald" />
 
             {/* Immersive Hero Section */}
             <section className="relative min-h-[90vh] md:min-h-screen flex items-end pb-24 md:pb-32 px-6 pt-32">
