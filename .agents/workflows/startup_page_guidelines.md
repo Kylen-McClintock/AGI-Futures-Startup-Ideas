@@ -37,6 +37,7 @@ The global `<ProjectTags />` block should NEVER be used. Instead, use the `<Inli
 
 ## Interactivity
 - **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
+- **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
 
 ## Database (Supabase) Scoring Requirements
 As part of generating the new idea, you must also evaluate and score the startup and append its data to the `seed_tags.ts` script so it syncs with Supabase. 

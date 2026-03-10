@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
+import { HoverAcronym } from "@/components/HoverAcronym";
 import { RevealSection } from "./components/RevealSection";
 import {
     Users, Brain, Network,
@@ -138,7 +139,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         </div>
                         <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center">
                             <div className="text-4xl font-light text-sky-400 mb-2">90%</div>
-                            <p className="text-sm text-white/60 font-light mb-4">Of firms globally are SMEs, accounting for more than half of global employment.</p>
+                            <p className="text-sm text-white/60 font-light mb-4">Of firms globally are <HoverAcronym acronym="SMEs" definition="Small and Medium-sized Enterprises" />, accounting for more than half of global employment.</p>
                             <ExpandableCitation label="[4]" sourceUrl="https://www.worldbank.org/en/topic/smefinance" sourceText="World Bank, SME Finance overview" />
                         </div>
                     </div>
@@ -199,12 +200,12 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <div className="glass-panel p-8 md:p-10 rounded-[2rem] border border-white/5 relative overflow-hidden group hover:border-indigo-500/30 transition-colors">
                                 <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[80px]" />
                                 <div className="relative z-10">
-                                    <h4 className="text-2xl font-medium text-white mb-4 flex items-center gap-3">
+                                    <h4 className="text-xl font-medium text-white mb-4 flex items-center gap-3">
                                         <Building2 className="w-7 h-7 text-indigo-400" />
                                         Upgradable skeuomorphic office
                                     </h4>
                                     <p className="text-white/80 leading-relaxed font-light text-lg">
-                                        A literal building that levels up with progress. Marketing has a campaign wall and creative bin. Sales shows a live pipeline you can drag. Product has a whiteboard and PRD shelf. Dev has a terminal with tests and pull requests. Finance shows cash, burn, runway. Hit milestones to unlock rooms, dashboards, and power-ups. Pay to customize themes, layouts, and department mascots.
+                                        A literal building that levels up with progress. Marketing has a campaign wall and creative bin. Sales shows a live pipeline you can drag. Product has a whiteboard and <HoverAcronym acronym="PRD" definition="Product Requirements Document" /> shelf. Dev has a terminal with tests and pull requests. Finance shows cash, burn, runway. Hit milestones to unlock rooms, dashboards, and power-ups. Pay to customize themes, layouts, and department mascots.
                                     </p>
                                 </div>
                             </div>
@@ -358,7 +359,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     <div className="glass-panel p-8 sm:p-12 rounded-[2rem] border border-indigo-500/20 bg-indigo-950/20 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/10 blur-[80px]" />
                         <p className="text-lg leading-relaxed text-white/80 font-light relative z-10">
-                            A solo founder building a vertical SaaS company opens Helm. Jarvis has triaged inbound leads, drafted a pricing experiment, and queued three ad concepts. The founder asks for a homepage refresh. Helm routes copy to a brand-safe writing agent, sends positioning to two opted-in software founders for a teardown, then escalates polish to a paid designer.
+                            A solo founder building a vertical <HoverAcronym acronym="SaaS" definition="Software as a Service" /> company opens Helm. Jarvis has triaged inbound leads, drafted a pricing experiment, and queued three ad concepts. The founder asks for a homepage refresh. Helm routes copy to a brand-safe writing agent, sends positioning to two opted-in software founders for a teardown, then escalates polish to a paid designer.
                         </p>
                         <p className="text-lg leading-relaxed text-indigo-300 font-medium mt-6 relative z-10 border-l-2 border-indigo-500 pl-4">
                             By that night, the page is live, the ad set is running, and every decision is logged for reuse. What normally takes a week happens in one coherent operating environment.
@@ -429,7 +430,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <Briefcase className="w-6 h-6 text-violet-400" /> Business Model
                         </h3>
                         <p className="text-lg leading-relaxed text-white/80 font-light relative z-10">
-                            Software-as-a-service tiers for Solo, Studio, Team. Usage-metered agent runs. Agent marketplace revenue share. Mentor subscriptions. Take rate on freelance reviews and implementations. Enterprise add-ons for advanced observability and private connectors.
+                            Software-as-a-service (<HoverAcronym acronym="SaaS" definition="Software as a Service" />) tiers for Solo, Studio, Team. Usage-metered agent runs. Agent marketplace revenue share. Mentor subscriptions. Take rate on freelance reviews and implementations. Enterprise add-ons for advanced observability and private connectors.
                         </p>
                     </div>
 
@@ -781,7 +782,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                     </details>
                 </RevealSection>
 
-            </div>
-        </main>
+            </div >
+        </main >
     );
 }

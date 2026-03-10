@@ -6,6 +6,7 @@ import { useRef } from "react";
 import { ChevronDown, ArrowRight, Layers, Box, Cpu, Network, BarChart3, Link as LinkIcon } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
+import { HoverAcronym } from "@/components/HoverAcronym";
 import { ExpandableSection } from "./components/ExpandableSection";
 import { UpliftChart } from "./components/UpliftChart";
 
@@ -167,7 +168,7 @@ export default function ClientPage() {
                         The Problem
                     </h2>
                     <p className="text-lg font-light text-stone-300 leading-relaxed text-pretty">
-                        Good SMBs are hitting the market, often with no successor. Buyers know deals, not operations, or they know operations, not AI. Lenders need a clean way to price "AI uplift" into DSCR, the debt service coverage ratio that protects the loan. Sellers want flexible exits that keep some profit distributions for a glide path. The playbooks and the financing rarely show up in one place.
+                        Good SMBs are hitting the market, often with no successor. Buyers know deals, not operations, or they know operations, not AI. Lenders need a clean way to price "AI uplift" into <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" />, the debt service coverage ratio that protects the loan. Sellers want flexible exits that keep some profit distributions for a glide path. The playbooks and the financing rarely show up in one place.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity, 'Small business closure crisis.'" />
                         <ExpandableCitation label="BizBuySell" sourceUrl="https://www.bizbuysell.com/insight-report/" sourceText="BizBuySell Insight data, retirement as leading sell motivation." />
                     </p>
@@ -187,7 +188,7 @@ export default function ClientPage() {
                         <div>
                             <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-3">Mechanism</h3>
                             <p className="text-lg font-light text-stone-300 leading-relaxed">
-                                A competitive cohort that trains prospective owner-operators to run one niche, implement AI across the funnel, and source and negotiate deals with our tooling and hands-on guidance. We coinvest only in the top performers, finance alongside an investor syndicate and SBA 7(a) loans, and lock in seller-friendly profit-distribution structures during transition.
+                                A competitive cohort that trains prospective owner-operators to run one niche, implement AI across the funnel, and source and negotiate deals with our tooling and hands-on guidance. We coinvest only in the top performers, finance alongside an investor syndicate and <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" /> loans, and lock in seller-friendly profit-distribution structures during transition.
                             </p>
                             <p className="text-lg font-light text-stone-300 leading-relaxed mt-4">
                                 Then we deploy a standardized AI operating system and track uplift with lender-grade scorecards. The core bet is simple: if you combine better buyers, better underwriting, and faster AI installs, you can win more deals and improve cash flow faster than traditional searchers.
@@ -230,27 +231,27 @@ export default function ClientPage() {
                         {[
                             {
                                 title: "Cohort + Curriculum",
-                                desc: "Eight to twelve weeks. You learn niche economics, staffing, compliance, and the complete AI toolchain, from marketing and sales to supplier management, scheduling, and customer service. You also learn sourcing, diligence, DSCR math, and negotiation tactics with live term-sheet reps.",
+                                desc: <>Eight to twelve weeks. You learn niche economics, staffing, compliance, and the complete AI toolchain, from marketing and sales to supplier management, scheduling, and customer service. You also learn sourcing, diligence, <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> math, and negotiation tactics with live term-sheet reps.</>,
                                 icon: <Layers className="block w-6 h-6" />
                             },
                             {
                                 title: "Deal Sourcing Tools",
-                                desc: "Broker feeds, CPA networks, targeted owner outreach, red-flag checklists, fast underwriting templates.",
+                                desc: <>Broker feeds, <HoverAcronym acronym="CPA" definition="Certified Public Accountant" /> networks, targeted owner outreach, red-flag checklists, fast underwriting templates.</>,
                                 icon: <Network className="block w-6 h-6" />
                             },
                             {
                                 title: "Selective Coinvestment",
-                                desc: "SPVs for the top graduates. We stack equity with SBA 7(a) and seller notes. Profit-distribution waterfalls let retiring owners keep income while you ramp.",
+                                desc: <><HoverAcronym acronym="SPVs" definition="Special Purpose Vehicles" /> for the top graduates. We stack equity with <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" /> and seller notes. Profit-distribution waterfalls let retiring owners keep income while you ramp.</>,
                                 icon: <BarChart3 className="block w-6 h-6" />
                             },
                             {
                                 title: "AI Playbooks",
-                                desc: "Vertical standard operating procedures, voice agents, robotic process automation, customer relationship management automations, pricing and accounts receivable workflows, plus a common data spine.",
+                                desc: <>Vertical <HoverAcronym acronym="SOPs" definition="Standard Operating Procedures" />, voice agents, <HoverAcronym acronym="RPA" definition="Robotic Process Automation" />, <HoverAcronym acronym="CRM" definition="Customer Relationship Management" /> automations, pricing and <HoverAcronym acronym="AR" definition="Accounts Receivable" /> workflows, plus a common data spine.</>,
                                 icon: <Cpu className="block w-6 h-6" />
                             },
                             {
                                 title: "Uplift Oracle",
-                                desc: "A portfolio benchmark that tracks before-after KPIs, feeds DSCR modeling, and compounds learnings across deals.",
+                                desc: <>A portfolio benchmark that tracks before-after <HoverAcronym acronym="KPIs" definition="Key Performance Indicators" />, feeds <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> modeling, and compounds learnings across deals.</>,
                                 icon: <Box className="block w-6 h-6" />
                             }
                         ].map((item, idx) => (
@@ -293,10 +294,10 @@ export default function ClientPage() {
                         <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
                         <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-6">Specific Example</h3>
                         <p className="text-lg font-light text-stone-200 leading-relaxed text-pretty relative z-10">
-                            An accepted cohort member buys a $2.0M revenue HVAC shop at 15% EBITDA using SBA 7(a), a seller note, and an 18-month profit-distribution glide for the seller.
+                            An accepted cohort member buys a $2.0M revenue <HoverAcronym acronym="HVAC" definition="Heating, Ventilation, and Air Conditioning" /> shop at 15% EBITDA using <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" />, a seller note, and an 18-month profit-distribution glide for the seller.
                         </p>
                         <p className="text-lg font-light text-stone-300 mt-4 leading-relaxed text-pretty relative z-10">
-                            Day one, we install phone intake agents, estimate follow-ups, dynamic routing, and accounts receivable collections. Support-style work shows ~14% productivity gains with generative AI, largest for newer staff. We expect similar lift in call-heavy flows, then expand into pricing and inventory. Cash conversion speeds up, DSCR strengthens, equity value rerates.
+                            Day one, we install phone intake agents, estimate follow-ups, dynamic routing, and <HoverAcronym acronym="AR" definition="Accounts Receivable" /> collections. Support-style work shows ~14% productivity gains with generative AI, largest for newer staff. We expect similar lift in call-heavy flows, then expand into pricing and inventory. Cash conversion speeds up, <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> strengthens, equity value rerates.
                             <ExpandableCitation label="NBER" sourceUrl="https://www.nber.org/papers/w31161" sourceText="Brynjolfsson et al., Generative AI at Work." />
                         </p>
 
@@ -508,7 +509,7 @@ export default function ClientPage() {
                         <h2 className="text-2xl font-serif text-white mb-6">Unique Go To Market</h2>
                         <InlineTags tags={initialTags?.founder_fit} theme="zinc" />
                         <p className="text-stone-300 font-light leading-relaxed mt-4">
-                            Run a FOMO engine with weekly short, teachable videos showing real buyers acquiring "boring" SMBs at discounts and installing AI playbooks that lift profit in 30 days. Each clip follows one hook, price paid, why the seller accepted, the three workflows installed, and a before-versus-after dashboard. Atomize to social, then route to a free Deal Scorecard gating the cohort. Show receipts with blurred bank deposits, CRM screens, call logs.
+                            Run a FOMO engine with weekly short, teachable videos showing real buyers acquiring "boring" SMBs at discounts and installing AI playbooks that lift profit in 30 days. Each clip follows one hook, price paid, why the seller accepted, the three workflows installed, and a before-versus-after dashboard. Atomize to social, then route to a free Deal Scorecard gating the cohort. Show receipts with blurred bank deposits, <HoverAcronym acronym="CRM" definition="Customer Relationship Management" /> screens, call logs.
                         </p>
                         <h4 className="text-sm font-medium text-white mt-6 mb-2">User Wedge</h4>
                         <p className="text-stone-400 font-light text-sm leading-relaxed">
@@ -518,7 +519,7 @@ export default function ClientPage() {
                     <div>
                         <h2 className="text-2xl font-serif text-amber-400 mb-6">AGI Future Edge</h2>
                         <p className="text-stone-300 font-light leading-relaxed">
-                            Playbooks improve with every rollout. The Uplift Oracle converts real operations data into lender-ready DSCR models, tightening underwriting. Pooled demand becomes a vendor moat. Alumni ship better SOPs back into the library.
+                            Playbooks improve with every rollout. The Uplift Oracle converts real operations data into lender-ready <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> models, tightening underwriting. Pooled demand becomes a vendor moat. Alumni ship better <HoverAcronym acronym="SOPs" definition="Standard Operating Procedures" /> back into the library.
                         </p>
                         <p className="text-stone-400 font-light text-sm leading-relaxed mt-4">
                             Over time, this expands into autonomous diligence agents, portfolio-wide benchmarking, dynamic lender pricing based on verified uplift, and eventually an acquisition graph that knows which operator, playbook, financing mix, and seller structure is most likely to work for each deal. In a world of abundant intelligence, winners own the rails between intelligence and real cash-flow assets.
@@ -539,7 +540,7 @@ export default function ClientPage() {
                         <ExpandableCitation label="McKinsey" sourceUrl="https://www.mckinsey.com" sourceText="McKinsey Global Institute" />
                     </p>
                     <p className="text-lg font-light text-stone-400 leading-relaxed text-pretty max-w-2xl mx-auto mb-12">
-                        At larger scale, Main Street Legacy becomes a translation layer between frontier AI and the real economy. Instead of AI gains concentrating only in software giants, it pushes them into HVAC shops, dental groups, brokerages, and neighborhood services. Large scale human flourishing that keeps communities economically alive.
+                        At larger scale, Main Street Legacy becomes a translation layer between frontier AI and the real economy. Instead of AI gains concentrating only in software giants, it pushes them into <HoverAcronym acronym="HVAC" definition="Heating, Ventilation, and Air Conditioning" /> shops, dental groups, brokerages, and neighborhood services. Large scale human flourishing that keeps communities economically alive.
                     </p>
                     <div className="flex justify-center flex-col items-center">
                         <InlineTags tags={initialTags?.outcomes} theme="amber" />
@@ -591,7 +592,7 @@ export default function ClientPage() {
                                 "Closed acquisitions per cohort",
                                 "Median time from completion to signed deal",
                                 "Median gross margin/EBITDA uplift 90/180 days post-install",
-                                "DSCR improvement after AI deployment",
+                                <><HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> improvement after AI deployment</>,
                                 "Seller referral rate",
                                 "Lender repeat participation rate"
                             ].map((kpi, idx) => (
