@@ -29,6 +29,9 @@ import twinOsImage from './assets/avatarlab_twinos.png';
 import graphImage from './assets/avatarlab_graph.png';
 import cellbankImage from './assets/avatarlab_cellbank_v2.png';
 
+// Components
+import ProductStackFlow from './components/ProductStackFlow';
+
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
     const tags = {
@@ -125,12 +128,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12 cursor-default">
                         <div className="text-sm font-mono tracking-widest uppercase text-cyan-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-cyan-500/50 mr-4" /> The Problem
+                            <span className="w-8 h-px bg-cyan-500/50 mr-4" /> Context
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
-                            Biology decisions are slow, <br className="hidden sm:block" />
-                            <span className="text-white/50">expensive, and risky.</span>
+                            The Problem
                         </h2>
+                        <p className="text-2xl text-white/50 font-light mt-4 leading-snug">Biology decisions are slow, expensive, and risky.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
@@ -170,9 +173,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags label="Enabling Tech" tags={tags.enabling_technology} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-8 leading-tight">
-                            Grow your own ground truth. <br className="hidden sm:block" /><span className="text-white/50">Test therapies before you ingest them.</span>
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-4 leading-tight">
+                            Solution Hypothesis
                         </h2>
+                        <p className="text-2xl text-white/50 font-light mb-8 max-w-2xl leading-snug">
+                            Grow your own ground truth. Test therapies before you ingest them.
+                        </p>
 
                         <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
                             <Image src={organoidsImage} alt="Microfluidic chip with organoid" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -197,38 +203,15 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                     {/* Product Stack Grid */}
                     <div className="mb-16">
-                        <h3 className="text-2xl font-light text-white mb-8 border-b border-white/10 pb-4">Product Stack</h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-colors cursor-default">
-                                <ActivitySquare className="w-6 h-6 text-cyan-400 mb-4" />
-                                <strong className="block text-white mb-2 font-medium">Avatar Lab</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">On-demand tests on your genotype-matched mini-organs, single or multi-organ.</span>
-                            </motion.div>
-
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-colors cursor-default">
-                                <BrainCircuit className="w-6 h-6 text-teal-400 mb-4" />
-                                <strong className="block text-white mb-2 font-medium">TwinOS</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">Your digital twin ranks options with confidence scores and assay provenance.</span>
-                            </motion.div>
-
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-colors cursor-default">
-                                <Database className="w-6 h-6 text-emerald-400 mb-4" />
-                                <strong className="block text-white mb-2 font-medium">Cell Bank</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">One-time creation and storage of a therapy-intent iPSC line, kept ready for emerging treatments.</span>
-                            </motion.div>
-
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-colors cursor-default">
-                                <FileText className="w-6 h-6 text-blue-400 mb-4" />
-                                <strong className="block text-white mb-2 font-medium">Evidence Packs</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">Clinician-, partner-, and regulator-friendly summaries for claims and decisions.</span>
-                            </motion.div>
-
-                            <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-cyan-500/30 hover:bg-white/[0.04] transition-colors cursor-default sm:col-span-2 lg:col-span-2">
-                                <Layers className="w-6 h-6 text-indigo-400 mb-4" />
-                                <strong className="block text-white mb-2 font-medium">Genome Tier</strong>
-                                <span className="text-white/60 font-light text-sm leading-relaxed block">A lower-cost recommendation layer for people with sequencing, lab, and wearable data, powered by the organoid truth engine rather than requiring everyone to run a custom assay.</span>
-                            </motion.div>
+                        <div className="text-sm font-mono tracking-widest uppercase text-indigo-400 mb-4 flex items-center mt-20">
+                            <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Architecture
                         </div>
+                        <h2 className="text-5xl sm:text-6xl font-light text-white mb-2 leading-tight">Product Stack</h2>
+                        <p className="text-xl text-white/50 font-light mb-8 max-w-2xl leading-snug">
+                            A multi-layered ecosystem connecting wet-lab truth with digital intelligence.
+                        </p>
+
+                        <ProductStackFlow />
                     </div>
 
                     {/* Specific Examples by ICP Grid */}
@@ -272,12 +255,14 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12">
                         <div className="text-sm font-mono tracking-widest uppercase text-indigo-400 mb-4 flex items-center">
-                            <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Market
+                            <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Economics
                         </div>
-                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-8">
-                            A multi-layered market <br className="hidden sm:block" />
-                            <span className="text-white/50">starting with cellular preservation.</span>
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-4">
+                            Market & Business Model
                         </h2>
+                        <p className="text-2xl text-white/50 font-light mb-8 max-w-2xl leading-snug">
+                            A multi-layered market starting with cellular preservation.
+                        </p>
 
                         <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-xl border border-white/10 group">
                             <Image src={graphImage} alt="Sophisticated data visualization hovering on dark glass" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
@@ -366,9 +351,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
-                            Moat and Difficulty.
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-4 leading-tight">
+                            Evaluation Metrics
                         </h2>
+                        <p className="text-2xl text-white/50 font-light mb-8 max-w-2xl leading-snug">
+                            Moat and Difficulty.
+                        </p>
                     </div>
 
                     <InteractiveScoreCard
@@ -452,11 +440,14 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <div className="order-2 md:order-1">
-                            <h3 className="text-3xl font-light text-white mb-6 flex items-center gap-3">
-                                <Crosshair className="w-8 h-8 text-cyan-400" /> Go To Market
-                            </h3>
+                            <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-4">
+                                Go To Market
+                            </h2>
+                            <p className="text-xl sm:text-2xl text-white/50 font-light mb-8 leading-snug">
+                                My Twin, My Choice.
+                            </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
-                                <strong className="text-white">My Twin, My Choice.</strong> Invite early users to run one high-stakes comparison on their avatars, then publish anonymized "what actually worked for me" deltas on a live leaderboard with assay provenance.
+                                Invite early users to run one high-stakes comparison on their avatars, then publish anonymized "what actually worked for me" deltas on a live leaderboard with assay provenance.
                             </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
                                 First buyers are affluent longevity and aesthetics power users, premium clinics, and science-forward brands. Every premium customer finances the training set for a much broader intelligence layer.
@@ -507,10 +498,15 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="grid md:grid-cols-2 gap-12 items-center group cursor-default mb-16">
                         <div>
-                            <h2 className="text-3xl font-light text-white mb-6 flex items-center gap-4">
-                                <ActivitySquare className="w-8 h-8 text-cyan-400" />
-                                Cell Banking & Generation
+                            <div className="text-sm font-mono tracking-widest uppercase text-cyan-400 mb-4 flex items-center">
+                                <span className="w-8 h-px bg-cyan-500/50 mr-4" /> Thesis
+                            </div>
+                            <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-4">
+                                Validation <br className="hidden sm:block" />& First Experiment
                             </h2>
+                            <p className="text-xl sm:text-2xl text-white/50 font-light mb-8 max-w-xl leading-snug">
+                                Cell Banking & Generation
+                            </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
                                 The foundation of the platform relies on secure, viable cryogenic storage combined with perfectly calibrated reprogramming and differentiation pipelines.
                             </p>
@@ -559,7 +555,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags tags={tags.outcomes} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-12">
                             Civilizational Impact.
                         </h2>
                     </div>
