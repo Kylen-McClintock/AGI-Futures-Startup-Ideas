@@ -34,6 +34,7 @@ import cellbankImage from './assets/avatarlab_cellbank_v2.png';
 
 // Components
 import ProductStackFlow from './components/ProductStackFlow';
+import { HoverAcronym } from '@/components/HoverAcronym';
 
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -117,7 +118,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             />
                         </h3>
                         <p className="text-lg text-white/70 leading-relaxed font-light">
-                            <strong className="text-cyan-300 font-medium">Test on your biology first.</strong> Before you start a GLP-1, a peptide stack, a cosmetic routine, or a multi-drug change, you run the choice against tissue grown from your own cells. Instead of guessing from population averages, anecdotes, or animal data, you get a ranked readout of likely benefit, likely downside, and what to test next. The premium wedge is personalized wet-lab testing. The larger company is a compounding recommendation engine that learns from genotype-linked tissue response, then generalizes outward to people with genome, lab, and wearable data who never need a full custom assay.
+                            <strong className="text-cyan-300 font-medium">Test on your biology first.</strong> Before you start a <HoverAcronym acronym="GLP-1" definition="glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity." />, a peptide stack, a cosmetic routine, or a multi-drug change, you run the choice against tissue grown from your own cells. Instead of guessing from population averages, anecdotes, or animal data, you get a ranked readout of likely benefit, likely downside, and what to test next. The premium wedge is personalized wet-lab testing. The larger company is a compounding recommendation engine that learns from genotype-linked tissue response, then generalizes outward to people with genome, lab, and wearable data who never need a full custom assay.
                         </p>
                     </div>
                 </motion.section>
@@ -204,7 +205,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                     <h4 className="text-xl font-medium text-white">1. Bank & Reprogram</h4>
                                 </div>
                                 <p className="text-white/70 font-light leading-relaxed">
-                                    Bank the youngest viable cells under clinical-grade conditions. Create a therapy-intent induced pluripotent stem cell (<strong className="text-cyan-200">iPSC</strong>) line with quality control and immune-type profiling. Preserve it as a master cell bank for future therapies.
+                                    Bank the youngest viable cells under clinical-grade conditions. Create a therapy-intent induced pluripotent stem cell (<HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." />) line with quality control and immune-type profiling. Preserve it as a master cell bank for future therapies.
                                 </p>
                             </div>
 
@@ -217,7 +218,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                     <h4 className="text-xl font-medium text-white">2. Grow Mini-Organs</h4>
                                 </div>
                                 <p className="text-white/70 font-light leading-relaxed">
-                                    From a small blood draw, reprogram cells into iPSCs. Differentiate them into mini-organs for liver, gut, brain, heart, immune co-cultures, and skin.
+                                    From a small blood draw, reprogram cells into <HoverAcronym acronym="iPSCs" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." />. Differentiate them into mini-organs for liver, gut, brain, heart, immune co-cultures, and skin.
                                 </p>
                             </div>
 
@@ -250,7 +251,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <div className="mt-6 glass-panel p-6 rounded-2xl border border-white/5 bg-white/5 flex items-start gap-4">
                             <AlertCircle className="w-6 h-6 text-cyan-400 shrink-0 mt-1" />
                             <p className="text-white/70 font-light text-sm leading-relaxed max-w-4xl">
-                                Drug-induced liver injury (<strong className="text-cyan-200">DILI</strong>) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
+                                Drug-induced liver injury (<HoverAcronym acronym="DILI" definition="drug-induced liver injury." />) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
                             </p>
                         </div>
                     </div>
@@ -271,13 +272,13 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     {/* Specific Examples by ICP Grid */}
                     <div>
                         <div className="flex justify-between items-end border-b border-white/10 pb-4 mb-8">
-                            <h3 className="text-2xl font-light text-white">Specific examples by ICP</h3>
+                            <h3 className="text-2xl font-light text-white">Specific examples by <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
                             <InlineTags tags={tags.customer} theme="emerald" />
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-cyan-500/10 bg-cyan-950/10">
                                 <strong className="text-cyan-300 block mb-2 font-medium">Individuals</strong>
-                                <p className="text-white/70 font-light leading-relaxed">Compare a GLP-1, a nootropic stack, and a peptide combo on your mini-organs first. Pick what helps most with the least risk for your biology.</p>
+                                <p className="text-white/70 font-light leading-relaxed">Compare a <HoverAcronym acronym="GLP-1" definition="glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity." />, a nootropic stack, and a peptide combo on your mini-organs first. Pick what helps most with the least risk for your biology.</p>
                             </motion.div>
 
                             <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-teal-500/10 bg-teal-950/10">
@@ -287,7 +288,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                             <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-blue-500/10 bg-blue-950/10">
                                 <strong className="text-blue-300 block mb-2 font-medium">Biopharma</strong>
-                                <p className="text-white/70 font-light leading-relaxed">Use liver and gut systems to flag DILI and permeability issues preclinically. Kill weak programs sooner. Feed organoid evidence into model-informed decisions.</p>
+                                <p className="text-white/70 font-light leading-relaxed">Use liver and gut systems to flag <HoverAcronym acronym="DILI" definition="drug-induced liver injury." /> and permeability issues preclinically. Kill weak programs sooner. Feed organoid evidence into model-informed decisions.</p>
                             </motion.div>
 
                             <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-6 rounded-2xl border border-emerald-500/10 bg-emerald-950/10">
@@ -396,7 +397,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags tags={['Build Cell Bank Now', 'Digital Twins Early']} theme="blue" />
                             </div>
                             <p className="text-lg text-white/70 font-light leading-relaxed mb-6">
-                                We can build the foundational stem cell banking layer <strong>today</strong>. The cryopreservation and iPSC generation protocols are established and commercially viable right now. For the analytical layers, organoid models are improving and FDA policy is pushing towards new approach methodologies (NAMs). <ExpandableCitation label="[1][2][5][7][8]" sourceUrl="" sourceText="FDA 2025 Roadmap" />
+                                We can build the foundational stem cell banking layer <strong>today</strong>. The cryopreservation and <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> generation protocols are established and commercially viable right now. For the analytical layers, organoid models are improving and FDA policy is pushing towards new approach methodologies (<HoverAcronym acronym="NAMs" definition="new approach methodologies, meaning non-animal methods such as organoids, organ chips, and computational models." />). <ExpandableCitation label="[1][2][5][7][8]" sourceUrl="" sourceText="FDA 2025 Roadmap" />
                             </p>
                             <p className="text-lg text-white/70 font-light leading-relaxed">
                                 But full digital twins are early. A 2025 scoping review found only 18 of 149 studied fully met twin criteria. The right move now is not to pretend the end state exists. Build the cell bank to capture the biological asset today, then sequence into assay validation. <ExpandableCitation label="[4][9][10]" sourceUrl="" sourceText="Tudor 2025, Katsoulakis 2024" />
@@ -614,13 +615,13 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </summary>
                         <div className="p-8 sm:p-10 pt-0 border-t border-white/5 bg-zinc-950/30">
                             <p className="text-lg text-white/80 font-light leading-relaxed border-l-2 border-cyan-500/40 pl-6 mb-8 mt-6">
-                                Recruit 50 donors across age bands. Create iPSC lines with one protocol. Primary endpoints: line creation success rate, genomic stability, differentiation yield for liver, gut, and skin organoids, and bank viability at 3 months. <ExpandableCitation label="[1][2][11]" sourceUrl="" sourceText="Ingber; Leung; Martins" />
+                                Recruit 50 donors across age bands. Create <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> lines with one protocol. Primary endpoints: line creation success rate, genomic stability, differentiation yield for liver, gut, and skin organoids, and bank viability at 3 months. <ExpandableCitation label="[1][2][11]" sourceUrl="" sourceText="Ingber; Leung; Martins" />
                             </p>
                             <p className="text-lg text-white/80 font-light leading-relaxed pl-6">
                                 Secondary endpoint: a blinded panel shows that donor-matched liver or liver-gut systems predict a predefined set of known hepatotoxic and non-hepatotoxic agents better than historical animal benchmarks. Pre-register metrics. Publish reproducibility first.
                             </p>
                             <p className="text-lg text-cyan-200 mt-6 font-medium pl-6">
-                                Quick falsifiable hypothesis: a standardized blood-to-iPSC-to-liver assay pipeline can produce reproducible, clinically relevant toxicity signal across donors well enough to support a premium commercial testing service.
+                                Quick falsifiable hypothesis: a standardized blood-to-<HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." />-to-liver assay pipeline can produce reproducible, clinically relevant toxicity signal across donors well enough to support a premium commercial testing service.
                             </p>
                         </div>
                     </details>
@@ -708,8 +709,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <ActivitySquare className="w-6 h-6 text-teal-400" /> Key Performance Indicators
                             </h3>
                             <ul className="space-y-4 text-white/80 font-light text-lg">
-                                <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> iPSC line creation success rate</li>
-                                <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> QC pass rate (genomic, sterility)</li>
+                                <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> <HoverAcronym acronym="iPSC" definition="induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types." /> line creation success rate</li>
+                                <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> <HoverAcronym acronym="QC" definition="quality control." /> pass rate (genomic, sterility)</li>
                                 <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> Concordance vs. known controls</li>
                                 <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> Turnaround time sample to result</li>
                                 <li className="flex items-start gap-4"><span className="text-teal-500 font-bold mt-1">✓</span> Gross margin per assay</li>
