@@ -21,7 +21,7 @@ export function ExpandableCitation({ label, sourceUrl, sourceText, theme = 'defa
 
     const [mounted, setMounted] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const coords = usePortalPosition(buttonRef, isExpanded);
+    const { coords, cssVars } = usePortalPosition(buttonRef, isExpanded);
 
     useEffect(() => {
         setMounted(true);
@@ -39,6 +39,8 @@ export function ExpandableCitation({ label, sourceUrl, sourceText, theme = 'defa
                         position: 'fixed',
                         top: coords.top,
                         left: coords.left,
+                        pointerEvents: 'auto',
+                        ...cssVars,
                     }}
                     className={`z-[9999] -translate-x-1/2 w-72 md:w-80 p-5 rounded-xl bg-zinc-950/95 backdrop-blur-xl border shadow-2xl text-left text-sm ${themeClass.acronymPopupBorder}`}
                 >

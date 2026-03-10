@@ -16,7 +16,13 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - **Hover States**: Apply subtle hover effects (e.g., `whileHover={{ scale: 1.02, y: -5 }}`) and transitions.
 - **Icons**: Every card must feature a contextually relevant icon imported from `lucide-react`.
 
-## 3. Civilizational Impact Score Box ("DeepGuide Style")
+## 3. Ideal Customer Profile (ICP) Use Cases
+- **Visual Value Flows**: The "Specific Example per ICP" section must NEVER be a static block of text.
+- **Interactive Component**: ALWAYS build this section as an interactive, multi-tab selector component (reference `src/app/handraise/components/ICPUseCases.tsx`).
+- **Stakeholder Flow**: For each use case, include an animated "Value Flow Architecture" graphic that explicitly maps the step-by-step flow between stakeholders (e.g., Founder -> Agent -> Experts -> Founder).
+- **Contributor Rewards**: Explicitly include a "Contributor Reward" section at the end of the flow detailing the exact value (e.g., USDC, Reputation points) earned by the participants in the network.
+
+## 4. Civilizational Impact Score Box ("DeepGuide Style")
 - Treat the "Civilizational Impact" section as an interactive data visualization.
 - Implement the score box using a glass-panel `<details>` HTML tag pattern (as seen in DeepGuide and Main Street Legacy).
 - The main visible number summary must be the overall `civilizational_impact_score`.
@@ -28,13 +34,13 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
 - **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
 
-## 4. Explicit & Collapsible Citations
+## 5. Explicit & Collapsible Citations
 - Always include an explicit **Acronyms & References** section at the very bottom of the page.
 - Wrap this entire section in a default-collapsed `<details>` block to save visual space and present a clean end-of-page experience.
 - When expanding the references block, format the acronyms as bold keys with lighter text definitions.
 - For references/citations, use the exact sources provided in the script, implementing them as clean outbound links (e.g., opening in a new tab `target="_blank"` with a small arrow icon/token `&rarr;`).
 
-## 5. Media Distribution
+## 6. Media Distribution
 - Aim for 3-4 distinct images spaced throughout the deeply text-heavy scripts.
 - **Hero Image (Top)**: Setting the scene.
 - **Contextual Image (Middle)**: Grounding the operational reality or the specific vertical.

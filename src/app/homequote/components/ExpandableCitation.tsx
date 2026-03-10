@@ -18,7 +18,7 @@ export default function ExpandableCitation({ id, sourceLabel, fullUrl, title }: 
   const [expanded, setExpanded] = useState(false);
   const [mounted, setMounted] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const coords = usePortalPosition(buttonRef, expanded);
+  const { coords, cssVars } = usePortalPosition(buttonRef, expanded);
 
   useEffect(() => {
     setMounted(true);
@@ -48,8 +48,10 @@ export default function ExpandableCitation({ id, sourceLabel, fullUrl, title }: 
                 position: 'fixed',
                 top: coords.top,
                 left: coords.left,
+                pointerEvents: 'auto',
+                ...cssVars,
               }}
-              className="z-[9999] -translate-x-1/2 md:translate-x-0 md:left-[var(--left)] w-64 md:w-80 p-4 rounded-xl bg-[#0a0f14]/95 backdrop-blur-xl border border-[var(--primary)]/20 shadow-[0_8px_32px_rgba(16,185,129,0.15)] text-left"
+              className="z-[9999] -translate-x-1/2 md:translate-x-0 w-64 md:w-80 p-4 rounded-xl bg-[#0a0f14]/95 backdrop-blur-xl border border-[var(--primary)]/20 shadow-[0_8px_32px_rgba(16,185,129,0.15)] text-left"
             >
               <div className="text-xs font-medium text-[var(--primary)] mb-1 font-mono uppercase tracking-wider">{sourceLabel}</div>
               <div className="text-sm text-white/90 mb-3">{title}</div>

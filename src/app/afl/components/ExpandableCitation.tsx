@@ -18,7 +18,7 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
     const [isExpanded, setIsExpanded] = useState(false);
     const [mounted, setMounted] = useState(false);
     const buttonRef = useRef<HTMLButtonElement>(null);
-    const coords = usePortalPosition(buttonRef, isExpanded, 'top');
+    const { coords, cssVars } = usePortalPosition(buttonRef, isExpanded, 'top');
 
     useEffect(() => {
         setMounted(true);
@@ -55,6 +55,8 @@ export function ExpandableCitation({ number, source, title, url }: CitationProps
                                     position: 'fixed',
                                     bottom: coords.bottom,
                                     left: coords.left,
+                                    pointerEvents: 'auto',
+                                    ...cssVars,
                                 }}
                                 className="z-[9999] -translate-x-1/2 mb-2 w-64 p-3 rounded-xl bg-black/95 backdrop-blur-xl border border-white/20 shadow-[0_0_30px_rgba(0,0,0,0.5)] text-left cursor-default"
                                 onClick={(e) => e.stopPropagation()}
