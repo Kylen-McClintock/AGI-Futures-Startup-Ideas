@@ -33,18 +33,18 @@ export default function ProductStackFlow() {
     ];
 
     const colorMap: any = {
-        emerald: { text: 'text-emerald-400', border: 'border-emerald-500/30', bg: 'bg-emerald-950/20' },
-        cyan: { text: 'text-cyan-400', border: 'border-cyan-500/30', bg: 'bg-cyan-950/20' },
-        teal: { text: 'text-teal-400', border: 'border-teal-500/30', bg: 'bg-teal-950/20' },
-        blue: { text: 'text-blue-400', border: 'border-blue-500/30', bg: 'bg-blue-950/20' },
-        indigo: { text: 'text-indigo-400', border: 'border-indigo-500/30', bg: 'bg-indigo-950/20' }
+        emerald: { text: 'text-[var(--secondary)]', border: 'border-[var(--primary)]/30', bg: 'bg-[var(--primary)]/20' },
+        cyan: { text: 'text-[var(--secondary)]', border: 'border-[var(--primary)]/30', bg: 'bg-[var(--primary)]/20' },
+        teal: { text: 'text-[var(--secondary)]', border: 'border-[var(--primary)]/30', bg: 'bg-[var(--primary)]/20' },
+        blue: { text: 'text-[var(--secondary)]', border: 'border-[var(--primary)]/30', bg: 'bg-[var(--primary)]/20' },
+        indigo: { text: 'text-[var(--secondary)]', border: 'border-[var(--primary)]/30', bg: 'bg-[var(--primary)]/20' }
     };
 
     return (
         <div className="w-full relative py-12">
 
             {/* The Connecting Line Background (Desktop) */}
-            <div className="hidden lg:block absolute top-[110px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-emerald-500/20 via-cyan-500/40 to-blue-500/20 z-0" />
+            <div className="hidden lg:block absolute top-[110px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-[var(--primary)]/20 via-[var(--primary)]/40 to-[var(--primary)]/20 z-0" />
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-4 relative z-10 mb-12">
                 {steps.map((step, idx) => {
@@ -74,7 +74,7 @@ export default function ProductStackFlow() {
                             </div>
 
                             {/* Content Card */}
-                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-zinc-950/50 hover:bg-white/[0.04] transition-colors w-full h-full text-center">
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-[var(--primary)]/50 hover:bg-white/[0.04] transition-colors w-full h-full text-center">
                                 <strong className="block text-white mb-3 font-medium text-lg">{step.title}</strong>
                                 <div className="text-sm block">{step.desc}</div>
                             </div>
@@ -91,8 +91,8 @@ export default function ProductStackFlow() {
                 transition={{ delay: 0.6 }}
                 className={`glass-panel p-8 rounded-3xl border ${colorMap.indigo.border} ${colorMap.indigo.bg} flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-6`}
             >
-                <div className={`w-16 h-16 shrink-0 rounded-full bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center`}>
-                    <Layers className="w-8 h-8 text-indigo-400" />
+                <div className={`w-16 h-16 shrink-0 rounded-full bg-[var(--primary)]/20 border border-[var(--primary)]/30 flex items-center justify-center`}>
+                    <Layers className="w-8 h-8 text-[var(--secondary)]" />
                 </div>
                 <div>
                     <strong className="block text-white mb-2 font-medium text-xl">Genome Tier (Mass Market)</strong>

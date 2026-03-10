@@ -19,27 +19,27 @@ export function StackDiagram() {
             name: "Memory Layer",
             icon: Database,
             desc: "Scoped goals, preferences, routines, and optional sync with personal AI.",
-            color: "text-blue-400",
-            bg: "bg-blue-400/10",
-            border: "border-blue-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         },
         {
             id: 3,
             name: "Behavior Layer",
             icon: Zap,
             desc: "Gaze, gesture, turn-taking, locomotion, and inverse kinematics.",
-            color: "text-amber-400",
-            bg: "bg-amber-400/10",
-            border: "border-amber-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         },
         {
             id: 4,
             name: "Perception Layer",
             icon: Eye,
             desc: "Real-time scene graph, surface anchoring, occlusion, body-pose estimation.",
-            color: "text-emerald-400",
-            bg: "bg-emerald-400/10",
-            border: "border-emerald-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         }
     ];
 

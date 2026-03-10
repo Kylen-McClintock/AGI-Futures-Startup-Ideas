@@ -18,7 +18,7 @@ export default function MarketChart() {
         <div className="w-full h-[400px] mt-10 mb-6 bg-[#0a0f14]/40 border border-white/5 rounded-3xl p-6 sm:p-10 backdrop-blur-md">
             <div className="mb-8">
                 <h4 className="text-xl font-serif text-white/90">U.S. Home Services Market Projection</h4>
-                <p className="text-sm font-mono text-emerald-400 mt-2 uppercase tracking-widest opacity-80">Baseline trajectory to 2030</p>
+                <p className="text-sm font-mono text-[var(--secondary)] mt-2 uppercase tracking-widest opacity-80">Baseline trajectory to 2030</p>
             </div>
             <div className="h-[250px]">
                 <ResponsiveContainer width="100%" height="100%">
@@ -47,9 +47,9 @@ export default function MarketChart() {
                             content={({ active, payload, label }) => {
                                 if (active && payload && payload.length) {
                                     return (
-                                        <div className="bg-[#0a0f14]/90 backdrop-blur-md border border-emerald-500/20 px-4 py-3 rounded-xl shadow-[0_8px_32px_rgba(16,185,129,0.15)]">
+                                        <div className="bg-[#0a0f14]/90 backdrop-blur-md border border-[var(--primary)]/20 px-4 py-3 rounded-xl shadow-[0_8px_32px_rgba(16,185,129,0.15)]">
                                             <p className="text-white/50 font-mono text-[10px] uppercase tracking-widest mb-1">Year {label}</p>
-                                            <p className="text-emerald-400 font-medium text-xl font-serif">${payload[0].value} Billion</p>
+                                            <p className="text-[var(--secondary)] font-medium text-xl font-serif">${payload[0].value} Billion</p>
                                         </div>
                                     );
                                 }

@@ -16,10 +16,10 @@ export function ExpandableSection({ title, score, defaultVisibleText, expandable
     const [isExpanded, setIsExpanded] = useState(false);
 
     const themeMap: Record<string, { border: string, bg: string, text: string, scoreBg: string, scoreText: string }> = {
-        emerald: { border: "border-emerald-500/20", bg: "bg-emerald-950/20 hover:bg-emerald-900/30", text: "text-emerald-400", scoreBg: "bg-emerald-500/20", scoreText: "text-emerald-300" },
-        amber: { border: "border-amber-500/20", bg: "bg-amber-950/20 hover:bg-amber-900/30", text: "text-amber-400", scoreBg: "bg-amber-500/20", scoreText: "text-amber-300" },
+        emerald: { border: "border-[var(--primary)]/20", bg: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30", text: "text-[var(--secondary)]", scoreBg: "bg-[var(--primary)]/20", scoreText: "text-[var(--tertiary)]" },
+        amber: { border: "border-[var(--primary)]/20", bg: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30", text: "text-[var(--secondary)]", scoreBg: "bg-[var(--primary)]/20", scoreText: "text-[var(--tertiary)]" },
         primary: { border: "border-[var(--primary)]/20", bg: "bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20", text: "text-[var(--primary)]", scoreBg: "bg-[var(--primary)]/20", scoreText: "text-[var(--primary)]" },
-        blue: { border: "border-blue-500/20", bg: "bg-blue-950/20 hover:bg-blue-900/30", text: "text-blue-400", scoreBg: "bg-blue-500/20", scoreText: "text-blue-300" },
+        blue: { border: "border-[var(--primary)]/20", bg: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30", text: "text-[var(--secondary)]", scoreBg: "bg-[var(--primary)]/20", scoreText: "text-[var(--tertiary)]" },
         zinc: { border: "border-white/10", bg: "bg-white/5 hover:bg-white/10", text: "text-white/80", scoreBg: "bg-white/10", scoreText: "text-white/90" }
     };
 

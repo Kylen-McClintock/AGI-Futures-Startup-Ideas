@@ -8,6 +8,7 @@ import InteractiveSection from "./components/InteractiveSection";
 import MarketChart from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hq_hero_scan_1772949695780.png";
 import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
@@ -50,7 +51,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
     const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <main className="min-h-screen bg-[#06090c] text-white/80 font-sans selection:bg-blue-500/30 selection:text-white pb-32">
+        <main className="min-h-screen bg-[#06090c] text-white/80 font-sans selection:bg-[var(--primary)]/30 selection:text-white pb-32" style={{ "--primary": themeMap['blue'].hexPrimary, "--secondary": themeMap['blue'].hexSecondary, "--tertiary": themeMap['blue'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="HomeQuote AI" theme="blue" />
             {/* Hero Section */}
             <section ref={containerRef} className="relative h-[90vh] md:h-screen w-full overflow-hidden flex items-end justify-center pb-24 md:pb-32">
@@ -72,9 +73,9 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        className="mb-6 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10 backdrop-blur-md text-blue-400 font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
+                        className="mb-6 px-4 py-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 backdrop-blur-md text-[var(--secondary)] font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(16,185,129,0.15)]"
                     >
-                        <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-[var(--secondary)] animate-pulse" />
                         Venture Thesis
                     </motion.div>
 
@@ -85,7 +86,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         transition={{ duration: 1, delay: 0.2 }}
                         className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white leading-tight mb-8"
                     >
-                        HomeQuote <span className="text-blue-400 italic font-medium">AI</span>
+                        HomeQuote <span className="text-[var(--secondary)] italic font-medium">AI</span>
                     </motion.h1>
                     <motion.p
                         initial={{ opacity: 0 }}
@@ -109,12 +110,12 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-white/90 md:leading-[1.6]">
                         “HomeQuote AI turns a user-filmed walkthrough of a home project into a structured job object, an exact quote, and instantly bookable offers from service providers.”
                     </p>
-                    <div className="h-px w-24 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent mx-auto mt-12 transition-all duration-700 group-hover:w-48 group-hover:via-blue-400 group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
+                    <div className="h-px w-24 bg-gradient-to-r from-transparent via-[var(--primary)]/50 to-transparent mx-auto mt-12 transition-all duration-700 group-hover:w-48 group-hover:via-[var(--secondary)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
                 </FadeIn>
 
                 <FadeIn>
                     <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4">
-                        <span className="w-8 h-px bg-blue-500/50 block" />
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Headline Stat
                     </h2>
                     <p className="text-lg leading-relaxed text-white/70">
@@ -141,18 +142,18 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                 <FadeIn>
                     <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4 flex-wrap">
-                        <span className="w-8 h-px bg-blue-500/50 block" />
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Problem
                     </h2>
                     <div className="prose prose-lg prose-invert text-white/70 max-w-none space-y-6">
                         <p className="text-xl text-white/90">Home services still run on a broken interface between demand and supply.</p>
                         <div className="grid md:grid-cols-2 gap-8 my-10">
                             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
-                                <h3 className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-4">The Homeowner</h3>
+                                <h3 className="text-[var(--secondary)] font-mono text-sm tracking-widest uppercase mb-4">The Homeowner</h3>
                                 <p className="font-light">Sees uncertainty. How much will this cost? Who can I trust? Will I need to take time off work just to get a vague range?</p>
                             </div>
                             <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm">
-                                <h3 className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-4">The Provider</h3>
+                                <h3 className="text-[var(--secondary)] font-mono text-sm tracking-widest uppercase mb-4">The Provider</h3>
                                 <p className="font-light">Sees waste. Which leads are real? Which jobs fit the crew? How many hours will get burned driving out for free estimates that never close?</p>
                             </div>
                         </div>
@@ -166,7 +167,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <ExpandableCitation id="5" sourceLabel="HOMESERVE" title="Gap Between Homeowner Preparedness and Reality" fullUrl="https://www.homeserve.com/en-us/media/homeserve-survey-reveals-alarming-gap-between-homeowner-preparedness-and-reality-of-home-repair-emergencies/" />.
                             Providers lose margin because intake, quoting, and routing are still half-phone-call, half-guesswork.
                         </p>
-                        <p className="text-xl text-white/90 font-medium border-l-2 border-blue-500/50 pl-6 mt-8 py-2">
+                        <p className="text-xl text-white/90 font-medium border-l-2 border-[var(--primary)]/50 pl-6 mt-8 py-2">
                             What could exist is a software-defined quoting layer for physical services. Show the job once. Scope it once. Price it once. Route it instantly.
                         </p>
                     </div>
@@ -188,7 +189,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                 <FadeIn>
                     <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
-                        <span className="w-8 h-px bg-blue-500/50 block" />
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Solution
                     </h2>
                     <div className="mb-8">
@@ -201,7 +202,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         </p>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8">
                             {['Task type', 'Room count / Area', 'Access constraints', 'Visible damage level', 'Difficulty score', 'Predicted labor hours', 'Tools & requirements', 'Confidence score'].map(item => (
-                                <div key={item} className="bg-blue-500/5 border border-blue-500/20 rounded-xl p-4 text-center text-sm font-mono text-blue-400">
+                                <div key={item} className="bg-[var(--primary)]/5 border border-[var(--primary)]/20 rounded-xl p-4 text-center text-sm font-mono text-[var(--secondary)]">
                                     {item}
                                 </div>
                             ))}
@@ -226,7 +227,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         <p>
                             The loop gets stronger after completion. Actual labor time, crew size, change orders, refunds, margins, and reviews feed back into the model. Over time, HomeQuote AI becomes a better estimator than any individual contractor because it learns across thousands of jobs, crews, neighborhoods, and home types.
                         </p>
-                        <p className="text-xl text-blue-400/90 italic">
+                        <p className="text-xl text-[var(--secondary)]/90 italic">
                             This is not just lead generation. It is the operating system for scope, quote, and dispatch.
                         </p>
                     </div>
@@ -248,7 +249,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                 <FadeIn>
                     <div className="bg-white/5 p-8 md:p-12 rounded-3xl border border-white/10 backdrop-blur-sm relative overflow-hidden">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 blur-[100px] rounded-full pointer-events-none" />
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[100px] rounded-full pointer-events-none" />
 
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-2">
                             <h2 className="text-3xl font-serif text-white">Specific Example per ICP</h2>
@@ -260,11 +261,11 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <p>
                                 <strong className="text-white font-medium">Initial ideal customer profile, or ICP:</strong> owner-operated and mid-sized move-out cleaning and carpet companies in one metro area.
                             </p>
-                            <div className="pl-6 border-l border-blue-500/30 space-y-4">
+                            <div className="pl-6 border-l border-[var(--primary)]/30 space-y-4">
                                 <p>A renter is leaving a two-bedroom apartment with pet stains in the living room. She opens HomeQuote AI and selects move-out cleaning plus carpet treatment.</p>
                                 <div className="bg-black/30 rounded-xl p-4 text-sm font-mono text-white/80 space-y-2">
-                                    <p className="text-blue-400 mb-3">The app guides her:</p>
-                                    <ul className="list-disc list-inside space-y-1 ml-2 marker:text-blue-500">
+                                    <p className="text-[var(--secondary)] mb-3">The app guides her:</p>
+                                    <ul className="list-disc list-inside space-y-1 ml-2 marker:text-[var(--primary)]">
                                         <li>pan slowly across each room</li>
                                         <li>show the stains up close</li>
                                         <li>open the bathroom and kitchen</li>
@@ -272,16 +273,16 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                                         <li>answer a few quick prompts about pets, clutter, and timing</li>
                                     </ul>
                                 </div>
-                                <div className="bg-[#0a0f14]/80 border border-blue-500/20 rounded-xl p-6 relative">
-                                    <div className="absolute top-0 right-4 transform -translate-y-1/2 bg-blue-500 text-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-widest">System Output</div>
-                                    <ul className="grid grid-cols-2 gap-3 text-sm font-mono text-blue-100/70">
+                                <div className="bg-[#0a0f14]/80 border border-[var(--primary)]/20 rounded-xl p-6 relative">
+                                    <div className="absolute top-0 right-4 transform -translate-y-1/2 bg-[var(--primary)] text-black font-bold text-xs px-3 py-1 rounded-full uppercase tracking-widest">System Output</div>
+                                    <ul className="grid grid-cols-2 gap-3 text-sm font-mono text-[var(--primary)]/70">
                                         <li>2 bedrooms</li>
                                         <li>1 bathroom</li>
                                         <li>pet stain severity moderate</li>
                                         <li>third floor with elevator</li>
                                         <li>estimated labor: 3.5 hours</li>
                                         <li>difficulty: 6/10</li>
-                                        <li className="col-span-2 text-blue-400 mt-2">Required tools: extractor and standard cleaning kit</li>
+                                        <li className="col-span-2 text-[var(--secondary)] mt-2">Required tools: extractor and standard cleaning kit</li>
                                         <li className="col-span-2 text-lg text-white mt-2 pb-2 border-b border-white/10">Quote: Exact $260.</li>
                                     </ul>
                                     <p className="mt-4 text-xs italic text-white/50">
@@ -312,7 +313,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                 <FadeIn>
                     <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4">
-                        <span className="w-8 h-px bg-blue-500/50 block" />
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Market
                     </h2>
                     <div className="prose prose-lg prose-invert text-white/70 max-w-none space-y-6">
@@ -333,14 +334,14 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <strong className="text-white block mt-4">The actual opportunity is to own the estimation and routing layer across a large volume of residential work.</strong>
                         </p>
 
-                        <div className="bg-blue-950/20 rounded-2xl p-6 my-8 border border-blue-500/10">
-                            <h3 className="text-blue-400 text-sm font-mono tracking-widest uppercase mb-4">From First Principles:</h3>
+                        <div className="bg-[var(--primary)]/20 rounded-2xl p-6 my-8 border border-[var(--primary)]/10">
+                            <h3 className="text-[var(--secondary)] text-sm font-mono tracking-widest uppercase mb-4">From First Principles:</h3>
                             <ul className="space-y-3 m-0">
-                                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✦</span> Home services are operationally local but structurally repetitive.</li>
-                                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✦</span> Many categories have strong visual signal. Cleaning, painting, landscaping can be partially scoped from media.</li>
-                                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✦</span> Providers are fragmented and under-softwared.</li>
-                                <li className="flex items-start gap-3"><span className="text-blue-500 mt-1">✦</span> Consumers increasingly expect app-speed response.</li>
-                                <li className="flex items-start gap-3 font-medium text-white/90 border-l-2 border-blue-500 pl-3 ml-2.5 mt-4"><span className="text-blue-500 mt-1">✦</span> The scarce asset is not demand. It is trusted, structured job data.</li>
+                                <li className="flex items-start gap-3"><span className="text-[var(--primary)] mt-1">✦</span> Home services are operationally local but structurally repetitive.</li>
+                                <li className="flex items-start gap-3"><span className="text-[var(--primary)] mt-1">✦</span> Many categories have strong visual signal. Cleaning, painting, landscaping can be partially scoped from media.</li>
+                                <li className="flex items-start gap-3"><span className="text-[var(--primary)] mt-1">✦</span> Providers are fragmented and under-softwared.</li>
+                                <li className="flex items-start gap-3"><span className="text-[var(--primary)] mt-1">✦</span> Consumers increasingly expect app-speed response.</li>
+                                <li className="flex items-start gap-3 font-medium text-white/90 border-l-2 border-[var(--primary)] pl-3 ml-2.5 mt-4"><span className="text-[var(--primary)] mt-1">✦</span> The scarce asset is not demand. It is trusted, structured job data.</li>
                             </ul>
                         </div>
 
@@ -368,7 +369,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>
                             <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
-                                <span className="w-8 h-px bg-blue-500/50 block" />
+                                <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                                 Why Now
                             </h2>
                             <div className="mb-8">
@@ -397,22 +398,22 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             </div>
                             <ul className="space-y-6">
                                 <li className="border-b border-white/5 pb-4">
-                                    <div className="text-blue-400 font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 1</div>
+                                    <div className="text-[var(--secondary)] font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 1</div>
                                     <strong className="text-white block mb-1">Marketplace Take Rate</strong>
                                     <span className="text-white/60 text-sm">Charge a take rate on completed jobs. Stronger than a classic lead fee because providers receive a scoped job and often an auto-bookable customer.</span>
                                 </li>
                                 <li className="border-b border-white/5 pb-4">
-                                    <div className="text-blue-400 font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 2</div>
+                                    <div className="text-[var(--secondary)] font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 2</div>
                                     <strong className="text-white block mb-1">Software Subscription</strong>
                                     <span className="text-white/60 text-sm">Monthly fees for the AI receptionist, quoting flow, calendar-aware pricing agent, and analytics.</span>
                                 </li>
                                 <li className="border-b border-white/5 pb-4">
-                                    <div className="text-blue-400 font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 3</div>
+                                    <div className="text-[var(--secondary)] font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 3</div>
                                     <strong className="text-white block mb-1">API & White-label</strong>
                                     <span className="text-white/60 text-sm">Property managers and insurers can pay to embed the estimation engine into their own channels.</span>
                                 </li>
                                 <li>
-                                    <div className="text-blue-400 font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 4</div>
+                                    <div className="text-[var(--secondary)] font-mono text-xs mb-1 uppercase tracking-widest">Revenue Stream 4</div>
                                     <strong className="text-white block mb-1">Premium Optimization</strong>
                                     <span className="text-white/60 text-sm">Dynamic pricing controls and route-density optimization for higher-tier providers.</span>
                                 </li>
@@ -464,7 +465,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <li>5 to 10 providers</li>
                             <li>split inbound traffic between existing intake and HomeQuote AI for 4-6 weeks</li>
                         </ul>
-                        <p className="text-blue-400 font-mono text-sm tracking-widest uppercase mb-2 mt-4">Pass Condition:</p>
+                        <p className="text-[var(--secondary)] font-mono text-sm tracking-widest uppercase mb-2 mt-4">Pass Condition:</p>
                         <ul className="list-disc ml-4 space-y-1 text-white/70">
                             <li>2x improvement in booking conversion</li>
                             <li>refund or material downward adjustment rate below 5 percent</li>
@@ -489,7 +490,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
 
                 <FadeIn>
                     <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap">
-                        <span className="w-8 h-px bg-blue-500/50 block" />
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Civilizational Impact
                     </h2>
                     <div className="mb-8">
@@ -503,7 +504,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         <p>
                             HomeQuote AI points intelligence at a real bottleneck in the physical world. It helps people maintain homes earlier, with less fear and less friction. It created cleaner signals about repair demand, repair cost inflation, and where housing stock is quietly deteriorating.
                         </p>
-                        <div className="bg-gradient-to-br from-blue-950/40 to-black/20 p-8 rounded-2xl border border-blue-500/20 mt-10">
+                        <div className="bg-gradient-to-br from-[var(--primary)]/40 to-black/20 p-8 rounded-2xl border border-[var(--primary)]/20 mt-10">
                             <p className="text-2xl font-serif text-white text-center leading-relaxed m-0">
                                 “In an AGI future, one of the highest-leverage moves is turning chaotic physical work into software-defined coordination. That is exactly what this company does.”
                             </p>
@@ -514,16 +515,16 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                 {/* References */}
                 <FadeIn>
                     <div className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto">
-                        <h3 className="text-sm font-bold tracking-widest text-blue-500 uppercase mb-8">References</h3>
+                        <h3 className="text-sm font-bold tracking-widest text-[var(--primary)] uppercase mb-8">References</h3>
                         <div className="grid gap-4 sm:grid-cols-2">
                             {citations.map((cite) => (
                                 <div key={cite.number} className="flex gap-4 group">
-                                    <span className="text-blue-400 font-serif text-sm shrink-0">[{cite.number}]</span>
+                                    <span className="text-[var(--secondary)] font-serif text-sm shrink-0">[{cite.number}]</span>
                                     <div>
                                         <p className="text-white/70 text-sm leading-relaxed">
                                             <span className="font-medium text-white/90">{cite.source}</span>,{" "}
                                             {cite.url ? (
-                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-blue-300 transition-colors">
+                                                <a href={cite.url} target="_blank" rel="noopener noreferrer" className="italic hover:underline hover:text-[var(--tertiary)] transition-colors">
                                                     {cite.title}
                                                 </a>
                                             ) : (
@@ -535,7 +536,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                                                 href={cite.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="text-xs font-mono text-white/40 hover:text-blue-400 transition-colors mt-1 inline-block"
+                                                className="text-xs font-mono text-white/40 hover:text-[var(--secondary)] transition-colors mt-1 inline-block"
                                             >
                                                 View Source ↗
                                             </a>

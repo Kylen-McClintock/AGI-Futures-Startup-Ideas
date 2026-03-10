@@ -18,7 +18,7 @@ export default function ExpandableCitation({ id, sourceLabel, fullUrl, title }: 
     <span className="inline-block relative z-10 mx-1">
       <button
         onClick={() => setExpanded(!expanded)}
-        className="inline-flex items-center text-xs font-mono px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 hover:bg-emerald-500/20 transition-colors border border-emerald-500/20 align-middle gap-1"
+        className="inline-flex items-center text-xs font-mono px-2 py-0.5 rounded-full bg-[var(--primary)]/10 text-[var(--secondary)] hover:bg-[var(--primary)]/20 transition-colors border border-[var(--primary)]/20 align-middle gap-1"
         aria-expanded={expanded}
       >
         <span>[{id}]</span>
@@ -32,15 +32,15 @@ export default function ExpandableCitation({ id, sourceLabel, fullUrl, title }: 
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 5, scale: 0.95 }}
             transition={{ duration: 0.15 }}
-            className="absolute left-0 top-full mt-2 w-64 md:w-80 p-4 rounded-xl bg-[#0a0f14]/95 backdrop-blur-xl border border-emerald-500/20 shadow-[0_8px_32px_rgba(16,185,129,0.15)] z-50 text-left"
+            className="absolute left-0 top-full mt-2 w-64 md:w-80 p-4 rounded-xl bg-[#0a0f14]/95 backdrop-blur-xl border border-[var(--primary)]/20 shadow-[0_8px_32px_rgba(16,185,129,0.15)] z-50 text-left"
           >
-            <div className="text-xs font-medium text-emerald-500 mb-1 font-mono uppercase tracking-wider">{sourceLabel}</div>
+            <div className="text-xs font-medium text-[var(--primary)] mb-1 font-mono uppercase tracking-wider">{sourceLabel}</div>
             <div className="text-sm text-white/90 mb-3">{title}</div>
             <a 
               href={fullUrl} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="text-xs font-mono text-emerald-400/70 hover:text-emerald-300 break-all transition-colors inline-block underline decoration-emerald-500/30 underline-offset-2"
+              className="text-xs font-mono text-[var(--secondary)]/70 hover:text-[var(--tertiary)] break-all transition-colors inline-block underline decoration-[var(--primary)]/30 underline-offset-2"
             >
               {fullUrl}
             </a>

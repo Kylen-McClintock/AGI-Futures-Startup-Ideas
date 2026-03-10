@@ -13,6 +13,7 @@ import helm_hero from "./helm/assets/helm_hero.png";
 import agentable_hero from "./agentable/assets/hero.png";
 import avatarlab_hero from "./avatarlab/assets/avatarlab_hero.png";
 import proofrun_hero from "./proofrun/assets/proofrun_hero.png";
+import handraise_hero from "./handraise/assets/handraise_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -37,7 +38,8 @@ export default async function Home() {
         "helm": { moat: 78, difficulty: 71, impact: 68, created_at: "2024-03-01T10:00:00Z" },
         "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z" },
         "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z" },
-        "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z" }
+        "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z" },
+        "handraise": { moat: 76, difficulty: 63, impact: 65, created_at: "2024-03-12T10:00:00Z" }
     };
 
     // Helper to merge static data with DB data
@@ -183,6 +185,16 @@ export default async function Home() {
             href: "/proofrun",
             themeColor: "hover:border-violet-500/50 text-violet-400",
             hoverTextColor: "group-hover:text-violet-400",
+        }),
+        createProject({
+            slug: "handraise",
+            title: "Handraise",
+            scoreTitle: "The open-graph braintrust",
+            description: "Leverage your network for the benefits of building in public without being spammy: you post a tight brief, only volunteers in that specialty respond, answers line up side by side, and contributors earn portable credit.",
+            image: handraise_hero,
+            href: "/handraise",
+            themeColor: "hover:border-indigo-500/50 text-indigo-400",
+            hoverTextColor: "group-hover:text-indigo-400",
         })
     ];
 

@@ -9,17 +9,17 @@ export function ShortageChart() {
 
     return (
         <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 relative overflow-hidden my-12">
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 to-transparent z-0 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 to-transparent z-0 pointer-events-none" />
 
             <div className="relative z-10 flex flex-col md:flex-row gap-8 items-center">
                 <div className="flex-1">
-                    <div className="flex items-center gap-3 text-rose-400 mb-4">
+                    <div className="flex items-center gap-3 text-[var(--secondary)] mb-4">
                         <AlertCircle className="w-5 h-5" />
                         <h4 className="text-sm font-mono uppercase tracking-widest">Structural Deficit</h4>
                     </div>
 
                     <div className="flex items-baseline gap-2 mb-2">
-                        <span className="text-5xl md:text-6xl font-light text-white tracking-tighter">127.4<span className="text-3xl text-white/50 tracking-normal text-rose-300">m</span></span>
+                        <span className="text-5xl md:text-6xl font-light text-white tracking-tighter">127.4<span className="text-3xl text-white/50 tracking-normal text-[var(--tertiary)]">m</span></span>
                     </div>
 
                     <p className="text-white/70 font-light leading-relaxed">
@@ -67,7 +67,7 @@ export function ShortageChart() {
                         </svg>
 
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                            <Users className="w-6 h-6 text-rose-400 mb-2" />
+                            <Users className="w-6 h-6 text-[var(--secondary)] mb-2" />
                             <span className="text-2xl font-light text-white">38.6%</span>
                             <span className="text-[10px] font-mono uppercase tracking-widest text-white/40">Of US Pop</span>
                         </div>

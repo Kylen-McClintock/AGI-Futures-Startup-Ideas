@@ -32,13 +32,13 @@ export function LonelinessChart() {
         <div className="w-full h-full min-h-[300px] flex flex-col pt-4 pb-2 relative">
             <div className="px-4 pb-2 mb-2 flex justify-between items-end border-b border-black/5 dark:border-white/5">
                 <div>
-                    <h4 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">
+                    <h4 className="text-sm font-semibold text-[var(--primary)] dark:text-[var(--primary)]">
                         The Connection Deficit
                     </h4>
-                    <p className="text-xs text-zinc-500 font-medium">U.S. Adults reporting loneliness (%)</p>
+                    <p className="text-xs text-[var(--primary)] font-medium">U.S. Adults reporting loneliness (%)</p>
                 </div>
                 <div className="text-right">
-                    <div className="text-2xl font-serif text-emerald-600 dark:text-emerald-400 font-medium">
+                    <div className="text-2xl font-serif text-[var(--primary)] dark:text-[var(--secondary)] font-medium">
                         {hoveredData ? `${hoveredData.loneliness}%` : "58%"}
                     </div>
                 </div>

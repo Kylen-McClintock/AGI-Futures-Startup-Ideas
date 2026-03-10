@@ -19,17 +19,17 @@ interface InteractiveGridProps {
 
 export function InteractiveGrid({ items, colorTheme = "amber" }: InteractiveGridProps) {
     const iconBgs: Record<string, string> = {
-        amber: "bg-amber-500/10 text-amber-400",
-        emerald: "bg-emerald-500/10 text-emerald-400",
-        blue: "bg-blue-500/10 text-blue-400",
-        purple: "bg-purple-500/10 text-purple-400",
+        amber: "bg-[var(--primary)]/10 text-[var(--secondary)]",
+        emerald: "bg-[var(--primary)]/10 text-[var(--secondary)]",
+        blue: "bg-[var(--primary)]/10 text-[var(--secondary)]",
+        purple: "bg-[var(--primary)]/10 text-[var(--secondary)]",
     };
 
     const borders: Record<string, string> = {
-        amber: "hover:border-amber-500/30",
-        emerald: "hover:border-emerald-500/30",
-        blue: "hover:border-blue-500/30",
-        purple: "hover:border-purple-500/30",
+        amber: "hover:border-[var(--primary)]/30",
+        emerald: "hover:border-[var(--primary)]/30",
+        blue: "hover:border-[var(--primary)]/30",
+        purple: "hover:border-[var(--primary)]/30",
     };
 
     return (

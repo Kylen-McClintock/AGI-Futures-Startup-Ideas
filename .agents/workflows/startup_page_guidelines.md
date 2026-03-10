@@ -33,12 +33,13 @@ The global `<ProjectTags />` block should NEVER be used. Instead, use the `<Inli
 ## Typography & Sizing
 - **Section Titles**: The section headers containing the inline tags must be visibly larger (e.g., `text-3xl`, `text-4xl`) than the standard body text and tags.
 - **Tag Sizing**: Tags should be small (`text-xs` or smaller), dense, and unobtrusive.
-- **Theming**: Each startup idea should use a custom `colorTheme` for its tags (passed to `<InlineTags theme="emerald" />`) that matches the vibe of the idea.
+- **Deep Theming CSS Variables**: Every startup idea MUST inject its theme's CSS variables at the root level. At the top of `page-client.tsx`, import `themeMap` from `@/utils/themeMap` and apply it to the `<main>` tag's style prop: `style={{ "--primary": themeMap['emerald'].hexPrimary, "--secondary": themeMap['emerald'].hexSecondary, "--tertiary": themeMap['emerald'].hexTertiary } as React.CSSProperties}`. Choose a vivid color theme (e.g. 'emerald', 'teal', 'violet', 'fuchsia') that matches the mood of the idea. 
+- **Component Theming**: Throughout your `page-client.tsx`, ALWAYS use the dynamically injected variables (e.g., `text-[var(--primary)]`, `bg-[var(--secondary)]`, `border-[var(--tertiary)]`) instead of hardcoded Tailwind color scales (like `text-emerald-500` or `bg-purple-600`). This ensures colors remain deeply synchronized across typography, backgrounds, SVGs, acronyms, and citations.
 
 ## Interactivity
-- **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme color should correspond to the overall color theme of the page.
-- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
-- **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
+- **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme name passed as the prop must exactly match the key you selected from `themeMap`.
+- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST use the `<ExpandableCitation />` component, which automatically inherits from the CSS variables, or be fully clickable `<a>` links.
+- **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, MCP) MUST be wrapped in `<HoverAcronym acronym="X" definition="Y" theme="emerald" />`. Ensure the theme prop matches the page's deep theme.
 
 ## Database (Supabase) Scoring Requirements
 As part of generating the new idea, you must also evaluate and score the startup and append its data to the `seed_tags.ts` script so it syncs with Supabase. 

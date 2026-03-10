@@ -52,7 +52,7 @@ export function AFLChart({ inView }: { inView: boolean }) {
                     {/* Build Cost Line (Falling) */}
                     <motion.polyline
                         fill="none"
-                        stroke="#10b981" // emerald-500
+                        stroke="#10b981" // [var(--primary)]
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -103,7 +103,7 @@ export function AFLChart({ inView }: { inView: boolean }) {
                     <span className="text-[10px] font-mono text-white/60">Student Loan Debt (Fed)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                    <div className="w-3 h-[2px] bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+                    <div className="w-3 h-[2px] bg-[var(--primary)] shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
                     <span className="text-[10px] font-mono text-white/60">Agentic MVP Build Cost</span>
                 </div>
             </div>

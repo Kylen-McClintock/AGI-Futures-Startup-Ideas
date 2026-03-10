@@ -139,7 +139,7 @@ export function InteractiveLoop() {
                                     <motion.div
                                         initial={{ opacity: 0, scale: 0.8 }}
                                         animate={{ opacity: 1, scale: 1 }}
-                                        className="px-3 py-1 rounded-full border border-blue-400/30 bg-blue-400/10 text-blue-400 font-mono text-xs uppercase tracking-widest flex items-center gap-1"
+                                        className="px-3 py-1 rounded-full border border-[var(--secondary)]/30 bg-[var(--secondary)]/10 text-[var(--secondary)] font-mono text-xs uppercase tracking-widest flex items-center gap-1"
                                     >
                                         <RefreshCw className="w-3 h-3 animate-spin duration-3000" /> Loop Completes
                                     </motion.div>

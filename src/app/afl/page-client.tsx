@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { motion } from "framer-motion";
+import { themeMap } from "@/utils/themeMap";
 
 // Components
 import { ExpandableCitation, CitationSection } from "./components/ExpandableCitation";
@@ -37,13 +38,13 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
     const { ref: chartRef, inView: chartInView } = useInView({ triggerOnce: true, threshold: 0.2 });
 
     return (
-        <main className="min-h-screen bg-neutral-950 text-neutral-200 selection:bg-orange-500/30 overflow-x-hidden relative">
+        <main className="min-h-screen bg-neutral-950 text-neutral-200 selection:bg-[var(--primary)]/30 overflow-x-hidden relative" style={{ "--primary": themeMap['orange'].hexPrimary, "--secondary": themeMap['orange'].hexSecondary, "--tertiary": themeMap['orange'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="AI Founder Lab" theme="orange" />
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-orange-500/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
-                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-orange-500/5 blur-[120px] rounded-full mix-blend-screen opacity-30" />
+                <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
+                <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-30" />
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
             </div>
 
@@ -65,7 +66,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        <div className="inline-block mb-8 text-xs font-mono tracking-widest uppercase text-orange-500 border border-orange-500/30 px-3 py-1 rounded-full bg-orange-500/5">
+                        <div className="inline-block mb-8 text-xs font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-3 py-1 rounded-full bg-[var(--primary)]/5">
                             Startup Idea Prototype
                         </div>
                         <h1 className="text-5xl sm:text-7xl lg:text-8xl font-serif leading-[1.1] tracking-tight mb-8">
@@ -101,7 +102,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 1, delay: 0.6 }}
-                        className="mt-12 text-lg sm:text-xl text-white/70 leading-relaxed font-light italic pl-6 border-l pointer-events-none border-orange-500/30 max-w-3xl"
+                        className="mt-12 text-lg sm:text-xl text-white/70 leading-relaxed font-light italic pl-6 border-l pointer-events-none border-[var(--primary)]/30 max-w-3xl"
                     >
                         Imagine skipping years of lectures and moving straight into the real game. You ship products with modern AI tools, talk to customers, grow an audience, earn equity, and graduate with proof that you can create value, not just talk about it. Instead of leaving with debt and vague potential, you leave with reps, signal, network, and upside.
                     </motion.div>
@@ -119,11 +120,11 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </h2>
                         <div className="grid sm:grid-cols-2 gap-8 items-start mb-6">
                             <div>
-                                <p className="text-5xl font-light text-orange-500 tracking-tighter mb-2">$1.7T</p>
+                                <p className="text-5xl font-light text-[var(--primary)] tracking-tighter mb-2">$1.7T</p>
                                 <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">U.S. student loan<br />outstanding balances</p>
                             </div>
                             <div>
-                                <p className="text-5xl font-light text-orange-500 tracking-tighter mb-2">55%</p>
+                                <p className="text-5xl font-light text-[var(--primary)] tracking-tighter mb-2">55%</p>
                                 <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">Faster dev time in<br />controlled AI studies</p>
                             </div>
                         </div>
@@ -150,8 +151,8 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                                 <h3 className="text-red-400 font-mono text-xs tracking-widest uppercase mb-3">The Old Model</h3>
                                 <p className="text-white/80 font-light leading-relaxed">Universities optimize for seat time and institutional continuity. Learn first, build later.</p>
                             </div>
-                            <div className="p-6 rounded-2xl bg-orange-500/5 border border-orange-500/20">
-                                <h3 className="text-orange-500 font-mono text-xs tracking-widest uppercase mb-3">The New Reality</h3>
+                            <div className="p-6 rounded-2xl bg-[var(--primary)]/5 border border-[var(--primary)]/20">
+                                <h3 className="text-[var(--primary)] font-mono text-xs tracking-widest uppercase mb-3">The New Reality</h3>
                                 <p className="text-white/80 font-light leading-relaxed">Startups optimize for learning velocity and truth through market feedback. <strong className="text-white font-medium">Build to learn.</strong></p>
                             </div>
                         </div>
@@ -171,11 +172,11 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <h2 className="text-4xl font-serif mb-8 text-white">Why Now: Crossing Curves</h2>
                         <InlineTags tags={initialTags?.readiness} theme="blue" />
                         <ul className="space-y-6 text-lg text-white/80 font-light leading-relaxed list-none mb-4">
-                            <li className="flex gap-4"><span className="text-orange-500 font-mono">01</span> The economic case for traditional higher education is under more scrutiny as costs remain high and outcomes vary sharply by major and path <ExpandableCitation number={1} source="Federal Reserve" title="Quarterly Report on Household Debt and Credit" /><ExpandableCitation number={2} source="College Board" title="Trends in College Pricing and Student Aid 2024" />.</li>
-                            <li className="flex gap-4"><span className="text-orange-500 font-mono">02</span> Generative AI tools have already shown measurable productivity gains in real software workflows, shrinking the time from idea to prototype <ExpandableCitation number={3} source="Peng et al." title="The Impact of AI on Developer Productivity" />.</li>
-                            <li className="flex gap-4"><span className="text-orange-500 font-mono">03</span> The labor market is starting to care more about proof of execution than polished resumes in frontier environments.</li>
+                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">01</span> The economic case for traditional higher education is under more scrutiny as costs remain high and outcomes vary sharply by major and path <ExpandableCitation number={1} source="Federal Reserve" title="Quarterly Report on Household Debt and Credit" /><ExpandableCitation number={2} source="College Board" title="Trends in College Pricing and Student Aid 2024" />.</li>
+                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">02</span> Generative AI tools have already shown measurable productivity gains in real software workflows, shrinking the time from idea to prototype <ExpandableCitation number={3} source="Peng et al." title="The Impact of AI on Developer Productivity" />.</li>
+                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">03</span> The labor market is starting to care more about proof of execution than polished resumes in frontier environments.</li>
                         </ul>
-                        <p className="text-lg text-white/80 leading-relaxed font-light mt-8 p-6 glass-panel rounded-2xl border-l-4 border-orange-500 italic">
+                        <p className="text-lg text-white/80 leading-relaxed font-light mt-8 p-6 glass-panel rounded-2xl border-l-4 border-[var(--primary)] italic">
                             This creates a narrow but powerful window. The best young builders do not want another content library. They want leverage, reps, distribution, and a shot at real upside.
                         </p>
                     </section>
@@ -186,12 +187,12 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <InlineTags tags={initialTags?.customer} theme="blue" />
                         <InlineTags tags={initialTags?.enabling_technology} theme="blue" />
 
-                        <div className="glass-panel p-8 rounded-3xl border border-orange-500/30 text-center mb-12 relative overflow-hidden">
-                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-orange-500/10 blur-[100px] pointer-events-none" />
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/30 text-center mb-12 relative overflow-hidden">
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[var(--primary)]/10 blur-[100px] pointer-events-none" />
                             <div className="text-2xl sm:text-3xl font-serif text-white mb-4 relative z-10">
                                 Learn by building. Earn by contributing. Graduate with signal.
                             </div>
-                            <p className="text-orange-500 font-mono text-sm uppercase tracking-widest relative z-10">
+                            <p className="text-[var(--primary)] font-mono text-sm uppercase tracking-widest relative z-10">
                                 Every cycle produces evidence, not just coursework.
                             </p>
                         </div>
@@ -205,17 +206,17 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                         <div className="space-y-6 mt-16">
                             <div className="glass-panel p-6 rounded-2xl border border-white/5">
-                                <h3 className="text-orange-500 font-mono text-sm tracking-widest uppercase mb-3">ICP 1: High-agency 19–26 yr old</h3>
+                                <h3 className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-3">ICP 1: High-agency 19–26 yr old</h3>
                                 <p className="text-white/70 font-light leading-relaxed">Instead of paying six figures for a degree with weak signal, they join AFL, ship four products in a year, build a public proof-of-work trail, earn pool units, and exit into a spin-out or principal-level operating role.</p>
                             </div>
 
                             <div className="glass-panel p-6 rounded-2xl border border-white/5">
-                                <h3 className="text-orange-500 font-mono text-sm tracking-widest uppercase mb-3">ICP 2: Early-career operator</h3>
+                                <h3 className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-3">ICP 2: Early-career operator</h3>
                                 <p className="text-white/70 font-light leading-relaxed">A sales, growth, or product generalist with talent but no clean path to co-founder status joins AFL, runs distribution across multiple ventures, builds an audience, and exits with a network, equity, and founder-level pattern recognition.</p>
                             </div>
 
                             <div className="glass-panel p-6 rounded-2xl border border-white/5 mt-12 mb-6">
-                                <h3 className="text-orange-500 font-mono text-sm tracking-widest uppercase mb-3 text-center">ICP 3: Underused Universities</h3>
+                                <h3 className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-3 text-center">ICP 3: Underused Universities</h3>
                                 <p className="text-white/70 font-light leading-relaxed text-center max-w-2xl mx-auto mb-8">AFL leases dorm blocks and facility access, turning idle capacity into revenue and innovation signaling, without forcing participants into a slow curriculum or degree track.</p>
 
                                 <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden relative group">
@@ -337,7 +338,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                             </div>
                         </div>
 
-                        <div className="bg-white/5 border border-orange-500/30 p-8 rounded-3xl">
+                        <div className="bg-white/5 border border-[var(--primary)]/30 p-8 rounded-3xl">
                             <h3 className="text-xl font-medium text-white mb-4">The Public Build League</h3>
                             <p className="text-white/80 font-light leading-relaxed mb-6">
                                 Weekly demos, kill decisions, shipping leaderboards, customer wins, and founder diaries become content. The audience watches ventures get built in real time, and the best applicants self-select in because they want to be seen. <strong className="font-medium text-white">Visibility becomes distribution.</strong> People do not just apply to learn. They apply to enter the arena.
@@ -359,8 +360,8 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     <section className="pt-12 border-t border-white/10">
                         <h2 className="text-4xl font-serif text-white mb-8">The AGI Future Edge</h2>
 
-                        <p className="text-xl text-white font-light leading-relaxed mb-12 pl-6 border-l-2 border-orange-500">
-                            As intelligence becomes abundant, raw instruction gets cheaper and less defensible. <strong className="font-medium text-orange-500">What stays scarce is coordinated action, judgment under uncertainty, taste, trust, and incentive alignment.</strong>
+                        <p className="text-xl text-white font-light leading-relaxed mb-12 pl-6 border-l-2 border-[var(--primary)]">
+                            As intelligence becomes abundant, raw instruction gets cheaper and less defensible. <strong className="font-medium text-[var(--primary)]">What stays scarce is coordinated action, judgment under uncertainty, taste, trust, and incentive alignment.</strong>
                         </p>
 
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
@@ -372,7 +373,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             A civilization heading toward AGI needs more people who can build, coordinate, and deploy technology responsibly. It does not need more credential inflation.
                         </p>
-                        <div className="p-8 pb-12 mb-12 rounded-3xl bg-gradient-to-br from-orange-500/10 to-transparent border border-orange-500/20">
+                        <div className="p-8 pb-12 mb-12 rounded-3xl bg-gradient-to-br from-[var(--primary)]/10 to-transparent border border-[var(--primary)]/20">
                             <p className="text-lg text-white/80 leading-relaxed font-light italic">
                                 "Best case, AFL becomes one of the highest-throughput training grounds for abundance-oriented founders. It channels elite ambition toward company creation, scientific acceleration, and tools that expand human flourishing, instead of defaulting that ambition into status games, bureaucracy, or pure engagement extraction."
                             </p>
@@ -381,15 +382,15 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                     {/* TRANSFERABLE INSIGHT */}
                     <section className="mb-24">
-                        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-orange-500/30 relative overflow-hidden">
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+                        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-[var(--primary)]/30 relative overflow-hidden">
+                            <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
 
-                            <h2 className="text-sm font-mono tracking-widest uppercase text-orange-400 mb-6 flex items-center relative z-10">
-                                <span className="w-8 h-px bg-orange-500/50 mr-4" /> Transferable Insight
+                            <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6 flex items-center relative z-10">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Transferable Insight
                             </h2>
 
                             <p className="text-2xl sm:text-3xl font-serif text-white leading-relaxed mb-6 relative z-10">
-                                When AI makes creation cheap, the scarce product stops being knowledge delivery and becomes <strong className="text-orange-300 font-medium italic">credibility-weighted execution loops</strong>.
+                                When AI makes creation cheap, the scarce product stops being knowledge delivery and becomes <strong className="text-[var(--tertiary)] font-medium italic">credibility-weighted execution loops</strong>.
                             </p>
                             <p className="text-lg text-white/70 font-light leading-relaxed relative z-10">
                                 The most valuable institutions of the next decade will not just teach. They will convert talent into outcomes under real incentives.

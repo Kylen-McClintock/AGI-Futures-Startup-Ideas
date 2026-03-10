@@ -12,11 +12,11 @@ const data = [
 
 export function RelationshipStatGraph() {
     return (
-        <div className="w-full h-72 md:h-96 mt-6 rounded-2xl glass-panel p-6 border border-amber-500/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-[100px] -z-10 translate-x-1/4 -translate-y-1/4 pointer-events-none" />
+        <div className="w-full h-72 md:h-96 mt-6 rounded-2xl glass-panel p-6 border border-[var(--primary)]/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[var(--primary)]/10 rounded-full blur-[100px] -z-10 translate-x-1/4 -translate-y-1/4 pointer-events-none" />
             <div className="mb-6">
-                <h3 className="text-xl font-serif text-amber-50 font-medium">Trajectory of Intimacy Over 2 Years</h3>
-                <p className="text-sm text-amber-200/60 mt-1">Intervention group vs. waitlist control</p>
+                <h3 className="text-xl font-serif text-[var(--primary)] font-medium">Trajectory of Intimacy Over 2 Years</h3>
+                <p className="text-sm text-[var(--primary)]/60 mt-1">Intervention group vs. waitlist control</p>
             </div>
 
             <div className="w-full h-[calc(100%-4rem)]">

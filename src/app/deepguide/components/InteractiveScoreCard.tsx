@@ -25,8 +25,8 @@ export function InteractiveScoreCard({
 
     // Choose color scheme based on type
     const themeClass = type === "moat"
-        ? "text-emerald-400 border-emerald-500/20 from-emerald-500/10"
-        : "text-rose-400 border-rose-500/20 from-rose-500/10";
+        ? "text-[var(--secondary)] border-[var(--primary)]/20 from-[var(--primary)]/10"
+        : "text-[var(--secondary)] border-[var(--primary)]/20 from-[var(--primary)]/10";
 
     const Icon = type === "moat" ? Shield : TrendingUp;
 

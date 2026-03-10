@@ -10,6 +10,7 @@ import { HoverAcronym } from "@/components/HoverAcronym";
 import { ExpandableSection } from "./components/ExpandableSection";
 import { UpliftChart } from "./components/UpliftChart";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hero.png";
 import operatorHubImg from "./assets/operator-hub.png";
@@ -53,7 +54,7 @@ export default function ClientPage() {
     };
 
     return (
-        <main ref={containerRef} className="min-h-screen bg-stone-950 text-stone-100 selection:bg-amber-500/30 font-sans antialiased overflow-x-hidden">
+        <main ref={containerRef} className="min-h-screen bg-stone-950 text-stone-100 selection:bg-[var(--primary)]/30 font-sans antialiased overflow-x-hidden">
             <ScrollProgress title="Main Street Legacy" theme="emerald" />
 
             {/* Immersive Hero Section */}
@@ -81,7 +82,7 @@ export default function ClientPage() {
                             variants={fadeInUp}
                             className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-white mb-6 leading-[1.1]"
                         >
-                            Main Street <span className="text-amber-400 italic">Legacy</span>
+                            Main Street <span className="text-[var(--secondary)] italic">Legacy</span>
                         </motion.h1>
 
                         <motion.p
@@ -108,10 +109,10 @@ export default function ClientPage() {
                     className="mb-24"
                 >
                     <p className="text-xl md:text-2xl font-light text-stone-300 leading-relaxed drop-cap">
-                        Surf the two biggest curves of the decade, <strong className="text-amber-400 font-normal">retiring Boomer owners and AI margin shock</strong>. We run a selective operator cohort, coinvest in the top grads, help them buy small and medium-sized businesses (SMBs), then install AI playbooks that double profits.
+                        Surf the two biggest curves of the decade, <strong className="text-[var(--secondary)] font-normal">retiring Boomer owners and AI margin shock</strong>. We run a selective operator cohort, coinvest in the top grads, help them buy small and medium-sized businesses (SMBs), then install AI playbooks that double profits.
                     </p>
                     <p className="mt-8 text-lg font-light text-stone-400 leading-relaxed">
-                        <strong className="text-amber-400 font-normal">Buy a boring business with real cash flow</strong>, step into ownership with financing that actually closes, and deploy AI systems that improve phones, quoting, routing, collections, and follow-up from day one. This is a faster path from operator ambition to compounding local wealth, and a cleaner succession path for sellers who built valuable firms but do not have a natural heir.
+                        <strong className="text-[var(--secondary)] font-normal">Buy a boring business with real cash flow</strong>, step into ownership with financing that actually closes, and deploy AI systems that improve phones, quoting, routing, collections, and follow-up from day one. This is a faster path from operator ambition to compounding local wealth, and a cleaner succession path for sellers who built valuable firms but do not have a natural heir.
                     </p>
                 </motion.section>
 
@@ -119,15 +120,15 @@ export default function ClientPage() {
                 <motion.section
                     initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }}
                     variants={fadeInUp}
-                    className="mb-24 my-24 p-8 md:p-12 rounded-3xl bg-amber-950/20 border border-amber-500/20 relative overflow-hidden group"
+                    className="mb-24 my-24 p-8 md:p-12 rounded-3xl bg-[var(--primary)]/20 border border-[var(--primary)]/20 relative overflow-hidden group"
                 >
                     <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <span className="text-9xl font-serif text-amber-400 leading-none">"</span>
+                        <span className="text-9xl font-serif text-[var(--secondary)] leading-none">"</span>
                     </div>
-                    <p className="text-2xl md:text-3xl font-light text-amber-100 leading-relaxed relative z-10">
+                    <p className="text-2xl md:text-3xl font-light text-[var(--primary)] leading-relaxed relative z-10">
                         Boomers own ~2.9 million U.S. firms employing ~32 million people and generating ~$6.5T in revenue. Retirement is the leading reason for listings.
                     </p>
-                    <p className="text-lg md:text-xl font-light text-amber-300 mt-6 relative z-10">
+                    <p className="text-lg md:text-xl font-light text-[var(--tertiary)] mt-6 relative z-10">
                         Generative AI is already delivering double-digit productivity gains in service workflows. The spread is monetizable.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity, 'Small business closure crisis,' Boomer ownership, 2.9M firms, 32M jobs, ~$6.5T revenue." />
                         <ExpandableCitation label="BizBuySell" sourceUrl="https://www.bizbuysell.com/insight-report/" sourceText="BizBuySell Insight data, retirement as leading sell motivation; market activity." />
@@ -164,7 +165,7 @@ export default function ClientPage() {
                     </h2>
                     <div className="space-y-8">
                         <div>
-                            <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-3">Mechanism</h3>
+                            <h3 className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-3">Mechanism</h3>
                             <p className="text-lg font-light text-stone-300 leading-relaxed">
                                 A competitive cohort that trains prospective owner-operators to run one niche, implement AI across the funnel, and source and negotiate deals with our tooling and hands-on guidance. We coinvest only in the top performers, finance alongside an investor syndicate and <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" /> loans, and lock in seller-friendly profit-distribution structures during transition.
                             </p>
@@ -236,12 +237,12 @@ export default function ClientPage() {
                             <motion.div
                                 key={idx}
                                 whileHover={{ scale: 1.02, y: -5 }}
-                                className="bg-stone-900/40 border border-white/5 p-8 rounded-3xl hover:bg-stone-800/60 hover:border-amber-500/30 transition-all duration-300 group"
+                                className="bg-stone-900/40 border border-white/5 p-8 rounded-3xl hover:bg-stone-800/60 hover:border-[var(--primary)]/30 transition-all duration-300 group"
                             >
-                                <div className="w-12 h-12 rounded-full bg-amber-500/10 flex items-center justify-center text-amber-500 mb-6 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                                <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center text-[var(--primary)] mb-6 group-hover:scale-110 group-hover:bg-[var(--primary)]/20 transition-all">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-white font-medium text-xl mb-3 flex items-center group-hover:text-amber-400 transition-colors">
+                                <h3 className="text-white font-medium text-xl mb-3 flex items-center group-hover:text-[var(--secondary)] transition-colors">
                                     {item.title}
                                 </h3>
                                 <p className="text-stone-400 font-light leading-relaxed">{item.desc}</p>
@@ -269,8 +270,8 @@ export default function ClientPage() {
                     </div>
 
                     <div className="bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden backdrop-blur-sm">
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 blur-[100px] rounded-full pointer-events-none"></div>
-                        <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-6">Specific Example</h3>
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[100px] rounded-full pointer-events-none"></div>
+                        <h3 className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-6">Specific Example</h3>
                         <p className="text-lg font-light text-stone-200 leading-relaxed text-pretty relative z-10">
                             An accepted cohort member buys a $2.0M revenue <HoverAcronym acronym="HVAC" definition="Heating, Ventilation, and Air Conditioning" /> shop at 15% EBITDA using <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" />, a seller note, and an 18-month profit-distribution glide for the seller.
                         </p>
@@ -325,14 +326,14 @@ export default function ClientPage() {
                                     <motion.li
                                         key={idx}
                                         whileHover={{ scale: 1.02, y: -2 }}
-                                        className="bg-stone-900/30 border border-white/5 p-5 rounded-2xl hover:bg-stone-800/50 hover:border-amber-500/30 transition-all cursor-default group"
+                                        className="bg-stone-900/30 border border-white/5 p-5 rounded-2xl hover:bg-stone-800/50 hover:border-[var(--primary)]/30 transition-all cursor-default group"
                                     >
                                         <div className="flex items-start gap-4">
-                                            <div className="mt-1 text-amber-500/50 group-hover:text-amber-400 transition-colors">
+                                            <div className="mt-1 text-[var(--primary)]/50 group-hover:text-[var(--secondary)] transition-colors">
                                                 {item.icon}
                                             </div>
                                             <div>
-                                                <strong className="text-stone-200 font-medium block mb-1 group-hover:text-amber-200 transition-colors">{item.title}</strong>
+                                                <strong className="text-stone-200 font-medium block mb-1 group-hover:text-[var(--primary)] transition-colors">{item.title}</strong>
                                                 <span className="text-stone-400 font-light text-sm leading-relaxed">{item.items}</span>
                                             </div>
                                         </div>
@@ -361,18 +362,18 @@ export default function ClientPage() {
                                 </p>
                             </div>
 
-                            <div className="bg-amber-950/20 rounded-2xl p-6 border border-amber-500/20">
+                            <div className="bg-[var(--primary)]/20 rounded-2xl p-6 border border-[var(--primary)]/20">
                                 <h3 className="text-white font-medium text-lg mb-4 flex items-center justify-between">
                                     Business Model
                                 </h3>
                                 <InlineTags tags={initialTags?.product_type} theme="zinc" />
                                 <ul className="space-y-4 mt-6 text-sm">
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">01</span><span className="text-stone-300 font-light"><strong>Cohort tuition.</strong> Selective admissions fund the school and create quality pressure.</span></li>
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">02</span><span className="text-stone-300 font-light"><strong>Carry.</strong> 10 to 30 percent on SPVs that back top grads.</span></li>
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">03</span><span className="text-stone-300 font-light"><strong>Platform fee.</strong> Subscription for AI operating system and shared services.</span></li>
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">04</span><span className="text-stone-300 font-light"><strong>Procurement margin.</strong> Pooled vendor pricing and rev-share.</span></li>
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">05</span><span className="text-stone-300 font-light"><strong>Data product.</strong> Anonymized “AI Uplift Score” sold to lenders/brokers.</span></li>
-                                    <li className="flex gap-3"><span className="text-amber-400 font-mono flex-shrink-0">06</span><span className="text-stone-300 font-light"><strong>Profit distributions.</strong> Negotiated distributions during/after transition.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">01</span><span className="text-stone-300 font-light"><strong>Cohort tuition.</strong> Selective admissions fund the school and create quality pressure.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">02</span><span className="text-stone-300 font-light"><strong>Carry.</strong> 10 to 30 percent on SPVs that back top grads.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">03</span><span className="text-stone-300 font-light"><strong>Platform fee.</strong> Subscription for AI operating system and shared services.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">04</span><span className="text-stone-300 font-light"><strong>Procurement margin.</strong> Pooled vendor pricing and rev-share.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">05</span><span className="text-stone-300 font-light"><strong>Data product.</strong> Anonymized “AI Uplift Score” sold to lenders/brokers.</span></li>
+                                    <li className="flex gap-3"><span className="text-[var(--secondary)] font-mono flex-shrink-0">06</span><span className="text-stone-300 font-light"><strong>Profit distributions.</strong> Negotiated distributions during/after transition.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -395,7 +396,7 @@ export default function ClientPage() {
                     <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
                     <div className="absolute bottom-0 left-0 p-8 md:p-12 z-10">
                         <div className="bg-stone-950/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 inline-block">
-                            <h4 className="text-amber-400 font-mono text-xs tracking-widest uppercase mb-2">Deployed Environment</h4>
+                            <h4 className="text-[var(--secondary)] font-mono text-xs tracking-widest uppercase mb-2">Deployed Environment</h4>
                             <p className="text-white text-lg font-light">Auto Repair & Triage Automations</p>
                         </div>
                     </div>
@@ -420,7 +421,7 @@ export default function ClientPage() {
                     <div className="bg-stone-900/40 border border-white/10 rounded-b-3xl p-8 md:p-12 -mt-1 relative z-10 backdrop-blur-sm">
                         <h2 className="text-2xl font-serif text-white mb-6">Investment Syndicate</h2>
                         <p className="text-lg font-light text-stone-300 leading-relaxed text-pretty">
-                            <strong className="text-amber-400 font-normal">Syndicate to Scale is a financing option built to capture market share while the window is red hot.</strong> A rolling co-investor pool with pre-committed capital slots into top cohort acquisitions alongside bank loans and seller notes, underwritten by a live AI Uplift Score derived from phones, quotes, schedules, and cash collections. Pre-cleared lender terms, templated offers, and seller profit-distribution glides compress close times so operators can out-move brokers and private equity without overpaying. A small warehouse line funds day-one installs. Public dashboards attract more sellers and capital, pooled vendor buying lifts margins, and wins recycle into the next deal to compound share.
+                            <strong className="text-[var(--secondary)] font-normal">Syndicate to Scale is a financing option built to capture market share while the window is red hot.</strong> A rolling co-investor pool with pre-committed capital slots into top cohort acquisitions alongside bank loans and seller notes, underwritten by a live AI Uplift Score derived from phones, quotes, schedules, and cash collections. Pre-cleared lender terms, templated offers, and seller profit-distribution glides compress close times so operators can out-move brokers and private equity without overpaying. A small warehouse line funds day-one installs. Public dashboards attract more sellers and capital, pooled vendor buying lifts margins, and wins recycle into the next deal to compound share.
                         </p>
                     </div>
                 </motion.section>
@@ -495,7 +496,7 @@ export default function ClientPage() {
                         </p>
                     </div>
                     <div>
-                        <h2 className="text-2xl font-serif text-amber-400 mb-6">AGI Future Edge</h2>
+                        <h2 className="text-2xl font-serif text-[var(--secondary)] mb-6">AGI Future Edge</h2>
                         <p className="text-stone-300 font-light leading-relaxed">
                             Playbooks improve with every rollout. The Uplift Oracle converts real operations data into lender-ready <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> models, tightening underwriting. Pooled demand becomes a vendor moat. Alumni ship better <HoverAcronym acronym="SOPs" definition="Standard Operating Procedures" /> back into the library.
                         </p>
@@ -513,7 +514,7 @@ export default function ClientPage() {
                 >
                     <h2 className="text-3xl font-serif text-white mb-8">Civilizational Impact</h2>
                     <p className="text-xl font-light text-stone-300 leading-relaxed text-pretty max-w-2xl mx-auto mb-10">
-                        Keep productive local firms alive. Transfer ownership to a new class of <strong className="text-amber-400 font-normal">AI-literate operators</strong>. Raise wages through efficiency and create higher quality service for communities. Channel the Boomer exit toward abundance instead of attrition.
+                        Keep productive local firms alive. Transfer ownership to a new class of <strong className="text-[var(--secondary)] font-normal">AI-literate operators</strong>. Raise wages through efficiency and create higher quality service for communities. Channel the Boomer exit toward abundance instead of attrition.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity" />
                         <ExpandableCitation label="McKinsey" sourceUrl="https://www.mckinsey.com" sourceText="McKinsey Global Institute" />
                     </p>
@@ -523,31 +524,31 @@ export default function ClientPage() {
                     <div className="flex justify-center flex-col items-center">
                         <InlineTags tags={initialTags?.outcomes} theme="amber" />
 
-                        <details className="mt-12 glass-panel rounded-[2rem] border border-amber-500/20 bg-amber-950/20 hover:bg-amber-950/30 hover:border-amber-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
+                        <details className="mt-12 glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30 hover:border-[var(--primary)]/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
                             <summary className="p-6 list-none flex justify-between items-center outline-none">
                                 <div className="text-left">
                                     <div className="text-4xl font-light text-white tracking-tight mb-1">61</div>
-                                    <div className="text-xs font-mono uppercase tracking-widest text-amber-500/80">Impact Score</div>
+                                    <div className="text-xs font-mono uppercase tracking-widest text-[var(--primary)]/80">Impact Score</div>
                                 </div>
-                                <ChevronDown className="w-5 h-5 text-amber-500/50 group-open:rotate-180 transition-transform duration-300" />
+                                <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 group-open:rotate-180 transition-transform duration-300" />
                             </summary>
-                            <div className="px-6 pb-6 pt-2 border-t border-amber-500/10 text-left">
+                            <div className="px-6 pb-6 pt-2 border-t border-[var(--primary)]/10 text-left">
                                 <div className="space-y-3">
                                     <div className="flex justify-between items-center text-sm">
-                                        <span className="text-amber-100/70 font-light">Abundance</span>
-                                        <span className="text-amber-400 font-mono">76</span>
+                                        <span className="text-[var(--primary)]/70 font-light">Abundance</span>
+                                        <span className="text-[var(--secondary)] font-mono">76</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm">
-                                        <span className="text-amber-100/70 font-light">Human Flourishing</span>
-                                        <span className="text-amber-400 font-mono">58</span>
+                                        <span className="text-[var(--primary)]/70 font-light">Human Flourishing</span>
+                                        <span className="text-[var(--secondary)] font-mono">58</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm">
-                                        <span className="text-rose-100/70 font-light">Community Renewal</span>
-                                        <span className="text-rose-400 font-mono">68</span>
+                                        <span className="text-[var(--primary)]/70 font-light">Community Renewal</span>
+                                        <span className="text-[var(--secondary)] font-mono">68</span>
                                     </div>
                                     <div className="flex justify-between items-center text-sm">
-                                        <span className="text-amber-100/70 font-light">Resilience</span>
-                                        <span className="text-amber-400 font-mono">54</span>
+                                        <span className="text-[var(--primary)]/70 font-light">Resilience</span>
+                                        <span className="text-[var(--secondary)] font-mono">54</span>
                                     </div>
                                 </div>
                             </div>
@@ -575,7 +576,7 @@ export default function ClientPage() {
                                 "Lender repeat participation rate"
                             ].map((kpi, idx) => (
                                 <li key={idx} className="text-sm font-light text-stone-400 flex items-start gap-3">
-                                    <span className="text-amber-500/50 mt-1">●</span>
+                                    <span className="text-[var(--primary)]/50 mt-1">●</span>
                                     {kpi}
                                 </li>
                             ))}
@@ -592,8 +593,8 @@ export default function ClientPage() {
                         </div>
 
                         <div>
-                            <h3 className="text-xs font-mono uppercase tracking-widest text-amber-400 mb-4">Transferable Insight</h3>
-                            <p className="text-stone-300 font-light leading-relaxed italic border-l-2 border-amber-500/30 pl-4 py-2">
+                            <h3 className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-4">Transferable Insight</h3>
+                            <p className="text-stone-300 font-light leading-relaxed italic border-l-2 border-[var(--primary)]/30 pl-4 py-2">
                                 "In fragmented industries, the deepest moat often comes from underwriting operational transformation before the market learns how to price it."
                             </p>
                         </div>
@@ -635,27 +636,27 @@ export default function ClientPage() {
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5 md:col-span-2">
                                     <strong className="text-stone-200 font-medium mr-2">[1]</strong>
                                     Project Equity, “Small business closure crisis,” Boomer ownership, 2.9M firms, 32M jobs, ~$6.5T revenue.
-                                    <a href="https://project-equity.org/wp-content/uploads/2023/08/Small-business-closure-crisis_Project-Equity_United-States.pdf" target="_blank" rel="noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline ml-2 inline-block">Project Equity &rarr;</a>
+                                    <a href="https://project-equity.org/wp-content/uploads/2023/08/Small-business-closure-crisis_Project-Equity_United-States.pdf" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline ml-2 inline-block">Project Equity &rarr;</a>
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5 md:col-span-2">
                                     <strong className="text-stone-200 font-medium mr-2">[2]</strong>
                                     BizBuySell Insight data, retirement as leading sell motivation; market activity.
-                                    <a href="https://www.bizbuysell.com/blog/retirees-business-for-sale-trends/" target="_blank" rel="noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline ml-2 inline-block">BizBuySell &rarr;</a>
+                                    <a href="https://www.bizbuysell.com/blog/retirees-business-for-sale-trends/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline ml-2 inline-block">BizBuySell &rarr;</a>
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5 md:col-span-2">
                                     <strong className="text-stone-200 font-medium mr-2">[3]</strong>
                                     Brynjolfsson, Li, Raymond, “Generative AI at Work,” NBER Working Paper w31161, ~14% support-center productivity lift.
-                                    <a href="https://www.nber.org/papers/w31161" target="_blank" rel="noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline ml-2 inline-block">NBER &rarr;</a>
+                                    <a href="https://www.nber.org/papers/w31161" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline ml-2 inline-block">NBER &rarr;</a>
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5 md:col-span-2">
                                     <strong className="text-stone-200 font-medium mr-2">[4]</strong>
                                     SBA FY2024 capital impact, ~$56B backed, growth in 7(a), many small-dollar loans.
-                                    <a href="https://www.sba.gov/document/report-sba-2024-capital-impact-report" target="_blank" rel="noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline ml-2 inline-block">SBA &rarr;</a>
+                                    <a href="https://www.sba.gov/document/report-sba-2024-capital-impact-report" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline ml-2 inline-block">SBA &rarr;</a>
                                 </li>
                                 <li className="text-sm font-light text-stone-400 bg-stone-950/50 p-4 rounded-xl border border-white/5 md:col-span-2">
                                     <strong className="text-stone-200 font-medium mr-2">[5]</strong>
                                     McKinsey Global Institute, “The economic potential of generative AI,” projected productivity contribution through 2040.
-                                    <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" rel="noreferrer" className="text-amber-400 hover:text-amber-300 hover:underline ml-2 inline-block">McKinsey &rarr;</a>
+                                    <a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/the-economic-potential-of-generative-ai-the-next-productivity-frontier" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline ml-2 inline-block">McKinsey &rarr;</a>
                                 </li>
 
                                 {/* Acronyms */}

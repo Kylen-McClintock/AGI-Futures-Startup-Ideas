@@ -15,9 +15,9 @@ interface ScoreCardProps {
 
 export function ScoreCard({ title, score, maxScore = 100, summary, details, type }: ScoreCardProps) {
     const [isExpanded, setIsExpanded] = useState(false);
-    const colorClass = type === "moat" ? "text-emerald-400" : "text-amber-400";
-    const bgClass = type === "moat" ? "from-emerald-900/20" : "from-amber-900/20";
-    const borderClass = type === "moat" ? "border-emerald-500/20" : "border-amber-500/20";
+    const colorClass = type === "moat" ? "text-[var(--secondary)]" : "text-[var(--secondary)]";
+    const bgClass = type === "moat" ? "from-[var(--primary)]/20" : "from-[var(--primary)]/20";
+    const borderClass = type === "moat" ? "border-[var(--primary)]/20" : "border-[var(--primary)]/20";
     const Icon = type === "moat" ? Shield : Crosshair;
 
     return (
@@ -88,7 +88,7 @@ export function ScoreCard({ title, score, maxScore = 100, summary, details, type
 // Sub-component for risk items within the ScoreCard
 export function RiskItem({ level, title, description, mitigation }: { level: string, title: string, description: React.ReactNode, mitigation: React.ReactNode }) {
 
-    let levelClass = "text-amber-400";
+    let levelClass = "text-[var(--secondary)]";
     if (level === "Very High") levelClass = "text-red-400";
     if (level === "Medium") levelClass = "text-[var(--primary)]";
 

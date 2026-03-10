@@ -309,6 +309,30 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Societal Cohesion']
         }
+    },
+    {
+        slug: 'handraise',
+        name: 'Handraise',
+        scores: {
+            moat_score: { ai_scored: 76 },
+            difficulty_score: { ai_scored: 63 },
+            civilizational_impact_score: { ai_scored: 65 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 64 },
+                "Social Trust": { ai_scored: 82 },
+                "Societal Cohesion": { ai_scored: 58 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Social Media', 'Community'],
+            bottleneck: ['Trust', 'Coordination', 'Talent Matching'],
+            customer: ['Founders', 'Startups'],
+            product_type: ['Platform', 'Coordination Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Knowledge Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Social Trust', 'Societal Cohesion']
+        }
     }
 ];
 

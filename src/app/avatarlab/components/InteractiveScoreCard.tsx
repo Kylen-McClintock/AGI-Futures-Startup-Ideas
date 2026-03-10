@@ -25,8 +25,8 @@ export function InteractiveScoreCard({
 
     // Cyan and Teal theme to match AvatarLab's "sci-fi biology" vibe
     const themeClass = type === "moat"
-        ? "text-cyan-400 border-cyan-500/20 from-cyan-500/10"
-        : "text-teal-400 border-teal-500/20 from-teal-500/10";
+        ? "text-[var(--secondary)] border-[var(--primary)]/20 from-[var(--primary)]/10"
+        : "text-[var(--secondary)] border-[var(--primary)]/20 from-[var(--primary)]/10";
 
     const Icon = type === "moat" ? Shield : ActivitySquare;
 

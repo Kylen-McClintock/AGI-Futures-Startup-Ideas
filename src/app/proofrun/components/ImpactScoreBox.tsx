@@ -16,38 +16,38 @@ interface ImpactScoreBoxProps {
 
 export function ImpactScoreBox({ overallScore, subRatings, colorTheme = "amber" }: ImpactScoreBoxProps) {
     const borders: Record<string, string> = {
-        amber: "border-amber-500/20 hover:border-amber-500/40",
-        emerald: "border-emerald-500/20 hover:border-emerald-500/40",
-        blue: "border-blue-500/20 hover:border-blue-500/40",
-        purple: "border-purple-500/20 hover:border-purple-500/40",
+        amber: "border-[var(--primary)]/20 hover:border-[var(--primary)]/40",
+        emerald: "border-[var(--primary)]/20 hover:border-[var(--primary)]/40",
+        blue: "border-[var(--primary)]/20 hover:border-[var(--primary)]/40",
+        purple: "border-[var(--primary)]/20 hover:border-[var(--primary)]/40",
     };
 
     const bgs: Record<string, string> = {
-        amber: "bg-amber-950/20 hover:bg-amber-950/30",
-        emerald: "bg-emerald-950/20 hover:bg-emerald-950/30",
-        blue: "bg-blue-950/20 hover:bg-blue-950/30",
-        purple: "bg-purple-950/20 hover:bg-purple-950/30",
+        amber: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30",
+        emerald: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30",
+        blue: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30",
+        purple: "bg-[var(--primary)]/20 hover:bg-[var(--primary)]/30",
     };
 
     const texts: Record<string, string> = {
-        amber: "text-amber-400 font-mono",
-        emerald: "text-emerald-400 font-mono",
-        blue: "text-blue-400 font-mono",
-        purple: "text-purple-400 font-mono",
+        amber: "text-[var(--secondary)] font-mono",
+        emerald: "text-[var(--secondary)] font-mono",
+        blue: "text-[var(--secondary)] font-mono",
+        purple: "text-[var(--secondary)] font-mono",
     };
 
     const mutedTexts: Record<string, string> = {
-        amber: "text-amber-100/70",
-        emerald: "text-emerald-100/70",
-        blue: "text-blue-100/70",
-        purple: "text-purple-100/70",
+        amber: "text-[var(--primary)]/70",
+        emerald: "text-[var(--primary)]/70",
+        blue: "text-[var(--primary)]/70",
+        purple: "text-[var(--primary)]/70",
     };
 
     const textHighlights: Record<string, string> = {
-        amber: "text-amber-400/80",
-        emerald: "text-emerald-400/80",
-        blue: "text-blue-400/80",
-        purple: "text-purple-400/80",
+        amber: "text-[var(--secondary)]/80",
+        emerald: "text-[var(--secondary)]/80",
+        blue: "text-[var(--secondary)]/80",
+        purple: "text-[var(--secondary)]/80",
     };
 
     return (

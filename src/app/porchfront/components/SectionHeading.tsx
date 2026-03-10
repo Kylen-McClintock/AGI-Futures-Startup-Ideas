@@ -15,7 +15,7 @@ export function SectionHeading({
     return (
         <Component
             className={cn(
-                "font-serif text-3xl md:text-5xl font-medium tracking-tight text-zinc-900 dark:text-zinc-50 mb-6 [text-wrap:balance]",
+                "font-serif text-3xl md:text-5xl font-medium tracking-tight text-[var(--primary)] dark:text-[var(--primary)] mb-6 [text-wrap:balance]",
                 className
             )}
             {...props}

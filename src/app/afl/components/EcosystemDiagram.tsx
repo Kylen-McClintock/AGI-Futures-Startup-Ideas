@@ -10,9 +10,9 @@ export function EcosystemDiagram() {
             name: "Operator Performance Graph",
             icon: Activity,
             desc: "Tracks who ships, sells, retains users, and compounds audience. Vastly more valuable than transcripts.",
-            color: "text-blue-400",
-            bg: "bg-blue-400/10",
-            border: "border-blue-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         },
         {
             id: 2,
@@ -28,18 +28,18 @@ export function EcosystemDiagram() {
             name: "Equity-Linked Alumni",
             icon: Award,
             desc: "Graduates remain economically aligned with future cohorts, functioning like a guild with genuine upside.",
-            color: "text-amber-400",
-            bg: "bg-amber-400/10",
-            border: "border-amber-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         },
         {
             id: 4,
             name: "Spin-Out Infrastructure",
             icon: Network,
             desc: "Standardized legal, operating, hiring, and playbook pipelines to dramatically reduce startup friction.",
-            color: "text-emerald-400",
-            bg: "bg-emerald-400/10",
-            border: "border-emerald-400/20"
+            color: "text-[var(--secondary)]",
+            bg: "bg-[var(--secondary)]/10",
+            border: "border-[var(--secondary)]/20"
         }
     ];
 
