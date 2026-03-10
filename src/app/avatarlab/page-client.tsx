@@ -19,7 +19,10 @@ import {
     Zap,
     BrainCircuit,
     Layers,
-    HeartPulse
+    HeartPulse,
+    AlertCircle,
+    Building2,
+    Globe2
 } from "lucide-react";
 
 // Assets
@@ -187,16 +190,67 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
 
                     <div className="mb-16">
-                        <h3 className="text-2xl font-light text-cyan-300 mb-6 flex items-center gap-3">
+                        <h3 className="text-2xl font-light text-cyan-300 mb-8 flex items-center gap-3">
                             <Microscope className="w-6 h-6" /> Mechanism
                         </h3>
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-zinc-900/30">
-                            <p className="text-lg leading-relaxed text-white/80 font-light mb-6">
-                                Bank the youngest viable cells under clinical-grade conditions. Create a therapy-intent induced pluripotent stem cell, or <strong className="text-cyan-200">iPSC</strong>, line with quality control and immune-type profiling. Preserve it as a master cell bank for future therapies. From a small blood draw, reprogram cells into iPSCs. Differentiate them into mini-organs for liver, gut, brain, heart, immune co-cultures, and skin.
-                            </p>
-                            <p className="text-lg leading-relaxed text-white/80 font-light">
-                                In later stages, link tissues on a microfluidic chip so the mini-organs communicate. Measure metabolism, barrier integrity, electrical activity, imaging phenotypes, and multi-omics. Run controlled experiments on single agents and stacks. Train a personal digital twin that fuses organoid readouts with wearables and lab data to forecast outcomes, side-effect risk, and next best action. Drug-induced liver injury, or <strong className="text-cyan-200">DILI</strong>, means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems.
-                                <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
+
+                        <div className="grid md:grid-cols-2 gap-6 relative">
+                            {/* Step 1 */}
+                            <div className="glass-panel p-8 rounded-3xl border border-cyan-500/20 bg-cyan-950/10 group hover:bg-cyan-950/20 transition-all">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/30 text-cyan-400">
+                                        <Database className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="text-xl font-medium text-white">1. Bank & Reprogram</h4>
+                                </div>
+                                <p className="text-white/70 font-light leading-relaxed">
+                                    Bank the youngest viable cells under clinical-grade conditions. Create a therapy-intent induced pluripotent stem cell (<strong className="text-cyan-200">iPSC</strong>) line with quality control and immune-type profiling. Preserve it as a master cell bank for future therapies.
+                                </p>
+                            </div>
+
+                            {/* Step 2 */}
+                            <div className="glass-panel p-8 rounded-3xl border border-teal-500/20 bg-teal-950/10 group hover:bg-teal-950/20 transition-all">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-teal-500/10 flex items-center justify-center border border-teal-500/30 text-teal-400">
+                                        <ActivitySquare className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="text-xl font-medium text-white">2. Grow Mini-Organs</h4>
+                                </div>
+                                <p className="text-white/70 font-light leading-relaxed">
+                                    From a small blood draw, reprogram cells into iPSCs. Differentiate them into mini-organs for liver, gut, brain, heart, immune co-cultures, and skin.
+                                </p>
+                            </div>
+
+                            {/* Step 3 */}
+                            <div className="glass-panel p-8 rounded-3xl border border-blue-500/20 bg-blue-950/10 group hover:bg-blue-950/20 transition-all">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-blue-500/10 flex items-center justify-center border border-blue-500/30 text-blue-400">
+                                        <Network className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="text-xl font-medium text-white">3. Network on a Chip</h4>
+                                </div>
+                                <p className="text-white/70 font-light leading-relaxed">
+                                    Link tissues on a microfluidic chip so the mini-organs communicate. Measure metabolism, barrier integrity, electrical activity, imaging phenotypes, and multi-omics.
+                                </p>
+                            </div>
+
+                            {/* Step 4 */}
+                            <div className="glass-panel p-8 rounded-3xl border border-indigo-500/20 bg-indigo-950/10 group hover:bg-indigo-950/20 transition-all">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center border border-indigo-500/30 text-indigo-400">
+                                        <BrainCircuit className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="text-xl font-medium text-white">4. Digital Twin Feedback</h4>
+                                </div>
+                                <p className="text-white/70 font-light leading-relaxed">
+                                    Run controlled experiments on single agents and stacks. Train a personal digital twin that fuses organoid readouts with wearables and lab data to forecast outcomes, side-effect risk, and next best action.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="mt-6 glass-panel p-6 rounded-2xl border border-white/5 bg-white/5 flex items-start gap-4">
+                            <AlertCircle className="w-6 h-6 text-cyan-400 shrink-0 mt-1" />
+                            <p className="text-white/70 font-light text-sm leading-relaxed max-w-4xl">
+                                Drug-induced liver injury (<strong className="text-cyan-200">DILI</strong>) means liver damage caused by medications. Liver and liver-gut systems are an attractive early wedge because toxicity and absorption are high-value, benchmarkable problems. <ExpandableCitation label="[1][2][4][6][11]" sourceUrl="" sourceText="Various sources on organ-on-chip, digital twins, and clinical iPSCs." />
                             </p>
                         </div>
                     </div>
@@ -269,34 +323,69 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         </div>
                     </div>
 
-                    <div className="space-y-6 mb-16">
-                        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <h4 className="text-xl text-white font-medium mb-3">Layer 1: Stem cell banking</h4>
-                            <p className="text-lg text-white/70 font-light leading-relaxed">
-                                The immediate wedge is the secure, clinical-grade preservation of an individual's youngest viable cells for future therapeutic use. This establishes the long-term customer relationship and the biological source material immediately.
-                            </p>
-                        </div>
+                    <div className="space-y-4 mb-16 relative">
+                        {/* Connecting line for visual grounding */}
+                        <div className="absolute left-10 sm:left-[3.25rem] top-10 bottom-10 w-px bg-gradient-to-b from-emerald-500/50 via-cyan-500/50 to-indigo-500/50 hidden sm:block" />
 
-                        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <h4 className="text-xl text-white font-medium mb-3">Layer 2: Premium assay market</h4>
-                            <p className="text-lg text-white/70 font-light leading-relaxed">
-                                The wallets are already there. Global dietary supplements were estimated at <strong>$209.5B</strong> in 2025. Global skincare was <strong>$122.1B</strong> in 2025. Goldman Sachs forecast anti-obesity drugs at <strong>$95B by 2030</strong>. MarketsandMarkets projects personalized nutrition at <strong>$30.94B by 2030</strong>. AvatarLab wedges into spending streams where people pay to experiment on themselves. <ExpandableCitation label="[12][13][14][15]" sourceUrl="" sourceText="Grand View Research 2026; Fortune Business Insights 2026; Goldman Sachs 2025, MarketsandMarkets 2025." />
-                            </p>
-                        </div>
+                        {/* Layer 1 */}
+                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-emerald-500/20 bg-emerald-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                                <Database className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl text-emerald-200 font-medium mb-3 flex items-center gap-3">
+                                    Layer 1: Stem cell banking <span className="text-xs font-mono uppercase tracking-widest text-emerald-500/50 border border-emerald-500/20 rounded-full px-2 py-0.5">The Wedge</span>
+                                </h4>
+                                <p className="text-lg text-white/70 font-light leading-relaxed">
+                                    The immediate wedge is the secure, clinical-grade preservation of an individual's youngest viable cells for future therapeutic use. This establishes the long-term customer relationship and the biological source material immediately.
+                                </p>
+                            </div>
+                        </motion.div>
 
-                        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <h4 className="text-xl text-white font-medium mb-3">Layer 3: Enterprise decision market</h4>
-                            <p className="text-lg text-white/70 font-light leading-relaxed">
-                                Adverse drug reactions frequently cause hospital admissions. Meaningfully reducing unpredictable real-world toxicity creates immense value for clinics, payers, and pharma before the consumer business even fully scales. <ExpandableCitation label="[16]" sourceUrl="https://pubmed.ncbi.nlm.nih.gov/39832731/" sourceText="Cosgrave, N. et al. 'Hospital admissions due to adverse drug reactions in older adults.' Age and Ageing. 2025." />
-                            </p>
-                        </div>
+                        {/* Layer 2 */}
+                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-teal-500/20 bg-teal-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-teal-500/20 border border-teal-500/30 flex items-center justify-center text-teal-400">
+                                <ActivitySquare className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl text-teal-200 font-medium mb-3 flex items-center gap-3">
+                                    Layer 2: Premium assay market <span className="text-xs font-mono uppercase tracking-widest text-teal-500/50 border border-teal-500/20 rounded-full px-2 py-0.5">High Margin Focus</span>
+                                </h4>
+                                <p className="text-lg text-white/70 font-light leading-relaxed">
+                                    The wallets are already there. Global dietary supplements were estimated at <strong>$209.5B</strong> in 2025. Global skincare was <strong>$122.1B</strong> in 2025. Goldman Sachs forecast anti-obesity drugs at <strong>$95B by 2030</strong>. MarketsandMarkets projects personalized nutrition at <strong>$30.94B by 2030</strong>. AvatarLab wedges into spending streams where people pay to experiment on themselves. <ExpandableCitation label="[12][13][14][15]" sourceUrl="" sourceText="Grand View Research 2026; Fortune Business Insights 2026; Goldman Sachs 2025, MarketsandMarkets 2025." />
+                                </p>
+                            </div>
+                        </motion.div>
 
-                        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/10 bg-cyan-950/10">
-                            <h4 className="text-xl text-cyan-200 font-medium mb-3">Layer 4: Recommendation engine market</h4>
-                            <p className="text-lg text-white/80 font-light leading-relaxed">
-                                This is the real prize. The addressable market expands beyond bespoke assays. The end state is that a relatively small number of high-quality assays generate the ground truth needed to improve recommendations for a far larger population with genome, bloodwork, phenotype, and wearable data. <strong>Turns a premium wet-lab service into a mass-market biology intelligence platform.</strong>
-                            </p>
-                        </div>
+                        {/* Layer 3 */}
+                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/20 bg-cyan-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-cyan-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400">
+                                <Building2 className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl text-cyan-200 font-medium mb-3 flex items-center gap-3">
+                                    Layer 3: Enterprise decision market <span className="text-xs font-mono uppercase tracking-widest text-cyan-500/50 border border-cyan-500/20 rounded-full px-2 py-0.5">B2B Extension</span>
+                                </h4>
+                                <p className="text-lg text-white/70 font-light leading-relaxed">
+                                    Adverse drug reactions frequently cause hospital admissions. Meaningfully reducing unpredictable real-world toxicity creates immense value for clinics, payers, and pharma before the consumer business even fully scales. <ExpandableCitation label="[16]" sourceUrl="https://pubmed.ncbi.nlm.nih.gov/39832731/" sourceText="Cosgrave, N. et al. 'Hospital admissions due to adverse drug reactions in older adults.' Age and Ageing. 2025." />
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        {/* Layer 4 */}
+                        <motion.div whileHover={{ x: 5 }} className="glass-panel p-6 sm:p-8 rounded-2xl border border-indigo-500/20 bg-indigo-950/10 flex flex-col sm:flex-row gap-6 items-start relative z-10 transition-transform shadow-[0_0_40px_rgba(99,102,241,0.1)]">
+                            <div className="w-14 h-14 shrink-0 rounded-2xl bg-indigo-500/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
+                                <Globe2 className="w-6 h-6" />
+                            </div>
+                            <div>
+                                <h4 className="text-xl text-indigo-300 font-medium mb-3 flex items-center gap-3">
+                                    Layer 4: Recommendation engine market <span className="text-xs font-mono uppercase tracking-widest text-indigo-500/50 border border-indigo-500/20 rounded-full px-2 py-0.5">The Ultimate Prize</span>
+                                </h4>
+                                <p className="text-lg text-white/80 font-light leading-relaxed">
+                                    This is the real prize. The addressable market expands beyond bespoke assays. The end state is that a relatively small number of high-quality assays generate the ground truth needed to improve recommendations for a far larger population with genome, bloodwork, phenotype, and wearable data. <strong>Turns a premium wet-lab service into a mass-market biology intelligence platform.</strong>
+                                </p>
+                            </div>
+                        </motion.div>
                     </div>
 
                     {/* Why Now & Readiness tags */}
