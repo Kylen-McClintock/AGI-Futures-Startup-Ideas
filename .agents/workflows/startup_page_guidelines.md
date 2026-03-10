@@ -36,10 +36,12 @@ The global `<ProjectTags />` block should NEVER be used. Instead, use the `<Inli
 - **Deep Theming CSS Variables**: Every startup idea MUST inject its theme's CSS variables at the root level. At the top of `page-client.tsx`, import `themeMap` from `@/utils/themeMap` and apply it to the `<main>` tag's style prop: `style={{ "--primary": themeMap['emerald'].hexPrimary, "--secondary": themeMap['emerald'].hexSecondary, "--tertiary": themeMap['emerald'].hexTertiary } as React.CSSProperties}`. Choose a vivid color theme (e.g. 'emerald', 'teal', 'violet', 'fuchsia') that matches the mood of the idea. 
 - **Component Theming**: Throughout your `page-client.tsx`, ALWAYS use the dynamically injected variables (e.g., `text-[var(--primary)]`, `bg-[var(--secondary)]`, `border-[var(--tertiary)]`) instead of hardcoded Tailwind color scales (like `text-emerald-500` or `bg-purple-600`). This ensures colors remain deeply synchronized across typography, backgrounds, SVGs, acronyms, and citations.
 
-## Interactivity
+## Interactivity & Components
 - **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme name passed as the prop must exactly match the key you selected from `themeMap`.
-- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST use the `<ExpandableCitation />` component, which automatically inherits from the CSS variables, or be fully clickable `<a>` links.
+- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST use the `<ExpandableCitation />` component, which automatically inherits from the CSS variables. CRITICAL: You MUST explicitly pass a valid `url="..."` prop to every single instance of `<ExpandableCitation />` so both the inline number and the popup render as fully clickable `<a>` links that open in a new tab.
 - **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, MCP) MUST be wrapped in `<HoverAcronym acronym="X" definition="Y" theme="emerald" />`. Ensure the theme prop matches the page's deep theme.
+- **Transferable Insight**: Every idea page must include a creatively styled "Transferable Insight" block highlighting a core market or psychological insight, uniquely decorated according to the deep theme (e.g., a glass panel with a colored border strip and styled quoted text).
+- **Value Flow Architecture**: Include an animated stakeholder flow diagram—such as a `<ValueFlow />` component powered by `framer-motion`—to explicitly map step-by-step stakeholder incentives, user roles, and "Contributor Rewards." Placed near the Business Model or ICP sections.
 
 ## Database (Supabase) Scoring Requirements
 As part of generating the new idea, you must also evaluate and score the startup and append its data to the `seed_tags.ts` script so it syncs with Supabase. 

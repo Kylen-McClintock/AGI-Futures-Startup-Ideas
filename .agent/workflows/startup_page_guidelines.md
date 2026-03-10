@@ -35,10 +35,12 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - When clicked/expanded, it must reveal a cleanly styled list of the specific sub-scores (e.g., Abundance, Human Flourishing, Community Renewal, Resilience).
 - **CRITICAL**: The scores must perfectly match the exact values defined for the startup within `seed_tags.ts`.
 
-## Interactivity
+## Interactivity & Components
 - **Scroll Progress**: Every startup idea MUST include the `<ScrollProgress title="Idea Name" theme="emerald" />` component at the top of the `page-client.tsx` main wrapper. The theme color should correspond to the overall color theme of the page.
-- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST be fully clickable `<a>` links that navigate to the actual source URL using `target="_blank"` and a `hover:underline` effect.
+- **Citations**: Any citations (whether inline `[1]` numbers or the expanded reference list) MUST use the `<ExpandableCitation />` component. CRITICAL: You MUST explicitly pass a valid `url="..."` prop to every single instance of the component so the inline marker and popup content render natively as fully clickable `<a>` links that open in a new tab.
 - **Acronyms**: Any complex, niche, or domain-specific acronyms mentioned in the text (e.g., SaaS, SOP, DSCR, MCP) MUST be wrapped in the `<HoverAcronym acronym="X" definition="Y" />` component to provide inline definitions on hover.
+- **Transferable Insight**: Every idea page must include a styled "Transferable Insight" block highlighting a key psychological or market insight. This should be a creatively styled glass-panel block with a left-colored border based on the deep theme and elegantly formatted typography.
+- **Value Flow Architecture**: Provide a standalone `<ValueFlow />` animated component or graphic mapping the explicit flow of value between stakeholders (utilizing Framer Motion line animations and a "Reward" block), integrated near the associated Business Model or ICP sections.
 
 ## 5. Explicit & Collapsible Citations
 - Always include an explicit **Acronyms & References** section at the very bottom of the page.
