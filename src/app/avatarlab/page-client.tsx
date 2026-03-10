@@ -76,7 +76,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
-                            AvatarLab
+                            AvatarLab<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-cyan-200/80 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-cyan-500/30 sm:pl-6">Organoid Avatars for Safe Personalized Therapy Testing</span>
                         </h1>
                         <p className="text-xl sm:text-2xl text-cyan-100/90 leading-relaxed font-light mb-8 max-w-3xl">
                             Bank your youngest cells. Grow mini-organs from your DNA, including skin. Test drugs, nutraceuticals, peptides, and combinations on your own biology before you try them. A personal digital twin ranks what works and what is safe for you.
@@ -171,7 +171,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             </div>
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-8 leading-tight">
-                            Personalized wet-lab testing <br className="hidden sm:block" /><span className="text-white/50">and intelligence.</span>
+                            Grow your own ground truth. <br className="hidden sm:block" /><span className="text-white/50">Test therapies before you ingest them.</span>
                         </h2>
 
                         <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
@@ -275,8 +275,8 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                             <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Market
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-8">
-                            The near-term market <br className="hidden sm:block" />
-                            <span className="text-white/50">is not one thing. It is a stack.</span>
+                            A multi-layered market <br className="hidden sm:block" />
+                            <span className="text-white/50">starting with cellular preservation.</span>
                         </h2>
 
                         <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-xl border border-white/10 group">
@@ -286,21 +286,28 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                     <div className="space-y-6 mb-16">
                         <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <h4 className="text-xl text-white font-medium mb-3">Layer 1: Premium assay market</h4>
+                            <h4 className="text-xl text-white font-medium mb-3">Layer 1: Stem cell banking</h4>
+                            <p className="text-lg text-white/70 font-light leading-relaxed">
+                                The immediate wedge is the secure, clinical-grade preservation of an individual's youngest viable cells for future therapeutic use. This establishes the long-term customer relationship and the biological source material immediately.
+                            </p>
+                        </div>
+
+                        <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
+                            <h4 className="text-xl text-white font-medium mb-3">Layer 2: Premium assay market</h4>
                             <p className="text-lg text-white/70 font-light leading-relaxed">
                                 The wallets are already there. Global dietary supplements were estimated at <strong>$209.5B</strong> in 2025. Global skincare was <strong>$122.1B</strong> in 2025. Goldman Sachs forecast anti-obesity drugs at <strong>$95B by 2030</strong>. MarketsandMarkets projects personalized nutrition at <strong>$30.94B by 2030</strong>. AvatarLab wedges into spending streams where people pay to experiment on themselves. <ExpandableCitation label="[12][13][14][15]" sourceUrl="" sourceText="Grand View Research 2026; Fortune Business Insights 2026; Goldman Sachs 2025, MarketsandMarkets 2025." />
                             </p>
                         </div>
 
                         <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <h4 className="text-xl text-white font-medium mb-3">Layer 2: Enterprise decision market</h4>
+                            <h4 className="text-xl text-white font-medium mb-3">Layer 3: Enterprise decision market</h4>
                             <p className="text-lg text-white/70 font-light leading-relaxed">
                                 Adverse drug reactions frequently cause hospital admissions. Meaningfully reducing unpredictable real-world toxicity creates immense value for clinics, payers, and pharma before the consumer business even fully scales. <ExpandableCitation label="[16]" sourceUrl="https://pubmed.ncbi.nlm.nih.gov/39832731/" sourceText="Cosgrave, N. et al. 'Hospital admissions due to adverse drug reactions in older adults.' Age and Ageing. 2025." />
                             </p>
                         </div>
 
                         <div className="glass-panel p-6 sm:p-8 rounded-2xl border border-cyan-500/10 bg-cyan-950/10">
-                            <h4 className="text-xl text-cyan-200 font-medium mb-3">Layer 3: Recommendation engine market</h4>
+                            <h4 className="text-xl text-cyan-200 font-medium mb-3">Layer 4: Recommendation engine market</h4>
                             <p className="text-lg text-white/80 font-light leading-relaxed">
                                 This is the real prize. The addressable market expands beyond bespoke assays. The end state is that a relatively small number of high-quality assays generate the ground truth needed to improve recommendations for a far larger population with genome, bloodwork, phenotype, and wearable data. <strong>Turns a premium wet-lab service into a mass-market biology intelligence platform.</strong>
                             </p>
@@ -312,13 +319,13 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <div>
                             <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
                                 <h3 className="text-2xl font-light text-white">Why Now</h3>
-                                <InlineTags tags={tags.readiness} theme="blue" />
+                                <InlineTags tags={['Build Cell Bank Now', 'Digital Twins Early']} theme="blue" />
                             </div>
                             <p className="text-lg text-white/70 font-light leading-relaxed mb-6">
-                                The science is promising, but the honest case is narrower than the full vision. Organoid models are improving. FDA policy is pushing towards new approach methodologies (NAMs). <ExpandableCitation label="[1][2][5][7][8]" sourceUrl="" sourceText="FDA 2025 Roadmap" />
+                                We can build the foundational stem cell banking layer <strong>today</strong>. The cryopreservation and iPSC generation protocols are established and commercially viable right now. For the analytical layers, organoid models are improving and FDA policy is pushing towards new approach methodologies (NAMs). <ExpandableCitation label="[1][2][5][7][8]" sourceUrl="" sourceText="FDA 2025 Roadmap" />
                             </p>
                             <p className="text-lg text-white/70 font-light leading-relaxed">
-                                But full digital twins are early. A 2025 scoping review found only 18 of 149 studied fully met twin criteria. The right move now is not to pretend the end state exists. Build the rudimentary stack to validate today. Liver toxicity, gut barrier, skin response. <ExpandableCitation label="[4][9][10]" sourceUrl="" sourceText="Tudor 2025, Katsoulakis 2024" />
+                                But full digital twins are early. A 2025 scoping review found only 18 of 149 studied fully met twin criteria. The right move now is not to pretend the end state exists. Build the cell bank to capture the biological asset today, then sequence into assay validation. <ExpandableCitation label="[4][9][10]" sourceUrl="" sourceText="Tudor 2025, Katsoulakis 2024" />
                             </p>
                         </div>
                         <div>
@@ -559,13 +566,26 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div className="space-y-6">
-                            <div className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-cyan-500/30 pl-6 space-y-4">
-                                <p>AvatarLab could compress the discovery-to-decision loop at two levels.</p>
-                                <p>First, it can make high-stakes experimentation safer for the people who use it directly. More signal, less roulette. Fewer harmful self-experiments. Faster learning about which interventions work for which biological profiles.</p>
-                                <p>Second, and more importantly, it can democratize the value of that learning. If the organoid layer becomes a truth engine for a much broader recommendation platform, then the benefits are not limited to wealthy users cloning mini-organs. A relatively small number of high-quality personalized assays could improve therapeutic suggestions for millions of people with sequencing, bloodwork, phenotype, and wearable data. That turns a luxury service into a general intelligence layer for personalized medicine.</p>
-                                <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" /></p>
-                                <p className="text-lg text-teal-300">Optional big-idea version: the company becomes the canonical scoring layer for intervention efficacy by biological profile, a foundational institution in the transition from population medicine to continuous personalized optimization.</p>
-                            </div>
+                            <details className="group cursor-pointer [&_summary::-webkit-details-marker]:hidden bg-cyan-950/10 border border-cyan-500/20 rounded-3xl overflow-hidden transition-all duration-300">
+                                <summary className="p-8 list-none flex justify-between items-start outline-none">
+                                    <div className="text-xl leading-relaxed text-cyan-50 font-light pr-8">
+                                        <p className="mb-3 font-medium text-cyan-300">Democratizing personalized medicine</p>
+                                        <p className="text-lg text-white/80">AvatarLab could compress the discovery-to-decision loop. If the organoid layer becomes a truth engine, the benefits extend beyond wealthy users—a few high-quality assays improve therapeutic suggestions for millions.</p>
+                                    </div>
+                                    <div className="shrink-0 mt-2 w-10 h-10 rounded-full bg-cyan-500/10 flex items-center justify-center border border-cyan-500/20 text-cyan-400 group-open:bg-cyan-500/20 group-open:text-cyan-300 transition-colors">
+                                        <Network className="w-5 h-5 group-open:hidden" />
+                                        <ChevronDown className="w-5 h-5 hidden group-open:block" />
+                                    </div>
+                                </summary>
+                                <div className="px-8 pb-8 pt-4 border-t border-cyan-500/10 text-lg leading-relaxed text-white/70 font-light space-y-6">
+                                    <p>First, it makes high-stakes experimentation safer for the people who use it directly. More signal, less roulette. Fewer harmful self-experiments. Faster learning about which interventions work for which biological profiles.</p>
+                                    <p>Second, and more importantly, it democratizes the value of that learning. A relatively small number of high-quality personalized assays could improve therapeutic suggestions for millions of people with sequencing, bloodwork, phenotype, and wearable data. That turns a luxury service into a general intelligence layer for personalized medicine.</p>
+                                    <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" /></p>
+                                    <div className="bg-white/5 p-5 rounded-2xl border border-white/10 mt-4 text-teal-200 italic">
+                                        Optional big-idea version: the company becomes the canonical scoring layer for intervention efficacy by biological profile, a foundational institution in the transition from population medicine to continuous personalized optimization.
+                                    </div>
+                                </div>
+                            </details>
 
                             <details className="mt-8 glass-panel rounded-[2rem] border border-cyan-500/20 bg-cyan-950/20 hover:bg-cyan-950/30 hover:border-cyan-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px]">
                                 <summary className="p-6 list-none flex justify-between items-center outline-none">
