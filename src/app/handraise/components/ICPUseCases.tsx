@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Users, LineChart, Code, ArrowRight, CheckCircle2, Bot, Coins } from "lucide-react";
+import { MessageSquare, Users, LineChart, Code, ArrowRight, CheckCircle2, Bot, Coins, Gift } from "lucide-react";
 import { HoverAcronym } from '@/components/HoverAcronym';
 
 const useCases = [
@@ -20,8 +20,9 @@ const useCases = [
             { role: "Handraise Agent", action: "Routes request to 5 precise experts", icon: Bot, isAgent: true },
             { role: "Experts (Async)", action: "2 say raise, 2 segment, 1 keep", icon: MessageSquare },
             { role: "Handraise Agent", action: "Synthesizes & drafts outbound copy", icon: Bot, isAgent: true },
-            { role: "Founder", action: "Executes test, experts earn reputation", icon: Coins },
-        ]
+            { role: "Founder", action: "Executes test, experts earn reputation", icon: CheckCircle2 },
+        ],
+        reward: { payload: "$50 USDC + 20 Reputation", context: "Earned per contributing expert" }
     },
     {
         id: "architecture",
@@ -38,7 +39,8 @@ const useCases = [
             { role: "Engineers (Async)", action: "Critique vector approach, provide alternative", icon: Code },
             { role: "Handraise Agent", action: "Summarizes the hybrid solution consensus", icon: Bot, isAgent: true },
             { role: "Solo Dev", action: "Saves 1 month of engineering time", icon: CheckCircle2 },
-        ]
+        ],
+        reward: { payload: "$150 USDC + 50 Reputation", context: "Earned per responding engineer" }
     },
     {
         id: "investor",
@@ -55,7 +57,8 @@ const useCases = [
             { role: "Mutuals (Async)", action: "Qualify fit & add personal notes", icon: MessageSquare },
             { role: "Handraise Agent", action: "Drafts forwardable emails", icon: Bot, isAgent: true },
             { role: "Investors", action: "Receive warm, high-context introductions", icon: ArrowRight },
-        ]
+        ],
+        reward: { payload: "100 Reputation + Karma", context: "Earned per mutual connection" }
     }
 ];
 
@@ -75,8 +78,8 @@ export function ICPUseCases() {
                             key={uc.id}
                             onClick={() => setActiveTab(uc.id)}
                             className={`flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 border ${isActive
-                                    ? "bg-[var(--primary)]/20 text-[var(--primary)] border-[var(--primary)]/50 shadow-lg shadow-[var(--primary)]/20"
-                                    : "bg-white/5 text-slate-400 border-white/5 hover:bg-white/10 hover:text-white"
+                                ? "bg-[var(--primary)]/20 text-[var(--primary)] border-[var(--primary)]/50 shadow-lg shadow-[var(--primary)]/20"
+                                : "bg-white/5 text-slate-400 border-white/5 hover:bg-white/10 hover:text-white"
                                 }`}
                         >
                             <Icon className="w-4 h-4" />
@@ -139,8 +142,8 @@ export function ICPUseCases() {
                                                 className="flex items-start gap-6 relative"
                                             >
                                                 <div className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full border shrink-0 ${step.isAgent
-                                                        ? "bg-[#06090c] border-[var(--primary)] text-[var(--primary)] shadow-[0_0_15px_var(--primary)] brightness-125"
-                                                        : "bg-[#06090c] border-white/20 text-white/70"
+                                                    ? "bg-[#06090c] border-[var(--primary)] text-[var(--primary)] shadow-[0_0_15px_var(--primary)] brightness-125"
+                                                    : "bg-[#06090c] border-white/20 text-white/70"
                                                     }`}>
                                                     <StepIcon className="w-4 h-4" />
                                                 </div>
@@ -154,6 +157,25 @@ export function ICPUseCases() {
                                         )
                                     })}
                                 </div>
+
+                                {/* Reward Component */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.6 }}
+                                    className="mt-8 pt-6 border-t border-white/10"
+                                >
+                                    <div className="flex items-center gap-3 bg-[var(--primary)]/10 border border-[var(--primary)]/20 rounded-2xl p-4 shadow-inner shadow-[var(--primary)]/5">
+                                        <div className="p-2 bg-[#06090c] rounded-xl text-[var(--secondary)] border border-white/5">
+                                            <Gift className="w-5 h-5" />
+                                        </div>
+                                        <div>
+                                            <div className="text-[10px] font-mono tracking-wider uppercase text-[var(--primary)] mb-0.5">Contributor Reward</div>
+                                            <div className="text-sm font-medium text-white">{activeCase.reward.payload}</div>
+                                            <div className="text-xs text-slate-400 mt-0.5">{activeCase.reward.context}</div>
+                                        </div>
+                                    </div>
+                                </motion.div>
                             </div>
                         </div>
                     </motion.div>
