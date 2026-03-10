@@ -23,11 +23,11 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/avatarlab_hero.png';
+import heroImage from './assets/avatarlab_hero_v2.png';
 import organoidsImage from './assets/avatarlab_organoids.png';
 import twinOsImage from './assets/avatarlab_twinos.png';
 import graphImage from './assets/avatarlab_graph.png';
-import cellbankImage from './assets/avatarlab_cellbank.png';
+import cellbankImage from './assets/avatarlab_cellbank_v2.png';
 
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -127,7 +127,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <div className="text-sm font-mono tracking-widest uppercase text-cyan-400 mb-4 flex items-center">
                             <span className="w-8 h-px bg-cyan-500/50 mr-4" /> The Problem
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
                             Biology decisions are slow, <br className="hidden sm:block" />
                             <span className="text-white/50">expensive, and risky.</span>
                         </h2>
@@ -170,7 +170,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags label="Enabling Tech" tags={tags.enabling_technology} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight mb-8 leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight mb-8 leading-tight">
                             Personalized wet-lab testing <br className="hidden sm:block" /><span className="text-white/50">and intelligence.</span>
                         </h2>
 
@@ -274,7 +274,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <div className="text-sm font-mono tracking-widest uppercase text-indigo-400 mb-4 flex items-center">
                             <span className="w-8 h-px bg-indigo-500/50 mr-4" /> Market
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-8">
                             The near-term market <br className="hidden sm:block" />
                             <span className="text-white/50">is not one thing. It is a stack.</span>
                         </h2>
@@ -359,7 +359,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags label="Founder Fit" tags={tags.founder_fit} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
                             Moat and Difficulty.
                         </h2>
                     </div>
@@ -401,12 +401,33 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         type="moat"
                         defaultVisibleText="If AvatarLab gets to market first with a credible, validated product, the moat is extremely strong. It is not just a lab-services business. It is a compounding biology intelligence business."
                         expandableText={
-                            <div className="space-y-4">
-                                <p className="text-lg bg-cyan-950/20 p-6 rounded-2xl border border-cyan-900/40 leading-relaxed font-light text-cyan-50">
-                                    <strong>Layer 1: hard-to-replicate data asset.</strong> Competitors can buy equipment and hire cell scientists. They cannot quickly recreate a large, longitudinal dataset of genotype-linked tissue responses tied to real-world follow-up. That dataset improves with every test.
+                            <div className="space-y-6 text-lg text-cyan-50 font-light leading-relaxed">
+                                <p>If executed well, the moat compounds along multiple dimensions at once:</p>
+                                <ul className="space-y-4">
+                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
+                                        <strong className="text-cyan-300 block mb-2">Data compounding.</strong> More assays improve predictive power.
+                                    </li>
+                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
+                                        <strong className="text-cyan-300 block mb-2">Model compounding.</strong> Better predictions attract more customers and partners.
+                                    </li>
+                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
+                                        <strong className="text-cyan-300 block mb-2">Workflow compounding.</strong> More runs improve protocols, automation, turnaround time, and cost.
+                                    </li>
+                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
+                                        <strong className="text-cyan-300 block mb-2">Trust compounding.</strong> More validated wins make clinicians, consumers, and brands more willing to rely on the system.
+                                    </li>
+                                    <li className="bg-cyan-950/20 p-5 rounded-2xl border border-cyan-900/40">
+                                        <strong className="text-cyan-300 block mb-2">Distribution compounding.</strong> The premium assay business seeds the data that unlocks a much larger recommendation platform.
+                                    </li>
+                                </ul>
+                                <p>
+                                    In an AGI world, this moat gets stronger, not weaker. General intelligence will commoditize pattern recognition. What stays scarce is proprietary ground-truth biology data with clean intervention labels and measurable outcomes. AGI can help competitors reason over public biology. It cannot conjure a private dataset built from years of wet-lab truth tied to individual genomes and outcomes.
                                 </p>
-                                <p className="text-lg bg-teal-950/20 p-6 rounded-2xl border border-teal-900/40 leading-relaxed font-light text-teal-50">
-                                    <strong>Layer 2: prediction engine escaping premium niche.</strong> The first wedge is expensive. The larger prize is a therapeutic recommendation engine trained on the deepest human-relevant intervention dataset in the world. High-end service turns into mass-market intelligence.
+                                <p>
+                                    The strategic goal is clear: use early high-margin organoid testing to build the reference dataset that powers personalized therapeutic guidance for everyone else. If AvatarLab reaches escape velocity on that loop first, it can become the Consumer Reports, Bloomberg Terminal, and credit bureau of personalized intervention efficacy, all in one.
+                                </p>
+                                <p className="text-teal-300 font-medium">
+                                    That is why the moat is not just defensibility. It is expanding advantage.
                                 </p>
                             </div>
                         }
@@ -457,8 +478,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <span className="text-white/70 font-light block">Model inferring likely winners for non-assay users improves as base deepens.</span>
                             </div>
                             <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-                                <strong className="text-teal-300 block mb-2">Privacy & Automation</strong>
-                                <span className="text-white/70 font-light block">Federated learning and robotic wet lab plus simulation increases throughput. <ExpandableCitation label="[2][4]" sourceUrl="" sourceText="Leung 2022, Katsoulakis 2024" /></span>
+                                <strong className="text-teal-300 block mb-2">Automation moat</strong>
+                                <span className="text-white/70 font-light block">Robotic wet lab plus simulation increases throughput and reproducibility, turning time into compounding advantage.</span>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
+                                <strong className="text-teal-300 block mb-2">Privacy & Protocol</strong>
+                                <span className="text-white/70 font-light block">Federated learning and federated ops. <ExpandableCitation label="[2][4]" sourceUrl="" sourceText="Leung 2022, Katsoulakis 2024" /></span>
                             </div>
                         </div>
                     </div>
@@ -527,16 +552,20 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <InlineTags tags={tags.outcomes} theme="blue" />
                             </div>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight">
                             Civilizational Impact.
                         </h2>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
                         <div className="space-y-6">
-                            <p className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-cyan-500/30 pl-6">
-                                AvatarLab could compress the discovery-to-decision loop at two levels. First, making high-stakes experimentation safer for direct users. Second, democratizing that learning by turning the organoid layer into a continuous intelligence engine for personalized medicine globally. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" />
-                            </p>
+                            <div className="text-xl leading-relaxed text-white/80 font-light border-l-2 border-cyan-500/30 pl-6 space-y-4">
+                                <p>AvatarLab could compress the discovery-to-decision loop at two levels.</p>
+                                <p>First, it can make high-stakes experimentation safer for the people who use it directly. More signal, less roulette. Fewer harmful self-experiments. Faster learning about which interventions work for which biological profiles.</p>
+                                <p>Second, and more importantly, it can democratize the value of that learning. If the organoid layer becomes a truth engine for a much broader recommendation platform, then the benefits are not limited to wealthy users cloning mini-organs. A relatively small number of high-quality personalized assays could improve therapeutic suggestions for millions of people with sequencing, bloodwork, phenotype, and wearable data. That turns a luxury service into a general intelligence layer for personalized medicine.</p>
+                                <p>If that works, the impact is large: fewer avoidable adverse events, faster translation from discovery to practical use, stronger feedback loops in longevity and therapeutics, and a more evidence-rich path toward extending healthy lifespan. <ExpandableCitation label="[1][4][7]" sourceUrl="" sourceText="Ingber; Katsoulakis; FDA" /></p>
+                                <p className="text-lg text-teal-300">Optional big-idea version: the company becomes the canonical scoring layer for intervention efficacy by biological profile, a foundational institution in the transition from population medicine to continuous personalized optimization.</p>
+                            </div>
 
                             <details className="mt-8 glass-panel rounded-[2rem] border border-cyan-500/20 bg-cyan-950/20 hover:bg-cyan-950/30 hover:border-cyan-500/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[320px]">
                                 <summary className="p-6 list-none flex justify-between items-center outline-none">
