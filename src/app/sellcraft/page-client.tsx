@@ -19,6 +19,7 @@ import ProductGridCard from "./components/ProductGridCard";
 import ValueFlowDiagram from "./components/ValueFlowDiagram";
 import PerformanceDataViz from "./components/PerformanceDataViz";
 import { ICPUseCases } from "./components/ICPUseCases";
+import { SkillTransition } from "./components/SkillTransition";
 
 // Assets
 import heroImg from "./assets/sellcraft_hero.png";
@@ -192,6 +193,8 @@ export default function SellCraftClient() {
                     </p>
                 </div>
             </div>
+        {/* --- SKILL TRANSITION --- */}
+        <SkillTransition />
         </section>
 
         {/* --- PRODUCT TEARDOWNS (Cards) --- */}
