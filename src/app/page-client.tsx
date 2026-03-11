@@ -218,19 +218,19 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                     <div className="flex flex-col gap-3 min-h-[44px]">
                         {/* Active Filter Badges */}
                         {activeTags.length > 0 && (
-                            <div className="flex flex-wrap items-center gap-2">
-                                <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest mr-1">Active Filters:</span>
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="text-xs sm:text-sm font-mono text-white/40 uppercase tracking-widest mr-2">Active Filters:</span>
                                 {activeTags.map((tagObj, idx) => {
                                     const catLabel = filterCategories.find(c => c.id === tagObj.category)?.label || tagObj.category;
                                     return (
-                                        <div key={`${tagObj.category}-${idx}`} className="flex items-center gap-1.5 bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-[var(--primary)] text-xs font-medium px-3 py-1 rounded-full">
+                                        <div key={`${tagObj.category}-${idx}`} className="flex items-center gap-2 bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-[var(--primary)] text-sm sm:text-base font-medium px-4 py-1.5 rounded-full">
                                             <span>{catLabel}: <span className="text-white font-semibold">{tagObj.tag}</span></span>
                                             <button
                                                 onClick={() => removeFilter(idx)}
-                                                className="hover:bg-[var(--primary)]/20 p-0.5 rounded-full transition-colors ml-1"
+                                                className="hover:bg-[var(--primary)]/20 p-1 rounded-full transition-colors ml-1.5"
                                                 aria-label="Remove filter"
                                             >
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
                                             </button>
                                         </div>
                                     );
@@ -240,14 +240,14 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
 
                         {/* Drill-down Selectors */}
                         {activeTags.length < 3 && (
-                            <div className="flex flex-wrap items-center gap-3">
-                                <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest mr-1">Add Filter:</span>
+                            <div className="flex flex-wrap items-center gap-4">
+                                <span className="text-xs sm:text-sm font-mono text-white/40 uppercase tracking-widest mr-2">Add Filter:</span>
 
                                 {/* 1. Category Selector */}
                                 <select
                                     value={selectedCategory || "default"}
                                     onChange={(e) => setSelectedCategory(e.target.value === "default" ? null : e.target.value)}
-                                    className="bg-black/50 border border-white/20 text-white/80 text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none hover:border-white/40 focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8"
+                                    className="bg-black/50 border border-white/20 text-white/80 text-sm sm:text-base rounded-full px-5 py-2.5 sm:px-6 sm:py-3 outline-none hover:border-white/40 focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-10"
                                     style={{
                                         backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                                         backgroundRepeat: 'no-repeat',
@@ -263,12 +263,12 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
 
                                 {/* 2. Tag Selector (Visible only if category is selected) */}
                                 {selectedCategory && (
-                                    <div className="flex items-center gap-2 transition-all duration-300">
-                                        <ArrowRight className="w-3 h-3 text-white/30" />
+                                    <div className="flex items-center gap-3 transition-all duration-300">
+                                        <ArrowRight className="w-4 h-4 text-white/30" />
                                         <select
                                             value="default"
                                             onChange={(e) => handleAddFilter(selectedCategory, e.target.value)}
-                                            className="bg-black/50 border border-[var(--primary)]/50 text-white text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8 shadow-[0_0_10px_rgba(var(--primary-rgb),0.1)]"
+                                            className="bg-black/50 border border-[var(--primary)]/50 text-white text-sm sm:text-base rounded-full px-5 py-2.5 sm:px-6 sm:py-3 outline-none focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-10 shadow-[0_0_15px_rgba(var(--primary-rgb),0.15)]"
                                             style={{
                                                 backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                                                 backgroundRepeat: 'no-repeat',

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { LibraryNavButton } from "@/components/LibraryNavButton";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -13,8 +14,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Murmuration Engine | AGI-native Strategy",
-  description: "An AGI-native strategy and execution engine for ambitious startups.",
+  title: "AGI Futures Startup Ideas Library",
+  description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
 };
 
 export default function RootLayout({
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${playfair.variable} antialiased bg-background text-foreground min-h-screen`}
       >
+        <LibraryNavButton />
         {children}
       </body>
     </html>
