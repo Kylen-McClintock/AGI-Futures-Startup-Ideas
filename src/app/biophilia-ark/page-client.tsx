@@ -4,18 +4,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
-import { HoverAcronym } from "@/components/HoverAcronym";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
+import { WellnessMarketChart } from "./components/WellnessMarketChart";
 import { Leaf, Activity, Sparkles, Building2, Wind, Shield, Users, Target, MoveUpRight, ChevronDown, Link as LinkIcon, HeartPulse, Globe2 } from "lucide-react";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
 import heroImage from './assets/cloud_forest.png';
-import desertMonolith from './assets/desert_monolith.png';
-import freshwaterCliff from './assets/freshwater_cliff.png';
-import tropicalCanopy from './assets/tropical_canopy.png';
-import prairieLightwall from './assets/prairie_lightwall.png';
+import desertMonolith from './assets/desert_monolith_v2.png';
+import freshwaterCliff from './assets/freshwater_cliff_v2.png';
+import tropicalCanopy from './assets/tropical_canopy_v2.png';
+import prairieLightwall from './assets/prairie_lightwall_v2.png';
 import dartFrog from './assets/dart_frog.png';
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -90,19 +90,15 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 mb-12 group">
-                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-[var(--primary)]/30 pl-6 group-hover:border-[var(--primary)]/60 transition-colors">
-                            A dead-end hallway becomes a cloud-forest opening with moss, stone, mist, and the flash of a dart frog. A luxury lobby ends in a glowing desert canyon with sculpted rock, sparse planting, and a gecko on a warm ledge. A waiting room gets moving water, schooling fish, and a calm focal point people actually want to watch. This is not office greenery. It is a new architectural status symbol, one that signals taste, calm, and visible care for the living world.
-                        </p>
-                    </div>
-
-                    <div className="flex flex-col items-center justify-center p-12 rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent">
-                        <h3 className="text-3xl sm:text-5xl font-light text-white tracking-tight mb-4 text-center">
-                            Wellness real estate reached <strong className="text-[var(--secondary)]">$584 billion</strong> in 2024
-                        </h3>
-                        <p className="text-xl text-white/60 font-light text-center">
-                            and is forecast to reach <strong className="text-white">$1.1 trillion by 2029.</strong>
-                        </p>
+                    <div className="grid md:grid-cols-2 gap-8 mb-8">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 group flex flex-col justify-center">
+                            <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-[var(--primary)]/30 pl-6 group-hover:border-[var(--primary)]/60 transition-colors">
+                                A dead-end hallway becomes a cloud-forest opening with moss, stone, mist, and the flash of a dart frog. A luxury lobby ends in a glowing desert canyon with sculpted rock, sparse planting, and a gecko on a warm ledge. A waiting room gets moving water, schooling fish, and a calm focal point people actually want to watch. This is not office greenery. It is a new architectural status symbol, one that signals taste, calm, and visible care for the living world.
+                            </p>
+                        </div>
+                        <div className="h-[400px] w-full max-w-sm mx-auto p-4 sm:p-0">
+                            <WellnessMarketChart />
+                        </div>
                     </div>
 
                     <div className="mt-4 text-right">
@@ -159,9 +155,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             </p>
                         </div>
                         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-[var(--primary)]/20 hover:bg-white/[0.04] transition-all duration-300 group">
-                            <p className="text-lg leading-relaxed text-white/80 font-light">
-                                Urban life removes not just wild landscapes, but daily contact with other forms of life. Plants matter, but so do movement, behavior, and the quiet fascination of watching animals exist. Existing living walls usually miss the mark. Many look commercial, stick awkwardly into the room, and are sold as generic wellness <HoverAcronym acronym="décor" definition="Decorative elements of an interior" theme="emerald" />. The real opportunity is much bigger: make nature a premium architectural element that wealthy homeowners, hotels, offices, and healthcare spaces actively want because it is calming, beautiful, memorable, and status-enhancing.
-                            </p>
+                            Urban life removes not just wild landscapes, but daily contact with other forms of life. Plants matter, but so do movement, behavior, and the quiet fascination of watching animals exist. Existing living walls usually miss the mark. Many look commercial, stick awkwardly into the room, and are sold as generic wellness décor. The real opportunity is much bigger: make nature a premium architectural element that wealthy homeowners, hotels, offices, and healthcare spaces actively want because it is calming, beautiful, memorable, and status-enhancing.
                         </div>
                     </div>
                 </motion.section>
@@ -202,7 +196,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             </ul>
                             <ul className="space-y-4">
                                 <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Optional water channels or reflective pools</li>
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Concealed lighting and optional <HoverAcronym acronym="microLED" definition="A display made of tiny light-emitting diodes" theme="emerald" /> horizon/sky panels</li>
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Concealed lighting and optional microLED horizon/sky panels</li>
                                 <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Quiet fans turning the wall into a working biofilter</li>
                             </ul>
                         </div>
