@@ -3,7 +3,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
-import { InlineTags } from "@/components/InlineTags";
+import { InlineTags } from "@/components/ProjectTags";
 
 interface Props {
   theme: string;
@@ -52,8 +52,8 @@ export default function SellCraftHero({ theme, heroImg }: Props) {
         {/* Global Tags Wrapper (Sector Only) */}
         <div className="mt-8 pt-6 border-t border-white/10">
           <InlineTags
-            tags={[{ type: "Sector", label: "AI" }, { type: "Sector", label: "Education" }, { type: "Sector", label: "Media" }]}
-            theme={theme}
+            tags={["AI", "Education", "Media"]}
+            theme={theme as any}
           />
         </div>
       </motion.div>

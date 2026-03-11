@@ -7,7 +7,7 @@ import { Gamepad2, GraduationCap, Building2 } from "lucide-react";
 
 // Global Components
 import { ScrollProgress } from "@/components/ScrollProgress";
-import { InlineTags } from "@/components/InlineTags";
+import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { themeMap } from "@/utils/themeMap";
@@ -96,7 +96,7 @@ export default function SellCraftClient() {
                 The mechanism is simple. Simulation creates deliberate practice. Structured scoring creates signal. Real employer demand creates motivation. Shared data across learning, hiring, and ramp creates a compounding skill graph.
             </p>
             <div className="mt-8">
-                <InlineTags tags={[{ type: "Enabling Technology", label: "Large Language Models" }, { type: "Enabling Technology", label: "Autonomous Agents" }, { type: "Enabling Technology", label: "Voice AI" }, { type: "Enabling Technology", label: "Spatial Computing" }, { type: "Enabling Technology", label: "Social Graph" }]} theme={theme} />
+                <InlineTags tags={["Large Language Models", "Autonomous Agents", "Voice AI", "Spatial Computing", "Social Graph"]} theme={theme} />
             </div>
         </section>
 
@@ -126,7 +126,7 @@ export default function SellCraftClient() {
                 </div>
             </div>
             <div className="mt-8">
-                <InlineTags tags={[{ type: "Customer", label: "Consumers" }, { type: "Customer", label: "Enterprises" }]} theme={theme} />
+                <InlineTags tags={["Consumers", "Enterprises"]} theme={theme} />
             </div>
         </section>
 
@@ -153,7 +153,7 @@ export default function SellCraftClient() {
                 </ol>
             </div>
             <div className="mt-8">
-                <InlineTags tags={[{ type: "Readiness", label: "Build Now" }]} theme={theme} />
+                <InlineTags tags={["Build Now"]} theme={theme} />
             </div>
         </section>
 
@@ -275,7 +275,7 @@ export default function SellCraftClient() {
                 </div>
             </div>
             <div className="pt-8">
-                <InlineTags tags={[{ type: "Product Type", label: "Platform" }, { type: "Product Type", label: "SaaS" }]} theme={theme} />
+                <InlineTags tags={["Platform", "SaaS"]} theme={theme} />
             </div>
         </section>
 
@@ -371,7 +371,7 @@ export default function SellCraftClient() {
                 <li><strong className="text-white">Consumer-first:</strong> Campus leagues, bootcamp partnerships, creator seasons, and highlight-clip virality. Upsell to Pro. Route top players to hiring partners.</li>
             </ul>
             <div className="mt-8">
-                <InlineTags tags={[{ type: "Founder Fit", label: "Operator-Led" }, { type: "Founder Fit", label: "Venture-Scale" }]} theme={theme} />
+                <InlineTags tags={["Operator-Led", "Venture-Scale"]} theme={theme} />
             </div>
         </section>
 
@@ -434,7 +434,7 @@ export default function SellCraftClient() {
                 />
             </div>
             <div className="mt-8">
-                <InlineTags tags={[{ type: "Civilizational Outcome", label: "Abundance" }, { type: "Civilizational Outcome", label: "Human Flourishing" }, { type: "Civilizational Outcome", label: "Social Trust" }]} theme={theme} />
+                <InlineTags tags={["Abundance", "Human Flourishing", "Social Trust"]} theme={theme} />
             </div>
         </section>
 
