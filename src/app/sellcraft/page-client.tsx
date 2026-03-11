@@ -397,7 +397,7 @@ export default function SellCraftClient() {
                     <Zap className="w-4 h-4" /> Transferable Insight
                 </h4>
                 <p className="text-2xl md:text-3xl font-light text-white italic leading-relaxed">
-                    "As AI makes product creation, information access, and scripted workflows cheaper, the durable human edge shifts toward trust-based coordination under uncertainty."
+                    "As AI makes it easier to build, analyze, and automate, the real advantage shifts to people who can earn trust, read the room, and get others aligned when the path is unclear."
                 </p>
             </div>
         </section>
