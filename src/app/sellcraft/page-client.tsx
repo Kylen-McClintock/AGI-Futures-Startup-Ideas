@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Gamepad2, GraduationCap, Building2 } from "lucide-react";
+import { Gamepad2, GraduationCap, Building2, Globe, Zap } from "lucide-react";
 
 // Global Components
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -46,6 +46,24 @@ export default function SellCraftClient() {
       {/* Narrative wrapper */}
       <div className="max-w-4xl mx-auto px-6 py-24 md:py-32 space-y-32">
         <SellCraftHero theme={theme} heroImg={heroImg} />
+
+        {/* Hero Vision Image */}
+        <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
+        >
+            <Image
+                src={heroImg}
+                alt="SellCraft Vision"
+                fill
+                quality={100}
+                className="object-cover"
+                priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+        </motion.div>
 
         {/* --- HEADLINE STAT --- */}
         <section className="space-y-8">
@@ -355,10 +373,16 @@ export default function SellCraftClient() {
                     description="Reps bring empathy and judgment. AI preps, probes, summarizes, and role-plays. SellCraft becomes both the sparring partner and the measurement layer." 
                     icon={Building2} theme={theme} 
                 />
-            </div>
-            <div className="text-xl leading-relaxed text-neutral-300 space-y-6 mt-8 p-6 bg-[var(--primary)]/5 border border-[var(--primary)]/20 rounded-2xl">
-                <p><strong>5. Talent liquidity rises.</strong> As remote work and AI tooling globalize recruiting, companies need signal, not pedigree. SellCraft turns sales ability into a more portable skill passport.</p>
-                <p><strong>6. Career anxiety creates demand for playful upskilling.</strong> People want AI-resilient skills and clearer routes to top-paying work. Pitch Quest is the low-friction on-ramp.</p>
+                <ProductGridCard 
+                    title="5. Talent liquidity rises." 
+                    description="As remote work and AI tooling globalize recruiting, companies need signal, not pedigree. SellCraft turns sales ability into a more portable skill passport." 
+                    icon={Globe} theme={theme} 
+                />
+                <ProductGridCard 
+                    title="6. Career anxiety creates demand for playful upskilling." 
+                    description="People want AI-resilient skills and clearer routes to top-paying work. Pitch Quest is the low-friction on-ramp." 
+                    icon={Zap} theme={theme} 
+                />
             </div>
         </section>
 
@@ -389,26 +413,66 @@ export default function SellCraftClient() {
                 ]} 
             />
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-2xl">
-                    <h4 className="text-red-400 font-bold mb-2">Scoring trust risk</h4>
-                    <p className="text-sm text-neutral-400">If users think the rubric is fake, the product collapses.</p>
-                </div>
-                <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-2xl">
-                    <h4 className="text-red-400 font-bold mb-2">Fairness and compliance risk</h4>
-                    <p className="text-sm text-neutral-400">Screening products live or die on defensibility.</p>
-                </div>
-                <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-2xl">
-                    <h4 className="text-red-400 font-bold mb-2">Consumer retention risk</h4>
-                    <p className="text-sm text-neutral-400">“Fun once” is not enough. The game loop has to sustain identity, status, and improvement.</p>
-                </div>
-                <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-2xl">
-                    <h4 className="text-red-400 font-bold mb-2">Cold start risk</h4>
-                    <p className="text-sm text-neutral-400">Employers need high-signal scenarios before the dataset is rich.</p>
-                </div>
-                <div className="bg-red-900/10 border border-red-500/20 p-6 rounded-2xl lg:col-span-2">
-                    <h4 className="text-red-400 font-bold mb-2">Model commoditization risk</h4>
-                    <p className="text-sm text-neutral-400">General models will make generic role-play easier. SellCraft wins only if the data, scoring, and employer trust stack get meaningfully better than commodity role-play.</p>
-                </div>
+                <details className="group border border-red-500/20 rounded-2xl bg-red-900/10 overflow-hidden">
+                    <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-red-500/5 transition-colors list-none outline-none">
+                        <h4 className="text-red-400 font-bold pr-4">Scoring trust risk</h4>
+                        <div className="flex items-center gap-4 shrink-0">
+                            <span className="text-xs font-mono uppercase tracking-widest text-red-400/80 bg-red-400/10 px-2 py-1 rounded">High</span>
+                            <span className="text-red-500 group-open:rotate-180 transition-transform">▼</span>
+                        </div>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2 border-t border-red-500/10 mt-2 text-sm text-neutral-400">
+                        <p>If users think the rubric is fake, the product collapses.</p>
+                    </div>
+                </details>
+                <details className="group border border-red-500/20 rounded-2xl bg-red-900/10 overflow-hidden">
+                    <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-red-500/5 transition-colors list-none outline-none">
+                        <h4 className="text-red-400 font-bold pr-4">Fairness risk</h4>
+                        <div className="flex items-center gap-4 shrink-0">
+                            <span className="text-xs font-mono uppercase tracking-widest text-red-400/80 bg-red-400/10 px-2 py-1 rounded">High</span>
+                            <span className="text-red-500 group-open:rotate-180 transition-transform">▼</span>
+                        </div>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2 border-t border-red-500/10 mt-2 text-sm text-neutral-400">
+                        <p>Screening products live or die on defensibility.</p>
+                    </div>
+                </details>
+                <details className="group border border-yellow-500/20 rounded-2xl bg-yellow-900/10 overflow-hidden">
+                    <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-yellow-500/5 transition-colors list-none outline-none">
+                        <h4 className="text-yellow-400 font-bold pr-4">Consumer retention</h4>
+                        <div className="flex items-center gap-4 shrink-0">
+                            <span className="text-xs font-mono uppercase tracking-widest text-yellow-400/80 bg-yellow-400/10 px-2 py-1 rounded">Medium</span>
+                            <span className="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
+                        </div>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2 border-t border-yellow-500/10 mt-2 text-sm text-neutral-400">
+                        <p>“Fun once” is not enough. The game loop has to sustain identity, status, and improvement.</p>
+                    </div>
+                </details>
+                <details className="group border border-yellow-500/20 rounded-2xl bg-yellow-900/10 overflow-hidden">
+                    <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-yellow-500/5 transition-colors list-none outline-none">
+                        <h4 className="text-yellow-400 font-bold pr-4">Cold start risk</h4>
+                        <div className="flex items-center gap-4 shrink-0">
+                            <span className="text-xs font-mono uppercase tracking-widest text-yellow-400/80 bg-yellow-400/10 px-2 py-1 rounded">Medium</span>
+                            <span className="text-yellow-500 group-open:rotate-180 transition-transform">▼</span>
+                        </div>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2 border-t border-yellow-500/10 mt-2 text-sm text-neutral-400">
+                        <p>Employers need high-signal scenarios before the dataset is rich.</p>
+                    </div>
+                </details>
+                <details className="group border border-red-500/30 rounded-2xl bg-red-900/20 overflow-hidden lg:col-span-2">
+                    <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-red-500/10 transition-colors list-none outline-none">
+                        <h4 className="text-red-300 font-bold pr-4">Model commoditization</h4>
+                        <div className="flex items-center gap-4 shrink-0">
+                            <span className="text-xs font-mono uppercase tracking-widest text-red-200 bg-red-500/30 px-2 py-1 rounded">Very High</span>
+                            <span className="text-red-400 group-open:rotate-180 transition-transform">▼</span>
+                        </div>
+                    </summary>
+                    <div className="px-6 pb-6 pt-2 border-t border-red-500/20 mt-2 text-sm text-neutral-300">
+                        <p>General models will make generic role-play easier. SellCraft wins only if the data, scoring, and employer trust stack get meaningfully better than commodity role-play.</p>
+                    </div>
+                </details>
             </div>
         </section>
 
@@ -457,37 +521,37 @@ export default function SellCraftClient() {
         {/* --- FOOTER: Acronyms & References --- */}
         <section className="pb-32">
             <details className="group border border-white/10 rounded-2xl bg-black/40 overflow-hidden text-sm">
-                <summary className="p-4 cursor-pointer flex justify-between items-center hover:bg-white/5 transition-colors list-none">
+                <summary className="p-4 cursor-pointer flex justify-between items-center hover:bg-white/5 transition-colors list-none outline-none">
                     <span className="font-semibold text-neutral-400 group-hover:text-[var(--primary)] transition-colors">Acronyms & References</span>
                     <span className="text-neutral-500 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
-                <div className="p-6 border-t border-white/10 space-y-6 text-neutral-500 bg-black/20">
+                <div className="p-6 border-t border-white/10 space-y-6 text-neutral-400 bg-black/20">
                     <div>
-                        <h4 className="text-[var(--primary)] mb-2 font-medium">Acronyms</h4>
-                        <ul className="list-none space-y-1">
-                            <li><strong className="text-neutral-400">SDRs:</strong> Sales Development Representatives</li>
-                            <li><strong className="text-neutral-400">AEs:</strong> Account Executives</li>
-                            <li><strong className="text-neutral-400">NPCs:</strong> Non-Player Characters</li>
-                            <li><strong className="text-neutral-400">SJT:</strong> Situational Judgment Test</li>
-                            <li><strong className="text-neutral-400">ATS:</strong> Applicant Tracking System</li>
-                            <li><strong className="text-neutral-400">L&D:</strong> Learning and Development</li>
-                            <li><strong className="text-neutral-400">RevOps:</strong> Revenue Operations</li>
-                            <li><strong className="text-neutral-400">CRM:</strong> Customer Relationship Management</li>
-                            <li><strong className="text-neutral-400">LMS:</strong> Learning Management System</li>
-                            <li><strong className="text-neutral-400">SQL:</strong> Sales Qualified Lead</li>
-                            <li><strong className="text-neutral-400">LLMs:</strong> Large Language Models</li>
+                        <h4 className="text-[var(--primary)] mb-3 font-medium">Acronyms</h4>
+                        <ul className="list-none space-y-2">
+                            <li><strong className="text-white font-semibold">SDRs:</strong> Sales Development Representatives</li>
+                            <li><strong className="text-white font-semibold">AEs:</strong> Account Executives</li>
+                            <li><strong className="text-white font-semibold">NPCs:</strong> Non-Player Characters</li>
+                            <li><strong className="text-white font-semibold">SJT:</strong> Situational Judgment Test</li>
+                            <li><strong className="text-white font-semibold">ATS:</strong> Applicant Tracking System</li>
+                            <li><strong className="text-white font-semibold">L&D:</strong> Learning and Development</li>
+                            <li><strong className="text-white font-semibold">RevOps:</strong> Revenue Operations</li>
+                            <li><strong className="text-white font-semibold">CRM:</strong> Customer Relationship Management</li>
+                            <li><strong className="text-white font-semibold">LMS:</strong> Learning Management System</li>
+                            <li><strong className="text-white font-semibold">SQL:</strong> Sales Qualified Lead</li>
+                            <li><strong className="text-white font-semibold">LLMs:</strong> Large Language Models</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 className="text-[var(--primary)] mb-2 font-medium">References</h4>
-                        <ol className="list-decimal pl-4 space-y-2">
-                            <li><a href="https://journals.sagepub.com/doi/10.1177/0022242921989437" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Xueming Luo, Marco Shaojun Qin, Zheng Fang, and Zhe Qu, Artificial Intelligence Coaches for Sales Agents: Caveats and Solutions, Journal of Marketing (2021).</a></li>
-                            <li><a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/virtual-reality-study.html" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">PwC, How virtual reality is redefining soft skills training (2022).</a></li>
-                            <li><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">McKinsey, The state of AI in early 2024 (2024).</a></li>
-                            <li><a href="https://www.weforum.org/reports/the-future-of-jobs-report-2023/" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">World Economic Forum, Future of Jobs Report 2025: The jobs of the future and the skills you need to get them (2025).</a></li>
-                            <li><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/work-samples-and-simulations/" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">U.S. Office of Personnel Management, Work Samples and Simulations.</a></li>
-                            <li><a href="https://www.cambridge.org/core/journals/industrial-and-organizational-psychology" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Industrial and Organizational Psychology, Structured interviews: moving beyond mean validity…</a></li>
-                            <li><a href="https://www.grandviewresearch.com/industry-analysis/sales-enablement-platform-market-report" target="_blank" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Grand View Research, Sales Enablement Platform Market, 2025–2030 report summary.</a></li>
+                        <h4 className="text-[var(--primary)] mb-3 font-medium mt-8">References</h4>
+                        <ol className="list-decimal pl-4 space-y-3">
+                            <li className="group/link"><a href="https://journals.sagepub.com/doi/10.1177/0022242921989437" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Xueming Luo, Marco Shaojun Qin, Zheng Fang, and Zhe Qu, Artificial Intelligence Coaches for Sales Agents: Caveats and Solutions, Journal of Marketing (2021) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/virtual-reality-study.html" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">PwC, How virtual reality is redefining soft skills training (2022) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">McKinsey, The state of AI in early 2024 (2024) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.weforum.org/reports/the-future-of-jobs-report-2023/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">World Economic Forum, Future of Jobs Report 2025: The jobs of the future and the skills you need to get them (2025) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.opm.gov/policy-data-oversight/assessment-and-selection/other-assessment-methods/work-samples-and-simulations/" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">U.S. Office of Personnel Management, Work Samples and Simulations <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.cambridge.org/core/journals/industrial-and-organizational-psychology" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Industrial and Organizational Psychology, Structured interviews: moving beyond mean validity… <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
+                            <li className="group/link"><a href="https://www.grandviewresearch.com/industry-analysis/sales-enablement-platform-market-report" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Grand View Research, Sales Enablement Platform Market, 2025–2030 report summary <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
                         </ol>
                     </div>
                 </div>
