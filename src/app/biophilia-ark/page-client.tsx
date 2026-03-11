@@ -11,7 +11,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/cloud_forest_wall.png';
+import heroImage from './assets/cloud_forest.png';
 import desertMonolith from './assets/desert_monolith.png';
 import freshwaterCliff from './assets/freshwater_cliff.png';
 import tropicalCanopy from './assets/tropical_canopy.png';
