@@ -55,9 +55,19 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
     const uniqueTags = useMemo(() => {
         const tags: Record<string, string[]> = {};
         filterCategories.forEach(cat => {
-            tags[cat.id] = Array.from(new Set(
-                projects.flatMap(p => p.tags?.[cat.id as keyof typeof p.tags] || [])
-            )).sort();
+            const allCatTags = projects.flatMap(p => {
+                const projectTagsObj = p.tags;
+                if (!projectTagsObj) return [];
+
+                // For instance, tags might be undefined or empty
+                const val = projectTagsObj[cat.id as keyof typeof projectTagsObj];
+                if (Array.isArray(val)) return val;
+                if (typeof val === 'string') {
+                    try { return JSON.parse(val); } catch { return [val]; }
+                }
+                return [];
+            });
+            tags[cat.id] = Array.from(new Set(allCatTags)).filter(Boolean).sort();
         });
         return tags;
     }, [projects]);
@@ -253,7 +263,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
 
                                 {/* 2. Tag Selector (Visible only if category is selected) */}
                                 {selectedCategory && (
-                                    <div className="flex items-center gap-2 animate-in fade-in slide-in-from-left-2 duration-300">
+                                    <div className="flex items-center gap-2 transition-all duration-300">
                                         <ArrowRight className="w-3 h-3 text-white/30" />
                                         <select
                                             value="default"
@@ -266,7 +276,7 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                                                 backgroundSize: '1em'
                                             }}
                                         >
-                                            <option value="default">Select Tag...</option>
+                                            <option value="default">Select Tag... ({(uniqueTags[selectedCategory] || []).length})</option>
                                             {(uniqueTags[selectedCategory] || []).map(opt => (
                                                 <option key={opt} value={opt}>{opt}</option>
                                             ))}

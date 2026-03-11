@@ -27,27 +27,27 @@ export default async function Home() {
     // Create a map for quick access
     const projectDataMap = new Map(dbProjects?.map(p => [p.slug, p]) || []);
 
-    const fallbackScores: Record<string, { moat: number, difficulty: number, impact: number, created_at: string }> = {
-        "murmuration": { moat: 85, difficulty: 70, impact: 92, created_at: "2024-03-09T10:00:00Z" },
-        "attune": { moat: 75, difficulty: 82, impact: 88, created_at: "2024-03-08T10:00:00Z" },
-        "porchfront": { moat: 88, difficulty: 75, impact: 82, created_at: "2024-03-07T10:00:00Z" },
-        "homequote": { moat: 79, difficulty: 67, impact: 75, created_at: "2024-03-06T10:00:00Z" },
-        "aura": { moat: 72, difficulty: 81, impact: 85, created_at: "2024-03-05T10:00:00Z" },
-        "hearth": { moat: 78, difficulty: 73, impact: 76, created_at: "2024-03-05T10:00:00Z" },
-        "afl": { moat: 78, difficulty: 61, impact: 80, created_at: "2024-03-04T10:00:00Z" },
-        "deepguide": { moat: 78, difficulty: 72, impact: 83, created_at: "2024-03-03T10:00:00Z" },
-        "main-street-legacy": { moat: 78, difficulty: 74, impact: 81, created_at: "2024-03-02T10:00:00Z" },
-        "helm": { moat: 78, difficulty: 71, impact: 68, created_at: "2024-03-01T10:00:00Z" },
-        "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z" },
-        "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z" },
-        "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z" },
-        "handraise": { moat: 76, difficulty: 63, impact: 65, created_at: "2024-03-12T10:00:00Z" }
+    const fallbackData: Record<string, { moat: number, difficulty: number, impact: number, created_at: string, tags?: any }> = {
+        "murmuration": { moat: 85, difficulty: 70, impact: 92, created_at: "2024-03-09T10:00:00Z", tags: { sector: ['AI', 'Governance', 'Security', 'Existential Risk Mitigation'], bottleneck: ['Coordination', 'Regulatory Friction', 'Trust'], customer: ['Enterprises', 'Governments'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Simulations', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Operator-Led'], outcomes: ['Resilience', 'Better Governance', 'Existential Risk Reduction', 'Differentially Defensive'] } },
+        "attune": { moat: 75, difficulty: 82, impact: 88, created_at: "2024-03-08T10:00:00Z", tags: { sector: ['Relationships', 'Community', 'AI'], bottleneck: ['Trust', 'Loneliness', 'Social Fragmentation'], customer: ['Couples', 'Consumers'], product_type: ['Consumer App', 'Personalized AI'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Societal Cohesion', 'Social Trust', 'Community Renewal'] } },
+        "porchfront": { moat: 88, difficulty: 75, impact: 82, created_at: "2024-03-07T10:00:00Z", tags: { sector: ['Community', 'Cities', 'Relationships'], bottleneck: ['Loneliness', 'Trust', 'Coordination'], customer: ['Consumers', 'Families'], product_type: ['Marketplace', 'Coordination Infrastructure'], enabling_technology: ['Social Graph', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Social Trust', 'Societal Cohesion', 'Community Renewal'] } },
+        "homequote": { moat: 79, difficulty: 67, impact: 75, created_at: "2024-03-06T10:00:00Z", tags: { sector: ['AI', 'Housing'], bottleneck: ['Trust', 'Coordination'], customer: ['Consumers', 'Enterprises'], product_type: ['Marketplace', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Vision AI', 'Voice AI', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Resilience', 'Social Trust', 'Human Flourishing', 'Scientific Acceleration', 'Societal Cohesion'] } },
+        "aura": { moat: 72, difficulty: 81, impact: 85, created_at: "2024-03-05T10:00:00Z", tags: { sector: ['AI', 'Education', 'Security', 'Existential Risk Mitigation'], bottleneck: ['Trust', 'Loneliness', 'Social Fragmentation'], customer: ['Consumers', 'Startups'], product_type: ['Platform', 'Marketplace'], enabling_technology: ['Large Language Models', 'Voice AI', 'Vision AI', 'Spatial Computing', 'Augmented Reality'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Social Trust', 'Ender Prevention', 'Existential Risk Reduction'] } },
+        "hearth": { moat: 78, difficulty: 73, impact: 76, created_at: "2024-03-05T10:00:00Z", tags: { sector: ['Real Estate', 'Community', 'Software'], bottleneck: ['Coordination', 'Financing', 'Trust'], customer: ['Founders', 'Families', 'Digital Nomads'], product_type: ['Platform', 'Marketplace', 'Services'], enabling_technology: ['Large Language Models', 'Knowledge Graphs', 'Autonomous Agents'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Community Renewal'] } },
+        "afl": { moat: 78, difficulty: 61, impact: 80, created_at: "2024-03-04T10:00:00Z", tags: { sector: ['AI', 'Education', 'Community', 'Media'], bottleneck: ['Talent Matching', 'Trust', 'Cultural Resistance'], customer: ['Founders', 'Consumers'], product_type: ['Institution', 'Platform'] } },
+        "deepguide": { moat: 78, difficulty: 72, impact: 83, created_at: "2024-03-03T10:00:00Z", tags: { sector: ['AI', 'Healthcare', 'Psychedelics', 'Science'], bottleneck: ['Trust', 'Regulatory Friction', 'Scientific Slowdown'], customer: ['Caregivers', 'Scientists'], product_type: ['SaaS', 'Agent'], enabling_technology: ['Large Language Models', 'Voice AI', 'Knowledge Graphs', 'Autonomous Agents'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Scientific Acceleration', 'Social Trust', 'Resilience'] } },
+        "main-street-legacy": { moat: 78, difficulty: 74, impact: 81, created_at: "2024-03-02T10:00:00Z", tags: { sector: ['AI', 'Finance', 'Education'], bottleneck: ['Trust', 'Coordination', 'Talent Matching'], customer: ['Founders', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Community Renewal', 'Resilience'] } },
+        "helm": { moat: 78, difficulty: 71, impact: 68, created_at: "2024-03-01T10:00:00Z", tags: { sector: ['AI', 'Community', 'Media'], bottleneck: ['Coordination', 'Trust', 'Talent Matching'], customer: ['Founders', 'Startups'], product_type: ['Platform', 'Agent'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Freedom'] } },
+        "agentable": { moat: 78, difficulty: 71, impact: 74, created_at: "2024-02-28T10:00:00Z", tags: { sector: ['AI', 'Security'], bottleneck: ['Trust', 'Coordination'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Vision AI'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Venture-Scale'], outcomes: ['Abundance', 'Social Trust', 'Alignment', 'Differentially Defensive'] } },
+        "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z", tags: { sector: ['AI', 'Biotech', 'Healthcare', 'Longevity'], bottleneck: ['Aging', 'Disease', 'Scientific Slowdown'], customer: ['Consumers', 'Doctors'], product_type: ['Platform', 'Personalized AI'], enabling_technology: ['Large Language Models', 'Wearables', 'Knowledge Graphs', 'Synthetic Biology', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience'] } },
+        "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z", tags: { sector: ['AI', 'Education'], bottleneck: ['Talent Matching', 'Trust', 'Coordination'], customer: ['Startups', 'Enterprises'], product_type: ['Platform', 'Marketplace'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Societal Cohesion'] } },
+        "handraise": { moat: 76, difficulty: 63, impact: 65, created_at: "2024-03-12T10:00:00Z", tags: { sector: ['AI', 'Social Media', 'Community'], bottleneck: ['Trust', 'Coordination', 'Talent Matching'], customer: ['Founders', 'Startups'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Knowledge Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Social Trust', 'Societal Cohesion'] } }
     };
 
     // Helper to merge static data with DB data
     const createProject = (staticData: Omit<ProjectData, 'created_at' | 'moat_score' | 'difficulty_score' | 'civilizational_impact_score'>): ProjectData => {
         const dbData = projectDataMap.get(staticData.slug);
-        const fallback = fallbackScores[staticData.slug] || { moat: 0, difficulty: 0, impact: 0, created_at: new Date().toISOString() };
+        const fallback = fallbackData[staticData.slug] || { moat: 0, difficulty: 0, impact: 0, created_at: new Date().toISOString(), tags: undefined };
 
         let moat = fallback.moat;
         if (dbData?.moat_score) moat = typeof dbData.moat_score === 'object' ? (dbData.moat_score as any).ai_scored : dbData.moat_score;
@@ -58,7 +58,10 @@ export default async function Home() {
         let impact = fallback.impact;
         if (dbData?.civilizational_impact_score) impact = typeof dbData.civilizational_impact_score === 'object' ? (dbData.civilizational_impact_score as any).ai_scored : dbData.civilizational_impact_score;
 
-        const tags = Array.isArray(dbData?.project_tags) ? dbData?.project_tags[0] : (dbData?.project_tags || undefined);
+        // Use DB tags if available, otherwise safely use fallback tags from the static dictionary
+        const dbTags = Array.isArray(dbData?.project_tags) ? dbData?.project_tags[0] : (dbData?.project_tags || undefined);
+        const tags = dbTags || fallback.tags || undefined;
+
         const ratings = dbData?.civilizational_impact_ratings || {};
 
         return {
