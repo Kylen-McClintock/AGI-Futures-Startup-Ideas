@@ -42,19 +42,19 @@ export function SkillTransition() {
         restDelta: 0.001
     });
 
-    // Stage 1: Initial Skills Visibility (Shows longer, fades out later)
-    const skillsOpacity = useTransform(smoothProgress, [0, 0.4, 0.6], [1, 1, 0]);
-    const skillsY = useTransform(smoothProgress, [0, 0.4, 0.6], [0, 0, -50]);
-    const skillsScale = useTransform(smoothProgress, [0, 0.4, 0.6], [1, 1, 0.95]);
+    // Stage 1: Initial Skills Visibility (Fades out extremely early)
+    const skillsOpacity = useTransform(smoothProgress, [0, 0.15, 0.3], [1, 1, 0]);
+    const skillsY = useTransform(smoothProgress, [0, 0.15, 0.3], [0, 0, -50]);
+    const skillsScale = useTransform(smoothProgress, [0, 0.15, 0.3], [1, 1, 0.95]);
 
     // Stage 2: The Transition Graphic (Lines converging/diverging)
-    const linesOpacity = useTransform(smoothProgress, [0.3, 0.5, 0.7], [0, 1, 0]);
-    const linesScale = useTransform(smoothProgress, [0.3, 0.5, 0.7], [0.8, 1, 0.8]);
+    const linesOpacity = useTransform(smoothProgress, [0.15, 0.35, 0.55], [0, 1, 0]);
+    const linesScale = useTransform(smoothProgress, [0.15, 0.35, 0.55], [0.8, 1, 0.8]);
 
-    // Stage 3: Occupations Visibility (Fades in earlier so it's visible while scrolling)
-    const occupationsOpacity = useTransform(smoothProgress, [0.5, 0.8], [0, 1]);
-    const occupationsY = useTransform(smoothProgress, [0.5, 0.8], [50, 0]);
-    const occupationsScale = useTransform(smoothProgress, [0.5, 0.8], [0.95, 1]);
+    // Stage 3: Occupations Visibility (Fades in very early and holds through the bottom)
+    const occupationsOpacity = useTransform(smoothProgress, [0.35, 0.6], [0, 1]);
+    const occupationsY = useTransform(smoothProgress, [0.35, 0.6], [50, 0]);
+    const occupationsScale = useTransform(smoothProgress, [0.35, 0.6], [0.95, 1]);
 
     return (
         <section ref={containerRef} className="py-24 relative min-h-[150vh] flex flex-col justify-center border-t border-white/10 mt-32">

@@ -16,10 +16,10 @@ import { themeMap } from "@/utils/themeMap";
 import SellCraftHero from "./components/SellCraftHero";
 import ExpandableScoreCard from "./components/ExpandableScoreCard";
 import ProductGridCard from "./components/ProductGridCard";
-import ValueFlowDiagram from "./components/ValueFlowDiagram";
 import PerformanceDataViz from "./components/PerformanceDataViz";
 import { ICPUseCases } from "./components/ICPUseCases";
 import { SkillTransition } from "./components/SkillTransition";
+import { MarketGrowthChart } from "./components/MarketGrowthChart";
 
 // Assets
 import heroImg from "./assets/sellcraft_hero.png";
@@ -120,35 +120,7 @@ export default function SellCraftClient() {
             </div>
         </section>
 
-        {/* --- SPECIFIC EXAMPLES / ICP --- */}
-        <section className="space-y-8">
-            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Specific examples per ICP</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                    <p className="text-neutral-300 leading-relaxed">
-                        A college senior with no logo-brand internship plays Pitch Quest, posts clips, improves her discovery score, toggles <strong className="text-[var(--primary)]">Open to Roles</strong>, and gets pulled into software sales interviews she would never have reached through resume screening alone.
-                    </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                    <p className="text-neutral-300 leading-relaxed">
-                        A medtech company replaces vague mock interviews with a Proving Ground that tests clinical objection handling, procurement pushback, and stakeholder mapping before final rounds.
-                    </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                    <p className="text-neutral-300 leading-relaxed">
-                        A cybersecurity team feeds Gong, Salesforce, security questionnaires, and loss reasons into Practice, then drills reps on the exact objections that stall deals in late stage enterprise cycles.
-                    </p>
-                </div>
-                <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                    <p className="text-neutral-300 leading-relaxed">
-                        A sales bootcamp uses campus leagues and creator ladders to keep learners engaged, benchmark progress, and surface top performers to hiring partners.
-                    </p>
-                </div>
-            </div>
-            <div className="mt-8">
-                <InlineTags tags={["Consumers", "Enterprises"]} theme={theme} />
-            </div>
-        </section>
+        {/* (Specific Examples ICP section removed to avoid redundancy with the tabbed interactive block below) */}
 
         {/* --- WHY NOW --- */}
         <section className="space-y-8 relative">
@@ -182,7 +154,12 @@ export default function SellCraftClient() {
             <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Market</h2>
             <div className="text-xl leading-relaxed text-neutral-300 space-y-6">
                 <p>
-                    The clean initial wedge is sales enablement and sales training. Grand View Research estimates the global sales enablement platform market at <strong className="text-[var(--primary)]">$5.23 billion in 2024</strong>, projected to reach <strong className="text-[var(--primary)]">$12.78 billion by 2030</strong> at a <strong className="text-white">16.3% compound annual growth rate</strong>.
+                    The clean initial wedge is sales enablement and sales training. 
+                </p>
+                
+                <MarketGrowthChart />
+                
+                <p>
                     <ExpandableCitation label="[7]" theme={theme as any} sourceUrl="https://www.grandviewresearch.com/industry-analysis/sales-enablement-platform-market-report" sourceText="Grand View Research, Sales Enablement Platform Market, 2025–2030 report summary." />
                     That is only the wedge. SellCraft also touches adjacent budgets in hiring, assessment, learning and development, and recruiting infrastructure.
                 </p>
