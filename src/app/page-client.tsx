@@ -18,6 +18,7 @@ export type ProjectData = {
     moat_score: number;
     difficulty_score: number;
     civilizational_impact_score: number;
+    civilizational_impact_ratings?: Record<string, { ai_scored: number }>;
     tags?: {
         sector?: string[];
         bottleneck?: string[];
@@ -42,10 +43,13 @@ const filterCategories = [
 ] as const;
 
 export default function HomeClient({ projects }: { projects: ProjectData[] }) {
-    const [sortBy, setSortBy] = useState<"recent" | "impact" | "moat" | "difficulty">("recent");
+    const [sortBy, setSortBy] = useState<"recent" | "impact" | "moat" | "difficulty" | string>("recent");
     const [sortDirection, setSortDirection] = useState<"desc" | "asc">("desc");
     const [searchQuery, setSearchQuery] = useState("");
-    const [activeFilters, setActiveFilters] = useState<Record<string, string>>({});
+
+    // New drill-down state
+    const [activeTags, setActiveTags] = useState<Array<{ category: string, tag: string }>>([]);
+    const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     // Extract all unique tags for each category
     const uniqueTags = useMemo(() => {
@@ -58,15 +62,33 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
         return tags;
     }, [projects]);
 
+    const handleAddFilter = (category: string, tag: string) => {
+        if (activeTags.length < 3 && tag && tag !== 'all') {
+            // Check if exact filter already exists to prevent duplicates
+            if (!activeTags.some(t => t.category === category && t.tag === tag)) {
+                setActiveTags([...activeTags, { category, tag }]);
+            }
+        }
+        setSelectedCategory(null);
+    };
+
+    const removeFilter = (indexToRemove: number) => {
+        setActiveTags(activeTags.filter((_, idx) => idx !== indexToRemove));
+
+        // If sorting by an outcome that was just removed, reset sort
+        const removedTag = activeTags[indexToRemove];
+        if (removedTag.category === "outcomes" && sortBy === `outcome_${removedTag.tag}`) {
+            setSortBy("recent");
+        }
+    };
+
     const sortedProjects = [...projects]
         .filter((project) => {
-            // Check all active tag filters
-            for (const [catId, selectedValue] of Object.entries(activeFilters)) {
-                if (selectedValue && selectedValue !== "all") {
-                    const projectTags = project.tags?.[catId as keyof typeof project.tags] || [];
-                    if (!projectTags.includes(selectedValue)) {
-                        return false;
-                    }
+            // Must contain ALL active tags
+            for (const activeTag of activeTags) {
+                const projectTags = project.tags?.[activeTag.category as keyof typeof project.tags] || [];
+                if (!projectTags.includes(activeTag.tag)) {
+                    return false;
                 }
             }
 
@@ -92,20 +114,25 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
             return true;
         })
         .sort((a, b) => {
-            // If filtering by outcome specifically, default to impact if sort is recent
-            const effectiveSortBy = (activeFilters.outcomes && activeFilters.outcomes !== "all" && sortBy === "recent") ? "impact" : sortBy;
-
             let diff = 0;
-            if (effectiveSortBy === "impact") {
+
+            // Check if sorting by a specific outcome
+            if (sortBy.startsWith("outcome_")) {
+                const outcomeName = sortBy.replace("outcome_", "");
+                const scoreA = a.civilizational_impact_ratings?.[outcomeName]?.ai_scored || 0;
+                const scoreB = b.civilizational_impact_ratings?.[outcomeName]?.ai_scored || 0;
+                diff = scoreB - scoreA;
+            } else if (sortBy === "impact") {
                 diff = b.civilizational_impact_score - a.civilizational_impact_score;
-            } else if (effectiveSortBy === "moat") {
+            } else if (sortBy === "moat") {
                 diff = b.moat_score - a.moat_score;
-            } else if (effectiveSortBy === "difficulty") {
+            } else if (sortBy === "difficulty") {
                 diff = b.difficulty_score - a.difficulty_score;
             } else {
                 // Default: Recent (descending by created_at)
                 diff = new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
             }
+
             return sortDirection === "desc" ? diff : -diff;
         });
 
@@ -159,6 +186,12 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                                     <option value="impact">Civilizational Impact</option>
                                     <option value="moat">Moat Potential</option>
                                     <option value="difficulty">Difficulty to Build</option>
+                                    {/* Dynamically add sorting options for selected Outcomes */}
+                                    {activeTags.filter(t => t.category === 'outcomes').map(t => (
+                                        <option key={`sort-outcome-${t.tag}`} value={`outcome_${t.tag}`}>
+                                            ↳ Rank by {t.tag} Score
+                                        </option>
+                                    ))}
                                 </select>
                                 <button
                                     onClick={() => setSortDirection(d => d === "desc" ? "asc" : "desc")}
@@ -171,37 +204,77 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                         </div>
                     </div>
 
-                    {/* Secondary Row: Tag Filters */}
-                    <div className="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-                        <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest shrink-0 mr-2">Filter By:</span>
-                        {filterCategories.map(cat => {
-                            const options = uniqueTags[cat.id] || [];
-                            if (options.length === 0) return null;
-                            const isSelected = activeFilters[cat.id] && activeFilters[cat.id] !== "all";
+                    {/* Secondary Row: Active Filters & Drill-down */}
+                    <div className="flex flex-col gap-3 min-h-[44px]">
+                        {/* Active Filter Badges */}
+                        {activeTags.length > 0 && (
+                            <div className="flex flex-wrap items-center gap-2">
+                                <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest mr-1">Active Filters:</span>
+                                {activeTags.map((tagObj, idx) => {
+                                    const catLabel = filterCategories.find(c => c.id === tagObj.category)?.label || tagObj.category;
+                                    return (
+                                        <div key={`${tagObj.category}-${idx}`} className="flex items-center gap-1.5 bg-[var(--primary)]/10 border border-[var(--primary)]/30 text-[var(--primary)] text-xs font-medium px-3 py-1 rounded-full">
+                                            <span>{catLabel}: <span className="text-white font-semibold">{tagObj.tag}</span></span>
+                                            <button
+                                                onClick={() => removeFilter(idx)}
+                                                className="hover:bg-[var(--primary)]/20 p-0.5 rounded-full transition-colors ml-1"
+                                                aria-label="Remove filter"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                            </button>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        )}
 
-                            // Use pure white hex encoded for default, bright green encoded for selected
-                            const strokeColor = isSelected ? '%2300ff00' : 'rgba(255,255,255,0.8)';
+                        {/* Drill-down Selectors */}
+                        {activeTags.length < 3 && (
+                            <div className="flex flex-wrap items-center gap-3">
+                                <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest mr-1">Add Filter:</span>
 
-                            return (
+                                {/* 1. Category Selector */}
                                 <select
-                                    key={cat.id}
-                                    value={activeFilters[cat.id] || "all"}
-                                    onChange={(e) => setActiveFilters(prev => ({ ...prev, [cat.id]: e.target.value }))}
-                                    className={`bg-black/50 border text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none transition-colors cursor-pointer appearance-none pr-8 shrink-0 relative ${isSelected ? 'border-[var(--primary)] text-[var(--primary)] bg-[var(--primary)]/5' : 'border-white/20 text-white/80 hover:border-white/40 focus:border-[var(--primary)]'}`}
+                                    value={selectedCategory || "default"}
+                                    onChange={(e) => setSelectedCategory(e.target.value === "default" ? null : e.target.value)}
+                                    className="bg-black/50 border border-white/20 text-white/80 text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none hover:border-white/40 focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8"
                                     style={{
-                                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='${strokeColor}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
                                         backgroundRepeat: 'no-repeat',
                                         backgroundPosition: 'right 0.75rem center',
                                         backgroundSize: '1em'
                                     }}
                                 >
-                                    <option value="all">Any {cat.label}</option>
-                                    {options.map(opt => (
-                                        <option key={opt} value={opt}>{opt}</option>
+                                    <option value="default">Select Category...</option>
+                                    {filterCategories.map(cat => (
+                                        <option key={cat.id} value={cat.id}>{cat.label}</option>
                                     ))}
                                 </select>
-                            );
-                        })}
+
+                                {/* 2. Tag Selector (Visible only if category is selected) */}
+                                {selectedCategory && (
+                                    <div className="flex items-center gap-2 animate-in fade-in slide-in-from-left-2 duration-300">
+                                        <ArrowRight className="w-3 h-3 text-white/30" />
+                                        <select
+                                            value="default"
+                                            onChange={(e) => handleAddFilter(selectedCategory, e.target.value)}
+                                            className="bg-black/50 border border-[var(--primary)]/50 text-white text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8 shadow-[0_0_10px_rgba(var(--primary-rgb),0.1)]"
+                                            style={{
+                                                backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300ff00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                                                backgroundRepeat: 'no-repeat',
+                                                backgroundPosition: 'right 0.75rem center',
+                                                backgroundSize: '1em'
+                                            }}
+                                        >
+                                            <option value="default">Select Tag...</option>
+                                            {(uniqueTags[selectedCategory] || []).map(opt => (
+                                                <option key={opt} value={opt}>{opt}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                )}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

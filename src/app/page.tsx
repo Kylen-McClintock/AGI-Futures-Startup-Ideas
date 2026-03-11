@@ -22,7 +22,7 @@ export default async function Home() {
     // Fetch scores and creation dates for all projects
     const { data: dbProjects } = await supabase
         .from('projects')
-        .select('slug, created_at, moat_score, difficulty_score, civilizational_impact_score, project_tags(*)');
+        .select('slug, created_at, moat_score, difficulty_score, civilizational_impact_score, civilizational_impact_ratings, project_tags(*)');
 
     // Create a map for quick access
     const projectDataMap = new Map(dbProjects?.map(p => [p.slug, p]) || []);
@@ -59,6 +59,7 @@ export default async function Home() {
         if (dbData?.civilizational_impact_score) impact = typeof dbData.civilizational_impact_score === 'object' ? (dbData.civilizational_impact_score as any).ai_scored : dbData.civilizational_impact_score;
 
         const tags = Array.isArray(dbData?.project_tags) ? dbData?.project_tags[0] : (dbData?.project_tags || undefined);
+        const ratings = dbData?.civilizational_impact_ratings || {};
 
         return {
             ...staticData,
@@ -66,6 +67,7 @@ export default async function Home() {
             moat_score: moat || fallback.moat,
             difficulty_score: difficulty || fallback.difficulty,
             civilizational_impact_score: impact || fallback.impact,
+            civilizational_impact_ratings: ratings,
             tags: tags,
         };
     };
