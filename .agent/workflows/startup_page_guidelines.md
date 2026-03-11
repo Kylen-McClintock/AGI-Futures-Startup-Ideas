@@ -32,7 +32,7 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - Treat the "Civilizational Impact" section as an interactive data visualization.
 - Implement the score box using a glass-panel `<details>` HTML tag pattern (as seen in DeepGuide and Main Street Legacy).
 - The main visible number summary must be the overall `civilizational_impact_score`.
-- When clicked/expanded, it must reveal a cleanly styled list of the specific sub-scores (e.g., Abundance, Human Flourishing, Community Renewal, Resilience).
+- When clicked/expanded, it must reveal a cleanly styled list of the specific sub-scores (e.g., Biodiversity, Climate, Air Quality, Abundance, Human Flourishing, Community Renewal, Resilience).
 - **CRITICAL**: The scores must perfectly match the exact values defined for the startup within `seed_tags.ts`.
 
 ## Interactivity & Components
@@ -54,3 +54,15 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - **Contextual Image (Middle)**: Grounding the operational reality or the specific vertical.
 - **Thematic Closing (Bottom)**: A strong visual at the bottom of the page to close the narrative out before the references or meta details. 
 - Ensure images utilize Next.js `<Image />` component with `fill` and absolute positioning for edge-to-edge or rounded-panel designs.
+
+## 7. Database (Supabase) Scoring Requirements
+As part of generating the new idea, you must also evaluate and score the startup and append its data to the `seed_tags.ts` script so it syncs with Supabase. 
+
+**CRITICAL RULE:** Use existing scores for the tags/criteria if they are already provided in the prompt/context for that idea. Only if a score doesn't yet exist for a specific tag or metric, then you should assess and apply a new score. All scores are on a scale of **-100 to 100**.
+
+You must generate the following five correct properties on its `projects` table row in `seed_tags.ts`. They should be formatted as follows:
+1. `created_at`: You MUST add a `created_at` property to the new startup object. Set it to the exact current date and time in ISO 8601 format (e.g. `'2026-03-12T10:00:00Z'`). This guarantees the homepage \"Recently Added\" sort perfectly places the newest ideas first.
+2. `moat_score`: Evaluate defensibility based on 4 criteria: Network Effects, Switching Costs, Cost Advantages, and Intangible Assets. Score each -100 to 100.
+3. `difficulty_score`: Evaluate execution difficulty based on 3 criteria: Technical Complexity, Regulatory Hurdles, and Capital Requirements. Score each -100 to 100.
+4. `civilizational_impact_score`: Evaluate impact based on 3 criteria: Scale of Impact, Depth of Impact, and Time to Impact. Score each -100 to 100.
+5. `civilizational_impact_ratings`: Generate a specific -100 to 100 rating for **each individual Civilizational Outcome tag** assigned to this startup idea. (e.g., `{ "Biodiversity": { "ai_scored": 88 }, "Air Quality": { "ai_scored": 82 }, "Human Flourishing": { "ai_scored": 85 }, "Climate": { "ai_scored": 90 } }`)

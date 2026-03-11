@@ -11,11 +11,11 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/cloud_forest.png';
+import heroImage from './assets/cloud_forest_v3.png';
 import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';
 import tropicalCanopy from './assets/tropical_canopy_v2.png';
-import prairieLightwall from './assets/prairie_lightwall_v2.png';
+import prairieLightwall from './assets/prairie_lightwall_v3.png';
 import dartFrog from './assets/dart_frog.png';
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -90,15 +90,49 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="grid md:grid-cols-2 gap-8 mb-8">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 group flex flex-col justify-center">
-                            <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-[var(--primary)]/30 pl-6 group-hover:border-[var(--primary)]/60 transition-colors">
-                                A dead-end hallway becomes a cloud-forest opening with moss, stone, mist, and the flash of a dart frog. A luxury lobby ends in a glowing desert canyon with sculpted rock, sparse planting, and a gecko on a warm ledge. A waiting room gets moving water, schooling fish, and a calm focal point people actually want to watch. This is not office greenery. It is a new architectural status symbol, one that signals taste, calm, and visible care for the living world.
+                    <div className="grid md:grid-cols-3 gap-6 mb-12">
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-[var(--primary)]/30 transition-colors duration-500 group">
+                            <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center mb-6 overflow-hidden">
+                                <Leaf className="w-5 h-5 text-[var(--primary)] group-hover:scale-110 transition-transform" />
+                            </div>
+                            <h4 className="text-xl text-white font-light mb-3">The Corridor</h4>
+                            <p className="text-white/60 font-light leading-relaxed">
+                                A dead-end hallway becomes a cloud-forest opening with moss, stone, mist, and the flash of a dart frog.
                             </p>
                         </div>
-                        <div className="h-[400px] w-full max-w-sm mx-auto p-4 sm:p-0">
-                            <WellnessMarketChart />
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-[var(--primary)]/30 transition-colors duration-500 group">
+                            <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center mb-6 overflow-hidden">
+                                <Sparkles className="w-5 h-5 text-[var(--primary)] group-hover:scale-110 transition-transform" />
+                            </div>
+                            <h4 className="text-xl text-white font-light mb-3">The Lobby</h4>
+                            <p className="text-white/60 font-light leading-relaxed">
+                                A luxury lobby ends in a glowing desert canyon with sculpted rock, sparse planting, and a gecko on a warm ledge.
+                            </p>
                         </div>
+                        <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.02] hover:border-[var(--primary)]/30 transition-colors duration-500 group">
+                            <div className="w-12 h-12 rounded-full bg-[var(--primary)]/10 flex items-center justify-center mb-6 overflow-hidden">
+                                <Wind className="w-5 h-5 text-[var(--primary)] group-hover:scale-110 transition-transform" />
+                            </div>
+                            <h4 className="text-xl text-white font-light mb-3">The Waiting Room</h4>
+                            <p className="text-white/60 font-light leading-relaxed">
+                                A waiting room gets moving water, schooling fish, and a calm focal point people actually want to watch.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-r from-[var(--primary)]/10 via-transparent to-transparent text-center">
+                        <p className="text-2xl sm:text-3xl text-white leading-relaxed font-light">
+                            This is not office greenery. It is a new <strong className="font-medium text-[var(--secondary)]">architectural status symbol</strong>, one that signals taste, calm, and visible care for the living world.
+                        </p>
+                    </div>
+
+                    <div className="mt-16 flex flex-col items-center justify-center p-12 rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent relative overflow-hidden">
+                        <div className="absolute top-[-50%] right-[-10%] w-[300px] h-[300px] bg-[var(--primary)]/20 rounded-full blur-[100px] pointer-events-none" />
+                        <h3 className="text-3xl sm:text-5xl font-light text-white tracking-tight mb-4 text-center z-10">
+                            Wellness real estate reached <strong className="text-[var(--secondary)]">$584 billion</strong> in 2024
+                        </h3>
+                        <p className="text-xl text-white/60 font-light text-center z-10">
+                            and is forecast to reach <strong className="text-white">$1.1 trillion by 2029.</strong>
+                        </p>
                     </div>
 
                     <div className="mt-4 text-right">
@@ -154,8 +188,22 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                                 />.
                             </p>
                         </div>
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-[var(--primary)]/20 hover:bg-white/[0.04] transition-all duration-300 group">
-                            Urban life removes not just wild landscapes, but daily contact with other forms of life. Plants matter, but so do movement, behavior, and the quiet fascination of watching animals exist. Existing living walls usually miss the mark. Many look commercial, stick awkwardly into the room, and are sold as generic wellness décor. The real opportunity is much bigger: make nature a premium architectural element that wealthy homeowners, hotels, offices, and healthcare spaces actively want because it is calming, beautiful, memorable, and status-enhancing.
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:border-[var(--primary)]/20 hover:bg-white/[0.04] transition-all duration-300 group flex flex-col h-full">
+                            <h3 className="text-2xl font-light text-white mb-6">The Missing Element</h3>
+                            <p className="text-lg leading-relaxed text-white/70 font-light mb-8">
+                                Urban life removes not just wild landscapes, but daily contact with other forms of life. Plants matter, but so do movement, behavior, and the quiet fascination of watching animals exist.
+                            </p>
+
+                            <div className="mt-auto space-y-6">
+                                <div className="border-l-2 border-rose-500/50 pl-4 py-1">
+                                    <h4 className="text-rose-400 font-medium text-sm mb-1 uppercase tracking-wider">The Current Fix</h4>
+                                    <p className="text-white/60 text-sm font-light">Existing living walls usually miss the mark. Many look commercial, stick awkwardly into the room, and are sold as generic wellness décor.</p>
+                                </div>
+                                <div className="border-l-2 border-[var(--primary)]/50 pl-4 py-1">
+                                    <h4 className="text-[var(--primary)] font-medium text-sm mb-1 uppercase tracking-wider">The Real Opportunity</h4>
+                                    <p className="text-white/80 text-[15px] font-light leading-relaxed">Make nature a premium architectural element that wealthy homeowners, hotels, offices, and healthcare spaces actively want because it is calming, beautiful, memorable, and status-enhancing.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.section>
@@ -221,62 +269,86 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
 
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                         {/* Desert Monolith */}
-                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group">
+                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
                             <div className="relative h-64 w-full">
                                 <Image src={desertMonolith} alt="Desert Monolith" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
-                            <div className="p-8">
+                            <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Desert Monolith</h3>
-                                <p className="text-white/60 font-light leading-relaxed mb-4">Sculpted canyon stone, sparse high-impact planting, warm light gradients, optional microLED horizon, and shallow reflective water if desired. Captures heat, depth, and silence without forcing a humid ecosystem into a dry interior.</p>
-                                <div className="space-y-2 text-sm">
-                                    <p><strong className="text-[var(--primary)] font-medium">Fauna:</strong> Small captive-bred desert reptiles (geckos), hardy invertebrates.</p>
-                                    <p><strong className="text-[var(--primary)] font-medium">Why it works:</strong> Visually premium, mechanically simpler, and easy to place in luxury homes, offices, and hospitality spaces.</p>
-                                </div>
+                                <p className="text-white/60 font-light leading-relaxed mb-6">Sculpted canyon stone, sparse high-impact planting, warm light gradients, optional microLED horizon, and shallow reflective water if desired. Captures heat, depth, and silence without forcing a humid ecosystem into a dry interior.</p>
+                                <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
+                                    <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
+                                        <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
+                                        <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
+                                    </summary>
+                                    <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small captive-bred desert reptiles (geckos), hardy invertebrates.</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Visually premium, mechanically simpler, and easy to place in luxury homes, offices, and hospitality spaces.</span></p>
+                                    </div>
+                                </details>
                             </div>
                         </div>
 
                         {/* Freshwater Cliff */}
-                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group">
+                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
                             <div className="relative h-64 w-full">
                                 <Image src={freshwaterCliff} alt="Freshwater Cliff" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
-                            <div className="p-8">
+                            <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Freshwater Cliff</h3>
-                                <p className="text-white/60 font-light leading-relaxed mb-4">Planted ledges, moving water, submerged pockets, and integrated stream or pool sections.</p>
-                                <div className="space-y-2 text-sm mt-8">
-                                    <p><strong className="text-[var(--primary)] font-medium">Fauna:</strong> Small schooling fish, shrimp, snails, and other compatible freshwater life.</p>
-                                    <p><strong className="text-[var(--primary)] font-medium">Why it works:</strong> Fish create immediate emotional pull, especially in waiting rooms, lobbies, pediatric spaces, and hospitality.</p>
-                                </div>
+                                <p className="text-white/60 font-light leading-relaxed mb-6">Planted ledges, moving water, submerged pockets, and integrated stream or pool sections.</p>
+                                <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
+                                    <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
+                                        <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
+                                        <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
+                                    </summary>
+                                    <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small schooling fish, shrimp, snails, and other compatible freshwater life.</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Fish create immediate emotional pull, especially in waiting rooms, lobbies, pediatric spaces, and hospitality.</span></p>
+                                    </div>
+                                </details>
                             </div>
                         </div>
 
                         {/* Tropical Canopy */}
-                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group">
+                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
                             <div className="relative h-64 w-full">
                                 <Image src={tropicalCanopy} alt="Tropical Canopy" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
-                            <div className="p-8">
+                            <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Tropical Canopy Wall</h3>
-                                <p className="text-white/60 font-light leading-relaxed mb-4">Dense foliage, bark forms, vines, filtered-green light, and hidden perches. Lush and immersive without needing the full water load of a paludarium.</p>
-                                <div className="space-y-2 text-sm">
-                                    <p><strong className="text-[var(--primary)] font-medium">Fauna:</strong> Small captive-bred arboreal reptiles (geckos), tropical invertebrates (walking sticks, display beetles).</p>
-                                    <p><strong className="text-[var(--primary)] font-medium">Why it works:</strong> Delivers strong life and movement while staying easier to standardize than a full amphibian-heavy system.</p>
-                                </div>
+                                <p className="text-white/60 font-light leading-relaxed mb-6">Dense foliage, bark forms, vines, filtered-green light, and hidden perches. Lush and immersive without needing the full water load of a paludarium.</p>
+                                <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
+                                    <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
+                                        <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
+                                        <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
+                                    </summary>
+                                    <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small captive-bred arboreal reptiles (geckos), tropical invertebrates (walking sticks, display beetles).</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Delivers strong life and movement while staying easier to standardize than a full amphibian-heavy system.</span></p>
+                                    </div>
+                                </details>
                             </div>
                         </div>
 
                         {/* Prairie Lightwall */}
-                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group">
+                        <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
                             <div className="relative h-64 w-full">
                                 <Image src={prairieLightwall} alt="Prairie Lightwall" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
-                            <div className="p-8">
+                            <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Prairie Lightwall</h3>
-                                <p className="text-white/60 font-light leading-relaxed mb-4">Native grasses, seed heads, mineral earth tones, and seasonal softness.</p>
-                                <div className="space-y-2 text-sm mt-8">
-                                    <p><strong className="text-[var(--primary)] font-medium">Fauna:</strong> Usually flora-first. Small insect life could be explored in specialized educational versions.</p>
-                                    <p><strong className="text-[var(--primary)] font-medium">Why it works:</strong> Calm, elegant, robust, and easier to scale across commercial spaces.</p>
-                                </div>
+                                <p className="text-white/60 font-light leading-relaxed mb-6">Native grasses, seed heads, mineral earth tones, and seasonal softness.</p>
+                                <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
+                                    <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
+                                        <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
+                                        <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
+                                    </summary>
+                                    <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Usually flora-first. Small insect life could be explored in specialized educational versions.</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Calm, elegant, robust, and easier to scale across commercial spaces.</span></p>
+                                    </div>
+                                </details>
                             </div>
                         </div>
                     </div>
@@ -321,17 +393,23 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
-                            <h3 className="text-2xl font-light text-white mb-6">Market</h3>
-                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
-                                The biggest early buyers are luxury homes, trophy offices, hotels, high-end multifamily developers, and select healthcare spaces. They want a calming presence, but they also want a new kind of status symbol.
-                            </p>
-                            <p className="text-lg text-white/70 leading-relaxed font-light">
-                                People know a great biowall is expensive. Unlike a supercar, it signals that the buyer values beauty, nature, and giving back. The company sits inside wellness real estate, luxury interiors, experiential hospitality, workplace design, and conservation-linked brand infrastructure. Those are much larger and better markets than "living walls."
-                            </p>
+                        <div className="flex flex-col gap-8">
+                            <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
+                                <h3 className="text-2xl font-light text-white mb-6">Market</h3>
+                                <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                    The biggest early buyers are luxury homes, trophy offices, hotels, high-end multifamily developers, and select healthcare spaces. They want a calming presence, but they also want a new kind of status symbol.
+                                </p>
+                                <p className="text-lg text-white/70 leading-relaxed font-light">
+                                    People know a great biowall is expensive. Unlike a supercar, it signals that the buyer values beauty, nature, and giving back. The company sits inside wellness real estate, luxury interiors, experiential hospitality, workplace design, and conservation-linked brand infrastructure. Those are much larger and better markets than "living walls."
+                                </p>
+                            </div>
+
+                            <div className="h-[400px]">
+                                <WellnessMarketChart />
+                            </div>
                         </div>
 
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500 h-full">
                             <h3 className="text-2xl font-light text-white mb-6">Why Now</h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
                                 The demand is ready because premium real estate, hospitality, and workplace design are moving toward healthier, more memorable environments, and wellness real estate is growing quickly.

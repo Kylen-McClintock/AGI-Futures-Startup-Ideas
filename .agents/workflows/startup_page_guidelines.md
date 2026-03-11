@@ -26,7 +26,7 @@ The global `<ProjectTags />` block should NEVER be used. Instead, use the `<Inli
 3. **Customer tags**: Must be placed in the **Ideal Customer Profile (ICP)** section.
 4. **Enabling Technology tags**: Must be placed in the **Solution** or **Product Stack** section.
 5. **Readiness tags**: Must be placed in the **Why Now** section.
-6. **Civilizational Outcome tags**: Must be placed in the **Civilizational Impact / AGI Futures** section.
+6. **Civilizational Outcome tags**: Must be placed in the **Civilizational Impact / AGI Futures** section. (e.g., Biodiversity, Climate, Air Quality, Abundance, Human Flourishing, etc.)
 7. **Founder Fit tags**: Must be placed in the **Unfair Advantage** or **Go-to-Market** section. (Do NOT put them in the Business Model section).
 8. **Bottleneck tags**: **DO NOT RENDER** these tags in the client-side UI.
 
@@ -48,8 +48,9 @@ As part of generating the new idea, you must also evaluate and score the startup
 
 **CRITICAL RULE:** Use existing scores for the tags/criteria if they are already provided in the prompt/context for that idea. Only if a score doesn't yet exist for a specific tag or metric, then you should assess and apply a new score. All scores are on a scale of **-100 to 100**.
 
-You must generate the following four JSONB properties on its `projects` table row in `seed_tags.ts`. They should be formatted as follows:
-1. `moat_score`: Evaluate defensibility based on 4 criteria: Network Effects, Switching Costs, Cost Advantages, and Intangible Assets. Score each -100 to 100.
-2. `difficulty_score`: Evaluate execution difficulty based on 3 criteria: Technical Complexity, Regulatory Hurdles, and Capital Requirements. Score each -100 to 100.
-3. `civilizational_impact_score`: Evaluate impact based on 3 criteria: Scale of Impact, Depth of Impact, and Time to Impact. Score each -100 to 100.
-4. `civilizational_impact_ratings`: Generate a specific -100 to 100 rating for **each individual Civilizational Outcome tag** assigned to this startup idea. (e.g., `{ "Human Flourishing": { "ai_scored": 85 }, "Abundance": { "ai_scored": 90 } }`)
+You must generate the following five correct properties on its `projects` table row in `seed_tags.ts`. They should be formatted as follows:
+1. `created_at`: You MUST add a `created_at` property to the new startup object. Set it to the exact current date and time in ISO 8601 format (e.g. `'2026-03-12T10:00:00Z'`). This guarantees the homepage \"Recently Added\" sort perfectly places the newest ideas first.
+2. `moat_score`: Evaluate defensibility based on 4 criteria: Network Effects, Switching Costs, Cost Advantages, and Intangible Assets. Score each -100 to 100.
+3. `difficulty_score`: Evaluate execution difficulty based on 3 criteria: Technical Complexity, Regulatory Hurdles, and Capital Requirements. Score each -100 to 100.
+4. `civilizational_impact_score`: Evaluate impact based on 3 criteria: Scale of Impact, Depth of Impact, and Time to Impact. Score each -100 to 100.
+5. `civilizational_impact_ratings`: Generate a specific -100 to 100 rating for **each individual Civilizational Outcome tag** assigned to this startup idea. (e.g., `{ "Biodiversity": { "ai_scored": 88 }, "Air Quality": { "ai_scored": 82 }, "Human Flourishing": { "ai_scored": 85 }, "Climate": { "ai_scored": 90 } }`)
