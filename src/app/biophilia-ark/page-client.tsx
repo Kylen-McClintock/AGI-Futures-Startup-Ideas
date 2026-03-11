@@ -17,7 +17,6 @@ import cloudForestPanel from './assets/cloud_forest_v3.png';
 import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';
 import prairieLightwall from './assets/prairie_lightwall_v3.png';
-import dartFrog from './assets/macro_frog.png';
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -355,26 +354,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         </div>
                     </div>
 
-                    {/* Macro Highlight */}
-                    <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent flex flex-col md:flex-row gap-12 items-center group">
-                        <div className="md:w-1/2 relative h-80 w-full rounded-2xl overflow-hidden border border-white/10 group-hover:border-[var(--primary)]/30 transition-colors">
-                            <Image src={dartFrog} alt="High definition macro photography of a vivid poison dart frog inside a luxury biowall" fill className="object-cover transition-transform duration-1000 group-hover:scale-110" />
-                        </div>
-                        <div className="md:w-1/2 flex flex-col h-full self-stretch justify-center">
-                            <h3 className="text-3xl font-light text-white mb-4">The Micro-Ecosystem</h3>
-                            <p className="text-lg text-white/80 font-light leading-relaxed mb-8">Moss, bromeliads, orchids, dripping stone, mist, layered depth, and root-like geometry. This is the highest-emotion product and one of the clearest portal experiences.</p>
-                            <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
-                                <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
-                                    <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
-                                    <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
-                                </summary>
-                                <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
-                                    <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small captive-bred amphibians (dart frogs), leaf-cutter ant colonies with visible foraging paths, walking sticks, and butterflies.</span></p>
-                                    <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">It feels alive in multiple ways at once: vivid color, moisture, movement, and complex biological behavior.</span></p>
-                                </div>
-                            </details>
-                        </div>
-                    </div>
+
                 </motion.section>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
