@@ -17,6 +17,7 @@ import cloudForestPanel from './assets/cloud_forest_v3.png';
 import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';
 import prairieLightwall from './assets/prairie_lightwall_v3.png';
+import dartFrog from './assets/macro_frog.png';
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -471,13 +472,22 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         </div>
                     </div>
 
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.02] transition-colors mt-8 group">
-                        <h3 className="text-2xl font-light text-white mb-6 flex items-center gap-3">
-                            <Target className="w-6 h-6 text-[var(--secondary)]" /> Media Wedge
-                        </h3>
-                        <p className="text-lg text-white/70 leading-relaxed font-light">
-                            <strong className="text-white">Worlds Inside Walls</strong>, a short-form video and podcast series showing how each wall is designed, built, maintained, inhabited, and tied back to a real ecosystem.
-                        </p>
+                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent mt-8 group flex flex-col md:flex-row gap-10 items-center">
+                        <div className="md:w-1/2">
+                            <h3 className="text-2xl font-light text-white mb-6 flex items-center gap-3">
+                                <Target className="w-6 h-6 text-[var(--secondary)]" /> Media Wedge
+                            </h3>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                <strong className="text-white text-xl block mb-2">Worlds Inside Walls</strong>
+                                A short-form video and podcast series showing how each installation is designed, built, maintained, inhabited, and tied back to a real ecosystem.
+                            </p>
+                            <p className="text-white/50 text-sm font-light leading-relaxed">
+                                Content focuses on extreme high-definition macro photography of the micro-ecosystems, showcasing the vividly alive, perfectly controlled miniature worlds just behind the glass.
+                            </p>
+                        </div>
+                        <div className="md:w-1/2 relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border border-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-colors shadow-2xl shadow-black/50">
+                            <Image src={dartFrog} alt="High definition macro photography of a vivid poison dart frog inside a luxury biowall" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        </div>
                     </div>
                 </motion.section>
 
