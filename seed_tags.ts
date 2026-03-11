@@ -20,6 +20,7 @@ const startups = [
     {
         slug: 'aura',
         name: 'AURA',
+        created_at: '2024-03-05T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 85 },
             difficulty_score: { ai_scored: 90 },
@@ -45,6 +46,7 @@ const startups = [
     {
         slug: 'afl',
         name: 'AI Founder Lab',
+        created_at: '2024-03-04T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 80 },
             difficulty_score: { ai_scored: 85 },
@@ -61,6 +63,7 @@ const startups = [
     {
         slug: 'homequote',
         name: 'HomeQuote AI',
+        created_at: '2024-03-06T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 75 },
             difficulty_score: { ai_scored: 80 },
@@ -88,6 +91,7 @@ const startups = [
     {
         slug: 'attune',
         name: 'Attune',
+        created_at: '2024-03-08T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 80 },
             difficulty_score: { ai_scored: 75 },
@@ -113,6 +117,7 @@ const startups = [
     {
         slug: 'murmuration',
         name: 'Murmuration Engine',
+        created_at: '2024-03-09T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 95 },
             difficulty_score: { ai_scored: 95 },
@@ -138,6 +143,7 @@ const startups = [
     {
         slug: 'porchfront',
         name: 'Porchfront',
+        created_at: '2024-03-07T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 70 },
             difficulty_score: { ai_scored: 65 },
@@ -163,6 +169,7 @@ const startups = [
     {
         slug: 'deepguide',
         name: 'DeepGuide',
+        created_at: '2024-03-03T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 72 },
@@ -188,6 +195,7 @@ const startups = [
     {
         slug: 'main-street-legacy',
         name: 'Main Street Legacy',
+        created_at: '2024-03-02T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 74 },
@@ -213,6 +221,7 @@ const startups = [
     {
         slug: 'hearth',
         name: 'Hearth',
+        created_at: '2024-03-13T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 73 },
@@ -238,6 +247,7 @@ const startups = [
     {
         slug: 'helm',
         name: 'Helm',
+        created_at: '2024-03-01T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 71 },
@@ -263,6 +273,7 @@ const startups = [
     {
         slug: 'agentable',
         name: 'Agentable',
+        created_at: '2024-02-28T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 71 },
@@ -288,6 +299,7 @@ const startups = [
     {
         slug: 'avatarlab',
         name: 'AvatarLab',
+        created_at: '2024-03-10T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 92 },
             difficulty_score: { ai_scored: 89 },
@@ -313,6 +325,7 @@ const startups = [
     {
         slug: 'proofrun',
         name: 'ProofRun',
+        created_at: '2024-03-11T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 78 },
             difficulty_score: { ai_scored: 67 },
@@ -338,6 +351,7 @@ const startups = [
     {
         slug: 'handraise',
         name: 'Handraise',
+        created_at: '2024-03-12T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 76 },
             difficulty_score: { ai_scored: 63 },
@@ -358,6 +372,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Social Trust', 'Societal Cohesion']
         }
+    },
+    {
+        slug: 'biophilia-ark',
+        name: 'Biophilia Ark',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 84 },
+            difficulty_score: { ai_scored: 74 },
+            civilizational_impact_score: { ai_scored: 78 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 86 },
+                "Biodiversity": { ai_scored: 91 },
+                "Community Renewal": { ai_scored: 72 },
+                "Air Quality": { ai_scored: 41 }
+            }
+        },
+        tags: {
+            sector: ['Housing', 'Cities', 'Community', 'Science'],
+            bottleneck: ['Meaning Crisis', 'Social Fragmentation', 'Cultural Resistance'],
+            customer: ['Enterprises', 'Consumers'],
+            product_type: ['Hardware', 'Platform'],
+            enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality']
+        }
     }
 ];
 
@@ -373,7 +413,8 @@ async function seed() {
             .from('projects')
             .upsert({
                 slug: startup.slug,
-                name: startup.name
+                name: startup.name,
+                created_at: startup.created_at,
             }, { onConflict: 'slug' })
             .select('id')
             .single();

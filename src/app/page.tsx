@@ -15,6 +15,7 @@ import avatarlab_hero from "./avatarlab/assets/avatarlab_hero.png";
 import proofrun_hero from "./proofrun/assets/proofrun_hero.png";
 import handraise_hero from "./handraise/assets/handraise_hero.png";
 import hearth_hero from "./hearth/assets/hero.png";
+import biophilia_ark_hero from "./biophilia-ark/assets/cloud_forest.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -215,6 +216,16 @@ export default async function Home() {
             href: "/handraise",
             themeColor: "hover:border-indigo-500/50 text-indigo-400",
             hoverTextColor: "group-hover:text-indigo-400",
+        }),
+        createProject({
+            slug: "biophilia-ark",
+            title: "Biophilia Ark",
+            scoreTitle: "Living portals for dead interiors",
+            description: "Builds high-design living walls that turn dead interiors into living portals, with optional animals, active biofiltration, and revenue flowing back to the real biome each wall represents.",
+            image: biophilia_ark_hero,
+            href: "/biophilia-ark",
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         })
     ];
 
