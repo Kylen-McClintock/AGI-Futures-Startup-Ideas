@@ -16,6 +16,7 @@ import proofrun_hero from "./proofrun/assets/proofrun_hero.png";
 import handraise_hero from "./handraise/assets/handraise_hero.png";
 import hearth_hero from "./hearth/assets/hero.png";
 import biophilia_ark_hero from "./biophilia-ark/assets/cloud_forest.png";
+import sellcraft_hero from "./sellcraft/assets/sellcraft_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -43,7 +44,8 @@ export default async function Home() {
         "avatarlab": { moat: 92, difficulty: 89, impact: 78, created_at: "2024-03-10T10:00:00Z", tags: { sector: ['AI', 'Biotech', 'Healthcare', 'Longevity'], bottleneck: ['Aging', 'Disease', 'Scientific Slowdown'], customer: ['Consumers', 'Doctors'], product_type: ['Platform', 'Personalized AI'], enabling_technology: ['Large Language Models', 'Wearables', 'Knowledge Graphs', 'Synthetic Biology', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience'] } },
         "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z", tags: { sector: ['AI', 'Education'], bottleneck: ['Talent Matching', 'Trust', 'Coordination'], customer: ['Startups', 'Enterprises'], product_type: ['Platform', 'Marketplace'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Societal Cohesion'] } },
         "handraise": { moat: 76, difficulty: 63, impact: 65, created_at: "2024-03-12T10:00:00Z", tags: { sector: ['AI', 'Social Media', 'Community'], bottleneck: ['Trust', 'Coordination', 'Talent Matching'], customer: ['Founders', 'Startups'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Knowledge Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Social Trust', 'Societal Cohesion'] } },
-        "biophilia-ark": { moat: 84, difficulty: 74, impact: 78, created_at: "2024-03-13T10:00:00Z", tags: { sector: ['Housing', 'Cities', 'Community', 'Science'], bottleneck: ['Meaning Crisis', 'Social Fragmentation', 'Cultural Resistance'], customer: ['Enterprises', 'Consumers'], product_type: ['Hardware', 'Platform'], enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate'] } }
+        "biophilia-ark": { moat: 84, difficulty: 74, impact: 78, created_at: "2024-03-13T10:00:00Z", tags: { sector: ['Housing', 'Cities', 'Community', 'Science'], bottleneck: ['Meaning Crisis', 'Social Fragmentation', 'Cultural Resistance'], customer: ['Enterprises', 'Consumers'], product_type: ['Hardware', 'Platform'], enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate'] } },
+        "sellcraft": { moat: 74, difficulty: 68, impact: 47, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Media'], bottleneck: ['Trust', 'Talent Matching'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Spatial Computing', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] } }
     };
 
     // Helper to merge static data with DB data
@@ -227,6 +229,16 @@ export default async function Home() {
             href: "/biophilia-ark",
             themeColor: "hover:border-emerald-500/50 text-emerald-400",
             hoverTextColor: "group-hover:text-emerald-400",
+        }),
+        createProject({
+            slug: "sellcraft",
+            title: "SellCraft",
+            scoreTitle: "The AI-native Sales Mastery platform",
+            description: "An AI-native connected Sales Mastery platform where human sales becomes the edge in a commoditized world.",
+            image: sellcraft_hero,
+            href: "/sellcraft",
+            themeColor: "hover:border-violet-500/50 text-violet-400",
+            hoverTextColor: "group-hover:text-violet-400",
         })
     ];
 

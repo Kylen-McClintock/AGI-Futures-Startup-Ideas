@@ -397,7 +397,32 @@ const startups = [
             enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'],
             readiness: ['Build Now'],
             founder_fit: ['Operator-Led', 'Venture-Scale'],
-            outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate']
+        outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate']
+        }
+    },
+    {
+        slug: 'sellcraft',
+        name: 'SellCraft',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 74 },
+            difficulty_score: { ai_scored: 68 },
+            civilizational_impact_score: { ai_scored: 47 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 56 },
+                "Human Flourishing": { ai_scored: 44 },
+                "Social Trust": { ai_scored: 32 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Education', 'Media'],
+            bottleneck: ['Trust', 'Talent Matching'],
+            customer: ['Consumers', 'Enterprises'],
+            product_type: ['Platform', 'SaaS'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Spatial Computing', 'Social Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Social Trust']
         }
     }
 ];
