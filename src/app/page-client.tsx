@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { ArrowRight, ArrowDownUp, ArrowUp, ArrowDown } from "lucide-react";
@@ -18,26 +18,96 @@ export type ProjectData = {
     moat_score: number;
     difficulty_score: number;
     civilizational_impact_score: number;
+    tags?: {
+        sector?: string[];
+        bottleneck?: string[];
+        readiness?: string[];
+        customer?: string[];
+        outcomes?: string[];
+        product_type?: string[];
+        enabling_technology?: string[];
+        founder_fit?: string[];
+    };
 };
+
+const filterCategories = [
+    { id: 'sector', label: 'Sector' },
+    { id: 'outcomes', label: 'Outcomes' },
+    { id: 'customer', label: 'Customer' },
+    { id: 'bottleneck', label: 'Bottleneck' },
+    { id: 'readiness', label: 'Readiness' },
+    { id: 'product_type', label: 'Product Type' },
+    { id: 'enabling_technology', label: 'Technology' },
+    { id: 'founder_fit', label: 'Founder Fit' }
+] as const;
 
 export default function HomeClient({ projects }: { projects: ProjectData[] }) {
     const [sortBy, setSortBy] = useState<"recent" | "impact" | "moat" | "difficulty">("recent");
     const [sortDirection, setSortDirection] = useState<"desc" | "asc">("desc");
+    const [searchQuery, setSearchQuery] = useState("");
+    const [activeFilters, setActiveFilters] = useState<Record<string, string>>({});
 
-    const sortedProjects = [...projects].sort((a, b) => {
-        let diff = 0;
-        if (sortBy === "impact") {
-            diff = b.civilizational_impact_score - a.civilizational_impact_score;
-        } else if (sortBy === "moat") {
-            diff = b.moat_score - a.moat_score;
-        } else if (sortBy === "difficulty") {
-            diff = b.difficulty_score - a.difficulty_score;
-        } else {
-            // Default: Recent (descending by created_at)
-            diff = new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-        }
-        return sortDirection === "desc" ? diff : -diff;
-    });
+    // Extract all unique tags for each category
+    const uniqueTags = useMemo(() => {
+        const tags: Record<string, string[]> = {};
+        filterCategories.forEach(cat => {
+            tags[cat.id] = Array.from(new Set(
+                projects.flatMap(p => p.tags?.[cat.id as keyof typeof p.tags] || [])
+            )).sort();
+        });
+        return tags;
+    }, [projects]);
+
+    const sortedProjects = [...projects]
+        .filter((project) => {
+            // Check all active tag filters
+            for (const [catId, selectedValue] of Object.entries(activeFilters)) {
+                if (selectedValue && selectedValue !== "all") {
+                    const projectTags = project.tags?.[catId as keyof typeof project.tags] || [];
+                    if (!projectTags.includes(selectedValue)) {
+                        return false;
+                    }
+                }
+            }
+
+            // Check Search Query
+            if (searchQuery.trim() !== "") {
+                const query = searchQuery.toLowerCase();
+                const titleMatch = project.title.toLowerCase().includes(query);
+                const descMatch = project.description.toLowerCase().includes(query);
+                const scoreTitleMatch = project.scoreTitle.toLowerCase().includes(query);
+
+                // Also search in tags
+                let tagMatch = false;
+                if (project.tags) {
+                    const allTags = Object.values(project.tags).flat().filter(Boolean) as string[];
+                    tagMatch = allTags.some(tag => tag.toLowerCase().includes(query));
+                }
+
+                if (!titleMatch && !descMatch && !scoreTitleMatch && !tagMatch) {
+                    return false;
+                }
+            }
+
+            return true;
+        })
+        .sort((a, b) => {
+            // If filtering by outcome specifically, default to impact if sort is recent
+            const effectiveSortBy = (activeFilters.outcomes && activeFilters.outcomes !== "all" && sortBy === "recent") ? "impact" : sortBy;
+
+            let diff = 0;
+            if (effectiveSortBy === "impact") {
+                diff = b.civilizational_impact_score - a.civilizational_impact_score;
+            } else if (effectiveSortBy === "moat") {
+                diff = b.moat_score - a.moat_score;
+            } else if (effectiveSortBy === "difficulty") {
+                diff = b.difficulty_score - a.difficulty_score;
+            } else {
+                // Default: Recent (descending by created_at)
+                diff = new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+            }
+            return sortDirection === "desc" ? diff : -diff;
+        });
 
     return (
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
@@ -49,39 +119,89 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                 <span className="italic text-white/70">Library</span>
             </h1>
 
-            <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 border-b border-white/10 pb-6 gap-6">
-                <p className="text-xl sm:text-2xl text-white/80 max-w-xl leading-relaxed font-light">
+            <div className="flex flex-col gap-4 mb-12 border-b border-white/10 pb-6">
+                <p className="text-xl sm:text-2xl text-white/80 max-w-xl leading-relaxed font-light mb-2">
                     A collection of premium speculative venture theses and product storytelling prototypes.
                 </p>
-                <div className="flex items-center gap-3">
-                    <span className="text-sm font-mono text-white/50 flex items-center gap-2">
-                        <ArrowDownUp className="w-4 h-4" />
-                        SORT BY
-                    </span>
-                    <div className="flex items-center gap-2">
-                        <select
-                            value={sortBy}
-                            onChange={(e) => setSortBy(e.target.value as any)}
-                            className="bg-black/50 border border-white/20 text-white text-sm rounded-lg px-4 py-2 outline-none focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8 relative"
-                            style={{
-                                backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
-                                backgroundRepeat: 'no-repeat',
-                                backgroundPosition: 'right 0.75rem center',
-                                backgroundSize: '1em'
-                            }}
-                        >
-                            <option value="recent">Recently Added</option>
-                            <option value="impact">Civilizational Impact</option>
-                            <option value="moat">Moat Potential</option>
-                            <option value="difficulty">Difficulty to Build</option>
-                        </select>
-                        <button
-                            onClick={() => setSortDirection(d => d === "desc" ? "asc" : "desc")}
-                            className="bg-black/50 border border-white/20 text-white p-2 rounded-lg hover:border-[var(--primary)] transition-colors flex items-center justify-center"
-                            aria-label={`Sort ${sortDirection === 'desc' ? 'Ascending' : 'Descending'}`}
-                        >
-                            {sortDirection === "desc" ? <ArrowDown className="w-5 h-5" /> : <ArrowUp className="w-5 h-5" />}
-                        </button>
+                <div className="flex flex-col gap-4">
+                    {/* Primary Row: Search and Sorting */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        {/* Search Input */}
+                        <div className="flex-1 max-w-2xl">
+                            <input
+                                type="text"
+                                placeholder="Search ideas, tags, sectors..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="bg-black/50 border border-white/20 text-white text-sm rounded-lg px-4 py-2 outline-none focus:border-[var(--primary)] transition-colors w-full"
+                            />
+                        </div>
+
+                        {/* Sorting */}
+                        <div className="flex items-center gap-3">
+                            <span className="text-sm font-mono text-white/50 hidden lg:flex items-center gap-2 whitespace-nowrap">
+                                <ArrowDownUp className="w-4 h-4" />
+                                SORT BY
+                            </span>
+                            <div className="flex items-center gap-2">
+                                <select
+                                    value={sortBy}
+                                    onChange={(e) => setSortBy(e.target.value as any)}
+                                    className="bg-black/50 border border-white/20 text-white text-sm rounded-lg px-4 py-2 outline-none focus:border-[var(--primary)] transition-colors cursor-pointer appearance-none pr-8 min-w-[140px]"
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'right 0.75rem center',
+                                        backgroundSize: '1em'
+                                    }}
+                                >
+                                    <option value="recent">Recently Added</option>
+                                    <option value="impact">Civilizational Impact</option>
+                                    <option value="moat">Moat Potential</option>
+                                    <option value="difficulty">Difficulty to Build</option>
+                                </select>
+                                <button
+                                    onClick={() => setSortDirection(d => d === "desc" ? "asc" : "desc")}
+                                    className="bg-black/50 border border-white/20 text-white p-2 rounded-lg hover:border-[var(--primary)] transition-colors flex items-center justify-center shrink-0"
+                                    aria-label={`Sort ${sortDirection === 'desc' ? 'Ascending' : 'Descending'}`}
+                                >
+                                    {sortDirection === "desc" ? <ArrowDown className="w-5 h-5" /> : <ArrowUp className="w-5 h-5" />}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Secondary Row: Tag Filters */}
+                    <div className="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                        <span className="text-[10px] sm:text-xs font-mono text-white/40 uppercase tracking-widest shrink-0 mr-2">Filter By:</span>
+                        {filterCategories.map(cat => {
+                            const options = uniqueTags[cat.id] || [];
+                            if (options.length === 0) return null;
+                            const isSelected = activeFilters[cat.id] && activeFilters[cat.id] !== "all";
+
+                            // Use pure white hex encoded for default, bright green encoded for selected
+                            const strokeColor = isSelected ? '%2300ff00' : 'rgba(255,255,255,0.8)';
+
+                            return (
+                                <select
+                                    key={cat.id}
+                                    value={activeFilters[cat.id] || "all"}
+                                    onChange={(e) => setActiveFilters(prev => ({ ...prev, [cat.id]: e.target.value }))}
+                                    className={`bg-black/50 border text-xs sm:text-sm rounded-full px-4 py-1.5 outline-none transition-colors cursor-pointer appearance-none pr-8 shrink-0 relative ${isSelected ? 'border-[var(--primary)] text-[var(--primary)] bg-[var(--primary)]/5' : 'border-white/20 text-white/80 hover:border-white/40 focus:border-[var(--primary)]'}`}
+                                    style={{
+                                        backgroundImage: `url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='${strokeColor}' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e")`,
+                                        backgroundRepeat: 'no-repeat',
+                                        backgroundPosition: 'right 0.75rem center',
+                                        backgroundSize: '1em'
+                                    }}
+                                >
+                                    <option value="all">Any {cat.label}</option>
+                                    {options.map(opt => (
+                                        <option key={opt} value={opt}>{opt}</option>
+                                    ))}
+                                </select>
+                            );
+                        })}
                     </div>
                 </div>
             </div>
