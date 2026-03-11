@@ -2,8 +2,11 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { useQueryState, parseAsString, parseAsArrayOf } from "nuqs";
 import Image, { StaticImageData } from "next/image";
 import { ArrowRight, ArrowDownUp, ArrowUp, ArrowDown } from "lucide-react";
+
+import { Suspense } from "react";
 
 export type ProjectData = {
     slug: string;
@@ -42,13 +45,24 @@ const filterCategories = [
     { id: 'founder_fit', label: 'Founder Fit' }
 ] as const;
 
-export default function HomeClient({ projects }: { projects: ProjectData[] }) {
-    const [sortBy, setSortBy] = useState<"recent" | "impact" | "moat" | "difficulty" | string>("recent");
-    const [sortDirection, setSortDirection] = useState<"desc" | "asc">("desc");
-    const [searchQuery, setSearchQuery] = useState("");
+function HomeClientInner({ projects }: { projects: ProjectData[] }) {
+    const [sortBy, setSortBy] = useQueryState("sort", parseAsString.withDefault("recent").withOptions({ shallow: false, history: 'push' }));
+    const [sortDirection, setSortDirection] = useQueryState("dir", parseAsString.withDefault("desc").withOptions({ shallow: false, history: 'push' }));
+    const [searchQuery, setSearchQuery] = useQueryState("q", parseAsString.withDefault("").withOptions({ shallow: false, history: 'push' }));
 
     // New drill-down state
-    const [activeTags, setActiveTags] = useState<Array<{ category: string, tag: string }>>([]);
+    const [activeTagsRaw, setActiveTagsRaw] = useQueryState("filters", parseAsArrayOf(parseAsString).withDefault([]).withOptions({ shallow: false, history: 'push' }));
+    
+    const activeTags = useMemo(() => {
+        return activeTagsRaw.map(str => {
+            const [category, ...rest] = str.split(':');
+            return { category, tag: rest.join(':') };
+        });
+    }, [activeTagsRaw]);
+
+    const setActiveTags = (newTags: Array<{ category: string, tag: string }>) => {
+        setActiveTagsRaw(newTags.map(t => `${t.category}:${t.tag}`));
+    };
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     // Extract all unique tags for each category
@@ -322,7 +336,16 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                             </div>
                             
                             {/* Dynamic Outcome Badge */}
-                            {sortBy.startsWith('outcome_') && (
+                            {activeTags.find(t => t.category === 'outcomes') && (
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                    <span className="text-white/90 font-medium">{activeTags.find(t => t.category === 'outcomes')?.tag}:</span>
+                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
+                                        {project.civilizational_impact_ratings?.[activeTags.find(t => t.category === 'outcomes')!.tag]?.ai_scored || 0}
+                                    </span>
+                                </div>
+                            )}
+                            {/* Hide old badge logic */}
+                            {false && (
                                 <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">{sortBy.replace('outcome_', '')}:</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
@@ -350,5 +373,14 @@ export default function HomeClient({ projects }: { projects: ProjectData[] }) {
                 ))}
             </div>
         </div>
+    );
+}
+
+
+export default function HomeClient(props: { projects: ProjectData[] }) {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-[var(--background)]"></div>}>
+            <HomeClientInner {...props} />
+        </Suspense>
     );
 }
