@@ -22,7 +22,8 @@ import { SkillTransition } from "./components/SkillTransition";
 import { MarketGrowthChart } from "./components/MarketGrowthChart";
 
 // Assets
-import heroImg from "./assets/sellcraft_hero.png";
+import heroImgOriginal from "./assets/sellcraft_hero.png";
+import heroImg from "./assets/sellcraft_hologram_hero.png";
 import pitchQuestImg from "./assets/sellcraft_pitch_quest.png";
 import provingGroundImg from "./assets/sellcraft_proving_ground.png";
 import practiceImg from "./assets/sellcraft_practice.png";
@@ -120,7 +121,11 @@ export default function SellCraftClient() {
             </div>
         </section>
 
-        {/* (Specific Examples ICP section removed to avoid redundancy with the tabbed interactive block below) */}
+        {/* --- ICP USE CASES / VALUE FLOW --- */}
+        <section className="space-y-12 relative">
+            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight pt-8 border-t border-white/10">Ideal Customer Profile & Value Flow</h2>
+            <ICPUseCases />
+        </section>
 
         {/* --- WHY NOW --- */}
         <section className="space-y-8 relative">
@@ -147,6 +152,12 @@ export default function SellCraftClient() {
             <div className="mt-8">
                 <InlineTags tags={["Build Now"]} theme={theme} />
             </div>
+
+            {/* Contextual Product Image */}
+            <div className="relative w-full aspect-[21/9] rounded-3xl overflow-hidden mt-16 border border-white/10 shadow-2xl">
+                <Image src={heroImgOriginal} alt="SellCraft Concept" fill className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </div>
         </section>
 
         {/* --- MARKET --- */}
@@ -172,12 +183,6 @@ export default function SellCraftClient() {
             </div>
         {/* --- SKILL TRANSITION --- */}
         <SkillTransition />
-        </section>
-
-        {/* --- ICP USE CASES / VALUE FLOW --- */}
-        <section className="space-y-12 pt-16 border-t border-white/10 relative">
-            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Ideal Customer Profile & Value Flow</h2>
-            <ICPUseCases />
         </section>
 
         {/* --- BUSINESS MODEL --- */}
@@ -382,6 +387,18 @@ export default function SellCraftClient() {
             </div>
             <div className="mt-8">
                 <InlineTags tags={["Abundance", "Human Flourishing", "Social Trust"]} theme={theme} />
+            </div>
+        </section>
+
+        {/* --- TRANSFERABLE INSIGHT --- */}
+        <section className="space-y-8 mb-32 relative">
+            <div className="p-8 md:p-12 bg-gradient-to-br from-[#06090c] to-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-3xl shadow-[0_0_40px_rgba(0,0,0,0.3)] shadow-[var(--primary)]/10">
+                <h4 className="text-[var(--primary)] font-bold uppercase tracking-widest text-sm mb-6 flex items-center gap-2">
+                    <Zap className="w-4 h-4" /> Transferable Insight
+                </h4>
+                <p className="text-2xl md:text-3xl font-light text-white italic leading-relaxed">
+                    "As AI makes product creation, information access, and scripted workflows cheaper, the durable human edge shifts toward trust-based coordination under uncertainty."
+                </p>
             </div>
         </section>
 

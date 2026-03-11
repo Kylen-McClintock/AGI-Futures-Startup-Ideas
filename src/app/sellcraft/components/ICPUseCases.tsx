@@ -1,14 +1,20 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Gamepad2, UserCheck, TrendingUp, Bot, ArrowRight, CheckCircle2, Users, Gift, ShieldAlert } from "lucide-react";
+
+import pitchQuestImg from "../assets/sellcraft_pitch_quest_new.png";
+import provingGroundImg from "../assets/sellcraft_proving_ground_new.png";
+import practiceImg from "../assets/sellcraft_practice_new.png";
 
 const useCases = [
     {
         id: "rep",
         title: "Consumer & Talent Discovery",
         icon: Gamepad2,
+        image: pitchQuestImg,
         text: (
             <p className="text-lg text-white/80 font-light leading-relaxed">
                 A career-switcher wants to break into software sales but has no experience. They play Pitch Quest, running through realistic cold calls and discovery simulations. The AI acts as a tough buyer, throwing curveballs and assessing their resilience. The user builds up their &quot;Discovery Depth Index&quot; and negotiation score. Once they hit Pro tier, they opt into Talent Discovery, making their validated stats visible to hiring managers.
@@ -27,6 +33,7 @@ const useCases = [
         id: "talent",
         title: "Screening & Hiring",
         icon: Users,
+        image: provingGroundImg,
         text: (
             <p className="text-lg text-white/80 font-light leading-relaxed">
                 A VP of Sales needs to hire 5 Account Executives but is tired of candidates who sound great in interviews but fail on the floor. Instead of a standard third-round interview, they invite candidates to a SellCraft Proving Ground. Candidates complete a 20-minute timed role-play based on the company&apos;s actual product and objections. The AI scores them on an objective rubric and provides a transcript. The VP hires the top 5 performers with confidence.
@@ -45,6 +52,7 @@ const useCases = [
         id: "enablement",
         title: "Enablement & Coaching",
         icon: TrendingUp,
+        image: practiceImg,
         text: (
             <p className="text-lg text-white/80 font-light leading-relaxed">
                 A Revenue Operations leader notices win rates dropping against a specific new competitor. They ingest recent Gong calls and Salesforce loss data into SellCraft. SellCraft generates a highly specific practice scenario featuring the new competitor&apos;s exact counter-pitches. All AEs are assigned a 15-minute practice bout. Managers review the scorecards and identify which reps need 1-on-1 coaching, quickly standardizing the team&apos;s response to the new threat.
@@ -102,7 +110,11 @@ export function ICPUseCases() {
                         className="grid lg:grid-cols-2 gap-12 relative z-10"
                     >
                         {/* Text Col */}
-                        <div className="flex flex-col justify-center">
+                        <div className="flex flex-col justify-start">
+                            <div className="relative w-full aspect-[16/7] rounded-2xl overflow-hidden mb-8 border border-white/10 shadow-xl">
+                                <Image src={activeCase.image} alt={activeCase.title} fill className="object-cover" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/80 to-transparent" />
+                            </div>
                             <div className="flex items-center gap-4 mb-6">
                                 <div className="p-3 bg-[var(--primary)]/10 rounded-xl border border-[var(--primary)]/30 text-[var(--primary)] shadow-inner shadow-[var(--primary)]/20">
                                     <activeCase.icon className="w-6 h-6" />
