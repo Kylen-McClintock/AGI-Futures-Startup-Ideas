@@ -385,7 +385,8 @@ const startups = [
                 "Human Flourishing": { ai_scored: 86 },
                 "Biodiversity": { ai_scored: 91 },
                 "Community Renewal": { ai_scored: 72 },
-                "Air Quality": { ai_scored: 41 }
+                "Air Quality": { ai_scored: 41 },
+                "Climate": { ai_scored: 82 }
             }
         },
         tags: {
@@ -396,7 +397,7 @@ const startups = [
             enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'],
             readiness: ['Build Now'],
             founder_fit: ['Operator-Led', 'Venture-Scale'],
-            outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality']
+            outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate']
         }
     }
 ];

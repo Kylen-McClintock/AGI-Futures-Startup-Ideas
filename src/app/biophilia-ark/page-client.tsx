@@ -29,7 +29,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
         enabling_technology: initialTags?.enabling_technology?.length ? initialTags.enabling_technology : ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'],
         readiness: initialTags?.readiness?.length ? initialTags.readiness : ['Build Now'],
         founder_fit: initialTags?.founder_fit?.length ? initialTags.founder_fit : ['Operator-Led', 'Venture-Scale'],
-        outcomes: initialTags?.outcomes?.length ? initialTags.outcomes : ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality']
+        outcomes: initialTags?.outcomes?.length ? initialTags.outcomes : ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate']
     };
 
     return (
@@ -700,6 +700,10 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-[var(--primary)]/70 font-light">Air Quality</span>
                                             <span className="text-[var(--secondary)] font-mono">41</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-[var(--primary)]/70 font-light">Climate</span>
+                                            <span className="text-[var(--secondary)] font-mono">82</span>
                                         </div>
                                     </div>
                                 </div>
