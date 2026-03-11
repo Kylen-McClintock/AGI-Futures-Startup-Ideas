@@ -11,10 +11,11 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/cloud_forest_v3.png';
+import heroImage from './assets/office_lobby_wall_v1.png';
+import cloudForestOld from './assets/cloud_forest.png';
+import cloudForestPanel from './assets/cloud_forest_v3.png';
 import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';
-import tropicalCanopy from './assets/tropical_canopy_v2.png';
 import prairieLightwall from './assets/prairie_lightwall_v3.png';
 import dartFrog from './assets/dart_frog.png';
 
@@ -231,22 +232,23 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         </h2>
                     </div>
 
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 mb-12">
-                        <p className="text-xl text-white/90 leading-relaxed font-light mb-8">
-                            Start with flush-integrated, modular living walls designed as portals into specific biomes. Win on beauty, calm, social value, and conservation alignment. Then layer in animals and biofiltration where the install, budget, and husbandry standards justify it.
-                        </p>
+                    <div className="grid md:grid-cols-2 gap-8 mb-12">
+                        <div className="relative h-[400px] w-full rounded-3xl overflow-hidden border border-white/5 order-2 md:order-1">
+                            <Image src={cloudForestOld} alt="Original Cloud Forest Wall Concept" fill className="object-cover" />
+                        </div>
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 flex flex-col justify-center order-1 md:order-2">
+                            <p className="text-xl text-white/90 leading-relaxed font-light mb-8">
+                                Start with flush-integrated, modular living walls designed as portals into specific biomes. Win on beauty, calm, social value, and conservation alignment. Then layer in animals and biofiltration where the install, budget, and husbandry standards justify it.
+                            </p>
 
-                        <div className="grid md:grid-cols-2 gap-8 text-lg text-white/70 font-light">
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Sculpted rock-like forms in mineral composite or ceramic</li>
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Recessed planting pockets and hidden irrigation</li>
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Selective painted depth where biology should not fill</li>
-                            </ul>
-                            <ul className="space-y-4">
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Optional water channels or reflective pools</li>
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Concealed lighting and optional microLED horizon/sky panels</li>
-                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> Quiet fans turning the wall into a working biofilter</li>
-                            </ul>
+                            <div className="text-lg text-white/70 font-light space-y-4">
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Sculpted rock-like forms in mineral composite or ceramic</div>
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Recessed planting pockets and hidden irrigation</div>
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Selective painted depth where biology should not fill</div>
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Optional water channels or reflective pools</div>
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Concealed lighting and optional microLED horizon/sky panels</div>
+                                <div><span className="text-[var(--primary)] font-bold mr-2">✓</span> Quiet fans turning the wall into a working biofilter</div>
+                            </div>
                         </div>
                     </div>
                 </motion.section>
@@ -310,22 +312,22 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             </div>
                         </div>
 
-                        {/* Tropical Canopy */}
+                        {/* Cloud Forest Wall */}
                         <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
                             <div className="relative h-64 w-full">
-                                <Image src={tropicalCanopy} alt="Tropical Canopy" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                                <Image src={cloudForestPanel} alt="Cloud Forest Wall" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
-                                <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Tropical Canopy Wall</h3>
-                                <p className="text-white/60 font-light leading-relaxed mb-6">Dense foliage, bark forms, vines, filtered-green light, and hidden perches. Lush and immersive without needing the full water load of a paludarium.</p>
+                                <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Cloud Forest Wall</h3>
+                                <p className="text-white/60 font-light leading-relaxed mb-6">Dense moss, bark forms, vines, mist, filtered-green light, and hidden perches. Immersive, high-impact vertical forest ecosystem.</p>
                                 <details className="mt-auto group/details cursor-pointer [&_summary::-webkit-details-marker]:hidden border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
                                     <summary className="p-4 flex items-center justify-between hover:bg-white/5 transition-colors">
                                         <span className="text-sm font-medium text-white/80">Fauna & Mechanics</span>
                                         <ChevronDown className="w-4 h-4 text-white/50 group-open/details:rotate-180 transition-transform" />
                                     </summary>
                                     <div className="p-4 pt-0 text-sm space-y-3 border-t border-white/5 mt-2 bg-black/20">
-                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small captive-bred arboreal reptiles (geckos), tropical invertebrates (walking sticks, display beetles).</span></p>
-                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Delivers strong life and movement while staying easier to standardize than a full amphibian-heavy system.</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Fauna:</strong><span className="text-white/70">Small captive-bred amphibians (dart frogs), tropical invertebrates (walking sticks, display beetles).</span></p>
+                                        <p><strong className="text-[var(--primary)] font-medium block mb-1">Why it works:</strong><span className="text-white/70">Delivers strong visual impact and movement while providing a perfectly controlled humid environment for sensitive species.</span></p>
                                     </div>
                                 </details>
                             </div>
