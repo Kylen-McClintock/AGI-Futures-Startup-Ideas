@@ -18,6 +18,7 @@ import ExpandableScoreCard from "./components/ExpandableScoreCard";
 import ProductGridCard from "./components/ProductGridCard";
 import ValueFlowDiagram from "./components/ValueFlowDiagram";
 import PerformanceDataViz from "./components/PerformanceDataViz";
+import { ICPUseCases } from "./components/ICPUseCases";
 
 // Assets
 import heroImg from "./assets/sellcraft_hero.png";
@@ -295,6 +296,12 @@ export default function SellCraftClient() {
             <div className="pt-8">
                 <InlineTags tags={["Platform", "SaaS"]} theme={theme} />
             </div>
+        </section>
+
+        {/* --- ICP USE CASES --- */}
+        <section className="space-y-8 mt-32 relative">
+            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Ideal Customer Profile (ICP)</h2>
+            <ICPUseCases />
         </section>
 
         {/* --- BUSINESS MODEL --- */}
