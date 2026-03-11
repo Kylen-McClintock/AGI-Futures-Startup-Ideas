@@ -197,113 +197,9 @@ export default function SellCraftClient() {
         <SkillTransition />
         </section>
 
-        {/* --- PRODUCT TEARDOWNS (Cards) --- */}
-        <section className="space-y-12 pt-16 border-t border-white/10">
-            <div className="space-y-4">
-                <h2 className="text-4xl font-black text-white tracking-tight">The Flywheel Architecture</h2>
-                <ValueFlowDiagram />
-            </div>
-
-            {/* Pitch Quest */}
-            <div className="space-y-8 mt-24">
-                <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight border-b border-white/10 pb-4">
-                    1) Pitch Quest <span className="text-xl text-neutral-400 font-normal ml-4">— Freemium Game → Talent Network</span>
-                </h2>
-                <Image src={pitchQuestImg} alt="Pitch Quest UI" className="w-full rounded-2xl border border-white/10 object-cover shadow-2xl" placeholder="blur" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300 text-lg">
-                    <div className="space-y-4">
-                        <p><strong>Who it’s for:</strong> Students, career-switchers, aspiring <HoverAcronym acronym="SDRs" definition="Sales Development Representatives" theme={theme} />, <HoverAcronym acronym="AEs" definition="Account Executives" theme={theme} />, and working reps.</p>
-                        <p><strong>Vibe:</strong> Genuinely fun and shareable. Virtual reality optional. Hyper-realistic AI <HoverAcronym acronym="NPCs" definition="Non-Player Characters" theme={theme} /> with big personalities, dynamic moods, and consequences. Run quick bits or multi-stage epics, cold open → discovery → demo → negotiation → procurement curveball. Story arcs and “boss buyers” keep you coming back.</p>
-                        <h4 className="font-bold text-white pt-4">Core play</h4>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Open-ended scenes:</strong> Quick hits, long arcs, or “walk-and-talk expo floor” sessions.</li>
-                            <li><strong>Quirky products:</strong> Haunted-museum memberships, robot-barista wholesale, spaceport insurance, eco shoelaces at a cash-only stall, plus occasional “Realistic Week” packs that mimic business-to-business cadence.</li>
-                            <li><strong>NPC realism:</strong> Interruptions, side-questions, competing priors, time pressure.</li>
-                        </ul>
-                    </div>
-                    <div className="space-y-4">
-                        <h4 className="font-bold text-white">Social virality system</h4>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><strong>Auto-highlights:</strong> Instant “Director’s Cut” clips of hilarious saves and flops, one-tap share to Shorts, Reels, and TikTok with brand-safe bleeping and captions.</li>
-                            <li><strong>Remix & Duet:</strong> Challenge a friend on the same buyer seed, compare outcomes side by side.</li>
-                            <li><strong>Creator Mode:</strong> User-generated scenes, moderated. Winning creators get featured ladders.</li>
-                            <li><strong>Clubs & leagues:</strong> Campus and company ladders, seasonal theme drops.</li>
-                        </ul>
-                        <h4 className="font-bold text-white pt-4">Pro tiers & Talent bridge</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-4">
-                            <li><strong>Pro ($9–$15/month):</strong> Full metrics, Discovery Depth Index, talk-to-listen ratio, objection-to-next-step rate, negotiation discipline, executive presence, ... Open to Roles toggle.</li>
-                            <li><strong>Pro+ ($19–$39/month):</strong> Monthly standardized Proving Ground run, industry tracks, portfolio reel.</li>
-                        </ul>
-                        <p>Pro and Pro+ players with validated scores appear in <strong>Talent Discovery</strong> for employers. Invitations route into company-branded Proving Grounds.</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Proving Ground */}
-            <div className="space-y-8 mt-24">
-                <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight border-b border-white/10 pb-4">
-                    2) Proving Ground <span className="text-xl text-neutral-400 font-normal ml-4">— Sales Interview & Screening</span>
-                </h2>
-                <Image src={provingGroundImg} alt="Proving Ground UI" className="w-full rounded-2xl border border-white/10 object-cover shadow-2xl" placeholder="blur" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300 text-lg">
-                    <div className="space-y-4">
-                        <p><strong>Buyer:</strong> Talent Acquisition and Sales leadership.</p>
-                        <p><strong>What it is:</strong> A standardized, job-related <HoverAcronym acronym="SJT" definition="Situational Judgment Test" theme={theme} /> and work-sample interview that replaces resume roulette with real talk.</p>
-                        <p><strong>Flow:</strong> Define competencies → assemble scenarios from the library plus your objections → invite candidates from your <HoverAcronym acronym="ATS" definition="Applicant Tracking System" theme={theme} /> or Pitch Quest opt-ins → timed voice and video sims → transcripts plus structured rubric → panel review → export back to ATS.</p>
-                    </div>
-                    <div className="space-y-4">
-                        <h4 className="font-bold text-white">Guardrails</h4>
-                        <ul className="list-disc pl-5 space-y-2 mb-4 text-[var(--secondary)]">
-                            <li>Candidate notice</li>
-                            <li>Accommodations</li>
-                            <li>Documented rubric</li>
-                            <li>Adverse-impact monitoring</li>
-                            <li>Human-in-the-loop decisions</li>
-                        </ul>
-                        <p><strong>Pricing:</strong> $2–$8 per candidate event, plus bundles with Talent Discovery, either pay per interview or pay per hire.</p>
-                    </div>
-                </div>
-            </div>
-
-            {/* Practice */}
-            <div className="space-y-8 mt-24">
-                <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight border-b border-white/10 pb-4">
-                    3) Practice <span className="text-xl text-neutral-400 font-normal ml-4">— Company-Specific Training on Real Blockers</span>
-                </h2>
-                <Image src={practiceImg} alt="Practice UI" className="w-full rounded-2xl border border-white/10 object-cover shadow-2xl" placeholder="blur" />
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-neutral-300 text-lg">
-                    <div className="space-y-4">
-                        <p><strong>Buyer:</strong> Enablement, <HoverAcronym acronym="L&D" definition="Learning and Development" theme={theme} />, <HoverAcronym acronym="RevOps" definition="Revenue Operations" theme={theme} />, Sales managers.</p>
-                        <p><strong>What it is:</strong> Reflex-building practice on your objections, buyers, security hurdles, return-on-investment pushback, and procurement friction, without endless manager scripting.</p>
-                        <h4 className="font-bold text-white mt-4">Data ingestion</h4>
-                        <ul className="list-disc pl-5 space-y-2">
-                            <li><strong><HoverAcronym acronym="CRM" definition="Customer Relationship Management" theme={theme} />:</strong> Salesforce or HubSpot fields, industry, stage, loss reasons.</li>
-                            <li><strong>Call notes:</strong> Gong, Zoom, and related tools mined for real objections and winning patterns.</li>
-                            <li><strong>Docs:</strong> Decks, frequently asked questions, return-on-investment calculators, security answers turned into scenario facts.</li>
-                        </ul>
-                        <p className="italic">Tenant-scoped. No cross-customer training without explicit agreement.</p>
-                    </div>
-                    <div className="space-y-4">
-                        <p><strong>Delivery:</strong> Webcam-first for reach. Virtual reality cohort optional for presence and exposure. Progressive tracks, SDR cold open → AE discovery and demo → negotiation → procurement and legal → renewal and expansion.</p>
-                        <h4 className="font-bold text-white mt-4">Manager tools</h4>
-                        <ul className="list-disc pl-5 space-y-2 text-[var(--primary)]">
-                            <li>SPIN and MEDDICC overlays</li>
-                            <li>Playlists & Clip libraries</li>
-                            <li>Annotations</li>
-                            <li><HoverAcronym acronym="LMS" definition="Learning Management System" theme={theme} /> export</li>
-                            <li>Salesforce write-back</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div className="pt-8">
-                <InlineTags tags={["Platform", "SaaS"]} theme={theme} />
-            </div>
-        </section>
-
-        {/* --- ICP USE CASES --- */}
-        <section className="space-y-8 mt-32 relative">
-            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Ideal Customer Profile (ICP)</h2>
+        {/* --- ICP USE CASES / VALUE FLOW --- */}
+        <section className="space-y-12 pt-16 border-t border-white/10 relative">
+            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Ideal Customer Profile & Value Flow</h2>
             <ICPUseCases />
         </section>
 
@@ -512,20 +408,31 @@ export default function SellCraftClient() {
             </div>
         </section>
 
-        {/* --- NEXT STEPS --- */}
-        <section className="space-y-8 mb-32 p-8 bg-gradient-to-br from-white/10 to-transparent border border-white/10 rounded-3xl">
-            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Next step</h2>
-            <p className="text-xl leading-relaxed text-neutral-300">
-                Start with <strong className="text-white">Practice</strong>, webcam-first, in one narrow vertical where objections are structured, expensive, and repeated. Cybersecurity, medtech, or capital equipment are strong candidates. Prove three things first:
-            </p>
-            <ol className="list-decimal pl-6 space-y-4 text-lg text-neutral-300">
-                <li>Simulation scores correlate with field behavior</li>
-                <li>Practice reduces time-to-ramp or improves objection-to-next-step conversion</li>
-                <li>Managers trust the transcripts, rubrics, and replay tools enough to use them every week</li>
-            </ol>
-            <p className="text-xl leading-relaxed text-neutral-300 mt-6 pt-4 border-t border-white/10">
-                Once that works, layer in <strong className="text-white">Proving Ground</strong> for hiring. Then launch <strong className="text-white">Pitch Quest</strong> as the distribution engine.
-            </p>
+        {/* --- FALSIFIABLE EXPERIMENT --- */}
+        <section className="space-y-8 mb-32">
+            <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Falsifiable experiment</h2>
+            <details className="group border border-white/10 rounded-2xl bg-white/5 overflow-hidden">
+                <summary className="p-6 cursor-pointer flex justify-between items-center hover:bg-white/10 transition-colors list-none outline-none">
+                    <h4 className="text-white font-bold text-lg">Test the Simulation-to-Field Correlation</h4>
+                    <span className="text-white/50 group-open:rotate-180 transition-transform">▼</span>
+                </summary>
+                <div className="p-6 pt-2 border-t border-white/10 mt-2 text-neutral-300 space-y-4">
+                    <p className="text-lg leading-relaxed">
+                        Start with <strong className="text-white">Practice</strong>, webcam-first, in one narrow vertical where objections are structured, expensive, and repeated (e.g. Cybersecurity, Medtech, or Capital Equipment).
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                        Prove three things sequentially:
+                    </p>
+                    <ol className="list-decimal pl-6 space-y-3 text-lg">
+                        <li>Simulation scores correlate highly with live field behavior.</li>
+                        <li>Simulation practice materially reduces time-to-ramp or improves objection-to-next-step conversion rates.</li>
+                        <li>Managers actually trust the AI transcripts and rubrics enough to substitute standard shadowing.</li>
+                    </ol>
+                    <p className="text-lg leading-relaxed pt-4 border-t border-white/10 mt-4 text-[var(--secondary)]">
+                        <strong>Hypothesis Falsified If:</strong> Reps game the AI for high scores without field improvement, or if manager overhead to construct and verify the simulations outweighs the coaching time saved.
+                    </p>
+                </div>
+            </details>
         </section>
 
         {/* --- FOOTER: Acronyms & References --- */}
