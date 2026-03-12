@@ -219,7 +219,7 @@ export default function CategoryFrontierForecast({ initialForecast, aiRationale 
                                 {[1e7, 1e9, 1e11].map(t => {
                                     const valStr = String(t);
                                     const explicitVal = activeCurve.probabilities[valStr];
-                                    const displayVal = explicitVal !== undefined ? explicitVal : '';
+                                    const displayVal = explicitVal !== undefined ? Number(explicitVal).toFixed(1) : '';
 
                                     let helperText = "";
                                     if (t === 1e7) helperText = "Will this category exist given actual VC effort and funding?";
