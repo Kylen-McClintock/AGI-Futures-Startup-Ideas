@@ -335,7 +335,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                         {/* Background Image Overlay */}
                         <div className="absolute inset-0 z-0">
                             <Image src={project.image} alt={`${project.title} Hero`} fill quality={100} className="object-cover opacity-30 group-hover:opacity-40 transition-opacity duration-500" />
-                            <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-500" />
+                            <div className="absolute inset-0 bg-black/[0.32] group-hover:bg-black/[0.12] transition-colors duration-500" />
                         </div>
                         {/* The hover gradient is specific to the theme color, and requires raw tailwind string rendering, so we inject a pseudo-color overlay */}
                         <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0`} style={{ background: 'currentColor' }} />
