@@ -63,7 +63,7 @@ export default function AboutPage() {
                                     Kylen McClintock
                                 </a>
                                 <p className="text-white/80 text-lg m-0">
-                                    ex-engineer, venture, and AI product management
+                                    ex-engineer, venture, and AI product lead
                                 </p>
                             </div>
                             <p className="text-[#3bf4a4] font-mono text-sm tracking-wide mt-3 mb-4">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                                 Currently <strong className="text-white">Co-Founder & CEO of LEVL</strong>, an AI-enabled longevity therapeutics startup.
                             </p>
                             <p className="border-l-2 border-white/10 italic text-white/60 py-2 pl-4 mt-6">
-                                I started LEVL (Longevity Escape Velocity Labs) to provide people with more time. Ironically, building it takes most of mine.
+                                I started LEV to accelerate Longevity Escape Velocity and give people more time. Ironically, building it takes most of mine.
                             </p>
                         </div>
 
