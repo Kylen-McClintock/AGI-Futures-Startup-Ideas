@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { SeesawVisual } from "./components/SeesawVisual";
 
 export const metadata: Metadata = {
     title: "AGI Futures | About",
@@ -36,6 +37,9 @@ export default function AboutPage() {
                             <p>
                                 I am a <strong>techno-optimist but a political realist</strong>. The path from AGI to ASI guarantees unfathomable abundance—even awakening the light cone with consciousness is possible. But so is chaotic collapse.
                             </p>
+                            
+                            <SeesawVisual />
+
                             <p className="text-[#3bf4a4] font-medium text-xl my-6">
                                 The next decade of builders possess unprecedented agency over which direction the AGI Future leans.
                             </p>
@@ -51,12 +55,18 @@ export default function AboutPage() {
                             </p>
                         </div>
 
-                        <div>
+                        <div className="space-y-6">
                             <p>
-                                The ratio of things I want to do in this lifetime with the people I love versus the time I have left is tragically lopsided. I started LEVL to accelerate Longevity Escape Velocity and literally give us more time. Ironically, building it takes most of mine.
+                                The ratio of things I want to do in this lifetime with the people I love versus the time I have left is tragically lopsided. 
+                            </p>
+                            <p className="pl-6 border-l-2 border-white/10 italic text-white/60 bg-white/[0.01] py-2 rounded-r-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02)]">
+                                I started LEVL to accelerate Longevity Escape Velocity and literally give us more time. Ironically, building it takes most of mine.
                             </p>
                             <p>
-                                I am launching <strong>AGI Futures</strong> to open source the most impactful startup opportunities I and other founders would build ourselves if we weren't already too busy scaling our own ventures. These ideas are the curated distillation of hundreds of conversations between leading founders and industry insiders operating at the extreme edge of the technological and cultural frontier.
+                                I am launching <strong>AGI Futures</strong> to open source the most impactful startup opportunities I and other founders would build ourselves if we weren't already too busy scaling our own ventures. 
+                            </p>
+                            <p>
+                                These ideas are the curated distillation of hundreds of conversations between leading founders and industry insiders operating at the extreme edge of the technological and cultural frontier.
                             </p>
                         </div>
 
@@ -65,7 +75,7 @@ export default function AboutPage() {
                             <p className="text-xl leading-relaxed">
                                 My hope: this community builds many of these AI-native startups, creates generational wealth, meaningfully improves the world, and—selfishly—ships products I want to use. 
                             </p>
-                            <p className="mt-8 text-white/60 italic">
+                            <p className="mt-8 text-[#3bf4a4]/80 italic">
                                 I plan to advise or invest alongside the top builders. If you are building one of these, let's talk.
                             </p>
                         </div>
