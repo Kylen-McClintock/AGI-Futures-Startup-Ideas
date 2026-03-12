@@ -84,6 +84,19 @@ const getNicheHardwareCurve = (slug: string): CategoryForecast => ({
     }
 });
 
+// A highly constrained curve for heavily regulated, slow-moving bio/psychedelic SaaS
+const getPsychedelicSaaSCurve = (slug: string): CategoryForecast => ({
+    id: `fc_${slug}_psychedelic_saas`,
+    targetIdeaSlug: slug,
+    sourceType: "AI",
+    updatedAt: new Date().toISOString(),
+    curves: {
+        '2030-01-01': { horizonDate: '2030-01-01', probabilities: generateCurve({ 1e7: 35, 1e9: 3, 1e11: 0.1 }, slug, 2030) },
+        '2035-01-01': { horizonDate: '2035-01-01', probabilities: generateCurve({ 1e7: 55, 1e9: 12, 1e11: 0.5 }, slug, 2035) },
+        '2040-01-01': { horizonDate: '2040-01-01', probabilities: generateCurve({ 1e7: 70, 1e9: 25, 1e11: 2 }, slug, 2040) }
+    }
+});
+
 
 export const forecastDatabase: Record<string, ForecastData> = {
     'afl': {
@@ -109,10 +122,6 @@ export const forecastDatabase: Record<string, ForecastData> = {
     'biophilia-ark': {
         forecast: getNicheHardwareCurve('biophilia-ark'),
         aiRationale: "Building high-design living walls that act as bio-filtration systems and digital twins for real-world ecologies is highly capital intensive. The AGI Futures forecaster model generates a heavily depressed curve for early years due to hardware scaling costs. However, if the platform successfully financializes verifiable biodiversity credits by 2035, the valuation potential scales non-linearly."
-    },
-    'deepguide': {
-        forecast: getSaaSMarketCurve('deepguide'),
-        aiRationale: "Automating knowledge management and session facilitation within existing enterprise silos is a well-understood, high-margin software category. The AGI Futures forecaster model reflects strong baseline confidence in reaching a $1B public market cap, though the ceiling is constrained by fragmentation and competition among incumbents."
     },
     'handraise': {
         forecast: getSaaSMarketCurve('handraise'),
@@ -141,6 +150,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
     'porchfront': {
         forecast: getSaaSMarketCurve('porchfront'),
         aiRationale: "Next-generation real estate and neighborhood social cohesion networks struggle with monetization. The AGI Futures forecaster model reflects a high likelihood of reaching a $100M+ valuation based on user engagement, but drops off sharply past $1B due to the historical difficulty of extracting high LTV from local community networks."
+    },
+    'deepguide': {
+        forecast: getPsychedelicSaaSCurve('deepguide'),
+        aiRationale: "Psychedelic therapy copilot SaaS faces profound regulatory friction, FDA scheduling uncertainties, and slow clinical adoption cycles. The AGI Futures forecaster model severely penalizes near-term hyper-growth, capping the valuation trajectory until federal rescheduling unlocks mass market clinical deployment."
     },
     'proofrun': {
         forecast: getSaaSMarketCurve('proofrun'),

@@ -36,8 +36,9 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[var(--primary)]/10 rounded-full blur-[120px]" />
-                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[var(--primary)]/10 rounded-full blur-[150px]" />
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[#A970FF]/20 rounded-full blur-[120px]" />
+                <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-[#00E5FF]/10 rounded-full blur-[130px]" />
+                <div className="absolute bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-[#A970FF]/15 rounded-full blur-[150px]" />
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 mt-24">
