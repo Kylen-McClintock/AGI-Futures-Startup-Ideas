@@ -23,16 +23,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
     <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-[var(--primary)]/30 selection:text-[var(--primary)] pb-32" style={{ "--primary": themeMap['rose'].hexPrimary, "--secondary": themeMap['rose'].hexSecondary, "--tertiary": themeMap['rose'].hexTertiary } as React.CSSProperties}>
       <ScrollProgress title="Attune" theme="primary" />
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 p-6 flex justify-between items-center bg-black/50 backdrop-blur-xl border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full bg-[var(--primary)] flex items-center justify-center text-black font-bold">A</div>
-          <span className="font-serif text-xl tracking-wide font-medium text-[var(--primary)]">ATTUNE</span>
-        </div>
-        <button className="text-sm px-5 py-2 glass-panel hover:bg-white/10 transition-colors rounded-full font-medium">
-          Request Access
-        </button>
-      </nav>
+
 
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center pt-24 px-6 md:px-12 lg:px-24">

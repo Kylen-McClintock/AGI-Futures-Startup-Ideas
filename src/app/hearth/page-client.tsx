@@ -49,15 +49,7 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-20 mix-blend-overlay pointer-events-none" />
             </div>
 
-            {/* Navigation */}
-            <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-6 transition-all duration-300 mix-blend-difference pointer-events-none">
-                <div className="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
-                    <Link href="/" className="inline-flex items-center text-sm font-mono tracking-widest text-white/50 hover:text-white transition-colors">
-                        <ArrowLeft className="w-4 h-4 mr-2" />
-                        LIBRARY
-                    </Link>
-                </div>
-            </nav>
+
 
             <article className="relative z-10 pt-32 lg:pt-48">
                 {/* HERO SECTION */}

@@ -43,6 +43,11 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - **Transferable Insight**: Every idea page must include a styled "Transferable Insight" block highlighting a key psychological or market insight. This should be a creatively styled glass-panel block with a left-colored border based on the deep theme and elegantly formatted typography.
 - **Value Flow Architecture**: Provide a standalone `<ValueFlow />` animated component or graphic mapping the explicit flow of value between stakeholders (utilizing Framer Motion line animations and a "Reward" block), integrated near the associated Business Model or ICP sections.
 
+## 5. Navigation & CTA Constraints (STRICT RULES)
+- **NO Floating Headers**: Do not add floating `<nav>` components, top bars, or sticky headers (e.g., logo, title). The page should rely exclusively on the `ScrollProgress` component for its top-of-page interactive element.
+- **NO Dedicated Library Buttons**: Do not include isolated custom "Library" or "Back" links on the client page (e.g., `<Link href="/">LIBRARY</Link>`). The global footer automatically provides library return navigation.
+- **NO Request Access or Waitlist Buttons**: Do not include "Request Access," "Join Waitlist," or any similar call-to-action buttons anywhere on the page. These prototypes are read-only theory components.
+
 ## 5. Explicit & Collapsible Citations
 - Always include an explicit **Acronyms & References** section at the very bottom of the page.
 - Wrap this entire section in a default-collapsed `<details>` block to save visual space and present a clean end-of-page experience.
