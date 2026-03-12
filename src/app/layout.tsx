@@ -3,6 +3,7 @@ import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LibraryNavButton } from "@/components/LibraryNavButton";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
+import { Footer } from "@/components/Footer";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const outfit = Outfit({
@@ -34,6 +35,7 @@ export default function RootLayout({
           <LibraryNavButton />
           {children}
           <AutoForecastInjector />
+          <Footer />
         </NuqsAdapter>
       </body>
     </html>
