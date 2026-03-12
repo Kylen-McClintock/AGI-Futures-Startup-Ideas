@@ -403,7 +403,7 @@ const startups = [
     {
         slug: 'sellcraft',
         name: 'SellCraft',
-        created_at: '2024-03-14T10:00:00Z',
+        created_at: '2026-03-11T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 74 },
             difficulty_score: { ai_scored: 68 },
@@ -428,7 +428,7 @@ const startups = [
     {
         slug: 'afterlight',
         name: 'Afterlight',
-        created_at: '2024-03-15T10:00:00Z',
+        created_at: '2026-03-12T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 72 },
             difficulty_score: { ai_scored: 44 },
