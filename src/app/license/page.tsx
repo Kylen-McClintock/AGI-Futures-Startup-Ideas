@@ -10,19 +10,6 @@ export const metadata: Metadata = {
 export default function LicensePage() {
     return (
         <main className="min-h-screen bg-[#07090A] text-white selection:bg-[#3bf4a4]/30">
-            {/* Header / Navigation */}
-            <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none p-6 flex justify-between items-center">
-                <Link
-                    href="/"
-                    className="pointer-events-auto group flex items-center gap-2 px-4 py-2 bg-black/40 hover:bg-black/60 backdrop-blur-md rounded-full border border-white/5 shadow-2xl transition-all hover:scale-105 active:scale-95"
-                >
-                    <ArrowLeft className="w-4 h-4 text-white/50 group-hover:text-white transition-colors" />
-                    <span className="text-sm font-medium tracking-wide text-white/70 group-hover:text-white transition-colors">
-                        Library
-                    </span>
-                </Link>
-            </div>
-
             {/* Content Container */}
             <div className="max-w-3xl mx-auto px-6 py-32 space-y-16">
                 

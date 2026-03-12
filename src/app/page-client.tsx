@@ -356,7 +356,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                             
                             {/* Dynamic Outcome Badge */}
                             {activeTags.find(t => t.category === 'outcomes') && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">{activeTags.find(t => t.category === 'outcomes')?.tag}:</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
                                         {project.civilizational_impact_ratings?.[activeTags.find(t => t.category === 'outcomes')!.tag]?.ai_scored || 0}
@@ -366,7 +366,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
 
                             {/* Forecast Badges */}
                             {sortBy === 'expectedValuation2030' && project.expectedValuation2030 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">Expected Val ('30):</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
                                         ${project.expectedValuation2030 >= 1_000_000_000 ? (project.expectedValuation2030 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2030 / 1_000_000).toFixed(1) + 'M'}
@@ -375,7 +375,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                             )}
 
                             {sortBy === 'expectedValuation2035' && project.expectedValuation2035 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">Expected Val ('35):</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
                                         ${project.expectedValuation2035 >= 1_000_000_000 ? (project.expectedValuation2035 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2035 / 1_000_000).toFixed(1) + 'M'}
@@ -384,7 +384,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                             )}
 
                             {sortBy === 'expectedValuation2040' && project.expectedValuation2040 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">Expected Val ('40):</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
                                         ${project.expectedValuation2040 >= 1_000_000_000 ? (project.expectedValuation2040 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2040 / 1_000_000).toFixed(1) + 'M'}
@@ -393,7 +393,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                             )}
 
                             {sortBy === 'timeToUnicorn' && project.timeToUnicorn !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
                                     <span className="text-white/90 font-medium">Time to $1B:</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
                                         {project.timeToUnicorn === Infinity ? '>2040' : Math.round(project.timeToUnicorn)}
