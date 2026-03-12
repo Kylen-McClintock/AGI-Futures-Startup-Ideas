@@ -179,13 +179,13 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                 AGI Futures
             </div>
             <h1 className="text-5xl sm:text-7xl font-serif text-[var(--foreground)] leading-[1.1] tracking-tight mb-8">
-                Startup Ideas <br />
-                <span className="italic text-white/70">Library</span>
+                <span className="italic text-white/70">AI-native</span> startup ideas <br />
+                for an abundant AGI future
             </h1>
 
             <div className="flex flex-col gap-4 mb-12 border-b border-white/10 pb-6">
                 <p className="text-xl sm:text-2xl text-white/80 max-w-xl leading-relaxed font-light mb-2">
-                    A collection of premium speculative venture theses and product storytelling prototypes.
+                    We open-source the high-conviction ideas we want to see built, from founders already heads down building their own.
                 </p>
                 <div className="flex flex-col gap-4">
                     {/* Primary Row: Search and Sorting */}
