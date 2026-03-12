@@ -8,6 +8,7 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 ## 1. Aesthetic & Vibe (Tomorrowland / Retro-Futurism)
 - **Visuals**: Maintain a "Tomorrowland at golden hour" or sleek retro-futurism vibe. 
 - **Color Palette**: Do not use generic, monochromatic themes (e.g., just `emerald` and `zinc` for everything). Intelligently adapt the primary Tailwind accent colors (e.g., `amber-500` / `stone-900`, `rose-500` / `slate-900`, etc.) to match the specific psychological vibe of the startup.
+- **Ambient Background Glow ("DeepGuide Style")**: All startup pages MUST include a dynamic, multi-colored ambient background glow immediately under the `ScrollProgress` component. Avoid single-color monochromes; instead layer overlapping, fixed, blurred circular divs (e.g., `w-[500px] h-[500px] rounded-full blur-[130px]`) containing BOTH `bg-[var(--primary)]` and `bg-[var(--secondary)]` at low opacities (10%-20%) floating over the dark `#06090c` background to create a rich, multi-dimensional atmospheric glow.
 - **Text Highlighting**: Use the chosen accent colors to dynamically highlight and bold critical sentences or phrases in large text blocks so the narrative "pops."
 
 ## 2. Interactive Lists & Grids (Framer Motion)
