@@ -163,6 +163,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('sellcraft'),
         aiRationale: "Building an AI-native sales mastery platform where humans practice against virtual customers faces skepticism from legacy leadership training incumbents. The AGI Futures forecaster model limits the probability of a $>100B outcome, anticipating rapid feature commoditization. However, the path to a high-margin $1B+ B2B training exit remains highly viable."
     },
+    'afterlight': {
+        forecast: getSaaSMarketCurve('afterlight'),
+        aiRationale: "Afterlight seeks to build a highly defensible trust and data moat in the end-of-life memory preservation space. The AGI Futures forecaster model reflects typical consumer SaaS resistance early on, but projects a highly valuable, sticky consumer-subscription exit if it reaches critical mass as the default generational archive."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

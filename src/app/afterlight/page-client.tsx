@@ -66,8 +66,9 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
+                        <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6 flex flex-col md:flex-row md:items-baseline md:gap-4">
                             Afterlight
+                            <span className="mt-2 md:mt-0 text-2xl sm:text-3xl text-white/50 tracking-normal font-serif italic">End of Life Connection & Memory Preservation</span>
                         </h1>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-8 max-w-3xl">
                             Afterlight helps maximize meaning in the last chapter of life, by prompting connection and the preservation of stories for the loved ones they leave behind.
