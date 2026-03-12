@@ -178,14 +178,17 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
             <div className="inline-block mb-6 text-xs sm:text-sm font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-4 py-1.5 rounded-full bg-[var(--primary)]/5 glass-panel">
                 AGI Futures
             </div>
-            <h1 className="text-5xl sm:text-7xl font-serif text-[var(--foreground)] leading-[1.1] tracking-tight mb-8">
-                <span className="italic text-white/70">AI-native</span> startup ideas <br />
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-10">
+                <span className="bg-[var(--primary)]/15 text-[var(--primary)] px-4 py-1.5 rounded-2xl inline-block mb-3 border border-[var(--primary)]/30 shadow-[0_0_30px_rgba(59,244,164,0.15)] backdrop-blur-sm">
+                    <span className="italic font-light">AI-native</span>&nbsp;
+                    <span className="font-medium">startup ideas</span>
+                </span> <br />
                 for an abundant AGI future
             </h1>
 
-            <div className="flex flex-col gap-4 mb-12 border-b border-white/10 pb-6">
-                <p className="text-xl sm:text-2xl text-white/80 max-w-xl leading-relaxed font-light mb-2">
-                    We open-source the high-conviction ideas we want to see built, from founders already heads down building their own.
+            <div className="flex flex-col gap-4 mb-16 border-b border-white/10 pb-10">
+                <p className="text-2xl sm:text-3xl text-white/95 max-w-3xl leading-snug font-medium mb-2">
+                    We open-source the high-conviction ideas we want to see built, <span className="text-white/50 italic font-serif tracking-wide block sm:inline mt-2 sm:mt-0">from founders already heads down scaling their own ventures.</span>
                 </p>
                 <div className="flex flex-col gap-4">
                     {/* Primary Row: Search and Sorting */}
