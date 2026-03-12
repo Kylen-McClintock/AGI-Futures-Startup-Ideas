@@ -14,7 +14,11 @@ export function ScrollProgress({ title, theme = "emerald" }: ScrollProgressProps
 
     // Wait until mounted to avoid hydration mismatch with useScroll
     useEffect(() => {
-        setMounted(true);
+        let isMounted = true;
+        if (isMounted) {
+            setMounted(true);
+        }
+        return () => { isMounted = false; };
     }, []);
     // Use spring for smoother progress bar animation
     const scaleX = useSpring(scrollYProgress, {

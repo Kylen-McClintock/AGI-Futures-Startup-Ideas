@@ -44,11 +44,14 @@ const STAGGER_ITEM: any = {
 
 export function PageClient() {
     return (
-        <main className="min-h-screen bg-stone-950 text-stone-300 font-sans selection:bg-[var(--primary)]/30 relative" style={{ "--primary": themeMap['cyan'].hexPrimary, "--secondary": themeMap['cyan'].hexSecondary, "--tertiary": themeMap['cyan'].hexTertiary } as React.CSSProperties}>
+        <main className="min-h-screen bg-[#06090c] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['cyan'].hexPrimary, "--secondary": themeMap['cyan'].hexSecondary, "--tertiary": themeMap['cyan'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Agentable" theme="cyan" />
 
-            {/* AMBIENT BACKGROUND */}
-            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden"></div>
+            {/* Ambient Background Glow */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] bg-[var(--primary)]/10 rounded-full blur-[120px]" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[var(--primary)]/10 rounded-full blur-[150px]" />
+            </div>
 
             {/* Nav Space */}
             <div className="h-24 w-full" />
@@ -101,7 +104,7 @@ export function PageClient() {
             </section>
 
             {/* ONE-LINER THESIS */}
-            <section className="px-6 py-24 bg-[var(--primary)]/30 border-y border-white/5">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <motion.div {...FADE_UP} className="max-w-4xl mx-auto text-center">
                     <p className="text-2xl md:text-3xl lg:text-4xl text-white font-serif leading-relaxed font-light">
                         A confusing website or app is really an undocumented operating system.
@@ -168,7 +171,7 @@ export function PageClient() {
             </section>
 
             {/* SOLUTION HYPOTHESIS & ARCHITECTURE */}
-            <section className="px-6 py-24 bg-[var(--primary)]/30 border-y border-white/5 overflow-hidden relative">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5 overflow-hidden relative">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[var(--primary)]/10 via-transparent to-transparent pointer-events-none" />
                 <div className="max-w-7xl mx-auto relative z-10">
                     <motion.div {...FADE_UP} className="max-w-3xl mb-16">
@@ -346,7 +349,7 @@ export function PageClient() {
             </section>
 
             {/* MARKET EVOLUTION */}
-            <section className="px-6 py-24 bg-[var(--primary)]/50 border-y border-white/5">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <motion.div {...FADE_UP} className="mb-16">
                         <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/70 mb-6 flex items-center">
@@ -458,7 +461,7 @@ export function PageClient() {
             </section>
 
             {/* BUSINESS MODEL */}
-            <section className="px-6 py-24 bg-[var(--primary)]/30 border-y border-white/5">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <motion.div {...FADE_UP} className="mb-16">
                         <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/70 mb-6 flex items-center">
@@ -541,7 +544,7 @@ export function PageClient() {
             </section>
 
             {/* GTM & FUTURE EDGE */}
-            <section className="px-6 py-24 bg-[var(--primary)]/50 border-y border-white/5">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <motion.div {...FADE_UP}>
                         <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/70 mb-6 flex items-center">
@@ -598,7 +601,7 @@ export function PageClient() {
             </section>
 
             {/* KPIs & EXPERIMENTS */}
-            <section className="px-6 py-24 bg-[var(--primary)]/30 border-y border-white/5">
+            <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16">
                     <motion.div {...FADE_UP} className="space-y-12">
                         <div>

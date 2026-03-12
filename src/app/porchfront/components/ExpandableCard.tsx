@@ -16,17 +16,17 @@ export function ExpandableCard({ title, score, summary, details, colorTheme }: E
     const [isOpen, setIsOpen] = useState(false);
 
     const colors: Record<string, string> = {
-        amber: "border-[var(--primary)]/50 dark:border-[var(--primary)]/50 bg-[var(--primary)]/50 dark:bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]",
-        emerald: "border-[var(--primary)]/50 dark:border-[var(--primary)]/50 bg-[var(--primary)]/50 dark:bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]",
-        blue: "border-[var(--primary)]/50 dark:border-[var(--primary)]/50 bg-[var(--primary)]/50 dark:bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]",
-        purple: "border-[var(--primary)]/50 dark:border-[var(--primary)]/50 bg-[var(--primary)]/50 dark:bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--primary)]",
+        amber: "border-white/10 bg-white/5 hover:border-[var(--primary)]/50",
+        emerald: "border-white/10 bg-white/5 hover:border-[var(--primary)]/50",
+        blue: "border-white/10 bg-white/5 hover:border-[var(--primary)]/50",
+        purple: "border-white/10 bg-white/5 hover:border-[var(--primary)]/50",
     };
 
     const badgeColors: Record<string, string> = {
-        amber: "bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] border-[var(--primary)] dark:border-[var(--primary)]",
-        emerald: "bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] border-[var(--primary)] dark:border-[var(--primary)]",
-        blue: "bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] border-[var(--primary)] dark:border-[var(--primary)]",
-        purple: "bg-[var(--primary)] dark:bg-[var(--primary)]/50 text-[var(--primary)] dark:text-[var(--secondary)] border-[var(--primary)] dark:border-[var(--primary)]",
+        amber: "bg-white/5 text-[var(--primary)] border-[var(--primary)]/30",
+        emerald: "bg-white/5 text-[var(--primary)] border-[var(--primary)]/30",
+        blue: "bg-white/5 text-[var(--primary)] border-[var(--primary)]/30",
+        purple: "bg-white/5 text-[var(--primary)] border-[var(--primary)]/30",
     };
 
     return (
@@ -42,11 +42,11 @@ export function ExpandableCard({ title, score, summary, details, colorTheme }: E
                     </div>
                 </div>
 
-                <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed pr-8 relative">
+                <p className="text-neutral-400 font-light leading-relaxed pr-8 relative">
                     {summary}
                     <motion.div
                         animate={{ rotate: isOpen ? 180 : 0 }}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 text-[var(--secondary)]"
+                        className="absolute right-0 top-1/2 -translate-y-1/2 text-neutral-500"
                     >
                         <ChevronDown size={20} />
                     </motion.div>
@@ -61,8 +61,8 @@ export function ExpandableCard({ title, score, summary, details, colorTheme }: E
                             transition={{ duration: 0.3, ease: "easeOut" }}
                             className="overflow-hidden"
                         >
-                            <div className="pt-6 mt-6 border-t border-black/5 dark:border-white/5 space-y-3">
-                                <p className="text-[var(--primary)] dark:text-[var(--tertiary)] font-light leading-relaxed">
+                            <div className="pt-6 mt-6 border-t border-white/10 space-y-3">
+                                <p className="text-neutral-500 font-light leading-relaxed">
                                     {details}
                                 </p>
                             </div>

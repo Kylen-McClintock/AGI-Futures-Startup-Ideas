@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LibraryNavButton } from "@/components/LibraryNavButton";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
+import { NuqsAdapter } from 'nuqs/adapters/next/app';
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -28,8 +30,11 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} ${playfair.variable} antialiased bg-background text-foreground min-h-screen`}
       >
-        <LibraryNavButton />
-        {children}
+        <NuqsAdapter>
+          <LibraryNavButton />
+          {children}
+          <AutoForecastInjector />
+        </NuqsAdapter>
       </body>
     </html>
   );

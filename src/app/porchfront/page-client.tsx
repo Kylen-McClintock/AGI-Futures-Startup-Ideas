@@ -16,7 +16,7 @@ import { SectionHeading } from "./components/SectionHeading";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { ExpandableCard } from "./components/ExpandableCard";
 import { LonelinessChart } from "./components/LonelinessChart";
-import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2 } from "lucide-react";
+import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2, Car, Bot, Leaf } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
@@ -43,12 +43,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 <div className="absolute bottom-[0%] right-[-10%] w-[60%] h-[60%] bg-[var(--primary)]/10 dark:bg-[var(--primary)]/5 blur-[140px] rounded-full mix-blend-multiply dark:mix-blend-screen opacity-20" />
             </div>
 
-            <nav className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-between items-center bg-white/50 dark:bg-black/50 backdrop-blur-xl border-b border-black/5 dark:border-white/5">
-                <div className="font-serif font-bold text-xl tracking-tight text-[var(--primary)] dark:text-[var(--primary)]">Porchfront</div>
-                <button className="bg-[var(--primary)] hover:bg-[var(--primary)] text-white px-4 py-2 rounded-full text-sm font-medium transition-colors shadow-sm dark:bg-[var(--primary)] dark:hover:bg-[var(--primary)]">
-                    Join the waitlist
-                </button>
-            </nav>
+
 
             {/* Hero Section */}
             <motion.section
@@ -62,12 +57,12 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
 
 
-                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-[var(--primary)] dark:text-[var(--primary)] mb-8 max-w-5xl leading-[0.9] [text-wrap:balance] relative z-10">
+                <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-semibold tracking-tighter text-white mb-8 max-w-5xl leading-[0.9] [text-wrap:balance] relative z-10">
                     Open doors.<br />
-                    <span className="text-[var(--secondary)] dark:text-[var(--primary)] font-light italic">Open minds.</span>
+                    <span className="text-[var(--primary)] font-light italic">Open minds.</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl lg:text-3xl text-[var(--primary)] dark:text-[var(--tertiary)] max-w-3xl font-light leading-relaxed mb-8 relative z-10 [text-wrap:balance]">
+                <p className="text-xl md:text-2xl lg:text-3xl text-neutral-400 max-w-3xl font-light leading-relaxed mb-8 relative z-10 [text-wrap:balance]">
                     Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map, shoppable builds, one-tap installers, and simple tools that reward real-world connection.
                 </p>
                 <div className="relative z-10 mb-16 flex flex-col items-center -space-y-4">
@@ -85,7 +80,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </motion.section>
 
             {/* Problem / Opportunity Statement */}
-            <section className="relative z-40 py-24 bg-white/60 dark:bg-black/40 backdrop-blur-3xl border-y border-black/5 dark:border-white/5">
+            <section className="relative z-40 py-24 bg-transparent border-y border-white/5">
                 <GridContainer>
                     <div className="flex flex-col md:flex-row gap-12 md:gap-24 items-center">
                         <div className="md:w-1/2">
@@ -95,8 +90,8 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             <SectionHeading className="mb-8">
                                 The antidote to isolation is outside your front door.
                             </SectionHeading>
-                            <p className="text-lg md:text-xl text-[var(--primary)] dark:text-[var(--secondary)] leading-relaxed mb-6 font-light">
-                                Roughly <strong className="font-semibold text-[var(--primary)] dark:text-[var(--primary)]">half of U.S. adults report loneliness</strong>, while driverless ride-hail now delivers <strong className="font-semibold text-[var(--primary)] dark:text-[var(--primary)]">~250k rides weekly</strong> across major U.S. metros—early proof that car-light living is coming and garages can shift from storage to social.
+                            <p className="text-lg md:text-xl text-neutral-400 leading-relaxed mb-6 font-light">
+                                Roughly <strong className="font-semibold text-white">half of U.S. adults report loneliness</strong>, while driverless ride-hail now delivers <strong className="font-semibold text-white">~250k rides weekly</strong> across major U.S. metros—early proof that car-light living is coming and garages can shift from storage to social.
                                 <ExpandableCitation
                                     label="Surgeon General Advisory"
                                     sourceUrl="https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf?utm_source=chatgpt.com"
@@ -106,7 +101,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
 
                         <div className="md:w-1/2 w-full">
-                            <div className="bg-[var(--primary)]/10 dark:bg-[var(--primary)]/10 rounded-3xl p-8 border border-[var(--primary)]/20 shadow-inner backdrop-blur-sm">
+                            <div className="bg-white/5 rounded-3xl p-8 border border-white/10 shadow-inner backdrop-blur-sm">
                                 <LonelinessChart />
                             </div>
                         </div>
@@ -141,11 +136,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm"
                         >
                             <HeartHandshake className="w-8 h-8 text-[var(--primary)] mb-6" />
-                            <h3 className="font-serif text-2xl font-medium mb-3">Connection is health.</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed">
+                            <h3 className="font-serif text-2xl font-medium mb-3 text-white">Connection is health.</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed">
                                 Small, repeated, face-to-face interactions measurably help combat the social disconnection epidemic.
                             </p>
                         </motion.div>
@@ -155,11 +150,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.1 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm"
                         >
                             <Users className="w-8 h-8 text-[var(--primary)] mb-6" />
-                            <h3 className="font-serif text-2xl font-medium mb-3">Walkable Europe shows the appetite.</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed">
+                            <h3 className="font-serif text-2xl font-medium mb-3 text-white">Walkable Europe shows the appetite.</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed">
                                 Pedestrianized, mixed-use streets consistently lift foot traffic and nearby spend—evidence that people crave neighborhood-scale connection.
                                 <ExpandableCitation label="ScienceDirect" sourceUrl="https://www.sciencedirect.com/science/article/am/pii/S026427512100367X?utm_source=chatgpt.com" sourceText="Pedestrianization and the economy." />
                             </p>
@@ -170,11 +165,11 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.2 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm"
                         >
                             <MapPin className="w-8 h-8 text-[var(--primary)] mb-6" />
-                            <h3 className="font-serif text-2xl font-medium mb-3">Policy tailwinds.</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed">
+                            <h3 className="font-serif text-2xl font-medium mb-3 text-white">Policy tailwinds.</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed">
                                 ADU and parking-minimum reforms make it easier to adapt small residential spaces; cities are already updating handbooks and guidance.
                                 <ExpandableCitation label="California ADU Handbook" sourceUrl="https://ahcd.assembly.ca.gov/system/files/2025-03/adu-handbook-update.pdf?utm_source=chatgpt.com" sourceText="ADU regulatory guidelines." />
                             </p>
@@ -185,13 +180,13 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ delay: 0.3 }}
-                            className="bg-white/50 dark:bg-[var(--primary)]/10 p-8 rounded-3xl border border-black/5 dark:border-white/5 backdrop-blur-sm"
+                            className="bg-white/5 p-8 rounded-3xl border border-white/10 backdrop-blur-sm"
                         >
                             <svg className="w-8 h-8 text-[var(--primary)] mb-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <path d="M14 16H9m10 0h3v-3.15a1 1 0 00-.84-.99L16 11l-2.7-3.6a2 2 0 00-1.6-.8H8.3a2 2 0 00-1.6.8L4 11l-5.16.86a1 1 0 00-.84.99V16h3m10 0a2 2 0 10-4 0m4 0a2 2 0 11-4 0m-6 0a2 2 0 10-4 0m4 0a2 2 0 11-4 0" />
                             </svg>
-                            <h3 className="font-serif text-2xl font-medium mb-3">Autonomy is arriving.</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed">
+                            <h3 className="font-serif text-2xl font-medium mb-3 text-white">Autonomy is arriving.</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed">
                                 Fewer household cars over time means more sidewalk-facing space dedicated to people, not storage.
                                 <ExpandableCitation label="Waymo Expansion" sourceUrl="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" sourceText="Robotaxi services expand." />
                             </p>
@@ -201,7 +196,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Product Stack */}
-            <section className="relative z-20 py-24 md:py-32 bg-[var(--primary)]/10 text-neutral-800 dark:text-neutral-200 rounded-[3rem] mx-4 md:mx-8 mb-24 overflow-hidden border border-[var(--primary)]/30 backdrop-blur-md">
+            <section className="relative z-20 py-24 md:py-32 bg-transparent text-white border-y border-white/5">
                 <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.2),transparent_50%)]" />
                 <GridContainer className="relative z-10">
                     <div className="flex flex-col md:flex-row gap-12 mb-20 items-center">
@@ -212,7 +207,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             <div className="mb-6">
                                 <InlineTags tags={initialTags?.enabling_technology} theme="amber" />
                             </div>
-                            <p className="text-xl text-[var(--primary)] dark:text-[var(--secondary)] font-light">Community first; compliance as guardrails.</p>
+                            <p className="text-xl text-neutral-400 font-light">Community first; compliance as guardrails.</p>
                         </div>
                         <div className="md:w-1/2 w-full">
                             <motion.div
@@ -229,10 +224,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     <div className="grid md:grid-cols-2 gap-x-12 gap-y-16">
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-[var(--primary)] flex items-center justify-center text-[var(--secondary)]"><MapPin size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Neighbors <span className="text-[var(--secondary)]/50 text-base font-sans ml-2">(social + discovery)</span></h3>
+                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--primary)]"><MapPin size={20} /></div>
+                                <h3 className="text-2xl font-serif font-medium text-white">Neighbors <span className="text-neutral-500 text-base font-sans ml-2">(social + discovery)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-[var(--primary)]/80 font-light">
+                            <ul className="space-y-4 text-neutral-400 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Live map + notifications:</strong> follow your block; opt into pings when a neighbor “opens”.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Channels:</strong> “who’s open tonight,” family-friendly tags, music/arts, maker hours.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Reputation that matters:</strong> “Great Host,” “Kid-Friendly,” “Quiet-Hours Champ.”</span></li>
@@ -242,10 +237,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-[var(--primary)]/50 flex items-center justify-center text-[var(--secondary)]"><Store size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Market <span className="text-[var(--secondary)]/50 text-base font-sans ml-2">(inspiration → cart → install)</span></h3>
+                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--primary)]"><Store size={20} /></div>
+                                <h3 className="text-2xl font-serif font-medium text-white">Market <span className="text-neutral-500 text-base font-sans ml-2">(inspiration → cart → install)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-[var(--primary)]/80 font-light">
+                            <ul className="space-y-4 text-neutral-400 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Shoppable inspiration:</strong> hosts tag their build; viewers can buy the same gear; creators auto-earn referral revenue.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Compliance badges:</strong> egress/ADA/noise options reduce friction without killing the vibe.</span></li>
                             </ul>
@@ -253,10 +248,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-[var(--primary)]/50 flex items-center justify-center text-[var(--secondary)]"><Box size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Kits <span className="text-[var(--secondary)]/50 text-base font-sans ml-2">(our hero SKUs)</span></h3>
+                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--primary)]"><Box size={20} /></div>
+                                <h3 className="text-2xl font-serif font-medium text-white">Kits <span className="text-neutral-500 text-base font-sans ml-2">(our hero SKUs)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-[var(--primary)]/80 font-light">
+                            <ul className="space-y-4 text-neutral-400 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Social Core:</strong> fold-out seating + warm lighting + quick-close privacy screen.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Micro-Biz Shells:</strong> lockable service wall, QR window, compact storage.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Quiet-hour assist:</strong> soft caps on light/sound the host can set.</span></li>
@@ -265,10 +260,10 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
                         <div>
                             <div className="flex items-center gap-3 mb-6">
-                                <div className="w-10 h-10 rounded-full bg-[var(--primary)]/50 flex items-center justify-center text-[var(--secondary)]"><Store size={20} /></div>
-                                <h3 className="text-2xl font-serif font-medium">Studio <span className="text-[var(--secondary)]/50 text-base font-sans ml-2">(garage business software)</span></h3>
+                                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[var(--primary)]"><Store size={20} /></div>
+                                <h3 className="text-2xl font-serif font-medium text-white">Studio <span className="text-neutral-500 text-base font-sans ml-2">(garage business software)</span></h3>
                             </div>
-                            <ul className="space-y-4 text-[var(--primary)]/80 font-light">
+                            <ul className="space-y-4 text-neutral-400 font-light">
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Neighbor-only POS:</strong> discounts, tip-jar, shared revenue splits.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Soft-touch compliance:</strong> city-tuned checklists for fire egress/home-occupation rules.</span></li>
                                 <li className="flex gap-3"><CheckCircle2 className="shrink-0 text-[var(--primary)] mt-1" size={18} /> <span><strong>Analytics:</strong> repeat neighbors, dwell time, neighborhood NPS, local spend.</span></li>
@@ -290,7 +285,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                 <div className="mb-6">
                                     <InlineTags tags={initialTags?.customer} theme="amber" />
                                 </div>
-                                <p className="text-lg text-[var(--primary)] dark:text-[var(--secondary)] font-light mb-8">
+                                <p className="text-lg text-neutral-400 font-light mb-8">
                                     What people already do (home bars, gyms, maker spaces)—supercharged. Start with our starter list.
                                 </p>
                                 <motion.div
@@ -326,7 +321,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                     <motion.div
                                         key={i}
                                         whileHover={{ y: -4, scale: 1.02 }}
-                                        className="flex flex-col justify-center p-6 bg-white dark:bg-[var(--primary)]/10 border border-black/5 dark:border-white/5 rounded-2xl shadow-sm hover:shadow-md hover:border-[var(--primary)]/50 dark:hover:border-[var(--primary)]/50 transition-colors cursor-pointer"
+                                        className="flex flex-col justify-center p-6 bg-white/5 border border-white/10 rounded-2xl shadow-sm hover:border-[var(--primary)]/50 transition-colors cursor-pointer"
                                     >
                                         <span className="text-[var(--primary)] text-xs font-mono mb-2">0{i + 1}</span>
                                         <span className="font-serif text-lg leading-tight">{idea}</span>
@@ -347,7 +342,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Badges & Block Parties */}
-            <section className="relative z-0 py-24 bg-[var(--primary)]/5 border-y border-black/5 dark:border-white/5">
+            <section className="relative z-0 py-24 bg-transparent border-y border-white/5">
                 <GridContainer>
                     <div className="grid md:grid-cols-2 gap-16 md:gap-24">
                         <div>
@@ -393,7 +388,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Business Model */}
-            <section className="relative z-10 py-32 bg-black/5 dark:bg-black/40 border-y border-white/5">
+            <section className="relative z-10 py-32 bg-transparent border-y border-white/5">
                 <GridContainer>
                     <div className="flex flex-col items-center gap-4 mb-2">
                         <SectionHeading className="text-center text-[var(--primary)] dark:text-white">Business model</SectionHeading>
@@ -411,8 +406,8 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                             { title: "Sponsors/City", desc: "Funded block-party circuits + “Porchfront District” activations." }
                         ].map((item, i) => (
                             <div key={i} className="bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/20 text-center flex flex-col items-center justify-center">
-                                <h4 className="font-sans font-medium text-[var(--tertiary)] mb-2">{item.title}</h4>
-                                <p className="text-sm text-[var(--primary)]/80 font-light leading-relaxed">{item.desc}</p>
+                                <h4 className="font-sans font-medium text-white mb-2">{item.title}</h4>
+                                <p className="text-sm text-neutral-400 font-light leading-relaxed">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -420,7 +415,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
             </section>
 
             {/* Risks and Moat */}
-            <section className="relative z-10 py-24 bg-[var(--primary)]/5 border-b border-black/5 dark:border-white/5">
+            <section className="relative z-10 py-24 bg-transparent border-y border-white/5">
                 <GridContainer>
                     <SectionHeading className="mb-6 text-center text-[var(--primary)] dark:text-[var(--primary)]">Risks & Moats</SectionHeading>
                     <div className="mb-12 flex justify-center">
@@ -471,31 +466,31 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     <p className="text-xl text-[var(--primary)] dark:text-[var(--secondary)] font-light text-center mb-16">Why this movement compounds exponentially.</p>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 relative group">
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
-                            <div className="text-4xl mb-6">🚕</div>
-                            <h3 className="font-serif text-2xl font-medium mb-4">Autonomous ride-hail</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed mb-4">
+                        <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 relative group">
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
+                            <Car className="w-10 h-10 text-[var(--primary)] mb-6" />
+                            <h3 className="font-serif text-2xl font-medium mb-4 text-white">Autonomous ride-hail</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed mb-4">
                                 Reduces the need for private car storage over time; more garages can face the sidewalk as human-scale spaces.
                             </p>
                             <ExpandableCitation label="Reuters: Waymo Expands" sourceUrl="https://www.reuters.com/business/autos-transportation/waymo-expands-robotaxi-services-into-more-parts-san-francisco-bay-area-2025-06-17/?utm_source=chatgpt.com" sourceText="Autonomous ride-hailing expansion context." />
                         </div>
 
-                        <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 relative group">
-                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
-                            <div className="text-4xl mb-6">🤖</div>
-                            <h3 className="font-serif text-2xl font-medium mb-4">Humanoid robots</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed mb-4">
+                        <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 relative group">
+                            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-3xl" />
+                            <Bot className="w-10 h-10 text-[var(--primary)] mb-6" />
+                            <h3 className="font-serif text-2xl font-medium mb-4 text-white">Humanoid robots</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed mb-4">
                                 Drives setup/ops costs down for ultra-small businesses (load-in/out, cleaning, stocking, simple prep), enabling one-person + robot micro-shops.
                             </p>
                             <ExpandableCitation label="BMW Completes Pilot" sourceUrl="https://www.automotivedive.com/news/bmw-completes-sucessful-pilot-humanoid-robots-spartanburg-plant-figure-02/723574/?utm_source=chatgpt.com" sourceText="Pilot program for humanoid robots." />
                         </div>
 
-                        <div className="bg-white/60 dark:bg-black/40 backdrop-blur-xl p-8 rounded-3xl border border-black/5 dark:border-white/5 shadow-lg relative group overflow-hidden">
+                        <div className="bg-white/5 backdrop-blur-xl p-8 rounded-3xl border border-white/10 shadow-lg relative group overflow-hidden">
                             <div className="absolute -right-12 -top-12 w-48 h-48 bg-[var(--primary)]/20 blur-[50px] rounded-full group-hover:bg-[var(--secondary)]/30 transition-colors" />
-                            <div className="text-4xl mb-6 relative z-10">🌿</div>
-                            <h3 className="font-serif text-2xl font-medium mb-4 relative z-10">Curb appeal, upgraded</h3>
-                            <p className="text-[var(--primary)] dark:text-[var(--secondary)] font-light leading-relaxed relative z-10">
+                            <Leaf className="w-10 h-10 text-[var(--primary)] mb-6 relative z-10" />
+                            <h3 className="font-serif text-2xl font-medium mb-4 relative z-10 text-white">Curb appeal, upgraded</h3>
+                            <p className="text-neutral-400 font-light leading-relaxed relative z-10">
                                 Robots can also create and maintain spectacular gardens (planting, pruning, seasonal refresh), making porches more inviting and blocks measurably friendlier.
                             </p>
                         </div>
