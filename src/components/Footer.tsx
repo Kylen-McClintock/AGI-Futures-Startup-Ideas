@@ -12,6 +12,9 @@ export function Footer() {
 
                 {/* Footer Links */}
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium tracking-wide">
+                    <Link href="/about" className="text-white/60 hover:text-white transition-colors">
+                        About
+                    </Link>
                     <Link href="/forecasting" className="text-white/60 hover:text-white transition-colors">
                         Forecasting Methodology
                     </Link>

@@ -10,7 +10,7 @@ export function AutoForecastInjector() {
     const [themeConfig, setThemeConfig] = useState<{ primary?: string, secondary?: string, tertiary?: string } | null>(null);
 
     // Only inject on startup idea sub-pages, not the root library or static info pages
-    const isExcludedRoute = ["/", "", "/forecasting", "/license"].includes(pathname);
+    const isExcludedRoute = ["/", "", "/forecasting", "/license", "/about"].includes(pathname);
 
     useEffect(() => {
         if (isExcludedRoute) return;
