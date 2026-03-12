@@ -34,13 +34,25 @@ export default function AboutPage() {
 
                     <div className="space-y-8">
                         <div>
-                            <p>
-                                I am a <strong>techno-optimist but a political realist</strong>. The path from AGI to ASI guarantees unfathomable abundance—even awakening the light cone with consciousness is possible. But so is chaotic collapse.
-                            </p>
+                            <div className="space-y-4">
+                                <p>
+                                    I am a <strong>techno-optimist but a political realist</strong>. 
+                                </p>
+                                <p className="text-2xl font-medium tracking-wide flex items-center flex-wrap gap-3">
+                                    <span>AGI</span>
+                                    <span className="text-white/40">→</span>
+                                    <span>ASI</span>
+                                    <span className="text-white/40">→</span>
+                                    <span>Unfathomable abundance <span className="text-sm text-white/40 uppercase tracking-widest font-mono ml-2">(not guaranteed!)</span></span>
+                                </p>
+                                <p>
+                                    Even <span className="text-[#3bf4a4] font-medium">Awakening the light cone</span> with consciousness is possible. But so is <span className="text-red-500 font-medium">chaotic collapse</span>.
+                                </p>
+                            </div>
                             
                             <SeesawVisual />
 
-                            <p className="text-[#3bf4a4] font-medium text-xl my-6">
+                            <p className="text-white italic text-3xl font-serif my-12 leading-relaxed">
                                 The next decade of builders possess unprecedented agency over which direction the AGI Future leans.
                             </p>
                         </div>
@@ -50,7 +62,10 @@ export default function AboutPage() {
                             <p className="font-medium text-white m-0 text-xl">
                                 Ex-Engineer, Venture, & AI Product Manager.
                             </p>
-                            <p className="text-white/60 mt-2 m-0">
+                            <p className="text-[#3bf4a4] font-mono text-sm tracking-wide mt-3 mb-4">
+                                ► AGI Alignment nerd since 2015 
+                            </p>
+                            <p className="text-white/60 mt-2 m-0 border-t border-white/10 pt-4">
                                 Currently <strong className="text-white">Co-Founder & CEO of LEVL</strong>, an AI-enabled longevity therapeutics startup.
                             </p>
                         </div>
@@ -66,14 +81,14 @@ export default function AboutPage() {
                                 I am launching <strong>AGI Futures</strong> to open source the most impactful startup opportunities I and other founders would build ourselves if we weren't already too busy scaling our own ventures. 
                             </p>
                             <p>
-                                These ideas are the curated distillation of hundreds of conversations between leading founders and industry insiders operating at the extreme edge of the technological and cultural frontier.
+                                These ideas are the <span className="bg-[#3bf4a4]/20 text-[#3bf4a4] px-2 py-0.5 rounded font-medium">curated distillation of hundreds of conversations</span> between leading founders and industry insiders operating at the extreme edge of the technological and cultural frontier.
                             </p>
                         </div>
 
                         <div className="mt-16 pt-12 border-t border-white/10">
                             <h2 className="text-3xl font-serif text-white mb-6">The Goal</h2>
                             <p className="text-xl leading-relaxed">
-                                My hope: this community builds many of these AI-native startups, creates generational wealth, meaningfully improves the world, and—selfishly—ships products I want to use. 
+                                This community builds many of these AI-native startups, creates generational wealth, meaningfully improves the world, and—selfishly—ships products I want to use. 
                             </p>
                             <p className="mt-8 text-[#3bf4a4]/80 italic">
                                 I plan to advise or invest alongside the top builders. If you are building one of these, let's talk.
