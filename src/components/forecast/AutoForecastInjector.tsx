@@ -9,11 +9,11 @@ export function AutoForecastInjector() {
     const pathname = usePathname();
     const [themeConfig, setThemeConfig] = useState<{ primary?: string, secondary?: string, tertiary?: string } | null>(null);
 
-    // Only inject on startup idea sub-pages, not the root library page
-    const isLibraryRoot = pathname === "/" || pathname === "";
+    // Only inject on startup idea sub-pages, not the root library or static info pages
+    const isExcludedRoute = ["/", "", "/forecasting", "/license"].includes(pathname);
 
     useEffect(() => {
-        if (isLibraryRoot) return;
+        if (isExcludedRoute) return;
 
         // Poll for CSS variables on the <main> tag to inherit the deep theme
         // since the layout wrapper sits *outside* the page's <main> tag where the styled are applied
@@ -45,9 +45,9 @@ export function AutoForecastInjector() {
             }, 50);
             return () => clearInterval(interval);
         }
-    }, [pathname, isLibraryRoot, themeConfig?.primary]);
+    }, [pathname, isExcludedRoute, themeConfig?.primary]);
 
-    if (isLibraryRoot) return null;
+    if (isExcludedRoute) return null;
 
     // Extract slug from pathname (e.g., "/agentable" -> "agentable")
     const slug = pathname.split('/').filter(Boolean).pop() || "";
