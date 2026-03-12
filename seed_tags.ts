@@ -424,6 +424,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Human Flourishing', 'Social Trust']
         }
+    },
+    {
+        slug: 'afterlight',
+        name: 'Afterlight',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 72 },
+            difficulty_score: { ai_scored: 44 },
+            civilizational_impact_score: { ai_scored: 67 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 83 },
+                "Social Trust": { ai_scored: 74 },
+                "Community Renewal": { ai_scored: 61 },
+                "Societal Cohesion": { ai_scored: 52 }
+            }
+        },
+        tags: {
+            sector: ['Deathcare', 'Relationships', 'Healthcare', 'Community'],
+            bottleneck: ['Trust', 'Meaning Crisis', 'Social Fragmentation'],
+            customer: ['Families', 'Caregivers'],
+            product_type: ['Consumer App', 'Personalized AI'],
+            enabling_technology: ['Large Language Models', 'Voice AI', 'Vision AI', 'Knowledge Graphs', 'Social Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Human Flourishing', 'Social Trust', 'Community Renewal', 'Societal Cohesion']
+        }
     }
 ];
 

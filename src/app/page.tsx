@@ -19,6 +19,7 @@ import handraise_hero from "./handraise/assets/handraise_hero.png";
 import hearth_hero from "./hearth/assets/hero.png";
 import biophilia_ark_hero from "./biophilia-ark/assets/cloud_forest.png";
 import sellcraft_hero from "./sellcraft/assets/sellcraft_hero.png";
+import afterlight_hero from "./afterlight/assets/afterlight_hero_1773354206295.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -47,7 +48,8 @@ export default async function Home() {
         "proofrun": { moat: 78, difficulty: 67, impact: 64, created_at: "2024-03-11T10:00:00Z", tags: { sector: ['AI', 'Education'], bottleneck: ['Talent Matching', 'Trust', 'Coordination'], customer: ['Startups', 'Enterprises'], product_type: ['Platform', 'Marketplace'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust', 'Societal Cohesion'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':68},'Human Flourishing':{'ai_scored':74},'Social Trust':{'ai_scored':54},'Societal Cohesion':{'ai_scored':58}} },
         "handraise": { moat: 76, difficulty: 63, impact: 65, created_at: "2024-03-12T10:00:00Z", tags: { sector: ['AI', 'Social Media', 'Community'], bottleneck: ['Trust', 'Coordination', 'Talent Matching'], customer: ['Founders', 'Startups'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Knowledge Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Social Trust', 'Societal Cohesion'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':64},'Social Trust':{'ai_scored':82},'Societal Cohesion':{'ai_scored':58}} },
         "biophilia-ark": { moat: 84, difficulty: 74, impact: 78, created_at: "2024-03-13T10:00:00Z", tags: { sector: ['Housing', 'Cities', 'Community', 'Science'], bottleneck: ['Meaning Crisis', 'Social Fragmentation', 'Cultural Resistance'], customer: ['Enterprises', 'Consumers'], product_type: ['Hardware', 'Platform'], enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'], readiness: ['Hardware Prototype'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':86},'Biodiversity':{'ai_scored':91},'Community Renewal':{'ai_scored':72},'Air Quality':{'ai_scored':41},'Climate':{'ai_scored':82}} },
-        "sellcraft": { moat: 74, difficulty: 68, impact: 47, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Media'], bottleneck: ['Trust', 'Talent Matching'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Spatial Computing', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':65},'Human Flourishing':{'ai_scored':70},'Social Trust':{'ai_scored':55}} }
+        "sellcraft": { moat: 74, difficulty: 68, impact: 47, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Media'], bottleneck: ['Trust', 'Talent Matching'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Spatial Computing', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':65},'Human Flourishing':{'ai_scored':70},'Social Trust':{'ai_scored':55}} },
+        "afterlight": { moat: 72, difficulty: 44, impact: 67, created_at: new Date().toISOString(), tags: { sector: ['Deathcare', 'Relationships', 'Healthcare', 'Community'], bottleneck: ['Trust', 'Meaning Crisis', 'Social Fragmentation'], customer: ['Families', 'Caregivers'], product_type: ['Consumer App', 'Personalized AI'], enabling_technology: ['Large Language Models', 'Voice AI', 'Vision AI', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Social Trust', 'Community Renewal', 'Societal Cohesion'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':83},'Social Trust':{'ai_scored':74},'Community Renewal':{'ai_scored':61},'Societal Cohesion':{'ai_scored':52}} }
     };
 
     // Helper to merge static data with DB data
@@ -251,6 +253,16 @@ export default async function Home() {
             href: "/sellcraft",
             themeColor: "hover:border-violet-500/50 text-violet-400",
             hoverTextColor: "group-hover:text-violet-400",
+        }),
+        createProject({
+            slug: "afterlight",
+            title: "Afterlight",
+            scoreTitle: "End of life memory preservation",
+            description: "Afterlight helps maximize meaning in the last chapter of life, by prompting connection and the preservation of stories for the loved ones they leave behind.",
+            image: afterlight_hero,
+            href: "/afterlight",
+            themeColor: "hover:border-amber-500/50 text-amber-400",
+            hoverTextColor: "group-hover:text-amber-400",
         })
     ];
 
