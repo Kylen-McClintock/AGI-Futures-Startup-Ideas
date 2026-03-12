@@ -12,7 +12,7 @@ export function SeesawVisual() {
             
             {/* The Board */}
             <motion.div 
-                className="w-full max-w-[320px] sm:max-w-md h-1.5 bg-gradient-to-r from-[#3bf4a4] via-white/20 to-red-500 rounded-full relative z-20 mb-[12px]"
+                className="w-full max-w-[320px] sm:max-w-md h-1.5 bg-gradient-to-r from-[#3bf4a4] via-white/20 to-red-500 rounded-full relative z-20 mb-[4px]"
                 animate={{ rotate: [-4, 6, -2, 5, -5, 3, -4] }}
                 transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
                 style={{ originX: 0.5, originY: 0.5 }}
