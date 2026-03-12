@@ -1,4 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
+import { getForecastForSlug } from "@/data/forecasts";
+import { calculateExpectedValuation, calculateTimeToUnicorn } from "@/utils/forecastMath";
 import HomeClient, { ProjectData } from "./page-client";
 
 import murmuration_hero from "./murmuration/assets/hero_strategy_dashboard.png";
@@ -68,6 +70,12 @@ export default async function Home() {
 
         const ratings = dbData?.civilizational_impact_ratings || fallback.civilizational_impact_ratings || {};
 
+        const forecastData = getForecastForSlug(staticData.slug).forecast;
+        const expectedValuation2030 = calculateExpectedValuation(forecastData.curves['2030-01-01'].probabilities);
+        const expectedValuation2035 = calculateExpectedValuation(forecastData.curves['2035-01-01'].probabilities);
+        const expectedValuation2040 = calculateExpectedValuation(forecastData.curves['2040-01-01'].probabilities);
+        const timeToUnicorn = calculateTimeToUnicorn(forecastData);
+
         return {
             ...staticData,
             created_at: dbData?.created_at || fallback.created_at,
@@ -76,6 +84,10 @@ export default async function Home() {
             civilizational_impact_score: impact || fallback.impact,
             civilizational_impact_ratings: ratings,
             tags: tags,
+            expectedValuation2030,
+            expectedValuation2035,
+            expectedValuation2040,
+            timeToUnicorn
         };
     };
 

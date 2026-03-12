@@ -32,6 +32,10 @@ export type ProjectData = {
         enabling_technology?: string[];
         founder_fit?: string[];
     };
+    expectedValuation2030?: number;
+    expectedValuation2035?: number;
+    expectedValuation2040?: number;
+    timeToUnicorn?: number;
 };
 
 const filterCategories = [
@@ -152,6 +156,15 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                 diff = b.moat_score - a.moat_score;
             } else if (sortBy === "difficulty") {
                 diff = b.difficulty_score - a.difficulty_score;
+            } else if (sortBy === "expectedValuation2030") {
+                diff = (b.expectedValuation2030 || 0) - (a.expectedValuation2030 || 0);
+            } else if (sortBy === "expectedValuation2035") {
+                diff = (b.expectedValuation2035 || 0) - (a.expectedValuation2035 || 0);
+            } else if (sortBy === "expectedValuation2040") {
+                diff = (b.expectedValuation2040 || 0) - (a.expectedValuation2040 || 0);
+            } else if (sortBy === "timeToUnicorn") {
+                // Smallest time (fastest) is considered "best", so we flip a and b to make desc put smallest first
+                diff = (a.timeToUnicorn || Infinity) - (b.timeToUnicorn || Infinity);
             } else {
                 // Default: Recent (descending by created_at)
                 diff = new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
@@ -210,6 +223,12 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     <option value="impact">Civilizational Impact</option>
                                     <option value="moat">Moat Potential</option>
                                     <option value="difficulty">Difficulty to Build</option>
+                                    <optgroup label="Valuation Forecasts">
+                                        <option value="expectedValuation2030">Expected Val ('30)</option>
+                                        <option value="expectedValuation2035">Expected Val ('35)</option>
+                                        <option value="expectedValuation2040">Expected Val ('40)</option>
+                                        <option value="timeToUnicorn">Time to $1B (Unicorn)</option>
+                                    </optgroup>
                                     {/* Dynamically add sorting options for selected Outcomes */}
                                     {activeTags.filter(t => t.category === 'outcomes').map(t => (
                                         <option key={`sort-outcome-${t.tag}`} value={`outcome_${t.tag}`}>
@@ -344,12 +363,40 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     </span>
                                 </div>
                             )}
-                            {/* Hide old badge logic */}
-                            {false && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">{sortBy.replace('outcome_', '')}:</span>
+
+                            {/* Forecast Badges */}
+                            {sortBy === 'expectedValuation2030' && project.expectedValuation2030 !== undefined && (
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                    <span className="text-white/90 font-medium">Expected Val ('30):</span>
                                     <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        {project.civilizational_impact_ratings?.[sortBy.replace('outcome_', '')]?.ai_scored || 0}
+                                        ${project.expectedValuation2030 >= 1_000_000_000 ? (project.expectedValuation2030 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2030 / 1_000_000).toFixed(1) + 'M'}
+                                    </span>
+                                </div>
+                            )}
+
+                            {sortBy === 'expectedValuation2035' && project.expectedValuation2035 !== undefined && (
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                    <span className="text-white/90 font-medium">Expected Val ('35):</span>
+                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
+                                        ${project.expectedValuation2035 >= 1_000_000_000 ? (project.expectedValuation2035 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2035 / 1_000_000).toFixed(1) + 'M'}
+                                    </span>
+                                </div>
+                            )}
+
+                            {sortBy === 'expectedValuation2040' && project.expectedValuation2040 !== undefined && (
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                    <span className="text-white/90 font-medium">Expected Val ('40):</span>
+                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
+                                        ${project.expectedValuation2040 >= 1_000_000_000 ? (project.expectedValuation2040 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2040 / 1_000_000).toFixed(1) + 'M'}
+                                    </span>
+                                </div>
+                            )}
+
+                            {sortBy === 'timeToUnicorn' && project.timeToUnicorn !== undefined && (
+                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md mt-2">
+                                    <span className="text-white/90 font-medium">Time to $1B:</span>
+                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
+                                        {project.timeToUnicorn === Infinity ? '>2040' : Math.round(project.timeToUnicorn)}
                                     </span>
                                 </div>
                             )}

@@ -1,4 +1,4 @@
-import { VALUATION_THRESHOLDS, VALUATION_BANDS } from '../types/forecast';
+import { VALUATION_THRESHOLDS, VALUATION_BANDS, CategoryForecast } from '../types/forecast';
 
 /**
  * Enforces monotonicity on a cumulative forecast curve.
@@ -172,4 +172,71 @@ export function inferHeavyTail(
     // Safety check with last anchor to ensure monotone.
     // We enforce monotonicity from the lowest valuation anchor outwards.
     return enforceMonotonicity(res, String(sortedAnchors[0].threshold), sortedAnchors[0].prob);
+}
+
+/**
+ * Calculates the expected valuation of a forecast curve in dollars.
+ * Approximates using the mid-point of each valuation band multiplied by its discrete probability.
+ * For the unbounded highest band ($1T+), we assume $1T for conservatism.
+ */
+export function calculateExpectedValuation(probabilities: Record<string, number>): number {
+    const bands = calculateBandDistribution(probabilities);
+    let expectedValue = 0;
+    
+    // Define rough midpoints for each band for EV calculation
+    const midpoints: Record<string, number> = {
+        "band_1": 5_000_000,           // < $10M (Assume 5M)
+        "band_2": 50_000_000,          // $10M - $100M
+        "band_3": 500_000_000,         // $100M - $1B
+        "band_4": 5_000_000_000,       // $1B - $10B
+        "band_5": 50_000_000_000,      // $10B - $100B
+        "band_6": 500_000_000_000,     // $100B - $1T
+        "band_7": 1_000_000_000_000    // > $1T (Conservative cap at 1T)
+    };
+
+    for (const [bandId, probPercent] of Object.entries(bands)) {
+        const prob = probPercent / 100;
+        const midpoint = midpoints[bandId] || 0;
+        expectedValue += prob * midpoint;
+    }
+
+    return expectedValue;
+}
+
+/**
+ * Calculates the exact year (interpolated) when the probability of reaching a $1B valuation crosses 50%.
+ * If it has already crossed 50% by 2030, extrapolates linearly backward from 2025 (assumed 0%).
+ * If it never crosses 50% by 2040, returns Infinity.
+ * 
+ * @param forecast The full category forecast object containing 2030, 2035, and 2040 curves
+ * @returns The year as a float (e.g., 2032.5 = mid-2032) or Infinity 
+ */
+export function calculateTimeToUnicorn(forecast: CategoryForecast): number {
+    const prob2030 = forecast.curves['2030-01-01'].probabilities['1000000000'] || 0;
+    const prob2035 = forecast.curves['2035-01-01'].probabilities['1000000000'] || 0;
+    const prob2040 = forecast.curves['2040-01-01'].probabilities['1000000000'] || 0;
+
+    const target = 50; // 50% probability boundary
+
+    if (prob2030 >= target) {
+        // Interpolate between 2025 (assumed 0%) and 2030
+        const prob2025 = 0;
+        const diff = prob2030 - prob2025;
+        return 2025 + ((target - prob2025) / diff) * 5;
+    }
+    
+    if (prob2035 >= target) {
+        // Interpolate between 2030 and 2035
+        const diff = prob2035 - prob2030;
+        return 2030 + ((target - prob2030) / diff) * 5;
+    }
+
+    if (prob2040 >= target) {
+        // Interpolate between 2035 and 2040
+        const diff = prob2040 - prob2035;
+        return 2035 + ((target - prob2035) / diff) * 5;
+    }
+
+    // Never hits 50% by 2040 
+    return Infinity;
 }
