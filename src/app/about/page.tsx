@@ -63,7 +63,7 @@ export default function AboutPage() {
                                     Kylen McClintock
                                 </a>
                                 <p className="text-white/80 text-lg m-0">
-                                    ex-engineer, venture, and AI product management.
+                                    ex-engineer, venture, and AI product management
                                 </p>
                             </div>
                             <p className="text-[#3bf4a4] font-mono text-sm tracking-wide mt-3 mb-4">
@@ -86,9 +86,8 @@ export default function AboutPage() {
                             </p>
                             <p className="text-xl leading-relaxed">
                                 If you want to contribute an idea, or you’re considering building one of these, please reach out.
-                            </p>
-                            <p className="mt-8 text-[#3bf4a4]/80 italic text-xl">
-                                I plan to advise, support, and sometimes invest alongside the top builders.
+                                <br/>
+                                <span className="text-[#3bf4a4]/80 italic mt-2 inline-block">Time allowing, I plan to advise, support, and sometimes invest alongside the top builders.</span>
                             </p>
                         </div>
                     </div>
