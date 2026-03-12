@@ -29,38 +29,32 @@ export default function AboutPage() {
                 <div className="prose prose-invert prose-lg max-w-none prose-p:font-light prose-p:text-white/80 prose-strong:text-white prose-strong:font-medium">
                     
                     <p className="lead text-2xl text-white font-serif italic mb-12 leading-relaxed border-l-4 border-[#3bf4a4] pl-6 py-2 bg-white/[0.02] rounded-r-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
-                        "Doing what I can to build a maximally beneficial AGI Future."
+                        “Whether it is to be Utopia or Oblivion will be a touch-and-go relay race right up to the final moment.”<br />
+                        <span className="text-lg text-white/50 not-italic mt-2 block">— Buckminster Fuller</span>
                     </p>
 
                     <div className="space-y-8">
                         <div>
                             <div className="space-y-4">
-                                <p>
-                                    I am a <strong>techno-optimist but a political realist</strong>. 
-                                </p>
-                                <p className="text-2xl font-medium tracking-wide flex items-center flex-wrap gap-3">
-                                    <span>AGI</span>
-                                    <span className="text-white/40">→</span>
-                                    <span>ASI</span>
-                                    <span className="text-white/40">→</span>
-                                    <span>Unfathomable abundance <span className="text-sm text-white/40 uppercase tracking-widest font-mono ml-2">(not guaranteed!)</span></span>
-                                </p>
-                                <p>
-                                    Even <span className="text-[#3bf4a4] font-medium">Awakening the light cone</span> with consciousness is possible. But so is <span className="text-red-500 font-medium">chaotic collapse</span>.
+                                <p className="text-xl leading-relaxed">
+                                    Ours is a time of unusual agency. The next decade of builders will help decide whether the AGI future bends toward abundance or collapse.
                                 </p>
                             </div>
                             
                             <SeesawVisual />
 
-                            <p className="text-white italic text-3xl font-serif my-12 leading-relaxed">
-                                The next decade of builders possess unprecedented agency over which direction the AGI Future leans.
+                            <p className="text-xl leading-relaxed mt-12">
+                                <strong>AGI Futures</strong> is a curated library of high-conviction startup blueprints drawn from hundreds of conversations with founders, operators, and industry insiders working at the frontier of technology, science, and culture.
+                            </p>
+                            <p className="text-xl leading-relaxed mt-6">
+                                This is not a generic startup ideas database. It is a vetted build list for people who see startups, decentralized protocols, and new institutions as core to an abundant future.
                             </p>
                         </div>
 
-                        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 my-12">
-                            <h3 className="text-sm font-mono tracking-widest uppercase text-white/40 mb-4">The Builder</h3>
+                        <div className="p-8 rounded-3xl bg-white/5 border border-white/10 my-16">
+                            <h3 className="text-sm font-mono tracking-widest uppercase text-white/40 mb-4">About the Lead Curator</h3>
                             <p className="font-medium text-white m-0 text-xl">
-                                Ex-Engineer, Venture, & AI Product Manager.
+                                I'm Kylen McClintock, an ex-engineer, venture, and AI product management.
                             </p>
                             <p className="text-[#3bf4a4] font-mono text-sm tracking-wide mt-3 mb-4">
                                 ► AGI Alignment nerd since 2015 
@@ -71,27 +65,20 @@ export default function AboutPage() {
                         </div>
 
                         <div className="space-y-6">
-                            <p>
-                                The ratio of things I want to do in this lifetime with the people I love versus the time I have left is tragically lopsided. 
-                            </p>
                             <p className="pl-6 border-l-2 border-white/10 italic text-white/60 bg-white/[0.01] py-2 rounded-r-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.02)]">
-                                I started LEVL to accelerate Longevity Escape Velocity and literally give us more time. Ironically, building it takes most of mine.
+                                I started LEVL (Longevity Escape Velocity Labs) to provide people with more time. Ironically, building it takes most of mine.
                             </p>
-                            <p>
-                                I am launching <strong>AGI Futures</strong> to open source the most impactful startup opportunities I and other founders would build ourselves if we weren't already too busy scaling our own ventures. 
+                            <p className="text-xl leading-relaxed mt-8">
+                                AGI Futures grew out of a simple observation: many of the most important startup opportunities never get built because the founders best positioned to see them are already fully committed to scaling something else.
                             </p>
-                            <p>
-                                These ideas are the <span className="bg-[#3bf4a4]/20 text-[#3bf4a4] px-2 py-0.5 rounded font-medium">curated distillation of hundreds of conversations</span> between leading founders and industry insiders operating at the extreme edge of the technological and cultural frontier.
-                            </p>
-                        </div>
-
-                        <div className="mt-16 pt-12 border-t border-white/10">
-                            <h2 className="text-3xl font-serif text-white mb-6">The Goal</h2>
                             <p className="text-xl leading-relaxed">
-                                This community builds many of these AI-native startups, creates generational wealth, meaningfully improves the world, and—selfishly—ships products I want to use. 
+                                That is why my team and I are open-sourcing the highest-conviction opportunities I and other founders would pursue ourselves if we weren’t already heads down on our own ventures.
                             </p>
-                            <p className="mt-8 text-[#3bf4a4]/80 italic">
-                                I plan to advise or invest alongside the top builders. If you are building one of these, let's talk.
+                            <p className="text-xl leading-relaxed">
+                                If you want to contribute an idea, or you’re considering building one of these, please reach out.
+                            </p>
+                            <p className="mt-8 text-[#3bf4a4]/80 italic text-xl">
+                                I plan to advise, support, and sometimes invest alongside the top builders.
                             </p>
                         </div>
                     </div>
