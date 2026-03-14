@@ -25,37 +25,43 @@ export function RecurrenceChart() {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/2 h-64 flex items-end justify-center gap-8 sm:gap-16 pt-8 border-b border-white/20 relative">
-                    <div className="absolute left-0 bottom-full w-full border-t border-white/5 border-dashed translate-y-[-100px]" />
-                    <div className="absolute left-0 top-0 text-[10px] font-mono tracking-widest text-white/20">RECURRENCE RATE</div>
-                    
-                    {/* Placebo Bar */}
-                    <div className="relative group w-24">
-                        <motion.div 
-                            initial={{ height: 0 }}
-                            whileInView={{ height: "80%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                            className="w-full bg-white/10 rounded-t-xl border-t border-white/30 backdrop-blur-sm relative"
-                        >
-                            <div className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-white/60">39.8%</div>
-                        </motion.div>
-                        <div className="mt-4 text-center text-sm font-medium text-white/50">Placebo</div>
-                    </div>
+                <div className="w-full md:w-1/2">
+                    <div className="h-64 flex items-end justify-center gap-8 sm:gap-16 pt-8 border-b border-white/20 relative">
+                        <div className="absolute left-0 bottom-full w-full border-t border-white/5 border-dashed translate-y-[-100px]" />
+                        <div className="absolute left-0 top-0 text-[10px] font-mono tracking-widest text-white/20">RECURRENCE RATE</div>
+                        
+                        {/* Placebo Bar */}
+                        <div className="relative group w-20 sm:w-24 h-full flex items-end">
+                            <motion.div 
+                                initial={{ height: 0 }}
+                                whileInView={{ height: "80%" }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                                className="w-full bg-white/10 rounded-t-xl border-t border-white/30 backdrop-blur-sm relative"
+                            >
+                                <div className="absolute -top-8 left-1/2 -translate-x-1/2 font-mono text-white/60">39.8%</div>
+                            </motion.div>
+                        </div>
 
-                    {/* Treatment Bar */}
-                    <div className="relative group w-24">
-                        <motion.div 
-                            initial={{ height: 0 }}
-                            whileInView={{ height: "25%" }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                            className="w-full bg-[var(--primary)] rounded-t-xl border-t border-[var(--primary)]/50 relative shadow-[0_0_30px_var(--primary-glow)]"
-                            style={{ boxShadow: '0 0 20px var(--primary)' }}
-                        >
-                            <div className="absolute -top-10 left-1/2 -translate-x-1/2 font-mono text-[var(--primary)] text-xl font-bold bg-[var(--primary)]/10 px-2 py-1 rounded-lg backdrop-blur-md">12.4%</div>
-                        </motion.div>
-                        <div className="mt-4 text-center text-sm font-medium text-[var(--primary)]">Treatment</div>
+                        {/* Treatment Bar */}
+                        <div className="relative group w-20 sm:w-24 h-full flex items-end">
+                            <motion.div 
+                                initial={{ height: 0 }}
+                                whileInView={{ height: "25%" }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                                className="w-full bg-[var(--primary)] rounded-t-xl border-t border-[var(--primary)]/50 relative shadow-[0_0_30px_var(--primary-glow)]"
+                                style={{ boxShadow: '0 0 20px var(--primary)' }}
+                            >
+                                <div className="absolute -top-10 left-1/2 -translate-x-1/2 font-mono text-[var(--primary)] text-xl font-bold bg-[var(--primary)]/10 px-2 py-1 rounded-lg backdrop-blur-md">12.4%</div>
+                            </motion.div>
+                        </div>
+                    </div>
+                    
+                    {/* Axis Labels */}
+                    <div className="flex justify-center gap-8 sm:gap-16 mt-4">
+                        <div className="w-20 sm:w-24 text-center text-sm font-medium text-white/50">Placebo</div>
+                        <div className="w-20 sm:w-24 text-center text-sm font-medium text-[var(--primary)]">Treatment</div>
                     </div>
                 </div>
             </div>

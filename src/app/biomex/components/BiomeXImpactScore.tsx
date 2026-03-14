@@ -44,11 +44,11 @@ export function BiomeXImpactScore({ overallScore, subScores }: BiomeXImpactScore
             <div className="px-6 pb-8 sm:px-8 border-t border-[var(--primary)]/10 pt-6 mt-2">
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {subScores.map((sub, i) => (
-                        <div key={i} className="flex flex-col gap-2 p-4 rounded-2xl bg-black/20 border border-white/5">
-                            <span className="text-xs font-mono uppercase tracking-widest text-[#a1a1aa] leading-tight flex-wrap">
+                        <div key={i} className="flex flex-col gap-2 p-4 rounded-2xl bg-black/20 border border-white/5 h-full">
+                            <span className="text-[10px] font-mono uppercase tracking-wider md:tracking-widest text-[#a1a1aa] leading-tight flex-grow break-words">
                                 {sub.name}
                             </span>
-                            <div className="flex items-end gap-1">
+                            <div className="flex items-end gap-1 mt-auto">
                                 <span className="text-2xl font-light text-white">{sub.score}</span>
                                 <span className="text-[#a1a1aa] font-mono text-[10px] mb-1">/ 100</span>
                             </div>
