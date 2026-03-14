@@ -21,6 +21,7 @@ import biophilia_ark_hero from "./biophilia-ark/assets/cloud_forest.png";
 import sellcraft_hero from "./sellcraft/assets/sellcraft_hero.png";
 import afterlight_hero from "./afterlight/assets/afterlight_hero_1773354206295.png";
 import civicpath_hero from "./civicpath/assets/hero.png";
+import biomex_hero from "./biomex/assets/hero_vista.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -51,7 +52,8 @@ export default async function Home() {
         "biophilia-ark": { moat: 84, difficulty: 74, impact: 78, created_at: "2024-03-13T10:00:00Z", tags: { sector: ['Housing', 'Cities', 'Community', 'Science'], bottleneck: ['Meaning Crisis', 'Social Fragmentation', 'Cultural Resistance'], customer: ['Enterprises', 'Consumers'], product_type: ['Hardware', 'Platform'], enabling_technology: ['Large Language Models', 'Vision AI', 'Augmented Reality', 'Simulations', 'Knowledge Graphs'], readiness: ['Hardware Prototype'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Biodiversity', 'Community Renewal', 'Air Quality', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':86},'Biodiversity':{'ai_scored':91},'Community Renewal':{'ai_scored':72},'Air Quality':{'ai_scored':41},'Climate':{'ai_scored':82}} },
         "sellcraft": { moat: 74, difficulty: 68, impact: 47, created_at: "2026-03-11T10:00:00Z", tags: { sector: ['AI', 'Education', 'Media'], bottleneck: ['Trust', 'Talent Matching'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Spatial Computing', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':65},'Human Flourishing':{'ai_scored':70},'Social Trust':{'ai_scored':55}} },
         "afterlight": { moat: 72, difficulty: 44, impact: 67, created_at: "2026-03-12T10:00:00Z", tags: { sector: ['Deathcare', 'Relationships', 'Healthcare', 'Community'], bottleneck: ['Trust', 'Meaning Crisis', 'Social Fragmentation'], customer: ['Families', 'Caregivers'], product_type: ['Consumer App', 'Personalized AI'], enabling_technology: ['Large Language Models', 'Voice AI', 'Vision AI', 'Knowledge Graphs', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Social Trust', 'Community Renewal', 'Societal Cohesion'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':83},'Social Trust':{'ai_scored':74},'Community Renewal':{'ai_scored':61},'Societal Cohesion':{'ai_scored':52}} },
-        "civicpath": { moat: 80, difficulty: 87, impact: 58, created_at: "2026-03-13T10:00:00Z", tags: { sector: ['Governance', 'Democracy', 'AI', 'Security'], bottleneck: ['Trust', 'Regulatory Friction', 'Social Fragmentation'], customer: ['Governments', 'Cities'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Operator-Led'], outcomes: ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':78},'Social Trust':{'ai_scored':61},'Societal Cohesion':{'ai_scored':52},'Freedom':{'ai_scored':39}} }
+        "civicpath": { moat: 80, difficulty: 87, impact: 58, created_at: "2026-03-13T10:00:00Z", tags: { sector: ['Governance', 'Democracy', 'AI', 'Security'], bottleneck: ['Trust', 'Regulatory Friction', 'Social Fragmentation'], customer: ['Governments', 'Cities'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Operator-Led'], outcomes: ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':78},'Social Trust':{'ai_scored':61},'Societal Cohesion':{'ai_scored':52},'Freedom':{'ai_scored':39}} },
+        "biomex": { moat: 85, difficulty: 92, impact: 69, created_at: "2026-03-14T12:00:00Z", tags: { sector: ['Biotech', 'Healthcare', 'Longevity', 'AI'], bottleneck: ['Aging', 'Disease', 'Regulatory Friction'], customer: ['Doctors', 'Enterprises'], product_type: ['Platform', 'Therapeutic'], enabling_technology: ['Knowledge Graphs', 'Wearables', 'Synthetic Biology', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Bio Founder', 'Venture-Scale'], outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience'] }, civilizational_impact_ratings: {'Longevity':{'ai_scored':80},'Human Flourishing':{'ai_scored':66},'Scientific Acceleration':{'ai_scored':76},'Resilience':{'ai_scored':54}} }
     };
 
     // Helper to merge static data with DB data
@@ -275,6 +277,16 @@ export default async function Home() {
             href: "/civicpath",
             themeColor: "hover:border-blue-500/50 text-blue-400",
             hoverTextColor: "group-hover:text-blue-400",
+        }),
+        createProject({
+            slug: "biomex",
+            title: "BiomeX",
+            scoreTitle: "Elite microbiome therapeutics",
+            description: "BiomeX turns elite human microbiomes into a therapeutic platform, compounding toward precision-engineered microbial medicines.",
+            image: biomex_hero,
+            href: "/biomex",
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         })
     ];
 

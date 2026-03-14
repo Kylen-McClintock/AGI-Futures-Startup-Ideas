@@ -171,6 +171,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('civicpath'),
         aiRationale: "CivicPath operates at the intersection of GovTech and civic identity. The AGI Futures forecaster model assigns a strong probability of reaching a $1B+ valuation by 2035, driven by the acute political pain of broken immigration systems and the massive TAM of national governments seeking legible, computable standards over rhetoric."
     },
+    'biomex': {
+        forecast: getDeepTechCurve('biomex'),
+        aiRationale: "BiomeX operates at the intersection of elite human biological variation and clinical therapeutics. The AGI Futures forecaster model applies a DeepTech curve, reflecting high early-stage capital requirements and regulatory risk, followed by potentially massive exponential upside if donor-inspired therapeutic transfer is validated in hard endpoints."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

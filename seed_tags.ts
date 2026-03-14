@@ -476,6 +476,32 @@ const startups = [
             founder_fit: ['Policy Entrepreneur', 'Operator-Led'],
             outcomes: ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom']
         }
+    },
+    {
+        slug: 'biomex',
+        name: 'BiomeX',
+        created_at: '2026-03-14T12:00:00Z',
+        scores: {
+            moat_score: { ai_scored: 85 },
+            difficulty_score: { ai_scored: 92 },
+            civilizational_impact_score: { ai_scored: 69 },
+            civilizational_impact_ratings: {
+                "Longevity": { ai_scored: 80 },
+                "Human Flourishing": { ai_scored: 66 },
+                "Scientific Acceleration": { ai_scored: 76 },
+                "Resilience": { ai_scored: 54 }
+            }
+        },
+        tags: {
+            sector: ['Biotech', 'Healthcare', 'Longevity', 'AI'],
+            bottleneck: ['Aging', 'Disease', 'Regulatory Friction'],
+            customer: ['Doctors', 'Enterprises'],
+            product_type: ['Platform', 'Therapeutic'],
+            enabling_technology: ['Knowledge Graphs', 'Wearables', 'Synthetic Biology', 'Large Language Models'],
+            readiness: ['Build Now'],
+            founder_fit: ['Bio Founder', 'Venture-Scale'],
+            outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience']
+        }
     }
 ];
 
