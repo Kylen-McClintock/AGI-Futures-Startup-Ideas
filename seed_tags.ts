@@ -458,12 +458,12 @@ const startups = [
         scores: {
             moat_score: { ai_scored: 80 },
             difficulty_score: { ai_scored: 87 },
-            civilizational_impact_score: { ai_scored: 58 },
+            civilizational_impact_score: { ai_scored: 84 },
             civilizational_impact_ratings: {
-                "Better Governance": { ai_scored: 78 },
-                "Social Trust": { ai_scored: 61 },
-                "Societal Cohesion": { ai_scored: 52 },
-                "Freedom": { ai_scored: 39 }
+                "Better Governance": { ai_scored: 94 },
+                "Social Trust": { ai_scored: 88 },
+                "Societal Cohesion": { ai_scored: 85 },
+                "Freedom": { ai_scored: 70 }
             }
         },
         tags: {

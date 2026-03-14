@@ -379,7 +379,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                                 <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Business Model
                             </div>
                             <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
-                                Value Flow Architecture.
+                                Revenue Architecture.
                             </h2>
                         </div>
                         <div className="hidden sm:block">
@@ -387,37 +387,36 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-12">
-                        <div>
-                            <ul className="space-y-4 text-white/80 font-light text-lg mb-10">
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- national or municipal software license</li>
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- implementation and systems integration fees</li>
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- per-active-case pricing</li>
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- premium scoring modules for employer sponsorship and economic potential assessment</li>
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- policy simulation module for ministries</li>
-                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- optional managed-services layer for multilingual support and compliance operations</li>
+                    <p className="text-xl leading-relaxed text-white/80 font-light mb-12 max-w-3xl">
+                        CivicPath is pure B2G (Business-to-Government) enterprise software. It monetizes by selling state capacity and political stabilization to national ministries and regional municipalities.
+                    </p>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/20 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
+                            <h3 className="text-lg text-[var(--secondary)] font-medium mb-4 flex items-center gap-2">1. Base Infrastructure</h3>
+                            <div className="text-sm font-mono tracking-widest uppercase text-white/40 mb-6 pb-4 border-b border-white/10">License & Integration</div>
+                            <ul className="space-y-4 text-white/80 font-light text-base">
+                                <li><strong>National/Municipal License:</strong> High seven-figure annual recurring contract for the core scoring engine and dashboard access.</li>
+                                <li><strong>Implementation Fees:</strong> Upfront professional services to integrate legacy database silos (tax, justice, border).</li>
                             </ul>
                         </div>
                         
-                        <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/5">
-                            <h3 className="text-xl font-medium text-white mb-6 flex items-center gap-2"><Scale className="w-5 h-5 text-[var(--primary)]"/> Value Flow</h3>
-                            <ul className="space-y-6">
-                                <li className="border-l-2 border-[var(--secondary)] pl-4">
-                                    <strong className="text-[var(--secondary)] block mb-1">Citizens:</strong>
-                                    <span className="text-white/70 font-light">more control, more trust, lower fiscal drag</span>
-                                </li>
-                                <li className="border-l-2 border-[var(--secondary)] pl-4">
-                                    <strong className="text-[var(--secondary)] block mb-1">Governments:</strong>
-                                    <span className="text-white/70 font-light">fewer administrative failures, clearer standards, better outcomes</span>
-                                </li>
-                                <li className="border-l-2 border-[var(--secondary)] pl-4">
-                                    <strong className="text-[var(--secondary)] block mb-1">Immigrants:</strong>
-                                    <span className="text-white/70 font-light">a fair map of what earns progress</span>
-                                </li>
-                                <li className="border-l-2 border-[var(--secondary)] pl-4">
-                                    <strong className="text-[var(--secondary)] block mb-1">Employers:</strong>
-                                    <span className="text-white/70 font-light">better selection, faster integration, lower compliance risk</span>
-                                </li>
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/40 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-colors relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--primary)]" />
+                            <h3 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2">2. Volume Processing</h3>
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/60 mb-6 pb-4 border-b border-[var(--primary)]/20">Per-active-case Pricing</div>
+                            <ul className="space-y-4 text-white/80 font-light text-base">
+                                <li><strong>Throughput Tiers:</strong> Usage-based pricing scaling with the number of immigrant profiles actively managed by the platform.</li>
+                                <li><strong>Agent Verification:</strong> Micro-transactions for automated LLM document checking, translation, and fraud flags.</li>
+                            </ul>
+                        </div>
+
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--secondary)]/30 bg-[var(--secondary)]/5 hover:bg-[var(--secondary)]/10 transition-colors">
+                            <h3 className="text-lg text-white font-medium mb-4 flex items-center gap-2">3. Premium Modules</h3>
+                            <div className="text-sm font-mono tracking-widest uppercase text-white/40 mb-6 pb-4 border-b border-white/10">High-ROI Upsells</div>
+                            <ul className="space-y-4 text-white/80 font-light text-base">
+                                <li><strong>Policy Simulation:</strong> Sold to legislative staff to precisely model the fiscal outcome of proposed immigration rule changes.</li>
+                                <li><strong>Employer Verification:</strong> Sub-licenses sold to enterprises navigating sponsored visas to pre-score their candidates.</li>
                             </ul>
                         </div>
                     </div>
@@ -584,7 +583,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group bg-black/50">
                         {/* We use gateImage here temporarily, or null if you prefer, but OptionalModuleCollapse does its own content inside mostly. 
                             Since we replaced intake.png, let's just make it a cool gradient container or use simulator again. */}
-                        <Image src={simulatorImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-40 blur-sm" />
+                        <Image src={simulatorImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
                     </div>
                     <OptionalModuleCollapse />
                 </motion.section>
@@ -627,7 +626,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             <details className="mt-8 glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
                                 <summary className="p-6 list-none flex justify-between items-center outline-none">
                                     <div>
-                                        <div className="text-4xl font-light text-white tracking-tight mb-1">58</div>
+                                        <div className="text-4xl font-light text-white tracking-tight mb-1">84</div>
                                         <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)]/80">Impact Score</div>
                                     </div>
                                     <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 group-open:rotate-180 transition-transform duration-300" />
@@ -636,19 +635,19 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                                     <div className="space-y-3">
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-[var(--primary)]/90 font-light">Better Governance</span>
-                                            <span className="text-[var(--secondary)] font-mono">78</span>
+                                            <span className="text-[var(--secondary)] font-mono">94</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-[var(--primary)]/90 font-light">Social Trust</span>
-                                            <span className="text-[var(--secondary)] font-mono">61</span>
+                                            <span className="text-[var(--secondary)] font-mono">88</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-[var(--primary)]/90 font-light">Societal Cohesion</span>
-                                            <span className="text-[var(--secondary)] font-mono">52</span>
+                                            <span className="text-[var(--secondary)] font-mono">85</span>
                                         </div>
                                         <div className="flex justify-between items-center text-sm">
                                             <span className="text-[var(--primary)]/90 font-light">Freedom</span>
-                                            <span className="text-[var(--secondary)] font-mono">39</span>
+                                            <span className="text-[var(--secondary)] font-mono">70</span>
                                         </div>
                                     </div>
                                 </div>
@@ -689,7 +688,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     className="mb-8 max-w-4xl"
                 >
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-[var(--primary)]/10 opacity-80 hover:opacity-100 transition-opacity duration-1000 group bg-[#070b14]">
-                        <Image src={dashboardImage} alt="Mobile App details background" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-30 blur-[2px]" />
+                        <Image src={dashboardImage} alt="Mobile App details background" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
                     </div>
 
