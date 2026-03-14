@@ -580,9 +580,8 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group bg-black/50">
-                        {/* We use gateImage here temporarily, or null if you prefer, but OptionalModuleCollapse does its own content inside mostly. 
-                            Since we replaced intake.png, let's just make it a cool gradient container or use simulator again. */}
-                        <Image src={simulatorImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
+                        {/* Using gateImage to visually separate the Optional Module from the core Solution Hypothesis */}
+                        <Image src={gateImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
                     </div>
                     <OptionalModuleCollapse />
                 </motion.section>
