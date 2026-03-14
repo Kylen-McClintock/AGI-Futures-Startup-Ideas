@@ -16,6 +16,7 @@ import simulatorImage from './assets/simulator.png';
 import immigrantAppImage from './assets/immigrant_app.png';
 import situationRoomImage from './assets/situation_room.png';
 import gateImage from './assets/gate.png';
+import intakeImage from './assets/intake.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 
 export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -580,8 +581,8 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group bg-black/50">
-                        {/* Using gateImage to visually separate the Optional Module from the core Solution Hypothesis */}
-                        <Image src={gateImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
+                        {/* Using intakeImage for the Overseas Asylum Intake Dashboard */}
+                        <Image src={intakeImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-80" />
                     </div>
                     <OptionalModuleCollapse />
                 </motion.section>
