@@ -13,6 +13,7 @@ import { themeMap } from "@/utils/themeMap";
 // Assets
 import dashboardImage from './assets/hero.png';
 import simulatorImage from './assets/simulator.png';
+import immigrantAppImage from './assets/immigrant_app.png';
 import gateImage from './assets/gate.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 
@@ -275,7 +276,12 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </p>
                     </div>
 
-                    <div className="mt-12 text-center text-2xl font-serif italic text-white/60">
+                    <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mt-12 mb-12 shadow-2xl shadow-[var(--primary)]/10 group border border-white/10">
+                        <Image src={immigrantAppImage} alt="Skilled immigrant using the transparent holographic CivicPath app" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]" />
+                        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[var(--background)] to-transparent pointer-events-none" />
+                    </div>
+
+                    <div className="text-center text-2xl font-serif italic text-white/60">
                         "Make belonging earned, visible, and fair."
                     </div>
 
