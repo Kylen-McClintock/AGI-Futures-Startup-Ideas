@@ -14,6 +14,7 @@ import { themeMap } from "@/utils/themeMap";
 import dashboardImage from './assets/hero.png';
 import simulatorImage from './assets/simulator.png';
 import immigrantAppImage from './assets/immigrant_app.png';
+import situationRoomImage from './assets/situation_room.png';
 import gateImage from './assets/gate.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 
@@ -686,7 +687,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     className="mb-8 max-w-4xl"
                 >
                     <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-[var(--primary)]/10 opacity-80 hover:opacity-100 transition-opacity duration-1000 group bg-[#070b14]">
-                        <Image src={dashboardImage} alt="Mobile App details background" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" />
+                        <Image src={situationRoomImage} alt="Ministry of Strategic Planning Situation Room" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-60" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
                     </div>
 
