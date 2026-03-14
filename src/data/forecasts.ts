@@ -167,6 +167,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('afterlight'),
         aiRationale: "Afterlight seeks to build a highly defensible trust and data moat in the end-of-life memory preservation space. The AGI Futures forecaster model reflects typical consumer SaaS resistance early on, but projects a highly valuable, sticky consumer-subscription exit if it reaches critical mass as the default generational archive."
     },
+    'civicpath': {
+        forecast: getSaaSMarketCurve('civicpath'),
+        aiRationale: "CivicPath operates at the intersection of GovTech and civic identity. The AGI Futures forecaster model assigns a strong probability of reaching a $1B+ valuation by 2035, driven by the acute political pain of broken immigration systems and the massive TAM of national governments seeking legible, computable standards over rhetoric."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

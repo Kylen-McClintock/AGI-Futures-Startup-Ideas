@@ -7,7 +7,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { OptionalModuleCollapse } from "./components/OptionalModuleCollapse";
-import { Activity, Shield, TrendingUp, AlertTriangle, Users, Building, FileText, ChevronDown, Link as LinkIcon, BadgeCheck, Network, Scale } from "lucide-react";
+import { Activity, Shield, TrendingUp, AlertTriangle, Users, Building, FileText, ChevronDown, Link as LinkIcon, BadgeCheck, Network, Scale, LayoutDashboard } from "lucide-react";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
@@ -74,9 +74,13 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             A government-facing and immigrant-facing dashboard that makes immigration earned, legible, and enforceable by showing each person their live probability of reaching work authorization, residency, and citizenship, and the exact actions that raise or lower those odds.
                         </p>
                         
-                        <p className="text-lg text-white/70 leading-relaxed font-light mb-8 max-w-3xl">
-                            Open the app and you see the whole game board. Your current legal position. Your probability of getting to the next stage. What raises it. What hurts it. Language progress, earnings, tax filings, hearings, clean record, civics, verified work, sponsorship, credential recognition, benefit dependence, and compliance all move the dashboard. For governments, it is the control panel for turning public priorities into visible incentives. For immigrants, it is a fairer map of how to earn belonging.
-                        </p>
+                        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 to-transparent relative overflow-hidden my-10 max-w-4xl shadow-[0_0_40px_-15px_var(--primary)] text-left">
+                            <div className="absolute top-0 left-0 w-1.5 h-full bg-[var(--primary)]" />
+                            <h3 className="text-lg text-[var(--secondary)] font-medium mb-3 flex items-center gap-2"><LayoutDashboard className="w-5 h-5"/> Make the Game Board Visible</h3>
+                            <p className="text-lg text-white/90 leading-relaxed font-light">
+                                Open the app and you see the whole game board. Your current legal position. Your probability of getting to the next stage. What raises it. What hurts it. Language progress, earnings, tax filings, hearings, clean record, civics, verified work, sponsorship, credential recognition, benefit dependence, and compliance all move the dashboard. For governments, it is the control panel for turning public priorities into visible incentives. For immigrants, it is a fairer map of how to earn belonging.
+                            </p>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
@@ -95,22 +99,54 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent relative group overflow-hidden flex flex-col md:flex-row shadow-[0_0_60px_-15px_var(--primary)]">
-                        <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
-                        <div className="md:w-1/3 p-10 flex flex-col justify-center items-center md:items-start border-b md:border-b-0 md:border-r border-[var(--primary)]/10">
-                            <div className="text-6xl sm:text-7xl text-[var(--primary)] font-light tracking-tighter mb-2 break-all">+€165k</div>
-                            <div className="text-sm font-mono uppercase tracking-widest text-[var(--secondary)]">Net Fiscal Swing</div>
-                            <div className="text-xs font-mono tracking-widest text-white/30 mt-1">Per Individual</div>
-                        </div>
-                        <div className="md:w-2/3 p-10 flex flex-col justify-center">
-                            <p className="text-xl text-white/80 font-light leading-relaxed">
-                                In a European Commission Joint Research Centre model, a young low-skilled immigrant creates a lifetime net fiscal cost of about <strong>€11,000</strong>, while a skilled immigrant generates a net fiscal gain of about <strong>€154,000</strong>. 
-                                <ExpandableCitation label="[1]" sourceUrl="https://joint-research-centre.ec.europa.eu/" sourceText="European Commission Joint Research Centre, Projecting the net fiscal impact of immigration in the European Union" />
-                            </p>
-                            <p className="text-xl text-white font-medium mt-4">
-                                Immigration quality is not a side issue. It is the economics.
-                            </p>
-                        </div>
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <details className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent relative group overflow-hidden shadow-[0_0_30px_-10px_var(--primary)] cursor-pointer [&_summary::-webkit-details-marker]:hidden flex flex-col h-fit">
+                            <summary className="p-8 outline-none list-none flex flex-col relative w-full h-full">
+                                <div className="absolute top-0 left-0 w-1.5 h-full bg-[var(--primary)]" />
+                                <div className="text-4xl sm:text-5xl text-[var(--primary)] font-light tracking-tighter mb-2 break-all">+€165k</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)]">Net Fiscal Swing</div>
+                                <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 absolute top-8 right-6 group-open:rotate-180 transition-transform duration-300" />
+                            </summary>
+                            <div className="px-8 pb-8 pt-2 border-t border-[var(--primary)]/10">
+                                <p className="text-sm text-white/80 font-light leading-relaxed mt-2">
+                                    In a European Commission JRC model, a young low-skilled immigrant creates a lifetime net fiscal cost of about <strong>€11,000</strong>, while a skilled immigrant generates a net fiscal gain of about <strong>€154,000</strong>.
+                                    <span className="block mt-2"><ExpandableCitation label="[1]" sourceUrl="https://joint-research-centre.ec.europa.eu/" sourceText="European Commission Joint Research Centre, Projecting the net fiscal impact of immigration in the European Union" /></span>
+                                </p>
+                            </div>
+                        </details>
+
+                        <details className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent relative group overflow-hidden shadow-[0_0_30px_-10px_var(--primary)] cursor-pointer [&_summary::-webkit-details-marker]:hidden flex flex-col h-fit">
+                            <summary className="p-8 outline-none list-none flex flex-col relative w-full h-full">
+                                <div className="absolute top-0 left-0 w-1.5 h-full bg-[var(--secondary)]" />
+                                <div className="text-4xl sm:text-5xl text-[var(--secondary)] font-light tracking-tighter mb-2 break-all">90%</div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-[var(--primary)]/80">Yr-1 Benefit Dependence</div>
+                                <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 absolute top-8 right-6 group-open:rotate-180 transition-transform duration-300" />
+                            </summary>
+                            <div className="px-8 pb-8 pt-2 border-t border-[var(--primary)]/10">
+                                <p className="text-sm text-white/80 font-light leading-relaxed mt-2">
+                                    In the Netherlands, <strong>90%</strong> of asylum migrants in the 2022 cohort were receiving benefits in the first year after being housed. In the 2023 cohort it was still <strong>78% of men</strong> and <strong>79% of women</strong>.
+                                </p>
+                                <div className="mt-2 flex gap-2">
+                                    <ExpandableCitation label="[4]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, English summary, Statistiek Wet Inburgering 2024" />
+                                    <ExpandableCitation label="[5]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, More asylum seekers with residency in paid work" />
+                                </div>
+                            </div>
+                        </details>
+
+                        <details className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent relative group overflow-hidden shadow-[0_0_30px_-10px_var(--primary)] cursor-pointer [&_summary::-webkit-details-marker]:hidden flex flex-col h-fit">
+                            <summary className="p-8 outline-none list-none flex flex-col relative w-full h-full">
+                                <div className="absolute top-0 left-0 w-1.5 h-full bg-red-400" />
+                                <div className="text-4xl sm:text-5xl text-red-400 font-light tracking-tighter mb-2 break-all">61% <span className="text-xl sm:text-2xl text-white/30 truncate">vs 83%</span></div>
+                                <div className="text-xs font-mono uppercase tracking-widest text-[var(--primary)]/80">National Employment Gap</div>
+                                <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 absolute top-8 right-6 group-open:rotate-180 transition-transform duration-300" />
+                            </summary>
+                            <div className="px-8 pb-8 pt-2 border-t border-[var(--primary)]/10">
+                                <p className="text-sm text-white/80 font-light leading-relaxed mt-2">
+                                    In Denmark, employment in 2023 was <strong>61%</strong> for immigrants and descendants from MENAPT countries, versus <strong>83%</strong> for people of Danish origin (and only <strong>54%</strong> for women in that cohort).
+                                    <span className="block mt-2"><ExpandableCitation label="[3]" sourceUrl="https://uim.dk" sourceText="Danish Ministry of Immigration and Integration, International Migration Denmark 2025" /></span>
+                                </p>
+                            </div>
+                        </details>
                     </div>
                 </motion.section>
 
@@ -141,17 +177,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         But the actual system rarely makes those priorities concrete. It does a weak job of translating public standards into day-to-day immigrant incentives. So you get the worst of both worlds. Good immigrants face confusion and random friction. Bad-fit immigrants learn how to exploit opacity. Citizens see a gap between what they were promised and what the system actually rewards.
                     </p>
 
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 bg-white/[0.02] mb-12">
-                        <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
-                            That gap is not imaginary. In Denmark, among people ages 25 to 64, employment in 2023 was <strong>61%</strong> for immigrants and descendants from the Middle East, North Africa, Afghanistan, Pakistan, and Türkiye, versus <strong>83%</strong> for people of Danish origin. Among women in that cohort, employment was only <strong>54%</strong>.
-                            <ExpandableCitation label="[3]" sourceUrl="https://uim.dk" sourceText="Danish Ministry of Immigration and Integration, International Migration Denmark 2025" />
-                        </p>
-                        <p className="text-lg leading-relaxed text-white/70 font-light">
-                            In the Netherlands, <strong>90%</strong> of asylum migrants in the 2022 cohort were receiving benefits in the first year after being housed by a municipality. In the 2023 cohort it was still <strong>78% of men</strong> and <strong>79% of women</strong> in that first year.
-                            <ExpandableCitation label="[4]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, English summary, Statistiek Wet Inburgering 2024" />
-                            <ExpandableCitation label="[5]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, More asylum seekers with residency in paid work" />
-                        </p>
-                    </div>
+
 
                     <div className="bg-[var(--primary)]/5 border-l-4 border-[var(--primary)] p-6 rounded-r-2xl">
                         <p className="text-xl text-[var(--secondary)] font-medium leading-relaxed">
@@ -687,7 +713,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
                         <h3 className="text-sm font-mono text-[var(--secondary)] uppercase tracking-widest mb-6 border-b border-[var(--primary)]/20 pb-4 inline-block">Transferable Insight</h3>
                         <p className="text-white font-serif text-2xl sm:text-3xl leading-relaxed mt-4">
-                            "In politically contested systems, the winner is often the company that makes standards computable. Not softer messaging. Not harsher rhetoric. A visible rules-and-incentives dashboard."
+                            "In politically contested systems, the winner is often the company that makes hidden complexities visible. When the game board is legible, incentives become obvious, and outcomes become predictable."
                         </p>
                     </div>
 
