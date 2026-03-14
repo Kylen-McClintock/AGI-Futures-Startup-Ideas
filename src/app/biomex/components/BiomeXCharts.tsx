@@ -33,7 +33,7 @@ export function RecurrenceChart() {
                     <div className="relative group w-24">
                         <motion.div 
                             initial={{ height: 0 }}
-                            whileInView={{ height: "39.8%" }}
+                            whileInView={{ height: "80%" }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                             className="w-full bg-white/10 rounded-t-xl border-t border-white/30 backdrop-blur-sm relative"
@@ -47,7 +47,7 @@ export function RecurrenceChart() {
                     <div className="relative group w-24">
                         <motion.div 
                             initial={{ height: 0 }}
-                            whileInView={{ height: "12.4%" }}
+                            whileInView={{ height: "25%" }}
                             viewport={{ once: true }}
                             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                             className="w-full bg-[var(--primary)] rounded-t-xl border-t border-[var(--primary)]/50 relative shadow-[0_0_30px_var(--primary-glow)]"

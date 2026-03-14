@@ -45,7 +45,7 @@ export function BiomeXImpactScore({ overallScore, subScores }: BiomeXImpactScore
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {subScores.map((sub, i) => (
                         <div key={i} className="flex flex-col gap-2 p-4 rounded-2xl bg-black/20 border border-white/5">
-                            <span className="text-xs font-mono uppercase tracking-widest text-[#a1a1aa] leading-tight break-words">
+                            <span className="text-xs font-mono uppercase tracking-widest text-[#a1a1aa] leading-tight flex-wrap">
                                 {sub.name}
                             </span>
                             <div className="flex items-end gap-1">

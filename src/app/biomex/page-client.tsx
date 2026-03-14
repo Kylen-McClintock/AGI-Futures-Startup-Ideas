@@ -8,6 +8,8 @@ import { ScoreCard, RiskItem } from "./components/BiomeXScoreCard";
 import { BusinessModelGrid } from "./components/BusinessModelGrid";
 import { RecurrenceChart } from "./components/BiomeXCharts";
 import { BiomeXImpactScore } from "./components/BiomeXImpactScore";
+import { DonorPhenotypeToggle } from "./components/DonorPhenotypeToggle";
+import { CircularValueFlow } from "./components/CircularValueFlow";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { themeMap } from "@/utils/themeMap";
@@ -146,32 +148,9 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                                 The non-obvious insight is that donor quality may be more than a safety filter. <strong className="text-white font-medium">It may be a therapeutic variable.</strong>
                             </p>
                             
-                            <ul className="space-y-6 text-white/80 font-light text-lg">
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>In a human melanoma study, responder-derived FMT plus anti-<HoverAcronym acronym="PD-1" definition="programmed cell death protein 1, an immune checkpoint target used in cancer therapy" theme="emerald" /> therapy produced clinical benefit in <strong className="text-white">6 of 15</strong> anti-PD-1-refractory patients. That is one of the cleanest human signals that donor microbiome quality can change outcomes in a hard disease setting. <ExpandableCitation label="3" sourceText="Davar et al. - Fecal microbiota transplant overcomes resistance to anti-PD-1 therapy in melanoma patients." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>In mice, <em className="text-white/80">Veillonella atypica</em>, a microbe enriched in elite athletes, improved treadmill run time by converting exercise lactate into propionate. <ExpandableCitation label="4" sourceText="Scheiman et al. - Meta-omics analysis of elite athletes identifies a performance-enhancing microbe that functions via lactate metabolism." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>In 2025, microbiota from athletes with very high exercise capacity improved <strong className="text-white">insulin sensitivity and muscle glycogen stores</strong> in transplanted mice. The paper did not show a transferred endurance boost, which is exactly the kind of nuance that makes the category more credible. <ExpandableCitation label="5" sourceText="Martin et al. - Atypical gut microbial ecosystem from athletes with very high exercise capacity improves insulin sensitivity and muscle glycogen stores in mice." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>Small human studies suggest microbiome transfer may improve <strong className="text-white">sleep quality</strong> in chronic insomnia, sleep disorders, and post-COVID insomnia. <ExpandableCitation label="6" sourceText="Fang et al. - Efficacy and safety of fecal microbiota transplantation for chronic insomnia in adults: a real world study." sourceUrl="" theme="emerald" /><ExpandableCitation label="7" sourceText="He et al. - Washed microbiota transplantation improves sleep quality in patients with sleep disorders." sourceUrl="" theme="emerald" /><ExpandableCitation label="8" sourceText="Lau et al. - Fecal Microbiota Transplantation for Sleep Disturbance in Post-acute COVID-19 Syndrome." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>Small human studies also suggest possible effects on <strong className="text-white">depression and anxiety symptoms</strong> in some gastrointestinal settings, but the evidence is still early and heterogeneous. <ExpandableCitation label="9" sourceText="Yang et al. - Multi-omics analysis of fecal microbiota transplantation's impact on constipation and comorbid depression and anxiety." sourceUrl="" theme="emerald" /><ExpandableCitation label="10" sourceText="Kurokawa et al. - The Effect of Fecal Microbiota Transplantation on Psychiatric Symptoms among Patients with Functional Gastrointestinal Disorders." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="text-[var(--primary)] mt-1">•</span>
-                                    <span>In aging models, young or healthy-donor microbiota improved healthspan markers, rejuvenated aged hematopoietic stem cells, and extended lifespan in progeroid mice. <ExpandableCitation label="11" sourceText="Bárcena et al. - Healthspan and lifespan extension by fecal microbiota transplantation in progeroid mice." sourceUrl="" theme="emerald" /><ExpandableCitation label="12" sourceText="Zeng et al. - Fecal microbiota transplantation from young mice rejuvenates aged hematopoietic stem cells by suppressing inflammation." sourceUrl="" theme="emerald" /><ExpandableCitation label="13" sourceText="Chen et al. - Transplant of microbiota from long-living people to mice reduces aging-related indices and transfers beneficial bacteria." sourceUrl="" theme="emerald" /></span>
-                                </li>
-                            </ul>
+                            <div className="mt-8">
+                                <DonorPhenotypeToggle />
+                            </div>
                         </div>
                     </div>
 
@@ -233,26 +212,41 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Specific Initial Use Cases
                         </div>
                         <div className="space-y-6">
-                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex gap-6">
-                                <Stethoscope className="w-8 h-8 text-[var(--primary)] shrink-0" />
-                                <div>
-                                    <h4 className="text-xl text-white font-medium mb-2">Gastroenterology and infectious disease clinics</h4>
+                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row gap-8 items-center md:items-start group hover:bg-[var(--primary)]/5 transition-colors">
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="p-3 bg-white/5 rounded-xl text-[var(--primary)] group-hover:scale-110 transition-transform">
+                                            <Stethoscope className="w-6 h-6" />
+                                        </div>
+                                        <h4 className="text-xl text-white font-medium">Gastroenterology and infectious disease clinics</h4>
+                                    </div>
                                     <p className="text-white/70 font-light leading-relaxed">A recurrent <em className="text-white/80">C. difficile</em> clinic uses BiomeX to source highly screened donor material, stratify by donor profile, track recurrence, and standardize follow-up. The value is fewer surprises, cleaner workflow, and a better shot at better outcomes in the one wedge where the category is already real. <ExpandableCitation label="15" sourceText="FDA - Fecal Microbiota Products." sourceUrl="" theme="emerald" /><ExpandableCitation label="17" sourceText="AGA - Clinical Practice Guideline on Fecal Microbiota-Based Therapies." sourceUrl="" theme="emerald" /></p>
                                 </div>
+                                <CircularValueFlow steps={['Screened Donor', 'Clinical Treatment', 'Outcome Tracking']} />
                             </div>
-                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex gap-6">
-                                <Activity className="w-8 h-8 text-[var(--primary)] shrink-0" />
-                                <div>
-                                    <h4 className="text-xl text-white font-medium mb-2">Longevity and performance clinics</h4>
+                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row gap-8 items-center md:items-start group hover:bg-[var(--primary)]/5 transition-colors">
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="p-3 bg-white/5 rounded-xl text-[var(--primary)] group-hover:scale-110 transition-transform">
+                                            <Activity className="w-6 h-6" />
+                                        </div>
+                                        <h4 className="text-xl text-white font-medium">Longevity and performance clinics</h4>
+                                    </div>
                                     <p className="text-white/70 font-light leading-relaxed">A frontier clinic enrolls patients into structured programs around recovery, sleep, inflammation, and metabolic health. BiomeX provides premium donor pools, phenotyping, and research-grade outcome tracking. The clinic gets differentiation. BiomeX gets the dataset that matters.</p>
                                 </div>
+                                <CircularValueFlow steps={['Premium Pools', 'Frontier Patients', 'Longitudinal Data']} />
                             </div>
-                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex gap-6">
-                                <Dna className="w-8 h-8 text-[var(--primary)] shrink-0" />
-                                <div>
-                                    <h4 className="text-xl text-white font-medium mb-2">Microbiome biotech and pharma</h4>
+                            <div className="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col md:flex-row gap-8 items-center md:items-start group hover:bg-[var(--primary)]/5 transition-colors">
+                                <div className="flex-1">
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="p-3 bg-white/5 rounded-xl text-[var(--primary)] group-hover:scale-110 transition-transform">
+                                            <Dna className="w-6 h-6" />
+                                        </div>
+                                        <h4 className="text-xl text-white font-medium">Microbiome biotech and pharma</h4>
+                                    </div>
                                     <p className="text-white/70 font-light leading-relaxed">A therapeutic company licenses donor-response data, engraftment data, and phenotype-linked strain insights to accelerate defined consortia and live biotherapeutic product development. <ExpandableCitation label="14" sourceText="Tseng et al. - Development of live biotherapeutic products." sourceUrl="" theme="emerald" /><ExpandableCitation label="18" sourceText="Louie et al. - VE303, a Defined Bacterial Consortium, for Prevention of Recurrent Clostridioides difficile Infection." sourceUrl="" theme="emerald" /></p>
                                 </div>
+                                <CircularValueFlow steps={['Therapeutic Data', 'Strain Selection', 'Defined Consortia']} />
                             </div>
                         </div>
                     </div>
