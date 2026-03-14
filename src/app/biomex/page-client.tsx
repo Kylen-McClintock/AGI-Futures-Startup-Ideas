@@ -180,7 +180,7 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     </div>
 
                     <p className="text-xl text-[var(--secondary)] font-serif italic max-w-3xl mt-12 pl-6 border-l-2 border-[var(--secondary)]/40">
-                        "The microbiome category has historically treated donor material as a generic commodity. The next generation of therapeutics will treat donor phenotype as the active ingredient."
+                        "The endgame isn't clinical transplants. The endgame is mathematically isolating the biological resilience of the 0.1% and manufacturing it as precision medicine for the rest of humanity."
                     </p>
 
                 </motion.section>
