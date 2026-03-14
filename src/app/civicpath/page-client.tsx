@@ -211,7 +211,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </div>
 
                         <p className="text-xl text-white/80 max-w-3xl font-light leading-relaxed mb-6">
-                            Each immigrant gets a <strong>CivicPath App</strong>. The primary metric is the probability of reaching the next legal phase. It features four live interface layers:
+                            Governments design, test, and manage their own points-based skilled immigration system. High-upside immigrants get a <strong>CivicPath App</strong> that shows them exactly how they score, how to improve, and which pathway gives them the best shot. The primary metric is the probability of reaching the next legal phase. It features four live interface layers:
                         </p>
                     </div>
 
@@ -522,27 +522,19 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                                 <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Go-To Market
                             </div>
                             <h3 className="text-3xl font-light text-white mb-6">
-                                Immigration Quality Simulator.
+                                Skilled-migrant selection wedge.
                             </h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
-                                Launch with a public <strong>Immigration Quality Simulator</strong> and <strong>Legibility Report</strong> for one country.
+                                Sell governments a dashboard that lets them design, test, and manage their own points-based skilled immigration system. Then layer in an applicant-facing interface that shows top immigrants around the world exactly how they score, how to improve, and which pathway gives them the best shot.
                             </p>
-                            <p className="text-lg text-white/70 leading-relaxed font-light mb-4">
-                                Show what happens to fiscal cost, work participation, and citizenship quality under different rules:
-                            </p>
-                            <ul className="space-y-2 text-white/80 font-light mb-6 pl-4 border-l border-[var(--primary)]/30">
-                                <li>- higher language thresholds</li>
-                                <li>- faster work authorization</li>
-                                <li>- tighter anti-fraud screening</li>
-                                <li>- stronger ideology screening</li>
-                                <li>- more aggressive benefit-linked incentives</li>
-                                <li>- pre-entry economic potential scoring</li>
-                            </ul>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
-                                This gets shared because it speaks directly to a live political fight and finally puts numbers on tradeoffs.
+                                This solves two problems at once. Governments get a more controllable, legible, and economically aligned intake system. High-upside immigrants get transparency into the rules and a clearer path to qualifying.
+                            </p>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                The first buyers are labor ministries, immigration ministries, and economic development agencies in countries competing for engineers, nurses, tradespeople, researchers, and founders. Over time, the product expands from skilled-entry scoring into the broader immigration dashboard, including post-entry integration, compliance, and earned citizenship pathways.
                             </p>
                             <div className="p-5 bg-[var(--primary)]/10 rounded-2xl border border-[var(--primary)]/20 text-white/90 font-light">
-                                <strong className="text-white">User wedge:</strong> a reform-minded municipality or ministry under political pressure that needs better outcomes before the next election cycle.
+                                <strong className="text-white">User wedge:</strong> A government or region that wants more control over immigrant quality without shutting the door on talent. They cannot wait because competition for skilled migrants is rising, labor shortages are real, and the public increasingly wants immigration to look selective, contribution-positive, and earned.
                             </div>
                         </div>
 
