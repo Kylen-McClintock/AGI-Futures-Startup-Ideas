@@ -14,6 +14,7 @@ import { themeMap } from "@/utils/themeMap";
 import dashboardImage from './assets/hero.png';
 import simulatorImage from './assets/simulator.png';
 import gateImage from './assets/gate.png';
+import ValueFlowScenarios from './components/ValueFlowScenarios';
 
 export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Expected fallback if empty
@@ -50,10 +51,10 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     >
                         <Image
                             src={dashboardImage}
-                            alt="Cinematic, immersive mobile app dashboard showing 78% probability of permanent residency and green verified language/work history metrics"
+                            alt="Massive glowing holographic dashboard displaying live immigration probability and civic value in a futuristic employment center"
                             fill
                             quality={100}
-                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
+                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02] opacity-90"
                             priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
@@ -168,7 +169,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     </div>
 
                     <p className="text-xl text-[var(--secondary)] leading-relaxed font-medium mb-8">
-                        There is a massive, structural feedback gap between what the voting public demands and what the administrative state actually enforces, and it is tearing the civic legitimacy of democracies apart.
+                        There is a massive, structural feedback gap between what the voting public demands and what the administrative state actually enforces. Without a system that can accurately distinguish and incentivize individual behavior, populist backlash will use a blunt tool to arbitrarily penalize entire regions of immigrants.
                     </p>
                     <p className="text-xl text-white/80 leading-relaxed font-light mb-12">
                         Citizens want a system that is selective, lawful, economically positive, non-violent, and culturally functional. But the actual system rarely makes those priorities concrete. It does a weak job of translating public standards into day-to-day immigrant incentives. So you get the worst of both worlds. Good immigrants face confusion and random friction. Bad-fit immigrants learn how to exploit opacity.
@@ -282,67 +283,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
-                {/* ICP Value Flow Scenarios */}
-                <motion.section
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mb-32"
-                >
-                    <div className="mb-12">
-                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
-                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Ideal Customer Profiles
-                        </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
-                            Interactive Value Flow Scenarios.
-                        </h2>
-                        <p className="text-xl text-white/70 font-light mt-6 max-w-3xl">
-                            The CivicPath architecture links sovereign administration to granular individual behavior.
-                        </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--primary)]/5 to-transparent">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Building className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Ministry of the Interior</h3>
-                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
-                                <strong className="text-[var(--primary)]">Pain:</strong> Drowning in asylum backlog, rising benefits costs, and massive political backlash over failed integration and no-shows.
-                            </p>
-                            <p className="text-lg leading-relaxed text-white/70 font-light">
-                                <strong className="text-[var(--secondary)]">Solution:</strong> The dashboard explicitly ties welfare reliance and crime to immediate pathway failure. It gives ministers an 'Immigration Quality Simulator' to forecast the exact fiscal and labor-market impact of policy tweaks before presenting them to parliament.
-                            </p>
-                        </div>
-
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--primary)]/5 to-transparent">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Shield className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Target Municipality</h3>
-                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
-                                <strong className="text-[var(--primary)]">Pain:</strong> The national government dumps migrants into the city, leaving them to bear the long-tail housing and language training costs.
-                            </p>
-                            <p className="text-lg leading-relaxed text-white/70 font-light">
-                                <strong className="text-[var(--secondary)]">Solution:</strong> The platform instantly identifies which residents are likely to stay benefits-dependent at 12 months, and allows the city to hyper-target language programs and contract-work placements to bend the curve.
-                            </p>
-                        </div>
-
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-indigo-500/5 to-transparent">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><FileText className="w-6 h-6 mr-3 text-indigo-400" /> The Asylum Seeker</h3>
-                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
-                                <strong className="text-[var(--primary)]">Pain:</strong> Trapped in opaque processing limbo, unsure what actions actually secure their stay versus risk deportation. Subject to predatory smugglers promising false guarantees.
-                            </p>
-                            <p className="text-lg leading-relaxed text-white/70 font-light">
-                                <strong className="text-indigo-300">Solution:</strong> A totally legible app showing exactly what they need to do: show up to the hearing next Tuesday (+4% probability), complete the in-app language test (+12% probability), get off long-term subsidy. The truth is harsh but predictable.
-                            </p>
-                        </div>
-
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--secondary)]/5 to-transparent">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><BadgeCheck className="w-6 h-6 mr-3 text-[var(--secondary)]" /> High-Skilled Immigrant</h3>
-                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
-                                <strong className="text-[var(--primary)]">Pain:</strong> Subject to the same hostile administrative friction and lottery-based delays as edge cases, despite representing instant net fiscal gain.
-                            </p>
-                            <p className="text-lg leading-relaxed text-white/70 font-light">
-                                <strong className="text-[var(--secondary)]">Solution:</strong> Pre-entry "Contribution Panel" scoring validates their high value immediately. They bypass standard queues and see a rapid, expedited probability meter confirming they will achieve permanent residency if they maintain verified employment.
-                            </p>
-                        </div>
-                    </div>
-                </motion.section>
+                <ValueFlowScenarios />
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
