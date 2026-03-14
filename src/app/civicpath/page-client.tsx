@@ -1,0 +1,768 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
+import { ExpandableCitation } from "@/components/ExpandableCitation";
+import { ScrollProgress } from "@/components/ScrollProgress";
+import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
+import { OptionalModuleCollapse } from "./components/OptionalModuleCollapse";
+import { Activity, Shield, TrendingUp, AlertTriangle, Users, Building, FileText, ChevronDown, Link as LinkIcon, BadgeCheck, Network, Scale } from "lucide-react";
+import { themeMap } from "@/utils/themeMap";
+
+// Assets
+import heroImage from './assets/hero.png';
+import dashboardImage from './assets/dashboard.png';
+import cityImage from './assets/city.png';
+import communityImage from './assets/community.png';
+import intakeImage from './assets/intake.png';
+
+export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
+    // Expected fallback if empty
+    const tags = {
+        sector: initialTags?.sector?.length ? initialTags.sector : ['Governance', 'Democracy', 'AI', 'Security'],
+        bottleneck: initialTags?.bottleneck?.length ? initialTags.bottleneck : ['Trust', 'Regulatory Friction', 'Social Fragmentation'],
+        customer: initialTags?.customer?.length ? initialTags.customer : ['Governments', 'Cities'],
+        product_type: initialTags?.product_type?.length ? initialTags.product_type : ['Platform', 'Coordination Infrastructure'],
+        enabling_technology: initialTags?.enabling_technology?.length ? initialTags.enabling_technology : ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations'],
+        readiness: initialTags?.readiness?.length ? initialTags.readiness : ['Build Now'],
+        founder_fit: initialTags?.founder_fit?.length ? initialTags.founder_fit : ['Policy Entrepreneur', 'Operator-Led'],
+        outcomes: initialTags?.outcomes?.length ? initialTags.outcomes : ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom']
+    };
+
+    return (
+        <main className="min-h-screen bg-[#070b14] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['blue'].hexPrimary, "--secondary": themeMap['blue'].hexSecondary, "--tertiary": themeMap['blue'].hexTertiary } as React.CSSProperties}>
+            <ScrollProgress title="CivicPath" theme="blue" />
+
+            {/* Ambient Background Glow */}
+            <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+                <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-[#3B82F6]/10 rounded-full blur-[140px]" />
+                <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-[#0EA5E9]/5 rounded-full blur-[130px]" />
+                <div className="absolute bottom-[-10%] right-[10%] w-[600px] h-[600px] bg-[#3B82F6]/5 rounded-full blur-[150px]" />
+            </div>
+
+            <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 mt-24">
+                {/* Hero Section */}
+                <header className="mb-32">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                        className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-[var(--primary)]/10"
+                    >
+                        <Image
+                            src={heroImage}
+                            alt="Cinematic, optimistic government control room overseeing a futuristic smart city"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            priority
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
+                    </motion.div>
+
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3 }}
+                    >
+                        <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6 flex flex-col md:flex-row md:items-baseline md:gap-4">
+                            CivicPath
+                            <span className="mt-2 md:mt-0 text-2xl sm:text-3xl text-white/50 tracking-normal font-serif italic">Immigration Dashboard</span>
+                        </h1>
+                        <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-6 max-w-3xl">
+                            A government-facing and immigrant-facing dashboard that makes immigration earned, legible, and enforceable by showing each person their live probability of reaching work authorization, residency, and citizenship, and the exact actions that raise or lower those odds.
+                        </p>
+                        
+                        <p className="text-lg text-white/70 leading-relaxed font-light mb-8 max-w-3xl">
+                            Open the app and you see the whole game board. Your current legal position. Your probability of getting to the next stage. What raises it. What hurts it. Language progress, earnings, tax filings, hearings, clean record, civics, verified work, sponsorship, credential recognition, benefit dependence, and compliance all move the dashboard. For governments, it is the control panel for turning public priorities into visible incentives. For immigrants, it is a fairer map of how to earn belonging.
+                        </p>
+
+                        <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+                            <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
+                            <InlineTags tags={tags.sector} theme="blue" />
+                        </div>
+                    </motion.div>
+                </header>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Headline Stat */}
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="mb-32"
+                >
+                    <div className="glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/5 to-transparent relative group overflow-hidden flex flex-col md:flex-row shadow-[0_0_60px_-15px_var(--primary)]">
+                        <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
+                        <div className="md:w-1/3 p-10 flex flex-col justify-center items-center md:items-start border-b md:border-b-0 md:border-r border-[var(--primary)]/10">
+                            <div className="text-6xl sm:text-7xl text-[var(--primary)] font-light tracking-tighter mb-2 break-all">+€165k</div>
+                            <div className="text-sm font-mono uppercase tracking-widest text-[var(--secondary)]">Net Fiscal Swing</div>
+                            <div className="text-xs font-mono tracking-widest text-white/30 mt-1">Per Individual</div>
+                        </div>
+                        <div className="md:w-2/3 p-10 flex flex-col justify-center">
+                            <p className="text-xl text-white/80 font-light leading-relaxed">
+                                In a European Commission Joint Research Centre model, a young low-skilled immigrant creates a lifetime net fiscal cost of about <strong>€11,000</strong>, while a skilled immigrant generates a net fiscal gain of about <strong>€154,000</strong>. 
+                                <ExpandableCitation label="[1]" sourceUrl="https://joint-research-centre.ec.europa.eu/" sourceText="European Commission Joint Research Centre, Projecting the net fiscal impact of immigration in the European Union" />
+                            </p>
+                            <p className="text-xl text-white font-medium mt-4">
+                                Immigration quality is not a side issue. It is the economics.
+                            </p>
+                        </div>
+                    </div>
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Problem Section */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12">
+                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> The Problem
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
+                            Most immigration systems <br className="hidden sm:block" />
+                            <span className="text-white/50">are running on paperwork, delay, and vibes.</span>
+                        </h2>
+                    </div>
+
+                    <p className="text-xl text-white/80 leading-relaxed font-light mb-8">
+                        Citizens want a system that is selective, lawful, economically positive, non-violent, and culturally functional. They want people who can work, integrate, learn the language, follow the law, and not become long-run fiscal burdens. Across 23 countries surveyed by Pew, a median of <strong>91%</strong> said speaking the main national language is important for true belonging, and <strong>81%</strong> said sharing the country's customs and traditions matters.
+                        <ExpandableCitation label="[2]" sourceUrl="https://www.pewresearch.org" sourceText="Pew Research Center, Language and Traditions Are Considered Central to National Identity" />
+                    </p>
+                    <p className="text-xl text-white/80 leading-relaxed font-light mb-12">
+                        But the actual system rarely makes those priorities concrete. It does a weak job of translating public standards into day-to-day immigrant incentives. So you get the worst of both worlds. Good immigrants face confusion and random friction. Bad-fit immigrants learn how to exploit opacity. Citizens see a gap between what they were promised and what the system actually rewards.
+                    </p>
+
+                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 bg-white/[0.02] mb-12">
+                        <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
+                            That gap is not imaginary. In Denmark, among people ages 25 to 64, employment in 2023 was <strong>61%</strong> for immigrants and descendants from the Middle East, North Africa, Afghanistan, Pakistan, and Türkiye, versus <strong>83%</strong> for people of Danish origin. Among women in that cohort, employment was only <strong>54%</strong>.
+                            <ExpandableCitation label="[3]" sourceUrl="https://uim.dk" sourceText="Danish Ministry of Immigration and Integration, International Migration Denmark 2025" />
+                        </p>
+                        <p className="text-lg leading-relaxed text-white/70 font-light">
+                            In the Netherlands, <strong>90%</strong> of asylum migrants in the 2022 cohort were receiving benefits in the first year after being housed by a municipality. In the 2023 cohort it was still <strong>78% of men</strong> and <strong>79% of women</strong> in that first year.
+                            <ExpandableCitation label="[4]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, English summary, Statistiek Wet Inburgering 2024" />
+                            <ExpandableCitation label="[5]" sourceUrl="https://www.cbs.nl" sourceText="Statistics Netherlands, More asylum seekers with residency in paid work" />
+                        </p>
+                    </div>
+
+                    <div className="bg-[var(--primary)]/5 border-l-4 border-[var(--primary)] p-6 rounded-r-2xl">
+                        <p className="text-xl text-[var(--secondary)] font-medium leading-relaxed">
+                            The civilizational problem is simple. If democracies cannot make immigration visibly earned and visibly governed, they will keep swinging between denial and backlash.
+                        </p>
+                    </div>
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Solution Hypothesis */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Solution Hypothesis
+                            </div>
+                            <div className="mt-4 sm:mt-0">
+                                <InlineTags label="Enabling Tech" tags={tags.enabling_technology} theme="blue" />
+                            </div>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight mb-8 leading-tight">
+                            The mechanism is a live dashboard, <br className="hidden sm:block" /><span className="text-[var(--secondary)]">not a static checklist.</span>
+                        </h2>
+
+                        <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/10 group border border-white/10">
+                            <Image src={dashboardImage} alt="CivicPath Glass Dashboard Interface" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        </div>
+
+                        <p className="text-xl text-white/80 max-w-3xl font-light leading-relaxed mb-6">
+                            Each immigrant gets a <strong>CivicPath Dashboard</strong> with four visible layers:
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 border border-[var(--primary)]/20 rounded-3xl bg-white/[0.01]">
+                            <h4 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2"><Network className="w-5 h-5"/> 1. Stage Probability Panel</h4>
+                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">Probability of reaching each next stage:</p>
+                            <ul className="space-y-2 text-white/80 font-light">
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> work permit</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> long-term residency</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> permanent residency</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> citizenship</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> removal or denial risk</li>
+                            </ul>
+                        </motion.div>
+                        
+                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 border border-[var(--primary)]/20 rounded-3xl bg-white/[0.01]">
+                            <h4 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2"><TrendingUp className="w-5 h-5"/> 2. Contribution Panel</h4>
+                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">A forward-looking estimate of economic value:</p>
+                            <ul className="space-y-2 text-white/80 font-light">
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> taxes paid</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> fees paid</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> wage trajectory</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> labor force participation</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> occupation demand</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> verified work history</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> benefit utilization</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> estimated future net contribution</li>
+                            </ul>
+                        </motion.div>
+
+                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 border border-[var(--primary)]/20 rounded-3xl bg-white/[0.01]">
+                            <h4 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2"><Users className="w-5 h-5"/> 3. Integration Panel</h4>
+                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">The measurable behaviors publics actually care about:</p>
+                            <ul className="space-y-2 text-white/80 font-light">
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> language attainment</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> civics and constitutional norms</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> legal compliance</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> employment continuity</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> school/community participation</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> credential recognition</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> responsiveness to notices</li>
+                            </ul>
+                        </motion.div>
+
+                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 border border-red-500/20 rounded-3xl bg-red-500/[0.02]">
+                            <h4 className="text-lg text-red-400 font-medium mb-4 flex items-center gap-2"><AlertTriangle className="w-5 h-5"/> 4. Risk Panel</h4>
+                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">The behaviors that should clearly hurt a case:</p>
+                            <ul className="space-y-2 text-white/80 font-light">
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> failure to appear</li>
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> document fraud</li>
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> violent crime</li>
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> repeated civil noncompliance</li>
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> extremist affiliations or support for political violence</li>
+                                <li className="flex items-start gap-2"><span className="text-red-400 mt-0.5">•</span> evidence of anti-constitutional ideology</li>
+                            </ul>
+                        </motion.div>
+                    </div>
+
+                    <div className="glass-panel p-8 rounded-3xl border border-white/5 bg-white/[0.02]">
+                        <p className="text-lg leading-relaxed text-white/70 font-light mb-0">
+                            It should score ideologies and behaviors that predict social harm, violence, coercion, or refusal to live under constitutional norms. In practice that means screening for Islamist extremism, violent ethno-nationalism, jihadist sympathies, support for political violence, honor violence, terror-linked networks, or any other anti-democratic ideology that signals high risk. Same standard for everyone. Behavior and ideology relevant to public safety, not theology.
+                        </p>
+                    </div>
+
+                    <div className="mt-12 text-center text-2xl font-serif italic text-white/60">
+                        "Make belonging earned, visible, and fair."
+                    </div>
+
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Specific Examples */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12">
+                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Specific Examples
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                            Scenarios in action.
+                        </h2>
+                    </div>
+
+                    <div className="space-y-6">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Building className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Interior ministry</h3>
+                            <p className="text-lg leading-relaxed text-white/70 font-light">
+                                A country wants to cut welfare dependence, raise labor-force participation, and reduce no-shows. New arrivals get the dashboard on day one. Every required action and every value-creating action is visible. Complete language levels, work continuously, file taxes, show up to hearings, avoid infractions, your probabilities rise. Miss notices, rely heavily on long-run benefits, or trigger public-safety flags, your dashboard worsens.
+                            </p>
+                        </div>
+
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Shield className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Municipality</h3>
+                            <p className="text-lg leading-relaxed text-white/70 font-light">
+                                A city is drowning in housing, welfare, and integration costs. It uses CivicPath to spot which residents are likely to stay benefits-dependent at 12 months and which are one intervention away from stable work. The dashboard lets the city allocate language programs, work placement, and compliance resources with actual precision.
+                            </p>
+                        </div>
+
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><BadgeCheck className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Skilled migration pathway</h3>
+                            <p className="text-lg leading-relaxed text-white/70 font-light">
+                                A government wants more doctors, engineers, builders, and founders, not just more applications. CivicPath scores likely future economic contribution before entry and shows applicants the fastest route to high-value integration. This becomes a talent selection and retention dashboard, not just an asylum tool.
+                            </p>
+                        </div>
+                    </div>
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Market & Why Now */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12">
+                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Market
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
+                            This is government software, <span className="text-white/50 block">not a consumer app pretending to be government software.</span>
+                        </h2>
+                        
+                        <p className="text-xl leading-relaxed text-white/80 font-light mb-8">
+                            Every serious migrant-receiving country is already paying for the downstream costs of weak selection and weak integration:
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
+                        <div>
+                            <ul className="space-y-3 text-white/70 font-light mb-8 bg-white/[0.02] p-6 rounded-2xl border border-white/5">
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> welfare administration</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> asylum case processing</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> housing support</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> compliance enforcement</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> deportation logistics</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> language programs</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> court backlogs</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> labor shortages left unfilled by poor matching</li>
+                            </ul>
+                            
+                            <p className="text-2xl text-[var(--secondary)] font-light leading-relaxed mb-8">
+                                CivicPath sits above all of that as the incentive and intelligence layer.
+                            </p>
+                            
+                            <h4 className="text-lg font-medium text-white mb-4">The first buyers are:</h4>
+                            <ul className="space-y-2 text-white/70 font-light">
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> national immigration ministries</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> interior ministries</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> municipalities with high migrant inflows</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> labor ministries for skills-based pathways</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> employer-sponsored migration programs</li>
+                            </ul>
+                            <p className="text-sm text-white/50 mt-4 font-light">
+                                This category gets bigger as more countries move toward explicit earned-membership models and stricter fiscal scrutiny.
+                            </p>
+                        </div>
+
+                        <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-[var(--primary)]/10 border border-white/10">
+                            <Image src={cityImage} alt="Holographic city map in a futuristic control room" fill quality={100} className="object-cover" />
+                        </div>
+                    </div>
+
+                    <div className="glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 mb-12">
+                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Why Now
+                        </div>
+                        <h3 className="text-3xl font-light text-white tracking-tight mb-8 leading-tight">Three things changed.</h3>
+                        <div className="space-y-8">
+                            <div className="border-l-2 border-[var(--primary)]/30 pl-6">
+                                <h4 className="text-xl text-[var(--secondary)] font-medium mb-2">First, the politics hardened.</h4>
+                                <p className="text-lg text-white/80 font-light">Citizens in rich democracies are demanding proof that immigration is selective, disciplined, and contribution-positive.</p>
+                            </div>
+                            <div className="border-l-2 border-[var(--primary)]/30 pl-6">
+                                <h4 className="text-xl text-[var(--secondary)] font-medium mb-2">Second, the data got good enough.</h4>
+                                <p className="text-lg text-white/80 font-light">Governments now have enough records on work, taxes, hearings, benefits, and case progression to model outcomes rather than guess.</p>
+                            </div>
+                            <div className="border-l-2 border-[var(--primary)]/30 pl-6">
+                                <h4 className="text-xl text-[var(--secondary)] font-medium mb-2">Third, the AI stack arrived.</h4>
+                                <p className="text-lg text-white/80 font-light">Large Language Models can explain complex legal pathways in plain language. Agents can track deadlines, missing evidence, and next-best actions at scale. The bottleneck is no longer software capability. It is state adoption.</p>
+                            </div>
+                        </div>
+                    </div>
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Business Model */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12 flex justify-between items-end">
+                        <div>
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Business Model
+                            </div>
+                            <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                                Value Flow Architecture.
+                            </h2>
+                        </div>
+                        <div className="hidden sm:block">
+                            <InlineTags tags={tags.product_type} theme="blue" />
+                        </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <ul className="space-y-4 text-white/80 font-light text-lg mb-10">
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- national or municipal software license</li>
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- implementation and systems integration fees</li>
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- per-active-case pricing</li>
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- premium scoring modules for employer sponsorship and economic potential assessment</li>
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- policy simulation module for ministries</li>
+                                <li className="bg-white/[0.02] p-4 rounded-xl border border-white/5">- optional managed-services layer for multilingual support and compliance operations</li>
+                            </ul>
+                        </div>
+                        
+                        <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/5">
+                            <h3 className="text-xl font-medium text-white mb-6 flex items-center gap-2"><Scale className="w-5 h-5 text-[var(--primary)]"/> Value Flow</h3>
+                            <ul className="space-y-6">
+                                <li className="border-l-2 border-[var(--secondary)] pl-4">
+                                    <strong className="text-[var(--secondary)] block mb-1">Citizens:</strong>
+                                    <span className="text-white/70 font-light">more control, more trust, lower fiscal drag</span>
+                                </li>
+                                <li className="border-l-2 border-[var(--secondary)] pl-4">
+                                    <strong className="text-[var(--secondary)] block mb-1">Governments:</strong>
+                                    <span className="text-white/70 font-light">fewer administrative failures, clearer standards, better outcomes</span>
+                                </li>
+                                <li className="border-l-2 border-[var(--secondary)] pl-4">
+                                    <strong className="text-[var(--secondary)] block mb-1">Immigrants:</strong>
+                                    <span className="text-white/70 font-light">a fair map of what earns progress</span>
+                                </li>
+                                <li className="border-l-2 border-[var(--secondary)] pl-4">
+                                    <strong className="text-[var(--secondary)] block mb-1">Employers:</strong>
+                                    <span className="text-white/70 font-light">better selection, faster integration, lower compliance risk</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Scorecards & Experiment */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32 space-y-8"
+                >
+                    <div className="mb-12">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Evaluation Metrics
+                            </div>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                            Defensibility and Strategy.
+                        </h2>
+                    </div>
+
+                    <InteractiveScoreCard
+                        title="Moat Potential"
+                        score={80}
+                        type="moat"
+                        defaultVisibleText={
+                            <p>The moat is the dataset and the integrations.</p>
+                        }
+                        expandableText={
+                            <p className="bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/20 text-white/80">
+                                Who actually predicts which traits and actions lead to work, tax contribution, low welfare use, civic integration, and clean status progression across millions of cases? Whoever owns that graph gets smarter with every cohort. In an AGI world, generic AI gets cheaper. Proprietary state-linked outcome graphs get more valuable.
+                            </p>
+                        }
+                    />
+
+                    <InteractiveScoreCard
+                        title="Difficulty to Get to Market"
+                        score={87}
+                        type="difficulty"
+                        defaultVisibleText={
+                            <p>Big upside, hard path. <strong className="text-white mt-2 block font-medium">Summary: Technically buildable now. Politically explosive. Procurement-heavy. Worth doing.</strong></p>
+                        }
+                        expandableText={
+                            <ul className="space-y-6">
+                                <li className="bg-[var(--primary)]/10 p-5 rounded-2xl border border-[var(--primary)]/20">
+                                    <strong className="text-[var(--secondary)] block mb-2 text-lg">Tech: Medium</strong>
+                                    The dashboard, rules engine, scoring layer, and agent workflows are buildable now. The hard part is calibration and explainability.<br />
+                                    <em className="text-white/60 not-italic block mt-2 text-sm">Mitigation: Start with a shadow-mode recommendation dashboard before letting it influence real case priority.</em>
+                                </li>
+                                <li className="bg-[var(--primary)]/10 p-5 rounded-2xl border border-[var(--primary)]/20">
+                                    <strong className="text-[var(--secondary)] block mb-2 text-lg">Regulatory: Very High</strong>
+                                    Immigration is high-stakes state infrastructure. Privacy, due process, anti-discrimination law, and procurement all matter.<br />
+                                    <em className="text-white/60 not-italic block mt-2 text-sm">Mitigation: Keep the model explainable. Separate official adjudication from advisory scoring in phase one. Make every factor inspectable and appealable.</em>
+                                </li>
+                                <li className="bg-[var(--primary)]/10 p-5 rounded-2xl border border-[var(--primary)]/20">
+                                    <strong className="text-[var(--secondary)] block mb-2 text-lg">Capital: Medium</strong>
+                                    Not DeepMind-scale, but this is not a weekend app. You need policy talent, integrations, and pilot patience.<br />
+                                    <em className="text-white/60 not-italic block mt-2 text-sm">Mitigation: Sell one high-ROI module first, such as no-show reduction, benefits-to-work conversion, or skilled-migrant scoring.</em>
+                                </li>
+                                <li className="bg-[var(--primary)]/10 p-5 rounded-2xl border border-[var(--primary)]/20">
+                                    <strong className="text-[var(--secondary)] block mb-2 text-lg">Execution: Very High</strong>
+                                    Most teams will either build a soft NGO app that nobody in government buys, or a punitive surveillance product that becomes politically radioactive.<br />
+                                    <em className="text-white/60 not-italic block mt-2 text-sm">Mitigation: Stay anchored on one principle: visible standards, visible incentives, visible due process.</em>
+                                </li>
+                            </ul>
+                        }
+                    />
+
+                    <InteractiveScoreCard
+                        title="First experiment"
+                        type="experiment"
+                        defaultVisibleText="Build a shadow dashboard for 1,000 migrants in one city or one legal pathway."
+                        expandableText={
+                            <div className="bg-white/[0.02] p-6 rounded-2xl border border-white/10 text-white/80">
+                                <p className="mb-4">
+                                    <strong className="text-[var(--primary)]">Hypothesis:</strong> showing live next-stage probabilities and next-best actions reduces missed appointments by <strong>25%</strong> and raises six-month employment by <strong>10 percentage points</strong> versus control.
+                                </p>
+                                <p>
+                                    If it does not move those two numbers, the dashboard is not doing real work.
+                                </p>
+                            </div>
+                        }
+                    />
+
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Unique Go To Market & Roadmap */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="grid md:grid-cols-2 gap-12">
+                        <div>
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Go-To Market
+                            </div>
+                            <h3 className="text-3xl font-light text-white mb-6">
+                                Immigration Quality Simulator.
+                            </h3>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                Launch with a public <strong>Immigration Quality Simulator</strong> and <strong>Legibility Report</strong> for one country.
+                            </p>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-4">
+                                Show what happens to fiscal cost, work participation, and citizenship quality under different rules:
+                            </p>
+                            <ul className="space-y-2 text-white/80 font-light mb-6 pl-4 border-l border-[var(--primary)]/30">
+                                <li>- higher language thresholds</li>
+                                <li>- faster work authorization</li>
+                                <li>- tighter anti-fraud screening</li>
+                                <li>- stronger ideology screening</li>
+                                <li>- more aggressive benefit-linked incentives</li>
+                                <li>- pre-entry economic potential scoring</li>
+                            </ul>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                This gets shared because it speaks directly to a live political fight and finally puts numbers on tradeoffs.
+                            </p>
+                            <div className="p-5 bg-[var(--primary)]/10 rounded-2xl border border-[var(--primary)]/20 text-white/90 font-light">
+                                <strong className="text-white">User wedge:</strong> a reform-minded municipality or ministry under political pressure that needs better outcomes before the next election cycle.
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> AGI Future Edge
+                            </div>
+                            <h3 className="text-3xl font-light text-white mb-6">
+                                Bottleneck shift to quality control.
+                            </h3>
+                            <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
+                                In an AGI future, every state will be able to process more applications. The bottleneck will shift from throughput to quality control and incentive design.
+                            </p>
+                            <p className="text-lg text-[var(--secondary)] leading-relaxed font-medium mb-8">
+                                CivicPath becomes the dashboard for selecting people who are likely to strengthen the country rather than burden it. It also becomes the always-on feedback loop that keeps immigration aligned with democratic preferences instead of bureaucratic inertia.
+                            </p>
+
+                            <h4 className="text-xl font-medium text-white mb-4">Future roadmap</h4>
+                            <ul className="space-y-2 text-white/70 font-light">
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> pre-entry screening for future economic contribution</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> AI-assisted asylum triage</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> labor-market matching</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> ideological risk scoring for violent or anti-constitutional extremism</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> dynamic policy simulation for ministers</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--primary)] mt-0.5">•</span> country-specific citizenship design tools</li>
+                            </ul>
+                        </div>
+                    </div>
+                </motion.section>
+
+                {/* Optional Module Component */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image src={intakeImage} alt="Minimalist futuristic pristine glowing terminal in embassy" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <OptionalModuleCollapse />
+                </motion.section>
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Civilizational Impact & Insight */}
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="mb-12">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-4">
+                            <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] flex items-center">
+                                <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Final Assessment
+                            </div>
+                            <div className="mt-4 sm:mt-0">
+                                <InlineTags tags={tags.outcomes} theme="blue" />
+                            </div>
+                        </div>
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                            Civilizational Impact.
+                        </h2>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 mb-12">
+                        <div className="space-y-6">
+                            <p className="text-xl leading-relaxed text-[var(--primary)] font-medium">
+                                This is a state-capacity company.
+                            </p>
+                            <p className="text-lg leading-relaxed text-white/80 font-light border-l-2 border-[var(--primary)]/30 pl-6">
+                                If you make immigration visibly earned, you increase public trust and preserve political room for high-value immigration. That matters. Without tools like this, democracies tend to fail in one of two directions: soft drift that breaks legitimacy, or blunt restriction that blocks talent and punishes legitimate applicants along with the worst cases.
+                            </p>
+                            <p className="text-lg leading-relaxed text-white/70 font-light">
+                                The highest-upside version of CivicPath gives countries a way to remain open to strength while being closed to parasitism, disorder, and extremism.
+                            </p>
+
+                            <details className="mt-8 glass-panel rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
+                                <summary className="p-6 list-none flex justify-between items-center outline-none">
+                                    <div>
+                                        <div className="text-4xl font-light text-white tracking-tight mb-1">58</div>
+                                        <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)]/80">Impact Score</div>
+                                    </div>
+                                    <ChevronDown className="w-5 h-5 text-[var(--primary)]/50 group-open:rotate-180 transition-transform duration-300" />
+                                </summary>
+                                <div className="px-6 pb-6 pt-2 border-t border-[var(--primary)]/10">
+                                    <div className="space-y-3">
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-[var(--primary)]/90 font-light">Better Governance</span>
+                                            <span className="text-[var(--secondary)] font-mono">78</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-[var(--primary)]/90 font-light">Social Trust</span>
+                                            <span className="text-[var(--secondary)] font-mono">61</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-[var(--primary)]/90 font-light">Societal Cohesion</span>
+                                            <span className="text-[var(--secondary)] font-mono">52</span>
+                                        </div>
+                                        <div className="flex justify-between items-center text-sm">
+                                            <span className="text-[var(--primary)]/90 font-light">Freedom</span>
+                                            <span className="text-[var(--secondary)] font-mono">39</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </details>
+                        </div>
+
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/20 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-colors">
+                            <h3 className="text-xl text-white font-medium mb-8 flex items-center gap-3">
+                                <Activity className="w-6 h-6 text-[var(--secondary)]" /> Key Performance Indicators
+                            </h3>
+                            <ul className="space-y-4 text-white/80 font-light text-lg">
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> 12-month paid-work rate</li>
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> 12-month benefit dependence rate</li>
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> hearing and appointment appearance rate</li>
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> language milestone completion rate</li>
+                                <li className="flex items-start gap-4"><span className="text-[var(--primary)] font-bold mt-1">✓</span> calibration accuracy of stage-probability forecasts</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 to-transparent mt-16 hover:border-[var(--primary)]/50 transition-colors duration-500 group relative overflow-hidden">
+                        <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
+                        <h3 className="text-sm font-mono text-[var(--secondary)] uppercase tracking-widest mb-6 border-b border-[var(--primary)]/20 pb-4 inline-block">Transferable Insight</h3>
+                        <p className="text-white font-serif text-2xl sm:text-3xl leading-relaxed mt-4">
+                            "In politically contested systems, the winner is often the company that makes standards computable. Not softer messaging. Not harsher rhetoric. A visible rules-and-incentives dashboard."
+                        </p>
+                    </div>
+
+                </motion.section>
+
+                <div className="w-full h-px bg-white/10 my-20" />
+
+                {/* References */}
+                <motion.section
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mb-8 max-w-4xl"
+                >
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-1000 group">
+                        <Image src={communityImage} alt="Futuristic community center with diverse population" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
+                    </div>
+
+                    <details className="group [&_summary::-webkit-details-marker]:hidden">
+                        <summary className="text-lg font-mono tracking-widest uppercase text-white/40 mb-10 flex items-center cursor-pointer hover:text-white/70 transition-colors outline-none">
+                            <LinkIcon className="w-5 h-5 mr-3" /> Acronyms & References 
+                            <ChevronDown className="w-5 h-5 ml-auto text-white/30 group-open:rotate-180 transition-transform duration-300" />
+                        </summary>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-20">
+                            {/* Definitions */}
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 md:col-span-2 bg-white/[0.01]">
+                                <h4 className="text-white/60 font-mono text-sm uppercase mb-4 tracking-widest">Defined Terms</h4>
+                                <ul className="space-y-3 text-sm font-light text-white/60 leading-relaxed">
+                                    <li><strong className="text-white/80">ROI:</strong> return on investment, the measurable payoff from spending money on a program or product</li>
+                                    <li><strong className="text-white/80">NGO:</strong> non-governmental organization, a nonprofit or advocacy organization outside the state</li>
+                                </ul>
+                            </div>
+
+                            {/* Citations */}
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[1]</span>
+                                <div className="text-sm text-white/50 font-light leading-relaxed">
+                                    European Commission Joint Research Centre, <em>Projecting the net fiscal impact of immigration in the European Union</em><br />
+                                    <a href="https://joint-research-centre.ec.europa.eu/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline inline-block mt-2 font-medium">Read Report &rarr;</a>
+                                </div>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[2]</span>
+                                <div className="text-sm text-white/50 font-light leading-relaxed">
+                                    Pew Research Center, <em>Language and Traditions Are Considered Central to National Identity</em><br />
+                                    <a href="https://www.pewresearch.org/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline inline-block mt-2 font-medium">Read Report &rarr;</a>
+                                </div>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[3]</span>
+                                <div className="text-sm text-white/50 font-light leading-relaxed">
+                                    Danish Ministry of Immigration and Integration, <em>International Migration Denmark 2025</em><br />
+                                    <a href="https://uim.dk/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline inline-block mt-2 font-medium">Read Report &rarr;</a>
+                                </div>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[4]</span>
+                                <div className="text-sm text-white/50 font-light leading-relaxed">
+                                    Statistics Netherlands, <em>English summary, Statistiek Wet Inburgering 2024</em><br />
+                                    <a href="https://www.cbs.nl/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline inline-block mt-2 font-medium">Read Report &rarr;</a>
+                                </div>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
+                                <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[5]</span>
+                                <div className="text-sm text-white/50 font-light leading-relaxed">
+                                    Statistics Netherlands, <em>More asylum seekers with residency in paid work</em><br />
+                                    <a href="https://www.cbs.nl/" target="_blank" rel="noreferrer" className="text-[var(--secondary)] hover:text-[var(--tertiary)] hover:underline inline-block mt-2 font-medium">Read Report &rarr;</a>
+                                </div>
+                            </div>
+                        </div>
+                    </details>
+                </motion.section>
+
+            </div>
+        </main>
+    );
+}

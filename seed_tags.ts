@@ -450,6 +450,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Human Flourishing', 'Social Trust', 'Community Renewal', 'Societal Cohesion']
         }
+    },
+    {
+        slug: 'civicpath',
+        name: 'CivicPath',
+        created_at: '2026-03-13T10:00:00Z',
+        scores: {
+            moat_score: { ai_scored: 80 },
+            difficulty_score: { ai_scored: 87 },
+            civilizational_impact_score: { ai_scored: 58 },
+            civilizational_impact_ratings: {
+                "Better Governance": { ai_scored: 78 },
+                "Social Trust": { ai_scored: 61 },
+                "Societal Cohesion": { ai_scored: 52 },
+                "Freedom": { ai_scored: 39 }
+            }
+        },
+        tags: {
+            sector: ['Governance', 'Democracy', 'AI', 'Security'],
+            bottleneck: ['Trust', 'Regulatory Friction', 'Social Fragmentation'],
+            customer: ['Governments', 'Cities'],
+            product_type: ['Platform', 'Coordination Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations'],
+            readiness: ['Build Now'],
+            founder_fit: ['Policy Entrepreneur', 'Operator-Led'],
+            outcomes: ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom']
+        }
     }
 ];
 
