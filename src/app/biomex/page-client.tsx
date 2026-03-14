@@ -96,10 +96,35 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 mb-12 group">
-                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-[var(--primary)]/30 pl-6 group-hover:border-[var(--primary)]/60 transition-colors">
-                            Imagine a ranked network of exceptional microbiome donors, elite endurance athletes, metabolically resilient older adults, exceptional sleepers, low-inflammation super-responders, people who recover unusually well after antibiotics. <strong className="text-white font-medium">BiomeX profiles them deeply, tracks the behaviors that sustain their biology, matches them to the right recipients, and pays them for high-quality material and protocol adherence.</strong> In the early years, the product is premium donor-derived microbiome therapy. Over time, the company learns which strains, metabolites, and donor traits actually transfer, then converts that insight into donor-inspired capsules and defined live biotherapeutic products.
-                        </p>
+                    <div className="grid md:grid-cols-4 gap-4 mb-12">
+                        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--primary)]/20 group-hover:bg-[var(--primary)] transition-colors" />
+                            <span className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-4 block">01 / Source</span>
+                            <p className="text-white/80 font-light leading-relaxed">
+                                Identify a ranked network of exceptional microbiome donors: elite athletes, deep sleepers, and low-inflammation super-responders.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--primary)]/20 group-hover:bg-[var(--primary)] transition-colors" />
+                            <span className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-4 block">02 / Profile</span>
+                            <p className="text-white/80 font-light leading-relaxed">
+                                <strong className="text-white font-medium">BiomeX profiles them deeply,</strong> tracking the behaviors that sustain their biology and paying them for high-quality material.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--primary)]/20 group-hover:bg-[var(--primary)] transition-colors" />
+                            <span className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-4 block">03 / Match</span>
+                            <p className="text-white/80 font-light leading-relaxed">
+                                In the early years, the product is premium donor-derived microbiome therapy matched to the right clinical recipients.
+                            </p>
+                        </div>
+                        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors group relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-1 bg-[var(--primary)]/20 group-hover:bg-[var(--primary)] transition-colors" />
+                            <span className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-4 block">04 / Scale</span>
+                            <p className="text-white/80 font-light leading-relaxed">
+                                Over time, the company converts transfer insights into donor-inspired capsules and defined live biotherapeutic products.
+                            </p>
+                        </div>
                     </div>
 
                     <div className="flex flex-col md:flex-row gap-8 items-center bg-[var(--primary)]/10 p-8 rounded-[2rem] border border-[var(--primary)]/20 shadow-[0_0_50px_var(--primary-glow)]" style={{ "--primary-glow": "var(--primary)" } as React.CSSProperties}>
@@ -155,7 +180,7 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     </div>
 
                     <p className="text-xl text-[var(--secondary)] font-serif italic max-w-3xl mt-12 pl-6 border-l-2 border-[var(--secondary)]/40">
-                        "That is enough signal to justify building a company. Not because every claim is proven, but because there is already enough evidence to believe donor phenotype is not random noise."
+                        "The microbiome category has historically treated donor material as a generic commodity. The next generation of therapeutics will treat donor phenotype as the active ingredient."
                     </p>
 
                 </motion.section>
