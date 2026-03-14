@@ -11,11 +11,9 @@ import { Activity, Shield, TrendingUp, AlertTriangle, Users, Building, FileText,
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/hero.png';
-import dashboardImage from './assets/dashboard.png';
-import cityImage from './assets/city.png';
-import communityImage from './assets/community.png';
-import intakeImage from './assets/intake.png';
+import dashboardImage from './assets/hero.png';
+import simulatorImage from './assets/simulator.png';
+import gateImage from './assets/gate.png';
 
 export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Expected fallback if empty
@@ -48,14 +46,14 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-[var(--primary)]/10"
+                        className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-[0_0_60px_-15px_var(--primary)] group border border-[var(--primary)]/20"
                     >
                         <Image
-                            src={heroImage}
-                            alt="Cinematic, optimistic government control room overseeing a futuristic smart city"
+                            src={dashboardImage}
+                            alt="Cinematic, immersive mobile app dashboard showing 78% probability of permanent residency and green verified language/work history metrics"
                             fill
                             quality={100}
-                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
                             priority
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
@@ -165,16 +163,15 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                             Most immigration systems <br className="hidden sm:block" />
-                            <span className="text-white/50">are running on paperwork, delay, and vibes.</span>
+                            <span className="text-white/50">are opaque and foster perverse incentives.</span>
                         </h2>
                     </div>
 
-                    <p className="text-xl text-white/80 leading-relaxed font-light mb-8">
-                        Citizens want a system that is selective, lawful, economically positive, non-violent, and culturally functional. They want people who can work, integrate, learn the language, follow the law, and not become long-run fiscal burdens. Across 23 countries surveyed by Pew, a median of <strong>91%</strong> said speaking the main national language is important for true belonging, and <strong>81%</strong> said sharing the country's customs and traditions matters.
-                        <ExpandableCitation label="[2]" sourceUrl="https://www.pewresearch.org" sourceText="Pew Research Center, Language and Traditions Are Considered Central to National Identity" />
+                    <p className="text-xl text-[var(--secondary)] leading-relaxed font-medium mb-8">
+                        There is a massive, structural feedback gap between what the voting public demands and what the administrative state actually enforces, and it is tearing the civic legitimacy of democracies apart.
                     </p>
                     <p className="text-xl text-white/80 leading-relaxed font-light mb-12">
-                        But the actual system rarely makes those priorities concrete. It does a weak job of translating public standards into day-to-day immigrant incentives. So you get the worst of both worlds. Good immigrants face confusion and random friction. Bad-fit immigrants learn how to exploit opacity. Citizens see a gap between what they were promised and what the system actually rewards.
+                        Citizens want a system that is selective, lawful, economically positive, non-violent, and culturally functional. But the actual system rarely makes those priorities concrete. It does a weak job of translating public standards into day-to-day immigrant incentives. So you get the worst of both worlds. Good immigrants face confusion and random friction. Bad-fit immigrants learn how to exploit opacity.
                     </p>
 
 
@@ -209,11 +206,11 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </h2>
 
                         <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/10 group border border-white/10">
-                            <Image src={dashboardImage} alt="CivicPath Glass Dashboard Interface" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                            <Image src={simulatorImage} alt="Immigration Quality Simulator glowing dashboard" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]" />
                         </div>
 
                         <p className="text-xl text-white/80 max-w-3xl font-light leading-relaxed mb-6">
-                            Each immigrant gets a <strong>CivicPath Dashboard</strong> with four visible layers:
+                            Each immigrant gets a <strong>CivicPath App</strong>. The primary metric is the probability of reaching the next legal phase. It features four live interface layers:
                         </p>
                     </div>
 
@@ -246,16 +243,14 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         </motion.div>
 
                         <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 border border-[var(--primary)]/20 rounded-3xl bg-white/[0.01]">
-                            <h4 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2"><Users className="w-5 h-5"/> 3. Integration Panel</h4>
-                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">The measurable behaviors publics actually care about:</p>
+                            <h4 className="text-lg text-[var(--primary)] font-medium mb-4 flex items-center gap-2"><Users className="w-5 h-5"/> 3. App Capability Checks</h4>
+                            <p className="text-sm text-white/50 mb-4 uppercase tracking-widest font-mono">In-app verifiable steps to update probability:</p>
                             <ul className="space-y-2 text-white/80 font-light">
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> language attainment</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> civics and constitutional norms</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> legal compliance</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> employment continuity</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> school/community participation</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> credential recognition</li>
-                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> responsiveness to notices</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> automated LLM language capacity checks</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> in-app foundational civics assessments</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> identity and credential verification (OIDC)</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> employment and contract upload matching</li>
+                                <li className="flex items-start gap-2"><span className="text-[var(--secondary)] mt-0.5">•</span> automated responsiveness to hearing notices</li>
                             </ul>
                         </motion.div>
 
@@ -287,7 +282,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
-                {/* Specific Examples */}
+                {/* ICP Value Flow Scenarios */}
                 <motion.section
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -296,32 +291,54 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                 >
                     <div className="mb-12">
                         <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
-                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Specific Examples
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Ideal Customer Profiles
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
-                            Scenarios in action.
+                            Interactive Value Flow Scenarios.
                         </h2>
+                        <p className="text-xl text-white/70 font-light mt-6 max-w-3xl">
+                            The CivicPath architecture links sovereign administration to granular individual behavior.
+                        </p>
                     </div>
 
-                    <div className="space-y-6">
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Building className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Interior ministry</h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--primary)]/5 to-transparent">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Building className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Ministry of the Interior</h3>
+                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
+                                <strong className="text-[var(--primary)]">Pain:</strong> Drowning in asylum backlog, rising benefits costs, and massive political backlash over failed integration and no-shows.
+                            </p>
                             <p className="text-lg leading-relaxed text-white/70 font-light">
-                                A country wants to cut welfare dependence, raise labor-force participation, and reduce no-shows. New arrivals get the dashboard on day one. Every required action and every value-creating action is visible. Complete language levels, work continuously, file taxes, show up to hearings, avoid infractions, your probabilities rise. Miss notices, rely heavily on long-run benefits, or trigger public-safety flags, your dashboard worsens.
+                                <strong className="text-[var(--secondary)]">Solution:</strong> The dashboard explicitly ties welfare reliance and crime to immediate pathway failure. It gives ministers an 'Immigration Quality Simulator' to forecast the exact fiscal and labor-market impact of policy tweaks before presenting them to parliament.
                             </p>
                         </div>
 
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Shield className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Municipality</h3>
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--primary)]/5 to-transparent">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><Shield className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Target Municipality</h3>
+                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
+                                <strong className="text-[var(--primary)]">Pain:</strong> The national government dumps migrants into the city, leaving them to bear the long-tail housing and language training costs.
+                            </p>
                             <p className="text-lg leading-relaxed text-white/70 font-light">
-                                A city is drowning in housing, welfare, and integration costs. It uses CivicPath to spot which residents are likely to stay benefits-dependent at 12 months and which are one intervention away from stable work. The dashboard lets the city allocate language programs, work placement, and compliance resources with actual precision.
+                                <strong className="text-[var(--secondary)]">Solution:</strong> The platform instantly identifies which residents are likely to stay benefits-dependent at 12 months, and allows the city to hyper-target language programs and contract-work placements to bend the curve.
                             </p>
                         </div>
 
-                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors">
-                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><BadgeCheck className="w-6 h-6 mr-3 text-[var(--secondary)]" /> Skilled migration pathway</h3>
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-indigo-500/5 to-transparent">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><FileText className="w-6 h-6 mr-3 text-indigo-400" /> The Asylum Seeker</h3>
+                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
+                                <strong className="text-[var(--primary)]">Pain:</strong> Trapped in opaque processing limbo, unsure what actions actually secure their stay versus risk deportation. Subject to predatory smugglers promising false guarantees.
+                            </p>
                             <p className="text-lg leading-relaxed text-white/70 font-light">
-                                A government wants more doctors, engineers, builders, and founders, not just more applications. CivicPath scores likely future economic contribution before entry and shows applicants the fastest route to high-value integration. This becomes a talent selection and retention dashboard, not just an asylum tool.
+                                <strong className="text-indigo-300">Solution:</strong> A totally legible app showing exactly what they need to do: show up to the hearing next Tuesday (+4% probability), complete the in-app language test (+12% probability), get off long-term subsidy. The truth is harsh but predictable.
+                            </p>
+                        </div>
+
+                        <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-[var(--primary)]/10 hover:border-[var(--primary)]/30 transition-colors bg-gradient-to-br from-[var(--secondary)]/5 to-transparent">
+                            <h3 className="text-2xl font-light text-white flex items-center mr-2 mb-4"><BadgeCheck className="w-6 h-6 mr-3 text-[var(--secondary)]" /> High-Skilled Immigrant</h3>
+                            <p className="text-lg leading-relaxed text-white/80 font-light mb-4">
+                                <strong className="text-[var(--primary)]">Pain:</strong> Subject to the same hostile administrative friction and lottery-based delays as edge cases, despite representing instant net fiscal gain.
+                            </p>
+                            <p className="text-lg leading-relaxed text-white/70 font-light">
+                                <strong className="text-[var(--secondary)]">Solution:</strong> Pre-entry "Contribution Panel" scoring validates their high value immediately. They bypass standard queues and see a rapid, expedited probability meter confirming they will achieve permanent residency if they maintain verified employment.
                             </p>
                         </div>
                     </div>
@@ -341,7 +358,7 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Market
                         </div>
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
-                            This is government software, <span className="text-white/50 block">not a consumer app pretending to be government software.</span>
+                            This is sovereign civic infrastructure.
                         </h2>
                         
                         <p className="text-xl leading-relaxed text-white/80 font-light mb-8">
@@ -379,8 +396,8 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             </p>
                         </div>
 
-                        <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-[var(--primary)]/10 border border-white/10">
-                            <Image src={cityImage} alt="Holographic city map in a futuristic control room" fill quality={100} className="object-cover" />
+                        <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-[var(--primary)]/10 border border-[var(--primary)]/20">
+                            <Image src={gateImage} alt="Holographic neon green verification approval gate" fill quality={100} className="object-cover transition-transform duration-1000 hover:scale-[1.02]" />
                         </div>
                     </div>
 
@@ -623,8 +640,10 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
-                        <Image src={intakeImage} alt="Minimalist futuristic pristine glowing terminal in embassy" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group bg-black/50">
+                        {/* We use gateImage here temporarily, or null if you prefer, but OptionalModuleCollapse does its own content inside mostly. 
+                            Since we replaced intake.png, let's just make it a cool gradient container or use simulator again. */}
+                        <Image src={simulatorImage} alt="Overseas simulation intake processing" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-40 blur-sm" />
                     </div>
                     <OptionalModuleCollapse />
                 </motion.section>
@@ -728,8 +747,8 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     viewport={{ once: true }}
                     className="mb-8 max-w-4xl"
                 >
-                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-1000 group">
-                        <Image src={communityImage} alt="Futuristic community center with diverse population" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-[var(--primary)]/10 opacity-80 hover:opacity-100 transition-opacity duration-1000 group bg-[#070b14]">
+                        <Image src={dashboardImage} alt="Mobile App details background" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105 opacity-30 blur-[2px]" />
                         <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
                     </div>
 
