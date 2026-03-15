@@ -14,7 +14,6 @@ import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { InteractiveGridCard } from "./components/InteractiveGridCard";
 import { ValueFlowDiagram } from "./components/ValueFlowDiagram";
 import { MarketTAMChart } from "./components/MarketTAMChart";
-import CategoryFrontierForecast from "@/components/forecast/CategoryFrontierForecast";
 
 // Import local images
 import heroImg from "./assets/easy_exit_hero_1773609319540.png";
@@ -29,15 +28,6 @@ export default function EasyExitClient() {
     const [isDifficultyExpanded, setIsDifficultyExpanded] = useState(false);
     const [isImpactExpanded, setIsImpactExpanded] = useState(false);
     const [isOpenSourceExpanded, setIsOpenSourceExpanded] = useState(false);
-
-    // Initial forecast data
-    const mockForecast = {
-        curves: {
-            '2030-01-01': { horizonDate: '2030-01-01', probabilities: { '10000000': 85, '100000000': 60, '1000000000': 15, '10000000000': 2, '100000000000': 0.1, '1000000000000': 0 } },
-            '2035-01-01': { horizonDate: '2035-01-01', probabilities: { '10000000': 95, '100000000': 75, '1000000000': 42, '10000000000': 12, '100000000000': 2, '1000000000000': 0.1 } },
-            '2040-01-01': { horizonDate: '2040-01-01', probabilities: { '10000000': 98, '100000000': 85, '1000000000': 68, '10000000000': 35, '100000000000': 8, '1000000000000': 0.5 } }
-        }
-    };
     
     return (
         <main 
@@ -411,26 +401,6 @@ export default function EasyExitClient() {
                         </AnimatePresence>
                     </div>
 
-                    {/* Open Source Priority Score */}
-                    <div className="glass-panel p-8 rounded-3xl border border-purple-500/20 bg-purple-500/5 cursor-pointer hover:bg-purple-500/10 transition-colors" onClick={() => setIsOpenSourceExpanded(!isOpenSourceExpanded)}>
-                        <div className="flex justify-between items-center mb-6">
-                            <h3 className="text-2xl font-light text-white">Open Source Priority</h3>
-                            <ChevronDown className={`w-5 h-5 text-white/50 transition-transform ${isOpenSourceExpanded ? "rotate-180" : ""}`} />
-                        </div>
-                        <div className="text-5xl font-light text-purple-400 mb-4">92<span className="text-xl text-white/30 ml-2">/ 100</span></div>
-                        <p className="text-white/80 text-sm italic mb-2">High open-source value. The protocol must be vendor-neutral to act as a trustworthy baseline.</p>
-                        
-                        <AnimatePresence>
-                            {isOpenSourceExpanded && (
-                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                                    <div className="pt-4 border-t border-white/10 mt-4 text-sm text-white/70 space-y-2">
-                                        <p>A closed protocol for machine-verifiable revocation rights defeats the point of an anti-lock-in standard.</p>
-                                        <p>The standard must be open to ensure competing machine agents and merchants can reliably communicate their intents and trust the validation mechanisms without paying tolls to a gateway. The tooling around it can be effectively monetized.</p>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
-                    </div>
                 </section>
 
                 {/* GO TO MARKET / FOUNDER FIT */}
@@ -470,39 +440,62 @@ export default function EasyExitClient() {
                         </p>
                     </div>
                     
-                    <div className="glass-panel p-8 rounded-3xl border-2 border-[var(--primary)]/50 bg-[var(--primary)]/10 cursor-pointer hover:bg-[var(--primary)]/20 transition-all shadow-[0_0_20px_rgba(var(--primary),0.15)]" onClick={() => setIsImpactExpanded(!isImpactExpanded)}>
-                        <div className="flex justify-between items-center">
-                            <div>
-                                <h3 className="text-sm font-mono uppercase tracking-widest text-[var(--primary)] mb-2">Civilizational Impact Score</h3>
-                                <div className="text-6xl font-light text-white">46<span className="text-xl text-white/50 ml-2">/ 100</span></div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div className="glass-panel p-8 rounded-3xl border-2 border-[var(--primary)]/50 bg-[var(--primary)]/10 cursor-pointer hover:bg-[var(--primary)]/20 transition-all shadow-[0_0_20px_rgba(var(--primary),0.15)] h-fit" onClick={() => setIsImpactExpanded(!isImpactExpanded)}>
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <h3 className="text-sm font-mono uppercase tracking-widest text-[var(--primary)] mb-2">Civilizational Impact Score</h3>
+                                    <div className="text-6xl font-light text-white">46<span className="text-xl text-white/50 ml-2">/ 100</span></div>
+                                </div>
+                                <ChevronDown className={`w-8 h-8 text-white/50 transition-transform ${isImpactExpanded ? "rotate-180" : ""}`} />
                             </div>
-                            <ChevronDown className={`w-8 h-8 text-white/50 transition-transform ${isImpactExpanded ? "rotate-180" : ""}`} />
+                            
+                            <AnimatePresence>
+                                {isImpactExpanded && (
+                                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                                        <div className="pt-8 mt-6 border-t border-white/10 grid grid-cols-2 gap-6">
+                                            <div>
+                                                <div className="text-sm text-white/50 mb-1">Social Trust</div>
+                                                <div className="text-2xl font-light text-emerald-400">68</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-sm text-white/50 mb-1">Freedom</div>
+                                                <div className="text-2xl font-light text-blue-400">58</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-sm text-white/50 mb-1">Better Governance</div>
+                                                <div className="text-2xl font-light text-purple-400">41</div>
+                                            </div>
+                                            <div>
+                                                <div className="text-sm text-white/50 mb-1">Differentially Defensive</div>
+                                                <div className="text-2xl font-light text-amber-400">37</div>
+                                            </div>
+                                        </div>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
                         </div>
-                        
-                        <AnimatePresence>
-                            {isImpactExpanded && (
-                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-                                    <div className="pt-8 mt-6 border-t border-white/10 grid grid-cols-2 gap-6">
-                                        <div>
-                                            <div className="text-sm text-white/50 mb-1">Social Trust</div>
-                                            <div className="text-2xl font-light text-emerald-400">68</div>
+
+                        {/* Open Source Priority Score */}
+                        <div className="glass-panel p-8 rounded-3xl border border-purple-500/20 bg-purple-500/5 cursor-pointer hover:bg-purple-500/10 transition-colors h-fit" onClick={() => setIsOpenSourceExpanded(!isOpenSourceExpanded)}>
+                            <div className="flex justify-between items-center mb-6">
+                                <h3 className="text-2xl font-light text-white">Open Source Priority</h3>
+                                <ChevronDown className={`w-5 h-5 text-white/50 transition-transform ${isOpenSourceExpanded ? "rotate-180" : ""}`} />
+                            </div>
+                            <div className="text-6xl font-light text-purple-400 mb-4">55<span className="text-xl text-white/30 ml-2">/ 100</span></div>
+                            <p className="text-white/80 text-sm italic mb-2">Moderate open-source value. The protocol must be vendor-neutral to act as a trustworthy baseline.</p>
+                            
+                            <AnimatePresence>
+                                {isOpenSourceExpanded && (
+                                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                                        <div className="pt-4 border-t border-white/10 mt-4 text-sm text-white/70 space-y-2">
+                                            <p>A closed protocol for machine-verifiable revocation rights defeats the point of an anti-lock-in standard.</p>
+                                            <p>The standard must be open to ensure competing machine agents and merchants can reliably communicate their intents and trust the validation mechanisms without paying tolls to a gateway. The tooling around it can be effectively monetized.</p>
                                         </div>
-                                        <div>
-                                            <div className="text-sm text-white/50 mb-1">Freedom</div>
-                                            <div className="text-2xl font-light text-blue-400">58</div>
-                                        </div>
-                                        <div>
-                                            <div className="text-sm text-white/50 mb-1">Better Governance</div>
-                                            <div className="text-2xl font-light text-purple-400">41</div>
-                                        </div>
-                                        <div>
-                                            <div className="text-sm text-white/50 mb-1">Differentially Defensive</div>
-                                            <div className="text-2xl font-light text-amber-400">37</div>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </AnimatePresence>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
                     </div>
                 </section>
 
@@ -510,18 +503,10 @@ export default function EasyExitClient() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="w-full aspect-video md:aspect-[21/9] relative rounded-3xl overflow-hidden border border-white/10"
+                    className="w-full aspect-video md:aspect-[21/9] relative rounded-3xl overflow-hidden border border-white/10 mb-16"
                 >
                     <Image src={impactImg} alt="Vibrant Neighborhood" fill className="object-cover" quality={100} />
                 </motion.div>
-                
-                <section>
-                    {/* Valuation Forecast Component */}
-                    <CategoryFrontierForecast 
-                        initialForecast={mockForecast as any} 
-                        aiRationale="Venture and scale probability dynamics for an agentic orchestration layer, predicting enterprise adoption trajectories across standard thresholds." 
-                    />
-                </section>
 
                 {/* KPIs & FIRST EXPERIMENT */}
                 <section>

@@ -191,6 +191,20 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getAgrivoltaicsInfrastructureCurve('helioterra'),
         aiRationale: "Agrivoltaics represents a highly viable land-use arbitrage, but scaling financing-and-delivery infrastructure for physical projects requires immense capital overhead. The AGI Futures forecaster model reflects high confidence in creating $10M+ regional successes by 2030, but throttles the probability of a $100B+ mega-developer outcome until dual-use policy tailwinds and utility-scale integration compound deeply into the 2040s."
     },
+    'easy-exit': {
+        forecast: {
+            id: `fc_easy-exit_agentic`,
+            targetIdeaSlug: 'easy-exit',
+            sourceType: "AI",
+            updatedAt: new Date().toISOString(),
+            curves: {
+                '2030-01-01': { horizonDate: '2030-01-01', probabilities: { '10000000': 85, '100000000': 60, '1000000000': 15, '10000000000': 2, '100000000000': 0.1, '1000000000000': 0 } },
+                '2035-01-01': { horizonDate: '2035-01-01', probabilities: { '10000000': 95, '100000000': 75, '1000000000': 42, '10000000000': 12, '100000000000': 2, '1000000000000': 0.1 } },
+                '2040-01-01': { horizonDate: '2040-01-01', probabilities: { '10000000': 98, '100000000': 85, '1000000000': 68, '10000000000': 35, '100000000000': 8, '1000000000000': 0.5 } }
+            }
+        },
+        aiRationale: "Venture and scale probability dynamics for an agentic orchestration layer, predicting enterprise adoption trajectories across standard thresholds."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {
