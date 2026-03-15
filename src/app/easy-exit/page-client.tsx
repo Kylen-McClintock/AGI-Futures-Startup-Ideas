@@ -23,7 +23,7 @@ import solutionImg from "./assets/easy_exit_solution_1773609351808.png";
 import marketImg from "./assets/easy_exit_market_1773609367126.png";
 import impactImg from "./assets/easy_exit_impact_1773609385141.png";
 
-export default function EasyExitClientPage({ initialTags }: { initialTags: any }) {
+export default function EasyExitClient() {
     const theme = themeMap['emerald'];
     const [isMoatExpanded, setIsMoatExpanded] = useState(false);
     const [isDifficultyExpanded, setIsDifficultyExpanded] = useState(false);
