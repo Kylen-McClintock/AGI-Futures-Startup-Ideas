@@ -175,8 +175,13 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
 
     return (
         <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
-            <div className="inline-block mb-6 text-xs sm:text-sm font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-4 py-1.5 rounded-full bg-[var(--primary)]/5 glass-panel">
-                AGI Futures
+            <div className="flex flex-wrap items-center gap-4 mb-6">
+                <div className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-4 py-1.5 rounded-full bg-[var(--primary)]/5 glass-panel">
+                    AGI Futures
+                </div>
+                <Link href="/problem-atlas" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/70 border border-white/20 px-4 py-1.5 rounded-full hover:bg-white/10 hover:text-white transition-colors glass-panel">
+                    View Problem Atlas →
+                </Link>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-10">
                 <span className="bg-[var(--primary)]/15 text-[var(--primary)] px-4 py-1.5 rounded-2xl inline-block mb-3 border border-[var(--primary)]/30 shadow-[0_0_30px_rgba(59,244,164,0.15)] backdrop-blur-sm">
