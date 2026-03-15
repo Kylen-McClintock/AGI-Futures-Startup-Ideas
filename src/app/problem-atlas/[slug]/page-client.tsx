@@ -20,6 +20,98 @@ function MarkdownText({ text, problem }: { text: string, problem: ProblemData })
     // Split by double newline for paragraphs
     const blocks = text.split('\n\n');
 
+    const renderListItem = (item: string, j: number) => {
+        let cleanItem = item.trim().replace(/^- /, '');
+        
+        const parts = [];
+        let lastIndex = 0;
+
+        // First parse nested source links like [1]([domain](url))
+        const sourceLinkRegex = /\[(\d+)\]\(\[[^\]]+\]\(([^)]+)\)\)/g;
+        let match;
+        while ((match = sourceLinkRegex.exec(cleanItem)) !== null) {
+            if (match.index > lastIndex) {
+                parts.push(<span key={`text-${lastIndex}`}>{cleanItem.substring(lastIndex, match.index)}</span>);
+            }
+            parts.push(
+                <a 
+                    key={`link-${match.index}`} 
+                    href={match[2]} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[var(--primary)] hover:underline inline-flex items-center gap-1"
+                >
+                    [{match[1]}]
+                </a>
+            );
+            lastIndex = match.index + match[0].length;
+        }
+
+        // Then parse standard links like [text](url) on the remaining text
+        // Note: this is simplified, we just apply it to the whole cleanItem but we should be careful not to double-parse
+        // We can do this by splitting the text into chunks first, but since the Regexes don't overlap in our use case typically, 
+        // we can just reconstruct the string or handle it differently.
+        // Actually, the easiest way is to apply standard link regex *only* to the text parts we just extracted!
+        const parsedParts = [];
+        const standardLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        
+        if (parts.length === 0) {
+            // No nested links, just do standard links
+            let sMatch;
+            while ((sMatch = standardLinkRegex.exec(cleanItem)) !== null) {
+                if (sMatch.index > lastIndex) {
+                    parsedParts.push(<span key={`stext-${lastIndex}`}>{cleanItem.substring(lastIndex, sMatch.index)}</span>);
+                }
+                parsedParts.push(
+                    <a 
+                        key={`slink-${sMatch.index}`} 
+                        href={sMatch[2]} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-[var(--primary)] hover:underline inline-flex items-center gap-1"
+                    >
+                        {sMatch[1]}
+                    </a>
+                );
+                lastIndex = sMatch.index + sMatch[0].length;
+            }
+            if (lastIndex < cleanItem.length) {
+                parsedParts.push(<span key={`stext-${lastIndex}`}>{cleanItem.substring(lastIndex)}</span>);
+            }
+        } else {
+            // We have nested links. 
+            // For simplicity in this dataset, we can just use the nested link output if there are nested links,
+            // and assume no standard links exist in the *same* bullet point, OR we can parse the text chunks.
+            // Let's parse the text chunks.
+            parsedParts.push(...parts);
+            if (lastIndex < cleanItem.length) {
+                parsedParts.push(<span key={`text-end-${lastIndex}`}>{cleanItem.substring(lastIndex)}</span>);
+            }
+        }
+
+        const finalParts = parsedParts.length > 0 ? parsedParts : [cleanItem];
+
+        // Check if this is a sub-headline item like "Startup Surfaces" or "Headline Evidence"
+        const isSubHeadlineItem = cleanItem.includes(':') && cleanItem.split(':')[0].split(' ').length <= 4;
+        
+        if (isSubHeadlineItem && !cleanItem.includes('http')) {
+            const [boldPart, ...rest] = cleanItem.split(':');
+            return (
+                <li key={j} className="flex flex-col gap-2 glass-panel p-6 rounded-2xl border border-white/5 w-full">
+                    <span className="text-[var(--primary)] font-medium text-xl">{boldPart}:</span>
+                    <span className="text-white/80">{rest.join(':').trim()}</span>
+                </li>
+            );
+        }
+
+        return (
+            <li key={j} className="flex items-start gap-4 glass-panel p-5 rounded-xl border border-white/5 w-full">
+                <span className="text-[var(--primary)] mt-1.5">•</span>
+                <span className="flex-1">{finalParts}</span>
+            </li>
+        );
+    };
+
     return (
         <div className="space-y-6 text-white/80 font-light text-lg sm:text-xl leading-relaxed flex flex-col">
             {blocks.map((block, i) => {
@@ -27,57 +119,7 @@ function MarkdownText({ text, problem }: { text: string, problem: ProblemData })
                     const items = block.split('\n').filter(line => line.trim().startsWith('- '));
                     return (
                         <ul key={i} className="list-none space-y-4 pl-0">
-                            {items.map((item, j) => {
-                                // removing '- ' and parsing links [text](url)
-                                let cleanItem = item.replace(/^- /, '');
-                                
-                                // parse [text](url)
-                                const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-                                const parts = [];
-                                let lastIndex = 0;
-                                let match;
-                                
-                                while ((match = linkRegex.exec(cleanItem)) !== null) {
-                                    if (match.index > lastIndex) {
-                                        parts.push(<span key={lastIndex}>{cleanItem.substring(lastIndex, match.index)}</span>);
-                                    }
-                                    parts.push(
-                                        <a 
-                                            key={match.index} 
-                                            href={match[2]} 
-                                            target="_blank" 
-                                            rel="noopener noreferrer"
-                                            className="text-[var(--primary)] hover:underline inline-flex items-center gap-1"
-                                        >
-                                            {match[1]}
-                                        </a>
-                                    );
-                                    lastIndex = match.index + match[0].length;
-                                }
-                                if (lastIndex < cleanItem.length) {
-                                    parts.push(<span key={lastIndex}>{cleanItem.substring(lastIndex)}</span>);
-                                }
-
-                                // Check if this is a sub-headline item like "Startup Surfaces" or "Headline Evidence"
-                                const isSubHeadlineItem = cleanItem.includes(':') && cleanItem.split(':')[0].split(' ').length <= 4;
-                                
-                                if (isSubHeadlineItem) {
-                                    const [boldPart, ...rest] = cleanItem.split(':');
-                                    return (
-                                        <li key={j} className="flex flex-col gap-2 glass-panel p-6 rounded-2xl border border-white/5 w-full">
-                                            <span className="text-[var(--primary)] font-medium text-xl">{boldPart}:</span>
-                                            <span className="text-white/80">{rest.join(':').trim()}</span>
-                                        </li>
-                                    );
-                                }
-
-                                return (
-                                    <li key={j} className="flex items-start gap-4 glass-panel p-5 rounded-xl border border-white/5 w-full">
-                                        <span className="text-[var(--primary)] mt-1.5">•</span>
-                                        <span className="flex-1">{parts.length > 0 ? parts : cleanItem}</span>
-                                    </li>
-                                );
-                            })}
+                            {items.map((item, j) => renderListItem(item, j))}
                         </ul>
                     );
                 }
@@ -101,7 +143,16 @@ function MarkdownText({ text, problem }: { text: string, problem: ProblemData })
                                 <span className="w-6 h-px bg-[var(--primary)]/50 mr-3" />
                                 {lines[0].replace(':', '')}
                             </h3>
-                            {lines.length > 1 && <p>{lines.slice(1).join('\n')}</p>}
+                            {lines.length > 1 && (
+                                <ul className="list-none space-y-4 pl-0">
+                                    {lines.slice(1).map((line, j) => {
+                                        if (line.trim().startsWith('- ')) {
+                                            return renderListItem(line, j);
+                                        }
+                                        return <p key={j} className="mb-4">{line}</p>;
+                                    })}
+                                </ul>
+                            )}
                         </div>
                     );
                 }
