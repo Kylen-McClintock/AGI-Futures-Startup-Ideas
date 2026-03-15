@@ -178,12 +178,23 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
             
             {/* Top Navigation */}
             <div className="sticky top-0 z-50 bg-black/50 backdrop-blur-xl border-b border-white/10">
-                <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-                    <Link href="/problem-atlas" className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-mono tracking-widest uppercase">
-                        <ArrowLeft className="w-4 h-4" /> Atlas
-                    </Link>
-                    <div className="text-white/30 text-xs font-mono tracking-widest uppercase hidden sm:block">
-                        Problem #{problem.rank.toString().padStart(2, '0')}
+                <div className="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between relative">
+                    <div className="flex-1 flex justify-start">
+                        <Link href="/problem-atlas" className="flex items-center gap-2 text-white/50 hover:text-white transition-colors text-sm font-mono tracking-widest uppercase">
+                            <ArrowLeft className="w-4 h-4" /> Atlas
+                        </Link>
+                    </div>
+                    
+                    <div className="flex-1 flex justify-center">
+                        <Link href="/" className="px-3 py-1 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all text-xs font-mono tracking-widest uppercase whitespace-nowrap shadow-[0_0_15px_rgba(255,255,255,0.05)]">
+                            AGI Futures
+                        </Link>
+                    </div>
+
+                    <div className="flex-1 flex justify-end">
+                        <div className="text-white/30 text-xs font-mono tracking-widest uppercase hidden sm:block">
+                            Problem #{problem.rank.toString().padStart(2, '0')}
+                        </div>
                     </div>
                 </div>
             </div>
