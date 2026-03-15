@@ -5,8 +5,10 @@ import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
-import { NeglectednessSlider } from "./components/NeglectednessSlider";
 import { AnimatedGrid, AnimatedGridItem } from "./components/AnimatedGrid";
+import { ICPToggle, ICPToggleItem } from "./components/ICPToggle";
+import { ExpandableStatCard } from "./components/ExpandableStatCard";
+import { OpenSourcePriority } from "./components/OpenSourcePriority";
 import { themeMap } from "@/utils/themeMap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -32,6 +34,8 @@ import heroImage from './assets/hero.png';
 import microclimateImage from './assets/microclimate.png';
 import dashboardImage from './assets/dashboard.png';
 import grazingImage from './assets/grazing.png';
+import icpGrowerImage from './assets/icp_grower.png';
+import icpDeveloperImage from './assets/icp_developer.png';
 
 export default function HelioTerraClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -46,24 +50,27 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
         outcomes: initialTags?.outcomes?.length ? initialTags.outcomes : ['Abundance', 'Climate', 'Resilience', 'Human Flourishing']
     };
 
-    const icpItems: AnimatedGridItem[] = [
+    const icpItems: ICPToggleItem[] = [
         {
             id: 'icp-1',
             title: 'Heat-stressed specialty crop grower in Arizona or California',
             description: 'A grower facing rising irrigation pressure installs elevated agrivoltaics over selected acreage. HelioTerra handles design, financing, and development. The grower gets a base lease, keeps producing on the land, and benefits if the shade profile improves quality, yield stability, and water economics.',
-            icon: Sprout
+            icon: Sprout,
+            image: icpGrowerImage
         },
         {
             id: 'icp-2',
             title: 'Sheep or pasture operator in Texas or the Pacific Northwest',
             description: 'A grazing operator with suitable land and grid access uses agrivoltaics as a second revenue layer. HelioTerra structures a grazing-friendly array so the ranch can preserve livestock productivity while adding long-duration power revenue.',
-            icon: Tractor
+            icon: Tractor,
+            image: grazingImage
         },
         {
             id: 'icp-3',
             title: 'Solar developer facing farmland opposition',
             description: 'A developer with a strong interconnection point but weak local narrative partners with HelioTerra to reframe the project from "farmland conversion" to "continued agricultural use with added farm income," which can materially improve siting odds in politically sensitive counties.',
-            icon: Sun
+            icon: Sun,
+            image: icpDeveloperImage
         }
     ];
 
@@ -133,7 +140,7 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             HelioTerra<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-[var(--primary)] font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-[var(--primary)]/30 sm:pl-6">Agrivoltaics optimization engine</span>
                         </h1>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-8 max-w-3xl">
-                            HelioTerra is a startup idea for financing, designing, and operating agrivoltaic projects that let the same acre produce farm income and solar revenue, with zero upfront cost to the farmer.
+                            HelioTerra finances, designs, and operates agrivoltaic projects that let the same acre produce farm income and solar revenue, with zero upfront cost to the farmer.
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed font-light mb-8 max-w-3xl">
                             Imagine a farm where land does not have to choose between food and energy. Elevated solar arrays create a crop-specific microclimate, the farmer keeps the land in production, and the project earns from both electrons and biology. The big vision is a new asset class for rural America. The first wedge is narrower and sharper: <strong className="text-[var(--primary)] font-medium">heat-stressed specialty crops in high-irradiance regions</strong>, where partial shade and water savings are most likely to create obvious economic upside.
@@ -255,36 +262,39 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                         </div>
                     </div>
 
-                    <div className="mb-16">
-                        <div className="flex justify-between items-end border-b border-white/10 pb-4 mb-8">
-                            <h3 className="text-2xl font-light text-white">Specific Examples per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
+                    <div className="mb-16 mt-32">
+                        <div className="flex justify-between items-end border-b border-white/10 pb-4 mb-12">
+                            <h3 className="text-3xl font-light text-white">Specific Examples per <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
                             <InlineTags tags={tags.customer} theme="emerald" />
                         </div>
-                        <AnimatedGrid items={icpItems} />
+                        <ICPToggle items={icpItems} />
                     </div>
 
-                    <div className="mb-8">
-                        <h3 className="text-3xl font-light text-[var(--primary)] mb-6">The Science is Ready</h3>
-                        <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
-                            The Arizona agrivoltaics field trial remains one of the clearest proofs that this can work in hot conditions. In that study, cherry tomato production under agrivoltaics was roughly <strong>double</strong> the conventional control, while jalapeño output stayed comparable and water-use efficiency improved. <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Barron-Gafford GA et al. (2019)." />
-                        </p>
-                        <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
-                            Solar output can improve too. In that same Arizona system, the panels experienced lower heat stress, and the researchers estimated roughly <strong>3% more electricity generation in summer</strong> and about <strong>1% more annually</strong> because the crop environment helped cool the panels.
-                        </p>
-                        <p className="text-lg leading-relaxed text-white/70 font-light mb-6">
-                            Grazing can also work. In Oregon, lamb growth under solar and open pasture was comparable across two years, and the authors concluded that combining sheep grazing with solar can increase total land productivity. <ExpandableCitation label="[4]" sourceUrl="#" sourceText="Andrew AC et al. (2021)." /> Earlier Oregon work also found <strong>90% more late-season biomass</strong> and <strong>328% higher water-use efficiency</strong> under panels in semi-arid pasture conditions.
-                        </p>
-                        <p className="text-lg leading-relaxed text-[var(--tertiary)] font-medium">
+                    <div className="mb-16 mt-32">
+                        <h3 className="text-5xl font-light text-[var(--primary)] tracking-tight mb-12 border-b border-white/10 pb-4">The Science is Ready</h3>
+                        <div className="grid md:grid-cols-3 gap-6 mb-8 mt-12">
+                            <ExpandableStatCard 
+                                stat={<span><span className="text-3xl">+</span>100<span className="text-3xl">%</span></span>}
+                                label="Cherry Tomato Output"
+                                description={<span>The Arizona agrivoltaics field trial remains one of the clearest proofs that this can work in hot conditions. In that study, cherry tomato production under agrivoltaics was roughly double the conventional control, while jalapeño output stayed comparable and water-use efficiency improved. <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Barron-Gafford GA et al. (2019)." /></span>}
+                                defaultExpanded={true}
+                            />
+                            <ExpandableStatCard 
+                                stat={<span><span className="text-3xl">-</span>10<span className="text-3xl">°C</span></span>}
+                                label="Solar Panel Temps (Up to +3% Yield)"
+                                description={<span>Solar output improves due to transpirational cooling from the crops below. Microclimate models and empirical data show panels operating up to 10°C cooler, leading to an average 3% increase in DC summer generation compared to bare-soil arrays. <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Williams et al. (2023). The potential for agrivoltaics to enhance solar farm cooling." /></span>}
+                            />
+                            <ExpandableStatCard 
+                                stat={<span><span className="text-3xl">+</span>328<span className="text-3xl">%</span></span>}
+                                label="Water-Use Efficiency"
+                                description={<span>Grazing works too. In semi-arid simulated pasture conditions in Oregon, researchers observed 90% more late-season biomass and a 328% increase in water-use efficiency under panels. A multi-year study also found lamb growth under solar and open pasture was fundamentally comparable, meaning total acreage productivity soared. <ExpandableCitation label="[4]" sourceUrl="#" sourceText="Andrew AC et al. (2021)." /></span>}
+                            />
+                        </div>
+                        <p className="text-xl leading-relaxed text-[var(--tertiary)] font-medium bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/20 mt-8">
                             The lesson is not that every acre should get panels. The lesson is that in the right crops, climates, and designs, agrivoltaics is already good enough to commercialize. What remains missing is the operating model.
                         </p>
                     </div>
 
-                    <div className="mt-16">
-                        <NeglectednessSlider 
-                            score={77} 
-                            interpretation="The broad agrivoltaics category is emerging, but the specific wedge of financing-and-delivery infrastructure for heat-stressed crop agrivoltaics is still strangely underbuilt. There is meaningful academic literature, a growing policy conversation, and scattered pilots, but there is still no dominant player that has standardized parcel underwriting, farmer-first contracts, and repeatable go-to-market around the highest-probability biological use cases."
-                        />
-                    </div>
                 </motion.section>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
@@ -563,6 +573,14 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                 </p>
                             </div>
                         </details>
+                    </div>
+
+                    <div className="mb-16">
+                        <OpenSourcePriority 
+                            impactScore={80}
+                            neglectednessScore={77}
+                            description="HelioTerra serves as an open template for balancing agricultural yield and high-capacity solar buildouts, turning a polarized land-use conflict into compounding parallel infrastructure. While the broad concept is gaining traction, the specific operating model for financing and delivering dual-use farms remains highly neglected."
+                        />
                     </div>
 
                     {/* Transferable Insight Panel */}
