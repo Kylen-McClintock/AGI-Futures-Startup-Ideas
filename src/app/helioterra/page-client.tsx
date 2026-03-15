@@ -275,10 +275,9 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                         <h3 className="text-5xl font-light text-[var(--primary)] tracking-tight mb-12 border-b border-white/10 pb-4">The Science is Ready</h3>
                         <div className="grid md:grid-cols-3 gap-6 mb-8 mt-12">
                             <ExpandableStatCard 
-                                stat={<span><span className="text-3xl">+</span>100<span className="text-3xl">%</span></span>}
+                                stat={<span><span className="text-3xl"></span>2<span className="text-3xl">x</span></span>}
                                 label="Cherry Tomato Output"
                                 description={<span>The Arizona agrivoltaics field trial remains one of the clearest proofs that this can work in hot conditions. In that study, cherry tomato production under agrivoltaics was roughly double the conventional control, while jalapeño output stayed comparable and water-use efficiency improved. <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Barron-Gafford GA et al. (2019)." /></span>}
-                                defaultExpanded={true}
                             />
                             <ExpandableStatCard 
                                 stat={<span><span className="text-3xl">-</span>10<span className="text-3xl">°C</span></span>}
