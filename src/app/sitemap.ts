@@ -1,10 +1,18 @@
 import { MetadataRoute } from 'next'
+import { problems } from '@/data/problem-atlas-data'
 
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://agifutures.co' // Replace with your actual production domain when available.
 
     // Calculate dates
     const date = new Date().toISOString()
+
+    const problemEntries: MetadataRoute.Sitemap = problems.map(problem => ({
+        url: `${baseUrl}/problem-atlas/${problem.slug}`,
+        lastModified: date,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    }));
 
     return [
         {
@@ -73,5 +81,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.8,
         },
+        {
+            url: `${baseUrl}/problem-atlas`,
+            lastModified: date,
+            changeFrequency: 'weekly',
+            priority: 0.9,
+        },
+        ...problemEntries,
     ]
 }
