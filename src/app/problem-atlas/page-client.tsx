@@ -239,7 +239,7 @@ function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
 
             <div className="flex flex-col gap-6">
                 {sortedProblems.map((problem) => (
-                    <ProblemCard key={problem.slug} problem={problem} />
+                    <ProblemCard key={problem.slug} problem={problem} activeSort={sortBy} />
                 ))}
                 
                 {sortedProblems.length === 0 && (

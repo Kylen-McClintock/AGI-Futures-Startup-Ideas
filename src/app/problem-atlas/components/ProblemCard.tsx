@@ -5,8 +5,25 @@ import Link from "next/link";
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import { ProblemData } from "@/data/problem-atlas-data";
 
-export function ProblemCard({ problem }: { problem: ProblemData }) {
+export function ProblemCard({ problem, activeSort = "priority" }: { problem: ProblemData, activeSort?: string }) {
     const [isExpanded, setIsExpanded] = useState(false);
+
+    let displayLabel = "Priority";
+    let displayScore: number | string = problem.problem_priority;
+
+    if (activeSort === "importance") {
+        displayLabel = "Importance";
+        displayScore = problem.importance;
+    } else if (activeSort === "neglectedness") {
+        displayLabel = "Neglected";
+        displayScore = problem.neglectedness;
+    } else if (activeSort === "tractability") {
+        displayLabel = "Tractable";
+        displayScore = problem.tractability;
+    } else if (activeSort === "rank") {
+        displayLabel = "Rank";
+        displayScore = problem.rank;
+    }
 
     return (
         <div className="glass-panel rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300 overflow-hidden bg-black/40">
@@ -17,13 +34,13 @@ export function ProblemCard({ problem }: { problem: ProblemData }) {
             >
                 {/* Ranking & Priority */}
                 <div className="flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start min-w-[120px] gap-2 md:gap-4 shrink-0 mt-1 md:mt-2 border-b md:border-b-0 border-white/10 pb-4 md:pb-0">
-                    <div className="text-[var(--primary)] font-mono text-sm uppercase tracking-widest font-semibold">
-                        Rank #{problem.rank}
+                    <div className="text-[var(--primary)] font-mono text-sm uppercase tracking-widest font-semibold flex flex-col md:flex-row gap-2">
+                        <span>Rank #{problem.rank}</span>
                     </div>
                     <div className="flex items-center gap-2">
-                        <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-full px-3 py-1 flex flex-col items-center w-[80px]">
-                            <span className="text-white/60 text-[10px] uppercase font-mono tracking-wider">Priority</span>
-                            <span className="text-[var(--primary)] font-bold text-xl leading-none font-serif">{problem.problem_priority}</span>
+                        <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-full px-3 py-1 flex flex-col items-center w-[100px] md:w-[80px]">
+                            <span className="text-white/60 text-[9px] uppercase font-mono tracking-wider">{displayLabel}</span>
+                            <span className="text-[var(--primary)] font-bold text-xl leading-none font-serif mt-0.5">{displayScore}</span>
                         </div>
                     </div>
                 </div>
