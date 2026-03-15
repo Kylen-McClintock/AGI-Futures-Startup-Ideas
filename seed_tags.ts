@@ -528,6 +528,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Capital Intensive'],
             outcomes: ['Abundance', 'Climate', 'Resilience', 'Human Flourishing']
         }
+    },
+    {
+        slug: 'easy-exit',
+        name: 'Easy Exit Protocol',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 64 },
+            difficulty_score: { ai_scored: 63 },
+            civilizational_impact_score: { ai_scored: 46 },
+            civilizational_impact_ratings: {
+                "Social Trust": { ai_scored: 68 },
+                "Freedom": { ai_scored: 58 },
+                "Better Governance": { ai_scored: 41 },
+                "Differentially Defensive": { ai_scored: 37 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Finance', 'Governance'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Enterprises', 'Governments'],
+            product_type: ['Infrastructure', 'Coordination Infrastructure'],
+            enabling_technology: ['Autonomous Agents', 'Large Language Models'],
+            readiness: ['Build Now'],
+            founder_fit: ['Technical Founder', 'Policy Entrepreneur'],
+            outcomes: ['Social Trust', 'Freedom', 'Better Governance', 'Differentially Defensive']
+        }
     }
 ];
 
