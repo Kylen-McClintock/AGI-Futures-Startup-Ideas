@@ -670,7 +670,507 @@ export const problems: ProblemData[] = [
             "[3] Reuters. EPA to rollback parts of PFAS rule and extend timelines (May 14, 2025). ([reuters.com](https://www.reuters.com/sustainability/climate-energy/epa-rollback-forever-chemical-rule-extend-timelines-2025-05-14/))",
             "[4] EPA. PFAS drinking water standards overview page. ([epa.gov](https://www.epa.gov/sdwa/and-polyfluoroalkyl-substances-pfas))"
         ]
-    }
+    },
+    {
+    "rank": 21,
+    "slug": "transmission-siting-and-permitting-os",
+    "title": "Transmission Siting and Permitting OS",
+    "short_descriptor": "Grid build speed",
+    "preview_text": "We can build generation fast, but the high-voltage transmission needed to move electrons from where energy is produced to where demand is stalls in multi-year planning, siting, and cost-allocation fights.",
+    "problem_priority": 71,
+    "importance": 82,
+    "neglectedness": 45,
+    "tractability": 60,
+    "gap": "What exists is fragmented, jurisdiction-heavy transmission development where routing, permitting, and “who pays” debates reset timelines repeatedly. What could exist is a repeatable, data-driven transmission delivery stack: faster corridor selection, defensible benefit-cost allocation, and standardized stakeholder workflows that compress years into quarters without cutting safety or legitimacy.",
+    "stakes": "If transmission build speed stays slow, clean electricity becomes a paper transition. The opportunity cost is massive: stranded renewables, higher prices, more gas dependence, and increased blackout risk. Grid build speed is not a “climate nice-to-have.” It is a hard physical constraint on abundance and industrial competitiveness.",
+    "sector_tags": [
+        "Energy",
+        "Governance"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Better Governance"
+    ],
+    "long_form_content": "Headline evidence:\n- The International Energy Agency (IEA) estimates that at least 3,000 gigawatts (GW) of renewable power projects are waiting in grid connection queues, including 1,500 GW in advanced stages. [1]\n- The IEA estimates over 80 million kilometres (km) of grids must be added or refurbished by 2040, roughly equal to the entire existing global grid. [1]\n- The Federal Energy Regulatory Commission (FERC) Order No. 1920 framework requires at least three long-term regional transmission scenarios, using best available data, with no less than a 20-year horizon, reassessed at least every five years. [2]\n\nWhy it stays neglected:\nTransmission is a coordination nightmare. Benefits are regional and long-lived; costs are local and immediate. “Permitting” is not one permit, it is a tangled graph of landowners, environmental review, state and local approvals, tribal consultation, and litigation risk. Meanwhile, regulated utility incentives often favor capex that is easiest to approve locally, not what is system-optimal.\n\nTractability:\nThe window is real because the planning regime is shifting and the data layer is improving. FERC’s long-term planning rules create a clearer compliance backbone. What remains hard is turning scenario planning into executable projects: right-of-way acquisition, credible cost allocation, and trusted community process. AI-value is highest where it compresses analysis, not where it replaces legitimacy.\n\nStartup surfaces:\n- “Transmission corridor CRM” for routing, landowner outreach, and permissioning workflow\n- Automated benefit-cost allocation workbench aligned to FERC Order 1920 requirements\n- Environmental and cultural review copilots that generate defensible, auditable documentation\n- Inter-regional queue and constraint mapping using open grid models and telemetry\n- Contracting and scheduling platforms for transformer, conductor, and high-voltage direct current (HVDC) supply bottlenecks",
+    "sources": [
+        "[1] International Energy Agency. Electricity Grids and Secure Energy Transitions: Executive summary. (2023). [2] Federal Energy Regulatory Commission. Explainer on the Transmission Planning and Cost Allocation Final Rule (Order No. 1920, 1920-A, 1920-B). (2024–2025). [3] Federal Energy Regulatory Commission. FERC Takes on Long-Term Planning with Historic Transmission Rule (news release). (May 13, 2024)."
+    ]
+},
+    {
+    "rank": 22,
+    "slug": "distribution-interconnection-throughput",
+    "title": "Distribution Interconnection Throughput",
+    "short_descriptor": "DER grid unlock",
+    "preview_text": "Distributed energy resources (DERs) such as rooftop solar, distributed storage, and electric vehicle (EV) charging want to connect, but distribution interconnection is slow, opaque, and upgrade-cost volatile.",
+    "problem_priority": 71,
+    "importance": 80,
+    "neglectedness": 50,
+    "tractability": 65,
+    "gap": "What exists is a semi-manual engineering workflow where each project triggers bespoke studies, uncertain timelines, and surprise upgrade bills. What could exist is a high-throughput, data-transparent interconnection layer: automated screening, standardized fast lanes, dynamic hosting capacity, and predictable upgrade cost allocation that lets DERs scale without breaking reliability.",
+    "stakes": "Distribution is where electrification lands. If DER interconnection stays slow, we lose a major lever for resilience, peak shaving, and consumer-driven supply. This is also a fairness issue: long queues and opaque upgrade charges concentrate access in wealthy zip codes and sophisticated developers, leaving mass-market participation behind.",
+    "sector_tags": [
+        "Energy",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. Department of Energy (DOE) reports U.S. residential photovoltaic (PV) systems grew from about 89,000 (2010) to 4.7 million (2023), with nearly 800,000 residential PV systems installed in 2023 alone. [1]\n- DOE summarizes key DER interconnection blockers as four categories: timeline and process delays, high grid upgrade costs, lack of grid data transparency, and incomplete or outdated technical standards. [1]\n- The IEA explicitly flags “modernising distribution grids” as a required response to accelerated electrification and renewables deployment. [2]\n\nWhy it stays neglected:\nDistribution utilities are optimized for safety and continuity, not throughput. The buyer is fragmented (thousands of utilities and regulators), standards are uneven, and data openness collides with cybersecurity concerns. Worst of all, the costs of fixing interconnection are often socialized politically, while the pain is privatized to developers and customers stuck in queues.\n\nTractability:\nDOE has now published a concrete solution map and defined the problem well. This is buildable because many delays are process and information problems, not physics. What remains hard is integration: utilities run legacy systems, regulators move slowly, and cyber requirements are real. Winning companies will sell “reliability plus speed,” not speed alone.\n\nStartup surfaces:\n- Interconnection “fast-lane” software that automates screening and study workflows\n- Hosting capacity as a service using feeder models plus real telemetry\n- Upgrade cost estimation and financing products that reduce surprises\n- Standardized data-sharing and security gateways for utilities and third parties\n- DER controls and curtailment orchestration that turns interconnection into a flexible contract, not a binary yes/no",
+    "sources": [
+        "[1] U.S. Department of Energy. Distributed Energy Resource Interconnection Roadmap. (January 2025). [2] International Energy Agency. Electricity Grids and Secure Energy Transitions: Executive summary. (2023). [3] U.S. Department of Energy. DOE Distributed Energy Resource Interconnection Roadmap (overview page). (January 2025)."
+    ]
+},
+    {
+    "rank": 23,
+    "slug": "methane-super-emitter-mitigation",
+    "title": "Methane Super-Emitter Mitigation",
+    "short_descriptor": "Fast climate leverage",
+    "preview_text": "We already have the technology to slash methane emissions from fossil fuel supply, but monitoring, accountability, and repair incentives are still weak, so avoidable emissions persist.",
+    "problem_priority": 70,
+    "importance": 83,
+    "neglectedness": 40,
+    "tractability": 75,
+    "gap": "What exists is periodic inspection and inconsistent reporting that misses intermittent events and “super-emitters.” What could exist is continuous, verifiable methane operations: persistent detection, automated dispatch for repair, and transaction-grade proof that emissions were reduced.",
+    "stakes": "Methane is a high-leverage climate lever because cutting it reduces near-term warming. If we can make methane control operationally routine, we buy time for slower decarbonization work and reduce waste in the energy system. This is one of the rare climate problems where physics, economics, and existing tech can align.",
+    "sector_tags": [
+        "Climate",
+        "Energy"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- The IEA estimates around 70% of methane emissions from the fossil fuel sector could be avoided with existing technologies, often at low cost. [1]\n- The IEA estimates around 35 million tonnes (Mt) of methane emissions from oil, gas, and coal could be avoided at no net cost, based on average 2024 energy prices. [1]\n- The IEA notes around 30% of oil and gas methane emissions could be avoided with measures offering rates of return above 25%. [1]\n\nWhy it stays neglected:\nMethane is a classic externality plus fragmentation story. The operator who pays for detection and repair does not capture the climate benefit, and in some regions does not even capture the gas value reliably. Measurement is the bottleneck: if you cannot attribute emissions to assets with high confidence, you cannot enforce, insure, or finance abatement.\n\nTractability:\nThis is unusually tractable because sensing is improving (satellites, aircraft, drones, fixed sensors), and operational playbooks are known (seals, vapor recovery, flaring optimization, methane capture). What is still hard is end-to-end system integration: detection to attribution to work order to verification.\n\nStartup surfaces:\n- Continuous methane monitoring networks with asset-level attribution\n- Verified “detect-to-repair” service contracts for midstream and upstream operators\n- Methane abatement marketplaces bundling equipment, labor, and verification\n- Regulatory-grade audit tooling for emissions reporting and compliance evidence\n- Parametric insurance products tied to verified methane performance",
+    "sources": [
+        "[1] International Energy Agency. Global Methane Tracker 2025: Key findings. (2025). [2] International Energy Agency. Global Methane Tracker 2025 (full report). (2025). [3] International Energy Agency. Global Methane Tracker 2025 (overview page). (2025)."
+    ]
+},
+    {
+    "rank": 24,
+    "slug": "wildfire-ignition-detection-networks",
+    "title": "Wildfire Ignition Detection Networks",
+    "short_descriptor": "Catch fires early",
+    "preview_text": "Most wildfires are stopped when caught early, but ignition detection is still uneven, leaving communities gambling on the first hours.",
+    "problem_priority": 70,
+    "importance": 78,
+    "neglectedness": 50,
+    "tractability": 65,
+    "gap": "What exists is partial coverage: satellites with latency, cameras without full terrain visibility, and human reporting that is delayed or noisy. What could exist is a layered detection mesh that fuses satellites, cameras, drones, and ground sensors into high-confidence alerts routed directly into initial-attack decision systems.",
+    "stakes": "The tail risk is everything. A small fraction of ignitions become megafires with outsized loss of life, housing, grid infrastructure, and air quality. Faster detection is not about shaving minutes off dispatch for average fires. It is about preventing the catastrophic escapes that define the damage curve.",
+    "sector_tags": [
+        "Climate",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Air Quality"
+    ],
+    "long_form_content": "Headline evidence:\n- NOAA tracks 403 U.S. billion-dollar weather and climate disaster events (1980–2024), including wildfire events as a specific category. [1]\n- The U.S. Forest Service reports initial attack success at about 98%, meaning a small percentage of fires that escape initial attack drive disproportionate damage. [2]\n- NASA’s Fire Information for Resource Management System (FIRMS) provides near real-time active fire or hotspot data, with global data available within about 3 hours of satellite observation. [3]\n\nWhy it stays neglected:\nWildfire risk is split across agencies, utilities, insurers, and households, so no one owns the full return on detection. Budgets fund suppression more reliably than prevention or sensing infrastructure. Procurement cycles are slow, and field systems must work under smoke, wind, power outages, and intermittent connectivity.\n\nTractability:\nSensing and edge compute are finally cheap enough to deploy at scale. The hard part is precision and trust: minimizing false positives while catching early, plus integrating with dispatch protocols that are already overloaded. This is tractable if built as an operator-grade system, not a consumer gadget.\n\nStartup surfaces:\n- Multi-sensor wildfire detection fusion with confidence scoring and audit logs\n- Utility-focused detection tied to de-energization decisions and crew routing\n- Drone or aircraft “confirm and map” services triggered by high-confidence alerts\n- Risk-aware initial attack optimization tools using weather plus access constraints\n- Community dashboards that translate detection into clear, local action steps",
+    "sources": [
+        "[1] NOAA National Centers for Environmental Information. U.S. Billion-Dollar Weather and Climate Disasters dataset. (Accessed 2026). [2] U.S. Forest Service. Wildland Fire Management report, including initial attack success claims. (FY2023). [3] NASA Earthdata. FIRMS overview and latency notes. (Accessed 2026)."
+    ]
+},
+    {
+    "rank": 25,
+    "slug": "lead-exposure-elimination",
+    "title": "Lead Exposure Elimination",
+    "short_descriptor": "Protect cognition",
+    "preview_text": "Lead remains a preventable neurotoxin in water, paint, soil, and products, but detection and remediation are still reactive, fragmented, and under-incentivized.",
+    "problem_priority": 70,
+    "importance": 78,
+    "neglectedness": 50,
+    "tractability": 60,
+    "gap": "What exists is a harm-driven system: children get tested after exposure, pipes get replaced after crises, and lead hazards persist in older housing stock. What could exist is a prevention-first stack: universal lead hazard discovery, prioritized remediation, and enforcement-grade proof that exposure pathways are eliminated.",
+    "stakes": "Lead is a direct hit on human capital. It lowers cognitive performance, increases behavioral burden, and compounds inequality because exposure is highly correlated with poverty and aging infrastructure. Eliminating lead is among the highest-return “invisible infrastructure” investments a society can make.",
+    "sector_tags": [
+        "Healthcare",
+        "Water"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Longevity"
+    ],
+    "long_form_content": "Headline evidence:\n- The WHO states lead can permanently affect children’s brain development, including reduced intelligence quotient (IQ) and behavioral changes. [1]\n- The CDC states no safe blood lead level has been identified in children. [2]\n- EPA’s Lead and Copper Rule Improvements require replacement of all lead service lines (and certain galvanized requiring replacement lines) under system control no later than 10 years after the compliance date. [3]\n\nWhy it stays neglected:\nThe costs are local, the benefits are long-term, and the harmed population often lacks political power. Lead remediation is operationally messy: uncertain inventories, private-side plumbing, landlord incentives, and fragmented funding. Even when rules exist, implementation bandwidth is scarce.\n\nTractability:\nThis is tractable because the playbook is known: find lead, replace lead, reduce exposure, verify outcomes. What is missing is execution machinery: accurate inventories, scheduling at neighborhood scale, and financing that aligns landlords, utilities, and households.\n\nStartup surfaces:\n- Lead service line inventory platforms combining records, field verification, and predictive mapping\n- Mobile lead hazard testing and remediation workflows for landlords and municipalities\n- Financing products tied to verified replacement and exposure reduction\n- “Lead-safe renovation” compliance tooling for contractors and permitting offices\n- Outcome verification: longitudinal measurement of lead exposure risk reduction at the community level",
+    "sources": [
+        "[1] World Health Organization. Lead poisoning and health (fact sheet). (2024). [2] Centers for Disease Control and Prevention. All Children Can Be Exposed to Lead (communication resource). (2025). [3] U.S. Environmental Protection Agency. National Primary Drinking Water Regulations for Lead and Copper Improvements (Federal Register). (Oct 30, 2024)."
+    ]
+},
+    {
+    "rank": 26,
+    "slug": "long-duration-energy-storage-bankability",
+    "title": "Long-Duration Energy Storage Bankability",
+    "short_descriptor": "Capital unlock",
+    "preview_text": "Long-duration energy storage (LDES) is increasingly necessary, but the market still lacks bankable performance, maintenance, and cost confidence to finance deployment at scale.",
+    "problem_priority": 70,
+    "importance": 78,
+    "neglectedness": 50,
+    "tractability": 55,
+    "gap": "What exists is a fragmented demo landscape where each chemistry or system must re-prove economics, safety, and durability from scratch. What could exist is an underwriting-grade infrastructure layer: standardized performance benchmarks, reliability telemetry, maintenance playbooks, and insurance products that turn prototypes into financeable assets.",
+    "stakes": "If we cannot finance LDES, we cap the share of variable renewables the grid can absorb cheaply and safely. That forces higher curtailment, higher backup fossil use, and slower electrification. Bankability is the bottleneck between “science project” and “gigaton-scale infrastructure.”",
+    "sector_tags": [
+        "Energy",
+        "Manufacturing"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- DOE analysis finds top innovation portfolios can reduce levelized cost of storage (LCOS) by 12%–85% to roughly $0.026–$0.255 per kilowatt-hour (kWh), with average implementation costs $86 million–$1,063 million and duration 5.5–11 years. [1]\n- DOE highlights that “energy storage project bankability” remains difficult without assurance over technology performance and without long track records, and calls out the need for consistent tools and methods to support risk assessment. [1]\n- The IEA notes that in a scenario aligned with national climate goals, power-system flexibility needs double between 2022 and 2030, increasing the value of storage and demand response. [2]\n\nWhy it stays neglected:\nLDES sits in the valley between venture and infrastructure. Venture wants fast scale and clean unit economics; infrastructure capital wants low risk and known failure modes. Utilities are conservative by mandate, and LDES often needs multi-year demonstrations across multiple use cases before it becomes “standard.”\n\nTractability:\nThe technical frontier is moving, but the near-term win is financial: measurement, warranties, and validation. We do not need a single winner chemistry to make progress. We need a bankability layer that makes several “good enough” technologies investable.\n\nStartup surfaces:\n- LDES performance verification and continuous telemetry standards\n- Insurance and warranty products priced off real-world degradation and maintenance data\n- Fleet maintenance optimization for storage assets including predictive service plans\n- Utility procurement copilots that translate use cases into contract terms and KPIs\n- Multi-site pilots-as-a-service that generate comparable deployment datasets",
+    "sources": [
+        "[1] U.S. Department of Energy. Achieving the Promise of Low-Cost Long Duration Energy Storage. (Aug 2024). [2] International Energy Agency. Electricity Grids and Secure Energy Transitions: Executive summary (flexibility doubling). (2023). [3] U.S. Department of Energy. Pathways to Commercial Liftoff: Long Duration Energy Storage Opportunities. (2023)."
+    ]
+},
+    {
+    "rank": 27,
+    "slug": "groundwater-depletion-accounting",
+    "title": "Groundwater Depletion Accounting",
+    "short_descriptor": "Water balance sheet",
+    "preview_text": "We pump groundwater like it is infinite because we still lack real-time, enforceable accounting of withdrawals and storage change.",
+    "problem_priority": 70,
+    "importance": 76,
+    "neglectedness": 55,
+    "tractability": 55,
+    "gap": "What exists is sparse monitoring wells, delayed reporting, and policy that under-prices depletion until crisis hits. What could exist is a groundwater balance sheet: continuous measurement (remote sensing plus local sensors), transparent allocation, and automated enforcement that treats aquifers like critical infrastructure.",
+    "stakes": "Groundwater is the hidden buffer behind agriculture, cities, and drought resilience. When it collapses, the failure mode is brutal: wells run dry, land subsides, ecosystems degrade, and water becomes a political emergency. Better accounting is upstream of better policy, because you cannot manage what you cannot measure credibly.",
+    "sector_tags": [
+        "Water",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- A U.S. Geological Survey analysis comparing GRACE satellite estimates with monitoring and modeling finds declining groundwater storage trends in six major southwestern and south-central U.S. aquifers totaling about −90 km³ over 15 years (2002–2017). [1]\n- NASA’s GRACE mission materials document significant groundwater depletion in multiple regions globally, illustrating that depletion is measurable at large scale by satellite gravimetry. [2]\n- NASA describes GRACE as capturing trends in total water storage and groundwater losses, supporting transboundary and regional management contexts where local measurement is sparse. [2]\n\nWhy it stays neglected:\nGroundwater is politically convenient to ignore because depletion is delayed. Over-pumping looks like prosperity until it doesn’t. Rights regimes are local, fragmented, and contested. Measurement threatens incumbents, so monitoring budgets get cut or delayed.\n\nTractability:\nRemote sensing plus cheap sensors plus better modeling makes this more tractable than a decade ago. The hard part is institutional: translating measurement into allocation, pricing, and enforcement. Startups can win by making measurement unavoidable and decision-ready.\n\nStartup surfaces:\n- Aquifer “digital twins” that fuse GRACE, wells, pumping telemetry, and climate forecasts\n- Low-cost pumping measurement retrofits and verified reporting rails\n- Groundwater allocation and trading platforms where policy allows\n- Leak and subsidence early-warning systems for municipalities and insurers\n- Compliance tooling for groundwater sustainability plans and audits",
+    "sources": [
+        "[1] U.S. Geological Survey. Comparison of groundwater storage changes from GRACE satellites, monitoring, and modeling in major U.S. aquifers (2002–2017). (2020). [2] NASA Jet Propulsion Laboratory. GRACE sees groundwater losses around the world (resource page). (Accessed 2026). [3] U.S. Geological Survey. Post-drought groundwater storage recovery in California’s Central Valley (publication page). (2021)."
+    ]
+},
+    {
+    "rank": 28,
+    "slug": "nuclear-licensing-and-safety-case-automation",
+    "title": "Nuclear Licensing and Safety Case Automation",
+    "short_descriptor": "Shorten nuclear timelines",
+    "preview_text": "Advanced nuclear can provide firm low-carbon power, but licensing remains document-heavy and slow, pushing timelines and costs beyond what most projects can survive.",
+    "problem_priority": 69,
+    "importance": 79,
+    "neglectedness": 45,
+    "tractability": 45,
+    "gap": "What exists is a bespoke, narrative-driven licensing and safety case process that is difficult to reuse across designs and sites. What could exist is a machine-checkable safety case ecosystem: standardized evidence modules, test data pipelines, and regulator-facing tooling that makes review faster, more consistent, and more transparent.",
+    "stakes": "If nuclear is to contribute meaningfully to clean firm power, the world needs a licensing system that is both rigorous and fast enough to be financeable. Slow licensing is not just a bureaucracy cost. It is a capital cost multiplier that kills projects and concentrates the industry in a few incumbents.",
+    "sector_tags": [
+        "Nuclear",
+        "Energy"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Climate"
+    ],
+    "long_form_content": "Headline evidence:\n- The NRC describes “Part 53” as a voluntary, performance-based alternative regulatory framework for licensing future commercial nuclear plants, reflecting a deliberate shift toward modernized licensing. [1]\n- The Part 53 proposed rule was noticed in the Federal Register in late 2024, formalizing the pathway for a risk-informed, technology-inclusive licensing regime for advanced reactors. [2]\n- The IEA projects nuclear power doubles from 413 GW (early 2022) to 812 GW (2050) in its Net Zero Emissions by 2050 Scenario, implying major build requirements that will be throttled without faster licensing. [3]\n\nWhy it stays neglected:\nRegulatory reform is slow because the failure mode is catastrophic and public trust is fragile. Meanwhile, firms cannot fully fund the tooling layer because it looks like shared infrastructure and its ROI depends on regulator adoption. This creates a deadlock: everyone agrees speed matters, but no one wants to be the first to change the process.\n\nTractability:\nThis is hard but tractable at the tooling layer. The near-term win is not “AI approves reactors.” The win is structured safety cases, traceable evidence, and faster compilation of what regulators already require. Adoption must be co-designed with regulators and auditability must be first-class.\n\nStartup surfaces:\n- Structured safety-case authoring tools with requirement-to-evidence traceability\n- Standards-aligned simulation and test data pipelines designed for regulator review\n- Reusable evidence modules for common systems (containment, fuels, instrumentation)\n- Review copilots that accelerate cross-referencing, consistency checks, and change tracking\n- Cybersecurity and verification tooling for digital instrumentation and control (I&C) safety claims",
+    "sources": [
+        "[1] U.S. Nuclear Regulatory Commission. Part 53 rulemaking overview and staff requirements memoranda references. (2024). [2] Federal Register. Risk-Informed, Technology-Inclusive Regulatory Framework for Advanced Reactors (proposed rule). (Oct 31, 2024). [3] International Energy Agency. Nuclear Power and Secure Energy Transitions: Executive summary (NZE capacity trajectory). (2023)."
+    ]
+},
+    {
+    "rank": 29,
+    "slug": "smoke-ready-buildings-retrofit",
+    "title": "Smoke-Ready Buildings Retrofit",
+    "short_descriptor": "Indoor air refuge",
+    "preview_text": "Wildfire smoke turns homes into exposure chambers. We tell people “stay indoors,” but many buildings cannot actually maintain safe indoor air when smoke is worst.",
+    "problem_priority": 69,
+    "importance": 75,
+    "neglectedness": 55,
+    "tractability": 70,
+    "gap": "What exists is ad hoc filtration, low awareness, and uneven access to clean-air rooms, especially for renters, low-income households, and critical facilities like schools. What could exist is smoke-ready building infrastructure: verified filtration, sealed envelopes, sensor-driven indoor air controls, and neighborhood-scale “clean air centers” that activate during events.",
+    "stakes": "Wildfire smoke events are increasingly a public health and productivity shock. Indoor air is where people spend most of their time, including during smoke emergencies. Building-level resilience is a scalable defense because once it is installed, it protects every future event.",
+    "sector_tags": [
+        "Housing",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Air Quality",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. Environmental Protection Agency advises creating a “clean room” with closed windows and filtered air during wildfire smoke events, reflecting that indoor protection requires specific building actions, not just staying inside. [1]\n- The CDC recommends using a National Institute for Occupational Safety and Health (NIOSH) approved respirator (e.g., N95) if people must go outside during wildfire smoke. [2]\n- NOAA reports U.S. billion-dollar disasters costs (2020–2024) total hundreds of billions of dollars, underscoring the growing economic load of climate-driven extremes that include wildfire impacts. [3]\n\nWhy it stays neglected:\nThe benefits are diffuse and the buyer is unclear. Is it a landlord capex decision, a tenant health decision, a school district decision, or a public health mandate? Retrofit work is also operationally annoying: coordination, permitting, and measuring performance. The result is under-installation until crisis.\n\nTractability:\nThis is buildable now. Filtration technology exists; sensors are cheap; retrofits are straightforward. The missing layer is verification and distribution: standardized packages, financing, and performance metrics (e.g., indoor particulate reduction under smoke conditions).\n\nStartup surfaces:\n- “Smoke-ready retrofit kits” with verified performance and simple installation workflows\n- Indoor air monitoring with building control automation optimized for smoke events\n- Facility targeting and placement for clean-air centers using exposure maps and mobility data\n- Financing products for landlords and schools tied to verified air-quality performance\n- Procurement-grade specs and compliance auditing for smoke readiness in public buildings",
+    "sources": [
+        "[1] U.S. Environmental Protection Agency. Create a Clean Room to Protect Indoor Air Quality During Wildfire Smoke. (Updated 2025). [2] Centers for Disease Control and Prevention. Safety Guidelines: Wildfires and Wildfire Smoke (respirator guidance). (Apr 15, 2024). [3] NOAA Climate.gov. Beyond the Data: 2024 active year for U.S. billion-dollar disasters, including recent five-year cost totals. (Jan 2025)."
+    ]
+},
+    {
+    "rank": 30,
+    "slug": "carbon-dioxide-removal-mrv-standards",
+    "title": "Carbon Dioxide Removal MRV Standards",
+    "short_descriptor": "Trust negative emissions",
+    "preview_text": "Carbon dioxide removal is increasingly required in net-zero pathways, but the market lacks trusted measurement, monitoring, reporting, and verification (MRV), so buyers cannot confidently differentiate real tons from stories.",
+    "problem_priority": 68,
+    "importance": 82,
+    "neglectedness": 35,
+    "tractability": 55,
+    "gap": "What exists is a patchwork of protocols, registries, and claims that are hard to compare and easy to game. What could exist is MRV that is standardized, auditable, and composable: transparent uncertainty bounds, durable storage accounting, and interoperable registries that make procurement and regulation credible.",
+    "stakes": "Without trustworthy MRV, carbon dioxide removal investment stalls or misallocates. The world either underbuilds removal and misses climate targets, or overpays for low-integrity credits and loses social trust. MRV is the trust layer for a future carbon-negative industry.",
+    "sector_tags": [
+        "Climate",
+        "Science"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Social Trust"
+    ],
+    "long_form_content": "Headline evidence:\n- DOE summarizes that IPCC Special Report pathways include scenarios where 3.5 to 16 gigatons of carbon dioxide (CO₂) per year are removed in 2050 from bioenergy with carbon capture and storage (BECCS) plus direct air capture systems, highlighting scale and verification stakes. [1]\n- DOE modeling indicates the U.S. may require roughly 0.5 to 2.4 billion tons of CO₂ per year of carbon dioxide removal by 2050 to reach net zero, depending on broader mitigation success. [1]\n- DOE explicitly notes that the prevalence of certain modeled approaches is partly due to limited cost and performance information on the full range of carbon dioxide removal pathways, making robust measurement and validation a near-term necessity. [1]\n\nWhy it stays neglected:\nMRV is public-good infrastructure. The buyer is multiple: corporates, regulators, insurers, and the public. Each wants different assurance levels. Meanwhile, projects want cheap MRV but markets need strict MRV. That tension stalls standardization.\n\nTractability:\nThis is tractable because the near-term work is engineering, not new physics: sensor fusion, statistical uncertainty, audit trails, and registry interoperability. The hard part is governance: designing standards that can evolve without breaking markets, and creating credible third-party verification.\n\nStartup surfaces:\n- MRV toolchains that produce audit-ready evidence and uncertainty quantification\n- Standards and registry interoperability layers with open APIs and provenance logs\n- “Durability accounting” services for geological, mineral, and ocean storage pathways\n- Continuous monitoring sensors and remote sensing pipelines for biological and land sinks\n- Insurance and warranty markets priced off MRV quality and observed permanence",
+    "sources": [
+        "[1] U.S. Department of Energy. Carbon Dioxide Removal: Purpose, Approaches, and Recommendations. (Jan 2025). [2] Intergovernmental Panel on Climate Change. AR6 Synthesis Report (Full Report). (2023). [3] Congressional Research Service. Carbon Dioxide Removal (CDR): Purpose, Approaches, and Context. (Nov 2024)."
+    ]
+},
+    {
+    "rank": 31,
+    "slug": "operational-technology-cyber-defense",
+    "title": "Operational Technology Cyber Defense",
+    "short_descriptor": "Protect physical systems",
+    "preview_text": "Ransomware and intrusion increasingly hit the physical world through operational technology (OT), but OT defenses lag because uptime, safety, and legacy constraints make patching and monitoring hard.",
+    "problem_priority": 68,
+    "importance": 78,
+    "neglectedness": 45,
+    "tractability": 60,
+    "gap": "What exists is information technology (IT)-centric security bolted onto industrial environments where downtime is unacceptable and devices are decades old. What could exist is OT-native cyber defense: safe segmentation, continuous asset visibility, compensating controls, and incident response that preserves safety.",
+    "stakes": "If OT remains soft, critical services fail: power, water, manufacturing, and logistics. The economic cost is not just ransom. It is physical downtime, safety exposure, and cascading disruptions. OT cyber defense is “differentially defensive” because it protects high-impact systems that attackers target asymmetrically.",
+    "sector_tags": [
+        "Security",
+        "Manufacturing"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Differentially Defensive"
+    ],
+    "long_form_content": "Headline evidence:\n- NIST SP 800-82 Revision 3 provides a dedicated OT security guide, explicitly distinguishing OT threats and safeguards from conventional IT security models. [1]\n- The FBI Internet Crime Complaint Center (IC3) 2024 annual report states reported losses exceeded $16 billion and flags ransomware as a pervasive threat to critical infrastructure. [2]\n- CISA continues to publish Industrial Control Systems (ICS) advisories describing active vulnerabilities and mitigations, reflecting an ongoing vulnerability surface in industrial systems. [3]\n\nWhy it stays neglected:\nIndustrial operators prioritize safety and uptime, so security changes are risky. Vendors are fragmented, device inventories are incomplete, and incident reporting is inconsistent. Many organizations do not even know what is on their OT networks, so they cannot defend it systematically.\n\nTractability:\nThis is tractable because the wins are largely operational: asset inventory, network segmentation, secure remote access, and anomaly detection tuned to industrial signals. The hard part is deployment inside safety-critical environments. Tools must be reliable, low-touch, and compatible with legacy systems.\n\nStartup surfaces:\n- OT asset discovery and “ground truth” inventory with continuous updates\n- Safe segmentation and micro-perimeter tooling for plants and utilities\n- Secure remote access designed for OT constraints and vendor ecosystems\n- OT anomaly detection using process variables and safety thresholds, not just signatures\n- Incident response playbooks and tabletop automation for industrial operators",
+    "sources": [
+        "[1] National Institute of Standards and Technology. Guide to Operational Technology (OT) Security (SP 800-82 Rev. 3). (2023). [2] Federal Bureau of Investigation. Internet Crime Complaint Center (IC3) 2024 Annual Report. (2024). [3] Cybersecurity and Infrastructure Security Agency. Industrial Control Systems advisories and alerts. (2025)."
+    ]
+},
+    {
+    "rank": 32,
+    "slug": "digital-public-identity-and-credentials",
+    "title": "Digital Public Identity and Credentials",
+    "short_descriptor": "Secure authentication",
+    "preview_text": "We can digitize services, but without secure digital identity rails we get fraud, exclusion, and high-friction enrollment across benefits, banking, healthcare, and work.",
+    "problem_priority": 68,
+    "importance": 75,
+    "neglectedness": 50,
+    "tractability": 65,
+    "gap": "What exists is brittle identity proofing, repeated account creation, weak authentication, and privacy risk from excessive data collection. What could exist is a digital public identity layer: privacy-preserving credentials, secure authentication, and interoperable verification that reduces fraud while expanding access.",
+    "stakes": "Identity is a foundation layer. If it is weak, everything built on top becomes expensive: fraud, manual reviews, and exclusion errors. If it is strong and privacy-preserving, we unlock faster services, safer payments, and broader inclusion in the digital economy.",
+    "sector_tags": [
+        "Governance",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Freedom",
+        "Better Governance"
+    ],
+    "long_form_content": "Headline evidence:\n- World Bank digital development analysis reports that in 2024, about 2.9 billion people still lacked access to “online digital ID” systems that enable secure remote authentication for online transactions. [1]\n- The World Bank ID4D dataset estimates approximately 850 million people worldwide lack an official ID, and billions more lack digitally verifiable or online-usable digital identity. [2]\n- NIST SP 800-63-4 provides technical requirements for identity proofing, authentication, and federation, explicitly covering government-facing digital identity assurance levels. [3]\n\nWhy it stays neglected:\nDigital identity is politically sensitive and easily derailed by surveillance fears, vendor capture, or exclusion harms. Meanwhile, the “buyer” is split across agencies and sectors. The result is duplicated identity systems, fragmented standards, and weak interoperability.\n\nTractability:\nThe technical pieces are mature: cryptography, secure hardware, and standardized protocols. The frontier is product governance: designing identity systems that are usable, inclusive, and privacy-preserving while meeting fraud and security requirements. Startups can win by shipping interoperable components that governments can adopt incrementally.\n\nStartup surfaces:\n- Privacy-preserving credential wallets and verifier infrastructure aligned to standards\n- Fraud-resistant remote identity proofing and re-verification workflows\n- Interoperability layers that unify fragmented agency identities without centralizing data\n- Consent-based attribute sharing for age, residency, and eligibility verification\n- Continuous risk scoring and adaptive authentication for high-risk transactions",
+    "sources": [
+        "[1] World Bank (ID4D). Global progress in identification: findings from latest data (blog). (Oct 2025). [2] World Bank (ID4D). ID4D Global Dataset (identity coverage estimates). (Accessed 2026). [3] National Institute of Standards and Technology. Digital Identity Guidelines (SP 800-63-4, Final). (2025)."
+    ]
+},
+    {
+    "rank": 33,
+    "slug": "public-procurement-execution-os",
+    "title": "Public Procurement Execution OS",
+    "short_descriptor": "Buy outcomes faster",
+    "preview_text": "Governments spend at huge scale, but procurement and delivery tooling is still slow, compliance-first, and brittle, so outcomes arrive late and expensive.",
+    "problem_priority": 68,
+    "importance": 73,
+    "neglectedness": 55,
+    "tractability": 55,
+    "gap": "What exists is procurement as paperwork: fragmented requirements, slow vendor onboarding, uneven performance tracking, and weak feedback loops between delivery and purchasing. What could exist is procurement as product management: outcome-based specs, continuous vendor performance data, faster purchasing cycles, and audit-ready transparency.",
+    "stakes": "Procurement is how states build. When it is slow, every public good becomes slow: housing, infrastructure, defense, health systems, and digital services. Improving procurement throughput is a compounding advantage because it speeds every downstream project category.",
+    "sector_tags": [
+        "Governance",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Better Governance",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- OECD reports public procurement accounted for 12.7% of gross domestic product (GDP) and 29.9% of total government expenditures in OECD countries (2023), making procurement system performance a macro-level lever. [1]\n- GAO flags federal information technology (IT) acquisition and management as a high-risk area, citing persistent challenges and the need for urgent action. [2]\n- GAO identifies “critical legacy systems” still needing modernization and evaluates weak plans for modernizing them, illustrating how execution tooling failures persist inside government. [3]\n\nWhy it stays neglected:\nProcurement is treated as compliance and risk minimization, not delivery optimization. Incentives punish failure more than delay, so systems become slow by default. Vendors adapt to the bureaucracy with consulting-heavy approaches that keep incumbents entrenched.\n\nTractability:\nThis is tractable because it is mostly software, workflow, and data, not physics. The hard parts are integration with legacy systems, security, and navigating procurement law. Winners will ship modular systems that layer on top of existing workflows and prove faster outcomes without sacrificing auditability.\n\nStartup surfaces:\n- Outcome-based requirements builders linked to measurable service-level objectives (SLOs)\n- Vendor onboarding and qualification automation with continuous monitoring\n- Contract performance telemetry and payment systems tied to verified milestones\n- Audit-ready transparency layers that reduce fear of experimentation\n- “Procurement copilots” that translate policy constraints into executable purchasing paths",
+    "sources": [
+        "[1] Organisation for Economic Co-operation and Development. Professionalising public procurement through certification (including procurement share of GDP and expenditures). (2025). [2] U.S. Government Accountability Office. Press release: urgent action needed on IT acquisition and management challenges (high-risk update). (Jan 2025). [3] U.S. Government Accountability Office. Agencies need to plan for modernizing critical decades-old legacy IT systems. (Jul 2025)."
+    ]
+},
+    {
+    "rank": 34,
+    "slug": "routine-immunization-catch-up-infrastructure",
+    "title": "Routine Immunization Catch-Up Infrastructure",
+    "short_descriptor": "Close immunity gaps",
+    "preview_text": "Routine vaccination coverage is plateauing and millions of zero-dose children persist, but immunization systems still struggle to find, persuade, and deliver to the hardest-to-reach cohorts.",
+    "problem_priority": 67,
+    "importance": 78,
+    "neglectedness": 40,
+    "tractability": 65,
+    "gap": "What exists is periodic campaigns and incomplete registries that miss mobile, conflict-affected, and underserved populations. What could exist is a real-time immunization operating system: reliable registries, microplanning, cold chain visibility, and last-mile delivery that treats “zero-dose” as a solvable logistics and trust problem.",
+    "stakes": "Routine immunization is one of the highest ROI interventions ever invented. When coverage stalls, outbreaks return and health systems absorb avoidable load. Catch-up is not just child health. It is global stability because infectious disease shocks cascade into education, labor markets, and political trust.",
+    "sector_tags": [
+        "Healthcare",
+        "Biotech"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Longevity"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO reports 14.3 million “zero-dose” children globally in 2024 and DTP3 coverage at 85% in 2024, still below pre-pandemic levels for some indicators. [1]\n- UNICEF reports 14.3 million zero-dose children and nearly 20 million infants missing at least one dose of diphtheria-tetanus-pertussis (DTP) vaccine in 2024. [2]\n- UNICEF’s immunization data notes measles first-dose coverage at 84% in 2024, leaving tens of millions unprotected, reinforcing that routine coverage gaps persist. [3]\n\nWhy it stays neglected:\nThe “last mile” is expensive and politically under-rewarded. Many health systems still lack interoperable registries, consistent funding, and community trust. Conflict and displacement break delivery models. Meanwhile, misinformation scales faster than public health response capacity.\n\nTractability:\nThis is tractable because the bottlenecks are execution: registries, supply chain, outreach, scheduling, and delivery visibility. Mobile infrastructure and better data systems can compress the feedback loop from “missed child” to “delivered dose.” The hard part is trust: the system must work with community institutions, not around them.\n\nStartup surfaces:\n- Interoperable immunization registries with offline-first functionality\n- Cold-chain monitoring and predictive resupply with audit logs\n- “Zero-dose finders” combining clinic data, geospatial targeting, and outreach workflows\n- Appointment and follow-up systems designed for low-connectivity environments\n- Trust and misinformation countermeasures built into delivery channels and community health worker tooling",
+    "sources": [
+        "[1] World Health Organization. Immunization coverage (fact sheet). (Jul 2025). [2] UNICEF. Press release: global childhood vaccination and zero-dose statistics. (2025). [3] UNICEF DATA. Vaccination and Immunization Statistics (global coverage indicators). (2025)."
+    ]
+},
+    {
+    "rank": 35,
+    "slug": "maternal-early-warning-and-postpartum-monitoring",
+    "title": "Maternal Early Warning and Postpartum Monitoring",
+    "short_descriptor": "Preventable deaths",
+    "preview_text": "Pregnancy is high-risk biology, but we still monitor many mothers episodically, missing early signals of hemorrhage, hypertensive disorders, infection, and cardiometabolic complications, especially postpartum.",
+    "problem_priority": 67,
+    "importance": 77,
+    "neglectedness": 45,
+    "tractability": 70,
+    "gap": "What exists is discontinuous care: prenatal visits, delivery, then a thin follow-up layer that often misses the highest-risk window. What could exist is a maternal early warning stack: continuous risk monitoring, faster escalation pathways, and postpartum continuity that treats maternal health as a high-signal system, not a one-time event.",
+    "stakes": "Maternal mortality is both a tragedy and a systems signal. When mothers die or suffer severe morbidity, the damage propagates: infant outcomes worsen, family stability cracks, and community trust declines. The upside is massive because many maternal complications are identifiable earlier with better monitoring and faster response.",
+    "sector_tags": [
+        "Healthcare",
+        "Longevity"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Longevity"
+    ],
+    "long_form_content": "Headline evidence:\n- CDC National Center for Health Statistics reports 649 maternal deaths in 2024 and a maternal mortality rate of 17.9 deaths per 100,000 live births, statistically similar to 2023. [1]\n- CDC reports maternal mortality risk rises sharply with age, with 2024 rates of 62.3 deaths per 100,000 live births for women age 40 and older. [1]\n- CDC reports 2023 maternal mortality rates with large age disparities, reinforcing persistence of high-risk cohorts. [2]\n\nWhy it stays neglected:\nMaternal care touches insurance, hospitals, OB-GYN practices, and public health programs that rarely share data well. Many systems are underpaid for postpartum continuity, and “one more warm handoff” often has no owner. The highest-risk mothers also face the highest barriers to follow-up.\n\nTractability:\nThis is tractable because sensors exist, risk models exist, and intervention pathways exist. The remaining challenge is workflow: integrating monitoring into care teams, ensuring escalation is staffed, and making follow-up default. The wedge is enabling clinicians to act, not generating more data.\n\nStartup surfaces:\n- Postpartum monitoring programs integrated with care teams and escalation protocols\n- Risk-scored pathways for hypertensive disorders and hemorrhage warning windows\n- Home vitals plus symptom capture with clinician-facing triage tooling\n- Claims and clinical data fusion to identify missed follow-ups and high-risk patients\n- Community-based care coordination platforms that reduce missed appointments",
+    "sources": [
+        "[1] Centers for Disease Control and Prevention, National Center for Health Statistics. Maternal Mortality Rates in the United States, 2024 and NCHS blog summary. (2026). [2] Centers for Disease Control and Prevention, National Center for Health Statistics. Maternal mortality rates in the United States, 2023. (2025). [3] Centers for Disease Control and Prevention. Provisional Maternal Death Rates (monitoring dashboard). (Accessed 2026)."
+    ]
+},
+    {
+    "rank": 36,
+    "slug": "sterile-injectable-manufacturing-reliability",
+    "title": "Sterile Injectable Manufacturing Reliability",
+    "short_descriptor": "Prevent shortages",
+    "preview_text": "Hospitals depend on generic sterile injectables, but quality failures, fragile economics, and concentrated supply chains keep producing shortages that disrupt care.",
+    "problem_priority": 67,
+    "importance": 76,
+    "neglectedness": 45,
+    "tractability": 50,
+    "gap": "What exists is a shortage management regime that reacts after manufacturing issues occur. What could exist is a reliability-first manufacturing stack: predictive quality surveillance, redundancy planning, and contract structures that pay for reliability, not just the lowest price.",
+    "stakes": "Drug shortages force rationing, delays, and clinical substitution. In sterile injectables, the downside is acute because these drugs are used in emergency departments, intensive care units, and operating rooms. Reliability is a healthcare resilience layer that becomes critical under disasters and supply shocks.",
+    "sector_tags": [
+        "Healthcare",
+        "Manufacturing"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Human Flourishing"
+    ],
+    "long_form_content": "Headline evidence:\n- FDA reports that in calendar year 2024 it was notified of 1,459 potential drug and biological product shortage situations by 151 manufacturers under mandatory notification requirements. [1]\n- FDA reports that in fiscal year 2024 it issued 105 warning letters to human drug manufacturing sites for drug quality-related reasons, the highest in the past five years. [2]\n- FDA positions the annual “State of Pharmaceutical Quality” reporting as a surveillance tool for the quality of the U.S. drug supply chain, including warning letters and recalls. [3]\n\nWhy it stays neglected:\nProcurement often rewards the cheapest supplier, not the most reliable. Sterile manufacturing is capital intensive, regulated, and hard to restart quickly. When margins get compressed, manufacturers underinvest in modernization, redundancy, and quality culture, increasing systemic fragility.\n\nTractability:\nThis is tractable through better incentives and better monitoring. Predictive quality signals, supplier diversification tooling, and reliability-linked contracts can reduce risk without changing science. Hard parts remain: regulatory constraints, long lead times for facility upgrades, and the need for buyer coalitions (hospital systems, group purchasing organizations) to change purchasing behavior.\n\nStartup surfaces:\n- Predictive quality analytics using inspection history, deviation data, and supply signals\n- Reliability scoring for manufacturers integrated into hospital procurement\n- “Capacity reservation” and redundancy financing structures for essential injectables\n- Digital quality management systems tailored for sterile manufacturing workflows\n- Early-warning systems that detect shortage risk and trigger coordinated mitigation",
+    "sources": [
+        "[1] U.S. Food and Drug Administration. Drug Shortages Report to Congress: Calendar Year 2024. (2024). [2] U.S. Food and Drug Administration. Report on the State of Pharmaceutical Quality FY2024. (2024). [3] U.S. Food and Drug Administration. Report on the State of Pharmaceutical Quality (program page). (2025)."
+    ]
+},
+    {
+    "rank": 37,
+    "slug": "nonrevenue-water-reduction",
+    "title": "Nonrevenue Water Reduction",
+    "short_descriptor": "Fix leaks first",
+    "preview_text": "We treat drinking water, then lose massive volumes through leaks and measurement errors, but utilities still lack the data and capital workflows to reduce losses quickly.",
+    "problem_priority": 67,
+    "importance": 72,
+    "neglectedness": 55,
+    "tractability": 70,
+    "gap": "What exists is aging infrastructure with incomplete leak detection, inconsistent water audits, and funding gaps that prolong repair cycles. What could exist is a modern water-loss operating system: continuous monitoring, prioritized replacement planning, and financing tied to verified loss reduction.",
+    "stakes": "Water loss is “negative-sum.” Utilities spend money to treat and pump water that never reaches customers, and leaks can become contamination entry points. In a climate-stressed future, every gallon saved is cheaper than every new gallon sourced.",
+    "sector_tags": [
+        "Water",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- EPA estimates household leaks waste roughly 900 billion gallons of water annually nationwide, illustrating the scale of preventable water loss even before distribution-system losses are counted. [1]\n- The American Society of Civil Engineers estimates a water main break occurs about every two minutes and about 6 billion gallons of treated water are lost each day in the U.S. [2]\n- EPA notes drinking water infrastructure is decades old and can be a significant source of water loss through leaks, motivating systematic audit and control programs. [3]\n\nWhy it stays neglected:\nNonrevenue water is a slow bleed with weak political salience until it becomes a crisis. Many utilities cannot raise rates easily, and capital markets price small utilities poorly. Measurement is also inconsistent, so losses can be hidden in accounting noise.\n\nTractability:\nThis is tractable because sensors, acoustic detection, advanced metering, and analytics are mature. The remaining friction is operational: deployment at scale, workforce scheduling, and financing. The best approach is not “one more gadget,” it is a closed-loop program that finds leaks, fixes them, verifies the savings, and reinvests.\n\nStartup surfaces:\n- Continuous leak detection using acoustic sensing and pressure transients\n- Nonrevenue water analytics that reconcile production, metering, and district metered areas\n- Financing tied to verified gallons saved and avoided treatment costs\n- Work order optimization platforms for pipe replacement and valve maintenance\n- Customer leak detection and alerting programs integrated with utility operations",
+    "sources": [
+        "[1] U.S. Environmental Protection Agency. WaterSense Statistics and Facts (household leak estimates). (Accessed 2026). [2] American Society of Civil Engineers. 2021 Infrastructure Report Card: Drinking Water. (2021). [3] U.S. Environmental Protection Agency. Water Audits and Water Loss Control for Public Water Systems (fact sheet). (2013)."
+    ]
+},
+    {
+    "rank": 38,
+    "slug": "orbital-debris-coordination-and-removal",
+    "title": "Orbital Debris Coordination and Removal",
+    "short_descriptor": "Keep orbits usable",
+    "preview_text": "Low Earth orbit is becoming a tragedy of the commons. Debris accumulates faster than governance, raising collision risk and threatening satellites, science, and future missions.",
+    "problem_priority": 66,
+    "importance": 70,
+    "neglectedness": 55,
+    "tractability": 55,
+    "gap": "What exists is partial tracking, inconsistent operator behavior, and limited incentives to remove debris or deorbit fast. What could exist is an orbital safety stack: interoperable tracking, enforceable standards, and credible “debris removal plus verification” services that keep the environment stable.",
+    "stakes": "Space is now critical infrastructure: communications, navigation, remote sensing, and defense. If orbital regimes become too risky, we lose capability and raise costs for everything that depends on space services. This is a coordination problem with a physics-based tipping risk: collisions create more debris, increasing future collision probability.",
+    "sector_tags": [
+        "Space",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Scientific Acceleration"
+    ],
+    "long_form_content": "Headline evidence:\n- ESA reports roughly 35,000 objects are tracked in orbit, with about 26,000 pieces of debris larger than 10 cm. [1]\n- The Inter-Agency Space Debris Coordination Committee reports an estimated environment including about 34,000 objects larger than 10 cm, about 900,000 objects from 1–10 cm, and about 128 million objects from 1 mm–1 cm. [2]\n- A NASA deorbit technology state-of-the-art report cites debris population estimates including roughly 1.1 million objects 1–10 cm and over 36,500 pieces larger than 10 cm. [3]\n\nWhy it stays neglected:\nNo one owns orbit. The cost of bad behavior is distributed across all operators over time. Standards exist, but enforcement is weak and international coordination is slow. Meanwhile, launch costs dropped and deployment accelerated, outpacing governance.\n\nTractability:\nActive debris removal is hard but becoming feasible. The tractable near-term wedge is coordination and verification: better tracking, collision avoidance interoperability, faster deorbit compliance, and insurance mechanisms that price risk properly. Removal missions can start with high-risk large objects where marginal benefit is highest.\n\nStartup surfaces:\n- High-precision tracking and conjunction analysis for small operators\n- Interoperable collision avoidance protocols and operator-to-operator coordination tooling\n- Deorbit compliance monitoring and scoring for insurers and regulators\n- “Removal as a service” targeting high-risk derelicts with verification of disposal\n- Space traffic data infrastructure with reconciled catalogs and uncertainty estimates",
+    "sources": [
+        "[1] European Space Agency. ESA Space Environment Report 2024 (tracked objects and debris counts). (Jul 2024). [2] Inter-Agency Space Debris Coordination Committee. Status of the Space Debris Environment (counts by size). (Feb 2025). [3] NASA. Small Spacecraft Technology State of the Art: Deorbit and debris environment estimates. (Feb 2025)."
+    ]
+},
+    {
+    "rank": 39,
+    "slug": "overdose-response-routing",
+    "title": "Overdose Response Routing",
+    "short_descriptor": "Naloxone fast lane",
+    "preview_text": "Overdose deaths are falling but remain extremely high. We still fail to route naloxone, medication-assisted treatment, and follow-up at the moment risk is highest.",
+    "problem_priority": 65,
+    "importance": 76,
+    "neglectedness": 40,
+    "tractability": 70,
+    "gap": "What exists is a disconnected system: emergency response reverses overdoses, then patients often fall through the cracks before effective treatment initiation and retention. What could exist is an overdose response pipeline: real-time risk identification, rapid treatment connection, and long-term follow-up as a default pathway.",
+    "stakes": "Overdose is a mass-mortality phenomenon with concentrated impact in working-age populations and vulnerable communities. The recent decline shows the system can move. The risk is backsliding if funding, logistics, and care continuity fail. Routing is the bottleneck between “saving a life today” and “preventing death next month.”",
+    "sector_tags": [
+        "Healthcare",
+        "Community"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- CDC reports provisional data showing about 87,000 overdose deaths from October 2023 to September 2024, down from around 114,000 the previous year, a nearly 24% decline. [1]\n- CDC reports overdose deaths involving opioids decreased from an estimated 83,140 (2023) to 54,743 (2024). [2]\n- CDC provides a jurisdiction-by-jurisdiction overdose death counts and change dashboard, reflecting ongoing surveillance infrastructure for routing and response. [3]\n\nWhy it stays neglected:\nThe system is split: emergency services, hospitals, behavioral health, and payers each optimize locally. Stigma and unstable housing break follow-up. Many programs are grant-funded and fragile. Data sharing is limited, so risk detection and referral loops are incomplete.\n\nTractability:\nThis is tractable because tools exist: naloxone distribution, medication treatment for opioid use disorder, and proven follow-up models. The missing layer is orchestration: logistics, referral completion, and retention measurement. AI can help with identification and workflow, but the core is execution.\n\nStartup surfaces:\n- Real-time referral completion tooling from emergency departments to treatment providers\n- Follow-up automation with measurement of retention and relapse risk signals\n- Community naloxone logistics and inventory intelligence tied to overdose hotspots\n- Care navigation platforms for high-risk cohorts including housing and social support routing\n- Payer-integrated outcomes tracking for treatment adherence and relapse prevention",
+    "sources": [
+        "[1] Centers for Disease Control and Prevention. CDC reports nearly 24% decline in U.S. drug overdose deaths (provisional). (Feb 25, 2025). [2] Centers for Disease Control and Prevention, National Center for Health Statistics. U.S. overdose deaths decrease almost 27% in 2024 (press release). (May 14, 2025). [3] Centers for Disease Control and Prevention. Provisional Drug Overdose Death Counts dashboard. (Accessed 2026)."
+    ]
+},
+    {
+    "rank": 40,
+    "slug": "measurement-based-mental-health-care",
+    "title": "Measurement-Based Mental Health Care",
+    "short_descriptor": "Quality at scale",
+    "preview_text": "We have validated therapies and medications, but mental health care is often delivered without consistent measurement, feedback loops, or continuity, so quality varies wildly and outcomes are unknown.",
+    "problem_priority": 65,
+    "importance": 74,
+    "neglectedness": 45,
+    "tractability": 70,
+    "gap": "What exists is appointment-based care with weak longitudinal tracking, limited follow-up, and scarce measurement of symptom change and functioning. What could exist is measurement-based care as default: standardized assessment, rapid iteration of treatment plans, and durable continuity supported by tools and teams.",
+    "stakes": "Mental health is upstream of productivity, relationships, education outcomes, and social cohesion. Scaling care quantity without scaling care quality is a trap. Measurement-based care turns “more sessions” into “better outcomes,” and creates the feedback data needed to allocate resources intelligently.",
+    "sector_tags": [
+        "Healthcare",
+        "Community"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Societal Cohesion"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO reports more than 1 billion people live with mental health disorders and calls for urgent service scale-up. [1]\n- WHO states depression and anxiety alone cost the global economy an estimated US$1 trillion each year, largely through lost productivity. [2]\n- WHO’s Mental Health Atlas collects data across 144 countries, tracking financing, workforce, and services, implying that measurement and system monitoring are core levers. [3]\n\nWhy it stays neglected:\nWorkforce shortages and reimbursement structures push volume over outcomes. Data systems are fragmented and privacy constraints are real, so longitudinal measurement is hard. Many care pathways still treat mental health as subjective and untrackable, which becomes a self-fulfilling failure mode.\n\nTractability:\nThis is tractable because validated instruments exist and digital follow-up is cheap. The hard part is adoption and workflow integration: clinicians must trust the measures, and systems must use them to adjust care. The wedge is building tools that reduce clinician burden while improving outcomes.\n\nStartup surfaces:\n- Measurement-based care platforms integrated with electronic health records and workflows\n- Hybrid care models that combine clinicians with coached, protocolized support\n- Continuous outcomes tracking tied to treatment adjustments and relapse prevention\n- Privacy-preserving analytics for payer and provider system performance benchmarking\n- Digital triage and step-care routing that reliably escalates when needed",
+    "sources": [
+        "[1] World Health Organization. Over a billion people living with mental health conditions: services require urgent scale-up. (Sep 2025). [2] World Health Organization. Depression and anxiety estimated economic cost statement (US$1 trillion per year). (Sep 2025). [3] World Health Organization. Mental Health Atlas 2024 (publication page and scope). (2025)."
+    ]
+}
 ].map(p => ({
     ...p,
     theme_color: getThemeForSector(p.sector_tags)
