@@ -502,6 +502,32 @@ const startups = [
             founder_fit: ['Bio Founder', 'Venture-Scale'],
             outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience']
         }
+    },
+    {
+        slug: 'helioterra',
+        name: 'HelioTerra',
+        created_at: '2026-03-15T01:48:18Z',
+        scores: {
+            moat_score: { ai_scored: 79 },
+            difficulty_score: { ai_scored: 84 },
+            civilizational_impact_score: { ai_scored: 80 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 87 },
+                "Climate": { ai_scored: 82 },
+                "Resilience": { ai_scored: 79 },
+                "Human Flourishing": { ai_scored: 70 }
+            }
+        },
+        tags: {
+            sector: ['Energy', 'Climate', 'Food'],
+            bottleneck: ['Regulatory Friction', 'Coordination', 'Cultural Resistance'],
+            customer: ['Enterprises', 'Governments'],
+            product_type: ['Platform', 'Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Simulations'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Capital Intensive'],
+            outcomes: ['Abundance', 'Climate', 'Resilience', 'Human Flourishing']
+        }
     }
 ];
 
