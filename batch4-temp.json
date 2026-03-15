@@ -1,0 +1,142 @@
+[
+  {
+    "rawRank": 21,
+    "slug": "dna-synthesis-screening-infrastructure",
+    "title": "DNA Synthesis Screening Infrastructure",
+    "short_descriptor": "Biosecurity by default",
+    "preview_text": "We can order DNA like cloud compute, but screening and enforcement are uneven, leaving synthetic biology’s dangerous edge cases under-governed."
+  },
+  {
+    "rawRank": 22,
+    "slug": "inverter-based-grid-stability-services",
+    "title": "Inverter-Based Grid Stability Services",
+    "short_descriptor": "Stable inverter grids",
+    "preview_text": "As grids fill with inverter-based resources, stability becomes a control and validation problem, but modeling and performance verification still lag deployment."
+  },
+  {
+    "rawRank": 23,
+    "slug": "enhanced-geothermal-drilling-scale",
+    "title": "Enhanced Geothermal Drilling Scale",
+    "short_descriptor": "Firm power unlock",
+    "preview_text": "We have planet-scale heat, but drilling cost, speed, and subsurface uncertainty still keep enhanced geothermal from mainstream firm power."
+  },
+  {
+    "rawRank": 24,
+    "slug": "hospital-throughput-and-bed-logistics",
+    "title": "Hospital Throughput and Bed Logistics",
+    "short_descriptor": "Stop ED boarding",
+    "preview_text": "We can deliver world-class medicine, but hospitals still run on weak flow control, so emergency departments become overflow wards and patients suffer in line."
+  },
+  {
+    "rawRank": 25,
+    "slug": "refrigerant-leak-detection-and-reclaim",
+    "title": "Refrigerant Leak Detection and Reclaim",
+    "short_descriptor": "Stop HFC escape",
+    "preview_text": "We spend to decarbonize electricity, then leak potent refrigerants into the sky because leak detection, repair, and reclaim systems are still under-instrumented."
+  },
+  {
+    "rawRank": 26,
+    "slug": "medical-oxygen-supply-reliability",
+    "title": "Medical Oxygen Supply Reliability",
+    "short_descriptor": "Oxygen everywhere",
+    "preview_text": "We treat oxygen as a commodity until it disappears, but oxygen is life-saving medicine whose production, storage, and delivery still fail routinely in high-need settings."
+  },
+  {
+    "rawRank": 27,
+    "slug": "nitrogen-loss-and-nitrous-oxide-control",
+    "title": "Nitrogen Loss and Nitrous Oxide Control",
+    "short_descriptor": "Close nitrogen loop",
+    "preview_text": "We rely on nitrogen fertilizer for yields, but we still run agriculture with weak measurement of nitrogen fate, leading to N2O emissions and nutrient pollution at climate and ecosystem scale."
+  },
+  {
+    "rawRank": 28,
+    "slug": "space-weather-early-warning",
+    "title": "Space Weather Early Warning",
+    "short_descriptor": "Protect critical systems",
+    "preview_text": "We run grids, satellites, and communications on assumptions of solar calm, but severe geomagnetic storms still arrive and can cascade into infrastructure disruption."
+  },
+  {
+    "rawRank": 29,
+    "slug": "fisheries-stock-monitoring-and-enforcement",
+    "title": "Fisheries Stock Monitoring and Enforcement",
+    "short_descriptor": "Ocean abundance",
+    "preview_text": "We can grow seafood demand, but we still manage many fisheries with insufficient monitoring and enforcement, so overfishing and illegal extraction persist."
+  },
+  {
+    "rawRank": 30,
+    "slug": "floodplain-mapping-and-stormwater-ops",
+    "title": "Floodplain Mapping and Stormwater Ops",
+    "short_descriptor": "Predictive flood defense",
+    "preview_text": "We build cities on yesterday’s flood maps, but rainfall patterns and exposure are changing, and stormwater systems are still operated with limited predictive control."
+  },
+  {
+    "rawRank": 31,
+    "slug": "crop-disease-early-warning",
+    "title": "Crop Disease Early Warning",
+    "short_descriptor": "Plant health radar",
+    "preview_text": "We fight food insecurity downstream, but we still lack real-time visibility into plant pests and diseases that destroy yields upstream."
+  },
+  {
+    "rawRank": 32,
+    "slug": "cybercrime-scam-immunity-layer",
+    "title": "Cybercrime Scam Immunity Layer",
+    "short_descriptor": "Stop AI scams",
+    "preview_text": "We built a digital economy on trust primitives that were never designed for synthetic identities, voice cloning, and industrial-scale social engineering."
+  },
+  {
+    "rawRank": 33,
+    "slug": "blood-supply-and-pathogen-reduction",
+    "title": "Blood Supply and Pathogen Reduction",
+    "short_descriptor": "Safe blood at scale",
+    "preview_text": "Modern medicine runs on blood, but supply reliability and safety upgrades remain constrained by donation volatility, fragmented logistics, and uneven pathogen risk controls."
+  },
+  {
+    "rawRank": 34,
+    "slug": "court-backlog-and-digital-dispute-resolution",
+    "title": "Court Backlog and Digital Dispute Resolution",
+    "short_descriptor": "Justice throughput",
+    "preview_text": "Civil justice is too slow and too expensive for everyday disputes, so rights become theoretical and economic activity stalls."
+  },
+  {
+    "rawRank": 35,
+    "slug": "low-carbon-cement-adoption-stack",
+    "title": "Low-Carbon Cement Adoption Stack",
+    "short_descriptor": "Build without carbon",
+    "preview_text": "We know how to lower cement emissions, but codes, standards, and procurement still reward incumbents, blocking adoption at infrastructure scale."
+  },
+  {
+    "rawRank": 36,
+    "slug": "child-development-early-detection",
+    "title": "Child Development Early Detection",
+    "short_descriptor": "Intervene sooner",
+    "preview_text": "We talk about human potential, but we still detect developmental delays late and unevenly, especially in low-resource settings, missing the cheapest window for lifelong impact."
+  },
+  {
+    "rawRank": 37,
+    "slug": "vaccine-cold-chain-telemetry",
+    "title": "Vaccine Cold Chain Telemetry",
+    "short_descriptor": "Zero spoilage logistics",
+    "preview_text": "We can manufacture vaccines, then lose impact at the last mile because cold chain temperature control, monitoring, and maintenance are still fragile."
+  },
+  {
+    "rawRank": 38,
+    "slug": "data-center-load-flexibility",
+    "title": "Data Center Load Flexibility",
+    "short_descriptor": "Grid-native compute",
+    "preview_text": "Compute demand is rising fast, but data centers still behave like rigid baseload loads instead of grid-supporting assets that can trade flexibility for speed and cost."
+  },
+  {
+    "rawRank": 39,
+    "slug": "ev-charging-reliability-and-interop",
+    "title": "EV Charging Reliability and Interop",
+    "short_descriptor": "Trust charging network",
+    "preview_text": "Electric vehicles are scaling, but charging still fails too often and too opaquely, slowing adoption and eroding confidence."
+  },
+  {
+    "rawRank": 40,
+    "slug": "post-quantum-cryptography-migration",
+    "title": "Post-Quantum Cryptography Migration",
+    "short_descriptor": "Quantum-safe Internet",
+    "preview_text": "We are building long-lived digital infrastructure on cryptography that future quantum computers could break, but migration is slow and inventory is incomplete."
+  }
+]

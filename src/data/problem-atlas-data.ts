@@ -1751,6 +1751,406 @@ export const problems: ProblemData[] = [
         "[2] U.S. Government Accountability Office. GPS Disruptions: Reports on vulnerabilities and resilience needs. Accessed 2026-03-15. https://www.gao.gov/search?search_api_fulltext=GPS%20disruptions",
         "[3] U.S. Department of Homeland Security. GPS and GNSS interference awareness resources. Accessed 2026-03-15. https://www.dhs.gov/science-and-technology/pnt"
     ]
+},
+    {
+    "rank": 61,
+    "slug": "hospital-throughput-and-bed-logistics",
+    "title": "Hospital Throughput and Bed Logistics",
+    "short_descriptor": "Stop ED boarding",
+    "preview_text": "We can deliver world-class medicine, but hospitals still run on weak flow control, so emergency departments become overflow wards and patients suffer in line.",
+    "problem_priority": 74,
+    "importance": 82,
+    "neglectedness": 55,
+    "tractability": 65,
+    "gap": "What exists is reactive capacity management: delayed discharges, unpredictable staffing, and limited real-time visibility into bed, transport, and service bottlenecks. What could exist is a hospital throughput OS: forecasting, coordination, and accountability that reduces ED boarding and compresses time-to-definitive-care.",
+    "stakes": "ED boarding is not an inconvenience. It is avoidable risk and waste. When flow breaks, everything breaks: delayed treatment, staff burnout, and higher mortality. Throughput is leverage because it multiplies existing hospital capacity without building new wings.",
+    "sector_tags": [
+        "Healthcare",
+        "AI"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- A 2023 study found older patients (75+) who stayed overnight in the ED had higher in-hospital mortality and more adverse events than those admitted to a ward sooner【5†L778-L787】【5†L888-L896】.  \n- A 2024 analysis associated longer ED boarding with increased risk of delirium or severe agitation, linking delays to worse patient outcomes【5†L778-L787】【5†L888-L896】.  \n- A 2025 study reinforced that ED boarding is tied to delays in definitive care and higher morbidity, making boarding a “signal event” of system strain【5†L778-L787】【5†L888-L896】.\n\nWhy it stays neglected:\nHospitals are complex, siloed systems with competing department incentives and static budgets. Many flow decisions are political or manual. Data lives in fragmented systems, and “optimization” tools fail if not embedded in real authority structures for bed management and discharge planning.\n\nTractability:\nThis is tractable because the bottleneck is coordination, not medicine. Forecasting, queue management, and task orchestration are solvable with modern software and AI. The hard part is change management: aligning incentives, building trust, and ensuring tools actually reduce clinician burden instead of adding dashboards.\n\nStartup surfaces:\n- Real-time bed and discharge orchestration with accountable workflows and escalation paths  \n- Length-of-stay forecasting and “anticipated discharge” planning for daily rounds  \n- Transport, imaging, and lab queue optimization targeting true bottlenecks  \n- Hospital command-center software translating signals into actions (not just alerts)  \n- Patient flow simulation and digital twins to test interventions before rollout",
+    "sources": [
+        "[1] Roussel M et al. “Overnight stay in the emergency department and mortality among older patients.” JAMA Internal Medicine. 2023. (Finds ED boarding increases risk for elderly)【5†L778-L787】【5†L888-L896】.",
+        "[2] Joseph JW et al. “ED boarding duration and inpatient delirium/agitation.” JAMA Network Open. 2024. (Links longer boarding to neurocognitive events)【5†L778-L787】【5†L888-L896】.",
+        "[3] Greenwood-Ericksen M et al. “ED boarding, inpatient census, and transfer delays.” JAMA Network Open. 2025. (Confirms boarding harms)【5†L778-L787】【5†L888-L896】."
+    ]
+},
+    {
+    "rank": 62,
+    "slug": "refrigerant-leak-detection-and-reclaim",
+    "title": "Refrigerant Leak Detection and Reclaim",
+    "short_descriptor": "Stop HFC escape",
+    "preview_text": "We spend to decarbonize electricity, then leak potent refrigerants into the sky because leak detection, repair, and reclaim systems are still under-instrumented.",
+    "problem_priority": 74,
+    "importance": 82,
+    "neglectedness": 55,
+    "tractability": 70,
+    "gap": "What exists is fragmented refrigerant management with weak leak detection, inconsistent technician practice, and limited reclaim supply. What could exist is a refrigerant lifecycle stack: continuous leak detection, verified repair, high-throughput reclaim, and auditable tracking that turns compliance into operational excellence.",
+    "stakes": "This is near-term climate leverage. Hydrofluorocarbons (HFCs) are powerful greenhouse gases, and leakage is pure waste. If we can measure and stop leaks and scale reclaiming, we accelerate climate progress without waiting for a full equipment turnover.",
+    "sector_tags": [
+        "Climate",
+        "Manufacturing"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- The AIM Act (2020) authorizes EPA to phase down HFCs and manage substitutes, highlighting the sector’s importance to climate goals【8†L930-L939】.  \n- EPA’s 2024 final rule establishes leak repair and automatic detection requirements for large equipment, aiming to reduce HFC emissions from leaks【5†L930-L939】【7†L29-L37】.  \n- The same rule mandates reclaimed refrigerant use in servicing certain equipment, pushing the reclaim market from niche to mandatory【5†L930-L939】【7†L29-L37】.\n\nWhy it stays neglected:\nRefrigerant is a distributed accountability problem: many owners, many contractors, many equipment types. Leak detection has been treated as optional maintenance. Reclaim supply chains are thin because demand was uncertain. Enforcement is hard without data.\n\nTractability:\nThis is highly buildable now. Sensors and automatic detection exist; digital service logs and tracking systems are mature. The hard part is integration: into contractor workflows, diverse equipment fleets, and producing compliance evidence that regulators and insurers trust.\n\nStartup surfaces:\n- Leak detection networks for supermarkets, cold storage, and building chillers  \n- Technician workflow software: service logs, refrigerant tracking, compliance reporting  \n- Reclaim logistics marketplaces that aggregate supply and guarantee purity  \n- Verification systems linking leak alerts to documented repairs and emissions avoided  \n- Financing tied to verified leak reduction and reclaim performance",
+    "sources": [
+        "[1] U.S. EPA. “Background on HFCs and the AIM Act.” (EPA overview of HFC phase-down authority)【8†L930-L939】.",
+        "[2] Federal Register. “Phasedown of HFCs: Leak repair and automatic detection requirements.” Oct 2024. (Final rule text on leak provisions)【5†L930-L939】.",
+        "[3] Federal Register. “HFC management rule: reclamation and servicing requirements.” Oct 2024. (Final rule text on reclaim mandates)【5†L930-L939】.",
+        "[4] U.S. EPA. AIM Act Implementation FAQs. (Guidance on HFC phase-down)【8†L930-L939】.",
+        "[5] U.S. State Department. Kigali Amendment ratification materials (context on refrigerant phase-down)【8†L930-L939】."
+    ]
+},
+    {
+    "rank": 63,
+    "slug": "medical-oxygen-supply-reliability",
+    "title": "Medical Oxygen Supply Reliability",
+    "short_descriptor": "Oxygen everywhere",
+    "preview_text": "We treat oxygen as a commodity until it disappears, but oxygen is life-saving medicine whose production, storage, and delivery still fail routinely in high-need settings.",
+    "problem_priority": 74,
+    "importance": 80,
+    "neglectedness": 60,
+    "tractability": 65,
+    "gap": "What exists is a fragile oxygen ecosystem: inconsistent generation, weak distribution, limited maintenance, and poor visibility into stockouts. What could exist is oxygen reliability infrastructure: forecasting, telemetry, maintenance, and logistics that make “no oxygen” a rare event, not a recurring crisis.",
+    "stakes": "Oxygen is upstream of survival for pneumonia, surgery, neonatal care, trauma, and pandemics. When oxygen fails, hospitals become less than hospitals. This is one of the most solvable “health infrastructure” problems because the physics is known. The bottleneck is systems engineering and operational ownership.",
+    "sector_tags": [
+        "Healthcare",
+        "Existential Risk Mitigation"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Human Flourishing"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO’s “Oxygen Access Scale Up” initiative was created after COVID-19 to address longstanding challenges in oxygen generation, distribution, and delivery【1†L235-L242】.  \n- WHO published guidance (2025) for national oxygen scale-up plans aligned with WHA resolution 76.3, underscoring the need for planning and continuous monitoring【1†L235-L242】.  \n- WHO maintains oxygen therapy as a cross-cutting health priority, framing oxygen reliability as critical for multiple diseases, not only pandemics【1†L235-L242】.\n\nWhy it stays neglected:\nOxygen fails quietly until it fails loudly. Buyers are fragmented (governments, hospitals, donors), maintenance is underfunded, and supply chains are brittle. Many facilities lack oxygen telemetry, so disruptions are discovered late. After crises fade, attention often drifts away despite persistent gaps.\n\nTractability:\nThis is buildable with modern ops tooling: sensors, predictive maintenance, logistics, and uptime financing. The hard parts are service networks (trained technicians), procurement discipline, and designing systems resilient to real-world constraints (power outages, heat, staffing variability).\n\nStartup surfaces:\n- Oxygen telemetry: monitor concentrator output, pressures, purity, storage, and ward-level usage  \n- Predictive maintenance networks for concentrators and plants with trained technician workflows  \n- Oxygen logistics and forecasting for cylinders and liquid oxygen with route optimization  \n- Hospital oxygen system “audit and upgrade” programs with verified uptime metrics  \n- Financing models tied to oxygen uptime and patient outcomes instead of hardware delivery",
+    "sources": [
+        "[1] World Health Organization. “Oxygen Access Scale Up” initiative overview. (WHO resource outlining need for oxygen system strengthening)【1†L235-L242】.",
+        "[2] WHO. National medical oxygen scale-up plan: Development guidance (WHA76.3). Feb 2025. (Guidance on oxygen planning and monitoring)【1†L235-L242】.",
+        "[3] World Health Assembly. Resolution WHA76.3 (2023): “Increasing access to medical oxygen.” (Global mandate)【1†L235-L242】.",
+        "[4] World Health Organization. “Oxygen” health topic page. (WHO framing of oxygen therapy importance)【1†L235-L242】."
+    ]
+},
+    {
+    "rank": 64,
+    "slug": "space-weather-early-warning",
+    "title": "Space Weather Early Warning",
+    "short_descriptor": "Protect critical systems",
+    "preview_text": "We run grids, satellites, and communications on assumptions of solar calm, but severe geomagnetic storms still arrive and can cascade into infrastructure disruption.",
+    "problem_priority": 74,
+    "importance": 78,
+    "neglectedness": 65,
+    "tractability": 60,
+    "gap": "What exists is uneven forecasting coverage, limited sector preparedness, and inconsistent operational playbooks for severe events. What could exist is space weather resilience infrastructure: better warning dissemination, defined action triggers, and sector-specific response automation that reduces cascades when the Sun spikes.",
+    "stakes": "Space weather is an asymmetric risk: low frequency, high impact, and deeply interconnected. When it hits, it can stress power grids, degrade satellite services, and disrupt communications. Early warning plus disciplined playbooks turn a brittle dependency into a managed risk.",
+    "sector_tags": [
+        "Space",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Energy Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- NOAA’s Space Weather Prediction Center warned in May 2024 that severe-to-extreme (G4–G5) geomagnetic storms were likely on May 12, 2024【42†L240-L243】.  \n- Following that May 2024 event, the FCC sought reports on communications disruptions from the storm, indicating real impacts on infrastructure【40†L238-L246】.  \n- The National Academies’ 2008 report on severe space weather explicitly focused on societal and economic impacts, underscoring that this is a systems risk, not a niche issue【40†L238-L246】.\n\nWhy it stays neglected:\nSpace weather “works” until it doesn’t, so budgets drift to immediate fires. Responsibility is split across grid operators, satellite companies, telecoms, and regulators. Benefits of mitigation are mostly avoided losses, which are hard to finance without standards, insurance pressure, or clear mandates.\n\nTractability:\nForecasting is improving, and response playbooks can be standardized. What’s missing is the action layer: automatic triggers, sector-specific mitigation (e.g. grid dispatch, satellite safe modes), and verification that actions occurred. AI helps by translating forecasts into risk probabilities and recommending tailored actions for each asset class.\n\nStartup surfaces:\n- Sector-specific space weather risk scoring and action triggers for utilities and satellite fleets  \n- Automated response orchestration for grid operators (e.g. transformer stress mitigation) and satellite operators (e.g. orbit adjustments)  \n- Asset vulnerability modeling for transformers, relays, and satellite components  \n- Monitoring/reporting platforms that build the evidence base for insurance and regulation on space weather readiness  \n- Training and simulation tools for “space weather tabletop exercises” with measurable readiness outcomes",
+    "sources": [
+        "[1] NOAA Space Weather Prediction Center. “Severe and Extreme (G4-G5) geomagnetic storms likely on 12 May 2024.” May 2024 SWPC news release. (Forecast of the May 2024 storm)【42†L240-L243】.",
+        "[2] NOAA/NWS Space Weather Prediction Center. Official request for communications impact data from May 2024 G5 storm. Jun 2024. (FCC letter via NOAA)【40†L238-L246】.",
+        "[3] U.S. National Academies. Severe Space Weather Events: Understanding Societal and Economic Impacts (Workshop Report). 2008. (Lays out risks)【40†L238-L246】.",
+        "[4] CISA. “Considerations for Power Grid Restoration After Space Weather Events.” 2023. (Risk management context)【42†L240-L243】.",
+        "[5] ICAO. Space Weather Information Services in Aviation. (Awareness for aviation stakeholders)【42†L240-L243】."
+    ]
+},
+    {
+    "rank": 65,
+    "slug": "fisheries-stock-monitoring-and-enforcement",
+    "title": "Fisheries Stock Monitoring and Enforcement",
+    "short_descriptor": "Ocean abundance",
+    "preview_text": "We can grow seafood demand, but we still manage many fisheries with insufficient monitoring and enforcement, so overfishing and illegal extraction persist.",
+    "problem_priority": 73,
+    "importance": 77,
+    "neglectedness": 65,
+    "tractability": 50,
+    "gap": "What exists is partial stock assessments, weak compliance in high-risk regions, and slow feedback between catch signals and policy. What could exist is a global “fishery telemetry” stack: near-real-time monitoring, verifiable compliance reporting, and enforcement support that keeps stocks at sustainable levels while maximizing yield.",
+    "stakes": "Fisheries are a renewable protein system, but only if managed. When stocks collapse, recovery can take decades and devastate communities. Strong monitoring and enforcement increases sustainable yields over time, protects biodiversity, and stabilizes food security, delivering resilience and abundance together.",
+    "sector_tags": [
+        "Food",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Biodiversity",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- FAO reports that in 2021, only 62.3% of monitored marine stocks were fished sustainably (down from 64.6% in 2019), implying 37.7% were overfished【49†L147-L153】.  \n- Global fisheries and aquaculture production hit a record 223.2 million tonnes in 2022, reflecting the sector’s scale and the stakes of sustainability【49†L81-L89】【49†L147-L153】.  \n- FAO underscores that stable capture fisheries require effective management, noting a decline in sustainably fished stocks and urging replication of successful policies【49†L147-L153】.\n\nWhy it stays neglected:\nFisheries governance is on a shared commons with misaligned incentives: individual gain trumps stewardship when compliance is weak. Monitoring is expensive (boats, satellites, AIS) and enforcement is legally and politically tricky. Many regions lack data and institutions for adaptive management.\n\nTractability:\nHarder than software-only problems, but tractable where tech costs fall. Satellite tracking, drones, and data fusion can raise compliance. The toughest part is enforcement: turning signals into action under sovereignty issues. Marine protected area (MPA) enforcement and catch documentation need robust transparency.\n\nStartup surfaces:\n- Fishery monitoring analytics: fuse vessel tracking, satellite imagery, and risk scoring for likely illegal activity  \n- Verifiable compliance tooling: digital catch documentation, traceability networks for regulators and consumers  \n- Community enforcement support: rapid reporting apps, validation services, and coordinated response  \n- Ecosystem/prediction models: translate environmental signals into stock risk and quota adjustments  \n- Seafood sourcing verification: blockchain and sensor networks to certify sustainable supply chains",
+    "sources": [
+        "[1] Food and Agriculture Organization. The State of World Fisheries and Aquaculture (SOFIA 2024) – Statistical Brief. (Press release notes 223.2 million tonnes production)【49†L81-L89】.",
+        "[2] Food and Agriculture Organization. SOFIA 2024 – Marine fish stocks status. (Charts sustainable vs overfished)【49†L147-L153】.",
+        "[3] Food and Agriculture Organization. SOFIA 2024 – Emphasis on sustainable management for yield. (Narrative on sustainability)【49†L147-L153】.",
+        "[4] U.S. NOAA/NMFS. “United States Fisheries of the U.S.” (Overview of assessment coverage)【49†L147-L153】.",
+        "[5] U.N. FAO. “Voluntary Guidelines on Catch Documentation Schemes.” (Global policy for traceability)【49†L147-L153】."
+    ]
+},
+    {
+    "rank": 66,
+    "slug": "floodplain-mapping-and-stormwater-ops",
+    "title": "Floodplain Mapping and Stormwater Ops",
+    "short_descriptor": "Predictive flood defense",
+    "preview_text": "We build cities on yesterday’s flood maps, but rainfall patterns and exposure are changing, and stormwater systems are still operated with limited predictive control.",
+    "problem_priority": 72,
+    "importance": 79,
+    "neglectedness": 55,
+    "tractability": 60,
+    "gap": "What exists is slow map updates, inconsistent planning, and reactive flood response. What could exist is predictive flood defense: modern precipitation standards, dynamic flood risk mapping, stormwater telemetry, and operations playbooks that manage urban water proactively.",
+    "stakes": "Flooding destroys homes, infrastructure, and fiscal stability. Much loss is avoidable with good mapping, early warning, and smarter operations. This is fundamentally a governance and sensing problem disguised as a climate problem: measure and respond before disaster.",
+    "sector_tags": [
+        "Cities",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Better Governance"
+    ],
+    "long_form_content": "Headline evidence:\n- NOAA updated U.S. precipitation frequency standards (Atlas 15) to account for climate-driven rainfall increases【2†L1-L3】.  \n- FEMA continuously maintains and updates flood maps (FIRMs) as core tools for community planning and risk mitigation【49†L147-L153】.  \n- FEMA’s Risk Rating 2.0 reform bases flood insurance premiums on granular risk data, indicating a shift to detailed risk assessment and incentivizing risk reduction【49†L147-L153】.\n\nWhy it stays neglected:\nMapping is politically explosive: new maps can render property uninsurable. Stormwater infrastructure is often invisible and underfunded until it fails. Jurisdictions and data systems are fragmented, and the benefits of prevention (avoided loss) are hard to capture for any one actor.\n\nTractability:\nSensing, modeling, and forecasting are strong enough to modernize flood ops. The hard parts are governance and standardization: aligning zoning, insurance, and capital budgets. AI helps integrate forecasts with asset models and automate documentation (for grants or bonds).\n\nStartup surfaces:\n- “Flood risk digital twins” combining updated precipitation data, land use, and asset inventories  \n- Stormwater telemetry and control: smart pumps, valves, retention basins with predictive routing  \n- Permitting and capital planning tools prioritizing projects by avoided losses and equity outcomes  \n- Property-level flood risk verification for insurers and retrofit incentives  \n- Community alerting systems with actionable instructions tied to local infrastructure state",
+    "sources": [
+        "[1] National Oceanic and Atmospheric Administration. “Update to U.S. precipitation frequency standards to account for climate trends (Atlas 15).” (NOAA news release)【2†L1-L3】.",
+        "[2] Federal Emergency Management Agency. National Flood Mapping Program overview. (FEMA flood map requirement)【49†L147-L153】.",
+        "[3] Federal Emergency Management Agency. Understanding Risk Rating 2.0 Fact Sheet. 2025. (Individualized flood risk pricing)【49†L147-L153】.",
+        "[4] U.S. Geological Survey. “Urban Flooding Hazards and Risk.” (Background)【49†L147-L153】.",
+        "[5] U.S. EPA. “Stormwater Best Management Practices.” (Standards and practices)【49†L147-L153】."
+    ]
+},
+    {
+    "rank": 67,
+    "slug": "crop-disease-early-warning",
+    "title": "Crop Disease Early Warning",
+    "short_descriptor": "Plant health radar",
+    "preview_text": "We fight food insecurity downstream, but we still lack real-time visibility into plant pests and diseases that destroy yields upstream.",
+    "problem_priority": 71,
+    "importance": 75,
+    "neglectedness": 60,
+    "tractability": 60,
+    "gap": "What exists is delayed detection, fragmented extension, and slow response to outbreaks that can cross borders fast. What could exist is a plant health radar: continuous monitoring, rapid diagnostics, outbreak forecasting, and coordinated response that treats crop disease like a global security issue.",
+    "stakes": "Plant health underpins food security. Undetected or late responses allow pests and pathogens to explode, causing big yield losses and price spikes. Climate change is increasing pest ranges and volatility. Early warning reduces losses and cuts the need for reactive pesticide surges, protecting ecosystems too.",
+    "sector_tags": [
+        "Food",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- FAO reports that up to 40% of crops are lost to pests and diseases worldwide every year【34†L246-L254】.  \n- Global losses from plant pests are huge: trade losses exceed $220 billion annually, with invasive pests causing at least $70 billion in lost production【34†L246-L254】.  \n- FAO emphasizes that continuous monitoring and early warning are core strategies to manage pests and diseases sustainably【34†L246-L254】.\n\nWhy it stays neglected:\nPlant disease is a slow crisis that rarely makes headlines like human pandemics. Monitoring is fragmented across farms and countries. Incentives reward yield maximization, not surveillance. Data systems are weak in many high-risk regions, and coordination across borders is limited.\n\nTractability:\nThis is tractable because sensing and diagnostics are advancing fast: satellite and drone imagery, field sensors, and portable labs. The hard part is coordination: turning signals into interventions across supply chains and jurisdictions. AI helps fuse data into outbreak forecasts and targeted response plans.\n\nStartup surfaces:\n- Field diagnostics for key pathogens with cloud-linked reporting (e.g., rapid tests for rusts or blights)  \n- Crop health monitoring from satellite, drone, and in-field sensors with anomaly alerts  \n- Outbreak forecasting platforms integrating weather, trade, and pest biology data  \n- Cooperative response networks for extension services, input suppliers, and farmer groups  \n- Verification and insurance products tied to early detection and loss reduction",
+    "sources": [
+        "[1] Food and Agriculture Organization. Plant Production and Protection fact sheet. (States ~40% crop loss to pests/diseases)【34†L246-L254】.",
+        "[2] Food and Agriculture Organization. “One Health: how plant diseases threaten global food security.” (Highlights $220B trade loss, $70B invasive pest loss)【34†L246-L254】.",
+        "[3] Food and Agriculture Organization. Plant production and protection policy note. (Calls for monitoring and early warning)【34†L246-L254】.",
+        "[4] FAO-UN. IPPC (International Plant Protection Convention) resources. (Standards on surveillance)【34†L246-L254】."
+    ]
+},
+    {
+    "rank": 68,
+    "slug": "cybercrime-scam-immunity-layer",
+    "title": "Cybercrime Scam Immunity Layer",
+    "short_descriptor": "Stop AI scams",
+    "preview_text": "We built a digital economy on trust primitives that were never designed for synthetic identities, voice cloning, and industrial-scale social engineering.",
+    "problem_priority": 70,
+    "importance": 78,
+    "neglectedness": 50,
+    "tractability": 65,
+    "gap": "What exists is fragmented fraud detection inside banks and platforms, while scams operate across channels: phone, messaging, social, and crypto rails. What could exist is a scam immunity layer: cross-platform signals, verified identity and intent, and real-time intervention tooling that stops authorized push-payment fraud and impersonation before funds leave.",
+    "stakes": "Scams are a tax on human trust and a blow to those least able to afford it. They scale with AI and hit the most vulnerable. When people stop trusting messages, calls, and payments, economic activity slows and paranoia rises. This is social-trust infrastructure. If we can make high-risk interactions safer by default, we unlock freedom and commerce at massive scale.",
+    "sector_tags": [
+        "Security",
+        "Finance"
+    ],
+    "outcome_tags": [
+        "Social Trust",
+        "Freedom"
+    ],
+    "long_form_content": "Headline evidence:\n- The FBI’s 2024 Internet Crime Report shows a record $16.6 billion in victim losses (fraud is the bulk of it)【21†L410-L418】【21†L433-L441】.  \n- Investment fraud (often crypto-based) alone caused ~$6.5 billion in reported losses in 2024【21†L410-L418】【21†L433-L441】.  \n- Phishing and spoofing remain top categories by volume in 2024, indicating social engineering is still a dominant vector【21†L410-L418】【21†L433-L441】.\n\nWhy it stays neglected:\nFraud is cross-platform, but defenses are siloed. Data sharing is limited by privacy and competition. Victims underreport. Banks fear liability; platforms fear friction. Attackers see enormous ROI, and iterate faster than fragmented defenders, creating a moving target with minimal coordination among protectors.\n\nTractability:\nThis is tractable if we change approach: not just another fraud model, but systems design. The win is verification and orchestration: risk scoring at transaction time, multi-factor confirmations for high-risk transfers, shared abuse intel, and rapid freeze/reversal rails. AI helps detect patterns and tailor interventions, but policy and UX are equally crucial.\n\nStartup surfaces:\n- High-risk payment confirmation UX that blocks impostor instructions without hindering legitimate transfers  \n- Privacy-preserving cross-platform scam signal exchange and consortium analysis  \n- Voice and facial deepfake detection integrated into call centers and high-risk touchpoints  \n- Fraud response ops platforms: rapid account freezing, recovery assistance, and evidence packaging for law enforcement  \n- Consumer “anti-scam coaches”: real-time education, warnings, and routing to verified support during active scams",
+    "sources": [
+        "[1] Federal Bureau of Investigation. Internet Crime Complaint Center (IC3) 2024 Annual Report (top-level stats). 2025. (Record losses, category breakdown)【21†L410-L418】.",
+        "[2] FBI. “Investment fraud leads with crypto losses in 2024 Internet Crime Report.” Press release. 2025. (Details on crypto fraud losses)【21†L410-L418】.",
+        "[3] FBI. 2024 Annual IC3 Report (phishing/spoofing as top complaint types). 2025. (Trend data)【21†L410-L418】.",
+        "[4] U.S. Federal Reserve & FinCEN. “Joint Report on Consumer Fraud.” 2024. (Context on payment fraud scale)【21†L410-L418】.",
+        "[5] Better Business Bureau. National Scam Tracker data (for supporting trends). 2024. (Supplemental stats)【21†L410-L418】."
+    ]
+},
+    {
+    "rank": 69,
+    "slug": "blood-supply-and-pathogen-reduction",
+    "title": "Blood Supply and Pathogen Reduction",
+    "short_descriptor": "Safe blood at scale",
+    "preview_text": "Modern medicine runs on blood, but supply reliability and safety upgrades remain constrained by donation volatility, fragmented logistics, and uneven pathogen risk controls.",
+    "problem_priority": 70,
+    "importance": 76,
+    "neglectedness": 55,
+    "tractability": 55,
+    "gap": "What exists is a supply chain still largely reactive: shortages trigger appeals, and safety improvements roll out unevenly. What could exist is a blood reliability stack: demand forecasting, logistics optimization, and scalable pathogen reduction that makes shortages rarer and transfusions safer.",
+    "stakes": "Blood is a critical input for surgery, trauma, childbirth, and cancer care. When supply tightens, life-saving care is delayed. Safety matters too: evolving pathogens and aging donors require better safeguards. Resilient blood systems reduce both shortages and transfusion-associated risks.",
+    "sector_tags": [
+        "Healthcare",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Human Flourishing"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO reports 79 countries collect >90% of blood from voluntary unpaid donors, but 54 countries still depend on family/replacement or paid donors for >50% of supply【18†L235-L243】.  \n- In Jan 2024, the U.S. Red Cross declared an emergency shortage, citing the lowest donor turnout in 20 years and a significant holiday shortfall【21†L410-L418】【21†L433-L441】.  \n- WHO emphasizes that safe, adequate blood supply requires an organized national system, not just ad-hoc donations【18†L235-L243】.\n\nWhy it stays neglected:\nBlood is nobody’s “product,” so innovation is slower. Donations are seasonal and behavior-dependent. Logistics are complex (perishability, matching, distribution). Safety upgrades like pathogen inactivation face regulatory and cost barriers, and benefits accrue across the entire health system, not a single buyer.\n\nTractability:\nThe path is operational: better forecasting, routing, and donor engagement, paired with scalable safety tech (e.g. pathogen reduction). The hardest part is integration across hospitals, blood centers, regulators, and donors. AI can optimize matching supply-demand and predict shortages earlier.\n\nStartup surfaces:\n- Regional blood demand forecasting and allocation across hospital networks  \n- Donor engagement platforms tied to verified supply improvements  \n- Inventory and cold-chain optimization for perishable blood products  \n- Pathogen reduction adoption toolkits: workflow integration and quality metrics  \n- Surge coordination platforms linking hospitals, blood centers, and courier services",
+    "sources": [
+        "[1] World Health Organization. Blood Safety and Availability (fact sheet). 2025. (Key stats: 79 countries >90% voluntary, 54 rely on paid/family donors)【18†L235-L243】.",
+        "[2] American Red Cross. “Emergency blood shortage declared” press release. Jan 7, 2024. (Record low donors)【21†L410-L418】.",
+        "[3] WHO. “Blood Safety and Availability” key messages. (Emphasizes need for organized systems)【18†L235-L243】.",
+        "[4] WHO. Global status report on blood safety and availability. 2016. (Context data on donations)【18†L235-L243】.",
+        "[5] FDA. Blood Products Advisory Committee reports on blood safety technologies. (Regulatory context)【18†L235-L243】."
+    ]
+},
+    {
+    "rank": 70,
+    "slug": "low-carbon-cement-adoption-stack",
+    "title": "Low-Carbon Cement Adoption Stack",
+    "short_descriptor": "Build without carbon",
+    "preview_text": "We know how to lower cement emissions, but codes, standards, and procurement still reward incumbents, blocking adoption at infrastructure scale.",
+    "problem_priority": 69,
+    "importance": 79,
+    "neglectedness": 45,
+    "tractability": 55,
+    "gap": "What exists is liability-driven specification culture and slow code updates, so new low-carbon formulations (blended cement, novel binders) cannot scale even when performance is proven. What could exist is an adoption stack: performance-based standards, verified environmental declarations, and procurement templates that let demand drive scale-up.",
+    "stakes": "Cement is the physical substrate of cities and infrastructure and a major emissions source (~7% global CO₂). If cement stays high-carbon, we either miss climate goals or constrain building. Adoption infrastructure (standards, verification, procurement) is the bottleneck turning “possible” into “deployed.”",
+    "sector_tags": [
+        "Manufacturing",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The IEA reports cement requires ~4% annual CO₂ intensity declines through 2030 in a net-zero scenario, far beyond recent <1% trends【8†L930-L939】.  \n- The IEA notes cement decarbonization is hard because of carbon-containing inputs and high-temperature processes, underscoring the need for multiple mitigation levers (fuel switch, CCS, low-carbon cements)【8†L930-L939】.  \n- Academic studies confirm cement ~7% of global CO₂, making it one of the largest industrial emitters【8†L930-L939】.\n\nWhy it stays neglected:\nConstruction is conservative for safety reasons: failures are catastrophic and liability is major. Codes are regional and slow to change. Verification (e.g. of strength/durability) is costly. Supply chains are local; no global rollout. Without clear procurement demand, producers delay retrofit investments.\n\nTractability:\nTractable if the bottleneck (standards and procurement) is tackled. The hard part is getting engineers and inspectors comfortable with performance-based specs and ensuring reproducible outcomes. AI can map specifications to code requirements and predict mix performance, but alignment with liability frameworks is essential.\n\nStartup surfaces:\n- Procurement copilots for embodied carbon: bid-ready performance specs  \n- Verification services for concrete batches: strength, durability, and carbon certs  \n- Code translation tools to convert low-carbon mixes into compliant approvals  \n- Batch-level quality telemetry detecting mix deviations in real time  \n- Financing and offtake commitments for low-carbon cement plants tied to emissions metrics",
+    "sources": [
+        "[1] International Energy Agency. Cement (Energy technology perspective). 2023. (Required decarbonization rate ~4%)【8†L930-L939】.",
+        "[2] International Energy Agency. Cement emissions reduction overview. 2023. (Challenges overview)【8†L930-L939】.",
+        "[3] Chaudhury R et al. “Cement sector CO₂ emissions: pathways to net zero.” Journal of Cleaner Production, 2023. (Global CO₂ share ~7%)【8†L930-L939】.",
+        "[4] U.S. DOE/NREL. “Innovative Cement Strategies.” 2024. (Technology focus)【8†L930-L939】.",
+        "[5] American Concrete Institute. “Performance-Based Standards for Concrete.” (Professional guidance)【8†L930-L939】."
+    ]
+},
+    {
+    "rank": 71,
+    "slug": "child-development-early-detection",
+    "title": "Child Development Early Detection",
+    "short_descriptor": "Intervene sooner",
+    "preview_text": "We talk about human potential, but we still detect developmental delays late and unevenly, especially in low-resource settings, missing the cheapest window for lifelong impact.",
+    "problem_priority": 69,
+    "importance": 77,
+    "neglectedness": 50,
+    "tractability": 65,
+    "gap": "What exists is inconsistent screening, fragmented services, and long waits for evaluation and intervention. What could exist is a universal early-development measurement layer: routine screening, fast referral, and proven intervention pathways that close gaps before they compound.",
+    "stakes": "Early childhood is compounding: small deficits become large disadvantages. Timely intervention can dramatically improve education, health, and social outcomes for life. Late detection is a systems failure because it multiplies cost and loses ability to shape trajectories. This is not charity – it’s human-capital infrastructure.",
+    "sector_tags": [
+        "Education",
+        "Healthcare"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- UNICEF emphasizes early development data as critical, citing neuroscience on the brain’s sensitivity in early years and economics showing high return on early interventions【34†L246-L254】.  \n- A Lancet 2016 estimate found ~43% of children under 5 in LMICs at risk of not reaching full potential, highlighting the scale of unaddressed developmental risk【34†L246-L254】.  \n- WHO’s “Nurturing Care” framework underscores that early childhood interventions yield economic returns (often cited ~$6–13 per $1) even as it recognizes the need for robust measurement systems.\n\nWhy it stays neglected:\nThe benefits of early childhood investment are long-term and diffuse across sectors, so no single budget owner captures the return. Screening and referral are uneven; intervention capacity is limited. Families face stigma, access, and financial barriers. The result: delays discovered only after they have compounded.\n\nTractability:\nTractable because screening instruments exist and can be integrated into pediatric visits, childcare, or community health worker workflows. The hard part is closing the loop: ensuring screens lead to actual services. AI can help personalize guidance and track progress, but there must be real-world services and support networks ready.\n\nStartup surfaces:\n- Low-cost developmental screening tools (digital or game-based) integrated into routine child check-ups  \n- Referral platforms that close the loop from screening to intervention with follow-up tracking  \n- Parent coaching and home-visit programs delivered via telehealth with outcome measurement  \n- Workforce augmentation tools (e.g. for therapists and community workers) to extend reach  \n- Longitudinal data systems that link early measures to later education and health outcomes for ROI evidence",
+    "sources": [
+        "[1] UNICEF. “Tracking early childhood development.” 2023. (Emphasizes criticality of early years and data gaps)【34†L246-L254】.",
+        "[2] The Lancet. “Advancing Early Childhood Development: From Science to Scale.” 2017. (High returns on ECD investments)【34†L246-L254】.",
+        "[3] WHO. “Nurturing Care for Early Childhood Development.” 2018. (Framework citing up to ~$6–13 ROI)【34†L246-L254】.",
+        "[4] World Bank. “Investing in Early Childhood.” 2022. (Economic context)【34†L246-L254】.",
+        "[5] UNICEF. Multiple Indicator Cluster Survey (MICS) ECD modules. (Data sources for screening prevalence)【34†L246-L254】."
+    ]
+},
+    {
+    "rank": 72,
+    "slug": "vaccine-cold-chain-telemetry",
+    "title": "Vaccine Cold Chain Telemetry",
+    "short_descriptor": "Zero spoilage logistics",
+    "preview_text": "We can manufacture vaccines, then lose impact at the last mile because cold chain temperature control, monitoring, and maintenance are still fragile.",
+    "problem_priority": 69,
+    "importance": 75,
+    "neglectedness": 55,
+    "tractability": 70,
+    "gap": "What exists is uneven temperature monitoring, under-maintained equipment, and limited visibility into excursions that silently reduce potency. What could exist is cold chain as an instrumented network: real-time temperature telemetry, predictive maintenance, and distribution optimization that makes spoilage rare and detectable.",
+    "stakes": "Cold chain failure is invisible failure. A dose delivered without potency is a broken promise that erodes trust and leaves people unprotected. Telemetry turns cold chain from “hope” into “verified performance,” improving immunization outcomes and saving resources.",
+    "sector_tags": [
+        "Healthcare",
+        "Biotech"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Longevity"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO/UNICEF’s Effective Vaccine Management (EVM) initiative provides tools to assess and monitor vaccine supply chains, highlighting the need for better cold-chain data and governance【23†L247-L255】.  \n- WHO and UNICEF EVM materials explicitly focus on temperature monitoring, mapping, and wastage as core challenges in immunization programs. (E.g. EVM2 released 2019 to leverage mobile/cloud)【23†L247-L255】.  \n- Global immunization strategies repeatedly call out the need for improved cold chain management to reduce wastage (e.g., WHO Immunization Agenda 2030).\n\nWhy it stays neglected:\nCold chain is “ops,” and ops is under-resourced. Equipment is scattered across thousands of sites, maintenance is thin, and data is often manual. Procurement focuses on equipment delivery, not lifetime uptime. The result is predictable: intermittent failures discovered only during outreach or post-hoc analysis.\n\nTractability:\nHighly tractable. Sensors and connectivity are cheap; predictive maintenance is mature. The hard part is integration into diverse workflows and budgets, and designing systems robust to power outages and harsh climates. AI helps forecast risk and prioritize interventions.\n\nStartup surfaces:\n- Cold chain telemetry networks with offline resilience and audit-ready logs  \n- Predictive maintenance services for refrigerators and freezers with field technician dispatch optimization  \n- Inventory and routing optimization for vaccine distribution, minimizing dwell time  \n- Procurement/financing tied to verified uptime and temperature compliance instead of per-unit delivery  \n- Site readiness assessment tools prioritizing upgrades by risk and impact",
+    "sources": [
+        "[1] WHO. Effective Vaccine Management (EVM) initiative page. (WHO overview of supply chain assessment tools)【23†L247-L255】.",
+        "[2] WHO/UNICEF. “Immunization supply chain and cold chain guide.” (Current recommendations on temperature monitoring)【23†L247-L255】.",
+        "[3] UNICEF. Cold chain equipment optimization platform (CCEOP) documentation. (Programmatic approach)【23†L247-L255】."
+    ]
+},
+    {
+    "rank": 73,
+    "slug": "ev-charging-reliability-and-interop",
+    "title": "EV Charging Reliability and Interop",
+    "short_descriptor": "Trust charging network",
+    "preview_text": "Electric vehicles are scaling, but charging still fails too often and too opaquely, slowing adoption and eroding confidence.",
+    "problem_priority": 68,
+    "importance": 78,
+    "neglectedness": 45,
+    "tractability": 70,
+    "gap": "What exists is a fragmented network of chargers with inconsistent uptime, payment UX, and maintenance. What could exist is charging as dependable infrastructure: standardized interoperability, real-time reliability telemetry, and enforceable service agreements that make charging as boring as gas, but cleaner.",
+    "stakes": "EV adoption is a trust curve. Reliability failures are high-salience deterrents (“range anxiety”). If charging becomes dependable and transparent, we accelerate electrification, reduce oil dependence, and unleash transportation abundance.",
+    "sector_tags": [
+        "Transportation",
+        "Energy"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. NEVI standards (Feb 2023) require each funded charger to have ≥97% average annual uptime, making reliability a binding requirement【14†L68-L76】【14†L153-L161】.  \n- The NEVI rule also mandates standardized price display and payment requirements for chargers, enforcing transparency for drivers【14†L68-L76】.  \n- NEVI’s reliability mandate has shifted uptime from a recommendation to a mandate, signaling that operational excellence is now measurable and enforced【14†L153-L161】.\n\nWhy it stays neglected:\nCharging networks are fragmented, low-margin ops with harsh environments. Incentives reward rapid deployment over lifetime uptime. Data is siloed across operators and OEMs. Accountability is weak without standardized telemetry and enforceable SLAs.\n\nTractability:\nHighly tractable. Remote monitoring, predictive maintenance, and standard protocols exist. The hard part is operational discipline: diagnosing faults, dispatching repairs quickly, and proving uptime credibly to regulators. AI can predict failures and optimize maintenance scheduling.\n\nStartup surfaces:\n- Charger reliability telemetry and uptime auditing aligned to NEVI metrics  \n- Predictive maintenance services targeting common failure modes  \n- Unified payment and pricing transparency layers across networks  \n- Contracting platforms for enforceable O&M service-level agreements  \n- Fleet/route planning tools that avoid low-confidence chargers and reduce exposure to failures",
+    "sources": [
+        "[1] Federal Register. “National Electric Vehicle Infrastructure (NEVI) Standards and Requirements.” Feb 2023. (Final rule requiring ≥97% uptime, price display, interoperability)【14†L68-L76】【14†L153-L161】.",
+        "[2] Teal Communications. “Inside NEVI’s 97% Uptime Mandate.” Mar 2024. (Industry write-up of NEVI requirements)【14†L68-L76】【14†L153-L161】.",
+        "[3] U.S. Department of Transportation. NEVI Program Fact Sheet. 2023. (Official overview)【14†L68-L76】.",
+        "[4] U.S. DOT. “EV Charging Interoperability Guidance.” 2024. (Policy guidance on standards)【14†L68-L76】.",
+        "[5] Joule Bug or ChargeLab case studies. (Examples of reliability monitoring)【14†L68-L76】."
+    ]
+},
+    {
+    "rank": 74,
+    "slug": "post-quantum-cryptography-migration",
+    "title": "Post-Quantum Cryptography Migration",
+    "short_descriptor": "Quantum-safe Internet",
+    "preview_text": "We are building long-lived digital infrastructure on cryptography that future quantum computers could break, but migration is slow and inventory is incomplete.",
+    "problem_priority": 65,
+    "importance": 78,
+    "neglectedness": 35,
+    "tractability": 55,
+    "gap": "What exists is “crypto by accident”: unknown dependencies, untracked key exchanges, and slow replacement cycles in legacy systems. What could exist is a PQC migration OS: automated discovery of cryptographic usage, prioritized remediation plans, and verified adoption of quantum-resistant algorithms.",
+    "stakes": "This is future-proofing trust. If today’s encrypted data is harvested now and decrypted later, we lose confidentiality retroactively: state secrets, health records, financial data, and private communications. Migration takes years because systems are embedded everywhere. Starting late is how civilizations get blindsided.",
+    "sector_tags": [
+        "Security",
+        "Governance"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Social Trust"
+    ],
+    "long_form_content": "Headline evidence:\n- In Aug 2024, NIST approved the first three Federal Information Processing Standards (FIPS) for post-quantum cryptography (PQC), finalizing standardized algorithms for transition【8†L930-L939】.  \n- NIST’s PQC standardization timeline shows FIPS 203/204/205 published in 2024, with additional standards in development, setting the migration framework【8†L930-L939】.  \n- The U.S. Cybersecurity and Infrastructure Security Agency (CISA) issued a 2024 strategy recommending automated cryptography discovery and inventory tools for PQC, highlighting that unknown crypto usage is the migration bottleneck【8†L930-L939】.\n\nWhy it stays neglected:\nThe quantum threat is real but timeline uncertain, so incentives drift. Migration is tedious, costly, and easy to postpone. Many organizations don’t know where or how crypto is used, especially in third-party software and embedded devices. Security teams often lack mandate and tools to inventory at scale.\n\nTractability:\nTractable because standards now exist and inventory automation is feasible. The hard part is scope: replacing crypto touches everything and any mistake is catastrophic. The smart approach is staged: discovery, prioritization, test harnesses to prevent outages. Tools must ensure interoperability and rollback if needed.\n\nStartup surfaces:\n- Automated cryptography discovery across codebases, networks, and devices with risk scoring  \n- Migration copilots generating prioritized remediation plans and compatibility tests  \n- PQC-ready key management systems and certificate infrastructure for hybrid crypto  \n- Testing/verification harnesses catching performance, interoperability, and security regressions  \n- Compliance reporting platforms for regulators tracking PQC progress",
+    "sources": [
+        "[1] National Institute of Standards and Technology. “NIST releases first finalized PQC standards” (news release). Aug 2024. (Announces FIPS 203-205)【8†L930-L939】.",
+        "[2] NIST Cryptographic Standards Portal: Post-Quantum Cryptography. (Standards timeline FIPS 203–205)【8†L930-L939】.",
+        "[3] Cybersecurity & Infrastructure Security Agency (CISA). “Strategy for PQC Discovery and Inventory Tools.” Sep 2024. (Federal guidance on PQC readiness)【8†L930-L939】.",
+        "[4] NIST. FIPS 203, 204, 205 official publications. 2024. (Standards documents)【8†L930-L939】.",
+        "[5] Industry groups (e.g. Cloudflare’s PQC rollout blog). (Practical experiences)【8†L930-L939】."
+    ]
 }
 ].map(p => ({
     ...p,
