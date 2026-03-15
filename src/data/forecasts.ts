@@ -97,6 +97,18 @@ const getPsychedelicSaaSCurve = (slug: string): CategoryForecast => ({
     }
 });
 
+// A curve for capital-intensive real-estate/infrastructure with high long-term floor but slower multi-billion scale
+const getAgrivoltaicsInfrastructureCurve = (slug: string): CategoryForecast => ({
+    id: `fc_${slug}_agrivoltaics`,
+    targetIdeaSlug: slug,
+    sourceType: "AI",
+    updatedAt: new Date().toISOString(),
+    curves: {
+        '2030-01-01': { horizonDate: '2030-01-01', probabilities: generateCurve({ 1e7: 60, 1e9: 5, 1e11: 0.1 }, slug, 2030) },
+        '2035-01-01': { horizonDate: '2035-01-01', probabilities: generateCurve({ 1e7: 80, 1e9: 20, 1e11: 1 }, slug, 2035) },
+        '2040-01-01': { horizonDate: '2040-01-01', probabilities: generateCurve({ 1e7: 90, 1e9: 45, 1e11: 5 }, slug, 2040) }
+    }
+});
 
 export const forecastDatabase: Record<string, ForecastData> = {
     'afl': {
@@ -174,6 +186,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
     'biomex': {
         forecast: getDeepTechCurve('biomex'),
         aiRationale: "BiomeX operates at the intersection of elite human biological variation and clinical therapeutics. The AGI Futures forecaster model applies a DeepTech curve, reflecting high early-stage capital requirements and regulatory risk, followed by potentially massive exponential upside if donor-inspired therapeutic transfer is validated in hard endpoints."
+    },
+    'helioterra': {
+        forecast: getAgrivoltaicsInfrastructureCurve('helioterra'),
+        aiRationale: "Agrivoltaics represents a highly viable land-use arbitrage, but scaling financing-and-delivery infrastructure for physical projects requires immense capital overhead. The AGI Futures forecaster model reflects high confidence in creating $10M+ regional successes by 2030, but throttles the probability of a $100B+ mega-developer outcome until dual-use policy tailwinds and utility-scale integration compound deeply into the 2040s."
     },
 };
 
