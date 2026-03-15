@@ -4,7 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Unlock } from "lucide-react";
 
-export function OpenSourcePriority({ impactScore, neglectednessScore, description }: { impactScore: number, neglectednessScore: number, description: string }) {
+export function OpenSourcePriority({ impactScore, neglectednessScore }: { impactScore: number, neglectednessScore: number }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
@@ -44,29 +44,11 @@ export function OpenSourcePriority({ impactScore, neglectednessScore, descriptio
                                 </div>
                             </div>
 
-                            <p className="text-xl sm:text-2xl text-white/80 font-light leading-relaxed mb-10">
-                                {description}
-                            </p>
 
-                            <div className="relative w-full h-8 mb-4 px-2 mt-8 pb-8">
-                                {/* Neglectedness Track */}
-                                <div className="absolute top-1/2 left-0 right-0 h-2 -translate-y-1/2 rounded-full bg-white/10 overflow-hidden">
-                                    <div className="h-full bg-gradient-to-r from-blue-500 via-[var(--primary)] to-amber-500 opacity-50" />
-                                </div>
-                                {/* Marker */}
-                                <motion.div 
-                                    initial={{ left: 0 }}
-                                    animate={{ left: `${neglectednessScore}%` }}
-                                    transition={{ duration: 1.5, delay: 0.2, type: "spring", bounce: 0.2 }}
-                                    className="absolute top-0 w-10 h-10 -ml-5 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.8)] border-[3px] border-[var(--primary)] flex items-center justify-center z-10"
-                                >
-                                    <div className="w-3 h-3 rounded-full bg-[var(--primary)]" />
-                                </motion.div>
-                                <div className="absolute top-12 left-0 right-0 flex justify-between text-xs font-mono uppercase tracking-widest text-white/40">
-                                    <span>Inevitable</span>
-                                    <span>Neglected</span>
-                                </div>
-                            </div>
+
+                            <p className="text-xs text-white/40 font-light mt-8">
+                                Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective.
+                            </p>
                         </div>
                     </motion.div>
                 )}

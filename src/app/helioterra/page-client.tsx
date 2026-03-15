@@ -9,6 +9,7 @@ import { AnimatedGrid, AnimatedGridItem } from "./components/AnimatedGrid";
 import { ICPToggle, ICPToggleItem } from "./components/ICPToggle";
 import { ExpandableStatCard } from "./components/ExpandableStatCard";
 import { OpenSourcePriority } from "./components/OpenSourcePriority";
+import { NeglectednessSlider } from "./components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -297,6 +298,18 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
 
                 </motion.section>
 
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <NeglectednessSlider 
+                        score={77} 
+                        interpretation="HelioTerra serves as an open template for balancing agricultural yield and high-capacity solar buildouts, turning a polarized land-use conflict into compounding parallel infrastructure. While the broad concept is gaining traction, the specific operating model for financing and delivering dual-use farms remains highly neglected."
+                    />
+                </motion.section>
+
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
 
                 {/* Market & Business Model */}
@@ -542,8 +555,8 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                         </div>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 gap-8 mb-16">
-                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/10 bg-white/5 hover:bg-white/10 transition-colors">
+                    <div className="grid sm:grid-cols-2 gap-8 mb-16 items-start">
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/10 bg-white/5 hover:bg-white/10 transition-colors h-full">
                             <h3 className="text-2xl text-white font-light mb-6 flex items-center gap-3">
                                 Key Performance Indicators
                             </h3>
@@ -556,8 +569,8 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             </ul>
                         </div>
                         
-                        <details className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/10 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden flex flex-col h-full h-min-content">
-                            <summary className="list-none flex justify-between items-center outline-none h-full h-min-content">
+                        <details className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/10 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden flex flex-col">
+                            <summary className="list-none flex justify-between items-center outline-none">
                                 <div>
                                     <h3 className="text-2xl text-white font-light mb-2">First Experiment</h3>
                                     <p className="text-white/60 font-light">Run a 60-day pilot in one target geography...</p>
@@ -579,7 +592,6 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                         <OpenSourcePriority 
                             impactScore={80}
                             neglectednessScore={77}
-                            description="HelioTerra serves as an open template for balancing agricultural yield and high-capacity solar buildouts, turning a polarized land-use conflict into compounding parallel infrastructure. While the broad concept is gaining traction, the specific operating model for financing and delivering dual-use farms remains highly neglected."
                         />
                     </div>
 

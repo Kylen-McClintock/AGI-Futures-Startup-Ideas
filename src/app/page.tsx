@@ -294,7 +294,7 @@ export default async function Home() {
             slug: "helioterra",
             title: "HelioTerra",
             scoreTitle: "Agrivoltaics optimization engine",
-            description: "HelioTerra is a startup idea for financing, designing, and operating agrivoltaic projects that let the same acre produce farm income and solar revenue, with zero upfront cost to the farmer.",
+            description: "HelioTerra finances, designs, and operates agrivoltaic projects that let the same acre produce farm income and solar revenue, with zero upfront cost to the farmer.",
             image: helioterra_hero,
             href: "/helioterra",
             themeColor: "hover:border-amber-500/50 text-amber-400",
