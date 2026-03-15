@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ChevronLeft, ChevronRight, ChevronDown, ExternalLink } from "lucide-react";
 import { ProblemData } from "@/data/problem-atlas-data";
 import { themeMap, ThemeColor } from "@/utils/themeMap";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 interface DetailProps {
     problem: ProblemData;
@@ -13,14 +14,14 @@ interface DetailProps {
 }
 
 // Simple parser for custom light markdown
-function MarkdownText({ text }: { text: string }) {
+function MarkdownText({ text, problem }: { text: string, problem: ProblemData }) {
     if (!text) return null;
     
     // Split by double newline for paragraphs
     const blocks = text.split('\n\n');
 
     return (
-        <div className="space-y-6 text-white/80 font-light text-lg sm:text-xl leading-relaxed">
+        <div className="space-y-6 text-white/80 font-light text-lg sm:text-xl leading-relaxed flex flex-col">
             {blocks.map((block, i) => {
                 if (block.startsWith('- ')) {
                     const items = block.split('\n').filter(line => line.trim().startsWith('- '));
@@ -57,8 +58,21 @@ function MarkdownText({ text }: { text: string }) {
                                     parts.push(<span key={lastIndex}>{cleanItem.substring(lastIndex)}</span>);
                                 }
 
+                                // Check if this is a sub-headline item like "Startup Surfaces" or "Headline Evidence"
+                                const isSubHeadlineItem = cleanItem.includes(':') && cleanItem.split(':')[0].split(' ').length <= 4;
+                                
+                                if (isSubHeadlineItem) {
+                                    const [boldPart, ...rest] = cleanItem.split(':');
+                                    return (
+                                        <li key={j} className="flex flex-col gap-2 glass-panel p-6 rounded-2xl border border-white/5 w-full">
+                                            <span className="text-[var(--primary)] font-medium text-xl">{boldPart}:</span>
+                                            <span className="text-white/80">{rest.join(':').trim()}</span>
+                                        </li>
+                                    );
+                                }
+
                                 return (
-                                    <li key={j} className="flex items-start gap-4 glass-panel p-5 rounded-xl border border-white/5">
+                                    <li key={j} className="flex items-start gap-4 glass-panel p-5 rounded-xl border border-white/5 w-full">
                                         <span className="text-[var(--primary)] mt-1.5">•</span>
                                         <span className="flex-1">{parts.length > 0 ? parts : cleanItem}</span>
                                     </li>
@@ -74,7 +88,15 @@ function MarkdownText({ text }: { text: string }) {
                 if (lines.length > 0 && lines[0].endsWith(':') && lines[0].split(' ').length <= 4) {
                     // It's a heading like "Headline evidence:"
                     return (
-                        <div key={i} className="mt-12 mb-6">
+                        <div key={i} className="mt-12 mb-6 w-full">
+                            {lines[0].toLowerCase().includes('neglected') && (
+                                <div className="mb-12">
+                                    <NeglectednessSlider 
+                                        score={Number(problem.neglectedness) || 50} 
+                                        interpretation={`A score indicating how undercapitalized or overlooked this problem is relative to its importance and tractability.`} 
+                                    />
+                                </div>
+                            )}
                             <h3 className="text-[var(--primary)] font-mono text-sm tracking-widest uppercase mb-4 flex items-center">
                                 <span className="w-6 h-px bg-[var(--primary)]/50 mr-3" />
                                 {lines[0].replace(':', '')}
@@ -183,7 +205,7 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
 
                 {/* Long Form Thesis */}
                 <section className="mb-24 prose-lg max-w-none">
-                    <MarkdownText text={problem.long_form_content} />
+                    <MarkdownText text={problem.long_form_content} problem={problem} />
                 </section>
 
                 {/* Sources */}

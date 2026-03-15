@@ -9,7 +9,7 @@ import { AnimatedGrid, AnimatedGridItem } from "./components/AnimatedGrid";
 import { ICPToggle, ICPToggleItem } from "./components/ICPToggle";
 import { ExpandableStatCard } from "./components/ExpandableStatCard";
 import { OpenSourcePriority } from "./components/OpenSourcePriority";
-import { NeglectednessSlider } from "./components/NeglectednessSlider";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from '@/components/HoverAcronym';
