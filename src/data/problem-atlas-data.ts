@@ -1210,6 +1210,547 @@ export const problems: ProblemData[] = [
         "[2] World Health Organization. Depression and anxiety estimated economic cost statement (US$1 trillion per year). (Sep 2025).",
         "[3] World Health Organization. Mental Health Atlas 2024 (publication page and scope). (2025)."
     ]
+},
+    {
+    "rank": 41,
+    "slug": "dna-synthesis-screening-infrastructure",
+    "title": "DNA Synthesis Screening Infrastructure",
+    "short_descriptor": "Biosecurity by default",
+    "preview_text": "We can order DNA like cloud compute, but screening and enforcement are still inconsistent, leaving synthetic biology’s dangerous edge cases under-governed.",
+    "problem_priority": 64,
+    "importance": 74,
+    "neglectedness": 40,
+    "tractability": 58,
+    "gap": "What exists is a patchwork of voluntary screening guidance, uneven vendor practices, and limited cross-border interoperability. What could exist is a global “screening-by-default” stack: harmonized sequence and customer screening, high-trust escalation channels, and audit-ready evidence that makes high-risk synthesis orders harder to place and easier to investigate.",
+    "stakes": "Synthetic biology is an engine of abundance and medicine, and also a pathway for catastrophic misuse if guardrails stay soft. DNA synthesis is a chokepoint where prevention is cheaper than response. If we make screening reliable and interoperable, we reduce the probability of rare, extreme events while preserving legitimate innovation velocity.",
+    "sector_tags": [
+        "Biotech",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Ender Prevention",
+        "Existential Risk Reduction"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. government published screening guidance for synthetic double-stranded DNA providers, explicitly recommending sequence screening and customer screening to reduce misuse risk. [1]\n- The U.S. National Biodefense Strategy identifies biotechnology as a domain where prevention and preparedness are core national priorities. [2]\n- The National Academies has warned that advances in synthetic biology can lower barriers to harmful capability and require updated biodefense approaches. [3]\n\nWhy it stays neglected:\nThis is a classic global public good. The best outcome is “nothing happens,” so it is hard to fund. Vendors face competitive pressure to reduce friction, and cross-border enforcement is weak. Screening also has hard technical edges: ambiguous sequences, context-dependent risk, and adversarial ordering behavior.\n\nTractability:\nTractable now because synthesis is already centralized enough to instrument, and because modern sequence classification and secure auditing are strong. The hard part is governance and interoperability: aligning vendors, regulators, and researchers on shared standards, safe harbor rules, and escalation protocols that do not punish legitimate science.\n\nStartup surfaces:\n- Sequence-of-concern classification services with transparent uncertainty bounds and human review escalation\n- Vendor screening workflow software: customer verification, order triage, and audit logs\n- Interoperability rails for cross-vendor risk signaling and approved sharing protocols\n- Red-team datasets and evaluation harnesses for screening quality and false-positive control\n- Compliance tooling for regulators and funders tying grants and procurement to verified screening maturity",
+    "sources": [
+        "[1] U.S. Department of Health and Human Services. Screening Framework Guidance for Providers of Synthetic Double-Stranded DNA. 2010. https://www.phe.gov/s3/BioriskManagement/biosafety/Pages/SynDNA.aspx",
+        "[2] The White House. National Biodefense Strategy and Implementation Plan. 2022. https://www.whitehouse.gov/wp-content/uploads/2022/10/National-Biodefense-Strategy-and-Implementation-Plan_October-2022.pdf",
+        "[3] National Academies of Sciences, Engineering, and Medicine. Biodefense in the Age of Synthetic Biology. 2018. https://nap.nationalacademies.org/catalog/24890/biodefense-in-the-age-of-synthetic-biology",
+        "[4] International Gene Synthesis Consortium. Harmonized Screening Protocol (program overview). Accessed 2026-03-15. https://genesynthesisconsortium.org/"
+    ]
+},
+    {
+    "rank": 42,
+    "slug": "inverter-based-grid-stability-services",
+    "title": "Inverter-Based Grid Stability Services",
+    "short_descriptor": "Stable inverter grids",
+    "preview_text": "As grids fill with inverter-based resources, stability becomes a controls-and-software problem, but standards, models, and validation still lag deployment.",
+    "problem_priority": 64,
+    "importance": 74,
+    "neglectedness": 42,
+    "tractability": 60,
+    "gap": "What exists is a grid designed for synchronous inertia, now being asked to operate with fast, complex inverter dynamics that are hard to model and test. What could exist is “stability as a service” for inverter-heavy grids: grid-forming controls, verified ride-through behavior, standardized models, and field validation pipelines that make behavior predictable under stress.",
+    "stakes": "Grid stability is the substrate for everything downstream: electrification, AI compute, industrial reshoring, and disaster response. If inverter-heavy systems behave unpredictably, we get curtailment, deratings, and blackouts. Solving this is not just about more megawatts. It is about keeping the grid controllable as its physics changes.",
+    "sector_tags": [
+        "Energy",
+        "Manufacturing"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- NERC published reliability guidance focused on performance of bulk power system-connected inverter-based resources, reflecting systemic reliability risk and the need for standardized performance expectations. [1]\n- IEEE Standard 2800 establishes interconnection and interoperability requirements for transmission-connected inverter-based resources, indicating standards are evolving but still being adopted. [2]\n- NREL has emphasized grid-forming inverters as a key technical pathway for maintaining stability in inverter-dominant futures. [3]\n\nWhy it stays neglected:\nNo single actor owns “system stability.” Costs are local to developers and asset owners; benefits are system-wide. Modeling is technically hard and proprietary. Standards adoption is slow, and validation requires field data from rare disturbance events. Utilities and operators are naturally conservative, and procurement language often cannot specify what it truly needs.\n\nTractability:\nThe technical levers exist: grid-forming controls, better models, and test procedures. What is missing is a scalable validation and certification layer that operators trust. AI helps by accelerating model calibration, anomaly detection, and scenario testing, but the core requirement is auditability and reproducibility.\n\nStartup surfaces:\n- Certification pipelines for inverter performance with standardized test artifacts and operator-grade reports\n- Model libraries and parameter estimation services that reduce black-box behavior\n- “Stability telemetry” platforms integrating phasor and disturbance data into actionable constraints\n- Grid-forming control tuning and monitoring as an ongoing service, not a one-time commissioning\n- Procurement copilots translating stability requirements into contract-ready technical specs",
+    "sources": [
+        "[1] North American Electric Reliability Corporation. Reliability Guideline: BPS-Connected Inverter-Based Resource Performance. 2023. https://www.nerc.com/comm/PC_Reliability_Guidelines_DL/IBR_Performance_Guideline.pdf",
+        "[2] IEEE Standards Association. IEEE Std 2800-2022: Interconnection and Interoperability of Inverter-Based Resources Interconnecting with Associated Transmission Electric Power Systems. 2022. https://standards.ieee.org/standard/2800-2022.html",
+        "[3] National Renewable Energy Laboratory. Grid-Forming Inverters (research overview). Accessed 2026-03-15. https://www.nrel.gov/grid/grid-forming-inverters.html"
+    ]
+},
+    {
+    "rank": 43,
+    "slug": "enhanced-geothermal-drilling-scale",
+    "title": "Enhanced Geothermal Drilling Scale",
+    "short_descriptor": "Firm heat underground",
+    "preview_text": "We have a planet-sized heat battery, but drilling cost, speed, and subsurface uncertainty still block geothermal from scaling like a mainstream clean firm resource.",
+    "problem_priority": 64,
+    "importance": 75,
+    "neglectedness": 38,
+    "tractability": 55,
+    "gap": "What exists is geothermal development that is slow, site-specific, and high-risk per well, with limited learning transfer across projects. What could exist is geothermal at manufacturing scale: faster drilling, repeatable reservoir creation and characterization, and standardized project finance that treats wells like factories, not one-off bets.",
+    "stakes": "Clean firm power is the missing stabilizer for high-renewables grids and industrial electrification. Geothermal can deliver that stabilizer with small land footprint and high capacity factor, if drilling cost and uncertainty fall. Scaling geothermal is also a resilience play: local firm generation reduces dependence on fuel supply chains.",
+    "sector_tags": [
+        "Energy",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Climate"
+    ],
+    "long_form_content": "Headline evidence:\n- DOE’s Enhanced Geothermal Shot sets an explicit cost target for next-generation geothermal power, signaling federal prioritization of cost and deployment speed. [1]\n- DOE’s Pathways to Commercial Liftoff report frames next-generation geothermal as a scale opportunity contingent on drilling improvement and project de-risking. [2]\n- USGS has assessed that geothermal resources can be substantial, but development depends on technology and economics, not resource scarcity alone. [3]\n\nWhy it stays neglected:\nGeothermal risk is front-loaded: you spend big before you know if the subsurface works. That scares capital, slows iteration, and limits player diversity. Permitting and local acceptance add friction. And the supply chain for rigs, crews, and specialized services competes with oil and gas cycles.\n\nTractability:\nThe tractable wedge is cost and learning-rate acceleration: better drilling, better subsurface imaging, and faster iteration loops. What remains hard is reservoir predictability and scaling technologies from demonstration to repeatable playbooks. AI helps by improving geological inference, drilling optimization, and risk modeling for underwriting.\n\nStartup surfaces:\n- Drilling optimization software and sensors that reduce nonproductive time and failure rates\n- Subsurface characterization and “reservoir forecasting” tools for financing-grade risk reduction\n- Modular wellfield designs with standardized equipment and commissioning procedures\n- Geothermal project underwriting and insurance products tied to validated subsurface models\n- Closed-loop and enhanced geothermal system monitoring and control platforms",
+    "sources": [
+        "[1] U.S. Department of Energy. Enhanced Geothermal Shot (program overview). Accessed 2026-03-15. https://www.energy.gov/eere/geothermal/enhanced-geothermal-shot",
+        "[2] U.S. Department of Energy. Pathways to Commercial Liftoff: Next-Generation Geothermal Power. 2023. https://www.energy.gov/sites/default/files/2023-03/Pathways%20to%20Commercial%20Liftoff%20-%20Next-Generation%20Geothermal%20Power_0.pdf",
+        "[3] U.S. Geological Survey. Geothermal resource assessment and overview materials. Accessed 2026-03-15. https://www.usgs.gov/programs/geothermal"
+    ]
+},
+    {
+    "rank": 44,
+    "slug": "data-center-load-flexibility",
+    "title": "Data Center Load Flexibility",
+    "short_descriptor": "Demand as a resource",
+    "preview_text": "Compute demand is rising fast, but data centers still behave like inflexible baseload loads instead of grid-supporting assets that can trade flexibility for speed and cost.",
+    "problem_priority": 63,
+    "importance": 75,
+    "neglectedness": 35,
+    "tractability": 70,
+    "gap": "What exists is a collision between explosive load growth and slow grid expansion, with data centers often optimized for uptime but not grid interaction. What could exist is “grid-native compute”: dispatchable loads, on-site generation and storage, and standardized market participation that turns data centers into stability and capacity resources.",
+    "stakes": "Data centers are becoming a major marginal load driver in many regions. If they scale rigidly, grids derate, prices spike, and permitting battles intensify. If they scale flexibly, they can accelerate grid buildout, reduce peak stress, and unlock faster electrification and compute abundance simultaneously.",
+    "sector_tags": [
+        "AI",
+        "Energy"
+    ],
+    "outcome_tags": [
+        "Energy Abundance",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The IEA identifies data centres and data transmission networks as a material electricity demand category with rising importance under digitalization and AI growth. [1]\n- NERC’s long-term reliability assessments have highlighted rapidly growing electricity demand in some regions, including from data centers, as a planning risk. [2]\n- DOE has emphasized energy efficiency and demand management as key levers for managing data center impacts on the grid. [3]\n\nWhy it stays neglected:\nUptime culture treats flexibility as risk, and procurement treats power as a utility bill, not a strategic system interface. Grid markets are complex and vary by region. Developers and utilities fight over interconnection and upgrades, and coordination failures dominate.\n\nTractability:\nThis is tractable because modern compute workloads include flexible components, and the hardware stack supports sophisticated scheduling. The hard part is making flexibility contractual and verifiable, and integrating with local grid operators without compromising reliability. AI helps by scheduling workloads against price, carbon, and grid constraints.\n\nStartup surfaces:\n- Workload orchestration that exposes “flexibility budgets” while preserving service-level agreements\n- Grid participation platforms for data centers: demand response, ancillary services, and capacity markets\n- On-site energy system optimization: storage, generation, and heat reuse control layers\n- Interconnection and upgrade cost modeling tied to flexible operating commitments\n- Standardized “flex compute” contracts for utilities and data center operators",
+    "sources": [
+        "[1] International Energy Agency. Data centres and data transmission networks (analysis and indicators). Accessed 2026-03-15. https://www.iea.org/energy-system/buildings/data-centres-and-data-transmission-networks",
+        "[2] North American Electric Reliability Corporation. Long-Term Reliability Assessments (regional demand growth discussions). Accessed 2026-03-15. https://www.nerc.com/pa/RAPA/ra/Pages/Assessments.aspx",
+        "[3] U.S. Department of Energy. Data center energy efficiency program information. Accessed 2026-03-15. https://www.energy.gov/eere/buildings/data-centers"
+    ]
+},
+    {
+    "rank": 45,
+    "slug": "low-carbon-cement-procurement-standards",
+    "title": "Low-Carbon Cement Procurement Standards",
+    "short_descriptor": "Build without carbon",
+    "preview_text": "We know how to make lower-carbon cement and concrete, but standards, codes, and procurement still reward incumbents, blocking adoption at scale.",
+    "problem_priority": 63,
+    "importance": 76,
+    "neglectedness": 32,
+    "tractability": 50,
+    "gap": "What exists is a building ecosystem optimized for known materials, slow code updates, and risk-averse specifications. What could exist is a low-carbon cement adoption stack: performance-based standards, verified environmental product declarations, and procurement that pays for lower embodied carbon without sacrificing safety.",
+    "stakes": "Cement is a foundational material for cities and infrastructure, and also a major emissions source. If we cannot decarbonize it, we carry a permanent emissions load or constrain building. Procurement and standards are the adoption bottleneck that turns technical feasibility into real emissions reduction.",
+    "sector_tags": [
+        "Manufacturing",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The IEA estimates cement is responsible for roughly 7% of global carbon dioxide emissions. [1]\n- The IEA notes that emission reductions in cement require both process and fuel shifts and deployment of low-carbon technologies, implying adoption and scale constraints beyond core chemistry. [1]\n- Federal “buy clean” style procurement initiatives have begun to target embodied carbon in construction materials, creating an adoption wedge for verified low-carbon products. [2]\n\nWhy it stays neglected:\nConstruction is liability-driven. Engineers spec what is proven. Codes and standards move slowly. Supply chains are local and fragmented, and performance verification is expensive. Without procurement demand and standards alignment, producers cannot justify capex for new processes.\n\nTractability:\nTractable if we treat this as a standards and verification problem. Environmental product declarations, performance-based specs, and procurement templates can accelerate adoption. What remains hard is harmonizing codes across jurisdictions and ensuring consistent material performance across varied mixes and conditions.\n\nStartup surfaces:\n- Automated embodied-carbon procurement tooling for governments and large buyers\n- Verification and quality systems for low-carbon cement blends and admixtures\n- Standards translation tools that map new formulations to code-compliant performance specs\n- Construction workflow products that reduce perceived risk for engineers and inspectors\n- Financing for cement plant retrofits tied to procurement commitments and verified outputs",
+    "sources": [
+        "[1] International Energy Agency. Cement (analysis and emissions share). Accessed 2026-03-15. https://www.iea.org/reports/cement",
+        "[2] The White House. Federal Buy Clean Initiative (policy overview and announcements). Accessed 2026-03-15. https://www.whitehouse.gov/briefing-room/statements-releases/2022/03/28/fact-sheet-buy-clean/",
+        "[3] U.S. General Services Administration. Low Embodied Carbon Construction Materials program information. Accessed 2026-03-15. https://www.gsa.gov/real-estate/design-construction/construction-programs/low-embodied-carbon"
+    ]
+},
+    {
+    "rank": 46,
+    "slug": "construction-robotics-for-retrofit",
+    "title": "Construction Robotics for Retrofit",
+    "short_descriptor": "Labor multiplier",
+    "preview_text": "We need to retrofit and rebuild at scale, but construction stays labor-constrained and low-productivity, and most high-impact work still depends on scarce skilled trades.",
+    "problem_priority": 62,
+    "importance": 74,
+    "neglectedness": 34,
+    "tractability": 60,
+    "gap": "What exists is a retrofit and construction system dominated by manual work, fragmented contractors, and inconsistent quality. What could exist is a robotics-enabled execution layer: high-throughput scanning, automated layout and install, and standardized workflows that make retrofits faster, cheaper, and more verifiable.",
+    "stakes": "If we cannot scale physical-world execution, we cannot scale housing supply, energy efficiency, or resilience. Construction is a real economy bottleneck that hits affordability, emissions, and disaster recovery. Robotics can turn constrained labor into a multiplier by shifting work from artisanal to repeatable.",
+    "sector_tags": [
+        "Robotics",
+        "Housing"
+    ],
+    "outcome_tags": [
+        "Abundance",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- IEA highlights buildings as a major energy demand sector where improving efficiency and electrification requires large-scale retrofit and deployment capacity. [1]\n- U.S. Bureau of Labor Statistics data shows persistent job openings and workforce pressure in construction-related categories, indicating labor constraints that constrain throughput. [2]\n- DOE has emphasized scaling building efficiency and decarbonization as a deployment challenge, not just a technology challenge, implying execution bottlenecks. [3]\n\nWhy it stays neglected:\nConstruction is fragmented and risk-averse. Job sites are unstructured environments that break many robotics assumptions. Adoption is slowed by contractor economics, training, and liability. Hardware startups also face long sales cycles and project-based revenue, which punishes iteration.\n\nTractability:\nThe enabling stack is improving: cheaper sensors, better SLAM, better manipulation primitives, and AI planning. The hard part is ruggedization and integration into contractor workflows. Winning companies will sell verified throughput and reduced rework, not “cool robots.”\n\nStartup surfaces:\n- Site scanning and automated as-built verification as a standard workflow layer\n- Robotics for high-frequency tasks: drilling, fastening, sealing, insulation placement, surface prep\n- Prefab and modular install systems that reduce on-site variability\n- Retrofit “assembly lines” with standardized labor-robot collaboration protocols\n- QA and compliance tooling that turns robotic work logs into inspection-ready evidence",
+    "sources": [
+        "[1] International Energy Agency. Buildings (energy demand and policy context). Accessed 2026-03-15. https://www.iea.org/energy-system/buildings",
+        "[2] U.S. Bureau of Labor Statistics. Job Openings and Labor Turnover Survey (JOLTS) data. Accessed 2026-03-15. https://www.bls.gov/jlt/",
+        "[3] U.S. Department of Energy. Buildings and Energy Efficiency programs. Accessed 2026-03-15. https://www.energy.gov/eere/buildings/buildings"
+    ]
+},
+    {
+    "rank": 47,
+    "slug": "nitrous-oxide-and-nitrogen-loss-control",
+    "title": "Nitrous Oxide and Nitrogen Loss Control",
+    "short_descriptor": "Invisible fertilizer emissions",
+    "preview_text": "Nitrous oxide is a potent greenhouse gas and nitrogen runoff is a major water and ecosystem pollutant, but we still lack precision measurement and incentives to reduce losses at scale.",
+    "problem_priority": 62,
+    "importance": 74,
+    "neglectedness": 33,
+    "tractability": 55,
+    "gap": "What exists is blanket fertilizer application, weak measurement of nitrogen fate, and policies that lag field reality. What could exist is nitrogen as a managed cycle: precision application, real-time soil and emissions sensing, and performance-based incentives that cut emissions and runoff while maintaining yields.",
+    "stakes": "Nitrogen loss is a compounding systems problem: climate forcing, water quality, and ecosystem collapse. Reducing it protects fisheries and drinking water while shrinking agricultural emissions. The upside is also economic: less wasted fertilizer and more stable yields under climate stress.",
+    "sector_tags": [
+        "Food",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Biodiversity"
+    ],
+    "long_form_content": "Headline evidence:\n- IPCC AR6 reports nitrous oxide has high global warming potential and is a significant component of agricultural greenhouse gas emissions. [1]\n- A global nitrous oxide budget synthesis reports rising nitrous oxide emissions, driven substantially by agriculture and nitrogen inputs. [2]\n- NOAA tracks recurring coastal hypoxia dynamics, including the Gulf of Mexico dead zone, linked to nutrient runoff, underscoring environmental stakes. [3]\n\nWhy it stays neglected:\nLosses are diffuse and hard to attribute to single actors, and measurement is expensive. Farmers are rationally risk-averse: fertilizer is yield insurance. Regulatory regimes often focus on point sources, not diffuse runoff. Buyers do not pay for “clean nitrogen,” and the benefit mostly accrues to downstream ecosystems and communities.\n\nTractability:\nPrecision tools are improving: sensors, models, and decision support can reduce over-application and time fertilizer more intelligently. The hard part is verification and incentives. The tractable wedge is performance contracts, audited measurement, and integration into existing farm workflows and finance.\n\nStartup surfaces:\n- Soil nitrogen and moisture sensing with actionable prescription generation\n- Farm-level nitrous oxide estimation models with audited uncertainty bounds\n- Variable-rate application tooling integrated with equipment and agronomy workflows\n- Nutrient runoff monitoring for watersheds and compliance programs\n- Performance-based financing: pay for verified nitrogen loss reduction, not inputs",
+    "sources": [
+        "[1] Intergovernmental Panel on Climate Change. AR6 Synthesis Report (Full Volume), greenhouse gas properties and sector emissions context. 2023. https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_FullVolume.pdf",
+        "[2] Tian H et al. A comprehensive quantification of global nitrous oxide sources and sinks. Nature. 2020. https://www.nature.com/articles/s41586-020-2780-0",
+        "[3] NOAA. Gulf of Mexico hypoxia and nutrient runoff context (data and reports). Accessed 2026-03-15. https://www.noaa.gov/education/resource-collections/ocean-coasts/hypoxia"
+    ]
+},
+    {
+    "rank": 48,
+    "slug": "sustainable-aviation-fuel-scale-up",
+    "title": "Sustainable Aviation Fuel Scale-Up",
+    "short_descriptor": "Clean jet fuel",
+    "preview_text": "We know aviation needs low-carbon fuels, but sustainable aviation fuel supply, certification, and offtake structures are still too small and too slow to matter at climate scale.",
+    "problem_priority": 61,
+    "importance": 73,
+    "neglectedness": 32,
+    "tractability": 55,
+    "gap": "What exists is a tiny sustainable aviation fuel market with high costs, limited feedstocks, and complex certification. What could exist is a scaled fuel ecosystem: bankable offtakes, standardized lifecycle accounting, and production pathways that expand supply without breaking land, food, or biodiversity constraints.",
+    "stakes": "Aviation is hard to electrify at long range, so fuels matter. If sustainable fuel does not scale, aviation remains a durable emissions source and a political constraint on climate goals. Scaling sustainable aviation fuel also builds broader clean fuel infrastructure that can spill into shipping and industry.",
+    "sector_tags": [
+        "Transportation",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- IEA notes aviation is a difficult-to-abate sector and tracks sustainable aviation fuel as a key lever for reducing emissions. [1]\n- ICAO has established the Carbon Offsetting and Reduction Scheme for International Aviation, increasing demand for credible lifecycle accounting and fuel substitution. [2]\n- IEA tracking indicates sustainable aviation fuel remains a small fraction of total jet fuel supply, highlighting an adoption and scale bottleneck. [1]\n\nWhy it stays neglected:\nFeedstock constraints, high capex, and uncertain long-term policy make financing hard. Airlines have thin margins and cannot pay large green premiums indefinitely. Lifecycle accounting is complex and contested. The supply chain spans agriculture, chemical processing, and refinery infrastructure, which moves slowly.\n\nTractability:\nTractable if we build the contracting and measurement layer: bankable offtakes, credible lifecycle MRV, and standardized certification. What remains hard is scaling production sustainably without land-use backlash. AI helps optimize feedstock logistics, process control, and lifecycle traceability.\n\nStartup surfaces:\n- Lifecycle emissions MRV tooling and audit-ready fuel accounting systems\n- Offtake contracting platforms that aggregate airline demand into financeable volumes\n- Feedstock logistics optimization with traceability and sustainability constraints\n- Process optimization for fuel conversion pathways and refinery integration\n- Certification workflow automation for fuel producers and airlines",
+    "sources": [
+        "[1] International Energy Agency. Aviation: tracking clean energy progress and sustainable aviation fuel indicators. Accessed 2026-03-15. https://www.iea.org/energy-system/transport/aviation",
+        "[2] International Civil Aviation Organization. CORSIA (program overview and lifecycle accounting context). Accessed 2026-03-15. https://www.icao.int/environmental-protection/CORSIA/Pages/default.aspx",
+        "[3] International Energy Agency. Renewables and biofuels context for transport fuel supply. Accessed 2026-03-15. https://www.iea.org/reports/renewables-2024"
+    ]
+},
+    {
+    "rank": 49,
+    "slug": "green-shipping-fuel-infrastructure",
+    "title": "Green Shipping Fuel Infrastructure",
+    "short_descriptor": "Decarbonize maritime",
+    "preview_text": "Shipping needs new fuels, but ports, bunkering, safety standards, and fuel supply chains are not scaling fast enough to meet emissions targets.",
+    "problem_priority": 60,
+    "importance": 73,
+    "neglectedness": 30,
+    "tractability": 50,
+    "gap": "What exists is incremental efficiency improvements and pilot corridors. What could exist is a full fuel transition stack: standardized safety and handling, port bunkering infrastructure for low-carbon fuels, and verified lifecycle accounting that makes contracting and insurance feasible.",
+    "stakes": "Shipping underpins global trade. If decarbonization is slow, the world carries a persistent emissions load or imposes trade friction through carbon border measures. Fuel infrastructure is the gating function: ship designs can evolve, but without reliable fuel availability, fleets cannot commit.",
+    "sector_tags": [
+        "Transportation",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Climate",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- IMO adopted a revised greenhouse gas strategy in 2023 with stronger emissions reduction ambitions, increasing pressure for fuel and infrastructure transition. [1]\n- IMO’s greenhouse gas studies document shipping as a material share of global emissions, making decarbonization nontrivial at scale. [2]\n- IEA highlights low-carbon fuels and port infrastructure as key constraints for decarbonizing hard-to-abate transport sectors. [3]\n\nWhy it stays neglected:\nFuel transitions require coordination among ship owners, charterers, ports, bunker suppliers, insurers, and regulators. Everyone waits for everyone else. Capex is large, safety requirements are stringent, and lifecycle accounting disputes slow contracting.\n\nTractability:\nTractable through corridor-based scaling: concentrate demand and infrastructure on high-volume routes first, standardize safety and accounting, and build financing structures that de-risk early infrastructure. AI helps optimize routing, fuel procurement, and emissions accounting, but physical deployment is the core.\n\nStartup surfaces:\n- Port bunkering planning tools and permitting workflow systems for new fuels\n- Safety and compliance tooling for fuel handling, storage, and crew training\n- Verified lifecycle accounting and contract audit logs for fuel procurement\n- Aggregated demand marketplaces for green shipping corridors\n- Insurance and warranty structures tied to verified safety and performance",
+    "sources": [
+        "[1] International Maritime Organization. 2023 IMO Strategy on Reduction of GHG Emissions from Ships (overview). 2023. https://www.imo.org/en/MediaCentre/PressBriefings/pages/IMO-revised-GHG-strategy.aspx",
+        "[2] International Maritime Organization. Fourth IMO GHG Study 2020 (report). 2020. https://www.imo.org/en/OurWork/Environment/Pages/Fourth-IMO-Greenhouse-Gas-Study-2020.aspx",
+        "[3] International Energy Agency. Shipping (clean energy progress tracking and fuel transition context). Accessed 2026-03-15. https://www.iea.org/energy-system/transport/shipping"
+    ]
+},
+    {
+    "rank": 50,
+    "slug": "water-reuse-and-desalination-brine-solutions",
+    "title": "Water Reuse and Desalination Brine Solutions",
+    "short_descriptor": "Close the water loop",
+    "preview_text": "Water reuse and desalination can expand supply, but energy intensity, brine disposal, and governance friction keep deployment slower and more contentious than the water crisis requires.",
+    "problem_priority": 60,
+    "importance": 72,
+    "neglectedness": 32,
+    "tractability": 55,
+    "gap": "What exists is fragmented project-by-project development constrained by permitting, public acceptance, and brine management. What could exist is a closed-loop water industrial stack: modular reuse systems, lower-energy treatment, and environmentally safe brine handling that makes new water supply scalable and politically durable.",
+    "stakes": "Water scarcity is a direct limiter on cities, industry, and food systems. Reuse and desal can deliver “new supply,” but only if ecosystems and communities accept the externalities. Brine is where legitimacy breaks. Solve brine and energy intensity, and reuse becomes a reliable abundance engine.",
+    "sector_tags": [
+        "Water",
+        "Cities"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO and UNICEF report billions still lack safely managed drinking water services, underscoring persistent global water access gaps. [1]\n- UNU-INWEH documented brine as a major environmental challenge of desalination, highlighting brine volume and disposal as a scaling constraint. [2]\n- The UN World Water Development Report emphasizes escalating water stress and the need for resilient water management and supply strategies. [3]\n\nWhy it stays neglected:\nWater projects are politically sensitive, slow to permit, and hard to finance without rate increases. Externalities are real: brine harms marine ecosystems if mishandled, and energy loads stress grids. Benefits accrue over decades, but backlash can kill a project in one news cycle.\n\nTractability:\nMembrane technology, sensors, and process control are improving. The hard part is system integration: making plants modular, reliable, and environmentally acceptable. AI helps optimize energy use, detect membrane fouling early, and manage blending and distribution to meet quality.\n\nStartup surfaces:\n- Modular water reuse systems for industrial parks and municipalities with remote operations\n- Brine concentration, mineral recovery, and safer disposal verification tooling\n- Energy optimization and demand flexibility for water treatment plants\n- Water quality sensing and compliance automation for reuse safety\n- Financing products tied to verified gallons delivered and avoided environmental harm",
+    "sources": [
+        "[1] WHO/UNICEF Joint Monitoring Programme. Progress on Drinking Water, Sanitation and Hygiene (JMP) indicators. Accessed 2026-03-15. https://washdata.org/",
+        "[2] United Nations University Institute for Water, Environment and Health (UNU-INWEH). The Hidden Environmental Cost of Desalination (brine challenge). 2019. https://inweh.unu.edu/publications/the-hidden-environmental-cost-of-desalination/",
+        "[3] UNESCO/UN-Water. United Nations World Water Development Report 2024. 2024. https://www.unesco.org/reports/wwdr/2024"
+    ]
+},
+    {
+    "rank": 51,
+    "slug": "microplastics-measurement-and-filtration",
+    "title": "Microplastics Measurement and Filtration",
+    "short_descriptor": "Remove plastic pollution",
+    "preview_text": "Microplastics are now a pervasive contaminant, but standardized measurement and scalable removal in water systems remain underbuilt.",
+    "problem_priority": 59,
+    "importance": 70,
+    "neglectedness": 34,
+    "tractability": 45,
+    "gap": "What exists is inconsistent sampling and analysis methods, making it hard to compare risks and interventions. What could exist is a microplastics control stack: standardized measurement, source attribution, and scalable filtration and capture in drinking water, wastewater, and industrial discharges.",
+    "stakes": "Microplastics are not just an aesthetic problem. They are a trust problem and potentially a long-run health and ecosystem burden. Standardized measurement is the prerequisite for credible regulation and investment. Removal infrastructure becomes a “forever” layer that future-proofs water systems against additional particulates.",
+    "sector_tags": [
+        "Water",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Biodiversity",
+        "Human Flourishing"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO has called for improved evidence and standardized methods regarding microplastics in drinking water and their potential health implications. [1]\n- UNEP describes plastic pollution as a large-scale global environmental problem, with systemic sources and growing downstream impacts. [2]\n- The U.S. National Academies has highlighted microplastics as an emerging contaminant requiring better measurement, fate, and mitigation understanding. [3]\n\nWhy it stays neglected:\nMeasurement is hard and expensive; there is no single standard method. Sources are diffuse across textiles, tires, packaging, and infrastructure. Regulation lags because causal health pathways are still being clarified, and industry pushback is strong.\n\nTractability:\nNear-term progress is tractable in measurement and capture at obvious chokepoints: wastewater plants, industrial discharges, and high-risk watersheds. The hard part is harmonizing methods and proving cost-effective removal without unintended consequences. AI can help with classification in spectroscopy and microscopy workflows.\n\nStartup surfaces:\n- Standardized sampling and analytics pipelines for microplastics quantification\n- Filtration retrofits for wastewater and industrial outflows with verified capture rates\n- Source attribution tools linking particle types to upstream sources for enforcement\n- Consumer and municipal monitoring programs with transparent dashboards\n- Material innovation for lower-shedding textiles and tire compounds, verified by measurement",
+    "sources": [
+        "[1] World Health Organization. Microplastics in drinking-water: Background document. 2019. https://www.who.int/publications/i/item/9789241516198",
+        "[2] United Nations Environment Programme. Turning off the Tap: How the world can end plastic pollution and create a circular economy. 2023. https://www.unep.org/resources/report/turning-off-tap-end-plastic-pollution-create-circular-economy",
+        "[3] National Academies of Sciences, Engineering, and Medicine. Proceedings and reports on microplastics in water and the environment (overview). Accessed 2026-03-15. https://www.nationalacademies.org/our-work/microplastics"
+    ]
+},
+    {
+    "rank": 52,
+    "slug": "foodborne-pathogen-early-detection",
+    "title": "Foodborne Pathogen Early Detection",
+    "short_descriptor": "Prevent outbreaks upstream",
+    "preview_text": "We can trace outbreaks after people get sick, but we still lack real-time pathogen detection and prevention inside food production and processing where the highest leverage sits.",
+    "problem_priority": 59,
+    "importance": 72,
+    "neglectedness": 28,
+    "tractability": 65,
+    "gap": "What exists is sampling that is periodic, slow, and often designed for compliance rather than early warning. What could exist is food safety telemetry: rapid tests, environmental monitoring, and genomic routing that flags contamination earlier and triggers targeted intervention before product ships.",
+    "stakes": "Foodborne illness is a persistent mass-scale burden, and outbreaks create both health harm and economic disruption. Early detection is the compounding lever: it reduces recalls, protects brand trust, and prevents downstream healthcare load. This is also a national resilience issue during disasters when supply chains are stressed.",
+    "sector_tags": [
+        "Food",
+        "Healthcare"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Resilience"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO estimates foodborne diseases cause roughly 600 million illnesses and 420,000 deaths annually worldwide. [1]\n- CDC estimates foodborne pathogens cause tens of millions of illnesses annually in the United States, indicating persistent system-level risk. [2]\n- FDA’s GenomeTrakr network reflects institutional investment in whole-genome sequencing for outbreak detection, but also highlights the gap between detection and prevention inside facilities. [3]\n\nWhy it stays neglected:\nLiability and reputation risks create incentives to minimize visibility. Many facilities are optimized for compliance checks, not continuous monitoring. The supply chain is fragmented, and smaller operators cannot afford advanced testing. Data sharing is limited, which slows learning and coordinated response.\n\nTractability:\nTractable because rapid diagnostics, sequencing, and analytics are improving and costs are falling. The hard part is workflow integration and false-positive management. Winning systems will provide actionable alerts with clear intervention playbooks, not raw lab outputs.\n\nStartup surfaces:\n- Environmental monitoring systems for plants with adaptive sampling and escalation logic\n- Rapid pathogen detection tools tied to operational interventions and recall decision support\n- Genomic traceability platforms spanning suppliers, processors, and distributors with permissioned sharing\n- Quality management copilots that convert monitoring into corrective action workflows\n- Insurance and contracting products that reward verified prevention performance",
+    "sources": [
+        "[1] World Health Organization. Food safety fact sheet and global burden framing. Accessed 2026-03-15. https://www.who.int/news-room/fact-sheets/detail/food-safety",
+        "[2] Centers for Disease Control and Prevention. Estimates of foodborne illness in the United States. Accessed 2026-03-15. https://www.cdc.gov/foodborneburden/index.html",
+        "[3] U.S. Food and Drug Administration. GenomeTrakr Network (WGS for foodborne pathogen tracking). Accessed 2026-03-15. https://www.fda.gov/food/whole-genome-sequencing-wgs-program/genometrakr-network"
+    ]
+},
+    {
+    "rank": 53,
+    "slug": "suicide-crisis-follow-up-infrastructure",
+    "title": "Suicide Crisis Follow-Up Infrastructure",
+    "short_descriptor": "Close the care loop",
+    "preview_text": "We can respond to crises, but we still fail at sustained follow-up and continuity for people at highest risk, so preventable deaths persist.",
+    "problem_priority": 59,
+    "importance": 72,
+    "neglectedness": 28,
+    "tractability": 65,
+    "gap": "What exists is episodic crisis response, fragmented referrals, and weak retention in evidence-based care. What could exist is a suicide prevention operations stack: rapid post-crisis follow-up, continuous risk monitoring, and durable care routing that makes continuity the default, not a heroic exception.",
+    "stakes": "Suicide is an upstream driver of grief, trauma, and community fracture, often affecting working-age and youth populations. Prevention has high leverage because risk is time-clustered around specific events and care transitions. Better follow-up is both a life-saving intervention and a systems trust intervention.",
+    "sector_tags": [
+        "Healthcare",
+        "Community"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Societal Cohesion"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO reports more than 700,000 people die by suicide each year globally, showing civilization-scale stakes. [1]\n- WHO emphasizes that suicide is preventable and that health systems and communities can reduce risk through timely intervention and follow-up. [1]\n- CDC tracks suicide as a major and rising cause of death in the U.S. over recent decades, reinforcing persistent system failure and the need for better prevention delivery. [2]\n\nWhy it stays neglected:\nThe system is fragmented across emergency departments, behavioral health, community providers, and payers. Stigma reduces engagement. Workforce shortages limit follow-up capacity. Data sharing is constrained by privacy and poor interoperability, so many transitions are “cold handoffs” that fail.\n\nTractability:\nTractable because proven follow-up models exist and communication tools are cheap. The hard part is building operational accountability: who owns follow-up completion, how it is staffed, and how outcomes are measured. AI can help triage, personalize outreach, and detect escalating risk, but human care continuity remains core.\n\nStartup surfaces:\n- Post-crisis follow-up orchestration from emergency care to outpatient care with verified completion\n- Continuous risk check-in tooling with escalation protocols for care teams\n- Provider network routing that matches risk profiles to available evidence-based capacity\n- Payer-integrated outcome tracking and incentives for retention and continuity\n- Community-based support coordination integrating housing, employment, and social services when relevant",
+    "sources": [
+        "[1] World Health Organization. Suicide (fact sheet and prevention framing). Accessed 2026-03-15. https://www.who.int/news-room/fact-sheets/detail/suicide",
+        "[2] Centers for Disease Control and Prevention. Suicide data and statistics (WISQARS and NCHS resources). Accessed 2026-03-15. https://www.cdc.gov/suicide/facts/index.html",
+        "[3] National Institute of Mental Health. Suicide prevention and crisis resources (program context). Accessed 2026-03-15. https://www.nimh.nih.gov/health/topics/suicide-prevention"
+    ]
+},
+    {
+    "rank": 54,
+    "slug": "fertility-and-reproductive-health-measurement",
+    "title": "Fertility and Reproductive Health Measurement",
+    "short_descriptor": "Measure conception health",
+    "preview_text": "We spend billions after infertility becomes obvious, but we under-invest in early, frequent measurement of reproductive health signals that could improve outcomes and reduce time-to-pregnancy.",
+    "problem_priority": 58,
+    "importance": 70,
+    "neglectedness": 30,
+    "tractability": 60,
+    "gap": "What exists is late-stage evaluation, inconsistent diagnostics, and fragmented care across labs, clinics, and payers. What could exist is a reproductive health measurement layer: routine hormonal and semen metrics, cycle and ovulation verification, and early risk detection integrated into care pathways.",
+    "stakes": "Fertility is a core human flourishing domain and a population-level stability variable. Earlier measurement reduces the emotional and financial cost of infertility, improves outcomes by enabling earlier intervention, and can support healthier pregnancies. The upside is not only more births. It is healthier families and less downstream healthcare burden.",
+    "sector_tags": [
+        "Healthcare",
+        "Sex"
+    ],
+    "outcome_tags": [
+        "Human Flourishing",
+        "Longevity"
+    ],
+    "long_form_content": "Headline evidence:\n- WHO reports infertility affects about 1 in 6 people globally, indicating large-scale unmet need and persistent barriers to care. [1]\n- WHO frames infertility as a disease of the reproductive system and emphasizes that prevention, diagnosis, and treatment are often inaccessible or unaffordable. [1]\n- CDC publishes fertility and assisted reproductive technology surveillance, indicating measurable outcomes exist but are not yet transformed into routine early detection workflows at scale. [2]\n\nWhy it stays neglected:\nReproductive care sits in a messy market: benefit coverage varies, outcomes take time, and stigma reduces demand signaling. Diagnostics are fragmented and not always standardized. Many interventions are expensive and concentrated in specialized clinics, limiting early-stage access.\n\nTractability:\nTractable because sensors, at-home sampling, and longitudinal analytics are improving. The hard part is clinical validation and integration: turning measurements into clear action pathways and ensuring equitable access. AI helps by interpreting longitudinal signals and matching to evidence-based interventions.\n\nStartup surfaces:\n- At-home fertility measurement systems with clinical-grade QC and longitudinal interpretation\n- Standardized diagnostic pathways that reduce time-to-diagnosis and increase guideline adherence\n- Care navigation platforms that integrate labs, clinics, and follow-up with outcome tracking\n- Male fertility measurement and improvement programs with verified metrics and coaching\n- Insurance and employer benefit layers tied to earlier intervention and improved outcomes",
+    "sources": [
+        "[1] World Health Organization. Infertility (fact sheet: prevalence and access constraints). 2023. https://www.who.int/news-room/fact-sheets/detail/infertility",
+        "[2] Centers for Disease Control and Prevention. Assisted Reproductive Technology (ART) and fertility surveillance. Accessed 2026-03-15. https://www.cdc.gov/art/index.html",
+        "[3] National Institutes of Health. Eunice Kennedy Shriver National Institute of Child Health and Human Development (reproductive health research context). Accessed 2026-03-15. https://www.nichd.nih.gov/health/topics/infertility"
+    ]
+},
+    {
+    "rank": 55,
+    "slug": "education-outcomes-ledger",
+    "title": "Education Outcomes Ledger",
+    "short_descriptor": "Skills proof OS",
+    "preview_text": "We build education systems that certify seat time, but we still lack portable, trustworthy proof of skills mastery that maps to real labor market and life outcomes.",
+    "problem_priority": 58,
+    "importance": 71,
+    "neglectedness": 28,
+    "tractability": 70,
+    "gap": "What exists is fragmented credentials, inconsistent assessments, and weak feedback loops between learning and opportunity. What could exist is an outcomes ledger: verifiable mastery credentials, competency-based progression, and longitudinal measurement that aligns education investments to actual capability gains.",
+    "stakes": "Human capital is the real growth engine. If skills can’t be measured credibly, learners waste time and money, employers mis-hire, and inequality hardens. A skills proof layer increases mobility, improves matching, and makes education spending more productive.",
+    "sector_tags": [
+        "Education",
+        "AI"
+    ],
+    "outcome_tags": [
+        "Abundance",
+        "Human Flourishing"
+    ],
+    "long_form_content": "Headline evidence:\n- The World Bank’s “learning poverty” indicator highlights severe learning shortfalls, implying that enrollment does not equal mastery and measurement gaps are real. [1]\n- OECD assessments document large variation in student competencies and persistent skills gaps, reinforcing the need for better measurement and feedback. [2]\n- OECD has emphasized skills as a driver of productivity and inclusion, indicating macroeconomic stakes for better skill formation systems. [3]\n\nWhy it stays neglected:\nEducation is path-dependent and credential-driven, and stakeholders benefit from the existing signaling system even when it’s noisy. Measurement is politically sensitive, and interoperability across schools, employers, and governments is weak. Vendors optimize for procurement requirements, not longitudinal outcomes.\n\nTractability:\nTractable because digital assessment, verifiable credentials, and AI tutoring enable competency-based models. The hard parts are standard setting, avoiding perverse incentives, and building trust across institutions. The wedge is verifiable mastery that is harder to game and easier to use.\n\nStartup surfaces:\n- Competency-based assessment platforms with cheating-resistant verification and clear standards mapping\n- Verifiable credential infrastructure that employers can trust and adopt cheaply\n- Longitudinal learning analytics that tie interventions to measurable capability gains\n- AI tutoring systems integrated with mastery checks and remediation loops\n- Skills-to-job matching rails that reward proven competence over pedigree",
+    "sources": [
+        "[1] World Bank. Learning Poverty (indicator and methodology). Accessed 2026-03-15. https://www.worldbank.org/en/topic/education/brief/learning-poverty",
+        "[2] OECD. PISA results and competency measurement context. Accessed 2026-03-15. https://www.oecd.org/pisa/",
+        "[3] OECD. Skills Strategy and skills outcomes framing. Accessed 2026-03-15. https://www.oecd.org/skills/"
+    ]
+},
+    {
+    "rank": 56,
+    "slug": "court-backlog-and-digital-dispute-resolution",
+    "title": "Court Backlog and Digital Dispute Resolution",
+    "short_descriptor": "Justice throughput",
+    "preview_text": "Civil justice is slow and expensive, so disputes fester and economic activity slows, but courts still lack modern workflow systems that can scale throughput without sacrificing due process.",
+    "problem_priority": 58,
+    "importance": 70,
+    "neglectedness": 30,
+    "tractability": 65,
+    "gap": "What exists is paper-era process running on digital facsimiles: fragmented case management, slow scheduling, and limited triage. What could exist is justice operations infrastructure: digital intake, triage, negotiated resolution rails, and outcome tracking that makes routine disputes faster and cheaper.",
+    "stakes": "Justice throughput is economic throughput. When disputes are slow, small businesses avoid enforcement, contracts become less credible, and power concentrates in actors who can afford litigation. Faster, fairer resolution increases trust, reduces coercion, and improves the business environment.",
+    "sector_tags": [
+        "Governance",
+        "Finance"
+    ],
+    "outcome_tags": [
+        "Better Governance",
+        "Freedom"
+    ],
+    "long_form_content": "Headline evidence:\n- CEPEJ reports provide cross-country metrics on judicial efficiency, including disposition time and clearance rates, documenting persistent backlog dynamics. [1]\n- OECD frames rule of law and effective institutions as foundational for economic performance and trust, reinforcing the system stakes of judicial throughput. [2]\n- Digitalization and process redesign are repeatedly highlighted as levers for improving court performance and access to justice in institutional analyses. [1]\n\nWhy it stays neglected:\nCourts are risk-averse, underfunded, and fragmented across jurisdictions. Procurement is slow, and legacy vendors dominate. Any change is politically sensitive because due process and fairness are non-negotiable. That makes experimentation hard even when the status quo is failing.\n\nTractability:\nTractable if we focus on workflow modernization and triage, not on automating judgment. The near-term wins are digital intake, scheduling, evidence management, and supported negotiation or mediation for routine cases. AI can help summarize filings and route cases, but transparency and appealability must be built in.\n\nStartup surfaces:\n- Digital intake and document normalization that reduces clerk workload and error\n- Case triage systems that route disputes to mediation, fast-track, or full adjudication\n- Scheduling optimization and remote hearing infrastructure with audit-grade records\n- Evidence and chain-of-custody tooling for digital exhibits and communications\n- Outcome tracking dashboards that measure throughput, fairness proxies, and user satisfaction",
+    "sources": [
+        "[1] Council of Europe, CEPEJ. European Judicial Systems: Efficiency and Quality of Justice (latest cycle and indicators). Accessed 2026-03-15. https://www.coe.int/en/web/cepej/cepej-reports-and-studies",
+        "[2] OECD. Trust in government and institutions (institutional performance context). Accessed 2026-03-15. https://www.oecd.org/gov/trust-in-government.htm",
+        "[3] World Justice Project. Rule of Law Index (access to justice dimension). Accessed 2026-03-15. https://worldjusticeproject.org/rule-of-law-index"
+    ]
+},
+    {
+    "rank": 57,
+    "slug": "disaster-insurance-and-claims-automation",
+    "title": "Disaster Insurance and Claims Automation",
+    "short_descriptor": "Rapid recovery finance",
+    "preview_text": "Climate disasters are becoming normal, but insurance pricing, availability, and claims processing still behave like rare events, slowing recovery and amplifying inequality.",
+    "problem_priority": 57,
+    "importance": 71,
+    "neglectedness": 25,
+    "tractability": 65,
+    "gap": "What exists is slow claims resolution, disputed losses, and shrinking coverage in high-risk areas. What could exist is rapid recovery finance: parametric triggers, remote damage verification, and claims automation that pays quickly and aligns incentives for resilience upgrades.",
+    "stakes": "Recovery speed is a second disaster. When households and businesses wait months for payouts, communities hollow out and rebuilding costs rise. Better insurance and claims infrastructure doesn’t just move money faster. It preserves social cohesion and reduces long-run public fiscal burden.",
+    "sector_tags": [
+        "Finance",
+        "Climate"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Community Renewal"
+    ],
+    "long_form_content": "Headline evidence:\n- NOAA’s billion-dollar disasters dataset documents hundreds of U.S. disaster events since 1980, reflecting the growing scale of insured and uninsured losses tied to extreme events. [1]\n- The U.S. Treasury Federal Insurance Office has analyzed climate-related financial risk in the insurance sector, indicating systemic stress and availability concerns. [2]\n- Disaster recovery outcomes are strongly influenced by claim speed and capital access, motivating tooling that improves verification and payout throughput. [2]\n\nWhy it stays neglected:\nInsurance is regulated locally, data is fragmented, and incentives are tangled: insurers want lower risk, homeowners want affordable premiums, and governments want coverage continuity. Fraud concerns slow payout. And many resilience investments are not priced into premiums fast enough to motivate action.\n\nTractability:\nTractable because remote sensing, computer vision, and standardized damage models are improving. The hard part is trust and regulation: insurers and regulators must accept automated evidence. The wedge is hybrid systems that combine fast parametric layers with verified indemnity payouts and resilience-linked incentives.\n\nStartup surfaces:\n- Remote damage verification using satellite, aerial imagery, and on-site sensor corroboration\n- Parametric insurance products designed around hazard intensity and local vulnerability\n- Claims workflow automation with fraud detection and audit logs acceptable to regulators\n- Resilience retrofit financing tied to premium reductions and verified risk reduction\n- Municipal recovery dashboards coordinating insurers, contractors, and permitting workflows",
+    "sources": [
+        "[1] NOAA National Centers for Environmental Information. U.S. Billion-Dollar Weather and Climate Disasters Dataset. Accessed 2026-03-15. https://www.ncei.noaa.gov/access/billions/",
+        "[2] U.S. Department of the Treasury, Federal Insurance Office. Climate-Related Financial Risk and the U.S. Insurance Sector. 2023. https://home.treasury.gov/system/files/311/FIO-Climate-Insurance-Report.pdf",
+        "[3] World Bank. Disaster risk financing and insurance (program resources). Accessed 2026-03-15. https://www.worldbank.org/en/topic/disasterriskmanagement/brief/disaster-risk-financing-and-insurance"
+    ]
+},
+    {
+    "rank": 58,
+    "slug": "semiconductor-supply-chain-traceability",
+    "title": "Semiconductor Supply Chain Traceability",
+    "short_descriptor": "Chips provenance",
+    "preview_text": "Semiconductors are civilization-critical, but the supply chain is opaque across tiers, making resilience planning, compliance, and risk reduction harder than it should be.",
+    "problem_priority": 57,
+    "importance": 72,
+    "neglectedness": 22,
+    "tractability": 55,
+    "gap": "What exists is limited visibility into multi-tier dependencies, bottlenecks, and geographic concentration, with reactive scrambling during shocks. What could exist is a chips provenance layer: multi-tier traceability, risk scoring, and verified compliance that helps buyers and governments plan and invest before shortages hit.",
+    "stakes": "Semiconductors drive everything: defense, energy systems, vehicles, medical devices, and AI compute. Supply shocks cascade into inflation and strategic vulnerability. Traceability is the prerequisite for redundancy because you cannot diversify what you cannot see.",
+    "sector_tags": [
+        "Manufacturing",
+        "Security"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Abundance"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. government’s supply chain review under Executive Order 14017 identifies semiconductors as a critical supply chain domain requiring resilience and investment. [1]\n- The U.S. Department of Commerce’s semiconductor supply chain assessments document structural vulnerabilities and the need for better visibility into dependencies. [2]\n- Modern industrial systems increasingly depend on chips, making supply chain shocks a national resilience issue rather than a niche manufacturing issue. [1]\n\nWhy it stays neglected:\nSupply chains are commercially sensitive, and incentives reward opacity. Tier-n suppliers often do not know their own deep dependencies. Standards for traceability and reporting are inconsistent. Buyers want resilience, but many cannot contract far enough forward to underwrite new capacity.\n\nTractability:\nTractable because the problem is largely data, standards, and incentives. The hard parts are adoption and trust: firms must share enough to make the system useful without leaking IP. AI can help infer risk from partial data, but governance and permissioning are central.\n\nStartup surfaces:\n- Multi-tier supply chain mapping with secure, permissioned sharing and audit trails\n- Risk scoring tied to geographic concentration, lead times, and substitution options\n- Compliance tooling for export controls and provenance requirements\n- Forecasting and contracting systems that aggregate demand and reduce volatility\n- “Resilience procurement” platforms for governments and strategic industries",
+    "sources": [
+        "[1] The White House. Building Resilient Supply Chains, Revitalizing American Manufacturing, and Fostering Broad-Based Growth (100-day review under EO 14017). 2021. https://www.whitehouse.gov/wp-content/uploads/2021/06/100-day-supply-chain-review-report.pdf",
+        "[2] U.S. Department of Commerce. Semiconductor Supply Chain Assessment (reports and releases). 2022. https://www.commerce.gov/news/press-releases/2022/01/commerce-department-releases-results-its-semiconductor-supply-chain",
+        "[3] CHIPS for America (U.S. Department of Commerce). Program overview and strategy. Accessed 2026-03-15. https://www.chips.gov/"
+    ]
+},
+    {
+    "rank": 59,
+    "slug": "gene-therapy-manufacturing-and-qc-platform",
+    "title": "Gene Therapy Manufacturing and QC Platform",
+    "short_descriptor": "Reliable vectors",
+    "preview_text": "We can design gene therapies faster than we can manufacture them reliably, and quality control remains a bottleneck for scaling safe, affordable delivery.",
+    "problem_priority": 56,
+    "importance": 72,
+    "neglectedness": 18,
+    "tractability": 55,
+    "gap": "What exists is bespoke manufacturing, limited capacity, and complex quality attributes that drive high costs and slow trials. What could exist is a scalable gene therapy manufacturing stack: standardized processes, real-time release testing, and quality systems that reduce batch failure and compress timelines.",
+    "stakes": "Gene therapies have the potential to cure previously untreatable diseases, but manufacturing scarcity and high costs constrain access. If the manufacturing layer stays artisanal, therapies remain rare and ultra-expensive. A scalable QC platform increases throughput, improves safety, and accelerates clinical translation.",
+    "sector_tags": [
+        "Biotech",
+        "Healthcare"
+    ],
+    "outcome_tags": [
+        "Longevity",
+        "Scientific Acceleration"
+    ],
+    "long_form_content": "Headline evidence:\n- FDA has published manufacturing-focused guidance for human gene therapy investigational new drug applications, reflecting the complexity and regulatory importance of chemistry, manufacturing, and controls. [1]\n- FDA maintains public listings of approved cellular and gene therapy products, indicating a growing pipeline that will increase manufacturing demand. [2]\n- Manufacturing and QC are repeatedly identified as limiting steps for translation and scalability of advanced therapies in regulatory and scientific literature. [1]\n\nWhy it stays neglected:\nProcess development is expensive, slow, and not easily standardized across vectors, indications, and facilities. Capacity is concentrated in a small number of specialized manufacturers. The incentive landscape favors discovery novelty over manufacturing excellence, and regulatory expectations require rigorous validation.\n\nTractability:\nTractable because analytics, automation, and process control are improving. The hard part is generating validated, regulator-trusted evidence while changing processes. AI helps optimize process parameters and detect deviations early, but quality systems and validation strategy must be designed from day one.\n\nStartup surfaces:\n- Real-time release analytics and automated quality control workflows\n- Process development optimization platforms for viral vector and non-viral delivery\n- Capacity marketplaces and scheduling tools for contract development and manufacturing organizations\n- Standardized digital batch records and deviation management systems for gene therapy facilities\n- Reference standards, assays, and comparability toolkits that reduce revalidation friction",
+    "sources": [
+        "[1] U.S. Food and Drug Administration. Chemistry, Manufacturing, and Control (CMC) Information for Human Gene Therapy Investigational New Drug Applications (Guidance for Industry). 2020. https://www.fda.gov/regulatory-information/search-fda-guidance-documents/chemistry-manufacturing-and-control-cmc-information-human-gene-therapy-investigational-new-drug",
+        "[2] U.S. Food and Drug Administration. Approved Cellular and Gene Therapy Products. Accessed 2026-03-15. https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/approved-cellular-and-gene-therapy-products",
+        "[3] U.S. Food and Drug Administration. Human Gene Therapy guidance documents (program index). Accessed 2026-03-15. https://www.fda.gov/vaccines-blood-biologics/cellular-gene-therapy-products/guidance-documents-human-gene-therapy"
+    ]
+},
+    {
+    "rank": 60,
+    "slug": "gnss-spoofing-and-positioning-resilience",
+    "title": "GNSS Spoofing and Positioning Resilience",
+    "short_descriptor": "Trust navigation",
+    "preview_text": "Positioning, navigation, and timing systems are critical infrastructure, but interference and spoofing are increasingly common and many sectors still lack resilient fallback and detection.",
+    "problem_priority": 55,
+    "importance": 71,
+    "neglectedness": 16,
+    "tractability": 60,
+    "gap": "What exists is heavy dependence on Global Navigation Satellite Systems (GNSS) with inconsistent detection, weak redundancy, and uneven sector preparedness. What could exist is resilient positioning: spoofing detection by default, multi-sensor fusion, and standardized assurance levels that keep navigation trustworthy under attack or interference.",
+    "stakes": "If GNSS trust collapses, the failure cascades: aviation, maritime, logistics, finance timing, energy grid timing, and emergency response. This is a quietly enormous single-point-of-failure risk. Resilient positioning converts a brittle dependency into a layered system that fails gracefully instead of catastrophically.",
+    "sector_tags": [
+        "Security",
+        "Transportation"
+    ],
+    "outcome_tags": [
+        "Resilience",
+        "Social Trust"
+    ],
+    "long_form_content": "Headline evidence:\n- The U.S. government has formally treated positioning, navigation, and timing resilience as a national priority, issuing executive actions to strengthen responsible use and resilience. [1]\n- GAO has reported on GPS vulnerabilities and the need for improved resilience planning and alternatives, indicating persistent systemic exposure. [2]\n- DHS and related agencies have documented GNSS interference as a real-world operational risk requiring detection and mitigation. [3]\n\nWhy it stays neglected:\nGNSS is “invisible until it fails,” and many sectors assume it is reliable by default. Mitigations require coordination across device manufacturers, operators, and regulators. Alternatives exist, but business cases are weak because benefits are mostly avoided catastrophe.\n\nTractability:\nTractable because detection and fusion are buildable now: inertial sensors, terrestrial signals, timing holdover, and anomaly detection. The hard part is standardization and deployment into legacy fleets and infrastructure. AI helps detect spoofing patterns and fuse multi-sensor truth estimates, but certification and liability will matter.\n\nStartup surfaces:\n- GNSS spoofing detection modules for aviation, maritime, and logistics fleets with audit logs\n- Multi-sensor positioning fusion SDKs with defined assurance levels and failure modes\n- Timing resilience products for communications and energy systems (holdover and sync monitoring)\n- Incident reporting and mapping platforms for interference hotspots and operational routing\n- Certification and compliance tooling for resilient positioning requirements in regulated sectors",
+    "sources": [
+        "[1] The White House. Executive Order 13905: Strengthening National Resilience Through Responsible Use of Positioning, Navigation, and Timing Services. 2020. https://www.federalregister.gov/documents/2020/02/18/2020-03337/strengthening-national-resilience-through-responsible-use-of-positioning-navigation-and-timing",
+        "[2] U.S. Government Accountability Office. GPS Disruptions: Reports on vulnerabilities and resilience needs. Accessed 2026-03-15. https://www.gao.gov/search?search_api_fulltext=GPS%20disruptions",
+        "[3] U.S. Department of Homeland Security. GPS and GNSS interference awareness resources. Accessed 2026-03-15. https://www.dhs.gov/science-and-technology/pnt"
+    ]
 }
 ].map(p => ({
     ...p,
