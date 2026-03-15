@@ -203,7 +203,7 @@ export const forecastDatabase: Record<string, ForecastData> = {
                 '2040-01-01': { horizonDate: '2040-01-01', probabilities: { '10000000': 98, '100000000': 85, '1000000000': 68, '10000000000': 35, '100000000000': 8, '1000000000000': 0.5 } }
             }
         },
-        aiRationale: "Venture and scale probability dynamics for an agentic orchestration layer, predicting enterprise adoption trajectories across standard thresholds."
+        aiRationale: "Easy Exit operates as the foundational trust and verification protocol for agentic commerce. The AGI Futures forecaster model projects a high probability of reaching a $100M+ valuation by 2035 as consumer-agent adoption rapidly accelerates merchant compliance to machine-readable revocation standards. However, because the core protocol must remain open-source to succeed as an anti-lock-in standard, extracting a $100B+ hyper-scale outcome is structurally constrained. The primary path to a major venture exit ($1B+) relies on successfully monopolizing the enterprise execution network, verification tooling, and compliance data layer built on top of the free protocol."
     },
 };
 
