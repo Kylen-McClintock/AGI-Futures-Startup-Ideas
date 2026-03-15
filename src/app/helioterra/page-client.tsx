@@ -37,6 +37,7 @@ import dashboardImage from './assets/dashboard.png';
 import grazingImage from './assets/grazing.png';
 import icpGrowerImage from './assets/icp_grower.png';
 import icpDeveloperImage from './assets/icp_developer.png';
+import heatStressedCropsImage from './assets/heat_stressed_crops.png';
 
 export default function HelioTerraClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -471,7 +472,7 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             </p>
                         </div>
                         <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 order-1 md:order-2">
-                            <Image src={grazingImage} alt="Sheep grazing peacefully under a stunning, modern solar design array" fill quality={100} className="object-cover" />
+                            <Image src={heatStressedCropsImage} alt="Fragile heat-stressed crops saved by cooling agrivoltaic panel shade" fill quality={100} className="object-cover" />
                         </div>
                     </div>
 
