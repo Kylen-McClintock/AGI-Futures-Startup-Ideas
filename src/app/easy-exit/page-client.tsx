@@ -14,6 +14,7 @@ import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { InteractiveGridCard } from "./components/InteractiveGridCard";
 import { ValueFlowDiagram } from "./components/ValueFlowDiagram";
 import { MarketTAMChart } from "./components/MarketTAMChart";
+import CategoryFrontierForecast from "@/components/forecast/CategoryFrontierForecast";
 
 // Import local images
 import heroImg from "./assets/easy_exit_hero_1773609319540.png";
@@ -22,13 +23,21 @@ import solutionImg from "./assets/easy_exit_solution_1773609351808.png";
 import marketImg from "./assets/easy_exit_market_1773609367126.png";
 import impactImg from "./assets/easy_exit_impact_1773609385141.png";
 
-export default function EasyExitClient() {
+export default function EasyExitClientPage({ initialTags }: { initialTags: any }) {
     const theme = themeMap['emerald'];
-    const [isFirstExperimentExpanded, setIsFirstExperimentExpanded] = useState(false);
     const [isMoatExpanded, setIsMoatExpanded] = useState(false);
     const [isDifficultyExpanded, setIsDifficultyExpanded] = useState(false);
     const [isImpactExpanded, setIsImpactExpanded] = useState(false);
     const [isOpenSourceExpanded, setIsOpenSourceExpanded] = useState(false);
+
+    // Initial forecast data
+    const mockForecast = {
+        curves: {
+            '2030-01-01': { horizonDate: '2030-01-01', probabilities: { '10000000': 85, '100000000': 60, '1000000000': 15, '10000000000': 2, '100000000000': 0.1, '1000000000000': 0 } },
+            '2035-01-01': { horizonDate: '2035-01-01', probabilities: { '10000000': 95, '100000000': 75, '1000000000': 42, '10000000000': 12, '100000000000': 2, '1000000000000': 0.1 } },
+            '2040-01-01': { horizonDate: '2040-01-01', probabilities: { '10000000': 98, '100000000': 85, '1000000000': 68, '10000000000': 35, '100000000000': 8, '1000000000000': 0.5 } }
+        }
+    };
     
     return (
         <main 
@@ -112,33 +121,27 @@ export default function EasyExitClient() {
 
             {/* HEADLINE STAT */}
             <section className="py-24 px-6 relative z-10">
-                <div className="max-w-5xl mx-auto">
+                <div className="max-w-4xl mx-auto">
                     <motion.div 
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="glass-panel p-12 md:p-16 rounded-[3rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent relative overflow-hidden"
+                        className="glass-panel p-8 md:p-12 rounded-3xl border-l-[3px] border-l-[var(--primary)] bg-gradient-to-r from-[var(--primary)]/5 to-transparent relative overflow-hidden flex flex-col md:flex-row items-center gap-8 md:gap-12 shadow-[0_4px_30px_rgba(0,0,0,0.1)]"
                     >
-                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/20 blur-[100px] rounded-full" />
-                        <h2 className="text-lg md:text-xl font-mono uppercase tracking-widest text-[var(--primary)] mb-6 relative z-10 text-center">
-                            On March 11, 2026, the Federal Trade Commission said it had received
-                        </h2>
-                        <div className="text-center mb-8 relative z-10">
-                            <span className="text-7xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-white to-[var(--primary)]/60 block tracking-tighter drop-shadow-2xl">
-                                100,000+
-                            </span>
-                            <span className="text-3xl md:text-4xl font-serif text-[var(--primary)] font-light mt-2 block">complaints</span>
+                        <div className="shrink-0 text-center md:text-left">
+                            <span className="text-5xl md:text-7xl font-serif text-white tracking-tight drop-shadow-lg leading-none">100,000+</span>
+                            <span className="text-sm font-mono uppercase tracking-widest text-[var(--primary)] block mt-3">Complaints</span>
                         </div>
-                        <h2 className="text-xl md:text-3xl font-light leading-snug text-white/80 relative z-10 text-center max-w-2xl mx-auto">
-                            in the past five years about hard-to-cancel subscriptions.
+                        <div className="text-xl md:text-2xl font-light leading-relaxed text-white/80">
+                            On March 11, 2026, the Federal Trade Commission noted they had received this many complaints over five years regarding hard-to-cancel subscriptions.
                             <ExpandableCitation 
                                 label="[1]" 
                                 sourceUrl="https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option" 
-                                sourceText="Federal Trade Commission, 'FTC Seeks Public Comment in Response to Advance Notice of Proposed Rulemaking Regarding Negative Option Marketing Practices.'" 
+                                sourceText="Federal Trade Commission." 
                                 theme="emerald" 
                             />
-                        </h2>
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -239,8 +242,8 @@ export default function EasyExitClient() {
                     <div className="grid grid-cols-1 gap-8">
                         <InteractiveGridCard 
                             icon={<Users className="w-6 h-6 text-white" />}
-                            tagLabel="ICP 1: Issuer bank or fintech app"
-                            title="The default control plane" 
+                            tagLabel="The default control plane"
+                            title="ICP 1: Issuer bank or fintech app" 
                             description={
                                 <span>A customer opens their banking app and sees Netflix, a fitness app, two forgotten software trials, and a local newspaper subscription. Each line item shows renewal date, price, and exit type. Two are one-click cancellable through Easy Exit. One offers instant downgrade. Support calls fall, trust rises, and the app becomes the default control plane for recurring spend. Mastercard and Visa already offer pieces of this experience, which proves demand, but the merchant-side standard is still fragmented. 
                                 <ExpandableCitation label="[3]" sourceUrl="https://developer.visa.com/capabilities/visa-subscription-manager/docs-getting-started" sourceText="Visa Subscription Manager." theme="emerald" />
@@ -250,14 +253,14 @@ export default function EasyExitClient() {
                         />
                         <InteractiveGridCard 
                             icon={<BarChart3 className="w-6 h-6 text-white" />}
-                            tagLabel="ICP 2: Subscription startup"
-                            title="Vertical SaaS integration" 
+                            tagLabel="Vertical SaaS integration"
+                            title="ICP 2: Subscription startup" 
                             description="A vertical SaaS company adds an Easy Exit badge to pricing and checkout. Trial conversion improves because buyers trust they are not entering a trap. Churn becomes cleaner data instead of involuntary residue. The company learns who actually wants to leave, who wants a cheaper plan, and which save offers work without coercion."
                         />
                         <InteractiveGridCard 
                             icon={<Lightbulb className="w-6 h-6 text-white" />}
-                            tagLabel="ICP 3: Consumer app or personal AI"
-                            title="Trust as a ranking signal" 
+                            tagLabel="Trust as a ranking signal"
+                            title="ICP 3: Consumer app or personal AI" 
                             description="A budgeting app or future AI purchasing assistant routes users toward merchants with instant revocation, transparent renewal terms, and a strong historical compliance score. 'Easy to exit' becomes a ranking signal the same way delivery time or free shipping became one."
                         />
                     </div>
@@ -407,6 +410,27 @@ export default function EasyExitClient() {
                             )}
                         </AnimatePresence>
                     </div>
+
+                    {/* Open Source Priority Score */}
+                    <div className="glass-panel p-8 rounded-3xl border border-purple-500/20 bg-purple-500/5 cursor-pointer hover:bg-purple-500/10 transition-colors" onClick={() => setIsOpenSourceExpanded(!isOpenSourceExpanded)}>
+                        <div className="flex justify-between items-center mb-6">
+                            <h3 className="text-2xl font-light text-white">Open Source Priority</h3>
+                            <ChevronDown className={`w-5 h-5 text-white/50 transition-transform ${isOpenSourceExpanded ? "rotate-180" : ""}`} />
+                        </div>
+                        <div className="text-5xl font-light text-purple-400 mb-4">92<span className="text-xl text-white/30 ml-2">/ 100</span></div>
+                        <p className="text-white/80 text-sm italic mb-2">High open-source value. The protocol must be vendor-neutral to act as a trustworthy baseline.</p>
+                        
+                        <AnimatePresence>
+                            {isOpenSourceExpanded && (
+                                <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
+                                    <div className="pt-4 border-t border-white/10 mt-4 text-sm text-white/70 space-y-2">
+                                        <p>A closed protocol for machine-verifiable revocation rights defeats the point of an anti-lock-in standard.</p>
+                                        <p>The standard must be open to ensure competing machine agents and merchants can reliably communicate their intents and trust the validation mechanisms without paying tolls to a gateway. The tooling around it can be effectively monetized.</p>
+                                    </div>
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
+                    </div>
                 </section>
 
                 {/* GO TO MARKET / FOUNDER FIT */}
@@ -493,44 +517,10 @@ export default function EasyExitClient() {
                 
                 <section>
                     {/* Valuation Forecast Component */}
-                    <div className="glass-panel p-8 md:p-12 rounded-[3rem] border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 via-[var(--primary)]/5 to-transparent relative overflow-hidden shadow-[0_0_50px_rgba(var(--primary),0.05)]">
-                        <div className="absolute top-0 right-0 w-96 h-96 bg-[var(--primary)]/10 blur-[120px] rounded-full pointer-events-none" />
-                        
-                        <div className="flex justify-between items-center mb-6 relative z-10">
-                            <h3 className="text-3xl font-serif font-light text-white flex items-center gap-4">
-                                <BarChart3 className="w-8 h-8 text-[var(--primary)]" />
-                                Valuation Forecast Model
-                            </h3>
-                        </div>
-                        <p className="text-white/70 text-lg mb-12 italic relative z-10 max-w-2xl">
-                            High-quality assessment of the probability that the category leader in this space (agentic revocation layer) validation reaches at least each valuation threshold for each of the dates:
-                        </p>
-                        
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left relative z-10">
-                            <div className="bg-black/40 backdrop-blur-xl rounded-3xl p-8 border border-white/5 hover:border-white/20 transition-colors">
-                                <div className="text-sm text-white/50 mb-4 font-mono uppercase tracking-widest leading-none">2030</div>
-                                <div className="text-6xl text-white font-light tracking-tight mb-2">15<span className="text-3xl">%</span></div>
-                                <div className="text-sm font-semibold text-white/90 mb-6 uppercase tracking-wider">$1B+ Valuation</div>
-                                <p className="text-sm text-white/60 leading-relaxed font-light">As autonomous agent purchasing expands, the first major wedge in standardizing verified cancellation rights establishes a robust B2B API.</p>
-                            </div>
-                            
-                            <div className="bg-[var(--primary)]/10 backdrop-blur-xl rounded-3xl p-8 border border-[var(--primary)]/30 shadow-[0_0_30px_rgba(var(--primary),0.1)] relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/10 to-transparent rounded-3xl pointer-events-none" />
-                                <div className="text-sm text-[var(--primary)]/70 mb-4 font-mono uppercase tracking-widest leading-none">2035</div>
-                                <div className="text-6xl text-[var(--primary)] font-light tracking-tight mb-2">42<span className="text-3xl">%</span></div>
-                                <div className="text-sm font-semibold text-[var(--primary)] mb-6 uppercase tracking-wider">$10B+ Valuation</div>
-                                <p className="text-sm text-[var(--primary)]/80 leading-relaxed font-light">With autonomous systems mediating the majority of commercial transactions, a machine-readable cross-merchant trust layer becomes mandatory financial infrastructure.</p>
-                            </div>
-                            
-                            <div className="bg-emerald-500/10 backdrop-blur-xl rounded-3xl p-8 border border-emerald-500/40 shadow-[0_0_40px_rgba(16,185,129,0.15)] relative">
-                                <div className="absolute inset-0 bg-gradient-to-t from-emerald-500/10 to-transparent rounded-3xl pointer-events-none" />
-                                <div className="text-sm text-emerald-400/80 mb-4 font-mono uppercase tracking-widest leading-none">2040</div>
-                                <div className="text-6xl text-emerald-300 font-light tracking-tight mb-2">68<span className="text-3xl">%</span></div>
-                                <div className="text-sm font-semibold text-emerald-300 mb-6 uppercase tracking-wider">$50B+ Valuation</div>
-                                <p className="text-sm text-emerald-300/80 leading-relaxed font-light">By standardizing algorithmic rights globally, the category leader functions similarly to Visa/Mastercard for intent termination and agent oversight.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <CategoryFrontierForecast 
+                        initialForecast={mockForecast as any} 
+                        aiRationale="Venture and scale probability dynamics for an agentic orchestration layer, predicting enterprise adoption trajectories across standard thresholds." 
+                    />
                 </section>
 
                 {/* KPIs & FIRST EXPERIMENT */}
@@ -548,25 +538,16 @@ export default function EasyExitClient() {
                             </ul>
                         </div>
                         
-                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/30 bg-[var(--primary)]/5 cursor-pointer hover:bg-[var(--primary)]/10 transition-colors" onClick={() => setIsFirstExperimentExpanded(!isFirstExperimentExpanded)}>
-                            <div className="flex justify-between items-start mb-4">
-                                <h3 className="text-xl text-white">First experiment</h3>
-                                <ChevronDown className={`w-5 h-5 text-white/50 transition-transform ${isFirstExperimentExpanded ? "rotate-180" : ""}`} />
+                        <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/10 bg-white/5">
+                            <h3 className="text-xl text-[var(--primary)] font-medium mb-4 flex items-center gap-3">
+                                <Lightbulb className="w-5 h-5" />
+                                First experiment
+                            </h3>
+                            <p className="text-white/90 font-medium mb-3">Quick falsifiable hypothesis:</p>
+                            <div className="text-white/70 text-sm space-y-4 font-light">
+                                <p>If 25 startup subscription merchants are offered a hosted Easy Exit endpoint and badge, at least 5 will implement it within 60 days and at least 2 will publicly use it in acquisition copy because they believe trust gains outweigh churn fear.</p>
+                                <p><strong className="text-white">Actual smallest test:</strong> Manually build the Easy Exit Index for 100 popular subscription products, then recruit 10 startup merchants into a no-code hosted cancellation flow plus badge. Measure merchant adoption, pricing-page conversion impact, and successful cancellation completion rate.</p>
                             </div>
-                            <p className="text-white/80 font-medium">Quick falsifiable hypothesis:</p>
-                            <AnimatePresence>
-                                {!isFirstExperimentExpanded && (
-                                    <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="text-white/60 text-sm mt-2 truncate">
-                                        If 25 startup subscription merchants are offered a hosted Easy Exit endpoint...
-                                    </motion.p>
-                                )}
-                                {isFirstExperimentExpanded && (
-                                    <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden mt-4 text-white/70 text-sm space-y-4">
-                                        <p>If 25 startup subscription merchants are offered a hosted Easy Exit endpoint and badge, at least 5 will implement it within 60 days and at least 2 will publicly use it in acquisition copy because they believe trust gains outweigh churn fear.</p>
-                                        <p><strong className="text-white">Actual smallest test:</strong> Manually build the Easy Exit Index for 100 popular subscription products, then recruit 10 startup merchants into a no-code hosted cancellation flow plus badge. Measure merchant adoption, pricing-page conversion impact, and successful cancellation completion rate.</p>
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
                         </div>
                     </div>
                 </section>
