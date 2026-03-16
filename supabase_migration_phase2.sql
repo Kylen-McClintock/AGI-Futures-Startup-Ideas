@@ -42,3 +42,9 @@ EXCEPTION WHEN duplicate_object THEN null; END $$;
 ALTER TABLE artifacts ADD COLUMN IF NOT EXISTS updated_at timestamp with time zone;
 -- Note: media_url already exists, we will migrate data if needed, but first we add the new array column
 ALTER TABLE artifacts ADD COLUMN IF NOT EXISTS media_urls text[] DEFAULT '{}';
+
+-- PHASE 3 SCHEMA ADDITIONS:
+-- Add Newsletter Opt-in Tracking to Profiles Table
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS newsletter_opt_in BOOLEAN DEFAULT true;
+UPDATE public.profiles SET newsletter_opt_in = true WHERE newsletter_opt_in IS NULL;
+

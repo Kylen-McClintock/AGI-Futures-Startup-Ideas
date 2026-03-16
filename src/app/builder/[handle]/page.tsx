@@ -19,6 +19,7 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
 
   const { data: { user } } = await supabase.auth.getUser();
   const isOwner = user?.id === profile.id;
+  const userEmail = isOwner ? user?.email : null;
 
   // 2. Fetch Linked Artifacts for this profile
   // Join with `projects` table to get the project name/slug for display.
@@ -51,5 +52,5 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
     if (n) ideaNotes = n;
   }
 
-  return <BuilderProfileClientPage profile={profile} artifacts={artifacts || []} isOwner={isOwner} savedIdeas={savedIdeas} ideaNotes={ideaNotes} />;
+  return <BuilderProfileClientPage profile={profile} artifacts={artifacts || []} isOwner={isOwner} savedIdeas={savedIdeas} ideaNotes={ideaNotes} userEmail={userEmail} />;
 }

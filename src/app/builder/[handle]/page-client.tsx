@@ -7,14 +7,38 @@ import { problems } from '@/data/problem-atlas-data';
 
 import { SubmitArtifactModal } from '@/components/SubmitArtifactModal';
 import { PrivateNotesSection } from '@/components/PrivateNotesSection';
+import { createClient } from '@/utils/supabase/client';
 
-export default function BuilderProfileClientPage({ profile, artifacts: initialArtifacts, isOwner, savedIdeas = [], ideaNotes = [] }: { profile: any, artifacts: any[], isOwner?: boolean, savedIdeas?: any[], ideaNotes?: any[] }) {
+export default function BuilderProfileClientPage({ profile, artifacts: initialArtifacts, isOwner, savedIdeas = [], ideaNotes = [], userEmail }: { profile: any, artifacts: any[], isOwner?: boolean, savedIdeas?: any[], ideaNotes?: any[], userEmail?: string | null }) {
+
+  const supabase = createClient();
 
   const [artifacts, setArtifacts] = React.useState(initialArtifacts);
   const [editingArtifact, setEditingArtifact] = React.useState<any>(null);
   const [isSubmitModalOpen, setIsSubmitModalOpen] = React.useState(false);
   const [isNotesModalOpen, setIsNotesModalOpen] = React.useState(false);
   const [editingNoteProjectId, setEditingNoteProjectId] = React.useState<string | null>(null);
+
+  const [isOptedIn, setIsOptedIn] = React.useState(profile.newsletter_opt_in ?? true);
+  const [isTogglingNewsletter, setIsTogglingNewsletter] = React.useState(false);
+
+  const handleToggleNewsletter = async () => {
+    setIsTogglingNewsletter(true);
+    const newVal = !isOptedIn;
+    setIsOptedIn(newVal);
+
+    const { error } = await supabase
+      .from('profiles')
+      .update({ newsletter_opt_in: newVal })
+      .eq('id', profile.id);
+
+    if (error) {
+        console.error("Failed to update newsletter preference", error);
+        // revert optimistic update on failure
+        setIsOptedIn(!newVal);
+    }
+    setIsTogglingNewsletter(false);
+  };
 
   const getProjectUrl = (slug: string) => {
     const isProblem = problems.some(p => p.slug === slug);
@@ -56,6 +80,26 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
                   <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed mb-6">
                       {profile.headline}
                   </p>
+              )}
+
+              {isOwner && userEmail && (
+                 <div className="flex flex-col md:flex-row items-center md:items-start gap-4 mb-6 p-4 rounded-2xl bg-white/5 border border-white/10 w-fit shrink-0">
+                    <div className="flex flex-col items-center md:items-start">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981]/70 mb-1">Account Email</span>
+                        <span className="text-sm font-medium text-white/90">{userEmail}</span>
+                    </div>
+                    <div className="hidden md:block w-px h-8 bg-white/10 mx-2 self-center"></div>
+                    <div className="flex items-center gap-3 self-center">
+                        <span className="text-xs text-white/70">Receive weekly newsletter</span>
+                        <button 
+                            onClick={handleToggleNewsletter} 
+                            disabled={isTogglingNewsletter}
+                            className={`w-10 h-5 rounded-full relative transition-colors ${isOptedIn ? 'bg-[#10b981]' : 'bg-white/20'} disabled:opacity-50`}
+                        >
+                            <div className={`absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 rounded-full bg-white transition-all duration-300 shadow-sm ${isOptedIn ? 'left-[22px]' : 'left-[3px]'}`} />
+                        </button>
+                    </div>
+                 </div>
               )}
 
                <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
