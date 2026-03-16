@@ -1,4 +1,5 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -8,6 +9,8 @@ import InteractiveSection from "./components/InteractiveSection";
 import MarketChart from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hq_hero_scan_1772949695780.png";
@@ -68,7 +71,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <div className="absolute inset-0 bg-gradient-to-t from-[#06090c] via-[#06090c]/40 to-black/20" />
                 </motion.div>
 
-                <div className="relative z-10 container mx-auto px-6 md:px-12 flex flex-col items-center text-center max-w-4xl">
+                <div className="relative z-10 container mx-auto px-6 sm:px-12 flex flex-col items-center text-center max-w-4xl">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -104,7 +107,11 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
             </section>
 
 
-            <div className="container mx-auto px-6 md:px-12 max-w-4xl pt-16 md:pt-24 space-y-32">
+            <div className="container mx-auto px-6 sm:px-12 max-w-4xl pt-16 md:pt-24 space-y-32">
+
+                <div className="flex justify-center mt-[-2rem] relative z-20">
+                    <InterestedButton projectSlug="homequote" />
+                </div>
 
                 <FadeIn className="text-center group">
                     <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed font-light text-white/90 md:leading-[1.6]">
@@ -547,6 +554,12 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                         </div>
                     </div>
                 </FadeIn>
+
+                <div className="flex justify-center mt-24 mb-12">
+                    <InterestedButton projectSlug="homequote" />
+                </div>
+                <AutoForecastInjector />
+                <ArtifactSection projectSlug="homequote" />
 
             </div>
         </main >

@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -6,6 +8,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Gamepad2, GraduationCap, Building2, Globe, Zap } from "lucide-react";
 
 // Global Components
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
@@ -45,6 +48,12 @@ export default function SellCraftClient() {
       } as React.CSSProperties}
     >
       <ScrollProgress title="SellCraft" theme={theme} />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="sellcraft" />
+            </div>
+
 
       {/* Narrative wrapper */}
       <div className="max-w-4xl mx-auto px-6 py-24 md:py-32 space-y-32">
@@ -470,6 +479,19 @@ export default function SellCraftClient() {
         </section>
 
       </div>
-    </main>
+    
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="sellcraft" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="sellcraft" />
+                </div>
+            </main>
   );
 }

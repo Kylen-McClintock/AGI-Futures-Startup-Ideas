@@ -1,9 +1,12 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { OptionalModuleCollapse } from "./components/OptionalModuleCollapse";
@@ -35,6 +38,12 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
     return (
         <main className="min-h-screen bg-[#070b14] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['blue'].hexPrimary, "--secondary": themeMap['blue'].hexSecondary, "--tertiary": themeMap['blue'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="CivicPath" theme="blue" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="civicpath" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -747,6 +756,19 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                 </motion.section>
 
             </div>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="civicpath" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="civicpath" />
+                </div>
+            </main>
     );
 }

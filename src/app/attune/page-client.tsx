@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 import attune_couple_connection from "./assets/attune_couple_connection.png";
 import attune_daily_reps from "./assets/attune_daily_reps.png";
 import attune_dual_sync from "./assets/attune_dual_sync.png";
@@ -11,6 +13,7 @@ import { RevealSection, FadeIn } from "./components/RevealSection";
 import { CoreLoopVisual } from "./components/CoreLoopVisual";
 import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
@@ -22,6 +25,12 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-transparent relative overflow-x-hidden selection:bg-[var(--primary)]/30 selection:text-[var(--primary)] pb-32" style={{ "--primary": themeMap['rose'].hexPrimary, "--secondary": themeMap['rose'].hexSecondary, "--tertiary": themeMap['rose'].hexTertiary } as React.CSSProperties}>
       <ScrollProgress title="Attune" theme="primary" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="attune" />
+            </div>
+
 
 
 
@@ -538,6 +547,19 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         </div>
 
       </div>
-    </main>
+    
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="attune" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="attune" />
+                </div>
+            </main>
   );
 }

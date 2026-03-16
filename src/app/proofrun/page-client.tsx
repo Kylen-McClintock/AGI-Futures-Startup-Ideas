@@ -1,10 +1,13 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { ImpactScoreBox } from "./components/ImpactScoreBox";
@@ -38,6 +41,12 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
     return (
         <main className="min-h-screen bg-[#0b0a09] text-stone-200 selection:bg-[var(--primary)]/30 font-sans antialiased overflow-x-hidden pb-32" style={{ "--primary": themeMap['violet'].hexPrimary, "--secondary": themeMap['violet'].hexSecondary, "--tertiary": themeMap['violet'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="ProofRun" theme="violet" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="proofrun" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -643,6 +652,19 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                 </motion.section>
 
             </div>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="proofrun" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="proofrun" />
+                </div>
+            </main>
     );
 }

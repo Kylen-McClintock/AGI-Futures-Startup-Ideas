@@ -1,5 +1,7 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
@@ -11,6 +13,7 @@ import { ExpandableStatCard } from "./components/ExpandableStatCard";
 import { OpenSourcePriority } from "./components/OpenSourcePriority";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from '@/components/HoverAcronym';
 import {
@@ -106,6 +109,12 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
     return (
         <main className="min-h-screen bg-[#06090c] text-stone-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['amber'].hexPrimary, "--secondary": themeMap['amber'].hexSecondary, "--tertiary": themeMap['amber'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="HelioTerra" theme="amber" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="helioterra" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -638,7 +647,9 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                 <div>[8] USDA Economic Research Service. <em>Farm Sector Income & Finances: Assets, Debt, and Wealth</em> (updated 2026).</div>
                             </div>
                         </div>
-                    </div>
+                    
+                <ArtifactSection projectSlug="helioterra" />
+            </div>
                 </details>
 
             </div >

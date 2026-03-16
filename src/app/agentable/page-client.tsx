@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,6 +10,7 @@ import { ExpandableCitation } from "./components/ExpandableCitation";
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { AgentableArchitecture } from "./components/AgentableArchitecture";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { useState } from "react";
 import { themeMap } from "@/utils/themeMap";
@@ -46,6 +49,12 @@ export function PageClient() {
     return (
         <main className="min-h-screen bg-[#06090c] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['cyan'].hexPrimary, "--secondary": themeMap['cyan'].hexSecondary, "--tertiary": themeMap['cyan'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Agentable" theme="cyan" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="agentable" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -743,7 +752,20 @@ export function PageClient() {
                 </details>
             </section>
 
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="agentable" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="agentable" />
+                </div>
+            </main>
     );
 }
 

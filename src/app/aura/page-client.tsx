@@ -1,8 +1,10 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ChevronDown } from "lucide-react";
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import { themeMap } from "@/utils/themeMap";
 
@@ -13,6 +15,7 @@ import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { StackDiagram } from "./components/StackDiagram";
 import { MarketChart } from "./components/MarketChart";
 import { ProjectTags, InlineTags } from "@/components/ProjectTags";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress"; // Added by user instruction
 
 // Hooks
@@ -50,7 +53,13 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
     return (
         <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden selection:bg-[var(--primary)] selection:text-white pb-32" style={{ "--primary": themeMap['fuchsia'].hexPrimary, "--secondary": themeMap['fuchsia'].hexSecondary, "--tertiary": themeMap['fuchsia'].hexTertiary } as React.CSSProperties}>
-            <ScrollProgress title="AURA" theme="fuchsia" /> {/* Added by user instruction */}
+            <ScrollProgress title="AURA" theme="fuchsia" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="aura" />
+            </div>
+ {/* Added by user instruction */}
             {/* Ambient Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/5 blur-[120px] rounded-full mix-blend-screen opacity-50" />
@@ -495,6 +504,19 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
 
                 </div>
             </article>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="aura" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="aura" />
+                </div>
+            </main>
     );
 }

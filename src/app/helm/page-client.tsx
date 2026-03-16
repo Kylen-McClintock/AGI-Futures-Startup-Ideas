@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { RevealSection } from "./components/RevealSection";
 import { themeMap } from "@/utils/themeMap";
@@ -20,6 +22,7 @@ import heroImage from './assets/helm_hero.png';
 import jarvisImage from './assets/helm_jarvis.png';
 import graphImage from './assets/helm_graph.png';
 import networkImage from './assets/helm_network.png';
+import { InterestedButton } from "@/components/InterestedButton";
 
 const citations = [
     { number: 1, source: "Upwork", title: "Freelance Forward 2023", url: "https://www.upwork.com/research/freelance-forward-2023" },
@@ -72,6 +75,12 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
     return (
         <main className="min-h-screen bg-[#06090c] text-slate-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['indigo'].hexPrimary, "--secondary": themeMap['indigo'].hexSecondary, "--tertiary": themeMap['indigo'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Helm" theme="indigo" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="helm" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -782,7 +791,9 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        
+                <ArtifactSection projectSlug="helm" />
+            </div>
                     </details>
                 </RevealSection>
 

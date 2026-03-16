@@ -1,5 +1,7 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
@@ -10,6 +12,7 @@ import { RecurrenceChart } from "./components/BiomeXCharts";
 import { BiomeXImpactScore } from "./components/BiomeXImpactScore";
 import { DonorPhenotypeToggle } from "./components/DonorPhenotypeToggle";
 import { CircularValueFlow } from "./components/CircularValueFlow";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { themeMap } from "@/utils/themeMap";
@@ -37,6 +40,12 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
     return (
         <main className="min-h-screen bg-[#06090c] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['emerald'].hexPrimary, "--secondary": themeMap['emerald'].hexSecondary, "--tertiary": themeMap['emerald'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="BiomeX" theme="emerald" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="biomex" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -682,6 +691,19 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                 </motion.section>
 
             </div>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="biomex" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="biomex" />
+                </div>
+            </main>
     );
 }

@@ -6,6 +6,8 @@ import { ArrowLeft, ChevronLeft, ChevronRight, ChevronDown, ExternalLink } from 
 import { ProblemData } from "@/data/problem-atlas-data";
 import { themeMap, ThemeColor } from "@/utils/themeMap";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { InterestedButton } from "@/components/InterestedButton";
+import { ArtifactSection } from "@/components/ArtifactSection";
 
 interface DetailProps {
     problem: ProblemData;
@@ -192,7 +194,7 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
                     </div>
 
                     <div className="flex-1 flex justify-end">
-                        <div className="text-white/30 text-xs font-mono tracking-widest uppercase hidden sm:block">
+                        <div className="text-white/30 text-xs font-mono tracking-widest uppercase hidden md:block pr-32">
                             Problem #{problem.rank.toString().padStart(2, '0')}
                         </div>
                     </div>
@@ -200,7 +202,9 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
             </div>
 
             <article className="max-w-4xl mx-auto px-6 py-20 lg:py-32">
-                
+                <div className="flex justify-center mt-[-2rem] relative z-20 mb-16">
+                    <InterestedButton projectSlug={problem.slug} />
+                </div>
                 {/* Header */}
                 <header className="mb-20">
                     <div className="flex flex-wrap items-center gap-2 mb-8">
@@ -344,6 +348,11 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
                         </Link>
                     ) : <div className="flex-1" />}
                 </nav>
+
+                <div className="flex justify-center mt-24 mb-12">
+                    <InterestedButton projectSlug={problem.slug} />
+                </div>
+                <ArtifactSection projectSlug={problem.slug} />
 
             </article>
         </main>

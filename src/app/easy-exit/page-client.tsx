@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
@@ -6,6 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { ArrowLeft, ChevronDown, CheckCircle, Lightbulb, PieChart, Lock, Users, Activity, BarChart3, Globe, ShieldCheck, ExternalLink } from "lucide-react";
 import { themeMap } from "@/utils/themeMap";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
@@ -39,6 +42,12 @@ export default function EasyExitClient() {
             } as React.CSSProperties}
         >
             <ScrollProgress title="Easy Exit" theme="emerald" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="easy-exit" />
+            </div>
+
             
             {/* Ambient Base Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
@@ -586,6 +595,19 @@ export default function EasyExitClient() {
                 </section>
 
             </div>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="easy-exit" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="easy-exit" />
+                </div>
+            </main>
     );
 }

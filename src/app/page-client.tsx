@@ -7,6 +7,8 @@ import Image, { StaticImageData } from "next/image";
 import { ArrowRight, ArrowDownUp, ArrowUp, ArrowDown } from "lucide-react";
 
 import { Suspense } from "react";
+import { useInterest } from "@/components/InterestProvider";
+import { InterestedButton } from "@/components/InterestedButton";
 
 export type ProjectData = {
     slug: string;
@@ -53,9 +55,11 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
     const [sortBy, setSortBy] = useQueryState("sort", parseAsString.withDefault("recent").withOptions({ shallow: false, history: 'push' }));
     const [sortDirection, setSortDirection] = useQueryState("dir", parseAsString.withDefault("desc").withOptions({ shallow: false, history: 'push' }));
     const [searchQuery, setSearchQuery] = useQueryState("q", parseAsString.withDefault("").withOptions({ shallow: false, history: 'push' }));
+    const [showSavedOnly, setShowSavedOnly] = useQueryState("saved", parseAsString.withDefault("false").withOptions({ shallow: false, history: 'push' }));
 
     // New drill-down state
     const [activeTagsRaw, setActiveTagsRaw] = useQueryState("filters", parseAsArrayOf(parseAsString).withDefault([]).withOptions({ shallow: false, history: 'push' }));
+    const { savedSlugs } = useInterest();
     
     const activeTags = useMemo(() => {
         return activeTagsRaw.map(str => {
@@ -135,6 +139,12 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                 }
 
                 if (!titleMatch && !descMatch && !scoreTitleMatch && !tagMatch) {
+                    return false;
+                }
+            }
+
+            if (showSavedOnly === "true") {
+                if (!savedSlugs.has(project.slug)) {
                     return false;
                 }
             }
@@ -230,7 +240,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     <option value="recent">Recently Added</option>
                                     <option value="impact">Civilizational Impact</option>
                                     <option value="moat">Moat Potential</option>
-                                    <option value="difficulty">Difficulty to Build</option>
+                                    <option value="difficulty">Neglectedness (Difficulty)</option>
                                     <optgroup label="Valuation Forecasts">
                                         <option value="expectedValuation2030">Expected Val ('30)</option>
                                         <option value="expectedValuation2035">Expected Val ('35)</option>
@@ -250,6 +260,14 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     aria-label={`Sort ${sortDirection === 'desc' ? 'Ascending' : 'Descending'}`}
                                 >
                                     {sortDirection === "desc" ? <ArrowDown className="w-5 h-5" /> : <ArrowUp className="w-5 h-5" />}
+                                </button>
+                                <button
+                                    onClick={() => setShowSavedOnly(showSavedOnly === "true" ? "false" : "true")}
+                                    className={`p-2 rounded-lg border transition-colors flex items-center justify-center shrink-0 ${showSavedOnly === "true" ? 'bg-[var(--primary)]/20 border-[var(--primary)]/50 text-[var(--primary)]' : 'bg-black/50 border-white/20 text-white/50 hover:text-white hover:border-white/40'}`}
+                                    aria-label="Toggle saved only"
+                                    title="Show Interested Only"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={showSavedOnly === "true" ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
                                 </button>
                             </div>
                         </div>
@@ -346,8 +364,8 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                         <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0`} style={{ background: 'currentColor' }} />
 
                         {/* Badges */}
-                        <div className="absolute top-4 right-4 z-20 flex flex-col items-end gap-2">
-                            <div className="flex flex-wrap justify-end gap-2">
+                        <div className="absolute top-4 right-3 sm:right-4 z-20 flex flex-col items-end gap-2 max-w-[80%]">
+                            <div className="flex flex-wrap justify-end gap-2 items-center">
                                 <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'impact' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
                                     <span className={sortBy === 'impact' ? 'text-white' : 'text-white/60'}>Impact:</span>
                                     <span className={sortBy === 'impact' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.civilizational_impact_score}</span>
@@ -357,7 +375,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     <span className={sortBy === 'moat' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.moat_score}</span>
                                 </div>
                                 <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Diff:</span>
+                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Neglectedness:</span>
                                     <span className={sortBy === 'difficulty' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.difficulty_score}</span>
                                 </div>
                             </div>
@@ -420,8 +438,13 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     {project.description}
                                 </p>
                             </div>
-                            <div className={`flex items-center text-sm font-mono uppercase tracking-widest text-white/40 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors mt-auto pt-4 relative isolate`}>
-                                View Prototype <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
+                            <div className="flex items-center justify-between mt-auto pt-4 relative isolate">
+                                <span className={`flex items-center text-sm font-mono uppercase tracking-widest text-white/40 min-w-0 pr-2 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors whitespace-nowrap overflow-hidden text-ellipsis`}>
+                                    VIEW IDEA <ArrowRight className="w-4 h-4 ml-2 shrink-0 group-hover:translate-x-2 transition-transform" />
+                                </span>
+                                <div onClick={(e) => e.preventDefault()} className="ml-2 transform scale-90 origin-right shrink-0">
+                                    <InterestedButton projectSlug={project.slug} iconOnly={true} />
+                                </div>
                             </div>
                         </div>
                     </Link>

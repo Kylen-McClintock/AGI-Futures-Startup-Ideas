@@ -1,8 +1,10 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import { themeMap } from "@/utils/themeMap";
 
@@ -14,6 +16,7 @@ import { AFLChart } from "./components/AFLChart";
 import { EcosystemDiagram } from "./components/EcosystemDiagram";
 import { ProjectTags, InlineTags, ProjectTagsProps } from "@/components/ProjectTags";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 // Hooks
@@ -40,6 +43,12 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
     return (
         <main className="min-h-screen bg-neutral-950 text-neutral-200 selection:bg-[var(--primary)]/30 overflow-x-hidden relative" style={{ "--primary": themeMap['orange'].hexPrimary, "--secondary": themeMap['orange'].hexSecondary, "--tertiary": themeMap['orange'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="AI Founder Lab" theme="orange" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="afl" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -402,6 +411,19 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
 
                 </div>
             </article>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="afl" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="afl" />
+                </div>
+            </main>
     );
 }

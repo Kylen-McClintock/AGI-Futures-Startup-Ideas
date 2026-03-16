@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown, ChevronUp, ArrowRight } from "lucide-react";
 import { ProblemData } from "@/data/problem-atlas-data";
+import { InterestedButton } from "@/components/InterestedButton";
 
 export function ProblemCard({ problem, activeSort = "priority" }: { problem: ProblemData, activeSort?: string }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -79,9 +80,14 @@ export function ProblemCard({ problem, activeSort = "priority" }: { problem: Pro
                     </div>
                 </div>
 
-                {/* Expand Toggle Icon */}
-                <div className="hidden md:flex shrink-0 items-center justify-center p-2 rounded-full border border-white/10 hover:border-white/30 text-white/50 bg-white/5 self-center">
-                    {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                {/* Action Column */}
+                <div className="flex md:flex-col items-center gap-4 shrink-0 justify-end md:justify-center self-stretch md:self-center pr-2 mt-4 md:mt-0">
+                    <div onClick={(e) => e.stopPropagation()}>
+                        <InterestedButton projectSlug={problem.slug} hideTextOnMobile={true} />
+                    </div>
+                    <div className="p-2 rounded-full border border-white/10 hover:border-white/30 text-white/50 bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-colors">
+                        {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                    </div>
                 </div>
             </div>
 

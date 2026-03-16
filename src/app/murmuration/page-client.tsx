@@ -1,16 +1,19 @@
 import { ParallaxImage } from "./components/ui/parallax-image";
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { ScrollReveal, FadeIn } from "./components/ui/scroll-reveal";
 import { ExpandableCitation } from "./components/ui/expandable-citation";
 import { StatChart } from "./components/charts/stat-chart";
 import { InteractiveLoop } from "./components/ui/interactive-loop";
 import { ArrowRight, CheckCircle2, ChevronDown, Layers, Target, Activity } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
 import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.png";
+import { InterestedButton } from "@/components/InterestedButton";
 
 const citations = [
   { number: 1, source: "Stanford HAI", title: "AI Index Report 2025", url: "https://hai.stanford.edu/ai-index-report" },
@@ -22,6 +25,12 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
   return (
     <main className="min-h-screen bg-[var(--background)] overflow-hidden" style={{ "--primary": themeMap['primary'].hexPrimary, "--secondary": themeMap['primary'].hexSecondary, "--tertiary": themeMap['primary'].hexTertiary } as React.CSSProperties}>
       <ScrollProgress title="Murmuration" theme="primary" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="murmuration" />
+            </div>
+
       {/* Ambient background glows */}
       <div className="fixed inset-0 z-0 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--primary)]/10 blur-[150px] rounded-full mix-blend-screen opacity-50" />
@@ -500,6 +509,19 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         </ScrollReveal>
 
       </div>
-    </main>
+    
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="murmuration" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="murmuration" />
+                </div>
+            </main>
   );
 }

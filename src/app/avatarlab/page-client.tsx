@@ -1,5 +1,7 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
@@ -36,6 +38,7 @@ import cellbankImage from './assets/avatarlab_cellbank_v2.png';
 // Components
 import ProductStackFlow from './components/ProductStackFlow';
 import { HoverAcronym } from '@/components/HoverAcronym';
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -54,6 +57,12 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
     return (
         <main className="min-h-screen bg-[#06090c] text-slate-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['teal'].hexPrimary, "--secondary": themeMap['teal'].hexSecondary, "--tertiary": themeMap['teal'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="AvatarLab" theme="teal" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="avatarlab" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -716,7 +725,9 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <div className="md:col-span-2">[17] Gawronski, B. E. et al. "Estimating preferences and willingness to pay for pharmacogenomic testing..." 2024.</div>
                             </div>
                         </div>
-                    </div>
+                    
+                <ArtifactSection projectSlug="avatarlab" />
+            </div>
                 </details>
 
             </div >

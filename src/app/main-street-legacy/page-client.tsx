@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import { Variants, motion, useScroll, useTransform } from "framer-motion";
@@ -9,6 +11,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { ExpandableSection } from "./components/ExpandableSection";
 import { UpliftChart } from "./components/UpliftChart";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
@@ -56,6 +59,12 @@ export default function ClientPage() {
     return (
         <main ref={containerRef} className="min-h-screen bg-stone-950 text-stone-100 selection:bg-[var(--primary)]/30 font-sans antialiased overflow-x-hidden">
             <ScrollProgress title="Main Street Legacy" theme="emerald" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="main-street-legacy" />
+            </div>
+
 
             {/* Immersive Hero Section */}
             <section className="relative min-h-[90vh] md:min-h-screen flex items-end pb-24 md:pb-32 px-6 pt-32">
@@ -698,6 +707,19 @@ export default function ClientPage() {
                     </details>
                 </motion.section>
             </article>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="main-street-legacy" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="main-street-legacy" />
+                </div>
+            </main>
     );
 }

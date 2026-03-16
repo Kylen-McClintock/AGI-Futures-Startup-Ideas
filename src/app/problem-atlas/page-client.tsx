@@ -6,14 +6,17 @@ import { useQueryState, parseAsString, parseAsArrayOf } from "nuqs";
 import { ArrowDownUp, ArrowUp, ArrowDown } from "lucide-react";
 import { ProblemData } from "@/data/problem-atlas-data";
 import { ProblemCard } from "./components/ProblemCard";
+import { useInterest } from "@/components/InterestProvider";
 
 function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
     const [sortBy, setSortBy] = useQueryState("sort", parseAsString.withDefault("priority").withOptions({ shallow: false, history: 'push' }));
     const [sortDirection, setSortDirection] = useQueryState("dir", parseAsString.withDefault("desc").withOptions({ shallow: false, history: 'push' }));
     const [searchQuery, setSearchQuery] = useQueryState("q", parseAsString.withDefault("").withOptions({ shallow: false, history: 'push' }));
+    const [showSavedOnly, setShowSavedOnly] = useQueryState("saved", parseAsString.withDefault("false").withOptions({ shallow: false, history: 'push' }));
     
     // Using nuqs for active tags like the home page
     const [activeTagsRaw, setActiveTagsRaw] = useQueryState("filters", parseAsArrayOf(parseAsString).withDefault([]).withOptions({ shallow: false, history: 'push' }));
+    const { savedSlugs } = useInterest();
     
     const activeTags = useMemo(() => {
         return activeTagsRaw.map(str => {
@@ -83,6 +86,10 @@ function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
                 const tagsMatch = [...problem.sector_tags, ...problem.outcome_tags].some(t => t.toLowerCase().includes(query));
 
                 if (!titleMatch && !descMatch && !textMatch && !tagsMatch) return false;
+            }
+
+            if (showSavedOnly === "true") {
+                if (!savedSlugs.has(problem.slug)) return false;
             }
 
             return true;
@@ -168,6 +175,14 @@ function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
                                     aria-label={`Sort ${sortDirection === 'desc' ? 'Ascending' : 'Descending'}`}
                                 >
                                     {sortDirection === "desc" ? <ArrowDown className="w-5 h-5" /> : <ArrowUp className="w-5 h-5" />}
+                                </button>
+                                <button
+                                    onClick={() => setShowSavedOnly(showSavedOnly === "true" ? "false" : "true")}
+                                    className={`p-2 rounded-lg border transition-colors flex items-center justify-center shrink-0 ${showSavedOnly === "true" ? 'bg-[var(--primary)]/20 border-[var(--primary)]/50 text-[var(--primary)]' : 'bg-black/50 border-white/20 text-white/50 hover:text-white hover:border-white/40'}`}
+                                    aria-label="Toggle saved only"
+                                    title="Show Interested Only"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill={showSavedOnly === "true" ? "currentColor" : "none"} stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path></svg>
                                 </button>
                             </div>
                         </div>

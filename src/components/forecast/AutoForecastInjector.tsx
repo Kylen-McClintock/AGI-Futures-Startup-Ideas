@@ -9,8 +9,8 @@ export function AutoForecastInjector() {
     const pathname = usePathname();
     const [themeConfig, setThemeConfig] = useState<{ primary?: string, secondary?: string, tertiary?: string } | null>(null);
 
-    // Only inject on startup idea sub-pages, not the root library or static info pages or problem atlas
-    const isExcludedRoute = ["/", "", "/forecasting", "/license", "/about"].includes(pathname) || pathname.startsWith('/problem-atlas');
+    // Only inject on startup idea sub-pages, not the root library or static info pages or problem atlas or builder profiles
+    const isExcludedRoute = ["/", "", "/forecasting", "/license", "/about", "/onboarding", "/login"].includes(pathname) || pathname.startsWith('/problem-atlas') || pathname.startsWith('/builder');
 
     useEffect(() => {
         if (isExcludedRoute) return;

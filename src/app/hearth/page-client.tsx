@@ -1,8 +1,10 @@
 "use client";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { ArtifactSection } from "@/components/ArtifactSection";
 import { motion } from "framer-motion";
 import { themeMap } from "@/utils/themeMap";
 
@@ -15,6 +17,7 @@ import { CoreProductStack } from "./components/CoreProductStack";
 import { ValueFlow } from "./components/ValueFlow";
 import { MarketChart } from "./components/MarketChart";
 import { InlineTags } from "@/components/ProjectTags";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from "@/components/HoverAcronym";
 
@@ -41,6 +44,12 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
     return (
         <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] font-sans antialiased overflow-x-hidden selection:bg-[var(--primary)] selection:text-white pb-32" style={{ "--primary": themeMap['amber'].hexPrimary, "--secondary": themeMap['amber'].hexSecondary, "--tertiary": themeMap['amber'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Hearth" theme="amber" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="hearth" />
+            </div>
+
 
             {/* Ambient Background layer */}
             <div className="fixed inset-0 z-0 pointer-events-none">
@@ -538,6 +547,19 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
 
                 </div>
             </article>
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="hearth" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="hearth" />
+                </div>
+            </main>
     );
 }

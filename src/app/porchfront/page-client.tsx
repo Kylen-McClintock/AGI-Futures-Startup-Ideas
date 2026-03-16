@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import React, { useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -18,6 +20,7 @@ import { ExpandableCard } from "./components/ExpandableCard";
 import { LonelinessChart } from "./components/LonelinessChart";
 import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2, Car, Bot, Leaf } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 
 const citations = [
@@ -36,6 +39,12 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
     return (
         <main className="min-h-screen bg-[#06090c] text-neutral-300 selection:bg-[var(--primary)]/30 font-sans overflow-x-hidden" style={{ "--primary": themeMap['amber'].hexPrimary, "--secondary": themeMap['amber'].hexSecondary, "--tertiary": themeMap['amber'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Porchfront" theme="amber" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="porchfront" />
+            </div>
+
 
             {/* Background Ambience */}
             <div className="fixed inset-0 pointer-events-none z-0">
@@ -541,6 +550,19 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                 </GridContainer>
             </section>
 
-        </main>
+        
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="porchfront" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="porchfront" />
+                </div>
+            </main>
     );
 }

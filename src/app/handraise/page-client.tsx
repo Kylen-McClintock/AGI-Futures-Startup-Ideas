@@ -1,4 +1,6 @@
 "use client";
+import { ArtifactSection } from "@/components/ArtifactSection";
+import { InterestedButton } from "@/components/InterestedButton";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +23,7 @@ import networkImage from "./assets/handraise_network.png";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ICPUseCases } from "./components/ICPUseCases";
 
@@ -39,6 +42,12 @@ export default function HandraiseClientPage() {
     return (
         <main className="min-h-screen bg-[#06090c] text-slate-200 selection:bg-[var(--primary)]/30 font-sans pb-32" style={{ "--primary": themeMap['indigo'].hexPrimary, "--secondary": themeMap['indigo'].hexSecondary, "--tertiary": themeMap['indigo'].hexTertiary } as React.CSSProperties}>
             <ScrollProgress title="Handraise" theme="indigo" />
+
+            {/* Top Interested Button */}
+            <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
+                <InterestedButton projectSlug="handraise" />
+            </div>
+
 
             {/* Ambient Background Glow */}
             <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
@@ -810,6 +819,8 @@ function CivilizationalImpactCard() {
                         </motion.div>
                     )}
                 </AnimatePresence>
+            
+                <ArtifactSection projectSlug="handraise" />
             </div>
         </motion.div>
     );

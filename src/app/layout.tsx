@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { LibraryNavButton } from "@/components/LibraryNavButton";
-import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { Footer } from "@/components/Footer";
+import { AuthHeader } from "@/components/AuthHeader";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
+import { InterestProvider } from "@/components/InterestProvider";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -32,10 +33,12 @@ export default function RootLayout({
         className={`${outfit.variable} ${playfair.variable} antialiased bg-background text-foreground min-h-screen`}
       >
         <NuqsAdapter>
-          <LibraryNavButton />
-          {children}
-          <AutoForecastInjector />
-          <Footer />
+          <InterestProvider>
+            <AuthHeader />
+            <LibraryNavButton />
+            {children}
+            <Footer />
+          </InterestProvider>
         </NuqsAdapter>
       </body>
     </html>
