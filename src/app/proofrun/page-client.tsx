@@ -626,13 +626,9 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                 <div className="text-sm"><strong className="text-white/80 select-all">PRD:</strong> <span className="text-white/50">Product requirements document</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">SaaS:</strong> <span className="text-white/50">Software as a service</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">B2B:</strong> <span className="text-white/50">Business to business</span></div>
-                                <div className="text-sm"><strong className="text-white/80 select-all">NPS:</strong> <span className="text-white/50">Net Promoter Score</span></div>
-                                <details className="text-sm group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12"><strong className="text-white/80 select-all">A/B test:</strong> <span className="text-white/50">Controlled experiment comparing two versions</span>
-            </div>
-        </details>
-                            
-            </div>
-        </details>
+                            </div>
+                            </div>
+                        </details>
 
                             <h4 className="text-sm font-semibold uppercase text-[var(--primary)]/80 mb-4 tracking-wider mt-6">References</h4>
                             <div className="space-y-4">
@@ -673,8 +669,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </details>
+                        </details>
                 </motion.section>
 
             </div>

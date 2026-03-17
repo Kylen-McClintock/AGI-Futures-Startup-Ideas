@@ -10,7 +10,7 @@ import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 import { AnimatedGrid, AnimatedGridItem } from "./components/AnimatedGrid";
 import { ICPToggle, ICPToggleItem } from "./components/ICPToggle";
 import { ExpandableStatCard } from "./components/ExpandableStatCard";
-import { OpenSourcePriority } from "./components/OpenSourcePriority";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
@@ -600,8 +600,9 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
 
                     <div className="mb-16">
                         <OpenSourcePriority 
-                            impactScore={80}
-                            neglectednessScore={77}
+                            civilizationalImpactScore={70}
+                            neglectednessScore={70}
+                            ideaSpecificText="Building HelioTerra in an open-source, decentralized manner ensures spatial computing and mapping layers remain a shared infrastructural truth, not an AI lab's private moat."
                         />
                     </div>
 
