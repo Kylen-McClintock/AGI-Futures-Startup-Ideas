@@ -26,6 +26,7 @@ import { HoverAcronym } from '@/components/HoverAcronym';
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { ICPUseCases } from "./components/ICPUseCases";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function HandraiseClientPage() {
     const tags = {
@@ -318,7 +319,17 @@ export default function HandraiseClientPage() {
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
+                
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={76} 
+                            interpretation="Significantly neglected. Knowledge networks like GLG are enterprise-only, and traditional networks are too noisy. An intentional, structured bounty graph where specialized operators answer tight briefs for portable credit strikes an under-served middle ground."
+                        />
+                    </div>
+                </div>
+<div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
 
                 {/* Market & Why Now & Business Model */}
                 <motion.section
@@ -327,7 +338,9 @@ export default function HandraiseClientPage() {
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                    <div className="mb-12 cursor-default">
+                    
+
+<div className="mb-12 cursor-default">
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-8">
                             Market
                         </h2>
@@ -346,7 +359,9 @@ export default function HandraiseClientPage() {
                         </div>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 mb-16">
+                    
+                
+<div className="grid lg:grid-cols-2 gap-12 mb-16">
                         <div>
                             <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
                                 <h3 className="text-2xl font-light text-white">Why now</h3>

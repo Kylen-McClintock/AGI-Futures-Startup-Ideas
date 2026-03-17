@@ -21,6 +21,7 @@ import solutionImg from "./assets/solution.png";
 import ecosystemImg from "./assets/ecosystem.png";
 import agingAssistedImg from "./assets/aging_assisted.png";
 import autonomousNavImg from "./assets/autonomous_nav.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 // Shared Animation Settings
 const FADE_UP: any = {
@@ -358,7 +359,17 @@ export function PageClient() {
             </section>
 
             {/* MARKET EVOLUTION */}
-            <section className="px-6 py-24 bg-transparent border-y border-white/5">
+            
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={85} 
+                            interpretation="Highly neglected. Everyone is building agents to read the web, but very few are building standard protocols or bridging SDKs for websites to intentionally broadcast their actions and UI to incoming agents to facilitate zero-friction transactions."
+                        />
+                    </div>
+                </div>
+<section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
                     <motion.div {...FADE_UP} className="mb-16">
                         <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/70 mb-6 flex items-center">
@@ -506,7 +517,9 @@ export function PageClient() {
             </section>
 
             {/* SCORES & ANALYSIS (INTERACTIVE) */}
-            <section className="px-6 py-24 max-w-4xl mx-auto space-y-12">
+            
+                
+<section className="px-6 py-24 max-w-4xl mx-auto space-y-12">
                 <motion.div {...FADE_UP}>
                     <InteractiveScoreCard
                         title="Moat & Defensibility"

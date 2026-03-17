@@ -40,6 +40,7 @@ import ProductStackFlow from './components/ProductStackFlow';
 import { HoverAcronym } from '@/components/HoverAcronym';
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function AvatarLabClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -252,7 +253,17 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
+                
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={92} 
+                            interpretation="Deeply neglected. Personalized biotech and organoid intelligence require massive capital and deep regulatory navigation. The idea of banking stem cells to test personalized therapies on biological digital twins is a sci-fi frontier for bold capital."
+                        />
+                    </div>
+                </div>
+<div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
 
                 {/* Market & Business Model */}
                 <motion.section
@@ -262,7 +273,9 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     className="mb-32"
                 >
                     <div className="mb-12">
-                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                        
+
+<div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Economics
                         </div>
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-4">
@@ -343,7 +356,9 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                     </div>
 
                     {/* Why Now & Readiness tags */}
-                    <div className="grid md:grid-cols-2 gap-12 mb-16">
+                    
+                
+<div className="grid md:grid-cols-2 gap-12 mb-16">
                         <div>
                             <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-4">
                                 <h3 className="text-2xl font-light text-white">Why Now</h3>

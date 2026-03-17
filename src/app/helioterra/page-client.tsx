@@ -313,9 +313,10 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                     viewport={{ once: true }}
                     className="mb-32"
                 >
+                    
                     <NeglectednessSlider 
                         score={77} 
-                        interpretation="HelioTerra serves as an open template for balancing agricultural yield and high-capacity solar buildouts, turning a polarized land-use conflict into compounding parallel infrastructure. While the broad concept is gaining traction, the specific operating model for financing and delivering dual-use farms remains highly neglected."
+                        interpretation="HelioTerra serves as an open template for balancing agricultural yield and high-capacity solar buildouts. While the broad concept is gaining traction, the specific operating model for financing and delivering dual-use farms remains highly neglected."
                     />
                 </motion.section>
 

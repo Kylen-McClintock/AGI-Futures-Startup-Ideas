@@ -28,6 +28,7 @@ import campusImage from "./assets/afl_campus_transformation.png";
 import protoImage from "./assets/afl_prototyping_workspace.png";
 import guildImage from "./assets/afl_guild_collaboration.png";
 import dashImage from "./assets/afl_build_league_dashboard.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 // Citations Data
 const citations = [
@@ -228,7 +229,17 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     </section>
 
                     {/* MARKET & BUSINESS MODEL */}
-                    <section>
+                    
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={75} 
+                            interpretation="Significantly neglected. Startup studios and accelerators are common, but an institution built explicitly around building AI-native ventures the *right* way—baking in safety, alignment, and civilizational optimism from day one—is a critically neglected structural model."
+                        />
+                    </div>
+                </div>
+<section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Market & Business Model</h2>
                         <InlineTags tags={initialTags?.product_type} theme="blue" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
@@ -358,7 +369,9 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                     </section>
 
                     {/* AGI EDGE & CIVILIZATIONAL IMPACT */}
-                    <section className="pt-12 border-t border-white/10">
+                    
+                
+<section className="pt-12 border-t border-white/10">
                         <h2 className="text-4xl font-serif text-white mb-8">The AGI Future Edge</h2>
 
                         <p className="text-xl text-white font-light leading-relaxed mb-12 pl-6 border-l-2 border-[var(--primary)]">

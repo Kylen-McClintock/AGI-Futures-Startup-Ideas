@@ -24,6 +24,7 @@ import missionDashboardImage from './assets/proofrun_mission_dashboard.png';
 import candidatePortfolioImage from './assets/proofrun_candidate_portfolio.png';
 import impactFlowImage from './assets/proofrun_impact_flow.png';
 import aiOrchestrationImage from './assets/proofrun_ai_orchestration.png';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function ProofRunClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -323,7 +324,17 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+                
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={70} 
+                            interpretation="Moderately neglected. The recruiting space is flooded with resume-parsing AI. Replacing the resume entirely with micro-bounties and 'Proof of Work' challenges is culturally difficult but mechanically superior, leaving an opening for a category creator."
+                        />
+                    </div>
+                </div>
+<div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
                 {/* Market & Business Model */}
                 <motion.section
@@ -332,7 +343,9 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                    <div className="grid md:grid-cols-2 gap-12">
+                    
+                
+<div className="grid md:grid-cols-2 gap-12">
                         <div>
                             <h2 className="text-3xl font-light text-white tracking-tight mb-8 flex items-center gap-3">
                                 <Database className="w-8 h-8 text-[var(--primary)]" /> Market Dynamics

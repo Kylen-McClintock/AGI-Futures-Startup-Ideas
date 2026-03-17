@@ -240,7 +240,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     <option value="recent">Recently Added</option>
                                     <option value="impact">Civilizational Impact</option>
                                     <option value="moat">Moat Potential</option>
-                                    <option value="difficulty">Neglectedness (Difficulty)</option>
+                                    <option value="difficulty">Difficulty to bring to market</option>
                                     <optgroup label="Valuation Forecasts">
                                         <option value="expectedValuation2030">Expected Val ('30)</option>
                                         <option value="expectedValuation2035">Expected Val ('35)</option>
@@ -375,7 +375,7 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     <span className={sortBy === 'moat' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.moat_score}</span>
                                 </div>
                                 <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Neglectedness:</span>
+                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Difficulty:</span>
                                     <span className={sortBy === 'difficulty' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.difficulty_score}</span>
                                 </div>
                             </div>

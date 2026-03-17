@@ -21,6 +21,7 @@ import situationRoomImage from './assets/situation_room.png';
 import gateImage from './assets/gate.png';
 import intakeImage from './assets/intake.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Expected fallback if empty
@@ -381,7 +382,17 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                     </div>
                 </motion.section>
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+                
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={85} 
+                            interpretation="Highly neglected. GovTech is an enterprise slog. Building a fast, legible immigration intake platform that governments proactively adopt to optimize their human capital inflow requires a policy entrepreneur willing to fight massive procurement friction."
+                        />
+                    </div>
+                </div>
+<div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
                 {/* Business Model */}
                 <motion.section
@@ -408,7 +419,9 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         CivicPath is pure B2G (Business-to-Government) enterprise software. It monetizes by selling state capacity and political stabilization to national ministries and regional municipalities.
                     </p>
 
-                    <div className="grid md:grid-cols-3 gap-6">
+                    
+                
+<div className="grid md:grid-cols-3 gap-6">
                         <div className="glass-panel p-8 rounded-3xl border border-[var(--primary)]/20 bg-white/[0.01] hover:bg-white/[0.02] transition-colors">
                             <h3 className="text-lg text-[var(--secondary)] font-medium mb-4 flex items-center gap-2">1. Base Infrastructure</h3>
                             <div className="text-sm font-mono tracking-widest uppercase text-white/40 mb-6 pb-4 border-b border-white/10">License & Integration</div>

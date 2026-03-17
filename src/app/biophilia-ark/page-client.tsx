@@ -21,6 +21,7 @@ import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';
 import prairieLightwall from './assets/prairie_lightwall_v3.png';
 import dartFrog from './assets/macro_frog.png';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -390,7 +391,17 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    
+                <div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={89} 
+                            interpretation="Highly neglected. Consumer hardware intersecting with active bio-filtration and terrariums is a bizarre, high-friction space that software investors avoid entirely. It requires hardware, biological maintenance, and rigorous design expertise."
+                        />
+                    </div>
+                </div>
+<div className="grid md:grid-cols-2 gap-8">
                         <div className="flex flex-col gap-8">
                             <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
                                 <h3 className="text-2xl font-light text-white mb-6">Market</h3>

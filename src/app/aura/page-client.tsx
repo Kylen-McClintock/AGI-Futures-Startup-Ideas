@@ -29,6 +29,7 @@ import officeImage from "./assets/aura_use_case_office.png";
 import connectImage from "./assets/aura_connection_avatar.png";
 import arGlassesImage from "./assets/aura_use_case_ar_glasses.png";
 import carHudImage from "./assets/aura_use_case_autonomous_car.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 // Citations Data
 const citations = [
@@ -354,7 +355,17 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                     </section>
 
                     {/* MARKET */}
-                    <section>
+                    
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={55} 
+                            interpretation="Moderate neglectedness. Both spatial computing and conversational AI are highly saturated. However, building an open marketplace that bridges 3D spatial presence with multi-modal LLMs *the right way*—optimizing for cognitive sovereignty and mitigating the risks of immersive behavioral manipulation—is civilizationally optimal and remains critically neglected."
+                        />
+                    </div>
+                </div>
+<section>
                         <h2 className="text-4xl font-serif mb-8 text-white">The Market Story</h2>
                         <InlineTags tags={initialTags?.customer} theme="primary" />
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
@@ -379,7 +390,9 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                     </section>
 
                     {/* BUSINESS MODEL */}
-                    <section>
+                    
+                
+<section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Business Model</h2>
                         <InlineTags tags={initialTags?.product_type} theme="primary" />
 

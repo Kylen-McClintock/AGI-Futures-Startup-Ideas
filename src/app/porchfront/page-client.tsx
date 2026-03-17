@@ -22,6 +22,7 @@ import { Store, MapPin, Users, HeartHandshake, Box, PlusCircle, CheckCircle2, Ca
 import { InlineTags } from "@/components/ProjectTags";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 const citations = [
     { number: 1, source: "Surgeon General Advisory", title: "Our Epidemic of Loneliness and Isolation", url: "https://www.hhs.gov/sites/default/files/surgeon-general-social-connection-advisory.pdf" },
@@ -371,7 +372,17 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                         </div>
 
                         <div>
-                            <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--secondary)] mb-6 border border-[var(--primary)]/20">
+                            
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={82} 
+                            interpretation="Highly neglected. The intersection of local zoning arbitrage, hyper-local social networking, and transforming physical suburban garages into third places is a regulatory and social frontier almost entirely untouched by standard consumer VC."
+                        />
+                    </div>
+                </div>
+<div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-[var(--primary)]/10 text-[var(--primary)] dark:text-[var(--secondary)] mb-6 border border-[var(--primary)]/20">
                                 <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg>
                             </div>
                             <h2 className="font-serif text-3xl font-medium mb-4">Brand-powered block parties</h2>
@@ -552,7 +563,9 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
 
         
                 {/* Auto Forecast Component */}
-                <AutoForecastInjector />
+                
+                
+<AutoForecastInjector />
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 

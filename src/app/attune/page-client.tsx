@@ -16,6 +16,7 @@ import { InlineTags } from "@/components/ProjectTags";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 const citations = [
   { number: 1, source: "PMC Study", title: "Evaluating the efficacy of a brief, recurring relationship checkup", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4115001/" }
@@ -363,7 +364,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
         {/* Why Now & Market */}
         <RevealSection>
-          <div className="grid md:grid-cols-2 gap-16">
+          
+                <FadeIn>
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={68} 
+                            interpretation="Moderately neglected. The 'AI companion' space is booming, but tools intentionally designed to coach high-functioning couples and build real-world human connection—rather than replacing it with an artificial partner—represent a distinct and underfunded wedge."
+                        />
+                    </div>
+                </FadeIn>
+<div className="grid md:grid-cols-2 gap-16">
             <div>
               <div className="flex flex-col gap-4 mb-2">
                 <h2 className="text-4xl font-serif font-medium text-[var(--primary)]">Why Now</h2>

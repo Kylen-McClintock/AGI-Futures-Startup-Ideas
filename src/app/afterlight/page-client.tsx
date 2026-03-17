@@ -19,6 +19,7 @@ import heroImage from './assets/afterlight_hero_1773354206295.png';
 import timelineImage from './assets/afterlight_timeline_1773354220095.png';
 import appImage from './assets/afterlight_app_1773354236688.png';
 import closingImage from './assets/afterlight_closing_1773354249527.png';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function AfterlightClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -298,7 +299,17 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
+                    
+                <div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={90} 
+                            interpretation="Severely neglected. Deathcare is notoriously immune to disruption due to extreme cultural sensitivities and fragmented state laws. An AI-native approach to legacy, grief support, and estate execution is a blue-ocean market for high-empathy founders."
+                        />
+                    </div>
+                </div>
+<div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
                             <h3 className="text-2xl font-light text-white mb-6">Wedge & Expansion</h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">

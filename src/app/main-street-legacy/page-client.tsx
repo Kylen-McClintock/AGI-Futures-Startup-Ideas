@@ -21,6 +21,7 @@ import hvacTransformedImg from "./assets/hvac-transformed.png";
 import mechanicImg from "./assets/mechanic.png";
 import syndicateImg from "./assets/syndicate.png";
 import futureMainStreetImg from "./assets/future-main-street.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 // Fade in up animation variant
 const fadeInUp: Variants = {
@@ -315,7 +316,17 @@ export default function ClientPage() {
                     variants={fadeInUp}
                     className="mb-24"
                 >
-                    <div className="grid md:grid-cols-12 gap-12">
+                    
+                <div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={80} 
+                            interpretation="Highly neglected. Search funds and SMB acquisitions are booming, but applying an AI-native operational stack to modernize retiring boomer businesses as a bundled product is an operational heavy-lift that pure SaaS investors avoid."
+                        />
+                    </div>
+                </div>
+<div className="grid md:grid-cols-12 gap-12">
                         <div className="md:col-span-7">
                             <h2 className="text-3xl font-serif text-white mb-8 flex items-center gap-4">
                                 <span className="w-8 h-px bg-stone-700"></span>

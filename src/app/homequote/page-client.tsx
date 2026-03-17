@@ -20,6 +20,7 @@ import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173.png";
 import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184.png";
 import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671.png";
 import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 const citations = [
     { number: 1, source: "MARKSPARK SOLUTIONS", title: "U.S. Home Services Market", url: "https://marksparksolutions.com/reports/us-home-services-market" },
@@ -120,7 +121,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <div className="h-px w-24 bg-gradient-to-r from-transparent via-[var(--primary)]/50 to-transparent mx-auto mt-12 transition-all duration-700 group-hover:w-48 group-hover:via-[var(--secondary)] group-hover:shadow-[0_0_20px_rgba(16,185,129,0.3)]" />
                 </FadeIn>
 
-                <FadeIn>
+                <FadeIn className="mb-32">
                     <h2 className="text-4xl font-serif text-white mb-8 flex items-center gap-4">
                         <span className="w-8 h-px bg-[var(--primary)]/50 block" />
                         Headline Stat
@@ -372,6 +373,15 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     </div>
                 </FadeIn>
 
+                <FadeIn className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={82} 
+                            interpretation="Highly neglected in its purest form. While there are countless home services SaaS products built to extract margin for the business owner, almost no one is building a protocol strictly for the homeowner to solicit, normalize, and auto-negotiate bids purely on the demand side. The structural mismatch between consumer desire (transparency) and contractor incentive (opacity) has left this specific consumer-agent wedge completely underfunded."
+                        />
+                    </div>
+                </FadeIn>
                 <FadeIn>
                     <div className="grid md:grid-cols-2 gap-12">
                         <div>

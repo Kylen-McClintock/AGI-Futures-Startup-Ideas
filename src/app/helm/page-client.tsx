@@ -9,6 +9,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { HoverAcronym } from "@/components/HoverAcronym";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { RevealSection } from "./components/RevealSection";
 import { themeMap } from "@/utils/themeMap";
 import {
@@ -424,6 +425,17 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                 </RevealSection>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+
+                {/* Neglectedness Slider */}
+                <RevealSection className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={40} 
+                            interpretation="Low neglectedness. The hype around 'one-person billion-dollar companies' has spawned hundreds of AI teammate workspaces and copilot dashboards. Helm requires exceptional design execution and workflow lock-in to stand out in a loud, crowded market."
+                        />
+                    </div>
+                </RevealSection>
 
                 {/* Business Model & Moat & GTM */}
                 <RevealSection className="mb-32">

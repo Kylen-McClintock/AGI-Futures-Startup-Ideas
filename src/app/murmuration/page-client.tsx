@@ -14,6 +14,7 @@ import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
 import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.png";
 import { InterestedButton } from "@/components/InterestedButton";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 const citations = [
   { number: 1, source: "Stanford HAI", title: "AI Index Report 2025", url: "https://hai.stanford.edu/ai-index-report" },
@@ -357,6 +358,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </p>
         </ScrollReveal>
 
+        {/* NEGLECTEDNESS */}
+        <ScrollReveal className="py-24 border-t border-white/10">
+            <div className="max-w-4xl mx-auto">
+                
+                <NeglectednessSlider 
+                    score={85} 
+                    interpretation="Highly neglected. While agent tooling is heavily funded, building a multi-agent orchestration layer specifically to mitigate catastrophic AI risks while still accelerating startup strategy is uncrowded. Building this the *right* (civilizationally optimal) way is the true frontier."
+                />
+            </div>
+        </ScrollReveal>
+
         {/* MOAT & GTM */}
         <div className="grid md:grid-cols-2 gap-12 py-24 border-t border-white/10">
           <ScrollReveal delay={0.1}>
@@ -511,7 +523,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
       </div>
     
                 {/* Auto Forecast Component */}
-                <AutoForecastInjector />
+<AutoForecastInjector />
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 

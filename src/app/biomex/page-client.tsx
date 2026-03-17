@@ -23,6 +23,7 @@ import heroVista from './assets/hero_vista.png';
 import clinicLab from './assets/clinic_lab.png';
 import capsuleProduct from './assets/capsule_product.png';
 import donorNetwork from './assets/donor_network.png';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function BiomeXClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -290,7 +291,17 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
 
                 <RecurrenceChart />
 
-                <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
+                
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={82} 
+                            interpretation="Highly neglected. Most pharma AI focuses on de novo molecule discovery. Building a data platform to systemically index and repurpose off-patent drugs using clinical trial exhaust is culturally opposed to big pharma’s blockbuster orientation."
+                        />
+                    </div>
+                </div>
+<div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
                 {/* Market & Business Model */}
                 <motion.section
@@ -345,7 +356,9 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                     <div className="grid md:grid-cols-2 gap-12 items-center group cursor-default">
+                     
+                
+<div className="grid md:grid-cols-2 gap-12 items-center group cursor-default">
                         <div>
                             <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
                                 <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Go-To Market

@@ -30,6 +30,7 @@ import heroImg from "./assets/sellcraft_hologram_hero.png";
 import pitchQuestImg from "./assets/sellcraft_pitch_quest.png";
 import provingGroundImg from "./assets/sellcraft_proving_ground.png";
 import practiceImg from "./assets/sellcraft_practice.png";
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function SellCraftClient() {
   const [isClient, setIsClient] = useState(false);
@@ -170,7 +171,17 @@ export default function SellCraftClient() {
         </section>
 
         {/* --- MARKET --- */}
-        <section className="space-y-8">
+        
+<div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={50} 
+                            interpretation="Moderate neglectedness. Sales coaching and conversational AI training is a well-funded SaaS category. Sellcraft's edge must come from superior immersive roleplay dynamics and actual workflow embedding rather than pure novelty."
+                        />
+                    </div>
+                </div>
+<section className="space-y-8">
             <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Market</h2>
             <div className="text-xl leading-relaxed text-neutral-300 space-y-6">
                 <p>
@@ -297,7 +308,9 @@ export default function SellCraftClient() {
         </section>
 
         {/* --- RISKS --- */}
-        <section className="space-y-8">
+        
+                
+<section className="space-y-8">
             <h2 className="text-3xl md:text-4xl text-[var(--primary)] font-bold tracking-tight">Risks and failure modes</h2>
             <ExpandableScoreCard 
                 title="Difficulty to Bring to Market" 

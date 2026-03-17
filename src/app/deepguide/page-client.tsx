@@ -19,6 +19,7 @@ import modalityGraphImage from './assets/deepguide_modality_graph.png';
 import safetyDashboardImage from './assets/deepguide_safety_dashboard.png';
 import clinicalTrainingImage from './assets/deepguide_clinical_training.png';
 import hologramTherapyImage from './assets/deepguide_hologram_therapy.png';
+import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function DeepGuideClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -281,7 +282,17 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8">
+                    
+                <div className="mb-32">
+                    <div className="mb-16">
+                        
+                        <NeglectednessSlider 
+                            score={88} 
+                            interpretation="Severely neglected. The intersection of psychedelic therapeutics and AI is constrained by regulatory friction and stigma. Building an auditable, data-rich copilot for facilitators that turns trip outcomes into evolving safety practices is early and defensible."
+                        />
+                    </div>
+                </div>
+<div className="grid md:grid-cols-2 gap-8">
                         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
                             <h3 className="text-2xl font-light text-white mb-6">Market</h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
