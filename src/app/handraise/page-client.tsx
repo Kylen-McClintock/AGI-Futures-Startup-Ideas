@@ -683,8 +683,17 @@ export default function HandraiseClientPage() {
                         <ChevronDown className="w-5 h-5 text-white/30 group-open:rotate-180 transition-transform duration-300" />
                     </summary>
                     <div className="px-6 pb-6 pt-2 border-t border-white/5">
-                        <div className="mb-8">
-                            <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider">Acronyms</h4>
+                        <details className="mb-8 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <ul className="text-sm text-white/50 space-y-3">
                                 <li><strong>AGI:</strong> Artificial General Intelligence, an AI system with general-purpose reasoning ability across many tasks.</li>
                                 <li><strong>HCI:</strong> Human-Computer Interaction, the field that studies how people interact with software and devices.</li>
@@ -695,9 +704,20 @@ export default function HandraiseClientPage() {
                                 <li><strong>OS:</strong> Operating System. Here it is used metaphorically to mean the default coordination layer for a category of work.</li>
                                 <li><strong>AT Protocol:</strong> the open social networking protocol behind Bluesky, designed around identity and account portability.</li>
                             </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider">References</h4>
+                        
+            </div>
+        </details>
+                        <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light text-white/40 leading-relaxed">
                                 <div><a target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors inline-block" href="https://about.linkedin.com/">[1] LinkedIn, "About LinkedIn." ↗</a></div>
                                 <div><a target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors inline-block" href="https://dl.acm.org/doi/10.1145/1357054.1357072">[2] Gloria Mark, Daniela Gudith, and Ulrich Klocke, "The Cost of Interrupted Work: More Speed and Stress," CHI 2008. ↗</a></div>
@@ -710,7 +730,9 @@ export default function HandraiseClientPage() {
                                 <div><a target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors inline-block" href="https://www.reuters.com/technology/rare-disclosure-linkedin-says-premium-subscriptions-bring-17-bln-2024-03-01/">[9] Reuters, "In rare disclosure, LinkedIn says premium subscriptions bring in $1.7 billion," 2024. ↗</a></div>
                                 <div><a target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors inline-block" href="https://www.shrm.org/">[10] SHRM, "Majority of Employee Referrals Made During Work Hours," 2025. ↗</a></div>
                             </div>
-                        </div>
+                        
+            </div>
+        </details>
                     </div>
                 </details>
 

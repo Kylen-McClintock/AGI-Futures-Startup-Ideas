@@ -22,6 +22,7 @@ import gateImage from './assets/gate.png';
 import intakeImage from './assets/intake.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 export default function CivicPathClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Expected fallback if empty
@@ -390,7 +391,8 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             score={85} 
                             interpretation="Highly neglected. GovTech is an enterprise slog. Building a fast, legible immigration intake platform that governments proactively adopt to optimize their human capital inflow requires a policy entrepreneur willing to fight massive procurement friction."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
@@ -688,6 +690,16 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                             </ul>
                         </div>
                     </div>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={58}
+                        neglectednessScore={85}
+                        ideaSpecificText="Open-sourcing CivicPath's intake simulations provides verifiable transparency for immigration processing, increasing democratic trust and preventing algorithmic bias in border policy."
+                    />
+                </div>
+
+
 
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 to-transparent mt-16 hover:border-[var(--primary)]/50 transition-colors duration-500 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />

@@ -20,6 +20,7 @@ import safetyDashboardImage from './assets/deepguide_safety_dashboard.png';
 import clinicalTrainingImage from './assets/deepguide_clinical_training.png';
 import hologramTherapyImage from './assets/deepguide_hologram_therapy.png';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 export default function DeepGuideClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -290,7 +291,8 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                             score={88} 
                             interpretation="Severely neglected. The intersection of psychedelic therapeutics and AI is constrained by regulatory friction and stigma. Building an auditable, data-rich copilot for facilitators that turns trip outcomes into evolving safety practices is early and defensible."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="grid md:grid-cols-2 gap-8">
                         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
@@ -629,6 +631,16 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                             </ul>
                         </div>
                     </div>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={83}
+                        neglectednessScore={88}
+                        ideaSpecificText="An open-source Deepguide ensures psychedelic therapy models remain mathematically rigorous and transparent, preventing reckless black-box deployment in mental health."
+                    />
+                </div>
+
+
 
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/[0.05] to-transparent mt-12 hover:border-white/20 transition-colors duration-500 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />

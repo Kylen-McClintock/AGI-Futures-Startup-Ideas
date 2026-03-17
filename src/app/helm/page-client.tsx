@@ -24,6 +24,7 @@ import jarvisImage from './assets/helm_jarvis.png';
 import graphImage from './assets/helm_graph.png';
 import networkImage from './assets/helm_network.png';
 import { InterestedButton } from "@/components/InterestedButton";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 const citations = [
     { number: 1, source: "Upwork", title: "Freelance Forward 2023", url: "https://www.upwork.com/research/freelance-forward-2023" },
@@ -434,7 +435,8 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             score={40} 
                             interpretation="Low neglectedness. The hype around 'one-person billion-dollar companies' has spawned hundreds of AI teammate workspaces and copilot dashboards. Helm requires exceptional design execution and workflow lock-in to stand out in a loud, crowded market."
                         />
-                    </div>
+
+</div>
                 </RevealSection>
 
                 {/* Business Model & Moat & GTM */}
@@ -729,6 +731,16 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                     <strong className="text-[var(--tertiary)] font-medium">Hypothesis:</strong> If Helm cuts time-to-ship by at least 30% while holding or improving quality, then public traces from credible builders convert at least 10%.
                                 </p>
                             </div>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={68}
+                        neglectednessScore={40}
+                        ideaSpecificText="An open-source Helm architecture allows the freelancer ecosystem to build customized autonomous workflows without platform lock-in, distributing the economic gains of AI."
+                    />
+                </div>
+
+
                         </details>
 
                         <div className="glass-panel p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/10">
@@ -754,8 +766,17 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                         <div className="mt-8 space-y-12">
                             {/* Definitions */}
-                            <div>
-                                <h4 className="text-sm font-mono tracking-widest uppercase text-white/30 mb-6 border-b border-white/5 pb-2">Acronyms</h4>
+                            <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                                
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-mono tracking-widest uppercase text-white/30 mb-6 border-b border-white/5 pb-2 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     <div className="bg-white/[0.02] border border-white/5 rounded-xl p-4">
                                         <div className="text-[var(--secondary)] font-mono text-sm mb-1">OS</div>
@@ -782,7 +803,9 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                         <div className="text-white/60 text-sm font-light">Levels 3 and 4 of system autonomy</div>
                                     </div>
                                 </div>
-                            </div>
+                            
+            </div>
+        </details>
 
                             {/* Citations */}
                             <div>

@@ -707,8 +707,17 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <ChevronDown className="w-5 h-5 text-white/30 group-open:rotate-180 transition-transform duration-300" />
                     </summary>
                     <div className="px-6 pb-6 pt-2 border-t border-white/5">
-                        <div className="mb-8">
-                            <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider">Acronyms</h4>
+                        <details className="mb-8 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <ul className="text-sm text-white/50 space-y-2">
                                 <li><strong>iPSC:</strong> induced pluripotent stem cell, an adult cell reprogrammed into a stem-cell-like state so it can be turned into many tissue types.</li>
                                 <li><strong>GLP-1:</strong> glucagon-like peptide-1, a hormone pathway targeted by drugs used for diabetes and obesity.</li>
@@ -717,9 +726,20 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <li><strong>QC:</strong> quality control.</li>
                                 <li><strong>ICP:</strong> ideal customer profile.</li>
                             </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider">References</h4>
+                        
+            </div>
+        </details>
+                        <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-light text-white/40 leading-relaxed">
                                 <div>[1] Ingber, D. E. "Human organs-on-chips for disease modelling..." <em>Nature Reviews Genetics</em>. 2022.</div>
                                 <div>[2] Leung, C. M. et al. "A guide to the organ-on-a-chip." <em>Nature Reviews Methods Primers</em>. 2022.</div>
@@ -739,7 +759,9 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <div className="md:col-span-2">[16] Cosgrave, N. et al. "Hospital admissions due to adverse drug reactions..." <em>Age and Ageing</em>. 2025.</div>
                                 <div className="md:col-span-2">[17] Gawronski, B. E. et al. "Estimating preferences and willingness to pay for pharmacogenomic testing..." 2024.</div>
                             </div>
-                        </div>
+                        
+            </div>
+        </details>
                     
                 <ArtifactSection projectSlug="avatarlab" />
             </div>

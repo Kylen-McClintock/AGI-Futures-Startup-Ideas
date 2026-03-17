@@ -24,6 +24,7 @@ import clinicLab from './assets/clinic_lab.png';
 import capsuleProduct from './assets/capsule_product.png';
 import donorNetwork from './assets/donor_network.png';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 export default function BiomeXClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -299,7 +300,8 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                             score={82} 
                             interpretation="Highly neglected. Most pharma AI focuses on de novo molecule discovery. Building a data platform to systemically index and repurpose off-patent drugs using clinical trial exhaust is culturally opposed to big pharma’s blockbuster orientation."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
@@ -545,6 +547,16 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                             </div>
                         </details>
                     </div>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={69}
+                        neglectednessScore={82}
+                        ideaSpecificText="Open-sourcing BioMex’s biomarker discovery models democratizes preventative healthcare algorithms, ensuring longevity isn't purely a function of wealth."
+                    />
+                </div>
+
+
 
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 to-transparent mt-12 hover:border-[var(--primary)]/50 transition-colors duration-500 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />

@@ -22,6 +22,7 @@ import ecosystemImg from "./assets/ecosystem.png";
 import agingAssistedImg from "./assets/aging_assisted.png";
 import autonomousNavImg from "./assets/autonomous_nav.png";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Shared Animation Settings
 const FADE_UP: any = {
@@ -367,7 +368,8 @@ export function PageClient() {
                             score={85} 
                             interpretation="Highly neglected. Everyone is building agents to read the web, but very few are building standard protocols or bridging SDKs for websites to intentionally broadcast their actions and UI to incoming agents to facilitate zero-friction transactions."
                         />
-                    </div>
+
+</div>
                 </div>
 <section className="px-6 py-24 bg-transparent border-y border-white/5">
                 <div className="max-w-4xl mx-auto">
@@ -621,6 +623,16 @@ export function PageClient() {
                     </p>
                 </motion.div>
             </section>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={74}
+                        neglectednessScore={85}
+                        ideaSpecificText="Open-sourcing Agentable’s UI translation layer accelerates the entire agentic ecosystem by creating a shared standard, preventing a few massive players from taxing all machine-readable software."
+                    />
+                </div>
+
+
 
             {/* KPIs & EXPERIMENTS */}
             <section className="px-6 py-24 bg-transparent border-y border-white/5">

@@ -5,7 +5,7 @@ import { InterestedButton } from "@/components/InterestedButton";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Gamepad2, GraduationCap, Building2, Globe, Zap } from "lucide-react";
+import { Gamepad2, GraduationCap, Building2, Globe, Zap, ChevronDown } from "lucide-react";
 
 // Global Components
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
@@ -459,8 +459,17 @@ export default function SellCraftClient() {
                     <span className="text-neutral-500 group-open:rotate-180 transition-transform">▼</span>
                 </summary>
                 <div className="p-6 border-t border-white/10 space-y-6 text-neutral-400 bg-black/20">
-                    <div>
-                        <h4 className="text-[var(--primary)] mb-3 font-medium">Acronyms</h4>
+                    <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                        
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-[var(--primary)] mb-3 font-medium !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                         <ul className="list-none space-y-2">
                             <li><strong className="text-white font-semibold">SDRs:</strong> Sales Development Representatives</li>
                             <li><strong className="text-white font-semibold">AEs:</strong> Account Executives</li>
@@ -474,9 +483,20 @@ export default function SellCraftClient() {
                             <li><strong className="text-white font-semibold">SQL:</strong> Sales Qualified Lead</li>
                             <li><strong className="text-white font-semibold">LLMs:</strong> Large Language Models</li>
                         </ul>
-                    </div>
-                    <div>
-                        <h4 className="text-[var(--primary)] mb-3 font-medium mt-8">References</h4>
+                    
+            </div>
+        </details>
+                    <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                        
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-[var(--primary)] mb-3 font-medium mt-8 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                         <ol className="list-decimal pl-4 space-y-3">
                             <li className="group/link"><a href="https://journals.sagepub.com/doi/10.1177/0022242921989437" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Xueming Luo, Marco Shaojun Qin, Zheng Fang, and Zhe Qu, Artificial Intelligence Coaches for Sales Agents: Caveats and Solutions, Journal of Marketing (2021) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
                             <li className="group/link"><a href="https://www.pwc.com/us/en/tech-effect/emerging-tech/virtual-reality-study.html" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">PwC, How virtual reality is redefining soft skills training (2022) <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
@@ -486,7 +506,9 @@ export default function SellCraftClient() {
                             <li className="group/link"><a href="https://www.cambridge.org/core/journals/industrial-and-organizational-psychology" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Industrial and Organizational Psychology, Structured interviews: moving beyond mean validity… <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
                             <li className="group/link"><a href="https://www.grandviewresearch.com/industry-analysis/sales-enablement-platform-market-report" target="_blank" rel="noopener noreferrer" className="hover:text-[var(--primary)] transition-colors underline decoration-white/20">Grand View Research, Sales Enablement Platform Market, 2025–2030 report summary <span className="inline-block ml-0.5 opacity-60 group-hover/link:opacity-100 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-all text-[var(--primary)] font-bold">&rarr;</span></a></li>
                         </ol>
-                    </div>
+                    
+            </div>
+        </details>
                 </div>
             </details>
         </section>

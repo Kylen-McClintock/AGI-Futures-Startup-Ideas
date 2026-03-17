@@ -22,6 +22,7 @@ import mechanicImg from "./assets/mechanic.png";
 import syndicateImg from "./assets/syndicate.png";
 import futureMainStreetImg from "./assets/future-main-street.png";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Fade in up animation variant
 const fadeInUp: Variants = {
@@ -324,7 +325,8 @@ export default function ClientPage() {
                             score={80} 
                             interpretation="Highly neglected. Search funds and SMB acquisitions are booming, but applying an AI-native operational stack to modernize retiring boomer businesses as a bundled product is an operational heavy-lift that pure SaaS investors avoid."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="grid md:grid-cols-12 gap-12">
                         <div className="md:col-span-7">
@@ -575,6 +577,16 @@ export default function ClientPage() {
                         </details>
                     </div>
                 </motion.section>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={81}
+                        neglectednessScore={80}
+                        ideaSpecificText="Open-sourcing Main Street Legacy’s transition infrastructure levels the playing field for local operators against private equity roll-ups, maintaining community ownership."
+                    />
+                </div>
+
+
 
                 {/* Meta Details: KPIs, Experiments, Transferable Insights */}
                 <motion.section

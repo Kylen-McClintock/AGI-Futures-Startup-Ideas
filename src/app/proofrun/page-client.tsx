@@ -598,9 +598,18 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                             </h3>
                             <ChevronDown className="w-5 h-5 text-white/30 group-open:rotate-180 transition-transform duration-300" />
                         </summary>
-                        <div className="p-6 pt-0 border-t border-white/5 bg-black/20">
+                        <details className="p-6 pt-0 border-t border-white/5 bg-black/20 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
 
-                            <h4 className="text-sm font-semibold uppercase text-[var(--primary)]/80 mb-4 tracking-wider">Acronyms</h4>
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-semibold uppercase text-[var(--primary)]/80 mb-4 tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                                 <div className="text-sm"><strong className="text-white/80 select-all">AI:</strong> <span className="text-white/50">Artificial intelligence</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">AI-native:</strong> <span className="text-white/50">Designed to work with AI tools as a normal part of the workflow</span></div>
@@ -618,8 +627,12 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                 <div className="text-sm"><strong className="text-white/80 select-all">SaaS:</strong> <span className="text-white/50">Software as a service</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">B2B:</strong> <span className="text-white/50">Business to business</span></div>
                                 <div className="text-sm"><strong className="text-white/80 select-all">NPS:</strong> <span className="text-white/50">Net Promoter Score</span></div>
-                                <div className="text-sm"><strong className="text-white/80 select-all">A/B test:</strong> <span className="text-white/50">Controlled experiment comparing two versions</span></div>
-                            </div>
+                                <details className="text-sm group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12"><strong className="text-white/80 select-all">A/B test:</strong> <span className="text-white/50">Controlled experiment comparing two versions</span>
+            </div>
+        </details>
+                            
+            </div>
+        </details>
 
                             <h4 className="text-sm font-semibold uppercase text-[var(--primary)]/80 mb-4 tracking-wider mt-6">References</h4>
                             <div className="space-y-4">

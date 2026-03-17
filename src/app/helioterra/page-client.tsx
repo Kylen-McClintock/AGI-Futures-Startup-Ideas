@@ -635,8 +635,17 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                 <li><strong>LOI:</strong> letter of intent, a non-binding agreement that signals serious project interest</li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider">References</h4>
+                        <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                            
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold text-white/60 mb-4 uppercase tracking-wider !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                             <div className="flex flex-col gap-4 text-xs font-light text-white/40 leading-relaxed">
                                 <div>[1] Jamil U, Pearce JM. <em>Enhancing heat stress tolerance in organic romaine lettuce using crystalline silicon and red, blue & green-colored thin film agrivoltaic systems</em> (2026).</div>
                                 <div>[2] American Farm Bureau Federation. <em>Farm Bankruptcies Continued to Climb in 2025</em> (2026).</div>
@@ -647,7 +656,9 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                 <div>[7] U.S. Department of Energy. <em>Large-Scale Solar Siting Resources</em> (updated 2026).</div>
                                 <div>[8] USDA Economic Research Service. <em>Farm Sector Income & Finances: Assets, Debt, and Wealth</em> (updated 2026).</div>
                             </div>
-                        </div>
+                        
+            </div>
+        </details>
                     
                 <ArtifactSection projectSlug="helioterra" />
             </div>

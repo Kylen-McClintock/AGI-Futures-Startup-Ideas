@@ -11,7 +11,7 @@ import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
 import { CoreLoopVisual } from "./components/CoreLoopVisual";
-import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp } from "lucide-react";
+import { ArrowRight, Activity, Brain, Shield, Users, Network, TrendingUp, ChevronDown } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 import { ScrollProgress } from "@/components/ScrollProgress";
@@ -524,8 +524,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
         </RevealSection>
 
         {/* References */}
-        <div className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto">
-          <h3 className="text-sm font-bold tracking-widest text-[var(--primary)] uppercase mb-8">References</h3>
+        <details className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+          
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-bold tracking-widest text-[var(--primary)] uppercase mb-8 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
           <div className="grid gap-4 sm:grid-cols-2">
             {citations.map((cite) => (
               <div key={cite.number} className="flex gap-4 group">
@@ -555,7 +564,9 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </div>
             ))}
           </div>
-        </div>
+        
+            </div>
+        </details>
 
       </div>
     

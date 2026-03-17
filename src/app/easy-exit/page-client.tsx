@@ -569,17 +569,37 @@ export default function EasyExitClient() {
                                 <ChevronDown className="w-5 h-5 transition-transform group-open:rotate-180" />
                             </summary>
                             <div className="pt-6 mt-6 border-t border-white/5 space-y-8 text-sm">
-                                <div>
-                                    <h4 className="text-white/80 font-medium mb-3">Niche acronyms used</h4>
+                                <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                                    
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-white/80 font-medium mb-3 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                                     <ul className="space-y-2 text-white/60">
                                         <li><strong className="text-white/80">API:</strong> Application Programming Interface</li>
                                         <li><strong className="text-white/80">2FA:</strong> Two-Factor Authentication</li>
                                         <li><strong className="text-white/80">SaaS:</strong> Software as a Service</li>
                                         <li><strong className="text-white/80">ICP:</strong> Ideal Customer Profile</li>
                                     </ul>
-                                </div>
-                                <div>
-                                    <h4 className="text-white/80 font-medium mb-3">References</h4>
+                                
+            </div>
+        </details>
+                                <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                                    
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-white/80 font-medium mb-3 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    References
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                                     <div className="space-y-3 text-white/60">
                                         <p>[1] <a href="https://www.ftc.gov/news-events/news/press-releases/2026/03/ftc-seeks-public-comment-response-advance-notice-proposed-rulemaking-regarding-negative-option" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline inline-flex items-center gap-1">Federal Trade Commission, "FTC Seeks Public Comment..." <ExternalLink className="w-3 h-3" /></a></p>
                                         <p>[2] <a href="https://www.justice.gov/usao-ndca/pr/united-states-files-complaint-against-adobe-and-two-adobe-executives-alleged-0" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline inline-flex items-center gap-1">U.S. Department of Justice, "United States Files Complaint Against Adobe..." <ExternalLink className="w-3 h-3" /></a></p>
@@ -588,7 +608,9 @@ export default function EasyExitClient() {
                                         <p>[5] <a href="https://www.rocketmoney.com/feature/manage-subscriptions" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline inline-flex items-center gap-1">Rocket Money, subscription management feature page. <ExternalLink className="w-3 h-3" /></a></p>
                                         <p>[6] <a href="https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202120220AB390" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:underline inline-flex items-center gap-1">California Legislature, Automatic Renewal Law updates. <ExternalLink className="w-3 h-3" /></a></p>
                                     </div>
-                                </div>
+                                
+            </div>
+        </details>
                             </div>
                         </details>
                     </div>

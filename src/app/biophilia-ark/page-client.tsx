@@ -22,6 +22,7 @@ import freshwaterCliff from './assets/freshwater_cliff_v2.png';
 import prairieLightwall from './assets/prairie_lightwall_v3.png';
 import dartFrog from './assets/macro_frog.png';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -399,7 +400,8 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             score={89} 
                             interpretation="Highly neglected. Consumer hardware intersecting with active bio-filtration and terrariums is a bizarre, high-friction space that software investors avoid entirely. It requires hardware, biological maintenance, and rigorous design expertise."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="grid md:grid-cols-2 gap-8">
                         <div className="flex flex-col gap-8">
@@ -739,6 +741,16 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         </div>
                     </div>
 
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={78}
+                        neglectednessScore={89}
+                        ideaSpecificText="An open-source hardware blueprint for Biophilia Ark accelerates biological integration into urban environments globally, ensuring climate resilience technology isn't artificially constrained."
+                    />
+                </div>
+
+
+
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-white/10 bg-gradient-to-br from-[var(--primary)]/5 to-transparent mt-12 hover:border-[var(--primary)]/20 transition-colors duration-500 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
                         <h3 className="text-sm font-mono text-[var(--secondary)] uppercase tracking-widest mb-6">Transferable Insight</h3>
@@ -763,8 +775,17 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             <ChevronDown className="w-5 h-5 ml-auto text-white/30 group-open:rotate-180 transition-transform duration-300" />
                         </summary>
                         <div className="space-y-12">
-                            <div>
-                                <h4 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6">Acronyms</h4>
+                            <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
+                                
+            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                <h4 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6 !mb-0 flex items-center gap-4">
+                    <span className="w-8 h-px bg-[var(--primary)]/50 block hidden sm:block"></span>
+                    Acronyms
+                </h4>
+                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+            </summary>
+            <div className="pt-8">
+        
                                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-white/60 font-light">
                                     <li><strong className="text-white/80">AR:</strong> Augmented reality</li>
                                     <li><strong className="text-white/80">CO2:</strong> Carbon dioxide</li>
@@ -774,10 +795,16 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                                     <li><strong className="text-white/80">microLED:</strong> A display made of tiny LEDs</li>
                                     <li><strong className="text-white/80">VOC:</strong> Volatile organic compound</li>
                                 </ul>
-                            </div>
+                            
+            </div>
+        </details>
 
-                            <div>
-                                <h4 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6">References</h4>
+                            <details className=" group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden">
+                                <summary className="list-none flex justify-between items-center outline-none py-4 hover:opacity-80 transition-opacity">
+            <h4 className="font-mono uppercase tracking-widest text-xs text-[var(--primary)] mb-0 flex items-center gap-4"><span className="w-8 h-px bg-[var(--primary)]/50 block"></span>References</h4>
+            <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
+         </summary>
+         <div className="pt-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div className="glass-panel p-6 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
                                         <span className="text-[var(--secondary)]/70 font-mono text-lg shrink-0">[1]</span>
@@ -829,6 +856,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                                     </div>
                                 </div>
                             </div>
+            </details>
                         </div>
                     </details>
                 </motion.section>

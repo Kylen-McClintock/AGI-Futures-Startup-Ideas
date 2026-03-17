@@ -29,6 +29,7 @@ import familyImage from "./assets/use_case_family.png";
 import founderImage from "./assets/use_case_founder.png";
 import agingImage from "./assets/use_case_aging.png";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 const citations = [
     { number: 1, source: "CDC", title: "Health Effects of Social Isolation and Loneliness (2024)", url: "https://www.cdc.gov/policy/opem/social-isolation-loneliness/index.html" },
@@ -237,7 +238,8 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                             score={78} 
                             interpretation="Significantly neglected. Co-living startups have often failed by trying to scale like centralized real estate. Building it the *right* way—a decentralized financial and coordination layer to help organic friend groups form high-trust, resilient local compounds—is civilizationally optimal and highly ignored."
                         />
-                    </div>
+
+</div>
                     <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Market</h2>
                         <InlineTags tags={initialTags?.customer} theme="amber" />
@@ -551,6 +553,16 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                             </div>
                         </div>
                     </section>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={76}
+                        neglectednessScore={78}
+                        ideaSpecificText="An open-source framework for Hearth’s legal and financial pooling significantly reduces the friction of creating high-trust communities, accelerating localized resilience."
+                    />
+                </div>
+
+
 
                     <CitationSection citations={citations} />
 

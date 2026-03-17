@@ -29,6 +29,7 @@ import protoImage from "./assets/afl_prototyping_workspace.png";
 import guildImage from "./assets/afl_guild_collaboration.png";
 import dashImage from "./assets/afl_build_league_dashboard.png";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Citations Data
 const citations = [
@@ -237,7 +238,8 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                             score={75} 
                             interpretation="Significantly neglected. Startup studios and accelerators are common, but an institution built explicitly around building AI-native ventures the *right* way—baking in safety, alignment, and civilizational optimism from day one—is a critically neglected structural model."
                         />
-                    </div>
+
+</div>
                 </div>
 <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">Market & Business Model</h2>
@@ -393,6 +395,16 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                             </p>
                         </div>
                     </section>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={80}
+                        neglectednessScore={75}
+                        ideaSpecificText="Open-sourcing AFL's curriculum and credentialing layer democratizes access to elite builder networks, ensuring the builders of the AGI future come from outside standard venture capture."
+                    />
+                </div>
+
+
 
                     {/* TRANSFERABLE INSIGHT */}
                     <section className="mb-24">

@@ -30,6 +30,7 @@ import connectImage from "./assets/aura_connection_avatar.png";
 import arGlassesImage from "./assets/aura_use_case_ar_glasses.png";
 import carHudImage from "./assets/aura_use_case_autonomous_car.png";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Citations Data
 const citations = [
@@ -363,7 +364,8 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             score={55} 
                             interpretation="Moderate neglectedness. Both spatial computing and conversational AI are highly saturated. However, building an open marketplace that bridges 3D spatial presence with multi-modal LLMs *the right way*—optimizing for cognitive sovereignty and mitigating the risks of immersive behavioral manipulation—is civilizationally optimal and remains critically neglected."
                         />
-                    </div>
+
+</div>
                 </div>
 <section>
                         <h2 className="text-4xl font-serif mb-8 text-white">The Market Story</h2>
@@ -512,6 +514,16 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             </div>
                         </div>
                     </section>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={85}
+                        neglectednessScore={55}
+                        ideaSpecificText="Open-sourcing Aura guarantees that the most advanced educational models and cognitive architectures aren't gatekept, preventing a catastrophic intelligence divide."
+                    />
+                </div>
+
+
 
                     <CitationSection citations={citations} />
 

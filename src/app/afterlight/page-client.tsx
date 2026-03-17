@@ -20,6 +20,7 @@ import timelineImage from './assets/afterlight_timeline_1773354220095.png';
 import appImage from './assets/afterlight_app_1773354236688.png';
 import closingImage from './assets/afterlight_closing_1773354249527.png';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 export default function AfterlightClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -307,7 +308,8 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                             score={90} 
                             interpretation="Severely neglected. Deathcare is notoriously immune to disruption due to extreme cultural sensitivities and fragmented state laws. An AI-native approach to legacy, grief support, and estate execution is a blue-ocean market for high-empathy founders."
                         />
-                    </div>
+
+</div>
                 </div>
 <div className="grid md:grid-cols-2 gap-8 mb-12">
                         <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500">
@@ -539,6 +541,16 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                             </ul>
                         </div>
                     </div>
+
+<div className="mb-16">
+                    <OpenSourcePriority 
+                        civilizationalImpactScore={67}
+                        neglectednessScore={90}
+                        ideaSpecificText="An open-source Afterlight guarantees that multigenerational family memory graphs remain private and immune to corporate sunsets, protecting humanity's most intimate legacy data."
+                    />
+                </div>
+
+
 
                     <div className="glass-panel p-10 sm:p-12 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-br from-[var(--primary)]/10 to-transparent mt-12 hover:border-[var(--primary)]/50 transition-colors duration-500 group relative overflow-hidden">
                         <div className="absolute top-0 left-0 w-2 h-full bg-[var(--primary)]" />
