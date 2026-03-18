@@ -120,14 +120,9 @@ export default function BuilderProfileClientPage({
                 <div className="flex items-center gap-4 mb-2 justify-center md:justify-start">
                   <h1 className="text-4xl md:text-5xl font-serif">{profile.name}</h1>
                   {isOwner && (
-                    <div className="flex flex-col sm:flex-row items-center gap-3">
-                        <Link href="/onboarding" className="px-3 py-1 rounded-full border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/10 text-[10px] font-mono uppercase tracking-widest transition-colors flex shrink-0">
-                          Edit Profile
-                        </Link>
-                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/50 shrink-0">
-                            Inbox: <span className="text-[#10b981]">{profile.contact_preference === 'nobody' ? 'Locked' : profile.contact_preference === 'following' ? 'Following Only' : 'Open'}</span>
-                        </div>
-                    </div>
+                    <Link href="/onboarding" className="px-3 py-1 rounded-full border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/10 text-[10px] font-mono uppercase tracking-widest transition-colors flex shrink-0">
+                      Edit Profile
+                    </Link>
                   )}
                   {!isOwner && currentUserId && (
                     <div className="flex items-center gap-2">
@@ -227,12 +222,22 @@ export default function BuilderProfileClientPage({
                           if (platform === 'huggingface') display = 'HuggingFace';
                           if (platform === 'email') {
                               const pref = profile.contact_preference || 'nobody';
+                              
+                              if (isOwner) {
+                                  return (
+                                      <div key="owner-inbox-pref" className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-xs font-mono">
+                                          <span className="text-white/50">Inbox:</span> 
+                                          <span className={`${pref === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
+                                              {pref === 'nobody' ? 'Locked' : pref === 'following' ? 'Following Only' : 'Open'}
+                                          </span>
+                                      </div>
+                                  );
+                              }
+
                               let canContact = false;
                               let lockReason = '';
                               
-                              if (isOwner) {
-                                  canContact = true;
-                              } else if (pref === 'anyone' && currentUserId) {
+                              if (pref === 'anyone' && currentUserId) {
                                   canContact = true;
                               } else if (pref === 'following' && isFollowedByOwner) {
                                   canContact = true;
