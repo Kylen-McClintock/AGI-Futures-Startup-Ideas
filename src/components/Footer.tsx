@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export function Footer() {
     return (
-        <footer className="w-full border-t border-white/10 bg-black/40 backdrop-blur-md py-12 px-6 mt-32">
+        <footer className="w-full border-t border-white/10 bg-black backdrop-blur-md py-12 px-6 mt-32">
             <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-6">
                 
                 {/* Branding or simple wordmark */}
                 <div className="flex flex-col items-center gap-2 mb-2">
-                    <img src="/logo.png" alt="AGI Futures Logo" className="h-8 md:h-12 w-auto object-contain" />
+                    <img src="/logo.png" alt="AGI Futures Logo" className="h-12 md:h-20 w-auto object-contain" />
                     <span className="text-sm font-mono tracking-widest text-[#3bf4a4] uppercase mx-auto">Library</span>
                 </div>
 

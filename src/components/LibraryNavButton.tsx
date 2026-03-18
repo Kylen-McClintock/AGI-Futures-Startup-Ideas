@@ -36,7 +36,7 @@ export function LibraryNavButton() {
             aria-label="Return to Library"
         >
             <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <img src="/logo.png" alt="AGI Futures" className="h-4 sm:h-5 w-auto object-contain" />
+            <span className="text-sm sm:text-base font-medium tracking-wide">AGI Futures</span>
         </Link>
     );
 }

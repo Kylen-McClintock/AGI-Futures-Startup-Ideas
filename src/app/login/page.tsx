@@ -28,12 +28,28 @@ export default function LoginPage() {
       <div className="max-w-md w-full glass-panel p-8 rounded-2xl border border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[50px] rounded-full pointer-events-none" />
         
-        <div className="text-center mb-10 flex flex-col items-center">
-          <img src="/logo.png" alt="AGI Futures" className="h-8 md:h-10 w-auto object-contain mb-4" />
+        <div className="text-center mb-10">
+          <h1 className="text-3xl font-serif mb-2">AGI Futures</h1>
           <p className="text-white/60 font-light">Sign in to build your profile, save notes, and post artifacts.</p>
         </div>
 
         <div className="flex flex-col gap-3">
+          <div className="mb-2">
+            <Auth
+              supabaseClient={supabase}
+              view="magic_link"
+              appearance={{ theme: ThemeSupa }}
+              theme="dark"
+              showLinks={false}
+              providers={[]}
+            />
+          </div>
+
+          <div className="relative flex items-center py-2 mb-2">
+            <div className="flex-grow border-t border-white/10"></div>
+            <span className="flex-shrink-0 mx-4 text-white/30 text-[10px] uppercase tracking-widest font-mono">Or continue with</span>
+            <div className="flex-grow border-t border-white/10"></div>
+          </div>
           <button 
             onClick={() => supabase.auth.signInWithOAuth({ provider: 'github', options: { redirectTo: origin ? `${origin}/auth/callback` : undefined } })}
             className="flex items-center justify-center gap-3 w-full p-3 rounded-lg border border-white/20 bg-white/5 hover:bg-white/10 text-white text-sm font-mono tracking-widest uppercase transition-all"
