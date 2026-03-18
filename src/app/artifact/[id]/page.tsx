@@ -3,12 +3,13 @@ import { createClient } from '@/utils/supabase/server';
 import ArtifactClientPage from './page-client';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
     const supabase = await createClient();
     const { data: artifact } = await supabase
         .from('artifacts')
         .select('title, summary')
-        .eq('id', params.id)
+        .eq('id', id)
         .single();
     
     if (!artifact) return { title: 'Artifact Not Found' };
@@ -19,7 +20,8 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
     };
 }
 
-export default async function ArtifactPage({ params }: { params: { id: string } }) {
+export default async function ArtifactPage({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
     const supabase = await createClient();
     const { data: artifact } = await supabase
         .from('artifacts')
@@ -28,7 +30,7 @@ export default async function ArtifactPage({ params }: { params: { id: string } 
             project:projects(name, slug),
             profile:profiles!artifacts_profile_id_fkey(name, handle, avatar_url)
         `)
-        .eq('id', params.id)
+        .eq('id', id)
         .single();
 
     if (!artifact) {
