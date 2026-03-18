@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
-import { ExternalLink, MessageSquareText, ArrowLeft, Star } from "lucide-react";
+import { ExternalLink, MessageSquareText, ArrowLeft, Star, Image as ImageIcon, X } from "lucide-react";
 import Link from 'next/link';
 
 export default function ArtifactClientPage({ artifact }: { artifact: any }) {
@@ -14,8 +14,11 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
     const [isLiked, setIsLiked] = useState(false);
     
     const [comments, setComments] = useState<any[]>([]);
-    const [newCommentText, setNewCommentText] = useState("");
-    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [newCommentText, setNewCommentText] = useState<Record<string, string>>({});
+    const [isSubmitting, setIsSubmitting] = useState<string | null>(null);
+    const [uploadingMediaForComment, setUploadingMediaForComment] = useState<string | null>(null);
+    const [commentMedia, setCommentMedia] = useState<Record<string, {url: string, tag: string}[]>>({});
+    const [replyingTo, setReplyingTo] = useState<string | null>(null);
 
     useEffect(() => {
         async function fetchInitial() {
@@ -33,7 +36,7 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
         
         async function fetchComments() {
             const { data } = await supabase.from('artifact_comments').select(`
-                id, content, created_at,
+                id, content, created_at, parent_id, media_urls,
                 profile:profiles!artifact_comments_profile_id_fkey(handle, name, avatar_url)
             `).eq('artifact_id', artifact.id).order('created_at', { ascending: true });
             if (data) setComments(data);
@@ -51,20 +54,65 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
         await supabase.from('artifacts').update({ likes: likes + 1 }).eq('id', artifact.id);
     };
 
-    const submitComment = async () => {
-        if (!user || !profile || !newCommentText.trim()) return alert("Sign in to comment.");
-        setIsSubmitting(true);
+    const handleCommentImageUpload = async (e: React.ChangeEvent<HTMLInputElement>, textKey: string) => {
+        if (!e.target.files?.[0] || !profile) return;
+        setUploadingMediaForComment(textKey);
+        const file = e.target.files[0];
+        
+        const form = new FormData();
+        form.append('file', file);
+
+        try {
+            const res = await fetch('/api/upload', { method: 'POST', body: form });
+            const data = await res.json();
+            
+            if (data.url) {
+                setCommentMedia(prev => ({
+                    ...prev,
+                    [textKey]: [...(prev[textKey] || []), { url: data.url, tag: 'note' }]
+                }));
+            } else {
+                alert("Upload failed: " + (data.error || "Unknown error"));
+            }
+        } catch (err: any) {
+            alert("Upload request failed.");
+        }
+        setUploadingMediaForComment(null);
+    };
+
+    const submitComment = async (parentId?: string) => {
+        if (!user || !profile) return alert("Sign in to comment.");
+        const textKey = parentId || artifact.id;
+        const text = newCommentText[textKey]?.trim();
+        const hasMedia = (commentMedia[textKey] || []).length > 0;
+        
+        if (!text && !hasMedia) return;
+
+        setIsSubmitting(textKey);
+        
+        const cleanMediaUrls = (commentMedia[textKey] || [])
+            .map(item => JSON.stringify({ url: item.url.trim(), tag: item.tag }));
+
         const { data, error } = await supabase.from('artifact_comments').insert({
-            artifact_id: artifact.id,
-            profile_id: profile.id,
-            content: newCommentText.trim()
-        }).select(`id, content, created_at, profile:profiles!artifact_comments_profile_id_fkey(handle, name, avatar_url)`).single();
+            artifact_id: artifact.id, 
+            profile_id: profile.id, 
+            content: text || '',
+            parent_id: parentId || null,
+            media_urls: cleanMediaUrls
+        }).select(`
+            id, content, created_at, parent_id, media_urls,
+            profile:profiles!artifact_comments_profile_id_fkey(handle, name, avatar_url)
+        `).single();
         
         if (!error && data) {
             setComments(prev => [...prev, data]);
-            setNewCommentText("");
+            setNewCommentText(prev => ({ ...prev, [textKey]: '' }));
+            setCommentMedia(prev => { const next = {...prev}; delete next[textKey]; return next; });
+            if (parentId) setReplyingTo(null);
+        } else {
+            alert("Failed to save note.");
         }
-        setIsSubmitting(false);
+        setIsSubmitting(null);
     };
 
     const isProblem = artifact.project?.slug?.startsWith('problem-atlas') || ['attune','easy-exit','murmuration','afl'].includes(artifact.project?.slug); // Approximation for Theme
@@ -200,50 +248,179 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
                 </h2>
                 
                 <div className="space-y-4 mb-8">
-                    {comments.map((c: any) => (
-                        <div key={c.id} className="flex gap-4 p-5 rounded-2xl border border-white/5 bg-white-[0.02]">
-                            <Link href={`/builder/${c.profile?.handle}`} className="w-8 h-8 rounded-full overflow-hidden bg-white/10 shrink-0 border border-white/10">
-                                {c.profile?.avatar_url && (
-                                    <img src={c.profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
-                                )}
-                            </Link>
-                            <div className="flex-1 min-w-0 font-sans">
-                                <div className="flex items-baseline gap-2 mb-2">
-                                    <span className="font-medium text-white/90 text-sm">{c.profile?.name}</span>
-                                    <span className={`text-[10px] font-mono tracking-widest ${themeColor}/70`}>@{c.profile?.handle}</span>
-                                    <span className="text-[10px] font-mono text-white/30 ml-auto tracking-widest">{new Date(c.created_at).toLocaleDateString()}</span>
+                    {comments.filter(c => !c.parent_id).map((comment: any) => {
+                        const replies = comments.filter((c: any) => c.parent_id === comment.id);
+                        return (
+                            <div key={comment.id} className="relative mb-6 last:mb-0">
+                                <div className="flex gap-4 p-5 rounded-2xl border border-white/5 bg-white-[0.02]">
+                                    <Link href={`/builder/${comment.profile?.handle}`} className="w-8 h-8 rounded-full overflow-hidden bg-white/10 shrink-0 border border-white/10">
+                                        {comment.profile?.avatar_url && (
+                                            <img src={comment.profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
+                                        )}
+                                    </Link>
+                                    <div className="flex-1 min-w-0 font-sans">
+                                        <div className="flex items-baseline gap-2 mb-2">
+                                            <span className="font-medium text-white/90 text-sm">{comment.profile?.name}</span>
+                                            <span className={`text-[10px] font-mono tracking-widest ${themeColor}/70`}>@{comment.profile?.handle}</span>
+                                            <span className="text-[10px] font-mono text-white/30 ml-auto tracking-widest">{new Date(comment.created_at).toLocaleDateString()}</span>
+                                        </div>
+                                        <p className="text-white/70 text-sm leading-relaxed whitespace-pre-wrap">{comment.content}</p>
+                                        
+                                        {comment.media_urls && comment.media_urls.length > 0 && (
+                                            <div className="mt-4 flex gap-3 overflow-x-auto pb-2 scrollbar-none snap-x">
+                                                {comment.media_urls.map((raw: any, i: number) => {
+                                                    let url = raw; let tag = '';
+                                                    try { const p = JSON.parse(raw); url = p.url; tag = p.tag; } catch(e){}
+                                                    return (
+                                                        <div key={i} className="relative w-[280px] shrink-0 snap-center rounded-xl overflow-hidden bg-black/50 border border-white/10 group">
+                                                            <img src={url} alt="Note Media" className="w-full h-48 object-cover" />
+                                                            {tag && <span className={`absolute top-2 left-2 bg-black/80 backdrop-blur-md ${themeColor} text-[9px] font-mono tracking-widest px-2 py-0.5 rounded border ${borderThemeColor}/30`}>{tag}</span>}
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        )}
+                                        
+                                        {user && (
+                                            <button onClick={() => setReplyingTo(replyingTo === comment.id ? null : comment.id)} className={`text-[9px] font-mono ${themeColor}/70 hover:${themeColor} uppercase tracking-widest mt-3 transition-colors opacity-70 cursor-pointer`}>
+                                                Reply
+                                            </button>
+                                        )}
+                                    </div>
                                 </div>
-                                <p className="text-white/70 text-sm leading-relaxed whitespace-pre-wrap">{c.content}</p>
+
+                                {/* Replies */}
+                                {replies.length > 0 && (
+                                    <div className="mt-3 ml-6 md:ml-12 pl-4 md:pl-6 space-y-3 relative">
+                                        <div className="absolute top-0 left-0 bottom-4 w-px bg-white/10" />
+                                        {replies.map((reply: any) => (
+                                            <div key={reply.id} className="flex gap-3 relative">
+                                                <div className="absolute top-6 -left-4 md:-left-6 w-4 md:w-6 h-px bg-white/10" />
+                                                <Link href={`/builder/${reply.profile?.handle}`} className="w-6 h-6 rounded-full overflow-hidden bg-white/10 shrink-0 border border-white/10 mt-1">
+                                                    {reply.profile?.avatar_url && <img src={reply.profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />}
+                                                </Link>
+                                                <div className="flex-1 min-w-0 font-sans p-4 rounded-2xl border border-white/5 bg-white-[0.02]">
+                                                    <div className="flex items-baseline gap-2 mb-2">
+                                                        <span className="font-medium text-white/90 text-sm">{reply.profile?.name}</span>
+                                                        <span className={`text-[9px] font-mono tracking-widest ${themeColor}/70`}>@{reply.profile?.handle}</span>
+                                                        <span className="text-[9px] font-mono text-white/30 ml-auto tracking-widest">{new Date(reply.created_at).toLocaleDateString()}</span>
+                                                    </div>
+                                                    <p className="text-white/70 text-sm leading-relaxed whitespace-pre-wrap">{reply.content}</p>
+                                                    {reply.media_urls && reply.media_urls.length > 0 && (
+                                                        <div className="mt-3 flex gap-2 overflow-x-auto pb-1 scrollbar-none snap-x">
+                                                            {reply.media_urls.map((raw: any, i: number) => {
+                                                                let url = raw; let tag = '';
+                                                                try { const p = JSON.parse(raw); url = p.url; tag = p.tag; } catch(e){}
+                                                                return (
+                                                                    <div key={i} className="relative w-[200px] shrink-0 snap-center rounded-lg overflow-hidden bg-black/50 border border-white/10">
+                                                                        <img src={url} alt="Reply Media" className="w-full h-32 object-cover" />
+                                                                    </div>
+                                                                );
+                                                            })}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+
+                                {/* Reply Input */}
+                                {replyingTo === comment.id && (
+                                    <div className="mt-3 ml-6 md:ml-12 pl-4 md:pl-6 relative">
+                                        <div className="absolute top-0 left-0 bottom-0 w-px bg-white/10" />
+                                        <div className="absolute top-6 -left-4 md:-left-6 w-4 md:w-6 h-px bg-white/10" />
+                                        
+                                        <div className="flex flex-col gap-2 p-4 border border-white/5 rounded-2xl bg-[#0a0f14] relative z-10">
+                                            {(commentMedia[comment.id] || []).length > 0 && (
+                                                <div className="flex gap-2 mb-2 overflow-x-auto pb-2">
+                                                    {(commentMedia[comment.id] || []).map((m, i) => (
+                                                        <div key={i} className="relative w-20 h-20 shrink-0 rounded-lg overflow-hidden border border-white/10 group">
+                                                            <img src={m.url} className="w-full h-full object-cover" />
+                                                            <button onClick={() => setCommentMedia(prev => { const n = {...prev}; n[comment.id] = n[comment.id].filter((_, idx) => idx !== i); return n; })} className="absolute top-1 right-1 p-1 bg-black/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                <X size={10} className="text-white" />
+                                                            </button>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            )}
+                                            
+                                            <textarea 
+                                                autoFocus
+                                                value={newCommentText[comment.id] || ''}
+                                                onChange={(e) => setNewCommentText(prev => ({...prev, [comment.id]: e.target.value}))}
+                                                placeholder={`Reply to ${comment.profile?.name}...`}
+                                                className={`w-full bg-transparent border-none px-0 py-1 text-sm text-white placeholder-white/30 focus:outline-none focus:ring-0 min-h-[40px] resize-y`}
+                                            />
+                                            
+                                            <div className="flex justify-between items-center pt-2 border-t border-white/5">
+                                                <div className="flex items-center gap-2">
+                                                    <label className={`cursor-pointer p-1.5 rounded-md text-white/40 hover:${themeColor} hover:bg-white/5 transition-colors relative`}>
+                                                        {uploadingMediaForComment === comment.id ? <div className={`w-3 h-3 border-2 border-[t-transparent] ${borderThemeColor} rounded-full animate-spin`} /> : <ImageIcon className="w-3.5 h-3.5" />}
+                                                        <input type="file" accept="image/*" className="hidden" onChange={(e) => handleCommentImageUpload(e, comment.id)} disabled={uploadingMediaForComment === comment.id || (commentMedia[comment.id] || []).length >= 2} />
+                                                    </label>
+                                                </div>
+                                                <div className="flex gap-2">
+                                                    <button onClick={() => setReplyingTo(null)} className="px-3 py-1.5 text-[9px] font-mono text-white/40 hover:text-white uppercase tracking-widest transition-colors">Cancel</button>
+                                                    <button onClick={() => submitComment(comment.id)} disabled={isSubmitting === comment.id || (!newCommentText[comment.id]?.trim() && !(commentMedia[comment.id]?.length > 0))} className={`px-4 py-1.5 ${bgThemeColor}/10 hover:${bgThemeColor}/20 ${themeColor} border ${borderThemeColor}/30 rounded-lg text-[9px] uppercase font-mono tracking-widest disabled:opacity-50 transition-colors`}>
+                                                        {isSubmitting === comment.id ? 'Posting...' : 'Reply'}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
-                        </div>
-                    ))}
+                        );
+                    })}
+
                     {comments.length === 0 && (
                         <p className="text-white/30 text-sm italic font-light p-4 text-center border border-white/5 rounded-2xl">No notes or comments yet.</p>
                     )}
                 </div>
 
-                <div className="flex gap-4 items-start p-5 border border-white/10 rounded-2xl bg-white/5">
-                     <div className="w-8 h-8 rounded-full overflow-hidden bg-white/10 shrink-0">
+                <div className="flex gap-4 items-start p-5 border border-white/10 rounded-2xl bg-white/5 flex-col md:flex-row">
+                     <div className="w-8 h-8 rounded-full overflow-hidden bg-white/10 shrink-0 hidden md:block">
                          {profile?.avatar_url ? (
                              <img src={profile.avatar_url} alt="Avatar" className="w-full h-full object-cover" />
                          ) : (
                              <span className="flex items-center justify-center w-full h-full text-xs text-white/50">{profile?.handle?.[0]?.toUpperCase()}</span>
                          )}
                      </div>
-                     <div className="flex-1 flex flex-col items-end gap-3">
+                     <div className="flex-1 w-full flex flex-col gap-3">
+                         {(commentMedia[artifact.id] || []).length > 0 && (
+                             <div className="flex gap-2 pb-2 overflow-x-auto">
+                                 {(commentMedia[artifact.id] || []).map((m, i) => (
+                                     <div key={i} className="relative w-24 h-24 shrink-0 rounded-xl overflow-hidden border border-white/10 group">
+                                         <img src={m.url} className="w-full h-full object-cover" />
+                                         <button onClick={() => setCommentMedia(prev => { const n = {...prev}; n[artifact.id] = n[artifact.id].filter((_, idx) => idx !== i); return n; })} className="absolute top-1 right-1 p-1 bg-black/80 rounded-full opacity-0 group-hover:opacity-100 transition-opacity">
+                                             <X size={12} className="text-white" />
+                                         </button>
+                                     </div>
+                                 ))}
+                             </div>
+                         )}
                          <textarea 
-                             value={newCommentText}
-                             onChange={(e) => setNewCommentText(e.target.value)}
+                             value={newCommentText[artifact.id] || ''}
+                             onChange={(e) => setNewCommentText(prev => ({...prev, [artifact.id]: e.target.value}))}
                              placeholder="Add a field note or comment..."
                              className={`w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-white/30 focus:outline-none focus:ring-1 focus:${ringThemeColor}/50 min-h-[100px] resize-y`}
                          />
-                         <button 
-                             onClick={submitComment}
-                             disabled={isSubmitting || !newCommentText.trim()}
-                             className={`px-6 py-2 ${bgThemeColor}/10 hover:${bgThemeColor}/20 ${themeColor} border ${borderThemeColor}/30 rounded-xl text-[10px] uppercase font-mono tracking-widest disabled:opacity-50 transition-colors`}
-                         >
-                             {isSubmitting ? 'Posting...' : 'Post Note'}
-                         </button>
+                         <div className="flex justify-between items-center pt-2">
+                             <div className="flex items-center gap-2">
+                                 <label className={`cursor-pointer p-2 rounded-md text-white/40 hover:${themeColor} hover:bg-white/5 transition-colors border border-white/10 md:border-transparent md:hover:border-white/10 relative`}>
+                                     {uploadingMediaForComment === artifact.id ? <div className={`w-4 h-4 border-2 border-[t-transparent] ${borderThemeColor} rounded-full animate-spin`} /> : <ImageIcon className="w-4 h-4" />}
+                                     <input type="file" accept="image/*" className="hidden" onChange={(e) => handleCommentImageUpload(e, artifact.id)} disabled={uploadingMediaForComment === artifact.id || (commentMedia[artifact.id] || []).length >= 2} />
+                                 </label>
+                             </div>
+                             <button 
+                                 onClick={() => submitComment()}
+                                 disabled={isSubmitting === artifact.id || (!newCommentText[artifact.id]?.trim() && !(commentMedia[artifact.id]?.length > 0))}
+                                 className={`px-6 py-2 ${bgThemeColor}/10 hover:${bgThemeColor}/20 ${themeColor} border ${borderThemeColor}/30 rounded-xl text-[10px] uppercase font-mono tracking-widest disabled:opacity-50 transition-colors`}
+                             >
+                                 {isSubmitting === artifact.id ? 'Posting...' : 'Post Note'}
+                             </button>
+                         </div>
                      </div>
                 </div>
             </div>
