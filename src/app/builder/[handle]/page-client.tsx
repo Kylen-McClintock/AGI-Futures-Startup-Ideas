@@ -102,6 +102,36 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
                  </div>
               )}
 
+              {/* Social Links */}
+              {profile.provider_links && Object.entries(profile.provider_links).filter(([k,v]) => v).length > 0 && (
+                  <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                      {Object.entries(profile.provider_links).filter(([k,v]) => v).map(([platform, link]) => {
+                          let display = platform.toUpperCase();
+                          if (platform === 'x') display = 'X (Twitter)';
+                          if (platform === 'github') display = 'GitHub';
+                          if (platform === 'linkedin') display = 'LinkedIn';
+                          if (platform === 'website') display = 'Website';
+                          if (platform === 'portfolio') display = 'Portfolio';
+                          if (platform === 'substack') display = 'Substack';
+                          if (platform === 'huggingface') display = 'HuggingFace';
+                          if (platform === 'email') {
+                              return (
+                                  <a key={platform} href={`mailto:${link}`} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:text-white hover:border-white/30 transition-all text-xs font-mono">
+                                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                                      Contact
+                                  </a>
+                              )
+                          }
+                          
+                          return (
+                              <a key={platform} href={link as string} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:text-white hover:border-[#10b981]/50 transition-all text-xs font-mono">
+                                  {display} ↗
+                              </a>
+                          )
+                      })}
+                  </div>
+              )}
+
                <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
                 {profile.builder_status?.map((status: string) => (
                     <span key={status} className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs text-white/70 font-mono">
@@ -130,7 +160,7 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
 
                 <section>
                     <h2 className="text-[#10b981] font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-3">
-                        <span className="w-6 h-px bg-[#10b981]/50 block" /> Startup Artificial Work
+                        <span className="w-6 h-px bg-[#10b981]/50 block" /> Proof of Work Artifacts
                     </h2>
 
                     {artifacts.filter((a: any) => !problems.some(p => p.slug === a.project?.slug)).length === 0 ? (
