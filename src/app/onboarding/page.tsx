@@ -35,6 +35,10 @@ export default async function OnboardingPage() {
     frontier_tech_familiarity: profile?.frontier_tech_familiarity || {},
     top_skills: profile?.top_skills || [],
     open_to: profile?.open_to || [],
+    provider_links: {
+      email: user.email || '',
+      ...(profile?.provider_links || {})
+    }
   };
 
   return <OnboardingClientPage defaultValues={defaultValues} user={user} />;

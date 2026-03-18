@@ -16,10 +16,19 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
   if (profileError || !profile) {
     return notFound();
   }
-
   const { data: { user } } = await supabase.auth.getUser();
   const isOwner = user?.id === profile.id;
   const userEmail = isOwner ? user?.email : null;
+
+  // 1.5 Fetch Follow Stats
+  const { count: followerCount } = await supabase.from('follows').select('*', { count: 'exact', head: true }).eq('following_id', profile.id);
+  const { count: followingCount } = await supabase.from('follows').select('*', { count: 'exact', head: true }).eq('follower_id', profile.id);
+  
+  let isFollowing = false;
+  if (user && !isOwner) {
+    const { data: followRel } = await supabase.from('follows').select('follower_id').eq('follower_id', user.id).eq('following_id', profile.id).maybeSingle();
+    isFollowing = !!followRel;
+  }
 
   // 2. Fetch Linked Artifacts for this profile
   // Join with `projects` table to get the project name/slug for display.
@@ -51,6 +60,16 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
       .order('updated_at', { ascending: false });
     if (n) ideaNotes = n;
   }
-
-  return <BuilderProfileClientPage profile={profile} artifacts={artifacts || []} isOwner={isOwner} savedIdeas={savedIdeas} ideaNotes={ideaNotes} userEmail={userEmail} />;
+  return <BuilderProfileClientPage 
+    profile={profile} 
+    artifacts={artifacts || []} 
+    isOwner={isOwner} 
+    currentUserId={user?.id}
+    savedIdeas={savedIdeas} 
+    ideaNotes={ideaNotes} 
+    userEmail={userEmail}
+    initialFollowerCount={followerCount || 0}
+    initialFollowingCount={followingCount || 0}
+    initialIsFollowing={isFollowing}
+  />;
 }

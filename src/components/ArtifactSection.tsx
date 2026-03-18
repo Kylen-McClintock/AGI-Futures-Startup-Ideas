@@ -24,6 +24,11 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
     const [isSubmitModalOpen, setIsSubmitModalOpen] = useState(false);
     const [isNotesModalOpen, setIsNotesModalOpen] = useState(false);
 
+    const [expandedComments, setExpandedComments] = useState<Set<string>>(new Set());
+    const [commentsByArtifact, setCommentsByArtifact] = useState<Record<string, any[]>>({});
+    const [newCommentText, setNewCommentText] = useState<Record<string, string>>({});
+    const [isSubmittingComment, setIsSubmittingComment] = useState<string | null>(null);
+
     useEffect(() => {
         async function fetchUser() {
             const { data: { user } } = await supabase.auth.getUser();
@@ -54,7 +59,8 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
             .from('artifacts')
             .select(`
                 *,
-                profile:profiles!artifacts_profile_id_fkey(name, handle, avatar_url)
+                profile:profiles!artifacts_profile_id_fkey(name, handle, avatar_url),
+                comments:artifact_comments(id)
             `)
             .eq('project_id', projectId)
             .order('likes', { ascending: false })
@@ -108,6 +114,47 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
         } else {
             console.error("Failed to like artifact:", error);
         }
+    };
+
+    const toggleComments = async (artifactId: string) => {
+        setExpandedComments(prev => {
+            const next = new Set(prev);
+            if (next.has(artifactId)) next.delete(artifactId);
+            else next.add(artifactId);
+            return next;
+        });
+
+        if (!expandedComments.has(artifactId)) {
+            const { data } = await supabase.from('artifact_comments').select(`
+                id, content, created_at,
+                profile:profiles!artifact_comments_profile_id_fkey(handle, name, avatar_url)
+            `).eq('artifact_id', artifactId).order('created_at', { ascending: true });
+            
+            if (data) setCommentsByArtifact(prev => ({...prev, [artifactId]: data}));
+        }
+    };
+
+    const handleSubmitComment = async (artifactId: string) => {
+        if (!profile) { alert("Please sign in to comment."); return; }
+        const text = newCommentText[artifactId]?.trim();
+        if (!text) return;
+
+        setIsSubmittingComment(artifactId);
+        const { data, error } = await supabase.from('artifact_comments').insert({
+            artifact_id: artifactId, profile_id: profile.id, content: text
+        }).select(`
+            id, content, created_at,
+            profile:profiles!artifact_comments_profile_id_fkey(handle, name, avatar_url)
+        `).single();
+
+        if (data) {
+            setCommentsByArtifact(prev => ({ ...prev, [artifactId]: [...(prev[artifactId] || []), data] }));
+            setNewCommentText(prev => ({ ...prev, [artifactId]: '' }));
+            setArtifacts(prev => prev.map(a => a.id === artifactId ? { ...a, comments: [...(a.comments || []), {id: data.id}] } : a));
+        } else {
+            console.error("Failed to post comment:", error);
+        }
+        setIsSubmittingComment(null);
     };
 
 
@@ -276,6 +323,15 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
 
                                         <div className="flex items-center gap-4">
                                             <button 
+                                                onClick={() => toggleComments(artifact.id)} 
+                                                className="group flex flex-col items-center gap-1 cursor-pointer"
+                                                title="View Comments"
+                                            >
+                                                <MessageSquareText className="w-[14px] h-[14px] text-white/30 group-hover:text-[#10b981] transition-colors" />
+                                                <span className="text-[10px] font-mono leading-none text-white/50 group-hover:text-[#10b981]/80">{artifact.comments?.length || 0}</span>
+                                            </button>
+
+                                            <button 
                                                 onClick={() => handleLike(artifact.id, artifact.likes)} 
                                                 className={`group flex flex-col items-center gap-1 ${likedArtifacts.has(artifact.id) ? 'cursor-default' : 'cursor-pointer'}`}
                                                 title={likedArtifacts.has(artifact.id) ? "You already upvoted this" : "Increase Reputation"}
@@ -291,6 +347,62 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                             )}
                                         </div>
                                     </div>
+                                    
+                                    {/* Comments Thread Section */}
+                                    {expandedComments.has(artifact.id) && (
+                                        <div className="mt-4 pt-4 border-t border-white/5 animate-in fade-in duration-300">
+                                            <div className="space-y-4 mb-4 mt-2">
+                                                {(commentsByArtifact[artifact.id] || []).length === 0 ? (
+                                                    <p className="text-[10px] uppercase font-mono tracking-widest text-white/30 italic text-center py-2">No comments yet. Start the discussion.</p>
+                                                ) : (
+                                                    (commentsByArtifact[artifact.id] || []).map(comment => (
+                                                        <div key={comment.id} className="flex gap-3">
+                                                            {comment.profile?.avatar_url ? (
+                                                                // eslint-disable-next-line @next/next/no-img-element
+                                                                <img src={comment.profile.avatar_url} alt="avatar" className="w-5 h-5 rounded-full object-cover shrink-0" />
+                                                            ) : (
+                                                                <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center text-[8px] shrink-0 font-serif">
+                                                                    {comment.profile?.name?.[0]?.toUpperCase()}
+                                                                </div>
+                                                            )}
+                                                            <div className="flex-1 bg-black/20 rounded-lg p-3 border border-white/5">
+                                                                <div className="flex justify-between items-center mb-1">
+                                                                    <Link href={`/builder/${comment.profile?.handle}`} className="text-[10px] font-mono text-[#10b981] hover:underline uppercase tracking-wide">
+                                                                        @{comment.profile?.handle}
+                                                                    </Link>
+                                                                    <span className="text-[8px] text-white/30 uppercase tracking-widest">{new Date(comment.created_at).toLocaleDateString()}</span>
+                                                                </div>
+                                                                <p className="text-xs text-white/80 leading-relaxed whitespace-pre-wrap">{comment.content}</p>
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                )}
+                                            </div>
+                                            
+                                            {user ? (
+                                                <div className="flex gap-3 relative">
+                                                    <textarea 
+                                                        value={newCommentText[artifact.id] || ''}
+                                                        onChange={e => setNewCommentText(prev => ({...prev, [artifact.id]: e.target.value}))}
+                                                        placeholder="Add a highly technical comment..."
+                                                        className="flex-1 bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white focus:border-[#10b981] outline-none min-h-[60px] resize-none pr-16"
+                                                    />
+                                                    <button 
+                                                        onClick={() => handleSubmitComment(artifact.id)}
+                                                        disabled={isSubmittingComment === artifact.id || !(newCommentText[artifact.id]?.trim())}
+                                                        className="absolute right-2 bottom-2 bg-[#10b981]/20 text-[#10b981] hover:bg-[#10b981]/30 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-all"
+                                                    >
+                                                        Post
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-center">
+                                                    <Link href="/login" className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:underline">Sign in to comment</Link>
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                    
                                 </div>
                             ))}
                          </div>

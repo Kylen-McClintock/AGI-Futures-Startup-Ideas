@@ -111,6 +111,7 @@ export default function OnboardingClientPage({ defaultValues, user }: { defaultV
       frontier_tech_familiarity: formData.frontier_tech_familiarity,
       top_skills: formData.top_skills,
       open_to: formData.open_to,
+      provider_links: formData.provider_links || {},
       updated_at: new Date().toISOString()
     });
 
@@ -378,6 +379,42 @@ export default function OnboardingClientPage({ defaultValues, user }: { defaultV
                   );
                 })}
               </div>
+            </div>
+          </section>
+
+          {/* Section 4: Links & Socials (Optional) */}
+          <section className="glass-panel p-8 rounded-2xl border border-white/5 space-y-6">
+            <h2 className="text-[var(--secondary)] font-mono text-sm tracking-widest uppercase mb-4" style={{ '--secondary': '#10b981' } as any}>4. Links & Socials (Optional)</h2>
+            <p className="text-white/50 text-sm font-light mb-6">Add as many or as few as you like. These will appear on your public profile.</p>
+            
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { key: 'email', label: 'Public Contact Email', placeholder: 'hello@example.com', type: 'email' },
+                { key: 'x', label: 'X (Twitter) Handle', placeholder: 'elonmusk', type: 'text' },
+                { key: 'github', label: 'GitHub Handle', placeholder: 'torvalds', type: 'text' },
+                { key: 'linkedin', label: 'LinkedIn URL', placeholder: 'https://linkedin.com/in/...', type: 'url' },
+                { key: 'website', label: 'Personal Website', placeholder: 'https://yourdomain.com', type: 'url' },
+                { key: 'portfolio', label: 'Portfolio / Demo', placeholder: 'https://...', type: 'url' },
+                { key: 'substack', label: 'Substack / Blog', placeholder: 'https://...', type: 'url' },
+                { key: 'huggingface', label: 'HuggingFace Handle', placeholder: 'username', type: 'text' },
+              ].map(field => (
+                <div key={field.key}>
+                  <label className="block text-xs uppercase tracking-widest text-white/50 mb-2">{field.label}</label>
+                  <input 
+                    type={field.type} 
+                    value={formData.provider_links?.[field.key] || ''} 
+                    onChange={e => setFormData({
+                      ...formData, 
+                      provider_links: {
+                        ...(formData.provider_links || {}),
+                        [field.key]: e.target.value
+                      }
+                    })}
+                    className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#10b981] outline-none transition-colors font-mono text-sm"
+                    placeholder={field.placeholder}
+                  />
+                </div>
+              ))}
             </div>
           </section>
 

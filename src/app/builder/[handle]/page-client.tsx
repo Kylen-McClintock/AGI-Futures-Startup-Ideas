@@ -9,7 +9,29 @@ import { SubmitArtifactModal } from '@/components/SubmitArtifactModal';
 import { PrivateNotesSection } from '@/components/PrivateNotesSection';
 import { createClient } from '@/utils/supabase/client';
 
-export default function BuilderProfileClientPage({ profile, artifacts: initialArtifacts, isOwner, savedIdeas = [], ideaNotes = [], userEmail }: { profile: any, artifacts: any[], isOwner?: boolean, savedIdeas?: any[], ideaNotes?: any[], userEmail?: string | null }) {
+export default function BuilderProfileClientPage({ 
+  profile, 
+  artifacts: initialArtifacts, 
+  isOwner, 
+  savedIdeas = [], 
+  ideaNotes = [], 
+  userEmail,
+  currentUserId,
+  initialFollowerCount = 0,
+  initialFollowingCount = 0,
+  initialIsFollowing = false
+}: { 
+  profile: any, 
+  artifacts: any[], 
+  isOwner?: boolean, 
+  savedIdeas?: any[], 
+  ideaNotes?: any[], 
+  userEmail?: string | null,
+  currentUserId?: string | null,
+  initialFollowerCount?: number,
+  initialFollowingCount?: number,
+  initialIsFollowing?: boolean
+}) {
 
   const supabase = createClient();
 
@@ -21,6 +43,28 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
 
   const [isOptedIn, setIsOptedIn] = React.useState(profile.newsletter_opt_in ?? true);
   const [isTogglingNewsletter, setIsTogglingNewsletter] = React.useState(false);
+
+  const [followerCount, setFollowerCount] = React.useState(initialFollowerCount);
+  const [followingCount] = React.useState(initialFollowingCount);
+  const [isFollowing, setIsFollowing] = React.useState(initialIsFollowing);
+  const [isTogglingFollow, setIsTogglingFollow] = React.useState(false);
+
+  const handleToggleFollow = async () => {
+    if (!currentUserId) return;
+    setIsTogglingFollow(true);
+    
+    if (isFollowing) {
+      setIsFollowing(false);
+      setFollowerCount(prev => prev - 1);
+      await supabase.from('follows').delete().eq('follower_id', currentUserId).eq('following_id', profile.id);
+    } else {
+      setIsFollowing(true);
+      setFollowerCount(prev => prev + 1);
+      await supabase.from('follows').insert({ follower_id: currentUserId, following_id: profile.id });
+    }
+    
+    setIsTogglingFollow(false);
+  };
 
   const handleToggleNewsletter = async () => {
     setIsTogglingNewsletter(true);
@@ -71,6 +115,19 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
                     <Link href="/onboarding" className="px-3 py-1 rounded-full border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/10 text-[10px] font-mono uppercase tracking-widest transition-colors flex shrink-0">
                       Edit Profile
                     </Link>
+                  )}
+                  {!isOwner && currentUserId && (
+                    <button 
+                      onClick={handleToggleFollow}
+                      disabled={isTogglingFollow}
+                      className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest transition-colors flex shrink-0 ${
+                        isFollowing 
+                          ? 'border border-white/20 text-white/50 hover:border-white/40 bg-white/5' 
+                          : 'border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10 bg-transparent'
+                      }`}
+                    >
+                      {isFollowing ? 'Following' : 'Follow'}
+                    </button>
                   )}
                 </div>
                 <p className="text-[#10b981] font-mono text-sm tracking-widest uppercase">@{profile.handle}</p>
@@ -339,8 +396,38 @@ export default function BuilderProfileClientPage({ profile, artifacts: initialAr
                 </section>
             </div>
 
-            {/* Right Column: Tags & Info */}
-            <div className="space-y-8">
+            {/* Right Column */}
+            <div className="space-y-12">
+
+                {isOwner && (
+                    <section>
+                      <h2 className="text-[#10b981] font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-3">
+                        <span className="w-6 h-px bg-[#10b981]/50 block" /> My Network
+                      </h2>
+                      <div className="flex flex-col gap-3">
+                          <button className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
+                              <span className="text-sm text-white/80 font-medium font-mono uppercase tracking-widest">Followers</span>
+                              <div className="flex items-center gap-3">
+                                  <span className="text-xl font-serif text-[#10b981]">{followerCount}</span>
+                                  <span className="text-white/30 group-hover:text-[#10b981] transition-colors">→</span>
+                              </div>
+                          </button>
+                          
+                          <button className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
+                              <span className="text-sm text-white/80 font-medium font-mono uppercase tracking-widest">Following</span>
+                              <div className="flex items-center gap-3">
+                                  <span className="text-xl font-serif text-[#10b981]">{followingCount}</span>
+                                  <span className="text-white/30 group-hover:text-[#10b981] transition-colors">→</span>
+                              </div>
+                          </button>
+                          
+                          <Link href={`/builder/${profile.handle}/feed`} className="w-full text-center mt-2 p-3 rounded-lg bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 hover:bg-[#10b981]/20 transition-all text-sm font-mono uppercase tracking-widest">
+                             Network Update Feed
+                          </Link>
+                      </div>
+                    </section>
+                )}
+                
                 {profile.goals && profile.goals.length > 0 && (
                   <div>
                       <h3 className="text-white/50 font-mono text-[10px] uppercase tracking-widest mb-3">Current Goals</h3>
