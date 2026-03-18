@@ -120,9 +120,14 @@ export default function BuilderProfileClientPage({
                 <div className="flex items-center gap-4 mb-2 justify-center md:justify-start">
                   <h1 className="text-4xl md:text-5xl font-serif">{profile.name}</h1>
                   {isOwner && (
-                    <Link href="/onboarding" className="px-3 py-1 rounded-full border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/10 text-[10px] font-mono uppercase tracking-widest transition-colors flex shrink-0">
-                      Edit Profile
-                    </Link>
+                    <div className="flex flex-col sm:flex-row items-center gap-3">
+                        <Link href="/onboarding" className="px-3 py-1 rounded-full border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/10 text-[10px] font-mono uppercase tracking-widest transition-colors flex shrink-0">
+                          Edit Profile
+                        </Link>
+                        <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/50 shrink-0">
+                            Inbox: <span className="text-[#10b981]">{profile.contact_preference === 'nobody' ? 'Locked' : profile.contact_preference === 'following' ? 'Following Only' : 'Open'}</span>
+                        </div>
+                    </div>
                   )}
                   {!isOwner && currentUserId && (
                     <div className="flex items-center gap-2">

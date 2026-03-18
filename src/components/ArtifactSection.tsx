@@ -86,7 +86,16 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
         loadArtifacts();
     }, [projectId]);
 
-    const filteredArtifacts = filterType === 'all' ? artifacts : artifacts.filter(a => a.type === filterType);
+    const [sortBy, setSortBy] = useState<'recent' | 'upvoted'>('recent');
+    const [displayLimit, setDisplayLimit] = useState(5);
+
+    const sortedArtifacts = [...artifacts].sort((a, b) => {
+        if (sortBy === 'upvoted') return (b.likes || 0) - (a.likes || 0);
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    });
+
+    const filteredArtifacts = filterType === 'all' ? sortedArtifacts : sortedArtifacts.filter(a => a.type === filterType);
+    const visibleArtifacts = filteredArtifacts.slice(0, displayLimit);
 
     const types = Array.from(new Set(artifacts.map(a => a.type)));
 
@@ -227,8 +236,19 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                 </button>
                             ))}
                         </div>
-                        <div className="text-xs font-mono text-white/40 uppercase tracking-widest">
-                            Sorted by Reputation
+                        <div className="flex bg-white/5 border border-white/10 rounded-lg p-1">
+                            <button
+                                onClick={() => setSortBy('recent')}
+                                className={`px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-colors ${sortBy === 'recent' ? 'bg-[#10b981]/20 text-[#10b981]' : 'text-white/50 hover:text-white'}`}
+                            >
+                                Recent
+                            </button>
+                            <button
+                                onClick={() => setSortBy('upvoted')}
+                                className={`px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-colors ${sortBy === 'upvoted' ? 'bg-[#10b981]/20 text-[#10b981]' : 'text-white/50 hover:text-white'}`}
+                            >
+                                Upvoted
+                            </button>
                         </div>
                      </div>
 
@@ -239,8 +259,9 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                              <p className="text-white/60 text-sm">Be the first to attach proof-of-work to this idea.</p>
                          </div>
                      ) : (
+                         <>
                          <div className="grid gap-6 md:grid-cols-2">
-                            {filteredArtifacts.map(artifact => (
+                            {visibleArtifacts.map(artifact => (
                                 <div key={artifact.id} className="p-6 glass-panel rounded-2xl border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between">
                                     
                                     <div>
@@ -406,6 +427,17 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                 </div>
                             ))}
                          </div>
+                         {filteredArtifacts.length > displayLimit && (
+                             <div className="mt-8 flex justify-center">
+                                 <button 
+                                     onClick={() => setDisplayLimit(prev => prev + 5)}
+                                     className="px-6 py-2 rounded-full border border-white/10 text-white/50 hover:text-white hover:bg-white/5 font-mono text-xs uppercase tracking-widest transition-colors flex items-center gap-2"
+                                 >
+                                     Show More <ChevronDown className="w-4 h-4" />
+                                 </button>
+                             </div>
+                         )}
+                         </>
                      )}
                 </div>
             )}

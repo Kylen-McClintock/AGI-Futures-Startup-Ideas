@@ -389,7 +389,7 @@ export default function OnboardingClientPage({ defaultValues, user, isUpdate = f
             <p className="text-white/50 text-sm font-light mb-6">Add as many or as few as you like. These will appear on your public profile.</p>
             
             <div className="mb-8">
-              <label className="block text-xs uppercase tracking-widest text-white/50 mb-2">Who can see your Contact Email?</label>
+              <label className="block text-xs uppercase tracking-widest text-white/50 mb-2">Who can message you / see your contact info?</label>
               <select
                 value={formData.contact_preference || 'nobody'}
                 onChange={e => setFormData({ ...formData, contact_preference: e.target.value })}
