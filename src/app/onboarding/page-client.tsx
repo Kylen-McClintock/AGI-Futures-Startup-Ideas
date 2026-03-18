@@ -112,6 +112,7 @@ export default function OnboardingClientPage({ defaultValues, user, isUpdate = f
       top_skills: formData.top_skills,
       open_to: formData.open_to,
       provider_links: formData.provider_links || {},
+      contact_preference: formData.contact_preference || 'nobody',
       updated_at: new Date().toISOString()
     });
 
@@ -387,6 +388,19 @@ export default function OnboardingClientPage({ defaultValues, user, isUpdate = f
             <h2 className="text-[var(--secondary)] font-mono text-sm tracking-widest uppercase mb-4" style={{ '--secondary': '#10b981' } as any}>4. Links & Socials (Optional)</h2>
             <p className="text-white/50 text-sm font-light mb-6">Add as many or as few as you like. These will appear on your public profile.</p>
             
+            <div className="mb-8">
+              <label className="block text-xs uppercase tracking-widest text-white/50 mb-2">Who can see your Contact Email?</label>
+              <select
+                value={formData.contact_preference || 'nobody'}
+                onChange={e => setFormData({ ...formData, contact_preference: e.target.value })}
+                className="w-full bg-white/5 border border-white/10 rounded-lg p-3 text-white focus:border-[#10b981] outline-none transition-colors font-mono text-sm appearance-none"
+              >
+                <option value="nobody" className="bg-[#06090c]">Nobody (Locked completely)</option>
+                <option value="following" className="bg-[#06090c]">Only people I follow (Strict Meritocracy)</option>
+                <option value="anyone" className="bg-[#06090c]">Any logged-in user (Open Networking)</option>
+              </select>
+            </div>
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { key: 'email', label: 'Public Contact Email', placeholder: 'hello@example.com', type: 'email' },

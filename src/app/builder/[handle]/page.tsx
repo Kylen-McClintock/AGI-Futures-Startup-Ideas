@@ -25,9 +25,14 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
   const { count: followingCount } = await supabase.from('follows').select('*', { count: 'exact', head: true }).eq('follower_id', profile.id);
   
   let isFollowing = false;
+  let isFollowedByOwner = false;
   if (user && !isOwner) {
     const { data: followRel } = await supabase.from('follows').select('follower_id').eq('follower_id', user.id).eq('following_id', profile.id).maybeSingle();
     isFollowing = !!followRel;
+    
+    // Check if the profile owner follows the current viewer (for email gating)
+    const { data: followedRel } = await supabase.from('follows').select('follower_id').eq('follower_id', profile.id).eq('following_id', user.id).maybeSingle();
+    isFollowedByOwner = !!followedRel;
   }
 
   // 2. Fetch Linked Artifacts for this profile
@@ -71,5 +76,6 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
     initialFollowerCount={followerCount || 0}
     initialFollowingCount={followingCount || 0}
     initialIsFollowing={isFollowing}
+    isFollowedByOwner={isFollowedByOwner}
   />;
 }

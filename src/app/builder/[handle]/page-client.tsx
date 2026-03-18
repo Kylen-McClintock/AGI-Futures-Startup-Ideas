@@ -20,7 +20,8 @@ export default function BuilderProfileClientPage({
   currentUserId,
   initialFollowerCount = 0,
   initialFollowingCount = 0,
-  initialIsFollowing = false
+  initialIsFollowing = false,
+  isFollowedByOwner = false
 }: { 
   profile: any, 
   artifacts: any[], 
@@ -31,7 +32,8 @@ export default function BuilderProfileClientPage({
   currentUserId?: string | null,
   initialFollowerCount?: number,
   initialFollowingCount?: number,
-  initialIsFollowing?: boolean
+  initialIsFollowing?: boolean,
+  isFollowedByOwner?: boolean
 }) {
 
   const supabase = createClient();
@@ -176,10 +178,40 @@ export default function BuilderProfileClientPage({
                           if (platform === 'substack') display = 'Substack';
                           if (platform === 'huggingface') display = 'HuggingFace';
                           if (platform === 'email') {
+                              const pref = profile.contact_preference || 'nobody';
+                              let canContact = false;
+                              let lockReason = '';
+                              
+                              if (isOwner) {
+                                  canContact = true;
+                              } else if (pref === 'anyone' && currentUserId) {
+                                  canContact = true;
+                              } else if (pref === 'following' && isFollowedByOwner) {
+                                  canContact = true;
+                              } else if (pref === 'nobody') {
+                                  canContact = false;
+                                  lockReason = 'Direct contact is locked.';
+                              } else if (pref === 'following' && !isFollowedByOwner) {
+                                  canContact = false;
+                                  lockReason = `${profile.name || 'This builder'} only accepts messages from people they follow.`;
+                              } else if (pref === 'anyone' && !currentUserId) {
+                                  canContact = false;
+                                  lockReason = 'You must be logged in to see contact info.';
+                              }
+
+                              if (!canContact) {
+                                  return (
+                                      <div key={platform} title={lockReason} className="cursor-not-allowed flex items-center gap-2 px-3 py-1.5 rounded-lg border border-red-500/20 bg-red-500/5 text-red-500/50 text-xs font-mono">
+                                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                          Contact Locked
+                                      </div>
+                                  )
+                              }
+
                               return (
-                                  <a key={platform} href={`mailto:${link}`} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:text-white hover:border-white/30 transition-all text-xs font-mono">
+                                  <a key={platform} href={`mailto:${link}`} className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-[#10b981]/30 bg-[#10b981]/10 text-[#10b981] hover:bg-[#10b981]/20 hover:border-[#10b981]/50 transition-all text-xs font-mono shadow-[0_0_15px_rgba(16,185,129,0.15)]">
                                       <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                                      Contact
+                                      Contact Me
                                   </a>
                               )
                           }
