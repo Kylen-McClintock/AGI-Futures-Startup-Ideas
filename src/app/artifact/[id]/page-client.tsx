@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
-import { ExternalLink, MessageSquareText, ArrowLeft } from "lucide-react";
+import { ExternalLink, MessageSquareText, ArrowLeft, Star } from "lucide-react";
 import Link from 'next/link';
 
 export default function ArtifactClientPage({ artifact }: { artifact: any }) {
@@ -123,10 +123,15 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
 
             <div className="p-8 md:p-12 border border-white/10 rounded-[2rem] bg-[#0a0f14]/80 backdrop-blur-2xl shadow-2xl">
                 <div className="flex justify-between items-start mb-6">
-                    <div className="flex items-center gap-3">
-                        <span className={`text-[10px] font-mono uppercase tracking-widest ${themeColor} border ${borderThemeColor}/30 px-3 py-1 rounded-full ${bgThemeColor}/10`}>
-                            {artifact.type}
+                    <div className="flex flex-wrap items-center gap-4 mb-8">
+                    <span className={`text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full border ${artifact.type === 'Problem' ? 'text-orange-500 border-orange-500/30 bg-orange-500/10' : 'text-[#10b981] border-[#10b981]/30 bg-[#10b981]/10'}`}>
+                        {artifact.type}
+                    </span>
+                    {artifact.is_editors_pick && (
+                        <span className="text-[10px] font-mono tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/30 px-3 py-1 rounded-full uppercase flex items-center gap-1.5 shadow-[0_0_15px_rgba(251,191,36,0.15)]">
+                            <Star className="w-3.5 h-3.5 fill-amber-400" /> High-Signal
                         </span>
+                    )}
                         <Link href={`/builder/${artifact.profile?.handle}`} className="flex items-center gap-2 hover:opacity-80 transition-opacity">
                             {artifact.profile?.avatar_url && (
                                 <img src={artifact.profile.avatar_url} alt="Creator" className="w-5 h-5 rounded-full border border-white/10 object-cover" />
@@ -138,6 +143,32 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
                 </div>
                 
                 <h1 className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-6">{artifact.title}</h1>
+
+                {artifact.project?.project_tags?.[0] && (
+                    <div className="flex flex-col gap-5 mb-10 p-6 bg-black/40 border border-white/5 rounded-2xl relative overflow-hidden">
+                        <div className={`absolute top-0 left-0 w-1 h-full ${bgThemeColor}`} />
+                        <div className="flex gap-8 flex-col sm:flex-row">
+                            <div className="flex-1">
+                                <h4 className={`text-[9px] font-mono tracking-widest ${themeColor}/70 uppercase mb-2 flex items-center gap-2`}>
+                                    <span className={`w-1 h-1 rounded-full ${bgThemeColor}`} /> Targeting Bottleneck
+                                </h4>
+                                <p className="text-sm text-white/90 leading-relaxed font-sans mt-1">
+                                    {artifact.project.project_tags[0].bottleneck?.[0] || 'Unresolved structural inefficiency'}
+                                </p>
+                            </div>
+                            <div className="w-px h-auto bg-white/5 hidden sm:block" />
+                            <div className="flex-1">
+                                <h4 className={`text-[9px] font-mono tracking-widest text-amber-400/70 uppercase mb-2 flex items-center gap-2`}>
+                                    <span className={`w-1 h-1 rounded-full bg-amber-400`} /> Advancing Outcome
+                                </h4>
+                                <p className="text-sm text-white/90 leading-relaxed font-sans mt-1">
+                                    {artifact.project.project_tags[0].outcomes?.[0] || 'Accelerating frontier prosperity'}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
                 {artifact.summary && <p className="text-lg text-white/70 leading-relaxed max-w-3xl mb-12 whitespace-pre-wrap">{artifact.summary}</p>}
 
                 {artifact.media_urls && artifact.media_urls.length > 0 && renderMedia(artifact.media_urls)}

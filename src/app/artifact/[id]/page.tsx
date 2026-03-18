@@ -27,7 +27,7 @@ export default async function ArtifactPage({ params }: { params: Promise<{ id: s
         .from('artifacts')
         .select(`
             *,
-            project:projects(name, slug),
+            project:projects(name, slug, project_tags(*)),
             profile:profiles!artifacts_profile_id_fkey(name, handle, avatar_url)
         `)
         .eq('id', id)

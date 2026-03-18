@@ -10,6 +10,7 @@ import { PrivateNotesSection } from '@/components/PrivateNotesSection';
 import { FollowListModal } from '@/components/FollowListModal';
 import { SendMessageModal } from '@/components/SendMessageModal';
 import { createClient } from '@/utils/supabase/client';
+import { Star } from "lucide-react";
 
 export default function BuilderProfileClientPage({ 
   profile, 
@@ -372,9 +373,14 @@ export default function BuilderProfileClientPage({
                                 <div key={a.id} className="p-6 border border-white/10 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-[#10b981]/30 transition-all group">
                                     <div className="flex justify-between items-start mb-3">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] border border-[#10b981]/30 px-2 py-0.5 rounded-full bg-[#10b981]/10">
+                                            <span className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] border border-[#10b981]/30 px-3 py-1 rounded-full bg-[#10b981]/10">
                                                 {a.type}
                                             </span>
+                                            {a.is_editors_pick && (
+                                                <span className="text-[10px] font-mono tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded uppercase flex items-center gap-1.5 shadow-[0_0_10px_rgba(251,191,36,0.15)] ml-1">
+                                                    <Star className="w-3 h-3 fill-amber-400" /> High-Signal
+                                                </span>
+                                            )}
                                             {isOwner && (
                                                 <button onClick={() => {
                                                     setEditingArtifact(a);
@@ -486,9 +492,14 @@ export default function BuilderProfileClientPage({
                                 <div key={a.id} className="p-6 border border-white/10 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-orange-500/30 transition-all group">
                                     <div className="flex justify-between items-start mb-3">
                                         <div className="flex items-center gap-2">
-                                            <span className="text-[10px] font-mono uppercase tracking-widest text-orange-500 border border-orange-500/30 px-2 py-0.5 rounded-full bg-orange-500/10">
+                                            <span className="text-[10px] font-mono uppercase tracking-widest text-orange-500 border border-orange-500/30 px-3 py-1 rounded-full bg-orange-500/10">
                                                 {a.type}
                                             </span>
+                                            {a.is_editors_pick && (
+                                                <span className="text-[10px] font-mono tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded uppercase flex items-center gap-1.5 shadow-[0_0_10px_rgba(251,191,36,0.15)] ml-1">
+                                                    <Star className="w-3 h-3 fill-amber-400" /> High-Signal
+                                                </span>
+                                            )}
                                             {isOwner && (
                                                 <button onClick={() => {
                                                     setEditingArtifact(a);

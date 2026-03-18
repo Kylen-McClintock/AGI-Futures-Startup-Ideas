@@ -94,9 +94,9 @@ export function SubmitArtifactModal({ projectId, profileId, onClose, onSuccess, 
     };
 
     const ARTIFACT_TYPES = [
-        'prototype', 'design', 'repo', 'video', 'demo', 'visual concept', 
-        'tagline set', 'wedge thesis', 'market insight', 'founder memo', 
-        'policy angle', 'product thesis'
+        'core repo', 'technical spec', 'prototype', 'demo', 'design concept', 
+        'design extension', 'wedge strategy', 'gtm thesis', 'market insight', 
+        'founder memo', 'policy angle', 'tagline set', 'product thesis'
     ];
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -154,8 +154,8 @@ export function SubmitArtifactModal({ projectId, profileId, onClose, onSuccess, 
                     <X className="w-5 h-5 text-white/50 hover:text-white" />
                 </button>
 
-                <h2 className="text-2xl font-serif text-white mb-2">{initialData ? 'Edit Artifact' : 'Add Artifact'}</h2>
-                <p className="text-white/50 text-sm mb-8">{initialData ? 'Update your proof-of-work or structural notes.' : 'Attach public proof-of-work or structural notes to this idea.'}</p>
+                <h2 className="text-2xl font-serif text-white mb-2">{initialData ? 'Refine Contribution' : 'Submit Proof of Work'}</h2>
+                <p className="text-white/50 text-sm mb-8">{initialData ? 'Update your canonical contribution or structural notes.' : 'Attach canonical proof-of-work, strategic insights, or design extensions to advance this thesis.'}</p>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { createClient } from "@/utils/supabase/client";
-import { ChevronDown, ChevronUp, ExternalLink, MessageSquareText } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink, MessageSquareText, FileText, Image as ImageIcon, Video, Code, Layout, Lock, Star } from "lucide-react";
 import Link from 'next/link';
 import { SubmitArtifactModal } from "./SubmitArtifactModal";
 import { PrivateNotesSection } from "./PrivateNotesSection";
@@ -205,7 +205,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                 onClick={() => { setEditingArtifact(null); setIsSubmitModalOpen(true); }}
                                 className="px-4 py-2 rounded-full bg-[#10b981]/20 border border-[#10b981]/50 text-[#10b981] hover:bg-[#10b981]/30 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(16,185,129,0.1)] hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]"
                             >
-                                + Add Artifact
+                                + Add Contribution
                             </button>
                          </>
                      ) : (
@@ -222,9 +222,9 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                     className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/10 bg-black/50 hover:bg-white/5 text-white/80 font-mono text-xs uppercase tracking-widest transition-all"
                 >
                     {isExpanded ? (
-                        <>Collapse Artifact Feed <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" /></>
+                        <>Collapse Contributions <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" /></>
                     ) : (
-                        <>View Artifacts {artifacts.length > 0 ? `(${artifacts.length})` : ''} <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" /></>
+                        <>View Contributions {artifacts.length > 0 ? `(${artifacts.length})` : ''} <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" /></>
                     )}
                 </button>
             </div>
@@ -282,9 +282,14 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                     <div>
                                         <div className="flex justify-between items-start mb-4">
                                             <div className="flex items-center gap-3">
-                                                <span className="text-[10px] font-mono tracking-widest uppercase px-2 py-0.5 rounded-full border border-zinc-700 bg-zinc-900/50 text-zinc-400">
+                                                <span className={`text-[10px] font-mono tracking-widest uppercase px-3 py-1 rounded-full border ${artifact.type === 'Problem' ? 'text-orange-500 border-orange-500/30 bg-orange-500/10' : 'text-[#10b981] border-[#10b981]/30 bg-[#10b981]/10'}`}>
                                                     {artifact.type}
                                                 </span>
+                                                {artifact.is_editors_pick && (
+                                                    <span className="text-[10px] font-mono tracking-widest text-amber-400 bg-amber-400/10 border border-amber-400/30 px-2 py-0.5 rounded uppercase flex items-center gap-1">
+                                                        <Star className="w-3 h-3 fill-amber-400" /> High-Signal
+                                                    </span>
+                                                )}
                                                 {profile && profile.id === artifact.profile_id && (
                                                     <button onClick={() => {
                                                         setEditingArtifact(artifact);
@@ -363,7 +368,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                             <button 
                                                 onClick={() => toggleComments(artifact.id)} 
                                                 className="group flex flex-col items-center gap-1 cursor-pointer"
-                                                title="View Comments"
+                                                title="View Public Notes"
                                             >
                                                 <MessageSquareText className="w-[14px] h-[14px] text-white/30 group-hover:text-[#10b981] transition-colors" />
                                                 <span className="text-[10px] font-mono leading-none text-white/50 group-hover:text-[#10b981]/80">{artifact.comments?.length || 0}</span>
@@ -391,7 +396,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                         <div className="mt-4 pt-4 border-t border-white/5 animate-in fade-in duration-300">
                                             <div className="space-y-4 mb-4 mt-2">
                                                 {(commentsByArtifact[artifact.id] || []).length === 0 ? (
-                                                    <p className="text-[10px] uppercase font-mono tracking-widest text-white/30 italic text-center py-2">No comments yet. Start the discussion.</p>
+                                                    <p className="text-[10px] uppercase font-mono tracking-widest text-white/30 italic text-center py-2">No field notes yet. Add a public insight.</p>
                                                 ) : (
                                                     (commentsByArtifact[artifact.id] || []).map(comment => (
                                                         <div key={comment.id} className="flex gap-3">
@@ -422,20 +427,26 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                                     <textarea 
                                                         value={newCommentText[artifact.id] || ''}
                                                         onChange={e => setNewCommentText(prev => ({...prev, [artifact.id]: e.target.value}))}
-                                                        placeholder="Add a highly technical comment..."
-                                                        className="flex-1 bg-white/5 border border-white/10 rounded-lg p-3 text-xs text-white focus:border-[#10b981] outline-none min-h-[60px] resize-none pr-16"
+                                                        placeholder="Add a structural insight, thesis extension, or build note..."
+                                                        className="flex-1 bg-transparent text-sm text-white/80 placeholder-white/30 focus:outline-none min-h-[60px] resize-none pr-16"
+                                                        onKeyDown={(e) => {
+                                                            if (e.key === 'Enter' && !e.shiftKey) {
+                                                                e.preventDefault();
+                                                                handleSubmitComment(artifact.id);
+                                                            }
+                                                        }}
                                                     />
                                                     <button 
                                                         onClick={() => handleSubmitComment(artifact.id)}
                                                         disabled={isSubmittingComment === artifact.id || !(newCommentText[artifact.id]?.trim())}
                                                         className="absolute right-2 bottom-2 bg-[#10b981]/20 text-[#10b981] hover:bg-[#10b981]/30 disabled:opacity-50 disabled:cursor-not-allowed px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-all"
                                                     >
-                                                        Post
+                                                        {isSubmittingComment === artifact.id ? '...' : 'Post Note'}
                                                     </button>
                                                 </div>
                                             ) : (
                                                 <div className="p-3 bg-white/5 border border-white/10 rounded-lg text-center">
-                                                    <Link href="/login" className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:underline">Sign in to comment</Link>
+                                                    <Link href="/login" className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:underline">Sign in to contribute</Link>
                                                 </div>
                                             )}
                                         </div>
