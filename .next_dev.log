@@ -87,3 +87,8 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
  GET /builder/kylen 200 in 343ms (compile: 90ms, proxy.ts: 115ms, render: 138ms)
  GET /builder/kylen/inbox 200 in 1658ms (compile: 286ms, proxy.ts: 377ms, render: 995ms)
  GET /builder/kylen 200 in 1724ms (compile: 254ms, proxy.ts: 307ms, render: 1163ms)
+ GET / 200 in 775ms (compile: 171ms, proxy.ts: 332ms, render: 272ms)
+ GET /problem-atlas 200 in 425ms (compile: 121ms, proxy.ts: 145ms, render: 159ms)
+ GET /problem-atlas/dna-synthesis-screening-infrastructure 200 in 1894ms (compile: 1705ms, proxy.ts: 122ms, generate-params: 1187ms, render: 68ms)
+✓ Compiled in 554ms
+✓ Compiled in 151ms

@@ -89,6 +89,21 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
     const [sortBy, setSortBy] = useState<'recent' | 'upvoted'>('recent');
     const [displayLimit, setDisplayLimit] = useState(5);
 
+    useEffect(() => {
+        if (typeof window !== 'undefined' && window.location.hash.startsWith('#artifact-') && artifacts.length > 0) {
+            setIsExpanded(true);
+            setDisplayLimit(100);
+            setTimeout(() => {
+                const element = document.getElementById(window.location.hash.substring(1));
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    element.classList.add('ring-2', 'ring-[#10b981]', 'ring-offset-8', 'ring-offset-[#06090c]', 'transition-all', 'duration-1000');
+                    setTimeout(() => element.classList.remove('ring-2', 'ring-[#10b981]', 'ring-offset-8', 'ring-offset-[#06090c]'), 3000);
+                }
+            }, 500);
+        }
+    }, [artifacts]);
+
     const sortedArtifacts = [...artifacts].sort((a, b) => {
         if (sortBy === 'upvoted') return (b.likes || 0) - (a.likes || 0);
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
