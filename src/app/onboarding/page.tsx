@@ -23,8 +23,8 @@ export default async function OnboardingPage() {
   // We can decide to pass default values here!
   // E.g. pulling raw metadata from Google/GitHub if they signed up using Oauth.
   let defaultValues = {
-    name: user.user_metadata?.full_name || '',
-    avatar_url: user.user_metadata?.avatar_url || '',
+    name: profile?.name || user.user_metadata?.full_name || user.user_metadata?.name || '',
+    avatar_url: profile?.avatar_url || user.user_metadata?.avatar_url || user.user_metadata?.picture || '',
     handle: profile?.handle || '',
     headline: profile?.headline || '',
     thesis: profile?.thesis || '',
@@ -41,5 +41,5 @@ export default async function OnboardingPage() {
     }
   };
 
-  return <OnboardingClientPage defaultValues={defaultValues} user={user} />;
+  return <OnboardingClientPage defaultValues={defaultValues} user={user} isUpdate={!!profile} />;
 }

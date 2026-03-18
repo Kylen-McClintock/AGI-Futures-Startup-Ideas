@@ -36,7 +36,7 @@ const PREDEFINED_SKILLS = [
   "Frontend", "Backend", "Full Stack", "AI/ML", "Design", "Product", "Go-To-Market", "Sales", "Marketing", "Community", "Operations", "Hardware", "Bio"
 ];
 
-export default function OnboardingClientPage({ defaultValues, user }: { defaultValues: any, user: User }) {
+export default function OnboardingClientPage({ defaultValues, user, isUpdate = false }: { defaultValues: any, user: User, isUpdate?: boolean }) {
   const supabase = createClient();
   const router = useRouter();
   
@@ -424,7 +424,7 @@ export default function OnboardingClientPage({ defaultValues, user }: { defaultV
               disabled={loading}
               className="bg-[#10b981] hover:bg-[#059669] text-white px-8 py-3 rounded-full font-mono text-sm uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_30px_rgba(16,185,129,0.5)] disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? 'Saving...' : 'Create Public Profile'}
+              {loading ? 'Saving...' : (isUpdate ? 'Update Profile' : 'Create Public Profile')}
             </button>
           </div>
 
