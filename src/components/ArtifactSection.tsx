@@ -165,21 +165,24 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
         if (!e.target.files?.[0] || !profile) return;
         setUploadingMediaForComment(textKey);
         const file = e.target.files[0];
-        const fileExt = file.name.split('.').pop();
-        const fileName = `${Math.random().toString(36).substring(2, 10)}.${fileExt}`;
-        const filePath = `${profile.id}/${fileName}`;
         
-        const { error: uploadError } = await supabase.storage.from('project-media').upload(filePath, file);
-        if (uploadError) {
-            alert("Upload failed: " + uploadError.message);
-        } else {
-            const { data } = supabase.storage.from('project-media').getPublicUrl(filePath);
-            if (data?.publicUrl) {
+        const form = new FormData();
+        form.append('file', file);
+
+        try {
+            const res = await fetch('/api/upload', { method: 'POST', body: form });
+            const data = await res.json();
+            
+            if (data.url) {
                 setCommentMedia(prev => ({
                     ...prev,
-                    [textKey]: [...(prev[textKey] || []), { url: data.publicUrl, tag: 'note' }]
+                    [textKey]: [...(prev[textKey] || []), { url: data.url, tag: 'note' }]
                 }));
+            } else {
+                alert("Upload failed: " + (data.error || "Unknown error"));
             }
+        } catch (err: any) {
+            alert("Upload request failed.");
         }
         setUploadingMediaForComment(null);
     };
@@ -479,7 +482,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                                                         )}
                                                                     </div>
                                                                     {user && (
-                                                                        <button onClick={() => setReplyingTo(replyingTo === comment.id ? null : comment.id)} className="text-[9px] font-mono text-white/30 hover:text-white uppercase tracking-widest mt-1.5 ml-1 transition-colors group-hover/comment:opacity-100 opacity-0 cursor-pointer">
+                                                                        <button onClick={() => setReplyingTo(replyingTo === comment.id ? null : comment.id)} className="text-[9px] font-mono text-white/40 hover:text-[#10b981] uppercase tracking-widest mt-1.5 ml-1 transition-colors opacity-70 cursor-pointer">
                                                                             Reply
                                                                         </button>
                                                                     )}
