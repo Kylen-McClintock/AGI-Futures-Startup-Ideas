@@ -33,3 +33,14 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
  GET /builder/kylen/inbox 200 in 2.6s (compile: 1350ms, proxy.ts: 466ms, render: 759ms)
 ✓ Compiled in 10ms
 ✓ Compiled in 1518ms
+ GET /builder/kylen/inbox 200 in 1925ms (compile: 205ms, proxy.ts: 501ms, render: 1219ms)
+ GET /builder/kylen 200 in 2.0s (compile: 993ms, proxy.ts: 128ms, render: 885ms)
+ GET /builder/kylen 200 in 952ms (compile: 10ms, proxy.ts: 127ms, render: 815ms)
+ GET /builder/kylen 200 in 973ms (compile: 19ms, proxy.ts: 202ms, render: 751ms)
+ GET /builder/kylen 200 in 907ms (compile: 16ms, proxy.ts: 132ms, render: 759ms)
+ GET /onboarding 200 in 858ms (compile: 224ms, proxy.ts: 384ms, render: 249ms)
+ GET /builder/kylen 200 in 1053ms (compile: 18ms, proxy.ts: 145ms, render: 890ms)
+ GET /builder/kylen/inbox 200 in 914ms (compile: 150ms, proxy.ts: 145ms, render: 618ms)
+ GET /builder/kylen 200 in 853ms (compile: 14ms, proxy.ts: 107ms, render: 732ms)
+✓ Compiled in 157ms
+✓ Compiled in 144ms

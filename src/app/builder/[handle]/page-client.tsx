@@ -57,6 +57,9 @@ export default function BuilderProfileClientPage({
   const [showFollowingModal, setShowFollowingModal] = React.useState(false);
   const [isMessageModalOpen, setIsMessageModalOpen] = React.useState(false);
 
+  const [sortBy, setSortBy] = React.useState<'recent' | 'upvoted'>('recent');
+  const [displayLimit, setDisplayLimit] = React.useState(5);
+
   const handleToggleFollow = async () => {
     if (!currentUserId) return;
     setIsTogglingFollow(true);
@@ -96,6 +99,17 @@ export default function BuilderProfileClientPage({
     const isProblem = problems.some(p => p.slug === slug);
     return isProblem ? `/problem-atlas/${slug}` : `/${slug}`;
   };
+
+  const sortedArtifacts = [...artifacts].sort((a, b) => {
+      if (sortBy === 'upvoted') return (b.likes || 0) - (a.likes || 0);
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+  });
+
+  const defaultArtifacts = sortedArtifacts.filter((a: any) => !problems.some(p => p.slug === a.project?.slug));
+  const problemArtifacts = sortedArtifacts.filter((a: any) => problems.some(p => p.slug === a.project?.slug));
+
+  const visibleDefaultArtifacts = defaultArtifacts.slice(0, displayLimit);
+  const visibleProblemArtifacts = problemArtifacts.slice(0, displayLimit);
 
   return (
     <div className="min-h-screen bg-[#06090c] text-white">
@@ -314,17 +328,33 @@ export default function BuilderProfileClientPage({
                 )}
 
                 <section>
-                    <h2 className="text-[#10b981] font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-3">
-                        <span className="w-6 h-px bg-[#10b981]/50 block" /> Proof of Work Artifacts
-                    </h2>
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
+                        <h2 className="text-[#10b981] font-mono text-sm tracking-widest uppercase flex items-center gap-3">
+                            <span className="w-6 h-px bg-[#10b981]/50 block" /> Proof of Work Artifacts
+                        </h2>
+                        <div className="flex bg-white/5 border border-white/10 rounded-lg p-1 shrink-0">
+                            <button
+                                onClick={() => setSortBy('recent')}
+                                className={`px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-colors ${sortBy === 'recent' ? 'bg-[#10b981]/20 text-[#10b981]' : 'text-white/50 hover:text-white'}`}
+                            >
+                                Recent
+                            </button>
+                            <button
+                                onClick={() => setSortBy('upvoted')}
+                                className={`px-3 py-1.5 rounded-md text-[10px] font-mono uppercase tracking-widest transition-colors ${sortBy === 'upvoted' ? 'bg-[#10b981]/20 text-[#10b981]' : 'text-white/50 hover:text-white'}`}
+                            >
+                                Upvoted
+                            </button>
+                        </div>
+                    </div>
 
-                    {artifacts.filter((a: any) => !problems.some(p => p.slug === a.project?.slug)).length === 0 ? (
+                    {defaultArtifacts.length === 0 ? (
                         <div className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center">
                             <p className="text-white/50 font-light text-sm italic">No startup artifacts published yet.</p>
                         </div>
                     ) : (
                         <div className="space-y-6">
-                            {artifacts.filter((a: any) => !problems.some(p => p.slug === a.project?.slug)).map((a: any) => (
+                            {visibleDefaultArtifacts.map((a: any) => (
                                 <div key={a.id} className="p-6 border border-white/10 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-[#10b981]/30 transition-all group">
                                     <div className="flex justify-between items-start mb-3">
                                         <div className="flex items-center gap-2">
@@ -399,6 +429,17 @@ export default function BuilderProfileClientPage({
                                     </div>
                                 </div>
                             ))}
+
+                            {defaultArtifacts.length > displayLimit && (
+                                <div className="pt-4 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setDisplayLimit(d => d + 5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors block w-full bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10"
+                                    >
+                                        Show More ({defaultArtifacts.length - displayLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     )}
                 </section>
@@ -408,13 +449,13 @@ export default function BuilderProfileClientPage({
                         <span className="w-6 h-px bg-orange-500/50 block" /> Problem Atlas Artifacts
                     </h2>
 
-                    {artifacts.filter((a: any) => problems.some(p => p.slug === a.project?.slug)).length === 0 ? (
+                    {problemArtifacts.length === 0 ? (
                         <div className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center">
                             <p className="text-white/50 font-light text-sm italic">No problem artifacts published yet.</p>
                         </div>
                     ) : (
                         <div className="space-y-6">
-                            {artifacts.filter((a: any) => problems.some(p => p.slug === a.project?.slug)).map((a: any) => (
+                            {visibleProblemArtifacts.map((a: any) => (
                                 <div key={a.id} className="p-6 border border-white/10 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-orange-500/30 transition-all group">
                                     <div className="flex justify-between items-start mb-3">
                                         <div className="flex items-center gap-2">
@@ -489,6 +530,17 @@ export default function BuilderProfileClientPage({
                                     </div>
                                 </div>
                             ))}
+
+                            {problemArtifacts.length > displayLimit && (
+                                <div className="pt-4 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setDisplayLimit(d => d + 5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors block w-full bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10"
+                                    >
+                                        Show More ({problemArtifacts.length - displayLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     )}
                 </section>
