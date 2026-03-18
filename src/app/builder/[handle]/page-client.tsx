@@ -7,6 +7,7 @@ import { problems } from '@/data/problem-atlas-data';
 
 import { SubmitArtifactModal } from '@/components/SubmitArtifactModal';
 import { PrivateNotesSection } from '@/components/PrivateNotesSection';
+import { FollowListModal } from '@/components/FollowListModal';
 import { createClient } from '@/utils/supabase/client';
 
 export default function BuilderProfileClientPage({ 
@@ -48,6 +49,9 @@ export default function BuilderProfileClientPage({
   const [followingCount] = React.useState(initialFollowingCount);
   const [isFollowing, setIsFollowing] = React.useState(initialIsFollowing);
   const [isTogglingFollow, setIsTogglingFollow] = React.useState(false);
+  
+  const [showFollowersModal, setShowFollowersModal] = React.useState(false);
+  const [showFollowingModal, setShowFollowingModal] = React.useState(false);
 
   const handleToggleFollow = async () => {
     if (!currentUserId) return;
@@ -405,7 +409,7 @@ export default function BuilderProfileClientPage({
                         <span className="w-6 h-px bg-[#10b981]/50 block" /> My Network
                       </h2>
                       <div className="flex flex-col gap-3">
-                          <button className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
+                          <button onClick={() => setShowFollowersModal(true)} className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
                               <span className="text-sm text-white/80 font-medium font-mono uppercase tracking-widest">Followers</span>
                               <div className="flex items-center gap-3">
                                   <span className="text-xl font-serif text-[#10b981]">{followerCount}</span>
@@ -413,7 +417,7 @@ export default function BuilderProfileClientPage({
                               </div>
                           </button>
                           
-                          <button className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
+                          <button onClick={() => setShowFollowingModal(true)} className="w-full text-left p-4 rounded-xl border border-white/10 bg-white/5 hover:bg-white/10 hover:border-[#10b981]/30 transition-all flex justify-between items-center group">
                               <span className="text-sm text-white/80 font-medium font-mono uppercase tracking-widest">Following</span>
                               <div className="flex items-center gap-3">
                                   <span className="text-xl font-serif text-[#10b981]">{followingCount}</span>
@@ -631,6 +635,14 @@ export default function BuilderProfileClientPage({
                 }}
             />
         )}
+             
+             {showFollowersModal && (
+                <FollowListModal profileId={profile.id} type="followers" onClose={() => setShowFollowersModal(false)} />
+             )}
+
+             {showFollowingModal && (
+                <FollowListModal profileId={profile.id} type="following" onClose={() => setShowFollowingModal(false)} />
+             )}
       </main>
     </div>
   );

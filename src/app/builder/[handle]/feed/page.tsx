@@ -2,8 +2,17 @@ import { createClient } from '@/utils/supabase/server';
 import { notFound, redirect } from 'next/navigation';
 import Link from 'next/link';
 
-export default async function NetworkFeedPage({ params }: { params: Promise<{ handle: string }> }) {
+export default async function NetworkFeedPage({ 
+  params,
+  searchParams
+}: { 
+  params: Promise<{ handle: string }>,
+  searchParams: Promise<{ tab?: string }>
+}) {
   const { handle } = await params;
+  const resolvedSearchParams = await searchParams;
+  const activeTab = resolvedSearchParams.tab === 'followers' ? 'followers' : 'following';
+  
   const supabase = await createClient();
 
   // 1. Fetch Profile
@@ -20,17 +29,20 @@ export default async function NetworkFeedPage({ params }: { params: Promise<{ ha
     return redirect(`/builder/${handle}`); // Only owner can see their feed
   }
 
-  // 2. Fetch Following IDs
-  const { data: follows } = await supabase
-    .from('follows')
-    .select('following_id')
-    .eq('follower_id', profile.id);
-
-  const followingIds = follows?.map(f => f.following_id) || [];
+  // 2. Fetch Target IDs based on tab
+  let targetIds: string[] = [];
+  
+  if (activeTab === 'following') {
+    const { data: follows } = await supabase.from('follows').select('following_id').eq('follower_id', profile.id);
+    targetIds = follows?.map(f => f.following_id) || [];
+  } else {
+    const { data: followers } = await supabase.from('follows').select('follower_id').eq('following_id', profile.id);
+    targetIds = followers?.map(f => f.follower_id) || [];
+  }
 
   // 3. Fetch Network Artifacts
   let artifacts: any[] = [];
-  if (followingIds.length > 0) {
+  if (targetIds.length > 0) {
     const { data: networkArtifacts } = await supabase
       .from('artifacts')
       .select(`
@@ -38,8 +50,8 @@ export default async function NetworkFeedPage({ params }: { params: Promise<{ ha
         project:projects ( slug, name ),
         profile:profiles ( handle, name, avatar_url )
       `)
-      .in('profile_id', followingIds)
-      .order('created_at', { ascending: false })
+      .in('profile_id', targetIds)
+      .order(activeTab === 'followers' ? 'likes' : 'created_at', { ascending: false })
       .limit(50);
       
       artifacts = networkArtifacts || [];
@@ -53,12 +65,31 @@ export default async function NetworkFeedPage({ params }: { params: Promise<{ ha
         <Link href={`/builder/${profile.handle}`} className="text-[#10b981] font-mono text-xs uppercase tracking-widest hover:underline mb-8 inline-block">
           ← Back to Profile
         </Link>
-        <h1 className="text-4xl font-serif mb-4">Network Feed</h1>
-        <p className="text-white/50 mb-12">Recent artifacts from builders you follow.</p>
+        <h1 className="text-4xl font-serif mb-4">Network Activity</h1>
+        <p className="text-white/50 mb-8">Discover what your network is building and backing.</p>
+
+        <div className="flex border-b border-white/10 mb-8 overflow-x-auto scrollbar-none">
+            <Link 
+              href={`/builder/${profile.handle}/feed`} 
+              className={`px-6 py-3 text-xs font-mono uppercase tracking-widest transition-colors shrink-0 ${activeTab === 'following' ? 'text-[#10b981] border-b-2 border-[#10b981]' : 'text-white/50 hover:text-white'}`}
+            >
+              Following Timeline
+            </Link>
+            <Link 
+              href={`/builder/${profile.handle}/feed?tab=followers`} 
+              className={`px-6 py-3 text-xs font-mono uppercase tracking-widest transition-colors shrink-0 ${activeTab === 'followers' ? 'text-[#10b981] border-b-2 border-[#10b981]' : 'text-white/50 hover:text-white'}`}
+            >
+              Follower Top Hits
+            </Link>
+        </div>
 
         {artifacts.length === 0 ? (
            <div className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center">
-             <p className="text-white/50 font-light italic">Your network hasn't published anything recently. Follow more builders!</p>
+             <p className="text-white/50 font-light italic">
+                {activeTab === 'following' 
+                  ? "The builders you follow haven't published anything recently." 
+                  : "Your followers haven't published any artifacts yet."}
+             </p>
            </div>
         ) : (
           <div className="space-y-6">
