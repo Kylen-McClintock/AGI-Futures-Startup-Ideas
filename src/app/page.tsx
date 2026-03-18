@@ -316,12 +316,13 @@ export default async function Home() {
 
     return (
         <main className="min-h-screen bg-[var(--background)] overflow-hidden flex flex-col justify-center relative">
-            {/* Flawless Pitch Black Header Blend */}
-            <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-black via-black via-50% to-transparent pointer-events-none z-0" />
             {/* Ambient background glows */}
             <div className="fixed inset-0 z-0 pointer-events-none">
                 <div className="absolute top-[-20%] left-[-10%] w-[60vw] h-[60vw] bg-[var(--primary)]/10 blur-[150px] rounded-full mix-blend-screen opacity-50" />
             </div>
+            {/* Flawless Pitch Black Header Blend */}
+            <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-black via-black via-50% to-transparent pointer-events-none z-[1]" />
+
 
             <HomeClient projects={projects} />
         </main>

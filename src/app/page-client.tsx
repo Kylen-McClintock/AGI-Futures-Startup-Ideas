@@ -184,9 +184,9 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
         });
 
     return (
-        <div className="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
             <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-10 pt-4 relative z-20">
-                <img src="/logo.png" alt="AGI Futures" className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
+                <img src="/logo.png" alt="AGI Futures" className="h-16 sm:h-20 md:h-28 w-auto object-contain" />
                 <Link href="/problem-atlas" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/40 border border-white/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-white/5 hover:text-white hover:border-white/30 transition-all font-medium whitespace-nowrap">
                     VIEW PROBLEM ATLAS &rarr;
                 </Link>
@@ -362,18 +362,18 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                         <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0`} style={{ background: 'currentColor' }} />
 
                         {/* Badges */}
-                        <div className="absolute top-4 right-3 sm:right-4 z-20 flex flex-col items-end gap-2 max-w-[80%]">
-                            <div className="flex flex-wrap justify-end gap-2 items-center">
-                                <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'impact' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
+                        <div className="absolute top-4 right-3 sm:right-4 z-20 flex flex-col items-end gap-2 w-full pr-0 sm:pr-0 pl-4">
+                            <div className="flex flex-nowrap justify-end gap-1 sm:gap-1.5 items-center">
+                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'impact' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
                                     <span className={sortBy === 'impact' ? 'text-white' : 'text-white/60'}>Impact:</span>
                                     <span className={sortBy === 'impact' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.civilizational_impact_score}</span>
                                 </div>
-                                <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'moat' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
+                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'moat' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
                                     <span className={sortBy === 'moat' ? 'text-white' : 'text-white/60'}>Moat:</span>
                                     <span className={sortBy === 'moat' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.moat_score}</span>
                                 </div>
-                                <div className={`glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border flex items-center gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Difficulty:</span>
+                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
+                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Diff:</span>
                                     <span className={sortBy === 'difficulty' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.difficulty_score}</span>
                                 </div>
                             </div>

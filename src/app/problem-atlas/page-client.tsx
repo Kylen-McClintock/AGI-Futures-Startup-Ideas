@@ -122,11 +122,11 @@ function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
     return (
         <div className="min-h-screen bg-[var(--background)] relative">
             {/* Flawless Pitch Black Header Blend for Problem Atlas */}
-            <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-black via-black via-50% to-transparent pointer-events-none z-0" />
+            <div className="absolute top-0 left-0 right-0 h-[800px] bg-gradient-to-b from-black via-black via-50% to-transparent pointer-events-none z-[1]" />
             
-            <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
+            <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
                 <Link href="/" className="inline-block mb-10 hover:opacity-80 transition-opacity">
-                    <img src="/logo.png" alt="AGI Futures" className="h-16 sm:h-20 md:h-24 w-auto object-contain" />
+                    <img src="/logo.png" alt="AGI Futures" className="h-16 sm:h-20 md:h-28 w-auto object-contain" />
                 </Link>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-6">
                 Problem Atlas
