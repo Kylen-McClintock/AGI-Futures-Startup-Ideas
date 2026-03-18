@@ -57,7 +57,7 @@ export default function LoginPage() {
               label: 'font-mono text-xs uppercase tracking-widest text-white/50 mb-2',
             }
           }}
-          providers={['github', 'google']}
+          providers={['github', 'linkedin', 'google']}
           redirectTo={origin ? `${origin}/auth/callback` : undefined}
           theme="dark"
         />
