@@ -232,10 +232,11 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
     const renderCommentNode = (comment: any, allComments: any[], level: number, artifactId: string) => {
         const replies = allComments.filter(c => c.parent_id === comment.id);
         const isRoot = level === 0;
+        const isIndented = level > 0 && level < 3;
 
         return (
-            <div key={comment.id} className={`flex flex-col gap-3 ${!isRoot ? 'ml-8 relative group/reply' : ''}`}>
-                {!isRoot && (
+            <div key={comment.id} className={`flex flex-col gap-3 ${isIndented ? 'ml-8 relative group/reply' : ''} ${level >= 3 ? 'mt-2' : ''}`}>
+                {isIndented && (
                     <>
                         <div className="absolute -left-5 top-3 w-4 h-px bg-white/10" />
                         <div className="absolute -left-5 -top-6 bottom-3 w-px bg-white/10" />
@@ -291,9 +292,13 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                 )}
 
                 {replyingTo === comment.id && (
-                    <div className={`ml-8 mt-1 flex flex-col gap-2 relative`}>
-                        <div className="absolute -left-5 top-3 w-4 h-px bg-[#10b981]/30" />
-                        <div className="absolute -left-5 -top-4 bottom-3 w-px bg-white/10" />
+                    <div className={`${level < 2 ? 'ml-8' : ''} mt-1 flex flex-col gap-2 relative`}>
+                        {level < 2 && (
+                            <>
+                                <div className="absolute -left-5 top-3 w-4 h-px bg-[#10b981]/30" />
+                                <div className="absolute -left-5 -top-4 bottom-3 w-px bg-white/10" />
+                            </>
+                        )}
                         <div className="bg-black/20 border border-white/10 rounded-lg p-2.5">
                             <textarea 
                                 value={newCommentText[comment.id] || ''}

@@ -163,10 +163,11 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
     const renderCommentNode = (comment: any, allComments: any[], level: number, artifactId: string) => {
         const replies = allComments.filter(c => c.parent_id === comment.id);
         const isRoot = level === 0;
+        const isIndented = level > 0 && level < 3;
 
         return (
-            <div key={comment.id} className={`flex flex-col gap-3 ${!isRoot ? 'ml-6 md:ml-12 relative group/reply' : ''}`}>
-                {!isRoot && (
+            <div key={comment.id} className={`flex flex-col gap-3 ${isIndented ? 'ml-6 md:ml-12 relative group/reply' : ''} ${level >= 3 ? 'mt-3' : ''}`}>
+                {isIndented && (
                     <>
                         <div className="absolute -left-4 md:-left-6 top-6 w-4 md:w-6 h-px bg-white/10" />
                         <div className="absolute -left-4 md:-left-6 -top-2 bottom-4 w-px bg-white/10" />
@@ -218,9 +219,13 @@ export default function ArtifactClientPage({ artifact }: { artifact: any }) {
                 )}
 
                 {replyingTo === comment.id && (
-                    <div className={`mt-2 ml-6 md:ml-12 relative flex flex-col gap-2 p-4 border border-white/5 rounded-2xl bg-[#0a0f14] z-10`}>
-                        <div className="absolute -left-4 md:-left-6 top-6 w-4 md:w-6 h-px bg-white/10" />
-                        <div className="absolute -left-4 md:-left-6 -top-2 bottom-4 w-px bg-white/10" />
+                    <div className={`mt-2 ${level < 2 ? 'ml-6 md:ml-12' : ''} relative flex flex-col gap-2 p-4 border border-white/5 rounded-2xl bg-[#0a0f14] z-10`}>
+                        {level < 2 && (
+                            <>
+                                <div className="absolute -left-4 md:-left-6 top-6 w-4 md:w-6 h-px bg-white/10" />
+                                <div className="absolute -left-4 md:-left-6 -top-2 bottom-4 w-px bg-white/10" />
+                            </>
+                        )}
                         
                         {(commentMedia[comment.id] || []).length > 0 && (
                             <div className="flex gap-2 mb-2 overflow-x-auto pb-2">

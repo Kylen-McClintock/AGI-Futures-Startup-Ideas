@@ -365,3 +365,4 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
  GET /builder/kylen 200 in 4.9s (compile: 919ms, proxy.ts: 223ms, render: 3.7s)
 ✓ Compiled in 111ms
 ✓ Compiled in 521ms
+✓ Compiled in 540ms
