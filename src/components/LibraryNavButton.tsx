@@ -35,8 +35,8 @@ export function LibraryNavButton() {
                 }`}
             aria-label="Return to Library"
         >
-            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span className="text-sm sm:text-base font-medium tracking-wide">AGI Futures</span>
+            <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5 text-white/80" />
+            <span className="text-sm sm:text-base font-medium tracking-wide text-[var(--primary)]">AGI Futures</span>
         </Link>
     );
 }
