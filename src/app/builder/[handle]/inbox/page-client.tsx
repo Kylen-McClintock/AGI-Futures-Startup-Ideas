@@ -62,33 +62,35 @@ export default function InboxClientPage({
                     
                     if (isMessage) {
                         return (
-                            <div key={`msg-${item.id}`} className="p-5 rounded-xl border border-[#10b981]/20 bg-[#10b981]/5 relative group transition-colors hover:border-[#10b981]/40">
-                                <div className="flex justify-between items-start mb-3">
-                                    <Link href={`/builder/${item.sender?.handle}`} className="flex items-center gap-3 group/link">
-                                        <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
-                                            {item.sender?.avatar_url ? (
-                                                <Image src={item.sender.avatar_url} alt={item.sender.name || 'User'} width={32} height={32} className="object-cover" />
-                                            ) : (
-                                                <span className="text-xs font-serif text-white/50">{item.sender?.name?.[0]?.toUpperCase()}</span>
-                                            )}
-                                        </div>
-                                        <div>
-                                            <div className="text-sm font-medium text-white group-hover/link:text-[#10b981] transition-colors">{item.sender?.name || 'Unknown'}</div>
-                                            <div className="text-[10px] font-mono uppercase text-[#10b981]/70 tracking-widest">@{item.sender?.handle}</div>
-                                        </div>
+                            <div key={`msg-${item.id}`} className="p-4 rounded-xl border border-white/5 bg-white-[0.02] relative group transition-colors hover:border-white/10">
+                                <div className="flex items-start gap-4">
+                                    <Link href={`/builder/${item.sender?.handle}`} className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
+                                        {item.sender?.avatar_url ? (
+                                            <Image src={item.sender.avatar_url} alt={item.sender.name || 'User'} width={32} height={32} className="object-cover" />
+                                        ) : (
+                                            <span className="text-xs font-serif text-white/50">{item.sender?.name?.[0]?.toUpperCase()}</span>
+                                        )}
                                     </Link>
-                                    <div className="flex flex-col items-end gap-2 mt-1">
-                                        <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest">{new Date(item.created_at).toLocaleDateString()}</span>
-                                        <button 
-                                            onClick={() => setActiveReplyUser({ id: item.sender_id, name: item.sender?.name || 'User' })}
-                                            className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:text-white"
-                                        >
-                                            <Reply className="w-3 h-3" /> Reply
-                                        </button>
+                                    
+                                    <div className="flex-1 w-full min-w-0">
+                                        <div className="flex justify-between items-start mb-4">
+                                            <Link href={`/builder/${item.sender?.handle}`} className="flex flex-col group/link">
+                                                <span className="text-sm font-medium text-white transition-colors group-hover/link:text-[#10b981]">{item.sender?.name || 'Unknown'}</span>
+                                                <span className="text-[10px] font-mono tracking-widest text-[#10b981]/70">@{item.sender?.handle}</span>
+                                            </Link>
+                                            <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
+                                        </div>
+
+                                        <div className="flex justify-between items-end gap-4">
+                                            <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
+                                            <button 
+                                                onClick={() => setActiveReplyUser({ id: item.sender_id, name: item.sender?.name || 'User' })}
+                                                className="opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:text-white px-2 py-1 rounded"
+                                            >
+                                                Reply
+                                            </button>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="ml-[22px] border-l-2 border-[#10b981]/20 pl-5 py-1 mt-1">
-                                    <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
                                 </div>
                             </div>
                         );
@@ -99,33 +101,33 @@ export default function InboxClientPage({
                         const projectUrl = isProblem ? `/problem-atlas/${item.project_slug}` : `/${item.project_slug}`;
                         
                         return (
-                            <div key={`cmt-${item.id}`} className={`p-5 rounded-xl border bg-white/5 relative transition-colors ${isProblem ? 'border-orange-500/20 hover:border-orange-500/40' : 'border-white/10 hover:border-[#10b981]/40'}`}>
-                                <div className="flex justify-between items-start mb-3">
-                                    <Link href={`/builder/${item.profile?.handle}`} className="flex items-center gap-3 group/link">
-                                        <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
-                                            {item.profile?.avatar_url ? (
-                                                <Image src={item.profile.avatar_url} alt={item.profile.name || 'User'} width={32} height={32} className="object-cover" />
-                                            ) : (
-                                                <span className="text-xs font-serif text-white/50">{item.profile?.name?.[0]?.toUpperCase()}</span>
-                                            )}
-                                        </div>
-                                        <div>
-                                            <div className={`text-sm font-medium text-white transition-colors ${isProblem ? 'group-hover/link:text-orange-500' : 'group-hover/link:text-[#10b981]'}`}>{item.profile?.name || 'Unknown'}</div>
-                                            <div className={`text-[10px] font-mono uppercase tracking-widest ${isProblem ? 'text-orange-500/70' : 'text-[#10b981]/70'}`}>@{item.profile?.handle}</div>
-                                        </div>
+                            <div key={`cmt-${item.id}`} className="p-4 rounded-xl border border-white/5 bg-white-[0.02] relative transition-colors hover:border-white/10">
+                                <div className="flex items-start gap-4">
+                                    <Link href={`/builder/${item.profile?.handle}`} className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
+                                        {item.profile?.avatar_url ? (
+                                            <Image src={item.profile.avatar_url} alt={item.profile.name || 'User'} width={32} height={32} className="object-cover" />
+                                        ) : (
+                                            <span className="text-xs font-serif text-white/50">{item.profile?.name?.[0]?.toUpperCase()}</span>
+                                        )}
                                     </Link>
-                                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
-                                </div>
-                                
-                                <div className="pl-11 mb-4 flex items-center flex-wrap gap-2">
-                                    <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Commented on your artifact:</span>
-                                    <Link href={`${projectUrl}#artifact-${item.artifact?.id}`} className={`text-xs font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
-                                        {item.artifact?.title || 'Unknown Artifact'} →
-                                    </Link>
-                                </div>
+                                    
+                                    <div className="flex-1 w-full min-w-0">
+                                        <div className="flex justify-between items-start mb-4">
+                                            <Link href={`/builder/${item.profile?.handle}`} className="flex flex-col group/link">
+                                                <span className={`text-sm font-medium text-white transition-colors ${isProblem ? 'group-hover/link:text-orange-500' : 'group-hover/link:text-[#10b981]'}`}>{item.profile?.name || 'Unknown'}</span>
+                                                <span className={`text-[10px] font-mono tracking-widest ${isProblem ? 'text-orange-500/70' : 'text-[#10b981]/70'}`}>@{item.profile?.handle}</span>
+                                            </Link>
+                                            <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
+                                        </div>
 
-                                <div className="ml-[22px] border-l-2 border-white/10 pl-5 py-1">
-                                    <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
+                                        <Link href={`${projectUrl}#artifact-${item.artifact?.id}`} className={`block mb-4 text-[10px] font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
+                                            COMMENTED ON YOUR ARTIFACT: {item.artifact?.title || 'UNKNOWN ARTIFACT'} →
+                                        </Link>
+
+                                        <div className="border-l border-white/10 pl-4 py-0.5">
+                                            <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         );

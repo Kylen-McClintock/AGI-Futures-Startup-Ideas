@@ -139,7 +139,7 @@ export default function BuilderProfileClientPage({
                         </button>
 
                         {(() => {
-                            const pref = profile.contact_preference || 'nobody';
+                            const pref = profile.message_preference || 'following';
                             let canContact = false;
                             let lockReason = '';
                             
@@ -211,11 +211,20 @@ export default function BuilderProfileClientPage({
               {/* Social Links */}
               <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
                   {isOwner && (
-                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-xs font-mono shrink-0">
-                          <span className="text-white/50">Inbox:</span> 
-                          <span className={`${(profile.contact_preference || 'nobody') === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
-                              {(profile.contact_preference || 'nobody') === 'nobody' ? 'Locked' : (profile.contact_preference || 'nobody') === 'following' ? 'Following Only' : 'Open'}
-                          </span>
+                      <div className="flex items-center gap-4 px-4 py-1.5 rounded-lg border border-white/10 bg-white/5 text-xs font-mono shrink-0">
+                          <div className="flex items-center gap-1.5">
+                              <span className="text-white/50">DMs:</span> 
+                              <span className={`${(profile.message_preference || 'following') === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
+                                  {(profile.message_preference || 'following') === 'nobody' ? 'Locked' : (profile.message_preference || 'following') === 'following' ? 'Following Only' : 'Open'}
+                              </span>
+                          </div>
+                          <div className="w-px h-3 bg-white/10" />
+                          <div className="flex items-center gap-1.5">
+                              <span className="text-white/50">Email:</span> 
+                              <span className={`${(profile.contact_preference || 'nobody') === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
+                                  {(profile.contact_preference || 'nobody') === 'nobody' ? 'Locked' : (profile.contact_preference || 'nobody') === 'following' ? 'Following Only' : 'Open'}
+                              </span>
+                          </div>
                       </div>
                   )}
 

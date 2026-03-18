@@ -1,0 +1,35 @@
+
+> agi-futures-startup-ideas@0.1.0 dev
+> next dev
+
+⚠ Warning: Next.js inferred your workspace root, but it may not be correct.
+ We detected multiple lockfiles and selected the directory of /Users/kylenmcclintock/package-lock.json as the root directory.
+ To silence this warning, set `turbopack.root` in your Next.js config, or consider removing one of the lockfiles if it's not needed.
+   See https://nextjs.org/docs/app/api-reference/config/next-config-js/turbopack#root-directory for more information.
+ Detected additional lockfiles: 
+   * /Users/kylenmcclintock/Documents/AntiGravity Projects/AGI Futures - AntiGravity/AGI Futures Startup Ideas/package-lock.json
+
+▲ Next.js 16.1.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.20.182.30:3000
+- Environments: .env.local
+
+✓ Starting...
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+✓ Ready in 2.9s
+ GET /builder/kylen/inbox 404 in 1436ms (compile: 1121ms, proxy.ts: 283ms, render: 32ms)
+Image with src "/_next/static/media/proofrun_hero.5576c746.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+Image with src "/_next/static/media/proofrun_mission_dashboard.b3ed19a8.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+Image with src "/_next/static/media/proofrun_candidate_portfolio.5b1c6a0b.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+Image with src "/_next/static/media/proofrun_impact_flow.b5172cbd.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+Image with src "/_next/static/media/proofrun_ai_orchestration.676a489a.png" is using quality "100" which is not configured in images.qualities [75]. Please update your config to [100, 75].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+ GET /proofrun 200 in 1791ms (compile: 987ms, proxy.ts: 221ms, render: 583ms)
+ GET /proofrun 200 in 1261ms (compile: 791ms, proxy.ts: 343ms, render: 126ms)
+ GET /builder/kylen/inbox 200 in 2.6s (compile: 1350ms, proxy.ts: 466ms, render: 759ms)
+✓ Compiled in 10ms
+✓ Compiled in 1518ms
