@@ -347,3 +347,6 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
  GET /builder/kylen 200 in 263ms (compile: 8ms, proxy.ts: 206ms, render: 49ms)
 ✓ Compiled in 836ms
 ✓ Compiled in 294ms
+✓ Compiled in 317ms
+✓ Compiled in 110ms
+✓ Compiled in 103ms

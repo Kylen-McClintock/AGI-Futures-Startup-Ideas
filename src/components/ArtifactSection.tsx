@@ -305,7 +305,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                                             </span>
                                         </div>
 
-                                        <Link href={`/artifact/${artifact.id}`}>
+                                        <Link href={`/artifact/${artifact.slug || artifact.id}`}>
                                             <h3 className="text-xl text-white hover:text-[#10b981] font-medium transition-colors mb-2 inline-block">{artifact.title}</h3>
                                         </Link>
                                         <p className="text-white/70 text-sm leading-relaxed mb-6 whitespace-pre-wrap">

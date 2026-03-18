@@ -120,7 +120,7 @@ export default function InboxClientPage({
                                             <span className="text-white/30 text-[10px] font-mono">•</span>
                                             <span className="text-[10px] font-mono text-white/30 tracking-widest mr-1">{new Date(item.created_at).toLocaleDateString()}</span>
                                             <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">commented on:</span>
-                                            <Link href={`/artifact/${item.artifact?.id}`} className={`text-[10px] font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
+                                            <Link href={`/artifact/${item.artifact?.slug || item.artifact?.id}`} className={`text-[10px] font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
                                                 {item.artifact?.title || 'UNKNOWN ARTIFACT'} →
                                             </Link>
                                         </div>

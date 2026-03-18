@@ -395,7 +395,7 @@ export default function BuilderProfileClientPage({
                                             {a.updated_at && <span className="text-[9px] text-white/30 mt-0.5 font-mono uppercase tracking-widest">Edited {new Date(a.updated_at).toLocaleDateString()}</span>}
                                         </div>
                                     </div>
-                                    <Link href={`/artifact/${a.id}`}>
+                                    <Link href={`/artifact/${a.slug || a.id}`}>
                                         <h3 className="text-xl font-medium text-white hover:text-[#10b981] transition-colors mb-2 inline-block">{a.title}</h3>
                                     </Link>
                                     {a.summary && <p className="text-white/60 text-sm leading-relaxed mb-4">{a.summary}</p>}
@@ -514,7 +514,7 @@ export default function BuilderProfileClientPage({
                                             {a.updated_at && <span className="text-[9px] text-white/30 mt-0.5 font-mono uppercase tracking-widest">Edited {new Date(a.updated_at).toLocaleDateString()}</span>}
                                         </div>
                                     </div>
-                                    <Link href={`/artifact/${a.id}`}>
+                                    <Link href={`/artifact/${a.slug || a.id}`}>
                                         <h3 className="text-xl font-medium text-white hover:text-orange-500 transition-colors mb-2 inline-block">{a.title}</h3>
                                     </Link>
                                     {a.summary && <p className="text-white/60 text-sm leading-relaxed mb-4">{a.summary}</p>}
