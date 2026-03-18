@@ -1,6 +1,30 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+    const pathname = usePathname() || "";
+    
+    let label = "Startup Ideas Library";
+    let color = "text-[#3bf4a4]";
+
+    if (pathname.includes('/problem-atlas')) {
+        label = "Problem Atlas";
+        color = "text-orange-500/80";
+    } else if (pathname.includes('/builder/')) {
+        label = "Builder Profile";
+        color = "text-[#10b981]";
+    } else if (pathname.includes('/onboarding')) {
+        label = "Builder Onboarding";
+        color = "text-[#10b981]";
+    } else if (pathname.includes('/proofrun') || pathname.includes('/artifact')) { // Future proofing
+        label = "Proof of Work Artifact";
+        color = "text-[#10b981]";
+    } else if (pathname !== '/' && pathname !== '/about' && pathname !== '/license' && pathname !== '/forecasting') {
+        label = "Startup Idea Writeup";
+    }
+
     return (
         <footer className="w-full border-t border-white/10 bg-black backdrop-blur-md py-12 px-6 mt-32">
             <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-6">
@@ -8,7 +32,7 @@ export function Footer() {
                 {/* Branding or simple wordmark */}
                 <div className="flex flex-col items-center gap-2 mb-2">
                     <img src="/logo.png" alt="AGI Futures Logo" className="h-12 md:h-20 w-auto object-contain" />
-                    <span className="text-sm font-mono tracking-widest text-[#3bf4a4] uppercase mx-auto">Library</span>
+                    <span className={`text-sm font-mono tracking-widest ${color} uppercase mx-auto text-center`}>{label}</span>
                 </div>
 
                 {/* Footer Links */}
