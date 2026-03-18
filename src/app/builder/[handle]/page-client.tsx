@@ -430,13 +430,24 @@ export default function BuilderProfileClientPage({
                                 </div>
                             ))}
 
-                            {defaultArtifacts.length > displayLimit && (
+                            {defaultArtifacts.length > displayLimit && displayLimit < 20 && (
                                 <div className="pt-4 pb-2 text-center">
                                     <button 
                                         onClick={() => setDisplayLimit(d => d + 5)}
                                         className="text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors block w-full bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10"
                                     >
                                         Show More ({defaultArtifacts.length - displayLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
+
+                            {displayLimit > 5 && (
+                                <div className="pt-2 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setDisplayLimit(5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:text-[#10b981]/80 transition-colors block w-full bg-[#10b981]/10 border border-[#10b981]/20 rounded-xl py-3 hover:bg-[#10b981]/20"
+                                    >
+                                        Collapse Feed ↑
                                     </button>
                                 </div>
                             )}
@@ -530,14 +541,24 @@ export default function BuilderProfileClientPage({
                                     </div>
                                 </div>
                             ))}
-
-                            {problemArtifacts.length > displayLimit && (
+                            {problemArtifacts.length > displayLimit && displayLimit < 20 && (
                                 <div className="pt-4 pb-2 text-center">
                                     <button 
                                         onClick={() => setDisplayLimit(d => d + 5)}
                                         className="text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors block w-full bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10"
                                     >
                                         Show More ({problemArtifacts.length - displayLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
+
+                            {displayLimit > 5 && (
+                                <div className="pt-2 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setDisplayLimit(5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-orange-500 hover:text-orange-500/80 transition-colors block w-full bg-orange-500/10 border border-orange-500/20 rounded-xl py-3 hover:bg-orange-500/20"
+                                    >
+                                        Collapse Feed ↑
                                     </button>
                                 </div>
                             )}

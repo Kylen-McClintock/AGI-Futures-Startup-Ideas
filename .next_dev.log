@@ -44,3 +44,19 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
  GET /builder/kylen 200 in 853ms (compile: 14ms, proxy.ts: 107ms, render: 732ms)
 ✓ Compiled in 157ms
 ✓ Compiled in 144ms
+ GET /builder/kylen/inbox 200 in 1018ms (compile: 31ms, proxy.ts: 311ms, render: 675ms)
+ GET /porchfront 200 in 1513ms (compile: 1062ms, proxy.ts: 313ms, render: 139ms)
+ GET /builder/kylen 200 in 1491ms (compile: 229ms, proxy.ts: 253ms, render: 1009ms)
+ GET /builder/kylen/inbox 200 in 752ms (compile: 20ms, proxy.ts: 113ms, render: 619ms)
+ GET /builder/kylen 200 in 1093ms (compile: 20ms, proxy.ts: 170ms, render: 903ms)
+ GET /builder/kylen 200 in 881ms (compile: 2ms, proxy.ts: 111ms, render: 767ms)
+ GET / 200 in 1155ms (compile: 781ms, proxy.ts: 129ms, render: 245ms)
+ GET /problem-atlas 200 in 318ms (compile: 120ms, proxy.ts: 86ms, render: 112ms)
+✓ Compiled in 656ms
+ GET /builder/kylen 200 in 1019ms (compile: 48ms, proxy.ts: 164ms, render: 807ms)
+✓ Compiled in 583ms
+✓ Compiled in 299ms
+✓ Compiled in 163ms
+ GET /builder/kylen 200 in 702ms (compile: 408ms, proxy.ts: 211ms, render: 82ms)
+ GET /proofrun 200 in 808ms (compile: 190ms, proxy.ts: 318ms, render: 300ms)
+ GET /builder/kylen 200 in 332ms (compile: 24ms, proxy.ts: 163ms, render: 145ms)

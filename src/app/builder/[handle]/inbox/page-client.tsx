@@ -62,30 +62,30 @@ export default function InboxClientPage({
                     
                     if (isMessage) {
                         return (
-                            <div key={`msg-${item.id}`} className="p-4 rounded-xl border border-white/5 bg-white-[0.02] relative group transition-colors hover:border-white/10">
-                                <div className="flex items-start gap-4">
-                                    <Link href={`/builder/${item.sender?.handle}`} className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
+                            <div key={`msg-${item.id}`} className="p-3 rounded-xl border border-white/5 bg-white-[0.02] relative group transition-colors hover:border-white/10">
+                                <div className="flex items-start gap-3">
+                                    <Link href={`/builder/${item.sender?.handle}`} className="w-6 h-6 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center mt-0.5">
                                         {item.sender?.avatar_url ? (
-                                            <Image src={item.sender.avatar_url} alt={item.sender.name || 'User'} width={32} height={32} className="object-cover" />
+                                            <Image src={item.sender.avatar_url} alt={item.sender.name || 'User'} width={24} height={24} className="object-cover" />
                                         ) : (
-                                            <span className="text-xs font-serif text-white/50">{item.sender?.name?.[0]?.toUpperCase()}</span>
+                                            <span className="text-[10px] font-serif text-white/50">{item.sender?.name?.[0]?.toUpperCase()}</span>
                                         )}
                                     </Link>
                                     
                                     <div className="flex-1 w-full min-w-0">
-                                        <div className="flex justify-between items-start mb-4">
-                                            <Link href={`/builder/${item.sender?.handle}`} className="flex flex-col group/link">
+                                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
+                                            <Link href={`/builder/${item.sender?.handle}`} className="group/link flex items-baseline gap-1.5">
                                                 <span className="text-sm font-medium text-white transition-colors group-hover/link:text-[#10b981]">{item.sender?.name || 'Unknown'}</span>
                                                 <span className="text-[10px] font-mono tracking-widest text-[#10b981]/70">@{item.sender?.handle}</span>
                                             </Link>
-                                            <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
+                                            <span className="text-white/30 text-[10px] font-mono">•</span>
+                                            <span className="text-[10px] font-mono text-white/30 tracking-widest">{new Date(item.created_at).toLocaleDateString()}</span>
                                         </div>
-
-                                        <div className="flex justify-between items-end gap-4">
+                                        <div className="flex justify-between items-end gap-4 mt-1">
                                             <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
                                             <button 
                                                 onClick={() => setActiveReplyUser({ id: item.sender_id, name: item.sender?.name || 'User' })}
-                                                className="opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:text-white px-2 py-1 rounded"
+                                                className="opacity-0 group-hover:opacity-100 transition-opacity text-[10px] font-mono uppercase tracking-widest text-[#10b981] hover:text-white px-2 py-1 rounded border border-[#10b981]/20"
                                             >
                                                 Reply
                                             </button>
@@ -101,32 +101,30 @@ export default function InboxClientPage({
                         const projectUrl = isProblem ? `/problem-atlas/${item.project_slug}` : `/${item.project_slug}`;
                         
                         return (
-                            <div key={`cmt-${item.id}`} className="p-4 rounded-xl border border-white/5 bg-white-[0.02] relative transition-colors hover:border-white/10">
-                                <div className="flex items-start gap-4">
-                                    <Link href={`/builder/${item.profile?.handle}`} className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
+                            <div key={`cmt-${item.id}`} className="p-3 rounded-xl border border-white/5 bg-white-[0.02] relative transition-colors hover:border-white/10">
+                                <div className="flex items-start gap-3">
+                                    <Link href={`/builder/${item.profile?.handle}`} className="w-6 h-6 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center mt-0.5">
                                         {item.profile?.avatar_url ? (
-                                            <Image src={item.profile.avatar_url} alt={item.profile.name || 'User'} width={32} height={32} className="object-cover" />
+                                            <Image src={item.profile.avatar_url} alt={item.profile.name || 'User'} width={24} height={24} className="object-cover" />
                                         ) : (
-                                            <span className="text-xs font-serif text-white/50">{item.profile?.name?.[0]?.toUpperCase()}</span>
+                                            <span className="text-[10px] font-serif text-white/50">{item.profile?.name?.[0]?.toUpperCase()}</span>
                                         )}
                                     </Link>
                                     
                                     <div className="flex-1 w-full min-w-0">
-                                        <div className="flex justify-between items-start mb-4">
-                                            <Link href={`/builder/${item.profile?.handle}`} className="flex flex-col group/link">
+                                        <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 mb-1">
+                                            <Link href={`/builder/${item.profile?.handle}`} className="group/link flex items-baseline gap-1.5">
                                                 <span className={`text-sm font-medium text-white transition-colors ${isProblem ? 'group-hover/link:text-orange-500' : 'group-hover/link:text-[#10b981]'}`}>{item.profile?.name || 'Unknown'}</span>
                                                 <span className={`text-[10px] font-mono tracking-widest ${isProblem ? 'text-orange-500/70' : 'text-[#10b981]/70'}`}>@{item.profile?.handle}</span>
                                             </Link>
-                                            <span className="text-[10px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
+                                            <span className="text-white/30 text-[10px] font-mono">•</span>
+                                            <span className="text-[10px] font-mono text-white/30 tracking-widest mr-1">{new Date(item.created_at).toLocaleDateString()}</span>
+                                            <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">commented on:</span>
+                                            <Link href={`${projectUrl}#artifact-${item.artifact?.id}`} className={`text-[10px] font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
+                                                {item.artifact?.title || 'UNKNOWN ARTIFACT'} →
+                                            </Link>
                                         </div>
-
-                                        <Link href={`${projectUrl}#artifact-${item.artifact?.id}`} className={`block mb-4 text-[10px] font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
-                                            COMMENTED ON YOUR ARTIFACT: {item.artifact?.title || 'UNKNOWN ARTIFACT'} →
-                                        </Link>
-
-                                        <div className="border-l border-white/10 pl-4 py-0.5">
-                                            <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
-                                        </div>
+                                        <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap mt-1 border-l border-white/10 pl-3 py-0.5">{item.content}</p>
                                     </div>
                                 </div>
                             </div>

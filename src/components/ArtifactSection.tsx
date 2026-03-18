@@ -262,7 +262,7 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                          <>
                          <div className="grid gap-6 md:grid-cols-2">
                             {visibleArtifacts.map(artifact => (
-                                <div key={artifact.id} className="p-6 glass-panel rounded-2xl border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between">
+                                <div id={`artifact-${artifact.id}`} key={artifact.id} className="p-6 glass-panel rounded-2xl border border-white/5 hover:border-white/10 transition-colors flex flex-col justify-between">
                                     
                                     <div>
                                         <div className="flex justify-between items-start mb-4">
