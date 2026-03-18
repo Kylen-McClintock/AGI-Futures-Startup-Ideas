@@ -355,3 +355,13 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
 ✓ Compiled in 1070ms
 ✓ Compiled in 712ms
 ✓ Compiled in 931ms
+✓ Compiled in 459ms
+✓ Compiled in 120ms
+ GET /problem-atlas/dna-synthesis-screening-infrastructure 200 in 4.7s (compile: 2.0s, proxy.ts: 456ms, generate-params: 3ms, render: 2.3s)
+ GET /problem-atlas/dna-synthesis-screening-infrastructure 200 in 1463ms (compile: 771ms, proxy.ts: 339ms, generate-params: 29ms, render: 353ms)
+ GET /problem-atlas/dna-synthesis-screening-infrastructure 200 in 168ms (compile: 9ms, proxy.ts: 146ms, generate-params: 1920µs, render: 14ms)
+ GET /builder/kylen 200 in 377ms (compile: 4ms, proxy.ts: 126ms, render: 247ms)
+ GET /builder/kylen 200 in 1938ms (compile: 187ms, proxy.ts: 420ms, render: 1331ms)
+ GET /builder/kylen 200 in 4.9s (compile: 919ms, proxy.ts: 223ms, render: 3.7s)
+✓ Compiled in 111ms
+✓ Compiled in 521ms
