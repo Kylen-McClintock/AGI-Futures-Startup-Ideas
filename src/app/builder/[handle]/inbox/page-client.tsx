@@ -62,8 +62,8 @@ export default function InboxClientPage({
                     
                     if (isMessage) {
                         return (
-                            <div key={`msg-${item.id}`} className="p-6 rounded-2xl border border-[#10b981]/20 bg-[#10b981]/5 relative group transition-colors hover:border-[#10b981]/40">
-                                <div className="flex justify-between items-start mb-4">
+                            <div key={`msg-${item.id}`} className="p-5 rounded-xl border border-[#10b981]/20 bg-[#10b981]/5 relative group transition-colors hover:border-[#10b981]/40">
+                                <div className="flex justify-between items-start mb-3">
                                     <Link href={`/builder/${item.sender?.handle}`} className="flex items-center gap-3 group/link">
                                         <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
                                             {item.sender?.avatar_url ? (
@@ -77,7 +77,7 @@ export default function InboxClientPage({
                                             <div className="text-[10px] font-mono uppercase text-[#10b981]/70 tracking-widest">@{item.sender?.handle}</div>
                                         </div>
                                     </Link>
-                                    <div className="flex flex-col items-end gap-2">
+                                    <div className="flex flex-col items-end gap-2 mt-1">
                                         <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest">{new Date(item.created_at).toLocaleDateString()}</span>
                                         <button 
                                             onClick={() => setActiveReplyUser({ id: item.sender_id, name: item.sender?.name || 'User' })}
@@ -87,7 +87,9 @@ export default function InboxClientPage({
                                         </button>
                                     </div>
                                 </div>
-                                <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap pl-11">{item.content}</p>
+                                <div className="ml-[22px] border-l-2 border-[#10b981]/20 pl-5 py-1 mt-1">
+                                    <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
+                                </div>
                             </div>
                         );
                     } else {
@@ -97,8 +99,8 @@ export default function InboxClientPage({
                         const projectUrl = isProblem ? `/problem-atlas/${item.project_slug}` : `/${item.project_slug}`;
                         
                         return (
-                            <div key={`cmt-${item.id}`} className={`p-6 rounded-2xl border bg-white/5 relative transition-colors ${isProblem ? 'border-orange-500/20 hover:border-orange-500/40' : 'border-white/10 hover:border-[#10b981]/40'}`}>
-                                <div className="flex justify-between items-start mb-4">
+                            <div key={`cmt-${item.id}`} className={`p-5 rounded-xl border bg-white/5 relative transition-colors ${isProblem ? 'border-orange-500/20 hover:border-orange-500/40' : 'border-white/10 hover:border-[#10b981]/40'}`}>
+                                <div className="flex justify-between items-start mb-3">
                                     <Link href={`/builder/${item.profile?.handle}`} className="flex items-center gap-3 group/link">
                                         <div className="w-8 h-8 rounded-full border border-white/10 overflow-hidden bg-white/5 shrink-0 flex items-center justify-center">
                                             {item.profile?.avatar_url ? (
@@ -112,17 +114,19 @@ export default function InboxClientPage({
                                             <div className={`text-[10px] font-mono uppercase tracking-widest ${isProblem ? 'text-orange-500/70' : 'text-[#10b981]/70'}`}>@{item.profile?.handle}</div>
                                         </div>
                                     </Link>
-                                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest shrink-0">{new Date(item.created_at).toLocaleDateString()}</span>
+                                    <span className="text-[9px] font-mono text-white/30 uppercase tracking-widest shrink-0 mt-1">{new Date(item.created_at).toLocaleDateString()}</span>
                                 </div>
                                 
-                                <div className="pl-11 mb-3">
-                                    <span className="text-[10px] font-mono text-white/50 uppercase tracking-widest">Commented on your artifact:</span>
-                                    <Link href={projectUrl} className={`ml-2 text-xs font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
+                                <div className="pl-11 mb-4 flex items-center flex-wrap gap-2">
+                                    <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Commented on your artifact:</span>
+                                    <Link href={projectUrl} className={`text-xs font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
                                         {item.artifact?.title || 'Unknown Artifact'} →
                                     </Link>
                                 </div>
 
-                                <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap pl-11 border-l-2 border-white/10 ml-[21px] pl-4">{item.content}</p>
+                                <div className="ml-[22px] border-l-2 border-white/10 pl-5 py-1">
+                                    <p className="text-white/80 text-sm leading-relaxed whitespace-pre-wrap">{item.content}</p>
+                                </div>
                             </div>
                         );
                     }
