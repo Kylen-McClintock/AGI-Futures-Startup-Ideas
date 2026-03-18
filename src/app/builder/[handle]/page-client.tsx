@@ -8,6 +8,7 @@ import { problems } from '@/data/problem-atlas-data';
 import { SubmitArtifactModal } from '@/components/SubmitArtifactModal';
 import { PrivateNotesSection } from '@/components/PrivateNotesSection';
 import { FollowListModal } from '@/components/FollowListModal';
+import { SendMessageModal } from '@/components/SendMessageModal';
 import { createClient } from '@/utils/supabase/client';
 
 export default function BuilderProfileClientPage({ 
@@ -54,6 +55,7 @@ export default function BuilderProfileClientPage({
   
   const [showFollowersModal, setShowFollowersModal] = React.useState(false);
   const [showFollowingModal, setShowFollowingModal] = React.useState(false);
+  const [isMessageModalOpen, setIsMessageModalOpen] = React.useState(false);
 
   const handleToggleFollow = async () => {
     if (!currentUserId) return;
@@ -123,17 +125,58 @@ export default function BuilderProfileClientPage({
                     </Link>
                   )}
                   {!isOwner && currentUserId && (
-                    <button 
-                      onClick={handleToggleFollow}
-                      disabled={isTogglingFollow}
-                      className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest transition-colors flex shrink-0 ${
-                        isFollowing 
-                          ? 'border border-white/20 text-white/50 hover:border-white/40 bg-white/5' 
-                          : 'border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10 bg-transparent'
-                      }`}
-                    >
-                      {isFollowing ? 'Following' : 'Follow'}
-                    </button>
+                    <div className="flex items-center gap-2">
+                        <button 
+                          onClick={handleToggleFollow}
+                          disabled={isTogglingFollow}
+                          className={`px-4 py-1.5 rounded-full text-xs font-mono uppercase tracking-widest transition-colors flex shrink-0 ${
+                            isFollowing 
+                              ? 'border border-white/20 text-white/50 hover:border-white/40 bg-white/5' 
+                              : 'border border-[#10b981] text-[#10b981] hover:bg-[#10b981]/10 bg-transparent'
+                          }`}
+                        >
+                          {isFollowing ? 'Following' : 'Follow'}
+                        </button>
+
+                        {(() => {
+                            const pref = profile.contact_preference || 'nobody';
+                            let canContact = false;
+                            let lockReason = '';
+                            
+                            if (pref === 'anyone') {
+                                canContact = true;
+                            } else if (pref === 'following' && isFollowedByOwner) {
+                                canContact = true;
+                            } else if (pref === 'nobody') {
+                                canContact = false;
+                                lockReason = 'Direct messaging is locked.';
+                            } else if (pref === 'following' && !isFollowedByOwner) {
+                                canContact = false;
+                                lockReason = `${profile.name || 'This builder'} only accepts messages from people they follow.`;
+                            }
+
+                            if (!canContact) {
+                                return (
+                                    <button 
+                                      title={lockReason} 
+                                      disabled
+                                      className="cursor-not-allowed flex items-center justify-center w-8 h-8 rounded-full border border-red-500/20 bg-red-500/5 text-red-500/50 shrink-0"
+                                    >
+                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                                    </button>
+                                );
+                            }
+
+                            return (
+                                <button 
+                                  onClick={() => setIsMessageModalOpen(true)}
+                                  className="flex items-center justify-center px-4 py-1.5 rounded-full border border-[#10b981] bg-[#10b981]/10 text-[#10b981] hover:bg-[#10b981]/20 transition-all text-xs font-mono uppercase tracking-widest cursor-pointer shadow-[0_0_15px_rgba(16,185,129,0.15)] shrink-0"
+                                >
+                                    Message
+                                </button>
+                            );
+                        })()}
+                    </div>
                   )}
                 </div>
                 <p className="text-[#10b981] font-mono text-sm tracking-widest uppercase">@{profile.handle}</p>
@@ -460,6 +503,9 @@ export default function BuilderProfileClientPage({
                           <Link href={`/builder/${profile.handle}/feed`} className="w-full text-center mt-2 p-3 rounded-lg bg-[#10b981]/10 text-[#10b981] border border-[#10b981]/20 hover:bg-[#10b981]/20 transition-all text-sm font-mono uppercase tracking-widest">
                              Network Update Feed
                           </Link>
+                          <Link href={`/builder/${profile.handle}/inbox`} className="w-full text-center p-3 rounded-lg bg-white/5 text-white/80 border border-white/10 hover:bg-white/10 hover:text-white transition-all text-sm font-mono uppercase tracking-widest">
+                             Inbox
+                          </Link>
                       </div>
                     </section>
                 )}
@@ -674,6 +720,18 @@ export default function BuilderProfileClientPage({
 
              {showFollowingModal && (
                 <FollowListModal profileId={profile.id} type="following" onClose={() => setShowFollowingModal(false)} />
+             )}
+
+             {isMessageModalOpen && (
+                 <SendMessageModal 
+                     receiverId={profile.id} 
+                     receiverName={profile.name} 
+                     onClose={() => setIsMessageModalOpen(false)} 
+                     onSuccess={() => {
+                         setIsMessageModalOpen(false);
+                         alert("Message sent successfully!");
+                     }}
+                 />
              )}
       </main>
     </div>
