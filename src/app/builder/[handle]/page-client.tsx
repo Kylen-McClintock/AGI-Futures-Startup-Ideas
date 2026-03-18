@@ -209,8 +209,18 @@ export default function BuilderProfileClientPage({
               )}
 
               {/* Social Links */}
-              {profile.provider_links && Object.entries(profile.provider_links).filter(([k,v]) => v).length > 0 && (
-                  <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+              <div className="flex flex-wrap justify-center md:justify-start gap-3 mb-6">
+                  {isOwner && (
+                      <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-xs font-mono shrink-0">
+                          <span className="text-white/50">Inbox:</span> 
+                          <span className={`${(profile.contact_preference || 'nobody') === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
+                              {(profile.contact_preference || 'nobody') === 'nobody' ? 'Locked' : (profile.contact_preference || 'nobody') === 'following' ? 'Following Only' : 'Open'}
+                          </span>
+                      </div>
+                  )}
+
+                  {profile.provider_links && Object.entries(profile.provider_links).filter(([k,v]) => v).length > 0 && (
+                      <>
                       {Object.entries(profile.provider_links).filter(([k,v]) => v).map(([platform, link]) => {
                           let display = platform.toUpperCase();
                           if (platform === 'x') display = 'X (Twitter)';
@@ -222,17 +232,6 @@ export default function BuilderProfileClientPage({
                           if (platform === 'huggingface') display = 'HuggingFace';
                           if (platform === 'email') {
                               const pref = profile.contact_preference || 'nobody';
-                              
-                              if (isOwner) {
-                                  return (
-                                      <div key="owner-inbox-pref" className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/10 bg-white/5 text-xs font-mono">
-                                          <span className="text-white/50">Inbox:</span> 
-                                          <span className={`${pref === 'nobody' ? 'text-red-500' : 'text-[#10b981]'}`}>
-                                              {pref === 'nobody' ? 'Locked' : pref === 'following' ? 'Following Only' : 'Open'}
-                                          </span>
-                                      </div>
-                                  );
-                              }
 
                               let canContact = false;
                               let lockReason = '';
@@ -275,8 +274,9 @@ export default function BuilderProfileClientPage({
                               </a>
                           )
                       })}
-                  </div>
-              )}
+                      </>
+                  )}
+              </div>
 
                <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-6">
                 {profile.builder_status?.map((status: string) => (

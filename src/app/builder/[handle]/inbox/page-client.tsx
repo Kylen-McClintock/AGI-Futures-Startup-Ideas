@@ -119,7 +119,7 @@ export default function InboxClientPage({
                                 
                                 <div className="pl-11 mb-4 flex items-center flex-wrap gap-2">
                                     <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest">Commented on your artifact:</span>
-                                    <Link href={projectUrl} className={`text-xs font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
+                                    <Link href={`${projectUrl}#artifact-${item.artifact?.id}`} className={`text-xs font-mono uppercase tracking-widest hover:underline ${isProblem ? 'text-orange-500' : 'text-[#10b981]'}`}>
                                         {item.artifact?.title || 'Unknown Artifact'} →
                                     </Link>
                                 </div>
