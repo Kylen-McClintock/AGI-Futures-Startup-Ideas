@@ -121,9 +121,9 @@ function ProblemAtlasInner({ problems }: { problems: ProblemData[] }) {
 
     return (
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
-            <div className="inline-block mb-6 text-xs sm:text-sm font-mono tracking-widest uppercase text-[var(--primary)] border border-[var(--primary)]/30 px-4 py-1.5 rounded-full bg-[var(--primary)]/5 glass-panel">
-                AGI Futures
-            </div>
+            <Link href="/" className="inline-block mb-6 mix-blend-screen drop-shadow-[0_0_15px_rgba(59,244,164,0.15)] hover:opacity-80 transition-opacity">
+                <img src="/logo.png" alt="AGI Futures" className="h-8 sm:h-12 w-auto object-contain" />
+            </Link>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-6">
                 Problem Atlas
             </h1>

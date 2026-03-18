@@ -188,8 +188,8 @@ export default function ProblemDetailClient({ problem, prevProblem, nextProblem 
                     </div>
                     
                     <div className="flex-1 flex justify-center">
-                        <Link href="/" className="px-3 py-1 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 text-[var(--primary)] hover:bg-[var(--primary)]/10 transition-all text-xs font-mono tracking-widest uppercase whitespace-nowrap shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                            AGI Futures
+                        <Link href="/" className="px-3 py-1 rounded-full border border-[var(--primary)]/20 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-all shadow-[0_0_15px_rgba(255,255,255,0.05)] flex items-center justify-center">
+                            <img src="/logo.png" alt="AGI Futures" className="h-4 w-auto object-contain mix-blend-screen" />
                         </Link>
                     </div>
 
