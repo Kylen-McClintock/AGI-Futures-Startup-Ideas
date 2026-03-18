@@ -6,8 +6,9 @@ export function Footer() {
             <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-6">
                 
                 {/* Branding or simple wordmark */}
-                <div className="text-xl font-serif tracking-tight text-white mb-2">
-                    AGI Futures <span className="text-[#3bf4a4]">Library</span>
+                <div className="flex flex-col items-center gap-2 mb-2">
+                    <img src="/logo.png" alt="AGI Futures Logo" className="h-8 md:h-12 w-auto object-contain" />
+                    <span className="text-sm font-mono tracking-widest text-[#3bf4a4] uppercase mx-auto">Library</span>
                 </div>
 
                 {/* Footer Links */}

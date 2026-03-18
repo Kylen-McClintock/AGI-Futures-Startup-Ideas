@@ -28,8 +28,8 @@ export default function LoginPage() {
       <div className="max-w-md w-full glass-panel p-8 rounded-2xl border border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 blur-[50px] rounded-full pointer-events-none" />
         
-        <div className="text-center mb-10">
-          <h1 className="text-3xl font-serif mb-2">AGI Futures</h1>
+        <div className="text-center mb-10 flex flex-col items-center">
+          <img src="/logo.png" alt="AGI Futures" className="h-8 md:h-10 w-auto object-contain mb-4" />
           <p className="text-white/60 font-light">Sign in to build your profile, save notes, and post artifacts.</p>
         </div>
 
