@@ -770,11 +770,7 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
 
 
             {/* VALUATION FORECAST MODULE */}
-            <AutoForecastInjector
-                targetMoatScore={initialData?.moat_score || 81}
-                targetDifficultyScore={initialData?.difficulty_score || 69}
-                marketForecast={valuationForecast}
-            />
+            <AutoForecastInjector />
 
             {/* IMPACT SECTION */}
             <section className="px-6 py-32 max-w-7xl mx-auto">
