@@ -580,6 +580,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Policy Entrepreneur'],
             outcomes: ['Better Governance', 'Alignment', 'Societal Cohesion', 'Social Trust']
         }
+    },
+    {
+        slug: 'bioark',
+        name: 'BioArk',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 74 },
+            difficulty_score: { ai_scored: 86 },
+            civilizational_impact_score: { ai_scored: 85 },
+            civilizational_impact_ratings: {
+                "Biodiversity": { ai_scored: 96 },
+                "Resilience": { ai_scored: 80 },
+                "Social Trust": { ai_scored: 63 },
+                "Scientific Acceleration": { ai_scored: 58 }
+            }
+        },
+        tags: {
+            sector: ['Biotech', 'Climate', 'Finance', 'Science'],
+            bottleneck: ['Trust', 'Coordination', 'Visibility'],
+            customer: ['Enterprises', 'Governments'],
+            product_type: ['Platform', 'Coordination Infrastructure'],
+            enabling_technology: ['Vision AI', 'Knowledge Graphs', 'Simulations'],
+            readiness: ['Requires Coordination Infrastructure'],
+            founder_fit: ['Bio Founder', 'Policy Entrepreneur'],
+            outcomes: ['Biodiversity', 'Resilience', 'Social Trust', 'Scientific Acceleration']
+        }
     }
 ];
 
