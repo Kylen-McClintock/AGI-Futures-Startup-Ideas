@@ -209,6 +209,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('proxypilot'),
         aiRationale: "ProxyPilot operates as a human-choice orchestration layer on top of massive capital allocation streams. The AGI Futures forecaster model projects a solid mid-tier outcome based on shifting existing proxy-advice assets, with a significant probability of unlocking a multi-billion dollar platform if creator-led delegation and personalized policy routing become the default behavior across major retail and embedded brokerages."
     },
+    'bioark': {
+        forecast: getSaaSMarketCurve('bioark'),
+        aiRationale: "Building a trust and funding layer for species recovery faces initial friction from deeply risk-averse, grant-based conservation funding models. However, the AGI Futures forecaster model assigns a high probability to reaching a $1B+ network valuation if it successfully acts as the unified proof-of-impact ledger for the global biodiversity funding gap, bridging private capital directly to verified, distributed ecological capacity."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {
