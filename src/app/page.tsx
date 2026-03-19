@@ -24,6 +24,7 @@ import civicpath_hero from "./civicpath/assets/hero.png";
 import biomex_hero from "./biomex/assets/hero_vista.png";
 import helioterra_hero from "./helioterra/assets/hero.png";
 import easy_exit_hero from "./easy-exit/assets/easy_exit_hero_1773609319540.png";
+import proxypilot_hero from "./proxypilot/assets/proxypilot_hero_1773874900098.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -57,7 +58,8 @@ export default async function Home() {
         "civicpath": { moat: 80, difficulty: 87, impact: 58, created_at: "2026-03-13T10:00:00Z", tags: { sector: ['Governance', 'Democracy', 'AI', 'Security'], bottleneck: ['Trust', 'Regulatory Friction', 'Social Fragmentation'], customer: ['Governments', 'Cities'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Operator-Led'], outcomes: ['Better Governance', 'Social Trust', 'Societal Cohesion', 'Freedom'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':78},'Social Trust':{'ai_scored':61},'Societal Cohesion':{'ai_scored':52},'Freedom':{'ai_scored':39}} },
         "biomex": { moat: 85, difficulty: 92, impact: 69, created_at: "2026-03-14T12:00:00Z", tags: { sector: ['Biotech', 'Healthcare', 'Longevity', 'AI'], bottleneck: ['Aging', 'Disease', 'Regulatory Friction'], customer: ['Doctors', 'Enterprises'], product_type: ['Platform', 'Therapeutic'], enabling_technology: ['Knowledge Graphs', 'Wearables', 'Synthetic Biology', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Bio Founder', 'Venture-Scale'], outcomes: ['Longevity', 'Human Flourishing', 'Scientific Acceleration', 'Resilience'] }, civilizational_impact_ratings: {'Longevity':{'ai_scored':80},'Human Flourishing':{'ai_scored':66},'Scientific Acceleration':{'ai_scored':76},'Resilience':{'ai_scored':54}} },
         "helioterra": { moat: 79, difficulty: 84, impact: 80, created_at: "2026-03-15T01:48:18Z", tags: { sector: ['Energy', 'Climate', 'Food'], bottleneck: ['Regulatory Friction', 'Coordination', 'Cultural Resistance'], customer: ['Enterprises', 'Governments'], product_type: ['Platform', 'Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Abundance', 'Climate', 'Resilience', 'Human Flourishing'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':87},'Climate':{'ai_scored':82},'Resilience':{'ai_scored':79},'Human Flourishing':{'ai_scored':70}} },
-        "easy-exit": { moat: 64, difficulty: 63, impact: 46, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Finance', 'Governance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Enterprises', 'Governments'], product_type: ['Infrastructure', 'Coordination Infrastructure'], enabling_technology: ['Autonomous Agents', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Policy Entrepreneur'], outcomes: ['Social Trust', 'Freedom', 'Better Governance', 'Differentially Defensive'] }, civilizational_impact_ratings: {'Social Trust':{'ai_scored':68},'Freedom':{'ai_scored':58},'Better Governance':{'ai_scored':41},'Differentially Defensive':{'ai_scored':37}} }
+        "easy-exit": { moat: 64, difficulty: 63, impact: 46, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Finance', 'Governance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Enterprises', 'Governments'], product_type: ['Infrastructure', 'Coordination Infrastructure'], enabling_technology: ['Autonomous Agents', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Policy Entrepreneur'], outcomes: ['Social Trust', 'Freedom', 'Better Governance', 'Differentially Defensive'] }, civilizational_impact_ratings: {'Social Trust':{'ai_scored':68},'Freedom':{'ai_scored':58},'Better Governance':{'ai_scored':41},'Differentially Defensive':{'ai_scored':37}} },
+        "proxypilot": { moat: 81, difficulty: 69, impact: 72, created_at: new Date().toISOString(), tags: { sector: ['Governance', 'Finance', 'AI'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS', 'Agent'], enabling_technology: ['Large Language Models', 'Autonomous Agents'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Policy Entrepreneur'], outcomes: ['Better Governance', 'Alignment', 'Societal Cohesion', 'Social Trust'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':88},'Alignment':{'ai_scored':81},'Societal Cohesion':{'ai_scored':75},'Social Trust':{'ai_scored':68}} }
     };
 
     // Helper to merge static data with DB data
@@ -311,6 +313,16 @@ export default async function Home() {
             href: "/easy-exit",
             themeColor: "hover:border-emerald-500/50 text-emerald-400",
             hoverTextColor: "group-hover:text-emerald-400",
+        }),
+        createProject({
+            slug: "proxypilot",
+            title: "ProxyPilot",
+            scoreTitle: "AI Native Proxy Voting",
+            description: "Transforming the $3.5 trillion proxy voting deadlock into an opportunity for retail investors to easily delegate their voting power to trusted creators, subject-matter experts, and bespoke AI pods.",
+            image: proxypilot_hero,
+            href: "/proxypilot",
+            themeColor: "hover:border-violet-500/50 text-violet-400",
+            hoverTextColor: "group-hover:text-violet-400",
         })
     ];
 

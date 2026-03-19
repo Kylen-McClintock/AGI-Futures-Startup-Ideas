@@ -82,6 +82,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/proxypilot`,
+            lastModified: date,
+            changeFrequency: 'monthly',
+            priority: 0.8,
+        },
+        {
             url: `${baseUrl}/problem-atlas`,
             lastModified: date,
             changeFrequency: 'weekly',

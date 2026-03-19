@@ -205,6 +205,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         },
         aiRationale: "Easy Exit operates as the foundational trust and verification protocol for agentic commerce. The AGI Futures forecaster model projects a high probability of reaching a $100M+ valuation by 2035 as consumer-agent adoption rapidly accelerates merchant compliance to machine-readable revocation standards. However, because the core protocol must remain open-source to succeed as an anti-lock-in standard, extracting a $100B+ hyper-scale outcome is structurally constrained. The primary path to a major venture exit ($1B+) relies on successfully monopolizing the enterprise execution network, verification tooling, and compliance data layer built on top of the free protocol."
     },
+    'proxypilot': {
+        forecast: getSaaSMarketCurve('proxypilot'),
+        aiRationale: "ProxyPilot operates as a human-choice orchestration layer on top of massive capital allocation streams. The AGI Futures forecaster model projects a solid mid-tier outcome based on shifting existing proxy-advice assets, with a significant probability of unlocking a multi-billion dollar platform if creator-led delegation and personalized policy routing become the default behavior across major retail and embedded brokerages."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

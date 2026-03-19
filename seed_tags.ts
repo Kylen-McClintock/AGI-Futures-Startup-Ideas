@@ -554,6 +554,32 @@ const startups = [
             founder_fit: ['Technical Founder', 'Policy Entrepreneur'],
             outcomes: ['Social Trust', 'Freedom', 'Better Governance', 'Differentially Defensive']
         }
+    },
+    {
+        slug: 'proxypilot',
+        name: 'ProxyPilot',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 81 },
+            difficulty_score: { ai_scored: 69 },
+            civilizational_impact_score: { ai_scored: 72 },
+            civilizational_impact_ratings: {
+                "Better Governance": { ai_scored: 88 },
+                "Alignment": { ai_scored: 81 },
+                "Societal Cohesion": { ai_scored: 75 },
+                "Social Trust": { ai_scored: 68 }
+            }
+        },
+        tags: {
+            sector: ['Governance', 'Finance', 'AI'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Consumers', 'Enterprises'],
+            product_type: ['Platform', 'SaaS', 'Agent'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Policy Entrepreneur'],
+            outcomes: ['Better Governance', 'Alignment', 'Societal Cohesion', 'Social Trust']
+        }
     }
 ];
 
