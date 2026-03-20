@@ -26,7 +26,7 @@ import cadWorkflowImage from './assets/cad_workflow.png';
 import pricingEngineImage from './assets/pricing_engine.png';
 import manualLaborImage from './assets/manual_labor.png';
 import thematicClosingImage from './assets/thematic_closing.png';
-import dataValidationAgentImg from './assets/data_validation_agent.png';
+import arWorkerDataImg from './assets/ar_worker_data.png';
 
 // Components
 import { ICPUseCases } from './components/ICPUseCases';
@@ -245,12 +245,14 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
 
                     <div className="mt-20 mb-8">
                          <h3 className="text-3xl font-light text-white mb-12 border-b border-white/10 pb-4">Data Source Visualization</h3>
-                         <div className="grid lg:grid-cols-2 gap-12 items-center">
+                         
+                         <div className="mb-16">
                             <VerifiedWorkflowObject />
-                            <div className="relative w-full aspect-[4/3] lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
-                                <Image src={dataValidationAgentImg} alt="Data validation agent reviewing streams of human workflow paths" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" priority />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/30 via-transparent to-[var(--primary)]/10 pointer-events-none mix-blend-overlay" />
-                            </div>
+                         </div>
+
+                         <div className="relative w-full aspect-[21/9] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
+                            <Image src={arWorkerDataImg} alt="Blue-collar worker using AR smart glasses to capture workflow telemetry" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" priority />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/30 via-transparent to-[var(--primary)]/10 pointer-events-none mix-blend-overlay" />
                          </div>
                     </div>
 
