@@ -51,6 +51,13 @@ export function VerifiedWorkflowObject() {
                             </div>
                             <span className="text-xs font-mono text-[var(--secondary)]">84% CONF</span>
                         </div>
+                        <div className="glass-panel p-3 rounded-xl border border-white/5 bg-white/[0.02] flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                                <span className="text-white/80 text-sm">Biometric Authenticity</span>
+                            </div>
+                            <span className="text-xs font-mono text-emerald-400">PASSED</span>
+                        </div>
                     </div>
                 </div>
 
@@ -61,10 +68,14 @@ export function VerifiedWorkflowObject() {
                     <pre>  <span className="text-sky-400">"id"</span>: <span className="text-amber-300">"wf_9283749"</span>,</pre>
                     <pre>  <span className="text-sky-400">"creator"</span>: <span className="text-amber-300">"0x4F...8B2"</span>,</pre>
                     <pre>  <span className="text-sky-400">"domain"</span>: <span className="text-amber-300">"hvac_plumbing"</span>,</pre>
-                    <pre>  <span className="text-sky-400">"scarcity_score"</span>: <span className="text-purple-400">0.94</span>,</pre>
+                    <pre>  <span className="text-sky-400">"scarcity_score"</span>: <span className="text-purple-400">0.82</span>,</pre>
+                    <pre>  <span className="text-sky-400">"validation"</span>: {'{\n'}</pre>
+                    <pre>    <span className="text-sky-400">"human_verified"</span>: <span className="text-purple-400">true</span>,</pre>
+                    <pre>    <span className="text-sky-400">"synthetic_data_ratio"</span>: <span className="text-purple-400">0.0</span></pre>
+                    <pre>  {'}'},</pre>
                     <pre>  <span className="text-sky-400">"market_pricing"</span>: {'{\n'}</pre>
-                    <pre>    <span className="text-sky-400">"spot_value"</span>: <span className="text-purple-400">420.50</span>,</pre>
-                    <pre>    <span className="text-sky-400">"residual_royalty"</span>: <span className="text-amber-300">"true"</span></pre>
+                    <pre>    <span className="text-sky-400">"spot_value_usd"</span>: <span className="text-purple-400">12.50</span>,</pre>
+                    <pre>    <span className="text-sky-400">"royalty_accrual"</span>: <span className="text-purple-400">0.05</span></pre>
                     <pre>  {'}'}</pre>
                     <pre className="text-emerald-400">{'}'}</pre>
                 </div>
@@ -72,7 +83,7 @@ export function VerifiedWorkflowObject() {
             
             <div className="mt-8 pt-4 border-t border-[var(--primary)]/10 flex justify-between items-center relative z-10">
                 <span className="text-xs text-white/40 tracking-widest uppercase">Live Quote</span>
-                <span className="text-xl font-mono text-[var(--primary)]">$420.50 <span className="text-sm text-white/50">+ Revenue Share</span></span>
+                <span className="text-xl font-mono text-[var(--primary)]">$12.50 <span className="text-sm text-white/50">+ Revenue Share</span></span>
             </div>
         </div>
     );

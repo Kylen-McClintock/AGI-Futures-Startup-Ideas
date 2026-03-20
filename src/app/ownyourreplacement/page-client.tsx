@@ -26,6 +26,7 @@ import cadWorkflowImage from './assets/cad_workflow.png';
 import pricingEngineImage from './assets/pricing_engine.png';
 import manualLaborImage from './assets/manual_labor.png';
 import thematicClosingImage from './assets/thematic_closing.png';
+import dataValidationAgentImg from './assets/data_validation_agent.png';
 
 // Components
 import { ICPUseCases } from './components/ICPUseCases';
@@ -118,7 +119,7 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
 
                         <div className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-r from-[var(--primary)]/10 to-transparent mb-12 max-w-4xl border-l-4 border-l-[var(--primary)] shadow-2xl">
                             <p className="text-lg text-white/90 leading-relaxed font-light">
-                                Each contribution is priced when submitted. Contributors receive tokens immediately. They can sell into liquidity or <strong className="font-medium text-[var(--primary)]">hold an income-replacement hedge</strong> that keeps paying as more buyers purchase access to the market over time.
+                                Each contribution is priced when submitted. Contributors receive tokens immediately. They can sell into liquidity or <strong className="font-medium text-[var(--primary)]">hold an income-replacement hedge</strong> that keeps paying as more buyers purchase access to train on the data over time.
                             </p>
                         </div>
 
@@ -231,9 +232,26 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                         <ProductStackGrid />
                     </div>
 
+                    <div className="mb-16">
+                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4 mb-8">
+                            <h3 className="text-3xl font-light text-white">Specific examples by <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
+                            <div className="mt-4 sm:mt-0">
+                                <InlineTags tags={tags.customer} theme="amber" />
+                            </div>
+                        </div>
+
+                        <ICPUseCases />
+                    </div>
+
                     <div className="mt-20 mb-8">
                          <h3 className="text-3xl font-light text-white mb-12 border-b border-white/10 pb-4">Data Source Visualization</h3>
-                         <VerifiedWorkflowObject />
+                         <div className="grid lg:grid-cols-2 gap-12 items-center">
+                            <VerifiedWorkflowObject />
+                            <div className="relative w-full aspect-[4/3] lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 group">
+                                <Image src={dataValidationAgentImg} alt="Data validation agent reviewing streams of human workflow paths" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" priority />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/30 via-transparent to-[var(--primary)]/10 pointer-events-none mix-blend-overlay" />
+                            </div>
+                         </div>
                     </div>
 
                     <div className="mb-16 mt-12 glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[#06090c] to-[var(--primary)]/5">
@@ -254,20 +272,6 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                                 Teach the machine. Own the upside.
                             </p>
                         </div>
-                    </div>
-
-                    <div className="w-full h-px bg-white/5 my-20" />
-
-                    {/* Specific Examples by ICP Grid */}
-                    <div className="mb-16">
-                        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end border-b border-white/10 pb-4 mb-8">
-                            <h3 className="text-3xl font-light text-white">Specific examples by <HoverAcronym acronym="ICP" definition="ideal customer profile." /></h3>
-                            <div className="mt-4 sm:mt-0">
-                                <InlineTags tags={tags.customer} theme="amber" />
-                            </div>
-                        </div>
-
-                        <ICPUseCases />
                     </div>
                 </motion.section>
 
@@ -487,7 +491,7 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                             </li>
                         </ul>
                         <p className="text-lg text-[var(--primary)]/90 font-light mt-8 pl-6 border-l-2 border-[var(--primary)]/50">
-                            That creates a compounding feedback loop. AGI does not obsolete the platform. It increases the value of the market that decides what machine-teachable labor is worth before and during the transition.
+                            That creates a compounding feedback loop. As AGI automates more workflows on the path toward superintelligence (ASI), the types of human training data that remain scarce and in demand will constantly evolve. A single platform that captures and prices this remaining edge of human capability uses its token to align incentives perfectly: participants get paid to continually adapt their workflows to exactly what the frontier models need next.
                         </p>
                     </div>
                 </motion.section>
@@ -654,14 +658,13 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                         <ChevronDown className="w-5 h-5 text-white/30 group-open:rotate-180 transition-transform duration-300" />
                     </summary>
                     <div className="px-6 pb-6 pt-2 border-t border-white/5">
-                        <details className="mb-8 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
-                            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                        <div className="mb-8 overflow-hidden">
+                            <div className="py-4 border-b border-white/10 transition-colors">
                                 <h4 className="text-sm font-bold text-white/60 uppercase tracking-wider !mb-0 flex items-center gap-4">
                                     <span className="w-8 h-px bg-[var(--primary)]/50 hidden sm:block"></span>
                                     Acronyms
                                 </h4>
-                                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
-                            </summary>
+                            </div>
                             <div className="pt-8">
                                 <ul className="text-sm text-white/60 space-y-4">
                                     <li><strong className="text-white/80">CAD:</strong> computer-aided design: software used by engineers and designers to create precise 2D and 3D models.</li>
@@ -670,16 +673,15 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                                     <li><strong className="text-white/80">Revenue-sharing token:</strong> a blockchain-based asset that represents a claim on a defined share of platform revenue, subject to legal structure.</li>
                                 </ul>
                             </div>
-                        </details>
+                        </div>
                         
-                        <details className="group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
-                            <summary className="list-none flex justify-between items-center outline-none py-4 border-b border-white/10 hover:border-[var(--primary)]/50 transition-colors">
+                        <div className="mb-12 overflow-hidden">
+                            <div className="py-4 border-b border-white/10 transition-colors">
                                 <h4 className="text-sm font-bold text-white/60 uppercase tracking-wider !mb-0 flex items-center gap-4">
                                     <span className="w-8 h-px bg-[var(--primary)]/50 hidden sm:block"></span>
                                     References
                                 </h4>
-                                <ChevronDown className="w-5 h-5 text-white/40 group-open:rotate-180 transition-transform duration-300" />
-                            </summary>
+                            </div>
                             <div className="pt-8">
                                 <div className="grid grid-cols-1 gap-4 text-xs font-light text-white/50 leading-relaxed">
                                     <div>[1] Pew Research Center, <a href="https://www.pewresearch.org/" target="_blank" className="hover:text-[var(--primary)] decoration-[var(--primary)] underline underline-offset-2">"U.S. workers are more worried than hopeful about future AI use in the workplace," 2025. ↗</a></div>
@@ -693,7 +695,7 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                                     <div>[9] Reuters, <a href="https://www.reuters.com/" target="_blank" className="hover:text-[var(--primary)] decoration-[var(--primary)] underline underline-offset-2">"US securities regulator issues long-awaited crypto guidance," March 17, 2026. ↗</a></div>
                                 </div>
                             </div>
-                        </details>
+                        </div>
                     </div>
                 </details>
 
