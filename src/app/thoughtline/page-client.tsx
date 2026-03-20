@@ -2,7 +2,8 @@
 
 import { InterestedButton } from "@/components/InterestedButton";
 import { ArtifactSection } from "@/components/ArtifactSection";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
 import Image from "next/image";
 import { ProjectTagsProps, InlineTags } from "@/components/ProjectTags";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
@@ -23,6 +24,8 @@ import glassesImage from './assets/thoughtline_glasses.png';
 import futureImage from './assets/thoughtline_future.png';
 
 export default function ThoughtlineClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
+    const [activeIcp, setActiveIcp] = useState(0);
+
     // Fallbacks
     const tags = {
         sector: initialTags?.sector?.length ? initialTags.sector : ['AI', 'Healthcare', 'Science'],
@@ -238,57 +241,128 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         </p>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-3xl border border-white/5 bg-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-colors group">
-                            <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/20 mb-6 flex items-center justify-center">
-                                <Mic className="w-6 h-6 text-[var(--secondary)]" />
-                            </div>
-                            <h3 className="text-2xl font-light text-white mb-4">Speech restoration</h3>
-                            <div className="text-sm text-[var(--primary)] mb-4 tracking-widest uppercase font-mono">First Real Wedge</div>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                A patient with <HoverAcronym acronym="ALS" definition="amyotrophic lateral sclerosis" theme="violet" /> thinks, "I want to go outside now," and Thoughtline turns deliberate inner voice into fluent speech. NIH reported error rates as low as 14% to 33% on a 50-word vocabulary, with participants preferring imagined speech.
-                                <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. Decoding inner speech from brain signals. 2025." theme="violet" />
-                            </p>
-                        </motion.div>
+                    <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mt-12">
+                        {/* Selector Column */}
+                        <div className="w-full lg:w-1/2 flex flex-col gap-4">
+                            {[
+                                {
+                                    id: 0,
+                                    title: "Speech restoration",
+                                    badge: "First Real Wedge",
+                                    icon: Mic,
+                                    desc: "A patient with ALS thinks, \"I want to go outside now,\" and Thoughtline turns deliberate inner voice into fluent speech. NIH reported error rates as low as 14% to 33% on a 50-word vocabulary.",
+                                    citationLabel: "[4]",
+                                    citationUrl: "#",
+                                    citationText: "NIH. Decoding inner speech from brain signals. 2025."
+                                },
+                                {
+                                    id: 1,
+                                    title: "Locked-in patients",
+                                    badge: "Second Implant Wedge",
+                                    icon: Activity,
+                                    desc: "A patient who has lost reliable motor output uses Thoughtline as a faster path from intention to communication and environmental control. Regained agency without manual friction.",
+                                    citationLabel: "[9]",
+                                    citationUrl: "#",
+                                    citationText: "Moses DA et al. Neuroprosthesis for decoding speech. NEJM, 2021."
+                                },
+                                {
+                                    id: 2,
+                                    title: "Severe psychiatric care",
+                                    badge: "Plausible Later Wedge",
+                                    icon: Brain,
+                                    desc: "A clinical system that learns harmful state transitions, maps them to a personalized intervention layer, and tests closed-loop prompting to disrupt depressive spirals.",
+                                    citationLabel: "[8]",
+                                    citationUrl: "#",
+                                    citationText: "Merk T et al. Nature Biomedical Engineering, 2025."
+                                },
+                                {
+                                    id: 3,
+                                    title: "High-performance user",
+                                    badge: "Later Mass Market",
+                                    icon: Workflow,
+                                    desc: "A founder walks into a hard meeting and silently thinks, \"Show me the strongest proof and calm the spiral.\" Thoughtline retrieves the context in real time through AR glasses.",
+                                    citationLabel: "[10]",
+                                    citationUrl: "#",
+                                    citationText: "Google. 2025."
+                                }
+                            ].map((icp, idx) => (
+                                <button
+                                    key={icp.id}
+                                    onClick={() => setActiveIcp(icp.id)}
+                                    className={`text-left p-6 sm:p-8 rounded-3xl border transition-all duration-300 group ${
+                                        activeIcp === icp.id 
+                                            ? "glass-panel bg-[var(--primary)]/10 border-[var(--primary)]/40 shadow-[0_0_30px_rgba(var(--primary-rgb),0.1)]" 
+                                            : "glass-panel border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-[var(--primary)]/20"
+                                    }`}
+                                >
+                                    <div className="flex items-start gap-5 sm:gap-6">
+                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                                            activeIcp === icp.id ? "bg-[var(--primary)]/20" : "bg-white/5 group-hover:bg-[var(--primary)]/10"
+                                        }`}>
+                                            <icp.icon className={`w-6 h-6 transition-colors duration-300 ${activeIcp === icp.id ? "text-[var(--secondary)]" : "text-white/40 group-hover:text-[var(--secondary)]/70"}`} />
+                                        </div>
+                                        <div>
+                                            <h3 className={`text-xl sm:text-2xl font-light mb-2 transition-colors duration-300 ${activeIcp === icp.id ? "text-white" : "text-white/70"}`}>
+                                                {icp.title}
+                                            </h3>
+                                            <div className="text-xs sm:text-sm text-[var(--primary)] mb-3 tracking-widest uppercase font-mono">
+                                                {icp.badge}
+                                            </div>
+                                            <AnimatePresence>
+                                                {activeIcp === icp.id && (
+                                                    <motion.div
+                                                        initial={{ opacity: 0, height: 0 }}
+                                                        animate={{ opacity: 1, height: "auto" }}
+                                                        exit={{ opacity: 0, height: 0 }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <p className="text-white/70 leading-relaxed font-light mt-4">
+                                                            {icp.desc}
+                                                            <span className="block mt-2">
+                                                                <ExpandableCitation label={icp.citationLabel} sourceUrl={icp.citationUrl} sourceText={icp.citationText} theme="violet" />
+                                                            </span>
+                                                        </p>
+                                                    </motion.div>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
+                                    </div>
+                                </button>
+                            ))}
+                        </div>
 
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-3xl border border-white/5 bg-[var(--primary)]/10 hover:border-[var(--primary)]/40 transition-colors group">
-                            <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/20 mb-6 flex items-center justify-center">
-                                <Activity className="w-6 h-6 text-[var(--secondary)]" />
-                            </div>
-                            <h3 className="text-2xl font-light text-white mb-4">Locked-in patients</h3>
-                            <div className="text-sm text-[var(--primary)] mb-4 tracking-widest uppercase font-mono">Second Implant Wedge</div>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                A patient who has lost reliable motor output uses Thoughtline as a faster path from intention to communication and environmental control. Regained agency: speak, call a nurse, operate software without the friction of manual assistive interfaces.
-                                <ExpandableCitation label="[9]" sourceUrl="#" sourceText="Moses DA et al. Neuroprosthesis for decoding speech. NEJM, 2021." theme="violet" />
-                            </p>
-                        </motion.div>
-
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-3xl border border-white/5 bg-[var(--primary)]/5 hover:border-[var(--primary)]/40 transition-colors group">
-                            <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 mb-6 flex items-center justify-center">
-                                <Brain className="w-6 h-6 text-[var(--secondary)]" />
-                            </div>
-                            <h3 className="text-2xl font-light text-white mb-4">Severe psychiatric care</h3>
-                            <div className="text-sm text-white/40 mb-4 tracking-widest uppercase font-mono">Plausible Later Wedge</div>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                A clinical system that learns harmful state transitions, maps them to a personalized intervention layer, and tests closed-loop prompting. Network targets for emotion decoding in deep brain stimulation patients with major depression make this legible.
-                                <ExpandableCitation label="[8]" sourceUrl="#" sourceText="Merk T et al. Nature Biomedical Engineering, 2025." theme="violet" />
-                                <ExpandableCitation label="[14]" sourceUrl="#" sourceText="WHO. Depressive disorder. 2025." theme="violet" />
-                            </p>
-                        </motion.div>
-
-                        <motion.div whileHover={{ scale: 1.02 }} className="glass-panel p-8 rounded-3xl border border-white/5 bg-[var(--primary)]/5 hover:border-[var(--primary)]/40 transition-colors group">
-                            <div className="w-12 h-12 rounded-xl bg-[var(--primary)]/10 mb-6 flex items-center justify-center">
-                                <Workflow className="w-6 h-6 text-[var(--secondary)]" />
-                            </div>
-                            <h3 className="text-2xl font-light text-white mb-4">High-performance user</h3>
-                            <div className="text-sm text-white/40 mb-4 tracking-widest uppercase font-mono">Later Mass Market</div>
-                            <p className="text-white/70 leading-relaxed font-light">
-                                A founder walks into a hard meeting and silently thinks, "Show me the strongest proof, calm the spiral, and prep the objection tree." Thoughtline retrieves the right context and returns the right frame in real time, likely arriving through glasses or earbuds.
-                                <ExpandableCitation label="[7]" sourceUrl="#" sourceText="Su K et al. 2025." theme="violet" />
-                                <ExpandableCitation label="[10]" sourceUrl="#" sourceText="Google. 2025." theme="violet" />
-                                <ExpandableCitation label="[11]" sourceUrl="#" sourceText="Meta. 2024." theme="violet" />
-                            </p>
-                        </motion.div>
+                        {/* Image Viewer Column */}
+                        <div className="w-full lg:w-1/2 mt-8 lg:mt-0 lg:sticky lg:top-32 h-[400px] sm:h-[500px] lg:h-[600px] relative rounded-[2rem] overflow-hidden border border-white/10 glass-panel shadow-2xl">
+                            <AnimatePresence mode="wait">
+                                {[
+                                    { id: 0, src: interfaceImage, alt: "Neural interface for speech restoration" },
+                                    { id: 1, src: clinicalImage, alt: "Clinical assistive tech for locked in patients" },
+                                    { id: 2, src: futureImage, alt: "Advanced psychiatric brain stimulation visualization" },
+                                    { id: 3, src: glassesImage, alt: "High performance AR glasses interface" },
+                                ].map((img) => (
+                                    activeIcp === img.id && (
+                                        <motion.div
+                                            key={img.id}
+                                            initial={{ opacity: 0, scale: 1.05 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.95 }}
+                                            transition={{ duration: 0.7, ease: "easeInOut" }}
+                                            className="absolute inset-0"
+                                        >
+                                            <Image 
+                                                src={img.src} 
+                                                alt={img.alt} 
+                                                fill 
+                                                className="object-cover"
+                                                quality={90}
+                                                priority={activeIcp === 0}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/80 via-transparent to-transparent pointer-events-none" />
+                                        </motion.div>
+                                    )
+                                ))}
+                            </AnimatePresence>
+                        </div>
                     </div>
                 </motion.section>
 
@@ -656,6 +730,9 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
 
             </div>
         
+            {/* Artifact Section / Proof of Work */}
+            <ArtifactSection projectSlug="thoughtline" />
+
             {/* Auto Forecast Component */}
             <AutoForecastInjector />
 

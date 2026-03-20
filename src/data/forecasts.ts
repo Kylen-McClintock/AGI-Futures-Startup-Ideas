@@ -227,6 +227,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         },
         aiRationale: "As manual and digital tasks are automated, the need for high-quality, verified human workflow data will surge. Market adoption depends heavily on establishing trust and overcoming regulatory hurdles around tokenized worker compensation. The upside is linked to becoming the standard marketplace for machine-teachable labor."
     },
+    'thoughtline': {
+        forecast: getDeepTechCurve('thoughtline'),
+        aiRationale: "Thoughtline represents a highly regulated, capital-intensive DeepTech play with extreme execution risk but paradigm-shifting upside. The AGI Futures forecaster model severely throttles probability of near-term hyperscale due to clinical validation timelines, hardware iteration cycles, and BCI policy uncertainty. However, the curve inflects massively upward by 2040 as the interface generalizes from clinical speech restoration to a mass-market intent router and personalized cognitive engine."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {
