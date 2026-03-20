@@ -213,6 +213,20 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('bioark'),
         aiRationale: "Building a trust and funding layer for species recovery faces initial friction from deeply risk-averse, grant-based conservation funding models. However, the AGI Futures forecaster model assigns a high probability to reaching a $1B+ network valuation if it successfully acts as the unified proof-of-impact ledger for the global biodiversity funding gap, bridging private capital directly to verified, distributed ecological capacity."
     },
+    'ownyourreplacement': {
+        forecast: {
+            id: `fc_ownyourreplacement`,
+            targetIdeaSlug: 'ownyourreplacement',
+            sourceType: "AI",
+            updatedAt: new Date().toISOString(),
+            curves: {
+                '2030-01-01': { horizonDate: '2030-01-01', probabilities: generateCurve({ 1e7: 60, 1e9: 15, 1e11: 0.1 }, 'ownyourreplacement', 2030) },
+                '2035-01-01': { horizonDate: '2035-01-01', probabilities: generateCurve({ 1e7: 85, 1e9: 40, 1e11: 5 }, 'ownyourreplacement', 2035) },
+                '2040-01-01': { horizonDate: '2040-01-01', probabilities: generateCurve({ 1e7: 95, 1e9: 65, 1e11: 15 }, 'ownyourreplacement', 2040) }
+            }
+        },
+        aiRationale: "As manual and digital tasks are automated, the need for high-quality, verified human workflow data will surge. Market adoption depends heavily on establishing trust and overcoming regulatory hurdles around tokenized worker compensation. The upside is linked to becoming the standard marketplace for machine-teachable labor."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

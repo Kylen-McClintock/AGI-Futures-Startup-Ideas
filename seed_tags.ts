@@ -606,6 +606,32 @@ const startups = [
             founder_fit: ['Bio Founder', 'Policy Entrepreneur'],
             outcomes: ['Biodiversity', 'Resilience', 'Social Trust', 'Scientific Acceleration']
         }
+    },
+    {
+        slug: 'ownyourreplacement',
+        name: 'Own Your Replacement',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 86 },
+            difficulty_score: { ai_scored: 84 },
+            civilizational_impact_score: { ai_scored: 70 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 77 },
+                "Freedom": { ai_scored: 73 },
+                "Social Trust": { ai_scored: 58 },
+                "Decentralization": { ai_scored: 70 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Robotics', 'Finance', 'Governance'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Enterprises', 'Startups'],
+            product_type: ['Marketplace', 'Coordination Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Vision AI', 'Voice AI', 'Blockchain', 'Tokenized Assets'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Freedom', 'Social Trust', 'Decentralization']
+        }
     }
 ];
 
