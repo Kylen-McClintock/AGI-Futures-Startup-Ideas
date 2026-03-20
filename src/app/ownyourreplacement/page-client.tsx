@@ -33,6 +33,9 @@ import ProductStackGrid from './components/ProductStackGrid';
 import { HoverAcronym } from '@/components/HoverAcronym';
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
+import { VerifiedWorkflowObject } from './components/VerifiedWorkflowObject';
+import { BusinessModelFlow } from './components/BusinessModelFlow';
+import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector";
 
 export default function OwnYourReplacementClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks based on script text
@@ -87,15 +90,37 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
-                        <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6 leading-tight">
-                            Own Your Replacement<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-[var(--primary)]/90 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-[var(--primary)]/40 sm:pl-6">Automation Income Hedge</span>
+                        <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-8 leading-tight">
+                            Own Your Replacement
                         </h1>
+                        <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[var(--primary)]/40 bg-[var(--primary)]/10 mb-8 shadow-[0_0_30px_var(--primary)]/20 shadow-inner group cursor-default">
+                            <div className="w-2.5 h-2.5 rounded-full bg-[var(--primary)] animate-pulse" />
+                            <span className="text-xl sm:text-2xl text-[var(--primary)] font-medium tracking-wide">Automation Income Hedge</span>
+                        </div>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-8 max-w-3xl">
                             A worker-first marketplace that prices human workflow data in real time and pays contributors in revenue-sharing tokens, so the people training AI agents and robots can keep a proportional claim on the automation economy they help create.
                         </p>
-                        <p className="text-lg text-white/70 leading-relaxed font-light mb-8 max-w-3xl">
-                            A freelance plumber records a rare repair with voice narration. A mechanical engineer captures a complex computer-aided design workflow. A service company lets employees opt in, then shares value between the company and the workers generating the data. Each contribution is priced when it is submitted. Contributors receive tokens immediately. They can sell into liquidity or hold an income-replacement hedge that keeps paying as more buyers purchase access to the market over time.
-                        </p>
+                        
+                        <div className="grid sm:grid-cols-3 gap-6 mb-8 max-w-4xl">
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-[var(--primary)]/30 transition-all duration-300">
+                                <strong className="text-white text-lg block mb-2">The Plumber</strong>
+                                <span className="text-white/60 text-sm leading-relaxed block">Records a rare repair with voice narration.</span>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.04] hover:border-[var(--primary)]/30 transition-all duration-300">
+                                <strong className="text-white text-lg block mb-2">The Engineer</strong>
+                                <span className="text-white/60 text-sm leading-relaxed block">Captures a complex computer-aided design workflow.</span>
+                            </div>
+                            <div className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/20 bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-all duration-300 shadow-[inset_0_0_20px_var(--primary)]/10">
+                                <strong className="text-[var(--tertiary)] text-lg block mb-2">The Enterprise</strong>
+                                <span className="text-white/60 text-sm leading-relaxed block">Lets employees opt in, sharing value between the company and workers.</span>
+                            </div>
+                        </div>
+
+                        <div className="glass-panel p-6 sm:p-8 rounded-[2rem] border border-[var(--primary)]/30 bg-gradient-to-r from-[var(--primary)]/10 to-transparent mb-12 max-w-4xl border-l-4 border-l-[var(--primary)] shadow-2xl">
+                            <p className="text-lg text-white/90 leading-relaxed font-light">
+                                Each contribution is priced when submitted. Contributors receive tokens immediately. They can sell into liquidity or <strong className="font-medium text-[var(--primary)]">hold an income-replacement hedge</strong> that keeps paying as more buyers purchase access to the market over time.
+                            </p>
+                        </div>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
@@ -206,7 +231,12 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                         <ProductStackGrid />
                     </div>
 
-                    <div className="mb-16 mt-20 glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[#06090c] to-[var(--primary)]/5">
+                    <div className="mt-20 mb-8">
+                         <h3 className="text-3xl font-light text-white mb-12 border-b border-white/10 pb-4">Data Source Visualization</h3>
+                         <VerifiedWorkflowObject />
+                    </div>
+
+                    <div className="mb-16 mt-12 glass-panel p-8 sm:p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[#06090c] to-[var(--primary)]/5">
                         <h3 className="text-2xl font-light text-white mb-6 flex items-center gap-3">
                             <Database className="w-6 h-6 text-[var(--secondary)]" /> Pricing algorithm
                         </h3>
@@ -302,45 +332,16 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
 
                     
                     <div className="mb-16">
-                        <h3 className="text-3xl font-light text-white mb-8 border-b border-white/10 pb-4">Business Model & Value flow</h3>
-                        
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                            <div className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/10 bg-gradient-to-b from-[var(--primary)]/10 to-transparent">
-                                <strong className="text-white text-xl block mb-4 border-b border-white/10 pb-2">Buyers</strong>
-                                <p className="text-white/60 text-sm font-light mb-4">AI labs, robotics firms, and automation teams pay for:</p>
-                                <ul className="text-white/80 text-sm font-light space-y-2">
-                                    <li>• category subscriptions to workflow data streams</li>
-                                    <li>• custom data-collection campaigns</li>
-                                    <li>• exclusivity premiums & secure training-access</li>
-                                    <li>• premium downloadable dataset rights</li>
-                                </ul>
-                            </div>
-                            <div className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/10 bg-gradient-to-b from-[var(--secondary)]/10 to-transparent">
-                                <strong className="text-white text-xl block mb-4 border-b border-white/10 pb-2">Contributors</strong>
-                                <p className="text-white/60 text-sm font-light mb-4">Workers submit data and are paid in tokens priced at submission. They can:</p>
-                                <ul className="text-white/80 text-sm font-light space-y-2">
-                                    <li>• sell immediately into liquidity</li>
-                                    <li>• keep holding as a proportional claim on future revenue</li>
-                                    <li>• build an automation hedge</li>
-                                </ul>
-                            </div>
-                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-                                <strong className="text-[var(--tertiary)] text-xl block mb-4 border-b border-white/10 pb-2">Enterprises</strong>
-                                <p className="text-white/80 text-sm font-light">
-                                    Companies can onboard teams, define opt-in rules, choose what remains private vs marketplace, and negotiate value splits with employees. For sensitive workflows, enterprise-private access keeps data inside the company boundary.
-                                </p>
-                            </div>
-                            <div className="glass-panel p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-                                <strong className="text-[var(--tertiary)] text-xl block mb-4 border-b border-white/10 pb-2">Outside Capital</strong>
-                                <p className="text-white/80 text-sm font-light mb-6">
-                                    Outside participants provide liquidity and price discovery. They make it possible for workers to convert future-looking claims into present liquidity.
-                                </p>
-                                <strong className="text-white text-md block mb-2 border-t border-white/10 pt-4">Platform</strong>
-                                <p className="text-white/80 text-sm font-light">
-                                    Keeps roughly <strong>30 percent</strong> of gross buyer revenue for infrastructure, compliance, product, and trust & safety.
-                                </p>
-                            </div>
+                        <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Operations
                         </div>
+                        <h3 className="text-3xl font-light text-white mb-8 border-b border-white/10 pb-4">Business Model & Value Flow</h3>
+                        
+                        <p className="text-xl text-[var(--primary)]/80 font-light leading-relaxed mb-12 max-w-3xl">
+                            The platform acts as a trust and pricing layer between human workers generating difficult-to-fake workflow traces and the AI labs that need them.
+                        </p>
+                        
+                        <BusinessModelFlow />
                     </div>
                 </motion.section>
 
@@ -439,9 +440,9 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                             <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-6">
                                 Go To Market
                             </h2>
-                            <div className="bg-white/5 p-6 rounded-2xl border-l-4 border-l-[var(--secondary)] mb-6">
-                                <p className="text-xl sm:text-2xl text-white font-serif italic text-[var(--primary)]">
-                                    “I got paid to teach my replacement, and I can show you the math.”
+                            <div className="bg-white/5 p-8 rounded-3xl border-l-4 border-l-[var(--secondary)] mb-8 shadow-xl shadow-[var(--primary)]/5">
+                                <p className="text-2xl sm:text-3xl text-white font-serif italic text-[var(--primary)] leading-snug">
+                                    “I'm training my AI replacement, but this time I'm keeping the equity.”
                                 </p>
                             </div>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
@@ -693,9 +694,21 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                                 </div>
                             </div>
                         </details>
-                        <ArtifactSection projectSlug="ownyourreplacement" />
                     </div>
                 </details>
+
+                {/* Auto Forecast Component */}
+                <AutoForecastInjector />
+
+                <div className="w-full h-px bg-gradient-to-r from-transparent via-[var(--primary)]/20 to-transparent my-20" />
+
+                {/* Proof of Work / Artifacts Section */}
+                <ArtifactSection projectSlug="ownyourreplacement" />
+
+                {/* Bottom Interested Button */}
+                <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                    <InterestedButton projectSlug="ownyourreplacement" />
+                </div>
             </div >
         </main >
     );
