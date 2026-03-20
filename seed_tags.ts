@@ -632,6 +632,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Freedom', 'Social Trust', 'Decentralization']
         }
+    },
+    {
+        slug: 'thoughtline',
+        name: 'Thoughtline',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 84 },
+            difficulty_score: { ai_scored: 92 },
+            civilizational_impact_score: { ai_scored: 68 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 88 },
+                "Freedom": { ai_scored: 79 },
+                "Social Trust": { ai_scored: 41 },
+                "Alignment": { ai_scored: 64 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Healthcare', 'Science'],
+            bottleneck: ['Trust', 'Disease', 'Meaning Crisis'],
+            customer: ['Consumers', 'Doctors'],
+            product_type: ['Personalized AI', 'Hardware'],
+            enabling_technology: ['Large Language Models', 'Voice AI', 'Wearables', 'Augmented Reality', 'Autonomous Agents'],
+            readiness: ['Build Soon'],
+            founder_fit: ['Technical Founder', 'Capital Intensive'],
+            outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment']
+        }
     }
 ];
 
