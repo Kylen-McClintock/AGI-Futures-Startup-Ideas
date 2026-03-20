@@ -31,7 +31,9 @@ export function Footer() {
                 
                 {/* Branding or simple wordmark */}
                 <div className="flex flex-col items-center gap-2 mb-2">
-                    <img src="/logo.png" alt="AGI Futures Logo" className="h-12 md:h-20 w-auto object-contain" />
+                    <Link href="/" className="hover:opacity-80 transition-opacity">
+                        <img src="/logo.png" alt="AGI Futures Logo" className="h-12 md:h-20 w-auto object-contain" />
+                    </Link>
                     <span className={`text-sm font-mono tracking-widest ${color} uppercase mx-auto text-center`}>{label}</span>
                 </div>
 
