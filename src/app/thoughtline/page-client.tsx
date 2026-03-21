@@ -87,6 +87,16 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             A personalized AI and neural-interface platform that helps shape your inner voice toward clarity, courage, calm, and focus, then lets you communicate with that AI at the speed of thought.
                         </p>
 
+                        <div className="p-6 sm:p-8 rounded-[1.5rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent max-w-4xl mb-10 shadow-[0_0_30px_rgba(var(--primary-rgb),0.05)]">
+                            <p className="text-lg sm:text-xl text-white/80 leading-relaxed font-light drop-shadow-sm border-l-2 border-[var(--primary)]/40 pl-5">
+                                Picture the real use case. You are about to pitch, flirt, negotiate, train, grieve, focus, or decide. The quality of that moment is shaped less by the world outside you than by the voice inside you. Thoughtline learns the patterns of your self-talk, your goals, your emotional tendencies, and the situations where you drift off course. Then it helps you return to a more capable state, not with generic affirmations, but with interventions tuned to your actual mind. As the interface improves, it stops feeling like an app and starts feeling like a second channel of intelligence, one you can eventually talk to without speaking. Research on everyday self-talk supports the premise that people use self-talk across demanding, emotional, and preparatory situations, and that distanced self-talk can help emotion regulation in the moments where people need to decide what to do or say.
+                                <span className="inline-block ml-2">
+                                    <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
+                                    <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
+                                </span>
+                            </p>
+                        </div>
+
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
                             <InlineTags tags={tags.sector} theme="violet" />
@@ -104,7 +114,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent flex flex-col items-center justify-center text-center group overflow-hidden relative mb-12 shadow-[0_0_50px_rgba(var(--primary-rgb),0.1)]">
+                    <div className="p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent flex flex-col items-center justify-center text-center group overflow-hidden relative shadow-[0_0_50px_rgba(var(--primary-rgb),0.1)]">
                         <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay"></div>
                         <h3 className="text-[5rem] md:text-[8rem] font-light text-white tracking-tighter leading-none mb-4 group-hover:scale-[1.02] transition-transform duration-700">
                             10.8% <span className="text-[var(--primary)]/40 text-4xl md:text-6xl align-middle">vs</span> 4.6%
@@ -114,21 +124,6 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             In the original experience-sampling study behind "a wandering mind is an unhappy mind," <strong>what people were thinking</strong> explained more than twice as much within-person variation in happiness as <strong>what they were doing</strong>. That is the core bet here. Thought quality is upstream of life quality.
                             <ExpandableCitation label="[1]" sourceUrl="#" sourceText="Killingsworth MA, Gilbert DT. A wandering mind is an unhappy mind. Science, 2010." theme="violet" />
                         </p>
-                    </div>
-
-                    <div className="grid md:grid-cols-12 gap-6 items-start">
-                        <div className="md:col-span-3 text-sm font-mono tracking-widest uppercase text-[var(--primary)]/40 pt-1 border-t border-[var(--primary)]/10">
-                            The Real Use Case
-                        </div>
-                        <div className="md:col-span-9 glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
-                            <p className="text-base text-white/50 leading-relaxed font-light">
-                                Picture the real use case. You are about to pitch, flirt, negotiate, train, grieve, focus, or decide. The quality of that moment is shaped less by the world outside you than by the voice inside you. Thoughtline learns the patterns of your self-talk, your goals, your emotional tendencies, and the situations where you drift off course. Then it helps you return to a more capable state, not with generic affirmations, but with interventions tuned to your actual mind. As the interface improves, it stops feeling like an app and starts feeling like a second channel of intelligence, one you can eventually talk to without speaking. Research on everyday self-talk supports the premise that people use self-talk across demanding, emotional, and preparatory situations, and that distanced self-talk can help emotion regulation in the moments where people need to decide what to do or say.
-                                <span className="inline-block ml-2">
-                                    <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
-                                    <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
-                                </span>
-                            </p>
-                        </div>
                     </div>
                 </motion.section>
 
