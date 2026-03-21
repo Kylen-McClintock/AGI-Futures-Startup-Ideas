@@ -104,15 +104,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                     transition={{ duration: 0.8 }}
                     className="mb-32"
                 >
-                    <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors duration-500 mb-12 group">
-                        <p className="text-xl sm:text-2xl text-white/80 leading-relaxed font-light border-l-4 border-[var(--primary)]/50 pl-6 group-hover:border-[var(--primary)] transition-colors">
-                            Picture the real use case. You are about to pitch, flirt, negotiate, train, grieve, focus, or decide. The quality of that moment is shaped less by the world outside you than by the voice inside you. Thoughtline learns the patterns of your self-talk, your goals, your emotional tendencies, and the situations where you drift off course. Then it helps you return to a more capable state, not with generic affirmations, but with interventions tuned to your actual mind. As the interface improves, it stops feeling like an app and starts feeling like a second channel of intelligence, one you can eventually talk to without speaking. Research on everyday self-talk supports the premise that people use self-talk across demanding, emotional, and preparatory situations, and that distanced self-talk can help emotion regulation in the moments where people need to decide what to do or say.
-                            <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
-                            <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
-                        </p>
-                    </div>
-
-                    <div className="p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent flex flex-col items-center justify-center text-center group mt-12 overflow-hidden relative">
+                    <div className="p-10 rounded-[2rem] border border-[var(--primary)]/20 bg-gradient-to-br from-[var(--primary)]/10 to-transparent flex flex-col items-center justify-center text-center group overflow-hidden relative mb-12 shadow-[0_0_50px_rgba(var(--primary-rgb),0.1)]">
                         <div className="absolute inset-0 bg-noise opacity-10 mix-blend-overlay"></div>
                         <h3 className="text-[5rem] md:text-[8rem] font-light text-white tracking-tighter leading-none mb-4 group-hover:scale-[1.02] transition-transform duration-700">
                             10.8% <span className="text-[var(--primary)]/40 text-4xl md:text-6xl align-middle">vs</span> 4.6%
@@ -122,6 +114,21 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             In the original experience-sampling study behind "a wandering mind is an unhappy mind," <strong>what people were thinking</strong> explained more than twice as much within-person variation in happiness as <strong>what they were doing</strong>. That is the core bet here. Thought quality is upstream of life quality.
                             <ExpandableCitation label="[1]" sourceUrl="#" sourceText="Killingsworth MA, Gilbert DT. A wandering mind is an unhappy mind. Science, 2010." theme="violet" />
                         </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-12 gap-6 items-start">
+                        <div className="md:col-span-3 text-sm font-mono tracking-widest uppercase text-[var(--primary)]/40 pt-1 border-t border-[var(--primary)]/10">
+                            The Real Use Case
+                        </div>
+                        <div className="md:col-span-9 glass-panel p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.01]">
+                            <p className="text-base text-white/50 leading-relaxed font-light">
+                                Picture the real use case. You are about to pitch, flirt, negotiate, train, grieve, focus, or decide. The quality of that moment is shaped less by the world outside you than by the voice inside you. Thoughtline learns the patterns of your self-talk, your goals, your emotional tendencies, and the situations where you drift off course. Then it helps you return to a more capable state, not with generic affirmations, but with interventions tuned to your actual mind. As the interface improves, it stops feeling like an app and starts feeling like a second channel of intelligence, one you can eventually talk to without speaking. Research on everyday self-talk supports the premise that people use self-talk across demanding, emotional, and preparatory situations, and that distanced self-talk can help emotion regulation in the moments where people need to decide what to do or say.
+                                <span className="inline-block ml-2">
+                                    <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
+                                    <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
+                                </span>
+                            </p>
+                        </div>
                     </div>
                 </motion.section>
 
@@ -289,42 +296,47 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                 <button
                                     key={icp.id}
                                     onClick={() => setActiveIcp(icp.id)}
-                                    className={`text-left p-6 sm:p-8 rounded-3xl border transition-all duration-300 group ${
+                                    className={`text-left p-6 sm:p-8 rounded-3xl border transition-all duration-300 group w-full ${
                                         activeIcp === icp.id 
                                             ? "glass-panel bg-[var(--primary)]/10 border-[var(--primary)]/40 shadow-[0_0_30px_rgba(var(--primary-rgb),0.1)]" 
                                             : "glass-panel border-white/5 bg-white/[0.01] hover:bg-white/[0.04] hover:border-[var(--primary)]/20"
                                     }`}
                                 >
-                                    <div className="flex items-start gap-5 sm:gap-6">
-                                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
-                                            activeIcp === icp.id ? "bg-[var(--primary)]/20" : "bg-white/5 group-hover:bg-[var(--primary)]/10"
-                                        }`}>
-                                            <icp.icon className={`w-6 h-6 transition-colors duration-300 ${activeIcp === icp.id ? "text-[var(--secondary)]" : "text-white/40 group-hover:text-[var(--secondary)]/70"}`} />
-                                        </div>
-                                        <div>
-                                            <h3 className={`text-xl sm:text-2xl font-light mb-2 transition-colors duration-300 ${activeIcp === icp.id ? "text-white" : "text-white/70"}`}>
-                                                {icp.title}
-                                            </h3>
-                                            <div className="text-xs sm:text-sm text-[var(--primary)] mb-3 tracking-widest uppercase font-mono">
-                                                {icp.badge}
+                                    <div className="flex items-start justify-between w-full">
+                                        <div className="flex items-start gap-5 sm:gap-6 flex-1 pr-4">
+                                            <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 transition-colors duration-300 ${
+                                                activeIcp === icp.id ? "bg-[var(--primary)]/20" : "bg-white/5 group-hover:bg-[var(--primary)]/10"
+                                            }`}>
+                                                <icp.icon className={`w-6 h-6 transition-colors duration-300 ${activeIcp === icp.id ? "text-[var(--secondary)]" : "text-white/40 group-hover:text-[var(--secondary)]/70"}`} />
                                             </div>
-                                            <AnimatePresence>
-                                                {activeIcp === icp.id && (
-                                                    <motion.div
-                                                        initial={{ opacity: 0, height: 0 }}
-                                                        animate={{ opacity: 1, height: "auto" }}
-                                                        exit={{ opacity: 0, height: 0 }}
-                                                        className="overflow-hidden"
-                                                    >
-                                                        <p className="text-white/70 leading-relaxed font-light mt-4">
-                                                            {icp.desc}
-                                                            <span className="block mt-2">
-                                                                <ExpandableCitation label={icp.citationLabel} sourceUrl={icp.citationUrl} sourceText={icp.citationText} theme="violet" />
-                                                            </span>
-                                                        </p>
-                                                    </motion.div>
-                                                )}
-                                            </AnimatePresence>
+                                            <div className="flex-1">
+                                                <h3 className={`text-xl sm:text-2xl font-light mb-2 transition-colors duration-300 ${activeIcp === icp.id ? "text-white" : "text-white/70"}`}>
+                                                    {icp.title}
+                                                </h3>
+                                                <div className="text-xs sm:text-sm text-[var(--primary)] mb-3 tracking-widest uppercase font-mono">
+                                                    {icp.badge}
+                                                </div>
+                                                <AnimatePresence>
+                                                    {activeIcp === icp.id && (
+                                                        <motion.div
+                                                            initial={{ opacity: 0, height: 0 }}
+                                                            animate={{ opacity: 1, height: "auto" }}
+                                                            exit={{ opacity: 0, height: 0 }}
+                                                            className="overflow-hidden"
+                                                        >
+                                                            <p className="text-white/70 leading-relaxed font-light mt-4">
+                                                                {icp.desc}
+                                                                <span className="block mt-2">
+                                                                    <ExpandableCitation label={icp.citationLabel} sourceUrl={icp.citationUrl} sourceText={icp.citationText} theme="violet" />
+                                                                </span>
+                                                            </p>
+                                                        </motion.div>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
+                                        <div className="shrink-0 pt-2 hidden sm:block">
+                                            <ChevronDown className={`w-6 h-6 transition-transform duration-500 ${activeIcp === icp.id ? "rotate-180 text-[var(--primary)]" : "text-white/20 group-hover:text-[var(--tertiary)]/50"}`} />
                                         </div>
                                     </div>
                                 </button>
@@ -517,24 +529,22 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                     viewport={{ once: true }}
                     className="mb-32"
                 >
-                    <div className="mb-12">
+                    <div className="mb-10">
                         <div className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-4 flex items-center">
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> AGI Future Edge
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                             As AI gets better, <br className="hidden sm:block" /><span className="text-white/50">Thoughtline compounds.</span>
                         </h2>
+                        
+                        <p className="text-xl sm:text-2xl text-white/80 font-light leading-relaxed max-w-3xl border-l-[3px] border-[var(--primary)]/50 pl-6 mb-12">
+                            This becomes the privacy-first interface between a person's goals and their personalized AIs. The product can evolve from self-talk optimizer to silent command layer, then to a full intent router across software, agents, and the physical world. 
+                        </p>
                     </div>
 
-                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 group">
-                        <Image src={futureImage} alt="Optimistic AGI future smart home interface" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--primary)]/10 to-[#06090c]/90 pointer-events-none flex items-end p-8 md:p-12">
-                            <div className="max-w-3xl">
-                                <p className="text-xl text-white/90 font-light leading-relaxed drop-shadow-lg border-l-4 border-[var(--primary)] pl-6">
-                                    This becomes the privacy-first interface between a person's goals and their personalized AIs. The product can evolve from self-talk optimizer to silent command layer, then to a full intent router across software, agents, and the physical world. 
-                                </p>
-                            </div>
-                        </div>
+                    <div className="relative w-full aspect-[21/9] md:aspect-[3/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 opacity-80 hover:opacity-100 transition-opacity duration-700 group">
+                        <Image src={futureImage} alt="Optimistic AGI future smart home interface" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-[1.03] origin-center" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c] via-transparent to-[#06090c]/40 pointer-events-none" />
                     </div>
                 </motion.section>
 
