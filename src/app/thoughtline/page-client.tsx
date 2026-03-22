@@ -22,6 +22,9 @@ import clinicalImage from './assets/thoughtline_clinical.png';
 import interfaceImage from './assets/thoughtline_interface.png';
 import glassesImage from './assets/thoughtline_glasses.png';
 import futureImage from './assets/thoughtline_future.png';
+import mechanismImage from './assets/thoughtline_mechanism.png';
+import psychImage from './assets/thoughtline_psych.png';
+import impactImage from './assets/thoughtline_impact.png';
 
 export default function ThoughtlineClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     const [activeIcp, setActiveIcp] = useState(0);
@@ -194,7 +197,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         </h2>
 
                         <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/10 group border border-white/10">
-                            <Image src={interfaceImage} alt="Futuristic transparent glass interface glowing with elegant purple abstract neural wave data" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                            <Image src={mechanismImage} alt="Premium glass interface glowing with elegant purple abstract neural wave data decoding intention" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         </div>
 
                         <p className="text-xl text-white/80 max-w-3xl font-light leading-relaxed mb-6">
@@ -344,7 +347,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                 {[
                                     { id: 0, src: interfaceImage, alt: "Neural interface for speech restoration" },
                                     { id: 1, src: clinicalImage, alt: "Clinical assistive tech for locked in patients" },
-                                    { id: 2, src: futureImage, alt: "Advanced psychiatric brain stimulation visualization" },
+                                    { id: 2, src: psychImage, alt: "Advanced psychiatric brain stimulation visualization" },
                                     { id: 3, src: glassesImage, alt: "High performance AR glasses interface" },
                                 ].map((img) => (
                                     activeIcp === img.id && (
@@ -598,9 +601,14 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                 <InlineTags tags={tags.outcomes} theme="violet" />
                             </div>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
+                        <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight mb-8">
                             Civilizational Impact.
                         </h2>
+
+                        <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/5 opacity-80">
+                            <Image src={impactImage} alt="Optimistic utopian future park with ubiquitous intelligence" fill quality={100} className="object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#06090c] via-transparent to-transparent pointer-events-none" />
+                        </div>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">
