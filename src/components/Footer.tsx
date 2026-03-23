@@ -45,6 +45,9 @@ export function Footer() {
                     <Link href="/about" className="text-white/60 hover:text-white transition-colors">
                         About
                     </Link>
+                    <Link href="/glossary" className="text-[#3bf4a4]/80 hover:text-[#3bf4a4] transition-colors">
+                        Singularity Glossary
+                    </Link>
                     <Link href="/forecasting" className="text-white/60 hover:text-white transition-colors">
                         Forecasting Methodology
                     </Link>
