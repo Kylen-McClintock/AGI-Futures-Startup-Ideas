@@ -21,6 +21,9 @@ export function Footer() {
     } else if (pathname.includes('/proofrun') || pathname.includes('/artifact')) { // Future proofing
         label = "Proof of Work Artifact";
         color = "text-[#10b981]";
+    } else if (pathname.includes('/singularity-tracker')) {
+        label = "Singularity Tracker";
+        color = "text-[#21de9a]";
     } else if (pathname !== '/' && pathname !== '/about' && pathname !== '/license' && pathname !== '/forecasting') {
         label = "Startup Idea Writeup";
     }
@@ -53,8 +56,11 @@ export function Footer() {
                 {/* Copyright / Small text */}
                 <div className="mt-8 text-xs text-white/30 text-center max-w-lg">
                     <p>Designed and built for the AGI transition.</p>
-                    <p className="mt-2">
-                        Startup idea writeups are licensed under the <Link href="/license" className="underline hover:text-white">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</Link>.
+                    <p className="mt-2 text-white/40">
+                        {label === "Startup Idea Writeup" 
+                            ? <>Startup idea writeups are licensed under the <Link href="/license" className="underline hover:text-white">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</Link>.</>
+                            : <>Data frameworks and projections are licensed under the <Link href="/license" className="underline hover:text-white">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</Link>.</>
+                        }
                     </p>
                 </div>
             </div>

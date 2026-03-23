@@ -185,11 +185,16 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
 
     return (
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 sm:py-32 lg:px-8 w-full">
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 mb-10 pt-4 relative z-20">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-10 pt-4 relative z-20">
                 <img src="/logo.png" alt="AGI Futures" className="h-16 sm:h-20 md:h-28 w-auto object-contain" />
-                <Link href="/problem-atlas" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/40 border border-white/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-white/5 hover:text-white hover:border-white/30 transition-all font-medium whitespace-nowrap">
-                    VIEW PROBLEM ATLAS &rarr;
-                </Link>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <Link href="/singularity-tracker" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-[#21de9a] border border-[#21de9a]/30 bg-[#21de9a]/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-[#21de9a]/20 transition-all font-medium whitespace-nowrap shadow-[0_0_15px_rgba(33,222,154,0.15)]">
+                        SINGULARITY TRACKER &rarr;
+                    </Link>
+                    <Link href="/problem-atlas" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/40 border border-white/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-white/5 hover:text-white hover:border-white/30 transition-all font-medium whitespace-nowrap">
+                        VIEW PROBLEM ATLAS &rarr;
+                    </Link>
+                </div>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-10">
                 <span className="bg-[var(--primary)]/15 text-[var(--primary)] px-4 py-1.5 rounded-2xl inline-block mb-3 border border-[var(--primary)]/30 shadow-[0_0_30px_rgba(59,244,164,0.15)] backdrop-blur-sm">
