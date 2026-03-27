@@ -25,6 +25,7 @@ export default function LiveForecastsClient({ initialForecasts }: Props) {
     
     const [activeTagsRaw, setActiveTagsRaw] = useQueryState("filters", parseAsArrayOf(parseAsString).withDefault([]).withOptions({ shallow: false, history: 'push' }));
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+    const [displayLimit, setDisplayLimit] = useState(10);
 
     const activeTags = useMemo(() => {
         return activeTagsRaw.map(str => {
@@ -210,9 +211,39 @@ export default function LiveForecastsClient({ initialForecasts }: Props) {
                 </div>
             ) : null}
             
-            {sortedForecasts.map((forecast) => (
-                <ForecastCard key={forecast.id} forecast={forecast} mode="live" answerCount={forecast.forecast_answers?.[0]?.count} />
-            ))}
+            <div className="flex flex-col">
+                {sortedForecasts.slice(0, displayLimit).map((forecast, i, arr) => {
+                    const isGroupedWithNext = i < arr.length - 1 &&
+                        JSON.stringify(forecast.sector) === JSON.stringify(arr[i + 1].sector) &&
+                        JSON.stringify(forecast.enabling_technology) === JSON.stringify(arr[i + 1].enabling_technology);
+                    const isGroupedWithPrev = i > 0 &&
+                        JSON.stringify(forecast.sector) === JSON.stringify(arr[i - 1].sector) &&
+                        JSON.stringify(forecast.enabling_technology) === JSON.stringify(arr[i - 1].enabling_technology);
+
+                    return (
+                        <div key={forecast.id} className={isGroupedWithNext ? "mb-0" : "mb-8 z-10"}>
+                            <ForecastCard 
+                                forecast={forecast} 
+                                mode="live" 
+                                answerCount={forecast.forecast_answers?.[0]?.count} 
+                                isGroupedWithNext={isGroupedWithNext}
+                                isGroupedWithPrev={isGroupedWithPrev}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
+
+            {sortedForecasts.length > displayLimit && (
+                <div className="pt-8 pb-12 flex justify-center w-full">
+                    <button 
+                        onClick={() => setDisplayLimit(d => d + 10)}
+                        className="px-6 py-4 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 text-white transition tracking-widest uppercase font-mono text-sm w-full max-w-md shadow-lg"
+                    >
+                        Load More Forecasts ↓
+                    </button>
+                </div>
+            )}
         </div>
     );
 }

@@ -13,9 +13,11 @@ interface Props {
     forecast: Forecast;
     mode: "live" | "proposed";
     answerCount?: number;
+    isGroupedWithPrev?: boolean;
+    isGroupedWithNext?: boolean;
 }
 
-export default function ForecastCard({ forecast, mode, answerCount }: Props) {
+export default function ForecastCard({ forecast, mode, answerCount, isGroupedWithPrev, isGroupedWithNext }: Props) {
     const supabase = createClient();
     const [answerMode, setAnswerMode] = useState<"quick" | "advanced">("quick");
     const [showAdvanced, setShowAdvanced] = useState(false);
@@ -57,7 +59,10 @@ export default function ForecastCard({ forecast, mode, answerCount }: Props) {
     };
 
     return (
-        <div className="bg-[#0D1114] border border-white/5 rounded-xl p-6 transition-all hover:bg-[#11161A]">
+        <div className={`bg-[#0D1114] border border-white/5 p-6 transition-colors hover:bg-[#11161A] relative ${isGroupedWithPrev ? 'rounded-t-none border-t-0' : 'rounded-t-xl'} ${isGroupedWithNext ? 'rounded-b-none border-b-0 -mb-[1px]' : 'rounded-b-xl'}`}>
+            
+            {/* Aesthetic Divider for grouped cards */}
+            {isGroupedWithPrev && <div className="absolute top-0 left-0 right-0 h-px bg-white/[0.04] z-10 mx-6" />}
             
             {/* Condition First-Class Object */}
             {forecast.condition && (

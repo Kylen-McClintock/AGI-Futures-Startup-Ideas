@@ -11,6 +11,7 @@ interface Props {
 
 export default function ProposedForecastsClient({ initialForecasts }: Props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [displayLimit, setDisplayLimit] = useState(10);
 
     // We can add logic to optimistically update or re-fetch on close if needed.
     // For now, refreshing the page pulls the newest submitted proposals since it's a Server Component layout.
@@ -33,9 +34,20 @@ export default function ProposedForecastsClient({ initialForecasts }: Props) {
                 </div>
             ) : null}
 
-            {initialForecasts?.map(forecast => (
+            {initialForecasts?.slice(0, displayLimit).map(forecast => (
                 <ForecastCard key={forecast.id} forecast={forecast} mode="proposed" />
             ))}
+
+            {(initialForecasts?.length || 0) > displayLimit && (
+                <div className="pt-8 pb-12 flex justify-center w-full">
+                    <button 
+                        onClick={() => setDisplayLimit(d => d + 10)}
+                        className="px-6 py-4 border border-white/10 rounded-xl bg-white/5 hover:bg-white/10 text-white transition tracking-widest uppercase font-mono text-sm w-full max-w-md shadow-lg"
+                    >
+                        Load More Proposals ↓
+                    </button>
+                </div>
+            )}
 
             <ProposeForecastModal 
                 isOpen={isModalOpen} 

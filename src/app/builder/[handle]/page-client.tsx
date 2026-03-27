@@ -612,9 +612,17 @@ export default function BuilderProfileClientPage({
                             {userForecasts.slice(0, forecastLimit).map((ans: any) => (
                                 <Link href="/forecasts/live" key={ans.id} className="block p-5 border border-white/5 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-[#3bf4a4]/30 transition-all group">
                                     <div className="flex items-start justify-between mb-3 gap-4">
-                                        <h3 className="text-lg font-serif text-white group-hover:text-[#3bf4a4] transition-colors leading-snug">
-                                            {ans.forecast?.question}
-                                        </h3>
+                                        <div className="flex-1">
+                                            {ans.forecast?.condition && (
+                                                <p className="text-xs text-white/50 mb-2 leading-relaxed max-w-2xl group-hover:text-white/70 transition-colors">
+                                                    <span className="text-[#3bf4a4]/60 font-mono tracking-wider uppercase text-[10px] mr-1.5">If</span>
+                                                    {ans.forecast.condition}
+                                                </p>
+                                            )}
+                                            <h3 className="text-lg font-serif text-white group-hover:text-[#3bf4a4] transition-colors leading-snug">
+                                                {ans.forecast?.question}
+                                            </h3>
+                                        </div>
                                         <span className="text-[10px] font-mono text-[#3bf4a4]/60 uppercase tracking-widest shrink-0 mt-1">{new Date(ans.created_at).toLocaleDateString()}</span>
                                     </div>
                                     
@@ -622,18 +630,19 @@ export default function BuilderProfileClientPage({
                                         <span className="text-[10px] font-mono uppercase tracking-widest text-[#3bf4a4]/60 shrink-0">Predicted</span>
                                         <div className="flex-1">
                                             {ans.answer_mode === 'quick' ? (
-                                                <div className="text-lg font-mono text-[#3bf4a4] font-medium tracking-tight">
-                                                    {ans.forecast?.type === 'multiple_choice' || ans.forecast?.type === 'company_actor' || ans.forecast?.type === 'cause_mechanism' ? (
-                                                        Object.keys(ans.answer_data?.options || {}).filter(k => ans.answer_data.options[k] > 0).map(k => `${k} (${Math.round(ans.answer_data.options[k] * 100)}%)`).join(', ')
-                                                    ) : ans.forecast?.type === 'binary' || ans.forecast?.type === 'binary_by_deadline' ? (
-                                                        `Yes: ${Math.round((ans.answer_data?.yes || 0) * 100)}%`
-                                                    ) : ans.forecast?.type === 'year_or_never' ? (
-                                                        `Year Estimate: ${Object.keys(ans.answer_data?.years || {}).length > 0 ? Object.keys(ans.answer_data.years).join(', ') : 'Never'}`
-                                                    ) : ans.forecast?.type === 'bucketed_magnitude' ? (
-                                                        Object.keys(ans.answer_data?.options || {}).filter(k => ans.answer_data.options[k] > 0).map(k => `${k} (${Math.round(ans.answer_data.options[k] * 100)}%)`).join(', ')
-                                                    ) : (
-                                                        'Submitted'
-                                                    )}
+                                                <div className="text-lg font-mono text-[#3bf4a4] font-medium tracking-tight mt-0.5">
+                                                    {ans.answer_data?.selected_option 
+                                                        ? String(ans.answer_data.selected_option) 
+                                                        : ans.answer_data?.year 
+                                                            ? `Year ${ans.answer_data.year}` 
+                                                            : ans.answer_data?.never 
+                                                                ? 'Never'
+                                                                : ans.answer_data?.yes !== undefined
+                                                                    ? `Yes: ${Math.round(ans.answer_data.yes * 100)}%`
+                                                                    : (
+                                                                        JSON.stringify(ans.answer_data) || 'Unknown'
+                                                                      )
+                                                    }
                                                 </div>
                                             ) : (
                                                 <div className="flex flex-col gap-1.5 w-full mt-2 lg:mt-0 max-w-xs">
