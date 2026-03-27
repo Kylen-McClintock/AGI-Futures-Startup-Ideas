@@ -15,6 +15,7 @@ import { Star } from "lucide-react";
 export default function BuilderProfileClientPage({ 
   profile, 
   artifacts: initialArtifacts, 
+  userForecasts = [],
   isOwner, 
   savedIdeas = [], 
   ideaNotes = [], 
@@ -27,6 +28,7 @@ export default function BuilderProfileClientPage({
 }: { 
   profile: any, 
   artifacts: any[], 
+  userForecasts?: any[],
   isOwner?: boolean, 
   savedIdeas?: any[], 
   ideaNotes?: any[], 
@@ -60,6 +62,7 @@ export default function BuilderProfileClientPage({
 
   const [sortBy, setSortBy] = React.useState<'recent' | 'upvoted'>('recent');
   const [displayLimit, setDisplayLimit] = React.useState(5);
+  const [forecastLimit, setForecastLimit] = React.useState(5);
 
   const handleToggleFollow = async () => {
     if (!currentUserId) return;
@@ -586,6 +589,92 @@ export default function BuilderProfileClientPage({
                                     <button 
                                         onClick={() => setDisplayLimit(5)}
                                         className="text-[10px] font-mono uppercase tracking-widest text-orange-500 hover:text-orange-500/80 transition-colors block w-full bg-orange-500/10 border border-orange-500/20 rounded-xl py-3 hover:bg-orange-500/20"
+                                    >
+                                        Collapse Feed ↑
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </section>
+
+                <section className="mt-12 pt-8 border-t border-white/5">
+                    <h2 className="text-[#3bf4a4] font-mono text-sm tracking-widest uppercase mb-6 flex items-center gap-3">
+                        <span className="w-6 h-px bg-[#3bf4a4]/50 block" /> Submitted Forecasts
+                    </h2>
+
+                    {userForecasts.length === 0 ? (
+                        <div className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center">
+                            <p className="text-white/50 font-light text-sm italic">No forecasts submitted yet.</p>
+                        </div>
+                    ) : (
+                        <div className="space-y-4">
+                            {userForecasts.slice(0, forecastLimit).map((ans: any) => (
+                                <Link href="/forecasts/live" key={ans.id} className="block p-5 border border-white/5 rounded-2xl bg-[#0a0f14]/50 hover:bg-[#0a0f14] hover:border-[#3bf4a4]/30 transition-all group">
+                                    <div className="flex items-start justify-between mb-3 gap-4">
+                                        <h3 className="text-lg font-serif text-white group-hover:text-[#3bf4a4] transition-colors leading-snug">
+                                            {ans.forecast?.question}
+                                        </h3>
+                                        <span className="text-[10px] font-mono text-[#3bf4a4]/60 uppercase tracking-widest shrink-0 mt-1">{new Date(ans.created_at).toLocaleDateString()}</span>
+                                    </div>
+                                    
+                                    <div className="mt-4 p-4 rounded-xl border border-[#3bf4a4]/20 bg-[#3bf4a4]/5 flex flex-col md:flex-row md:items-center gap-3 md:gap-4 group-hover:bg-[#3bf4a4]/10 transition-colors">
+                                        <span className="text-[10px] font-mono uppercase tracking-widest text-[#3bf4a4]/60 shrink-0">Predicted</span>
+                                        <div className="flex-1">
+                                            {ans.answer_mode === 'quick' ? (
+                                                <div className="text-lg font-mono text-[#3bf4a4] font-medium tracking-tight">
+                                                    {ans.forecast?.type === 'multiple_choice' || ans.forecast?.type === 'company_actor' || ans.forecast?.type === 'cause_mechanism' ? (
+                                                        Object.keys(ans.answer_data?.options || {}).filter(k => ans.answer_data.options[k] > 0).map(k => `${k} (${Math.round(ans.answer_data.options[k] * 100)}%)`).join(', ')
+                                                    ) : ans.forecast?.type === 'binary' || ans.forecast?.type === 'binary_by_deadline' ? (
+                                                        `Yes: ${Math.round((ans.answer_data?.yes || 0) * 100)}%`
+                                                    ) : ans.forecast?.type === 'year_or_never' ? (
+                                                        `Year Estimate: ${Object.keys(ans.answer_data?.years || {}).length > 0 ? Object.keys(ans.answer_data.years).join(', ') : 'Never'}`
+                                                    ) : ans.forecast?.type === 'bucketed_magnitude' ? (
+                                                        Object.keys(ans.answer_data?.options || {}).filter(k => ans.answer_data.options[k] > 0).map(k => `${k} (${Math.round(ans.answer_data.options[k] * 100)}%)`).join(', ')
+                                                    ) : (
+                                                        'Submitted'
+                                                    )}
+                                                </div>
+                                            ) : (
+                                                <div className="flex flex-col gap-1.5 w-full mt-2 lg:mt-0 max-w-xs">
+                                                    {Object.entries(ans.answer_data?.options || {}).map(([key, value]) => {
+                                                        const pct = Math.round((value as number) * 100);
+                                                        return (
+                                                            <div key={key} className="flex items-center gap-3 text-[10px] font-mono">
+                                                                <span className="w-24 truncate text-white/50 text-right uppercase tracking-wider">{key}</span>
+                                                                <div className="flex-1 h-1.5 bg-black/40 rounded-full overflow-hidden flex items-center border border-white/5">
+                                                                    <div className="h-full bg-[#3bf4a4]/80 shadow-[0_0_10px_rgba(59,244,164,0.3)] transition-all duration-1000" style={{ width: `${pct}%` }}></div>
+                                                                </div>
+                                                                <span className="w-8 text-[#3bf4a4] text-right font-medium">{pct}%</span>
+                                                            </div>
+                                                        );
+                                                    })}
+                                                </div>
+                                            )}
+                                        </div>
+                                    </div>
+                                    {ans.reasoning && (
+                                        <p className="mt-4 text-sm text-white/50 italic border-l-2 border-white/10 pl-3">"{ans.reasoning}"</p>
+                                    )}
+                                </Link>
+                            ))}
+
+                            {userForecasts.length > forecastLimit && (
+                                <div className="pt-4 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setForecastLimit(l => l + 5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-white/50 hover:text-white transition-colors block w-full bg-white/5 border border-white/10 rounded-xl py-3 hover:bg-white/10"
+                                    >
+                                        Show More ({userForecasts.length - forecastLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
+
+                            {forecastLimit > 5 && (
+                                <div className="pt-2 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setForecastLimit(5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-[#3bf4a4] hover:text-[#3bf4a4]/80 transition-colors block w-full bg-[#3bf4a4]/10 border border-[#3bf4a4]/20 rounded-xl py-3 hover:bg-[#3bf4a4]/20"
                                     >
                                         Collapse Feed ↑
                                     </button>

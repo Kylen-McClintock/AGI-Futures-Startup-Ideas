@@ -65,9 +65,21 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
       .order('updated_at', { ascending: false });
     if (n) ideaNotes = n;
   }
+
+  // 4. Fetch User's Forecast Answers
+  const { data: userForecasts } = await supabase
+    .from('forecast_answers')
+    .select(`
+      *,
+      forecast:forecasts ( id, question, type, options, condition )
+    `)
+    .eq('profile_id', profile.id)
+    .order('created_at', { ascending: false });
+
   return <BuilderProfileClientPage 
     profile={profile} 
     artifacts={artifacts || []} 
+    userForecasts={userForecasts || []}
     isOwner={isOwner} 
     currentUserId={user?.id}
     savedIdeas={savedIdeas} 

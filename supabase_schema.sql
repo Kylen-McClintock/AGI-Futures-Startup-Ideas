@@ -117,3 +117,72 @@ CREATE POLICY "Users can manage their own notes" ON idea_notes
 -- CREATE OR REPLACE TRIGGER on_auth_user_created
 --   AFTER INSERT ON auth.users
 --   FOR EACH ROW EXECUTE PROCEDURE public.handle_new_user();
+
+-- 14. Forecasts Section Tables
+CREATE TABLE IF NOT EXISTS forecasts (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  profile_id uuid REFERENCES profiles(id) ON DELETE SET NULL,
+  status text NOT NULL DEFAULT 'proposed', -- 'proposed', 'live', 'resolved', 'rejected'
+  type text NOT NULL, -- 'binary', 'binary_by_deadline', 'multiple_choice', 'year_or_never', 'bucketed_magnitude', 'cause_mechanism', 'company_actor'
+  condition text, -- Optional condition making this a conditional forecast
+  question text NOT NULL,
+  options jsonb, -- Array of strings/buckets
+  deadline timestamp with time zone,
+  resolution_criteria text,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+  updated_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS forecast_votes (
+  profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  forecast_id uuid REFERENCES forecasts(id) ON DELETE CASCADE NOT NULL,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+  PRIMARY KEY (profile_id, forecast_id)
+);
+
+CREATE TABLE IF NOT EXISTS forecast_comments (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  forecast_id uuid REFERENCES forecasts(id) ON DELETE CASCADE NOT NULL,
+  profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  content text NOT NULL,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS forecast_answers (
+  id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+  forecast_id uuid REFERENCES forecasts(id) ON DELETE CASCADE NOT NULL,
+  profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  answer_mode text NOT NULL DEFAULT 'quick', -- 'quick', 'advanced'
+  answer_data jsonb NOT NULL,
+  reasoning text,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+  updated_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+-- 15. Forecasts RLS Policies
+ALTER TABLE forecasts ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forecast_votes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forecast_comments ENABLE ROW LEVEL SECURITY;
+ALTER TABLE forecast_answers ENABLE ROW LEVEL SECURITY;
+
+-- Forecasts Policies
+CREATE POLICY "Allow public read access on forecasts" ON forecasts FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own forecasts" ON forecasts FOR INSERT WITH CHECK (auth.uid() = profile_id);
+-- In the future, admins/mods might update the status, for now users shouldn't arbitrarily change status once live
+
+-- Forecast Votes Policies
+CREATE POLICY "Allow public read access on forecast_votes" ON forecast_votes FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own votes" ON forecast_votes FOR INSERT WITH CHECK (auth.uid() = profile_id);
+CREATE POLICY "Users can delete their own votes" ON forecast_votes FOR DELETE USING (auth.uid() = profile_id);
+
+-- Forecast Comments Policies
+CREATE POLICY "Allow public read access on forecast_comments" ON forecast_comments FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own comments" ON forecast_comments FOR INSERT WITH CHECK (auth.uid() = profile_id);
+CREATE POLICY "Users can update their own comments" ON forecast_comments FOR UPDATE USING (auth.uid() = profile_id);
+CREATE POLICY "Users can delete their own comments" ON forecast_comments FOR DELETE USING (auth.uid() = profile_id);
+
+-- Forecast Answers Policies
+CREATE POLICY "Allow public read access on forecast_answers" ON forecast_answers FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own answers" ON forecast_answers FOR INSERT WITH CHECK (auth.uid() = profile_id);
+CREATE POLICY "Users can update their own answers" ON forecast_answers FOR UPDATE USING (auth.uid() = profile_id);
+CREATE POLICY "Users can delete their own answers" ON forecast_answers FOR DELETE USING (auth.uid() = profile_id);

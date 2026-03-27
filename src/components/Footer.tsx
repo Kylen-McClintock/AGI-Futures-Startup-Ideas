@@ -24,6 +24,9 @@ export function Footer() {
     } else if (pathname.includes('/singularity-tracker')) {
         label = "Singularity Tracker";
         color = "text-[#21de9a]";
+    } else if (pathname.includes('/forecasts')) {
+        label = "FORECASTS";
+        color = "text-[#3bf4a4]";
     } else if (pathname !== '/' && pathname !== '/about' && pathname !== '/license' && pathname !== '/forecasting') {
         label = "Startup Idea Writeup";
     }
@@ -47,6 +50,9 @@ export function Footer() {
                     </Link>
                     <Link href="/glossary" className="text-[#3bf4a4]/80 hover:text-[#3bf4a4] transition-colors">
                         Singularity Glossary
+                    </Link>
+                    <Link href="/forecasts/live" className="text-[#3bf4a4] hover:text-[#3bf4a4]/80 transition-colors font-semibold">
+                        Live Forecasts
                     </Link>
                     <Link href="/forecasting" className="text-white/60 hover:text-white transition-colors">
                         Forecasting Methodology

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "AGI Futures | Forecasting Methodology",
-    description: "The mathematical model and rationale behind the AGI Futures AI-driven evaluation metrics for Expected Valuation and Time to Unicorn.",
+    description: "The structural rationale behind the AGI Futures Live Forecasts feed and our AI-driven venture metrics for Expected Valuation.",
 };
 
 export default function ForecastingMethodologyPage() {
@@ -19,22 +19,41 @@ export default function ForecastingMethodologyPage() {
                         Forecasting <span className="italic text-[#3bf4a4]">Methodology</span>
                     </h1>
                     <p className="text-xl text-white/70 font-light leading-relaxed">
-                        How we derive actionable venture metrics (<strong className="text-white">Expected Valuation</strong> and <strong className="text-white">Time to Unicorn</strong>) from complex probabilistic AI forecasts.
+                        The structural architecture behind our <strong className="text-[#3bf4a4]">Live Forecasts Feed</strong> and the generative math powering the <strong className="text-white">Expected Valuation</strong> metrics for Startup Ideas.
                     </p>
                 </div>
 
                 <div className="h-px w-full bg-gradient-to-r from-white/10 via-white/5 to-transparent" />
 
                 <div className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:font-medium prose-p:font-light prose-p:text-white/70 prose-a:text-[#3bf4a4]">
-                    <h2>The Challenge of Probabilistic Forecasting</h2>
+                    <h2 className="text-[#3bf4a4]">Part I: The Live Forecasts Engine</h2>
                     <p>
-                        A single point forecast (e.g., "This startup will be worth $5B in 2035") is often useless for speculative venturing. The AGI transition possesses far too much variance. This is why our AI forecasting engine instead outputs <strong>Probability Distribution Curves</strong>. 
+                        The AGI Futures <Link href="/forecasts/live">Forecasts section</Link> is a high-signal layer for frontier judgment. It structurally moves beyond the short-term mechanics of a typical binary prediction market (which often trends toward casino mechanics) into the multidimensional modeling required to navigate the AGI transition.
                     </p>
+                    
+                    <h3>Conditions as First-Class Objects</h3>
                     <p>
-                        However, while curves are statistically rich, they are difficult for humans to intuitively rank and compare. To solve this, we algorithmically collapse the distribution curves back down into two extremely legible heuristics: Expected Valuation, and Time to Unicorn.
+                        Determining <em>what</em> will happen is often less useful than determining <em>why</em>. In our schema, <strong>Conditions</strong> ("If X occurs by 2030...") are treated as first-class architectural objects explicitly decoupled from the predicted outcome. This forces the isolation of specific variables, enabling forecasters to explicitly model critical dependencies—like geopolitical interventions, specific model scaling capabilities, or compute bottlenecks—without confounding them with the ultimate timeline.
                     </p>
 
-                    <h2 className="mt-16">1. Expected Valuation (EV)</h2>
+                    <h3>Continuous Probability Distributions</h3>
+                    <p>
+                        Most prediction interfaces compress reality into simple "Yes/No" binaries. Our architecture is built natively for continuous time horizons and dimensional magnitudes. When estimating the arrival year of a breakthrough, users aren't guessing a single date; they are equipped to draw rich probability distributions across time (e.g., plotting a bell curve that peaks in 2032 but maintains a heavy tail stretching into the 2040s) and bucket their convictions across infinite scenarios.
+                    </p>
+
+                    <h3>Algorithmic Curation via Impact Scoring</h3>
+                    <p>
+                        Pure volume-based sorting in prediction networks naturally favors trivial, high-frequency questions with fast feedback loops. To deliberately maintain a civilization-scale feed, discovery is curated via a compound <strong>Importance Score</strong>. This creates a 50/50 weighted blend between an objective AI assessment of the forecast's macroscopic economic/geopolitical impact, and the decentralized, subjective importance ratings of the human builder network.
+                    </p>
+
+                    <hr className="my-16 border-white/10" />
+
+                    <h2 className="text-[#10b981]">Part II: Startup Idea Projections</h2>
+                    <p>
+                        For specific operational startup ideas within the problem atlas, we algorithmically abstract complex probabilistic forecasts back down into two extremely legible heuristics: <strong>Expected Valuation (EV)</strong> and <strong>Time to Unicorn</strong>.
+                    </p>
+
+                    <h3 className="mt-12">1. Expected Valuation (EV)</h3>
                     <p>
                         Our Expected Valuation metric evaluates the economic value of a startup idea in a specific future year (e.g., 2030, 2035, 2040) by weighting every possible outcome by its probability of occurring.
                     </p>
@@ -46,7 +65,7 @@ export default function ForecastingMethodologyPage() {
                         <li><strong>Summation:</strong> Adding all the weighted band values together yields the exact mathematical Expected Value in dollars.</li>
                     </ol>
 
-                    <h2 className="mt-16">2. Time to Unicorn ($1B+)</h2>
+                    <h3 className="mt-12">2. Time to Unicorn ($1B+)</h3>
                     <p>
                         The Expected Valuation metric is highly skewed by extreme upside probabilities. To balance this, we also rank ideas by their velocity: the speed at which they cross the 50% likelihood threshold of achieving a $1 Billion valuation.
                     </p>
