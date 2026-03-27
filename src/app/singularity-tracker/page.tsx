@@ -37,9 +37,14 @@ export default function SingularityTrackerPage() {
 
         {/* Header Section */}
         <header className="mb-16">
-          <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-[#21de9a]/10 border border-[#21de9a]/20 text-[#21de9a] text-xs font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-[#21de9a] animate-pulse shadow-[0_0_8px_rgba(33,222,154,0.8)]" />
-            LIVE DATA / CIVILIZATION COCKPIT
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
+            <div className="inline-flex items-center gap-3 px-3 py-1.5 rounded-full bg-[#21de9a]/10 border border-[#21de9a]/20 text-[#21de9a] text-xs font-medium">
+              <span className="w-2 h-2 rounded-full bg-[#21de9a] animate-pulse shadow-[0_0_8px_rgba(33,222,154,0.8)]" />
+              LIVE DATA / CIVILIZATION COCKPIT
+            </div>
+            <Link href="/glossary" className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/70 text-xs font-medium uppercase tracking-widest hover:bg-white/10 hover:text-white transition-all">
+              Singularity Glossary &rarr;
+            </Link>
           </div>
           
           <h1 className="font-serif text-5xl md:text-7xl font-semibold tracking-tighter mb-6">
@@ -91,13 +96,25 @@ export default function SingularityTrackerPage() {
                        </div>
                        <div className="flex items-center gap-2 text-white/50 mb-1 z-10 hover:text-white/80 transition-colors">
                          <sector.icon className="w-5 h-5 drop-shadow-md" style={{ color: sector.color }} /> 
-                         <span className="text-xs uppercase tracking-widest font-mono">{sector.id}</span>
+                         <span className="text-xs uppercase tracking-widest font-mono font-bold">{sector.id}</span>
                        </div>
-                       <motion.div layout="position" className="text-4xl lg:text-5xl font-mono font-bold tracking-tight z-10 drop-shadow-lg" style={{ color: sector.color, textShadow: `0 0 25px ${sector.color}60` }}>
-                          {sector.acceleration.toFixed(2)}<span className="text-2xl text-white/30 ml-1">v</span>
+                       
+                       <motion.div layout="position" className="text-[10px] text-white/50 uppercase tracking-widest mt-4 mb-1 z-10 font-medium font-mono">
+                          Pace of Progress
                        </motion.div>
-                       <motion.div layout="position" className="text-[10px] text-white/40 uppercase tracking-widest mt-2 text-center max-w-[90%] leading-snug z-10 font-mono">
-                          Σ(v × w) / Σ(w) = {sector.avgVelocity.toFixed(1)}% YoY
+
+                       <motion.div layout="position" className="text-4xl lg:text-5xl font-mono font-bold tracking-tight z-10 drop-shadow-lg" style={{ color: sector.color, textShadow: `0 0 25px ${sector.color}60` }}>
+                          {sector.avgVelocity.toFixed(1)}<span className="text-2xl text-white/30 ml-1">%</span>
+                       </motion.div>
+
+                       <motion.div layout="position" className="text-[10px] text-white/40 uppercase tracking-widest mt-2 mb-4 text-center max-w-[90%] leading-snug z-10 font-mono">
+                          ACCELERATION VECTOR = {sector.acceleration.toFixed(2)}v
+                       </motion.div>
+
+                       <motion.div layout="position" className="mt-2 z-10 pointer-events-none">
+                          <button className="text-[10px] font-mono tracking-widest uppercase px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-white/70 shadow-sm">
+                            {isExpanded ? 'Hide Rationalization' : 'Show Rationalization'}
+                          </button>
                        </motion.div>
                      </div>
 

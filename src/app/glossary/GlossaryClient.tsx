@@ -146,6 +146,20 @@ export function GlossaryClient() {
                 <p className="text-lg text-white/70 font-light leading-relaxed max-w-4xl">
                   {item.definition}
                 </p>
+
+                {item.canonicalLink && (
+                  <div className="mt-6">
+                    <a 
+                      href={item.canonicalLink} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-sm font-medium tracking-wide text-[#3bf4a4]/80 hover:text-[#3bf4a4] hover:underline underline-offset-4 transition-all"
+                    >
+                      Explore Canonical Origin
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg>
+                    </a>
+                  </div>
+                )}
               </motion.div>
             ))
           )}

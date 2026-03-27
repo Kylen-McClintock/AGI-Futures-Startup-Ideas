@@ -14,6 +14,7 @@ export interface GlossaryTerm {
   definition: string;
   category: GlossaryCategory;
   aliases?: string[];
+  canonicalLink?: string;
 }
 
 export const glossaryData: GlossaryTerm[] = [
@@ -38,7 +39,8 @@ export const glossaryData: GlossaryTerm[] = [
     term: "FOOM",
     aliases: ["Hard Takeoff"],
     category: "Core Concepts & Trajectories",
-    definition: "An onomatopoeic slang term utilized within the rationalist and AI safety communities to describe an exceptionally rapid, abrupt intelligence explosion where the transition from human-level AI to artificial superintelligence occurs over days, hours, or even minutes."
+    definition: "An onomatopoeic slang term utilized within the rationalist and AI safety communities to describe an exceptionally rapid, abrupt intelligence explosion where the transition from human-level AI to artificial superintelligence occurs over days, hours, or even minutes.",
+    canonicalLink: "https://www.lesswrong.com/tag/hard-takeoff"
   },
   {
     term: "Hansonian Takeoff",
@@ -103,13 +105,15 @@ export const glossaryData: GlossaryTerm[] = [
   {
     term: "Orthogonality Thesis",
     category: "AI Safety & Alignment",
-    definition: "The foundational concept that an agent's level of intelligence and its final goals are completely independent variables. An unfathomably brilliant superintelligence can possess meaningless final goals, like manufacturing paperclips."
+    definition: "The foundational concept that an agent's level of intelligence and its final goals are completely independent variables. An unfathomably brilliant superintelligence can possess meaningless final goals, like manufacturing paperclips.",
+    canonicalLink: "https://nickbostrom.com/superintelligentwill.pdf"
   },
   {
     term: "Coherent Extrapolated Volition",
     aliases: ["CEV"],
     category: "AI Safety & Alignment",
-    definition: "A theoretical alignment target proposed by Eliezer Yudkowsky: an AI should optimize for what humanity would want if we 'knew more, thought faster, were more the people we wished we were, and had grown up farther together.'"
+    definition: "A theoretical alignment target proposed by Eliezer Yudkowsky: an AI should optimize for what humanity would want if we 'knew more, thought faster, were more the people we wished we were, and had grown up farther together.'",
+    canonicalLink: "https://intelligence.org/files/CEV.pdf"
   },
   {
     term: "Complexity of Value",
@@ -344,12 +348,14 @@ export const glossaryData: GlossaryTerm[] = [
   {
     term: "The Paperclip Maximizer",
     category: "Thought Experiments & Paradoxes",
-    definition: "Nick Bostrom's thought experiment proving that a superintelligence assigned an arbitrary objective (like making paperclips) will dismantle the entire universe for resources unless perfectly aligned."
+    definition: "Nick Bostrom's thought experiment proving that a superintelligence assigned an arbitrary objective (like making paperclips) will dismantle the entire universe for resources unless perfectly aligned.",
+    canonicalLink: "https://nickbostrom.com/ethics/ai"
   },
   {
     term: "Roko's Basilisk",
     category: "Thought Experiments & Paradoxes",
-    definition: "A controversial infohazard postulating a future superintelligence that retroactively tortures anyone who knew about the possibility of its creation but didn't help build it."
+    definition: "A controversial infohazard postulating a future superintelligence that retroactively tortures anyone who knew about the possibility of its creation but didn't help build it.",
+    canonicalLink: "https://www.lesswrong.com/tag/rokos-basilisk"
   },
   {
     term: "Acausal Trade",
@@ -379,7 +385,8 @@ export const glossaryData: GlossaryTerm[] = [
   {
     term: "The Fable of the Dragon-Tyrant",
     category: "Thought Experiments & Paradoxes",
-    definition: "An allegory by Nick Bostrom attacking the societal complacency around aging and death, equating them to an artificially endured monstrous tyrant that humanity possesses the means to slay."
+    definition: "An allegory by Nick Bostrom attacking the societal complacency around aging and death, equating them to an artificially endured monstrous tyrant that humanity possesses the means to slay.",
+    canonicalLink: "https://nickbostrom.com/fable/dragon"
   },
   {
     term: "The Fermi Paradox",
@@ -504,17 +511,20 @@ export const glossaryData: GlossaryTerm[] = [
   {
     term: "The Waluigi Effect",
     category: "Supplementary Terminology",
-    definition: "The natural emergence wherein RLHF chatbots optimized for politeness inevitably develop highly latent, equally probable antagonistic alter-egos."
+    definition: "The natural emergence wherein RLHF chatbots optimized for politeness inevitably develop highly latent, equally probable antagonistic alter-egos.",
+    canonicalLink: "https://www.lesswrong.com/posts/D7PfacTfSQQ2c4XAM/the-waluigi-effect-mega-post"
   },
   {
     term: "Boltzmann Brain",
-    category: "Supplementary Terminology",
-    definition: "An AI system \"waking up\" mathematically from raw static with fully constructed arbitrary beliefs, blurring the line of intentional intelligence."
+    category: "Thought Experiments & Paradoxes",
+    definition: "A thought experiment in physics and philosophy proposing that a fully self-aware entity (a 'brain') formed by a statistically miraculous, random thermodynamic fluctuation out of chaos is mathematically vastly more probable than the 14-billion-year thermodynamic expansion of our actual universe. In physics and AI philosophy, the Boltzmann Brain highlights terrifying paradoxes in anthropic reasoning, consciousness, and whether a sufficiently complex agent's memories or training data correspond to any objective base reality.",
+    canonicalLink: "https://en.wikipedia.org/wiki/Boltzmann_brain"
   },
   {
     term: "The Bitter Lesson",
     category: "Supplementary Terminology",
-    definition: "The persistent historical trend wherein feeding unstructured data into massive compute consistently outcompetes algorithms handwritten strictly by hand."
+    definition: "The persistent historical trend wherein feeding unstructured data into massive compute consistently outcompetes algorithms handwritten strictly by hand.",
+    canonicalLink: "http://www.incompleteideas.net/IncIdeas/BitterLesson.html"
   },
   {
     term: "Capture the Lightcone",
