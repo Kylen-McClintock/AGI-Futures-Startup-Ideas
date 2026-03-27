@@ -11,6 +11,7 @@ export type ForecastType =
 
 export interface Forecast {
     id: string;
+    slug?: string;
     profile_id: string | null;
     status: ForecastStatus;
     type: ForecastType;

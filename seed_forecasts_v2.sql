@@ -15,8 +15,11 @@ INSERT INTO forecasts (status, type, condition, question, resolution_criteria, o
 -- 1. Driverless ridehail and apartment parking
 ('live', 'bucketed_magnitude', 'fully driverless ridehail is approved for unrestricted commercial operation across Greater Phoenix by 2030', 'How much will average apartment parking ratios in new multifamily developments fall below the 2025 Phoenix baseline over the following 5 years?', NULL, '["less than 5%", "5–15%", "15–30%", "30%+"]'::jsonb, '{"Mobility", "Real Estate"}', '{"Autonomous Vehicles"}', 75),
 
--- 2. AI tutoring and achievement gaps
-('live', 'bucketed_magnitude', 'AI-native tutoring becomes a standard weekly tool for at least 50% of public-school students in 5 or more U.S. states by 2030', 'How will the math achievement gap between top- and bottom-quartile school districts change over the following 5 years?', NULL, '["widens by 10%+", "changes by less than 10%", "narrows by 10–25%", "narrows by 25%+"]'::jsonb, '{"Education"}', '{"LLMs", "Generative AI"}', 85),
+-- 2. AI tutoring and achievement gaps within adopting states
+('live', 'bucketed_magnitude', 'AI-native tutoring becomes a standard weekly tool for at least 50% of public-school students in 5 or more U.S. states by 2030', 'How will the math achievement gap between top- and bottom-quartile school districts that have implemented AI-native tutoring change over the following 5 years?', NULL, '["widens by 50%+", "widens by 10-50%", "changes by less than 10%", "narrows by 10-25%", "narrows by 25-50%", "narrows by 50%+"]'::jsonb, '{"Education"}', '{"LLMs", "Generative AI"}', 85),
+
+-- 2b. AI tutoring gaps between adopting and non-adopting states
+('live', 'bucketed_magnitude', 'AI-native tutoring becomes a standard weekly tool for at least 50% of public-school students in 5 or more U.S. states by 2030', 'How will the math achievement gap between school districts that implement AI-native tutoring and those that do not change over the following 5 years?', NULL, '["widens by 200%+", "widens by 100-200%", "widens by 50-100%", "widens by 10-50%", "changes by less than 10%", "narrows"]'::jsonb, '{"Education"}', '{"LLMs", "Generative AI"}', 80),
 
 -- 3. Humanoid robots and warehouse labor economics
 ('live', 'bucketed_magnitude', 'humanoid robots are deployed at all-in operating cost below $8/hour in at least 3 major U.S. warehouse networks by 2031', 'How much will labor cost per unit shipped fall in those networks over the following 5 years?', NULL, '["less than 10%", "10–25%", "25–50%", "50%+"]'::jsonb, '{"Logistics", "Robotics"}', '{"Humanoid Robotics"}', 80),
@@ -53,8 +56,8 @@ INSERT INTO forecasts (status, type, condition, question, resolution_criteria, o
 ('live', 'multiple_choice', NULL, 'Who will prove to be Satoshi Nakamoto?', 'consensus of credible reporting and/or a transfer from Satoshi’s original wallet', '["Hal Finney", "Nick Szabo", "Adam Back", "Len Sassaman", "Peter Todd", "A group / multiple people", "No one / remains unproven", "Other (optional write-in)"]'::jsonb, '{"Crypto"}', '{"Cryptography"}', 20),
 
 -- Longevity
-('live', 'year_or_never', NULL, 'What year will the first human celebrate their 130th birthday?', NULL, NULL, '{"Bio", "Health"}', '{"Anti-Aging", "Biotech"}', 80),
-('live', 'year_or_never', NULL, 'What year will the first human celebrate their 150th birthday?', NULL, NULL, '{"Bio", "Health"}', '{"Anti-Aging", "Biotech"}', 85),
+('live', 'year_or_never', NULL, 'What year will the first human celebrate their 130th birthday?', NULL, '["Before 2035", "2035-2050", "2050-2070", "2070-2100", "2100+", "Never"]'::jsonb, '{"Bio", "Health"}', '{"Anti-Aging", "Biotech"}', 80),
+('live', 'year_or_never', NULL, 'What year will the first human celebrate their 150th birthday?', NULL, '["Before 2050", "2050-2075", "2075-2100", "2100-2150", "2150+", "Never"]'::jsonb, '{"Bio", "Health"}', '{"Anti-Aging", "Biotech"}', 85),
 
 -- AGI / ASI
 ('live', 'cause_mechanism', 'ASI is not developed by 2050', 'what will be the primary reason?', NULL, '["Capabilities plateaued below ASI", "Compute / energy / hardware bottlenecks", "Data bottlenecks", "Economics / incentives were insufficient", "Regulation / governance / geopolitical restrictions slowed development", "Alignment / safety concerns forced a sustained slowdown", "Civilizational disruption, war, or collapse prevented progress", "ASI effectively arrived, but not in a way people agreed to call ''ASI''", "Other (optional write-in)"]'::jsonb, '{"Artificial Intelligence"}', '{"AGI", "Compute"}', 98),
@@ -65,7 +68,7 @@ INSERT INTO forecasts (status, type, condition, question, resolution_criteria, o
 ('live', 'company_actor', NULL, 'What company will be the first to sell 100,000 humanoid robots that can cook, clean, and perform basic household chores?', NULL, '["Figure", "1X", "Tesla", "Apptronik", "Unitree", "Sanctuary AI", "AgiBot", "UBTech", "Other (optional write-in)"]'::jsonb, '{"Robotics", "Consumer"}', '{"Humanoid Robotics"}', 75),
 ('live', 'year_or_never', NULL, 'In what year will there be 1 billion humanoid robots on Earth?', NULL, NULL, '{"Robotics", "Manufacturing"}', '{"Humanoid Robotics"}', 85),
 ('live', 'company_actor', NULL, 'What company will have the largest market share when there are 1 billion humanoid robots on Earth?', NULL, '["Tesla", "Figure", "1X", "Apptronik", "Unitree", "AgiBot", "UBTech", "Xiaomi", "Other (optional write-in)"]'::jsonb, '{"Robotics", "Manufacturing"}', '{"Humanoid Robotics"}', 75),
-('live', 'year_or_never', NULL, 'In what year will there be 10 billion humanoid robots in the solar system?', NULL, NULL, '{"Robotics", "Space"}', '{"Humanoid Robotics", "Space Tech"}', 60),
+('live', 'year_or_never', NULL, 'In what year will there be 10 billion humanoid robots in the solar system?', NULL, '["Before 2040", "2040-2060", "2060-2080", "2080-2120", "2120+", "Never"]'::jsonb, '{"Robotics", "Space"}', '{"Humanoid Robotics", "Space Tech"}', 60),
 
 -- Energy
 ('live', 'year_or_never', NULL, 'In what year will the first company provide economically viable net-positive commercial nuclear fusion power to the grid?', NULL, NULL, '{"Energy"}', '{"Fusion"}', 90),

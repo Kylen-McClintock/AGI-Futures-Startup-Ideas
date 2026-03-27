@@ -7,9 +7,10 @@ import ProposeForecastModal from "../components/ProposeForecastModal";
 
 interface Props {
     initialForecasts: Forecast[];
+    userId?: string;
 }
 
-export default function ProposedForecastsClient({ initialForecasts }: Props) {
+export default function ProposedForecastsClient({ initialForecasts, userId }: Props) {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [displayLimit, setDisplayLimit] = useState(10);
 
@@ -35,7 +36,7 @@ export default function ProposedForecastsClient({ initialForecasts }: Props) {
             ) : null}
 
             {initialForecasts?.slice(0, displayLimit).map(forecast => (
-                <ForecastCard key={forecast.id} forecast={forecast} mode="proposed" />
+                <ForecastCard key={forecast.id} forecast={forecast} mode="proposed" userId={userId} />
             ))}
 
             {(initialForecasts?.length || 0) > displayLimit && (

@@ -3,10 +3,10 @@
 import { Forecast, ForecastType } from "@/types/forecasting";
 import { useState, useMemo } from "react";
 import { createClient } from "@/utils/supabase/client";
-
 interface Props {
     forecast: Forecast;
     onSubmitted?: () => void;
+    userId?: string;
 }
 
 // Helper to determine the dynamic labels based on forecast type if 'options' array is null
@@ -26,8 +26,7 @@ function getDynamicOptions(type: ForecastType, explicitOptions: string[] | null)
             return ["Bucket A", "Bucket B", "Bucket C", "Bucket D"];
     }
 }
-
-export default function AdvancedAnswerForm({ forecast, onSubmitted }: Props) {
+export default function AdvancedAnswerForm({ forecast, onSubmitted, userId }: Props) {
     const supabase = createClient();
     
     const activeOptions = useMemo(() => getDynamicOptions(forecast.type, forecast.options), [forecast]);
@@ -45,6 +44,7 @@ export default function AdvancedAnswerForm({ forecast, onSubmitted }: Props) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [success, setSuccess] = useState(false);
+    const [reasoning, setReasoning] = useState("");
 
     const total = values.reduce((a, b) => a + b, 0);
 
@@ -103,7 +103,8 @@ export default function AdvancedAnswerForm({ forecast, onSubmitted }: Props) {
             forecast_id: forecast.id,
             profile_id: user.id,
             answer_mode: 'advanced',
-            answer_data: answerData
+            answer_data: answerData,
+            reasoning: reasoning.trim() || null
         });
 
         if (insertError) {

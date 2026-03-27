@@ -7,6 +7,7 @@ export const revalidate = 0;
 
 export default async function LiveForecastsPage() {
     const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
     
     // We fetch answer counts for the built-in Popularity sort!
     const { data: forecasts } = await supabase
@@ -15,5 +16,5 @@ export default async function LiveForecastsPage() {
         .eq("status", "live")
         .order("created_at", { ascending: false });
 
-    return <LiveForecastsClient initialForecasts={forecasts || []} />;
+    return <LiveForecastsClient initialForecasts={forecasts || []} userId={user?.id} />;
 }

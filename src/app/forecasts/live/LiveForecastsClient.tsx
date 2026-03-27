@@ -12,6 +12,7 @@ interface ExtendedForecast extends Forecast {
 
 interface Props {
     initialForecasts: ExtendedForecast[];
+    userId?: string;
 }
 
 const filterCategories = [
@@ -19,7 +20,7 @@ const filterCategories = [
     { id: 'enabling_technology', label: 'Technology' },
 ] as const;
 
-export default function LiveForecastsClient({ initialForecasts }: Props) {
+export default function LiveForecastsClient({ initialForecasts, userId }: Props) {
     const [sortBy, setSortBy] = useQueryState("sort", parseAsString.withDefault("important").withOptions({ shallow: false, history: 'push' }));
     const [sortDirection, setSortDirection] = useQueryState("dir", parseAsString.withDefault("desc").withOptions({ shallow: false, history: 'push' }));
     
@@ -211,27 +212,18 @@ export default function LiveForecastsClient({ initialForecasts }: Props) {
                 </div>
             ) : null}
             
-            <div className="flex flex-col">
-                {sortedForecasts.slice(0, displayLimit).map((forecast, i, arr) => {
-                    const isGroupedWithNext = i < arr.length - 1 &&
-                        JSON.stringify(forecast.sector) === JSON.stringify(arr[i + 1].sector) &&
-                        JSON.stringify(forecast.enabling_technology) === JSON.stringify(arr[i + 1].enabling_technology);
-                    const isGroupedWithPrev = i > 0 &&
-                        JSON.stringify(forecast.sector) === JSON.stringify(arr[i - 1].sector) &&
-                        JSON.stringify(forecast.enabling_technology) === JSON.stringify(arr[i - 1].enabling_technology);
-
-                    return (
-                        <div key={forecast.id} className={isGroupedWithNext ? "mb-0" : "mb-8 z-10"}>
-                            <ForecastCard 
-                                forecast={forecast} 
-                                mode="live" 
-                                answerCount={forecast.forecast_answers?.[0]?.count} 
-                                isGroupedWithNext={isGroupedWithNext}
-                                isGroupedWithPrev={isGroupedWithPrev}
-                            />
-                        </div>
-                    );
-                })}
+            {/* Sub-Feed of Forecast Cards */}
+            <div className="flex flex-col space-y-px">
+                {sortedForecasts.slice(0, displayLimit).map((f, i) => (
+                    <ForecastCard 
+                        key={f.id} 
+                        forecast={f} 
+                        answerCount={f.forecast_answers?.[0]?.count || 0}
+                        userId={userId}
+                        isGroupedWithPrev={i !== 0}
+                        isGroupedWithNext={i !== sortedForecasts.length - 1}
+                    />
+                ))}
             </div>
 
             {sortedForecasts.length > displayLimit && (

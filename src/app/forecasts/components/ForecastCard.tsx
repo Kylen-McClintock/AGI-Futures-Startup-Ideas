@@ -3,6 +3,7 @@
 import { Forecast } from "@/types/forecasting";
 import { useState } from "react";
 import { MessageSquare, ThumbsUp, ChevronDown, BarChart2, Users } from "lucide-react";
+import Link from "next/link";
 import QuickAnswerForm from "./QuickAnswerForm";
 import AdvancedAnswerForm from "./AdvancedAnswerForm";
 import AggregateDisplay from "./AggregateDisplay";
@@ -11,13 +12,15 @@ import { createClient } from "@/utils/supabase/client";
 
 interface Props {
     forecast: Forecast;
-    mode: "live" | "proposed";
+    mode?: "live" | "proposed";
     answerCount?: number;
     isGroupedWithPrev?: boolean;
     isGroupedWithNext?: boolean;
+    isStandalone?: boolean;
+    userId?: string;
 }
 
-export default function ForecastCard({ forecast, mode, answerCount, isGroupedWithPrev, isGroupedWithNext }: Props) {
+export default function ForecastCard({ forecast, mode = "live", answerCount, isGroupedWithPrev, isGroupedWithNext, isStandalone, userId }: Props) {
     const supabase = createClient();
     const [answerMode, setAnswerMode] = useState<"quick" | "advanced">("quick");
     const [showAdvanced, setShowAdvanced] = useState(false);
@@ -76,9 +79,17 @@ export default function ForecastCard({ forecast, mode, answerCount, isGroupedWit
 
             {/* Header: Title and Popularity */}
             <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6">
-                <h3 className="text-2xl font-serif text-white max-w-3xl">
-                    {forecast.question}
-                </h3>
+                {isStandalone ? (
+                    <h3 className="text-2xl font-serif text-white max-w-3xl">
+                        {forecast.question}
+                    </h3>
+                ) : (
+                    <Link href={`/forecasts/live/${forecast.slug || forecast.id}`} className="block group">
+                        <h3 className="text-2xl font-serif text-white group-hover:text-[#3bf4a4] transition-colors max-w-3xl">
+                            {forecast.question}
+                        </h3>
+                    </Link>
+                )}
                 {answerCount !== undefined && (
                     <div className="flex items-center gap-1.5 shrink-0 bg-[#3bf4a4]/10 border border-[#3bf4a4]/20 px-3 py-1 pb-1.5 rounded-full self-start">
                         <Users className="w-3.5 h-3.5 text-[#3bf4a4]" />
@@ -129,9 +140,9 @@ export default function ForecastCard({ forecast, mode, answerCount, isGroupedWit
 
                     <div className="bg-black/20 rounded-lg p-5 border border-white/5 mb-6">
                         {answerMode === "quick" ? (
-                            <QuickAnswerForm forecast={forecast} />
+                            <QuickAnswerForm forecast={forecast} userId={userId} />
                         ) : (
-                            <AdvancedAnswerForm forecast={forecast} />
+                            <AdvancedAnswerForm forecast={forecast} userId={userId} />
                         )}
                         
                         {showCrowd && (

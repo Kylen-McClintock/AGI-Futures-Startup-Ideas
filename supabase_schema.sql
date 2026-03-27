@@ -46,6 +46,7 @@ CREATE TABLE IF NOT EXISTS profiles (
   avatar_url text,
   headline text,
   thesis text,
+  is_premium boolean DEFAULT false,
   builder_status text[] DEFAULT '{}',
   goals text[] DEFAULT '{}',
   sectors text[] DEFAULT '{}',
@@ -144,6 +145,8 @@ CREATE TABLE IF NOT EXISTS forecast_comments (
   id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
   forecast_id uuid REFERENCES forecasts(id) ON DELETE CASCADE NOT NULL,
   profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE NOT NULL,
+  target_answer_id uuid, -- If commenting on a specific user's thesis/prediction
+  parent_id uuid, -- For threaded replies to other comments
   content text NOT NULL,
   created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
 );
@@ -157,6 +160,20 @@ CREATE TABLE IF NOT EXISTS forecast_answers (
   reasoning text,
   created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
   updated_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS forecast_answer_votes (
+  answer_id uuid REFERENCES forecast_answers(id) ON DELETE CASCADE,
+  profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+  PRIMARY KEY (answer_id, profile_id)
+);
+
+CREATE TABLE IF NOT EXISTS forecast_comment_votes (
+  comment_id uuid REFERENCES forecast_comments(id) ON DELETE CASCADE,
+  profile_id uuid REFERENCES profiles(id) ON DELETE CASCADE,
+  created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
+  PRIMARY KEY (comment_id, profile_id)
 );
 
 -- 15. Forecasts RLS Policies
@@ -186,3 +203,13 @@ CREATE POLICY "Allow public read access on forecast_answers" ON forecast_answers
 CREATE POLICY "Users can insert their own answers" ON forecast_answers FOR INSERT WITH CHECK (auth.uid() = profile_id);
 CREATE POLICY "Users can update their own answers" ON forecast_answers FOR UPDATE USING (auth.uid() = profile_id);
 CREATE POLICY "Users can delete their own answers" ON forecast_answers FOR DELETE USING (auth.uid() = profile_id);
+
+-- Forecast Answer Votes
+CREATE POLICY "Allow public read access on forecast_answer_votes" ON forecast_answer_votes FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own answer votes" ON forecast_answer_votes FOR INSERT WITH CHECK (auth.uid() = profile_id);
+CREATE POLICY "Users can delete their own answer votes" ON forecast_answer_votes FOR DELETE USING (auth.uid() = profile_id);
+
+-- Forecast Comment Votes
+CREATE POLICY "Allow public read access on forecast_comment_votes" ON forecast_comment_votes FOR SELECT USING (true);
+CREATE POLICY "Users can insert their own comment votes" ON forecast_comment_votes FOR INSERT WITH CHECK (auth.uid() = profile_id);
+CREATE POLICY "Users can delete their own comment votes" ON forecast_comment_votes FOR DELETE USING (auth.uid() = profile_id);
