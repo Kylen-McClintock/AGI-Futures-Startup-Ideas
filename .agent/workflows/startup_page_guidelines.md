@@ -54,12 +54,30 @@ When generating or refining a new startup idea prototype in the AGI Futures plat
 - When expanding the references block, format the acronyms as bold keys with lighter text definitions.
 - For references/citations, use the exact sources provided in the script, implementing them as clean outbound links (e.g., opening in a new tab `target="_blank"` with a small arrow icon/token `&rarr;`).
 
-## 6. Media Distribution
+## 6. Media Distribution & Open Graph SEO
 - Aim for 3-4 distinct images spaced throughout the deeply text-heavy scripts.
-- **Hero Image (Top)**: Setting the scene.
+- **Hero Image (Top)**: Setting the scene. Must be named `hero.png` or `hero.jpg`.
 - **Contextual Image (Middle)**: Grounding the operational reality or the specific vertical.
 - **Thematic Closing (Bottom)**: A strong visual at the bottom of the page to close the narrative out before the references or meta details. 
 - Ensure images utilize Next.js `<Image />` component with `fill` and absolute positioning for edge-to-edge or rounded-panel designs.
+- **Open Graph Metadata (CRITICAL)**: You MUST natively wire the `heroImage` into the `page.tsx` Next.js metadata export so social media platforms render the rich preview cards correctly. Use this exact pattern:
+  ```tsx
+  import heroImage from './assets/hero.png';
+  
+  export const metadata: Metadata = {
+      title: 'Idea Name | AGI Futures',
+      description: '...',
+      openGraph: {
+          title: 'Idea Name | AGI Futures',
+          description: '...',
+          images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height }],
+      },
+      twitter: {
+          card: "summary_large_image",
+          images: [heroImage.src],
+      }
+  };
+  ```
 
 ## 7. Database (Supabase) Scoring Requirements
 As part of generating the new idea, you must also evaluate and score the startup and append its data to the `seed_tags.ts` script so it syncs with Supabase. 
