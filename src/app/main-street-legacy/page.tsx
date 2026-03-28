@@ -1,5 +1,6 @@
 import ClientPage from "./page-client";
 import { Metadata } from "next";
+import heroImage from './assets/hero.png';
 
 export const metadata: Metadata = {
     title: 'Main Street Legacy | AI-Native SMB Succession Engine - AGI Futures',

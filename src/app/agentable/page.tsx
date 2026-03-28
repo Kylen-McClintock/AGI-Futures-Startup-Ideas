@@ -1,4 +1,5 @@
 import { PageClient } from "./page-client";
+import heroImage from './assets/hero.png';
 
 export const metadata = {
     title: 'Agentable | Make Software Legible - AGI Futures',
