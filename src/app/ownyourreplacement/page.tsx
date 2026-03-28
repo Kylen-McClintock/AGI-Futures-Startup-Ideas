@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
+import heroImage from './assets/hero.png';
 import OwnYourReplacementClientPage from './page-client';
 
 export const metadata: Metadata = {
@@ -8,6 +9,11 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Own Your Replacement | Automation Income Hedge - AGI Futures',
         description: 'Teach the machine. Own the upside. A pricing engine for machine-teachable labor.',
+        images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height }],
+    },
+    twitter: {
+        card: "summary_large_image",
+        images: [heroImage.src],
     }
 };
 

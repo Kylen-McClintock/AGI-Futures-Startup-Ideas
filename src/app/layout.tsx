@@ -18,8 +18,22 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://agifutures.org"),
   title: "AGI Futures Startup Ideas Library",
   description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
+  openGraph: {
+    title: "AGI Futures Startup Ideas Library",
+    description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
+    url: "https://agifutures.org",
+    siteName: "AGI Futures",
+    images: [{ url: "/icon.png", width: 800, height: 800 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AGI Futures Startup Ideas Library",
+    description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
+    images: ["/icon.png"],
+  },
 };
 
 export default function RootLayout({

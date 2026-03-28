@@ -10,8 +10,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'ProxyPilot | AGI Futures',
         description: 'AI Native Proxy Voting. Transforming the proxy voting deadlock into an opportunity for retail investors to delegate voting power.',
-        images: ['/images/proxypilot_og.jpg'], // Assuming placeholder for now, normally an explicit OG image path
+        images: ['/images/proxypilot_og.png'],
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "ProxyPilot | AGI Futures",
+        description: "AI Native Proxy Voting. Transforming the proxy voting deadlock into an opportunity for retail investors to delegate voting power.",
+        images: ["/images/proxypilot_og.png"],
+    }
 };
 
 export default async function ProxyPilotPage() {
