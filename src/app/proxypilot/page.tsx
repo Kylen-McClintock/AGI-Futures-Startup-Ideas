@@ -4,7 +4,7 @@ import ProxyPilotClient from './page-client';
 import { calculateExpectedValuation, calculateTimeToUnicorn } from '@/utils/forecastMath';
 import { getForecastForSlug } from '@/data/forecasts';
 
-import proxypilotOg from '../../public/images/proxypilot_og.png';
+import proxypilotOg from './assets/proxypilot_og.png';
 
 export const metadata: Metadata = {
     title: 'ProxyPilot | AGI Futures',
