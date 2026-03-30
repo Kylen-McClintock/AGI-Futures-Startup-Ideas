@@ -52,7 +52,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/afl`,
+            url: `${baseUrl}/AIFounderLab`,
             lastModified: date,
             changeFrequency: 'monthly',
             priority: 0.8,

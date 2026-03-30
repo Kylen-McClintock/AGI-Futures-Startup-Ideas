@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg-color: #020804; --primary: #10b981; --text-main: #ffffff; }
+        body { margin: 0; padding: 0; width: 1080px; height: 1350px; background-color: var(--bg-color); color: var(--text-main); font-family: 'Outfit', sans-serif; position: relative; overflow: hidden;}
+        
+        #bg-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(1.0); }
+        .dark-overlay { position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.05); pointer-events: none; }
+        .radial-shadow { position: absolute; inset: 0; z-index: 2; background: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 65%); pointer-events: none; }
+        
+        /* The structural "Card" layout requested. 48% high. Solid black on the floor where the footer is. */
+        #bottom-card { 
+            position: absolute; 
+            bottom: 0; left: 0; right: 0; height: 48%; 
+            z-index: 2; 
+            background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 140px, rgba(0,0,0,0.55) 200px, rgba(0,0,0,0.55) 100%); 
+            border-top: 1px solid rgba(255,255,255,0.15); 
+            backdrop-filter: blur(8px);
+            pointer-events: none;
+        }
+
+        #content { position: relative; z-index: 3; width: 100%; height: 100%; padding: 0; box-sizing: border-box; display: flex; flex-direction: column; overflow: hidden; }
+        
+        .slide-counter { position: absolute; top: 40px; right: 40px; font-size: 20px; font-family: 'Inter', sans-serif; font-weight: 300; opacity: 0.7; z-index: 10; letter-spacing: 1px; }
+
+        /* Erased the massive margin buffer. This locks the text cleanly right above the footer safe zone. */
+        .inner-content { flex: 1; min-height: 0; padding: 60px 80px; display: flex; flex-direction: column; justify-content: flex-end; margin-bottom: 150px; }
+        
+        .body-area-standard { display: flex; flex-direction: column; justify-content: flex-end; width: 100%; }
+        
+        /* Section Header perfectly embedded inside the text block layer */
+        .card-section-label { font-size: 22px; font-weight: 600; font-family: 'Inter', sans-serif; letter-spacing: 2px; color: rgba(255,255,255,0.7); margin-bottom: 16px; text-transform: uppercase; }
+
+        .cover-header-row { position: absolute; top: 50px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: flex-start; z-index: 10; }
+        .cover-proof-label { font-size: 32px; font-weight: 300; font-family: 'Inter', sans-serif; opacity: 0.9; margin-top: 6px; }
+        
+        .cover-tags { display: flex; gap: 10px; flex-wrap: wrap; justify-content: flex-end; max-width: 500px; }
+        .cover-tags .tag { border: 1.5px solid var(--primary); padding: 6px 20px; border-radius: 40px; color: var(--primary); font-size: 18px; font-weight: 500; background: rgba(0,0,0,0.6); backdrop-filter: blur(8px); }
+        
+        .cover-center-wrapper { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: 0 80px; z-index: 5; pointer-events: none;}
+        .cover-title-group { display: flex; flex-direction: column; text-align: left; width: 100%; }
+        .cover-title { font-size: 160px; font-weight: 700; letter-spacing: -3px; line-height: 1; margin: 0 0 16px 0; text-shadow: 0 8px 30px rgba(0,0,0,0.8); text-align: left; }
+        .cover-descriptor { font-size: 42px; font-weight: 300; line-height: 1.4; max-width: 900px; margin: 0; text-shadow: 0 5px 20px rgba(0,0,0,0.9); text-align: left; opacity: 0.95; }
+
+        .standard-subtitle { font-size: 42px; font-weight: 600; color: var(--primary); font-family: 'Outfit', sans-serif; margin: 0 0 16px 0; line-height: 1.2; text-shadow: 0 4px 12px rgba(0,0,0,0.9); }
+        .standard-text { font-size: 36px; font-weight: 300; line-height: 1.45; font-family: 'Inter', sans-serif; margin: 0; text-shadow: 0 4px 15px rgba(0,0,0,0.9); width: 100%; max-width: 900px; }
+
+        .hook-massive-stat { font-size: 100px; font-weight: 700; color: var(--text-main); line-height: 1.05; letter-spacing: -3px; margin: 0 0 20px 0; text-shadow: 0 8px 30px rgba(0,0,0,0.8); }
+        .hook-text { font-size: 36px; font-weight: 300; line-height: 1.45; font-family: 'Inter', sans-serif; margin: 0; text-shadow: 0 4px 20px rgba(0,0,0,0.9); max-width: 920px; color: var(--primary); }
+
+        .list-container { display: flex; flex-direction: column; gap: 20px; width: 100%; max-width: 960px; margin-top: 10px; overflow: hidden; }
+        .list-card { background: rgba(0,0,0,0.4); border-left: 5px solid var(--primary); border-radius: 6px 16px 16px 6px; padding: 24px 30px; backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(0,0,0,0.4); }
+        .list-card-title { font-size: 34px; font-weight: 600; color: #ffffff; margin-bottom: 6px; font-family: 'Outfit'; }
+        .list-card-desc { font-size: 26px; font-weight: 300; line-height: 1.4; font-family: 'Inter', sans-serif; color: rgba(255,255,255,0.9); }
+        
+        .list-container[data-count="4"] { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .list-container[data-count="4"] .list-card { padding: 18px 24px; border-left-width: 4px; }
+        .list-container[data-count="4"] .list-card-title { font-size: 28px; margin-bottom: 6px; }
+        .list-container[data-count="4"] .list-card-desc { font-size: 20px; line-height: 1.4; }
+
+        .cta-slide-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 0 60px 140px 60px; }
+        .cta-quote { font-weight: 500; letter-spacing: -1px; color: #ffffff; font-style: italic; margin-bottom: 60px; font-family: 'Outfit'; text-shadow: 0 8px 30px rgba(0,0,0,0.8); }
+        .cta-link { font-size: 32px; font-weight: 400; color: #fff; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); padding: 18px 48px; border-radius: 50px; backdrop-filter: blur(10px); }
+
+        .footer-abs { position: absolute; bottom: 40px; left: 80px; right: 80px; display: flex; justify-content: space-between; align-items: flex-end; z-index: 10; }
+        .logo-container { width: 350px; height: 80px; overflow: hidden; display: flex; align-items: center; justify-content: flex-start; }
+        .logo-img { height: 100%; width: auto; transform: scale(1.6); transform-origin: left center; filter: brightness(1.1); }
+        .slug-name { font-size: 34px; font-weight: 400; font-family: 'Outfit', sans-serif; opacity: 0.8; margin-bottom: 0; padding-bottom: 22px; }
+    </style>
+</head>
+<body>
+    <img id="bg-image" src="" alt="">
+    <div class="dark-overlay"></div>
+    <div id="bottom-card"></div>
+    <div id="radial-overlay"></div>
+    <div id="content"></div>
+
+    <script>
+        window.renderSlide = function(type, data, index, totalSlides, imageSrc, logoSrc, slugTitle, ideaNumber) {
+            var content = document.getElementById('content');
+            var bgImage = document.getElementById('bg-image');
+            var radialOverlay = document.getElementById('radial-overlay');
+            var bottomCard = document.getElementById('bottom-card');
+            
+            if (imageSrc) {
+                bgImage.src = imageSrc;
+                bgImage.style.display = 'block';
+            } else {
+                bgImage.style.display = 'none';
+            }
+
+            // Exclude bottom card from cover and cta
+            if (type === 'cover' || type === 'cta') {
+                radialOverlay.className = 'radial-shadow';
+                bottomCard.style.display = 'none';
+            } else {
+                radialOverlay.className = '';
+                bottomCard.style.display = 'block';
+            }
+
+            var logoElement = logoSrc ? 
+                '<div class="logo-container"><img class="logo-img" src="' + logoSrc + '" alt="AGI Futures"></div>' : 
+                '<div style="font-size: 38px; color: #10b981; font-weight: 600;">AGI Futures</div>';
+
+            var slugElement = type !== 'cover' ? '<div class="slug-name">' + slugTitle + '</div>' : '';
+
+            var footerHtml = 
+                '<div class="footer-abs">' +
+                    logoElement +
+                    slugElement +
+                '</div>';
+
+            var html = '';
+
+            if (type === 'cover') {
+                var tagHtml = '';
+                if (data.tags && data.tags.length > 0) {
+                    tagHtml = '<div class="cover-tags">' + data.tags.map(function(t) { return '<div class="tag">' + t + '</div>'; }).join('') + '</div>';
+                }
+                
+                html = 
+                    '<div class="cover-header-row">' +
+                        '<div class="cover-proof-label">AGI Proof Startup Idea #' + (ideaNumber || 'X') + '</div>' +
+                        tagHtml +
+                    '</div>' +
+                    '<div class="cover-center-wrapper">' +
+                        '<div class="cover-title-group">' +
+                            '<h1 class="cover-title">' + (data.title || '') + '</h1>' +
+                            '<p class="cover-descriptor">' + (data.descriptor || '') + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                    footerHtml;
+            } else if (type === 'cta') {
+                var quoteLength = data.title ? data.title.length : 0;
+                var quoteSize = quoteLength > 200 ? '40px' : (quoteLength > 120 ? '50px' : '64px');
+                var quoteLineHeight = quoteLength > 120 ? '1.4' : '1.3';
+
+                var footerCtaHtml = '<div class="footer-abs">' + logoElement + '</div>';
+                html = 
+                    '<div class="slide-counter">' + index + '/' + totalSlides + '</div>' +
+                    '<div class="inner-content" style="margin-bottom: 0px;">' +
+                        '<div class="cta-slide-container">' +
+                            '<h2 class="cta-quote" style="font-size: ' + quoteSize + '; line-height: ' + quoteLineHeight + ';">&ldquo;' + (data.title || '') + '&rdquo;</h2>' +
+                            '<div class="cta-link">' + (data.text || '') + '</div>' +
+                        '</div>' +
+                    '</div>' +
+                    footerCtaHtml;
+            } else if (type === 'hook') {
+                var headerTitle = data.sectionName || "The Hook";
+                
+                html = 
+                    '<div class="slide-counter">' + index + '/' + totalSlides + '</div>' +
+                    '<div class="inner-content">' +
+                        '<div class="body-area-standard">' +
+                            '<div class="card-section-label">' + headerTitle + '</div>' +
+                            '<h2 class="hook-massive-stat">' + (data.title || '') + '</h2>' +
+                            '<p class="hook-text">' + (data.text || '') + '</p>' +
+                        '</div>' +
+                    '</div>' +
+                    footerHtml;
+            } else {
+                var headerTitle = data.sectionName || data.title || "Insight";
+                if (type === 'oneLiner') headerTitle = data.sectionName || "The Pitch";
+
+                var subtitleHtml = (data.title && data.title !== headerTitle && type !== 'oneLiner') ? '<h3 class="standard-subtitle">' + data.title + '</h3>' : '';
+
+                var listHtml = '';
+                if (data.list && data.list.length > 0) {
+                    var cards = data.list.map(function(item) {
+                        return '<div class="list-card">' +
+                                  (item.title ? '<div class="list-card-title">' + item.title + '</div>' : '') +
+                                  (item.description ? '<div class="list-card-desc">' + item.description + '</div>' : '') +
+                               '</div>';
+                    }).join('');
+                    listHtml = '<div class="list-container" data-count="' + data.list.length + '">' + cards + '</div>';
+                }
+
+                var endTagsHtml = '';
+                if (type === 'final' && data.tags && data.tags.length > 0) {
+                    var tgs = data.tags.map(function(t) { return '<div class="tag">' + t + '</div>'; }).join('');
+                    endTagsHtml = '<div class="cover-tags" style="justify-content: flex-start; margin-top: 30px;">' + tgs + '</div>';
+                }
+
+                html = 
+                    '<div class="slide-counter">' + index + '/' + totalSlides + '</div>' +
+                    '<div class="inner-content">' +
+                        '<div class="body-area-standard">' +
+                            '<div class="card-section-label">' + headerTitle + '</div>' +
+                            subtitleHtml +
+                            (data.text ? '<p class="standard-text">' + data.text + '</p>' : '') +
+                            listHtml +
+                            endTagsHtml +
+                        '</div>' +
+                    '</div>' +
+                    footerHtml;
+            }
+
+            content.innerHTML = html;
+        };
+    </script>
+</body>
+</html>
