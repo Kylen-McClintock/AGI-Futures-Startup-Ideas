@@ -222,7 +222,12 @@
                 var ctaHtml = '';
                 if (type === 'final') {
                     var finalCtaText = 'Explore the full startup blueprint at <span style="font-weight: 600;">AGIFutures.org/' + (slug || '') + '</span>';
-                    ctaHtml = '<div style="margin-top: 50px; display: flex; justify-content: center; width: 100%;"><div class="idea-badge" style="background: ' + pillBg + '; border: 1.5px solid ' + pillBorder + '; font-size: 23px; font-weight: 400; padding: 20px 20px; width: 100%; box-sizing: border-box; text-align: center; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + finalCtaText + '</div></div>';
+                    var ctaLength = 53 + (slug ? slug.length : 0);
+                    var ctaFontSize = '29px';
+                    if (ctaLength > 68) ctaFontSize = '23px';
+                    else if (ctaLength > 60) ctaFontSize = '26px';
+                    
+                    ctaHtml = '<div style="margin-top: 50px; display: flex; justify-content: center; width: 100%;"><div class="idea-badge" style="background: ' + pillBg + '; border: 1.5px solid ' + pillBorder + '; font-size: ' + ctaFontSize + '; font-weight: 400; padding: 20px 20px; width: 100%; box-sizing: border-box; text-align: center; border-radius: 999px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">' + finalCtaText + '</div></div>';
                 }
 
                 html = 
