@@ -582,6 +582,26 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                     </div>
                 </motion.section>
 
+                <motion.section
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="mb-32"
+                >
+                    <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-[var(--primary)]/30 bg-[#0b0a09]/80 relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[80px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4" />
+                        <h3 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Transferable Insight
+                        </h3>
+                        <p className="text-xl leading-relaxed text-white/90 font-light mb-6 tracking-wide">
+                            In an era of hyper-abundant AI capability, credentialism collapses into proof-of-work.
+                        </p>
+                        <p className="text-lg leading-relaxed text-white/70 font-light">
+                            When anyone can use an LLM or autonomous agent to perfectly synthesize a resume or beat an algorithmic take-home test, the only unfakeable signal left is the deterministic execution of live, highly-scoped tasks. The highest leverage for builders isn't creating better filtering AI—it’s physically decentralizing an organization's backlog to turn <strong>real work</strong> into the ultimate API for talent discovery. Shifting systems from proxies (degrees) to direct performance objects is how you scale trust.
+                        </p>
+                    </div>
+                </motion.section>
+
                 <div className="w-full h-px bg-white/10 my-20" />
 
                 {/* References */}

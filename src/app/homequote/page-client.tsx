@@ -530,6 +530,22 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     </div>
                 </FadeIn>
 
+                {/* Transferable Insight */}
+                <FadeIn>
+                    <div className="bg-white/5 border border-[var(--primary)]/20 p-8 sm:p-12 rounded-3xl relative overflow-hidden group">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[80px] rounded-full pointer-events-none -translate-y-1/2 translate-x-1/4" />
+                        <h3 className="text-sm font-mono tracking-widest uppercase text-[var(--secondary)] mb-6 flex items-center">
+                            <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Transferable Insight
+                        </h3>
+                        <p className="text-xl leading-relaxed text-white/90 font-light mb-6">
+                            The deepest moat isn't the model—it's the data pipeline translating chaotic, physical entropy into standardized pricing objects.
+                        </p>
+                        <p className="text-lg leading-relaxed text-white/70 font-light">
+                            AI-native builders shouldn't just look to "make tasks faster." The highest leverage comes from finding where <strong>fuzzy physical reality</strong> (like a messy living room) collides with <strong>hard financial negotiation</strong> (a service quote). When you use an LLM as the translation layer between the analog world and strict capital systems, you turn bespoke human sensing into a repeatable, software-defined API.
+                        </p>
+                    </div>
+                </FadeIn>
+
                 {/* References */}
                 <FadeIn>
                     <details className="mt-24 pt-12 border-t border-white/10 max-w-3xl mx-auto group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden mb-12">
