@@ -594,10 +594,10 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Transferable Insight
                         </h3>
                         <p className="text-xl leading-relaxed text-white/90 font-light mb-6 tracking-wide">
-                            In an era of hyper-abundant AI capability, credentialism collapses into proof-of-work.
+                            Turn the backlog into a robust trust API.
                         </p>
                         <p className="text-lg leading-relaxed text-white/70 font-light">
-                            When anyone can use an LLM or autonomous agent to perfectly synthesize a resume or beat an algorithmic take-home test, the only unfakeable signal left is the deterministic execution of live, highly-scoped tasks. The highest leverage for builders isn't creating better filtering AI—it’s physically decentralizing an organization's backlog to turn <strong>real work</strong> into the ultimate API for talent discovery. Shifting systems from proxies (degrees) to direct performance objects is how you scale trust.
+                            In a world of abundant AI capability, credentialism collapses. The only unfakeable signal left is the deterministic execution of live, scoped tasks. The lever for builders is shifting systems away from historical proxies and instead wrapping real-world production outputs into verifiable, public data objects to scale trust.
                         </p>
                     </div>
                 </motion.section>

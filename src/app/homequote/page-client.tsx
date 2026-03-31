@@ -538,10 +538,10 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             <span className="w-8 h-px bg-[var(--primary)]/50 mr-4" /> Transferable Insight
                         </h3>
                         <p className="text-xl leading-relaxed text-white/90 font-light mb-6">
-                            The deepest moat isn't the model—it's the data pipeline translating chaotic, physical entropy into standardized pricing objects.
+                            Treat models as an API bridge for physical entropy.
                         </p>
                         <p className="text-lg leading-relaxed text-white/70 font-light">
-                            AI-native builders shouldn't just look to "make tasks faster." The highest leverage comes from finding where <strong>fuzzy physical reality</strong> (like a messy living room) collides with <strong>hard financial negotiation</strong> (a service quote). When you use an LLM as the translation layer between the analog world and strict capital systems, you turn bespoke human sensing into a repeatable, software-defined API.
+                            True moats aren't built on making digital workflows slightly faster; they reside where fuzzy, chaotic reality collides with strict operational systems. Builders who use multimodal models to translate unstructured human sensing into deterministic, structured data objects will command the highest-friction bottlenecks in any industry.
                         </p>
                     </div>
                 </FadeIn>

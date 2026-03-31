@@ -523,10 +523,10 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                                 <span className="w-8 h-px bg-[var(--secondary)]/50 mr-4" /> Transferable Insight
                             </h3>
                             <p className="text-xl leading-relaxed text-white/90 font-light mb-6">
-                                Don’t build a monolithic app; build the agnostic context API.
+                                Decouple intelligence from the presentation layer.
                             </p>
                             <p className="text-lg leading-relaxed text-white/70 font-light">
-                                The future of spatial computing isn't about single-purpose endpoints—it’s about decoupling intelligence from the presentation layer. When an AI can understand its environment, remember its user, and project its state into any XR device, it becomes an Embodied Intelligence Stack. Builders should focus on the modular memory kernels and behavior graphs that can plug indiscriminately into whatever physical hardware eventually wins the adoption race.
+                                The highest leverage in interface design is separating the reasoning engine from the visual shell. When your agent's memory and behavior graph can plug indiscriminately into any frontend—be it a web UI, a voice channel, or spatial hardware—your product survives hardware shifts and scales infinitely.
                             </p>
                         </div>
                     </section>
