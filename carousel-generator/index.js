@@ -29,7 +29,7 @@ async function main() {
         // CACHE BYPASS: Skip API rate limits if we already extracted the JSON payload yesterday
         let carouselData;
         try {
-            const extPath = '/Users/kylenmcclintock/Downloads/agifutures_carousel_text_batch_04_revised.json';
+            const extPath = '/Users/kylenmcclintock/Downloads/agifutures_carousel_text_batch_05.json';
             let extData = null;
             try {
                 const raw = await fs.readFile(extPath, 'utf8');
@@ -37,7 +37,11 @@ async function main() {
             } catch (err) {}
 
             if(extData && extData.ideas) {
-                const ideaObj = extData.ideas.find(i => i.slug === slug);
+                const ideaObj = extData.ideas.find(i => 
+                    i.slug === slug || 
+                    i.slug.replace(/-/g, '') === slug.replace(/-/g, '') ||
+                    i.slug.startsWith(slug)
+                );
                 if(ideaObj) {
                     console.log(`[GPT INJECT] Safely intercepted payload directly from user's custom JSON string!`);
                     carouselData = {};
