@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
-export async function renderCarousel(slug, carouselData, outputDir, ideaNumber) {
+export async function renderCarousel(slug, carouselData, outputDir, ideaNumber, themeColor) {
     const assetsDir = path.join(PROJECT_ROOT, 'src', 'app', slug, 'assets');
     const logoPath = path.join(PROJECT_ROOT, 'public', 'logo.png');
     
@@ -40,8 +40,7 @@ export async function renderCarousel(slug, carouselData, outputDir, ideaNumber) 
         { type: 'solution', data: carouselData.solution },
         { type: 'optional1', data: carouselData.optional1 },
         { type: 'optional2', data: carouselData.optional2 },
-        { type: 'final', data: carouselData.final },
-        { type: 'cta', data: carouselData.cta }
+        { type: 'final', data: carouselData.final }
     ];
 
     for (let i = 0; i < sequence.length; i++) {
@@ -61,8 +60,8 @@ export async function renderCarousel(slug, carouselData, outputDir, ideaNumber) 
             }
         }
         
-        await page.evaluate(({ type, data, index, total, imageSrc, logoSrc, slugTitle, ideaNumber }) => {
-            window.renderSlide(type, data, index, total, imageSrc, logoSrc, slugTitle, ideaNumber);
+        await page.evaluate(({ type, data, index, total, imageSrc, logoSrc, slugTitle, ideaNumber, themeColor, slug }) => {
+            window.renderSlide(type, data, index, total, imageSrc, logoSrc, slugTitle, ideaNumber, themeColor, slug);
         }, { 
             type: slide.type, 
             data: slide.data, 
@@ -71,7 +70,9 @@ export async function renderCarousel(slug, carouselData, outputDir, ideaNumber) 
             imageSrc: base64Image, 
             logoSrc: base64Logo, 
             slugTitle: carouselData.cover.title,
-            ideaNumber: ideaNumber
+            ideaNumber: ideaNumber,
+            themeColor: themeColor,
+            slug: slug
         });
         
         await new Promise(resolve => setTimeout(resolve, 300));

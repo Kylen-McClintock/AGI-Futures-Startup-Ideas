@@ -24,7 +24,7 @@ import dartFrog from './assets/macro_frog.png';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
-export default function BiophiliaArkClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
+export default function BioWallsClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
     const tags = {
         sector: initialTags?.sector?.length ? initialTags.sector : ['Housing', 'Cities', 'Community', 'Science'],
@@ -39,11 +39,11 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
 
     return (
         <main className="min-h-screen bg-[#06090c] text-[var(--tertiary)] selection:bg-[var(--primary)]/30 overflow-x-hidden font-sans pb-32" style={{ "--primary": themeMap['emerald'].hexPrimary, "--secondary": themeMap['emerald'].hexSecondary, "--tertiary": themeMap['emerald'].hexTertiary } as React.CSSProperties}>
-            <ScrollProgress title="Biophilia Ark" theme="emerald" />
+            <ScrollProgress title="BioWalls" theme="emerald" />
 
             {/* Top Interested Button */}
             <div className="fixed top-24 right-6 lg:right-12 z-50 animate-in fade-in slide-in-from-right-8 duration-700 delay-500 hidden sm:block">
-                <InterestedButton projectSlug="biophilia-ark" />
+                <InterestedButton projectSlug="biowalls" />
             </div>
 
 
@@ -79,10 +79,10 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
-                            Biophilia Ark
+                            BioWalls
                         </h1>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/80 leading-relaxed font-light mb-8 max-w-3xl">
-                            Builds high-design living walls that turn dead interiors into living portals, with optional animals, active biofiltration, and revenue flowing back to the real biome each wall represents.
+                            Builds high-design living walls that turn dead interiors into luxury portals to the natural world, with optional animals, active biofiltration, and revenue flowing back to the real biome each wall represents.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
@@ -488,7 +488,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                             </ul>
                             <div className="mt-auto">
                                 <p className="text-lg text-white/80 leading-relaxed font-light bg-[var(--primary)]/10 p-5 rounded-2xl border border-[var(--primary)]/20">
-                                    <strong>Value flow is simple:</strong> Buyers get beauty and status. Occupants get a better daily environment. Conservation partners get recurring funds tied to a specific biome. Biophilia Ark gets installation and recurring service revenue.
+                                    <strong>Value flow is simple:</strong> Buyers get beauty and status. Occupants get a better daily environment. Conservation partners get recurring funds tied to a specific biome. BioWalls gets installation and recurring service revenue.
                                 </p>
                             </div>
                         </div>
@@ -607,7 +607,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
 
                     <div className="glass-panel p-8 sm:p-10 rounded-3xl border border-white/5 hover:bg-white/[0.03] transition-colors duration-500 group">
                         <p className="text-lg text-white/70 leading-relaxed font-light mb-6">
-                            AGI lowers the cost of custom ecosystem design, maintenance intelligence, and digital-twin planning. Biophilia Ark can use AI to:
+                            AGI lowers the cost of custom ecosystem design, maintenance intelligence, and digital-twin planning. BioWalls can use AI to:
                         </p>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-white/80 font-light mb-6">
                             <li className="flex items-center gap-3 bg-white/5 p-4 rounded-xl border border-white/5"><span className="text-[var(--primary)]">✦</span> Generate site-specific concepts fast</li>
@@ -745,7 +745,7 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                     <OpenSourcePriority 
                         civilizationalImpactScore={78}
                         neglectednessScore={89}
-                        ideaSpecificText="An open-source hardware blueprint for Biophilia Ark accelerates biological integration into urban environments globally, ensuring climate resilience technology isn't artificially constrained."
+                        ideaSpecificText="An open-source hardware blueprint for BioWalls accelerates biological integration into urban environments globally, ensuring climate resilience technology isn't artificially constrained."
                     />
                 </div>
 
@@ -868,11 +868,11 @@ export default function BiophiliaArkClientPage({ initialTags }: { initialTags: P
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />
 
                 {/* Proof of Work / Artifacts Section */}
-                <ArtifactSection projectSlug="biophilia-ark" />
+                <ArtifactSection projectSlug="biowalls" />
 
                 {/* Bottom Interested Button */}
                 <div className="flex justify-center mt-32 mb-16 animate-in fade-in slide-in-from-bottom-8 duration-700">
-                    <InterestedButton projectSlug="biophilia-ark" />
+                    <InterestedButton projectSlug="biowalls" />
                 </div>
             </main>
     );

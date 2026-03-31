@@ -23,6 +23,7 @@ import heroImage from './assets/helm_hero.png';
 import jarvisImage from './assets/helm_jarvis.png';
 import graphImage from './assets/helm_graph.png';
 import networkImage from './assets/helm_network.png';
+import icpNetworkImage from './assets/helm_icp_network.png';
 import { InterestedButton } from "@/components/InterestedButton";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -370,6 +371,11 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <InlineTags tags={tags.customer} theme="indigo" />
                         </div>
                     </div>
+
+                    <RevealSection className="mb-12 w-full aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-[var(--primary)]/20 relative group">
+                        <Image unoptimized src={icpNetworkImage} alt="Distributed modern startup team seamlessly connected by a glowing networking graph" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/20 via-transparent to-transparent pointer-events-none" />
+                    </RevealSection>
 
                     <div className="glass-panel p-8 sm:p-12 rounded-[2rem] border border-[var(--primary)]/20 bg-[var(--primary)]/20 relative overflow-hidden group">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--primary)]/10 blur-[80px]" />

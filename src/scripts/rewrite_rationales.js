@@ -16,7 +16,7 @@ const rationales = {
     "avatarlab": "Open-sourcing AvatarLab’s organoid simulation datasets rapidly accelerates global decentralized drug discovery, rather than locking longevity gains behind a single pharma monopoly.",
     "proofrun": "An open-source ProofRun protocol creates a universal, verified credentialing system that bypasses legacy credentialism, allowing raw talent to coordinate freely.",
     "handraise": "Open-sourcing Handraise’s contribution graph creates a credibly neutral protocol for tracking decentralized value creation, preventing a single platform from owning the future of work.",
-    "biophilia-ark": "An open-source hardware blueprint for Biophilia Ark accelerates biological integration into urban environments globally, ensuring climate resilience technology isn't artificially constrained.",
+    "biowalls": "An open-source hardware blueprint for BioWalls accelerates biological integration into urban environments globally, ensuring climate resilience technology isn't artificially constrained.",
     "sellcraft": "Open-sourcing Sellcraft's spatial sales paradigms lowers the barrier for complex product education across the entire ecosystem, preventing the largest tech firms from monopolizing B2B distribution.",
     "afterlight": "An open-source Afterlight guarantees that multigenerational family memory graphs remain private and immune to corporate sunsets, protecting humanity's most intimate legacy data.",
     "civicpath": "Open-sourcing CivicPath's intake simulations provides verifiable transparency for immigration processing, increasing democratic trust and preventing algorithmic bias in border policy.",

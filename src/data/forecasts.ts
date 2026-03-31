@@ -131,8 +131,8 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getDeepTechCurve('avatarlab'),
         aiRationale: "Personalized biology and DNA-based digital twins require massive capital expenditure and face high regulatory hurdles. The AGI Futures forecaster model implies a 'winner-take-most' dynamic, where failure is highly likely, but a breakout success by 2040 could easily exceed $10B as the primary infrastructure for personalized medicine."
     },
-    'biophilia-ark': {
-        forecast: getNicheHardwareCurve('biophilia-ark'),
+    'biowalls': {
+        forecast: getNicheHardwareCurve('biowalls'),
         aiRationale: "Building high-design living walls that act as bio-filtration systems and digital twins for real-world ecologies is highly capital intensive. The AGI Futures forecaster model generates a heavily depressed curve for early years due to hardware scaling costs. However, if the platform successfully financializes verifiable biodiversity credits by 2035, the valuation potential scales non-linearly."
     },
     'handraise': {
