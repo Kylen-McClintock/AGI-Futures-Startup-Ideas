@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 
 export type IdeaSeed = {
     id: string;
+    slug?: string | null;
     profile_id: string;
     descriptor: string;
     one_liner: string;
