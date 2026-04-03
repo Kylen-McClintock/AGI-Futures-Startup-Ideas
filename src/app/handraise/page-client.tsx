@@ -82,10 +82,10 @@ export default function HandraiseClientPage() {
                         transition={{ duration: 0.8, delay: 0.3 }}
                     >
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
-                            Handraise<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-[var(--primary)]/80 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-[var(--primary)]/30 sm:pl-6">— Social-graph braintrust</span>
+                            Handraise<span className="block sm:inline sm:ml-6 text-2xl sm:text-3xl text-[var(--primary)]/80 font-light mt-2 sm:mt-0 tracking-normal border-l-0 sm:border-l-2 sm:border-[var(--primary)]/30 sm:pl-6">— The Social Graph Braintrust</span>
                         </h1>
                         <p className="text-xl sm:text-2xl text-[var(--primary)]/90 leading-relaxed font-light mb-8 max-w-3xl">
-                            Leverage your network for the benefits of building in public without being spammy: you post a tight brief, only volunteers in that specialty respond, answers line up side by side, and contributors earn portable credit.
+                            Handraise gives founders the benefits of building in public without being spammy. It turns vague posts, scattered DMs, and awkward favors into structured asks, precise routing, and one clear next move.
                         </p>
                         <p className="text-lg text-white/70 leading-relaxed font-light mb-8 max-w-3xl">
                             A founder is deciding whether to kill a feature, change pricing, or ask for an intro. Today that usually means vague posts, scattered DMs, awkward favors, and advice trapped in threads. Handraise turns that into one structured ask, routed to the right people, with answers compared in one place and the next move made obvious.

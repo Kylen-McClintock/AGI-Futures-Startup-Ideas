@@ -1,31 +1,93 @@
 import { exec } from 'child_process';
 import util from 'util';
-const execAsync = util.promisify(exec);
+import fs from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-const startups = [
-    { s: 'agentable', n: 1, c: '#0ea5e9'},
-    { s: 'main-street-legacy', n: 3, c: '#0ea5e9'},
-    { s: 'deepguide', n: 4, c: '#0ea5e9'},
-    { s: 'AIFounderLab', n: 5, c: '#10b981'},
-    { s: 'aura', n: 6, c: '#f59e0b'},
-    { s: 'hearth', n: 7, c: '#f43f5e'},
-    { s: 'homequote', n: 8, c: '#3b82f6'},
-    { s: 'porchfront', n: 9, c: '#14b8a6'},
-    { s: 'murmuration', n: 11, c: '#0ea5e9'},
-    { s: 'avatarlab', n: 12, c: '#f43f5e'},
-    { s: 'proofrun', n: 13, c: '#eab308'},
-    { s: 'handraise', n: 14, c: '#6366f1'},
-    { s: 'biowalls', n: 15, c: '#16a34a'},
-    { s: 'sellcraft', n: 16, c: '#f97316'},
-    { s: 'afterlight', n: 17, c: '#f59e0b'},
-    { s: 'civicpath', n: 18, c: '#2563eb'},
-    { s: 'biomex', n: 19, c: '#ec4899'},
-    { s: 'helioterra', n: 20, c: '#ea580c'}
+const execAsync = util.promisify(exec);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const order = [
+    "murmuration",
+    "attune",
+    "porchfront",
+    "hearth",
+    "homequote",
+    "aura",
+    "AIFounderLab",
+    "deepguide",
+    "main-street-legacy",
+    "helm",
+    "agentable",
+    "avatarlab",
+    "proofrun",
+    "handraise",
+    "biowalls",
+    "sellcraft",
+    "afterlight",
+    "civicpath",
+    "biomex",
+    "helioterra",
+    "easy-exit",
+    "proxy-pilot",
+    "bioark",
+    "ownyourreplacement",
+    "thoughtline"
 ];
 
+const themeMap = {
+    'attune': '#ec4899',
+    'porchfront': '#14b8a6',
+    'hearth': '#f43f5e',
+    'homequote': '#3b82f6',
+    'aura': '#f59e0b',
+    'AIFounderLab': '#10b981',
+    'deepguide': '#a855f7',
+    'main-street-legacy': '#0ea5e9',
+    'helm': '#6366f1',
+    'agentable': '#0ea5e9',
+    'avatarlab': '#f43f5e',
+    'proofrun': '#eab308',
+    'handraise': '#6366f1',
+    'biowalls': '#16a34a',
+    'sellcraft': '#f97316',
+    'afterlight': '#f59e0b',
+    'civicpath': '#2563eb',
+    'biomex': '#ec4899',
+    'helioterra': '#ea580c',
+    'murmuration': '#0ea5e9',
+    'easy-exit': '#eab308',
+    'proxy-pilot': '#6366f1',
+    'bioark': '#16a34a',
+    'ownyourreplacement': '#f97316',
+    'thoughtline': '#0ea5e9'
+};
+
 async function main() {
-    console.log(`Initiating global regeneration sequence for ${startups.length} startups...`);
-    for (const { s, n, c } of startups) {
+    console.log(`Initiating global regeneration sequence for ${order.length} startups...`);
+    
+    // Pass 1: For thoughtline and easy-exit, let's make sure their empty JSON triggers Gemini
+    for(const s of ['thoughtline', 'easy-exit']) {
+         console.log(`Extracting fresh JSON for ${s} via Gemini...`);
+         try {
+             const n = order.indexOf(s) + 1;
+             await execAsync(`node index.js ${s} ${n} "${themeMap[s]}"`);
+         } catch(e) {
+             console.log(`Error extracting ${s}:`, e);
+         }
+    }
+    
+    // Pass 2: Lock foundational copy for all of them!
+    console.log("Locking foundational copy from page.tsx metadata...");
+    await execAsync(`node fix_fundamentals.js`);
+    
+    // Pass 3: Regenerate all Slides
+    for (let i = 0; i < order.length; i++) {
+        const s = order[i];
+        const n = i + 1;
+        const c = themeMap[s] || '#10b981';
+        
         console.log(`Regenerating ${s} [Idea #${n}]...`);
         try {
             await execAsync(`node index.js ${s} ${n} "${c}"`);

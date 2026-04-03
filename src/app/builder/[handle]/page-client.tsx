@@ -10,12 +10,14 @@ import { PrivateNotesSection } from '@/components/PrivateNotesSection';
 import { FollowListModal } from '@/components/FollowListModal';
 import { SendMessageModal } from '@/components/SendMessageModal';
 import { createClient } from '@/utils/supabase/client';
-import { Star } from "lucide-react";
+import { Star, Sprout } from "lucide-react";
+import IdeaSeedCard from '@/app/Idea-Seeds/components/IdeaSeedCard';
 
 export default function BuilderProfileClientPage({ 
   profile, 
   artifacts: initialArtifacts, 
   userForecasts = [],
+  ideaSeeds = [],
   isOwner, 
   savedIdeas = [], 
   ideaNotes = [], 
@@ -29,6 +31,7 @@ export default function BuilderProfileClientPage({
   profile: any, 
   artifacts: any[], 
   userForecasts?: any[],
+  ideaSeeds?: any[],
   isOwner?: boolean, 
   savedIdeas?: any[], 
   ideaNotes?: any[], 
@@ -63,6 +66,7 @@ export default function BuilderProfileClientPage({
   const [sortBy, setSortBy] = React.useState<'recent' | 'upvoted'>('recent');
   const [displayLimit, setDisplayLimit] = React.useState(5);
   const [forecastLimit, setForecastLimit] = React.useState(5);
+  const [seedLimit, setSeedLimit] = React.useState(5);
 
   const handleToggleFollow = async () => {
     if (!currentUserId) return;
@@ -589,6 +593,57 @@ export default function BuilderProfileClientPage({
                                     <button 
                                         onClick={() => setDisplayLimit(5)}
                                         className="text-[10px] font-mono uppercase tracking-widest text-orange-500 hover:text-orange-500/80 transition-colors block w-full bg-orange-500/10 border border-orange-500/20 rounded-xl py-3 hover:bg-orange-500/20"
+                                    >
+                                        Collapse Feed ↑
+                                    </button>
+                                </div>
+                            )}
+                        </div>
+                    )}
+                </section>
+
+                <section className="mt-12 pt-8 border-t border-white/5">
+                    <div className="flex items-center justify-between mb-6">
+                        <h2 className="text-fuchsia-500 font-mono text-sm tracking-widest uppercase flex items-center gap-3 mb-0">
+                            <span className="w-6 h-px bg-fuchsia-500/50 block" /> Idea Seeds
+                        </h2>
+                        {isOwner && (
+                            <Link 
+                                href="/Idea-Seeds/new"
+                                className="inline-flex items-center justify-center gap-2 rounded-lg bg-fuchsia-500/10 hover:bg-fuchsia-500/20 text-fuchsia-400 border border-fuchsia-500/20 h-8 px-3 text-xs font-medium transition-colors"
+                            >
+                                <Sprout className="w-3.5 h-3.5" />
+                                Plant Seed
+                            </Link>
+                        )}
+                    </div>
+
+                    {ideaSeeds.length === 0 ? (
+                        <div className="p-8 border border-white/10 rounded-2xl bg-white/5 text-center">
+                            <p className="text-white/50 font-light text-sm italic">No idea seeds planted yet.</p>
+                        </div>
+                    ) : (
+                        <div className="grid gap-6">
+                            {ideaSeeds.slice(0, seedLimit).map((seed: any) => (
+                                <IdeaSeedCard key={seed.id} seed={seed} currentUserId={currentUserId!} />
+                            ))}
+
+                            {ideaSeeds.length > seedLimit && (
+                                <div className="pt-4 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setSeedLimit(l => l + 5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-fuchsia-400 hover:text-fuchsia-300 transition-colors block w-full bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-xl py-3 hover:bg-fuchsia-500/20"
+                                    >
+                                        Show More ({ideaSeeds.length - seedLimit}) ↓
+                                    </button>
+                                </div>
+                            )}
+
+                            {seedLimit > 5 && (
+                                <div className="pt-2 pb-2 text-center">
+                                    <button 
+                                        onClick={() => setSeedLimit(5)}
+                                        className="text-[10px] font-mono uppercase tracking-widest text-fuchsia-400 hover:text-fuchsia-300 transition-colors block w-full bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-xl py-3 hover:bg-fuchsia-500/20"
                                     >
                                         Collapse Feed ↑
                                     </button>

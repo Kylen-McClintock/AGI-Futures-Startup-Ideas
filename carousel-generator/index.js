@@ -29,7 +29,7 @@ async function main() {
         // CACHE BYPASS: Skip API rate limits if we already extracted the JSON payload yesterday
         let carouselData;
         try {
-            const extPath = '/Users/kylenmcclintock/Downloads/agifutures_carousel_text_batch_05.json';
+            const extPath = '/Users/kylenmcclintock/Downloads/agifutures_batch_corrections_biowalls_civicpath_afterlight_helioterra.json';
             let extData = null;
             try {
                 const raw = await fs.readFile(extPath, 'utf8');

@@ -4,11 +4,12 @@ import { createClient } from '@/utils/supabase/client';
 import { User } from '@supabase/supabase-js';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useRouter, usePathname } from 'next/navigation';
 
 export function AuthHeader() {
   const supabase = createClient();
   const router = useRouter();
+  const pathname = usePathname();
   const [user, setUser] = useState<User | null>(null);
   const [profile, setProfile] = useState<any>(null);
 
@@ -38,6 +39,13 @@ export function AuthHeader() {
 
   return (
     <div className="absolute sm:fixed top-6 right-6 z-[100] flex items-center gap-4">
+      <Link 
+        href="/Idea-Seeds"
+        className="backdrop-blur-md bg-white/5 hover:bg-white/10 border border-white/10 text-white px-5 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all shadow-lg hover:border-white/30 hidden md:block"
+      >
+        Submit an Idea
+      </Link>
+
       {user ? (
         <div className="flex items-center gap-3 backdrop-blur-md bg-black/50 border border-white/10 rounded-full pl-2 pr-4 py-1">
           {profile?.handle ? (
@@ -80,8 +88,8 @@ export function AuthHeader() {
         </div>
       ) : (
         <Link 
-          href="/login" 
-          className="backdrop-blur-md bg-white/5 hover:bg-white/10 border border-white/10 text-white px-5 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all shadow-lg hover:border-white/30"
+          href={`/login${pathname && pathname !== '/' ? `?next=${pathname}` : ''}`} 
+          className="backdrop-blur-md bg-fuchsia-600/20 hover:bg-fuchsia-600/40 border border-fuchsia-500/30 text-fuchsia-100 px-5 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all shadow-lg hover:border-fuchsia-500/50"
         >
           Builder Sign In
         </Link>

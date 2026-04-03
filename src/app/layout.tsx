@@ -43,7 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <body
+      <body suppressHydrationWarning
         className={`${outfit.variable} ${playfair.variable} antialiased bg-background text-foreground min-h-screen`}
       >
         <NuqsAdapter>

@@ -244,7 +244,7 @@ export default async function Home() {
             slug: "handraise",
             title: "Handraise",
             scoreTitle: "The open-graph braintrust",
-            description: "Leverage your network for the benefits of building in public without being spammy: you post a tight brief, only volunteers in that specialty respond, answers line up side by side, and contributors earn portable credit.",
+            description: "Handraise gives founders the benefits of building in public without being spammy. It turns vague posts, scattered DMs, and awkward favors into structured asks, precise routing, and one clear next move.",
             image: handraise_hero,
             href: "/handraise",
             themeColor: "hover:border-indigo-500/50 text-indigo-400",

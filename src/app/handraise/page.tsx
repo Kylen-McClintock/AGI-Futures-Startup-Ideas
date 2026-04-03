@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import HandraiseClientPage from './page-client';
 
 export const metadata: Metadata = {
-    title: 'Handraise | AGI Futures',
-    description: 'Ask once. Route precisely. Compound trust. Leverage your network for the benefits of building in public without being spammy.',
+    title: 'Handraise | The Social Graph Braintrust - AGI Futures',
+    description: 'Handraise gives founders the benefits of building in public without being spammy. It turns vague posts, scattered DMs, and awkward favors into structured asks, precise routing, and one clear next move.',
     openGraph: {
-        title: 'Handraise | AGI Futures',
-        description: 'Leverage your network for the benefits of building in public without being spammy: you post a tight brief, only volunteers in that specialty respond, answers line up side by side, and contributors earn portable credit.',
+        title: 'Handraise | The Social Graph Braintrust - AGI Futures',
+        description: 'Handraise gives founders the benefits of building in public without being spammy. It turns vague posts, scattered DMs, and awkward favors into structured asks, precise routing, and one clear next move.',
     },
 };
 

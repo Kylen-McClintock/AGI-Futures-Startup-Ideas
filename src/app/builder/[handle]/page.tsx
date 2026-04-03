@@ -76,10 +76,22 @@ export default async function BuilderProfilePage({ params }: { params: Promise<{
     .eq('profile_id', profile.id)
     .order('created_at', { ascending: false });
 
+  // 5. Fetch User's Idea Seeds
+  const { data: ideaSeeds } = await supabase
+    .from('idea_seeds')
+    .select(`
+        *,
+        profiles!idea_seeds_profile_id_fkey(name, handle, avatar_url),
+        idea_seed_votes(vote_type, profile_id)
+    `)
+    .eq('profile_id', profile.id)
+    .order('created_at', { ascending: false });
+
   return <BuilderProfileClientPage 
     profile={profile} 
     artifacts={artifacts || []} 
     userForecasts={userForecasts || []}
+    ideaSeeds={ideaSeeds || []}
     isOwner={isOwner} 
     currentUserId={user?.id}
     savedIdeas={savedIdeas} 

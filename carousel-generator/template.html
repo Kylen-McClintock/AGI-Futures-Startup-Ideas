@@ -200,7 +200,7 @@
                 var headerTitle = data.sectionName || data.title || "Insight";
                 if (type === 'oneLiner') headerTitle = data.sectionName || "The Pitch";
 
-                var subtitleHtml = (data.title && data.title !== headerTitle && type !== 'oneLiner') ? '<h3 class="standard-subtitle">' + data.title + '</h3>' : '';
+                var subtitleHtml = (data.title && data.title !== headerTitle) ? '<h3 class="standard-subtitle">' + data.title + '</h3>' : '';
 
                 var listHtml = '';
                 if (data.list && data.list.length > 0) {

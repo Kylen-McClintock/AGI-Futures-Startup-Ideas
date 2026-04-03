@@ -15,8 +15,15 @@ export default function LoginPage() {
     setOrigin(window.location.origin);
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
       if (session) {
-        // Simple redirect strategy for now. In a real app we might check if profile is complete.
-        router.push('/onboarding');
+        const urlParams = new URLSearchParams(window.location.search);
+        const nextRoute = urlParams.get('next');
+        
+        if (nextRoute && nextRoute.startsWith('/')) {
+            router.push(nextRoute);
+        } else {
+            // Simple redirect fallback strategy
+            router.push('/onboarding');
+        }
       }
     });
 
