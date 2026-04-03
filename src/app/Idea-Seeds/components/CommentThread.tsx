@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { User, CornerDownRight, MessageSquarePlus } from 'lucide-react';
 import { timeAgo } from '@/utils/timeAgo';
+import Link from 'next/link';
 
 interface CommentThreadProps {
     seedId: string;
