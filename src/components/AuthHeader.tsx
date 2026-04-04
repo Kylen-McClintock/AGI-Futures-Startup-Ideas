@@ -41,7 +41,7 @@ export function AuthHeader() {
     <div className="absolute sm:fixed top-6 right-6 z-[100] flex items-center gap-4">
       <Link 
         href="/Idea-Seeds"
-        className="backdrop-blur-md bg-white/5 hover:bg-white/10 border border-white/10 text-white px-5 py-2 rounded-full font-mono text-xs uppercase tracking-widest transition-all shadow-lg hover:border-white/30 hidden md:block"
+        className="backdrop-blur-md bg-white/5 hover:bg-white/10 border border-white/10 text-white px-3 md:px-5 py-2 rounded-full font-mono text-[10px] md:text-xs uppercase tracking-widest transition-all shadow-lg hover:border-white/30 truncate"
       >
         Submit an Idea
       </Link>
