@@ -231,6 +231,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getDeepTechCurve('thoughtline'),
         aiRationale: "Thoughtline represents a highly regulated, capital-intensive DeepTech play with extreme execution risk but paradigm-shifting upside. The AGI Futures forecaster model severely throttles probability of near-term hyperscale due to clinical validation timelines, hardware iteration cycles, and BCI policy uncertainty. However, the curve inflects massively upward by 2040 as the interface generalizes from clinical speech restoration to a mass-market intent router and personalized cognitive engine."
     },
+    'signal-house': {
+        forecast: getAIEmergenceCurve('signal-house'),
+        aiRationale: "Signal House operates at the intersection of AI curation and human presence. The AGI Futures forecaster model assigns a strong probability of reaching a $1B+ valuation by 2035, driven by the acute pain of attention fragmentation and the compounding network effects of canonical virtual rooms for specific niches."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

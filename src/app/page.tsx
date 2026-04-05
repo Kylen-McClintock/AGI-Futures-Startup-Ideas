@@ -28,6 +28,7 @@ import proxypilot_hero from "./proxypilot/assets/proxypilot_hero_1773874900098.p
 import bioark_hero from "./bioark/assets/hero.png";
 import ownyourreplacement_hero from "./ownyourreplacement/assets/hero.png";
 import thoughtline_hero from "./thoughtline/assets/thoughtline_hero.png";
+import signal_house_hero from "./signal-house/assets/hero_v3.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -65,7 +66,8 @@ export default async function Home() {
         "proxypilot": { moat: 81, difficulty: 69, impact: 72, created_at: new Date().toISOString(), tags: { sector: ['Governance', 'Finance', 'AI'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'SaaS', 'Agent'], enabling_technology: ['Large Language Models', 'Autonomous Agents'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Policy Entrepreneur'], outcomes: ['Better Governance', 'Alignment', 'Societal Cohesion', 'Social Trust'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':88},'Alignment':{'ai_scored':81},'Societal Cohesion':{'ai_scored':75},'Social Trust':{'ai_scored':68}} },
         "bioark": { moat: 74, difficulty: 86, impact: 85, created_at: new Date().toISOString(), tags: { sector: ['Biotech', 'Climate', 'Finance', 'Science'], bottleneck: ['Trust', 'Coordination', 'Visibility'], customer: ['Enterprises', 'Governments'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Vision AI', 'Knowledge Graphs', 'Simulations'], readiness: ['Requires Coordination Infrastructure'], founder_fit: ['Bio Founder', 'Policy Entrepreneur'], outcomes: ['Biodiversity', 'Resilience', 'Social Trust', 'Scientific Acceleration'] }, civilizational_impact_ratings: {'Biodiversity':{'ai_scored':96},'Resilience':{'ai_scored':80},'Social Trust':{'ai_scored':63},'Scientific Acceleration':{'ai_scored':58}} },
         "ownyourreplacement": { moat: 86, difficulty: 84, impact: 70, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Robotics', 'Finance', 'Governance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Enterprises', 'Startups'], product_type: ['Marketplace', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Vision AI', 'Voice AI', 'Blockchain', 'Tokenized Assets'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Freedom', 'Social Trust', 'Decentralization'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':77},'Freedom':{'ai_scored':73},'Social Trust':{'ai_scored':58},'Decentralization':{'ai_scored':70}} },
-        "thoughtline": { moat: 84, difficulty: 92, impact: 68, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Healthcare', 'Science'], bottleneck: ['Trust', 'Disease', 'Meaning Crisis'], customer: ['Consumers', 'Doctors'], product_type: ['Personalized AI', 'Hardware'], enabling_technology: ['Large Language Models', 'Voice AI', 'Wearables', 'Augmented Reality', 'Autonomous Agents'], readiness: ['Build Soon'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':88},'Freedom':{'ai_scored':79},'Social Trust':{'ai_scored':41},'Alignment':{'ai_scored':64}} }
+        "thoughtline": { moat: 84, difficulty: 92, impact: 68, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Healthcare', 'Science'], bottleneck: ['Trust', 'Disease', 'Meaning Crisis'], customer: ['Consumers', 'Doctors'], product_type: ['Personalized AI', 'Hardware'], enabling_technology: ['Large Language Models', 'Voice AI', 'Wearables', 'Augmented Reality', 'Autonomous Agents'], readiness: ['Build Soon'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':88},'Freedom':{'ai_scored':79},'Social Trust':{'ai_scored':41},'Alignment':{'ai_scored':64}} },
+        "signal-house": { moat: 74, difficulty: 49, impact: 60, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Community', 'Social Media'], bottleneck: ['Loneliness', 'Talent Matching', 'Social Fragmentation'], customer: ['Founders', 'Students'], product_type: ['Platform', 'Consumer App'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Spatial Computing'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':70},'Community Renewal':{'ai_scored':68},'Social Trust':{'ai_scored':53},'Abundance':{'ai_scored':41}} }
     };
 
     // Helper to merge static data with DB data
@@ -110,6 +112,16 @@ export default async function Home() {
     };
 
     const projects: ProjectData[] = [
+        createProject({
+            slug: "signal-house",
+            title: "Signal House",
+            scoreTitle: "Curated Focus Rooms",
+            description: "An immersive deep work network where people work and study in beautifully curated virtual rooms, build habitual flow-state spaces, and find aligned collaborators.",
+            image: signal_house_hero,
+            href: "/signal-house",
+            themeColor: "hover:border-violet-500/50 text-violet-400",
+            hoverTextColor: "group-hover:text-violet-400",
+        }),
         createProject({
             slug: "murmuration",
             title: "Murmuration Engine",

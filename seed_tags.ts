@@ -658,6 +658,32 @@ const startups = [
             founder_fit: ['Technical Founder', 'Capital Intensive'],
             outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment']
         }
+    },
+    {
+        slug: 'signal-house',
+        name: 'Signal House',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 74 },
+            difficulty_score: { ai_scored: 49 },
+            civilizational_impact_score: { ai_scored: 60 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 70 },
+                "Community Renewal": { ai_scored: 68 },
+                "Social Trust": { ai_scored: 53 },
+                "Abundance": { ai_scored: 41 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Education', 'Community', 'Social Media'],
+            bottleneck: ['Loneliness', 'Talent Matching', 'Social Fragmentation'],
+            customer: ['Founders', 'Students'],
+            product_type: ['Platform', 'Consumer App'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Spatial Computing'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance']
+        }
     }
 ];
 
