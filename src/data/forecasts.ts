@@ -235,6 +235,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getAIEmergenceCurve('signal-house'),
         aiRationale: "Signal House operates at the intersection of AI curation and human presence. The AGI Futures forecaster model assigns a strong probability of reaching a $1B+ valuation by 2035, driven by the acute pain of attention fragmentation and the compounding network effects of canonical virtual rooms for specific niches."
     },
+    'skyhold': {
+        forecast: getDeepTechCurve('skyhold'),
+        aiRationale: "By targeting real estate before autonomous vehicles and eVTOL aircraft completely reprice edge locations, Skyhold executes a capital-intensive physical arbitrage play. While near-term operations involve traditional development friction and significant physical infrastructure costs, the AGI Futures Valuation Forecasting Model predicts outsized exponential scaling potential by 2040, as autonomous networks dissolve legacy commuting distances and redefine what constitutes prime real estate."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

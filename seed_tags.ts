@@ -684,6 +684,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance']
         }
+    },
+    {
+        slug: 'skyhold',
+        name: 'Skyhold',
+        created_at: '2026-04-05T12:20:44-06:00',
+        scores: {
+            moat_score: { ai_scored: 68 },
+            difficulty_score: { ai_scored: 78 },
+            civilizational_impact_score: { ai_scored: 57 },
+            civilizational_impact_ratings: {
+                "Resilience": { ai_scored: 72 },
+                "Human Flourishing": { ai_scored: 61 },
+                "Community Renewal": { ai_scored: 66 },
+                "Abundance": { ai_scored: 30 }
+            }
+        },
+        tags: {
+            sector: ['Housing', 'Transportation', 'Community', 'Cities'],
+            bottleneck: ['Housing Shortage', 'Regulatory Friction', 'Coordination'],
+            customer: ['Founders', 'Families'],
+            product_type: ['Infrastructure', 'Community'],
+            enabling_technology: ['Autonomous Agents', 'Simulations', 'Robotics', 'Charter Cities'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Capital Intensive'],
+            outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance']
+        }
     }
 ];
 
