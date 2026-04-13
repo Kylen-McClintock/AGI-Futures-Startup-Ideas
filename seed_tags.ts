@@ -710,6 +710,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Capital Intensive'],
             outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance']
         }
+    },
+    {
+        slug: 'wild-return',
+        name: 'Wild Return',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 67 },
+            difficulty_score: { ai_scored: 81 },
+            civilizational_impact_score: { ai_scored: 69 },
+            civilizational_impact_ratings: {
+                "Human Flourishing": { ai_scored: 82 },
+                "Community Renewal": { ai_scored: 74 },
+                "Biodiversity": { ai_scored: 52 },
+                "Climate": { ai_scored: 29 }
+            }
+        },
+        tags: {
+            sector: ['Deathcare', 'Healthcare', 'Community', 'Psychedelics'],
+            bottleneck: ['Meaning Crisis', 'Trust', 'Regulatory Friction'],
+            customer: ['Families', 'Caregivers'],
+            product_type: ['Institution', 'Community'],
+            enabling_technology: ['Knowledge Graphs', 'Large Language Models'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Capital Intensive'],
+            outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate']
+        }
     }
 ];
 

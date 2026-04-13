@@ -30,6 +30,7 @@ import ownyourreplacement_hero from "./ownyourreplacement/assets/hero.png";
 import thoughtline_hero from "./thoughtline/assets/thoughtline_hero.png";
 import signal_house_hero from "./signal-house/assets/hero_v3.png";
 import skyhold_hero from "./skyhold/assets/hero.webp";
+import wild_return_hero from "./wild-return/assets/hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -69,7 +70,8 @@ export default async function Home() {
         "ownyourreplacement": { moat: 86, difficulty: 84, impact: 70, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Robotics', 'Finance', 'Governance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Enterprises', 'Startups'], product_type: ['Marketplace', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Vision AI', 'Voice AI', 'Blockchain', 'Tokenized Assets'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Freedom', 'Social Trust', 'Decentralization'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':77},'Freedom':{'ai_scored':73},'Social Trust':{'ai_scored':58},'Decentralization':{'ai_scored':70}} },
         "thoughtline": { moat: 84, difficulty: 92, impact: 68, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Healthcare', 'Science'], bottleneck: ['Trust', 'Disease', 'Meaning Crisis'], customer: ['Consumers', 'Doctors'], product_type: ['Personalized AI', 'Hardware'], enabling_technology: ['Large Language Models', 'Voice AI', 'Wearables', 'Augmented Reality', 'Autonomous Agents'], readiness: ['Build Soon'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':88},'Freedom':{'ai_scored':79},'Social Trust':{'ai_scored':41},'Alignment':{'ai_scored':64}} },
         "signal-house": { moat: 74, difficulty: 49, impact: 60, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Community', 'Social Media'], bottleneck: ['Loneliness', 'Talent Matching', 'Social Fragmentation'], customer: ['Founders', 'Students'], product_type: ['Platform', 'Consumer App'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Spatial Computing'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':70},'Community Renewal':{'ai_scored':68},'Social Trust':{'ai_scored':53},'Abundance':{'ai_scored':41}} },
-        "skyhold": { moat: 68, difficulty: 78, impact: 57, created_at: new Date().toISOString(), tags: { sector: ['Housing', 'Transportation', 'Community', 'Cities'], bottleneck: ['Housing Shortage', 'Regulatory Friction', 'Coordination'], customer: ['Founders', 'Families'], product_type: ['Infrastructure', 'Community'], enabling_technology: ['Autonomous Agents', 'Simulations', 'Robotics', 'Charter Cities'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance'] }, civilizational_impact_ratings: {'Resilience':{'ai_scored':72},'Human Flourishing':{'ai_scored':61},'Community Renewal':{'ai_scored':66},'Abundance':{'ai_scored':30}} }
+        "skyhold": { moat: 68, difficulty: 78, impact: 57, created_at: new Date().toISOString(), tags: { sector: ['Housing', 'Transportation', 'Community', 'Cities'], bottleneck: ['Housing Shortage', 'Regulatory Friction', 'Coordination'], customer: ['Founders', 'Families'], product_type: ['Infrastructure', 'Community'], enabling_technology: ['Autonomous Agents', 'Simulations', 'Robotics', 'Charter Cities'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance'] }, civilizational_impact_ratings: {'Resilience':{'ai_scored':72},'Human Flourishing':{'ai_scored':61},'Community Renewal':{'ai_scored':66},'Abundance':{'ai_scored':30}} },
+        "wild-return": { moat: 67, difficulty: 81, impact: 69, created_at: new Date().toISOString(), tags: { sector: ['Deathcare', 'Healthcare', 'Community', 'Psychedelics'], bottleneck: ['Meaning Crisis', 'Trust', 'Regulatory Friction'], customer: ['Families', 'Caregivers'], product_type: ['Institution', 'Community'], enabling_technology: ['Knowledge Graphs', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':82},'Community Renewal':{'ai_scored':74},'Biodiversity':{'ai_scored':52},'Climate':{'ai_scored':29}} }
     };
 
     // Helper to merge static data with DB data
@@ -383,6 +385,16 @@ export default async function Home() {
             href: "/thoughtline",
             themeColor: "hover:border-violet-500/50 text-violet-400",
             hoverTextColor: "group-hover:text-violet-400",
+        }),
+        createProject({
+            slug: "wild-return",
+            title: "Wild Return",
+            scoreTitle: "Nature-grounded end-of-life sanctuary",
+            description: "A nature-grounded end-of-life sanctuary that combines natural burial, palliative care, and ritual design to make dying more peaceful and life more meaningful.",
+            image: wild_return_hero,
+            href: "/wild-return",
+            themeColor: "hover:border-emerald-500/50 text-emerald-400",
+            hoverTextColor: "group-hover:text-emerald-400",
         })
     ];
 
