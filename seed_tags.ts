@@ -736,6 +736,32 @@ const startups = [
             founder_fit: ['Operator-Led', 'Capital Intensive'],
             outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate']
         }
+    },
+    {
+        slug: 'waypoint',
+        name: 'Waypoint',
+        created_at: new Date().toISOString(),
+        scores: {
+            moat_score: { ai_scored: 91 },
+            difficulty_score: { ai_scored: 78 },
+            civilizational_impact_score: { ai_scored: 87 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 88 },
+                "Resilience": { ai_scored: 91 },
+                "Human Flourishing": { ai_scored: 89 },
+                "Climate": { ai_scored: 74 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Water', 'Climate', 'Finance'],
+            bottleneck: ['Coordination', 'Trust', 'Energy Scarcity'],
+            customer: ['Governments', 'Enterprises'],
+            product_type: ['Platform', 'Coordination Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Vision AI', 'Augmented Reality'],
+            readiness: ['Build Now'],
+            founder_fit: ['Operator-Led', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate']
+        }
     }
 ];
 

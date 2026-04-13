@@ -31,6 +31,7 @@ import thoughtline_hero from "./thoughtline/assets/thoughtline_hero.png";
 import signal_house_hero from "./signal-house/assets/hero_v3.png";
 import skyhold_hero from "./skyhold/assets/hero.webp";
 import wild_return_hero from "./wild-return/assets/hero.png";
+import waypoint_hero from "./waypoint/assets/waypoint_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -71,7 +72,8 @@ export default async function Home() {
         "thoughtline": { moat: 84, difficulty: 92, impact: 68, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Healthcare', 'Science'], bottleneck: ['Trust', 'Disease', 'Meaning Crisis'], customer: ['Consumers', 'Doctors'], product_type: ['Personalized AI', 'Hardware'], enabling_technology: ['Large Language Models', 'Voice AI', 'Wearables', 'Augmented Reality', 'Autonomous Agents'], readiness: ['Build Soon'], founder_fit: ['Technical Founder', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Freedom', 'Social Trust', 'Alignment'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':88},'Freedom':{'ai_scored':79},'Social Trust':{'ai_scored':41},'Alignment':{'ai_scored':64}} },
         "signal-house": { moat: 74, difficulty: 49, impact: 60, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Community', 'Social Media'], bottleneck: ['Loneliness', 'Talent Matching', 'Social Fragmentation'], customer: ['Founders', 'Students'], product_type: ['Platform', 'Consumer App'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Spatial Computing'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':70},'Community Renewal':{'ai_scored':68},'Social Trust':{'ai_scored':53},'Abundance':{'ai_scored':41}} },
         "skyhold": { moat: 68, difficulty: 78, impact: 57, created_at: new Date().toISOString(), tags: { sector: ['Housing', 'Transportation', 'Community', 'Cities'], bottleneck: ['Housing Shortage', 'Regulatory Friction', 'Coordination'], customer: ['Founders', 'Families'], product_type: ['Infrastructure', 'Community'], enabling_technology: ['Autonomous Agents', 'Simulations', 'Robotics', 'Charter Cities'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance'] }, civilizational_impact_ratings: {'Resilience':{'ai_scored':72},'Human Flourishing':{'ai_scored':61},'Community Renewal':{'ai_scored':66},'Abundance':{'ai_scored':30}} },
-        "wild-return": { moat: 67, difficulty: 81, impact: 69, created_at: new Date().toISOString(), tags: { sector: ['Deathcare', 'Healthcare', 'Community', 'Psychedelics'], bottleneck: ['Meaning Crisis', 'Trust', 'Regulatory Friction'], customer: ['Families', 'Caregivers'], product_type: ['Institution', 'Community'], enabling_technology: ['Knowledge Graphs', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':82},'Community Renewal':{'ai_scored':74},'Biodiversity':{'ai_scored':52},'Climate':{'ai_scored':29}} }
+        "wild-return": { moat: 67, difficulty: 81, impact: 69, created_at: new Date().toISOString(), tags: { sector: ['Deathcare', 'Healthcare', 'Community', 'Psychedelics'], bottleneck: ['Meaning Crisis', 'Trust', 'Regulatory Friction'], customer: ['Families', 'Caregivers'], product_type: ['Institution', 'Community'], enabling_technology: ['Knowledge Graphs', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':82},'Community Renewal':{'ai_scored':74},'Biodiversity':{'ai_scored':52},'Climate':{'ai_scored':29}} },
+        "waypoint": { moat: 91, difficulty: 78, impact: 87, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Water', 'Climate', 'Finance'], bottleneck: ['Coordination', 'Trust', 'Energy Scarcity'], customer: ['Governments', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Vision AI', 'Augmented Reality'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':88},'Resilience':{'ai_scored':91},'Human Flourishing':{'ai_scored':89},'Climate':{'ai_scored':74}} }
     };
 
     // Helper to merge static data with DB data
@@ -116,6 +118,16 @@ export default async function Home() {
     };
 
     const projects: ProjectData[] = [
+        createProject({
+            slug: "waypoint",
+            title: "Waypoint",
+            scoreTitle: "AI Co-Pilot for Sustainable Development Deployment",
+            description: "Turns proven infrastructure designs into financeable, field-executable projects, with capital linked to verified real-world outcomes.",
+            image: waypoint_hero,
+            href: "/waypoint",
+            themeColor: "hover:border-cyan-500/50 text-cyan-400",
+            hoverTextColor: "group-hover:text-cyan-400",
+        }),
         createProject({
             slug: "skyhold",
             title: "Skyhold",
