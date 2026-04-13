@@ -28,6 +28,8 @@ import ritualImage from "./assets/ritual.png";
 import palliativeImage from "./assets/palliative.png";
 import landImage from "./assets/land.png";
 
+import icpCoupleImage from "./assets/icp_couple.png";
+
 // Acronyms
 // GBC: Green Burial Council
 // NFDA: National Funeral Directors Association
