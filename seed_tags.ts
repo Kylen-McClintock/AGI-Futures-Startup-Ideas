@@ -376,7 +376,7 @@ const startups = [
     {
         slug: 'biophilia-ark',
         name: 'Biophilia Ark',
-        created_at: new Date().toISOString(),
+        created_at: '2024-03-13T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 84 },
             difficulty_score: { ai_scored: 74 },
@@ -532,7 +532,7 @@ const startups = [
     {
         slug: 'easy-exit',
         name: 'Easy Exit Protocol',
-        created_at: new Date().toISOString(),
+        created_at: '2026-03-20T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 64 },
             difficulty_score: { ai_scored: 63 },
@@ -558,7 +558,7 @@ const startups = [
     {
         slug: 'proxypilot',
         name: 'ProxyPilot',
-        created_at: new Date().toISOString(),
+        created_at: '2026-03-22T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 81 },
             difficulty_score: { ai_scored: 69 },
@@ -584,7 +584,7 @@ const startups = [
     {
         slug: 'bioark',
         name: 'BioArk',
-        created_at: new Date().toISOString(),
+        created_at: '2026-03-25T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 74 },
             difficulty_score: { ai_scored: 86 },
@@ -610,7 +610,7 @@ const startups = [
     {
         slug: 'ownyourreplacement',
         name: 'Own Your Replacement',
-        created_at: new Date().toISOString(),
+        created_at: '2026-03-28T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 86 },
             difficulty_score: { ai_scored: 84 },
@@ -636,7 +636,7 @@ const startups = [
     {
         slug: 'thoughtline',
         name: 'Thoughtline',
-        created_at: new Date().toISOString(),
+        created_at: '2026-03-31T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 84 },
             difficulty_score: { ai_scored: 92 },
@@ -662,7 +662,7 @@ const startups = [
     {
         slug: 'signal-house',
         name: 'Signal House',
-        created_at: new Date().toISOString(),
+        created_at: '2026-04-02T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 74 },
             difficulty_score: { ai_scored: 49 },
@@ -714,7 +714,7 @@ const startups = [
     {
         slug: 'wild-return',
         name: 'Wild Return',
-        created_at: new Date().toISOString(),
+        created_at: '2026-04-08T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 67 },
             difficulty_score: { ai_scored: 81 },
@@ -740,7 +740,7 @@ const startups = [
     {
         slug: 'waypoint',
         name: 'Waypoint',
-        created_at: new Date().toISOString(),
+        created_at: '2026-04-11T10:00:00Z',
         scores: {
             moat_score: { ai_scored: 91 },
             difficulty_score: { ai_scored: 78 },
