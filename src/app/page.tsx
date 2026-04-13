@@ -32,6 +32,7 @@ import signal_house_hero from "./signal-house/assets/hero_v3.png";
 import skyhold_hero from "./skyhold/assets/hero.webp";
 import wild_return_hero from "./wild-return/assets/hero.png";
 import waypoint_hero from "./waypoint/assets/waypoint_hero.png";
+import housegraph_hero from "./housegraph/assets/housegraph_hero.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -73,7 +74,8 @@ export default async function Home() {
         "signal-house": { moat: 74, difficulty: 49, impact: 60, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Education', 'Community', 'Social Media'], bottleneck: ['Loneliness', 'Talent Matching', 'Social Fragmentation'], customer: ['Founders', 'Students'], product_type: ['Platform', 'Consumer App'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Social Graph', 'Spatial Computing'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Human Flourishing', 'Community Renewal', 'Social Trust', 'Abundance'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':70},'Community Renewal':{'ai_scored':68},'Social Trust':{'ai_scored':53},'Abundance':{'ai_scored':41}} },
         "skyhold": { moat: 68, difficulty: 78, impact: 57, created_at: new Date().toISOString(), tags: { sector: ['Housing', 'Transportation', 'Community', 'Cities'], bottleneck: ['Housing Shortage', 'Regulatory Friction', 'Coordination'], customer: ['Founders', 'Families'], product_type: ['Infrastructure', 'Community'], enabling_technology: ['Autonomous Agents', 'Simulations', 'Robotics', 'Charter Cities'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Resilience', 'Human Flourishing', 'Community Renewal', 'Abundance'] }, civilizational_impact_ratings: {'Resilience':{'ai_scored':72},'Human Flourishing':{'ai_scored':61},'Community Renewal':{'ai_scored':66},'Abundance':{'ai_scored':30}} },
         "wild-return": { moat: 67, difficulty: 81, impact: 69, created_at: new Date().toISOString(), tags: { sector: ['Deathcare', 'Healthcare', 'Community', 'Psychedelics'], bottleneck: ['Meaning Crisis', 'Trust', 'Regulatory Friction'], customer: ['Families', 'Caregivers'], product_type: ['Institution', 'Community'], enabling_technology: ['Knowledge Graphs', 'Large Language Models'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Capital Intensive'], outcomes: ['Human Flourishing', 'Community Renewal', 'Biodiversity', 'Climate'] }, civilizational_impact_ratings: {'Human Flourishing':{'ai_scored':82},'Community Renewal':{'ai_scored':74},'Biodiversity':{'ai_scored':52},'Climate':{'ai_scored':29}} },
-        "waypoint": { moat: 91, difficulty: 78, impact: 87, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Water', 'Climate', 'Finance'], bottleneck: ['Coordination', 'Trust', 'Energy Scarcity'], customer: ['Governments', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Vision AI', 'Augmented Reality'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':88},'Resilience':{'ai_scored':91},'Human Flourishing':{'ai_scored':89},'Climate':{'ai_scored':74}} }
+        "waypoint": { moat: 91, difficulty: 78, impact: 87, created_at: new Date().toISOString(), tags: { sector: ['AI', 'Water', 'Climate', 'Finance'], bottleneck: ['Coordination', 'Trust', 'Energy Scarcity'], customer: ['Governments', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Vision AI', 'Augmented Reality'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':88},'Resilience':{'ai_scored':91},'Human Flourishing':{'ai_scored':89},'Climate':{'ai_scored':74}} },
+        "housegraph": { moat: 84, difficulty: 81, impact: 44, created_at: "2026-04-13T12:37:11-06:00", tags: { sector: ['AI', 'Housing', 'Finance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'Agent'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Vision AI', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':51},'Human Flourishing':{'ai_scored':42},'Social Trust':{'ai_scored':48}} }
     };
 
     // Helper to merge static data with DB data
@@ -407,6 +409,16 @@ export default async function Home() {
             href: "/wild-return",
             themeColor: "hover:border-emerald-500/50 text-emerald-400",
             hoverTextColor: "group-hover:text-emerald-400",
+        }),
+        createProject({
+            slug: "housegraph",
+            title: "HouseGraph",
+            scoreTitle: "Autonomous Home Transaction Layer",
+            description: "Turns every home into a verified, queryable AI agent that can tour, explain, negotiate, and coordinate the sale of that property at a fraction of traditional transaction cost.",
+            image: housegraph_hero,
+            href: "/housegraph",
+            themeColor: "hover:border-teal-500/50 text-teal-400",
+            hoverTextColor: "group-hover:text-teal-400",
         })
     ];
 

@@ -762,6 +762,31 @@ const startups = [
             founder_fit: ['Operator-Led', 'Venture-Scale'],
             outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate']
         }
+    },
+    {
+        slug: 'housegraph',
+        name: 'HouseGraph',
+        created_at: '2026-04-13T12:37:11-06:00',
+        scores: {
+            moat_score: { ai_scored: 84 },
+            difficulty_score: { ai_scored: 81 },
+            civilizational_impact_score: { ai_scored: 44 },
+            civilizational_impact_ratings: {
+                "Abundance": { ai_scored: 51 },
+                "Human Flourishing": { ai_scored: 42 },
+                "Social Trust": { ai_scored: 48 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Housing', 'Finance'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Consumers', 'Enterprises'],
+            product_type: ['Platform', 'Agent'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Vision AI', 'Knowledge Graphs'],
+            readiness: ['Build Now'],
+            founder_fit: ['Technical Founder', 'Venture-Scale'],
+            outcomes: ['Abundance', 'Human Flourishing', 'Social Trust']
+        }
     }
 ];
 
