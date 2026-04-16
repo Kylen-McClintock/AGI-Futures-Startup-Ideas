@@ -787,6 +787,32 @@ const startups = [
             founder_fit: ['Technical Founder', 'Venture-Scale'],
             outcomes: ['Abundance', 'Human Flourishing', 'Social Trust']
         }
+    },
+    {
+        slug: 'whistleworks',
+        name: 'WhistleWorks',
+        created_at: '2026-04-15T10:20:00-06:00',
+        scores: {
+            moat_score: { ai_scored: 84 },
+            difficulty_score: { ai_scored: 72 },
+            civilizational_impact_score: { ai_scored: 82 },
+            civilizational_impact_ratings: {
+                "Better Governance": { ai_scored: 90 },
+                "Social Trust": { ai_scored: 83 },
+                "Resilience": { ai_scored: 74 },
+                "Differentially Defensive": { ai_scored: 81 }
+            }
+        },
+        tags: {
+            sector: ['Governance', 'Security', 'AI'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Governments', 'Enterprises'],
+            product_type: ['Platform', 'SaaS'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs'],
+            readiness: ['Build Now'],
+            founder_fit: ['Policy Entrepreneur', 'Venture-Scale'],
+            outcomes: ['Better Governance', 'Social Trust', 'Resilience', 'Differentially Defensive']
+        }
     }
 ];
 

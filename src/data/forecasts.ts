@@ -243,6 +243,10 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getAgrivoltaicsInfrastructureCurve('wild-return'),
         aiRationale: "Wild Return requires high upfront capital and land acquisition, similar to infrastructure plays. The AGI Futures forecaster model reflects initial slow growth due to trust-building, regulatory gating, and physical build-out constraints. However, as cultural adoption accelerates and legacy competitors fail to adapt to ecological demands, it achieves a compounding valuation upside through recurring stewardship funds and multi-generational lock-in by 2040."
     },
+    'whistleworks': {
+        forecast: getSaaSMarketCurve('whistleworks'),
+        aiRationale: "WhistleWorks acts as a trusted intake and legal funnel for high-value fraud cases. The AGI Futures Valuation Forecasting Model predicts typical consumer/enterprise SaaS early resistance due to trust barriers. However, once the proprietary case data asset loops back into systemic fraud detection software, the platform exhibits compounding data advantages. This leads to a highly robust trajectory toward a stable $1B+ category leadership by 2035."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {
