@@ -247,6 +247,20 @@ export const forecastDatabase: Record<string, ForecastData> = {
         forecast: getSaaSMarketCurve('whistleworks'),
         aiRationale: "WhistleWorks acts as a trusted intake and legal funnel for high-value fraud cases. The AGI Futures Valuation Forecasting Model predicts typical consumer/enterprise SaaS early resistance due to trust barriers. However, once the proprietary case data asset loops back into systemic fraud detection software, the platform exhibits compounding data advantages. This leads to a highly robust trajectory toward a stable $1B+ category leadership by 2035."
     },
+    'public-ai': {
+        forecast: {
+            id: `fc_public-ai`,
+            targetIdeaSlug: 'public-ai',
+            sourceType: "AI",
+            updatedAt: new Date().toISOString(),
+            curves: {
+                '2030-01-01': { horizonDate: '2030-01-01', probabilities: generateCurve({ 1e7: 90, 1e9: 40, 1e11: 5 }, 'public-ai', 2030) },
+                '2035-01-01': { horizonDate: '2035-01-01', probabilities: generateCurve({ 1e7: 99, 1e9: 75, 1e11: 20 }, 'public-ai', 2035) },
+                '2040-01-01': { horizonDate: '2040-01-01', probabilities: generateCurve({ 1e7: 99.9, 1e9: 90, 1e11: 45 }, 'public-ai', 2040) }
+            }
+        },
+        aiRationale: "Public AI operates as a foundational sovereign intelligence layer for governments. The AGI Futures forecaster model projects high probabilities of creating multiple $1B+ regional deployments due to the sticky, high-value nature of public sector contracts. However, because sovereign AI emphasizes localized control over global aggregation, achieving a single $100B+ monopoly is structurally harder compared to consumer tech, leading to a strong, high-floor, mid-ceiling forecast curve."
+    },
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {

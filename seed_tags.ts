@@ -813,6 +813,32 @@ const startups = [
             founder_fit: ['Policy Entrepreneur', 'Venture-Scale'],
             outcomes: ['Better Governance', 'Social Trust', 'Resilience', 'Differentially Defensive']
         }
+    },
+    {
+        slug: 'public-ai',
+        name: 'Public AI',
+        created_at: '2026-04-21T17:53:09-06:00',
+        scores: {
+            moat_score: { ai_scored: 88 },
+            difficulty_score: { ai_scored: 76 },
+            civilizational_impact_score: { ai_scored: 89 },
+            civilizational_impact_ratings: {
+                "Better Governance": { ai_scored: 95 },
+                "Social Trust": { ai_scored: 85 },
+                "Decentralization": { ai_scored: 75 },
+                "Alignment": { ai_scored: 82 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Governance', 'Democracy', 'Cities'],
+            bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'],
+            customer: ['Governments', 'Cities'],
+            product_type: ['Platform', 'Infrastructure'],
+            enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations', 'Social Graph'],
+            readiness: ['Build Now'],
+            founder_fit: ['Policy Entrepreneur', 'Venture-Scale'],
+            outcomes: ['Better Governance', 'Social Trust', 'Decentralization', 'Alignment']
+        }
     }
 ];
 
