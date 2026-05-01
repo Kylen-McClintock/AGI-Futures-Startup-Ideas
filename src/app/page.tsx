@@ -35,6 +35,7 @@ import waypoint_hero from "./waypoint/assets/waypoint_hero.png";
 import housegraph_hero from "./housegraph/assets/housegraph_hero.png";
 import whistleworks_hero from "./whistleworks/assets/hero_vista.png";
 import publicai_hero from "./public-ai/assets/hero.png";
+import commonground_hero from "./commonground/assets/hero_negotiation_realistic.png";
 
 export default async function Home() {
     const supabase = await createClient();
@@ -79,7 +80,8 @@ export default async function Home() {
         "waypoint": { moat: 91, difficulty: 78, impact: 87, created_at: "2026-04-11T10:00:00Z", tags: { sector: ['AI', 'Water', 'Climate', 'Finance'], bottleneck: ['Coordination', 'Trust', 'Energy Scarcity'], customer: ['Governments', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Vision AI', 'Augmented Reality'], readiness: ['Build Now'], founder_fit: ['Operator-Led', 'Venture-Scale'], outcomes: ['Abundance', 'Resilience', 'Human Flourishing', 'Climate'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':88},'Resilience':{'ai_scored':91},'Human Flourishing':{'ai_scored':89},'Climate':{'ai_scored':74}} },
         "housegraph": { moat: 84, difficulty: 81, impact: 44, created_at: "2026-04-13T12:37:11-06:00", tags: { sector: ['AI', 'Housing', 'Finance'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Consumers', 'Enterprises'], product_type: ['Platform', 'Agent'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Voice AI', 'Vision AI', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Venture-Scale'], outcomes: ['Abundance', 'Human Flourishing', 'Social Trust'] }, civilizational_impact_ratings: {'Abundance':{'ai_scored':51},'Human Flourishing':{'ai_scored':42},'Social Trust':{'ai_scored':48}} },
         "whistleworks": { moat: 84, difficulty: 72, impact: 82, created_at: "2026-04-15T10:20:00-06:00", tags: { sector: ['Governance', 'Security', 'AI'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Governments', 'Enterprises'], product_type: ['Platform', 'SaaS'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Venture-Scale'], outcomes: ['Better Governance', 'Social Trust', 'Resilience', 'Differentially Defensive'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':90},'Social Trust':{'ai_scored':83},'Resilience':{'ai_scored':74},'Differentially Defensive':{'ai_scored':81}} },
-        "public-ai": { moat: 88, difficulty: 76, impact: 89, created_at: "2026-04-21T17:53:09-06:00", tags: { sector: ['AI', 'Governance', 'Democracy', 'Cities'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Governments', 'Cities'], product_type: ['Platform', 'Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Venture-Scale'], outcomes: ['Better Governance', 'Social Trust', 'Decentralization', 'Alignment'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':95},'Social Trust':{'ai_scored':85},'Decentralization':{'ai_scored':75},'Alignment':{'ai_scored':82}} }
+        "public-ai": { moat: 88, difficulty: 76, impact: 89, created_at: "2026-04-21T17:53:09-06:00", tags: { sector: ['AI', 'Governance', 'Democracy', 'Cities'], bottleneck: ['Trust', 'Coordination', 'Regulatory Friction'], customer: ['Governments', 'Cities'], product_type: ['Platform', 'Infrastructure'], enabling_technology: ['Large Language Models', 'Autonomous Agents', 'Knowledge Graphs', 'Simulations', 'Social Graph'], readiness: ['Build Now'], founder_fit: ['Policy Entrepreneur', 'Venture-Scale'], outcomes: ['Better Governance', 'Social Trust', 'Decentralization', 'Alignment'] }, civilizational_impact_ratings: {'Better Governance':{'ai_scored':95},'Social Trust':{'ai_scored':85},'Decentralization':{'ai_scored':75},'Alignment':{'ai_scored':82}} },
+        "commonground": { moat: 84, difficulty: 72, impact: 90, created_at: "2026-04-26T16:50:56-06:00", tags: { sector: ['AI', 'Governance', 'Finance'], bottleneck: ['Trust', 'Coordination'], customer: ['Founders', 'Enterprises'], product_type: ['Platform', 'Coordination Infrastructure'], enabling_technology: ['Large Language Models', 'Knowledge Graphs', 'Simulations'], readiness: ['Build Now'], founder_fit: ['Technical Founder', 'Operator-Led'], outcomes: ['Social Trust', 'Better Governance', 'Abundance'] }, civilizational_impact_ratings: {'Social Trust':{'ai_scored':94},'Better Governance':{'ai_scored':90},'Abundance':{'ai_scored':86}} }
     };
 
     // Helper to merge static data with DB data
@@ -442,6 +444,16 @@ export default async function Home() {
             image: publicai_hero,
             href: "/public-ai",
             themeColor: "hover:border-teal-500/50 text-[var(--primary)]",
+            hoverTextColor: "group-hover:text-[var(--primary)]",
+        }),
+        createProject({
+            slug: "commonground",
+            title: "CommonGround AI",
+            scoreTitle: "Human Coordination Infrastructure",
+            description: "A provably fair dispute resolution system that learns from precedent, expert judgment, and each party's true priorities to compute outcomes humans can actually converge on.",
+            image: commonground_hero,
+            href: "/commonground",
+            themeColor: "hover:border-cyan-500/50 text-[var(--primary)]",
             hoverTextColor: "group-hover:text-[var(--primary)]",
         })
     ];

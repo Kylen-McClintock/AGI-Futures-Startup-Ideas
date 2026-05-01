@@ -839,6 +839,31 @@ const startups = [
             founder_fit: ['Policy Entrepreneur', 'Venture-Scale'],
             outcomes: ['Better Governance', 'Social Trust', 'Decentralization', 'Alignment']
         }
+    },
+    {
+        slug: 'commonground',
+        name: 'CommonGround AI',
+        created_at: '2026-04-26T16:50:56-06:00',
+        scores: {
+            moat_score: { ai_scored: 84 },
+            difficulty_score: { ai_scored: 72 },
+            civilizational_impact_score: { ai_scored: 90 },
+            civilizational_impact_ratings: {
+                "Social Trust": { ai_scored: 94 },
+                "Better Governance": { ai_scored: 90 },
+                "Abundance": { ai_scored: 86 }
+            }
+        },
+        tags: {
+            sector: ['AI', 'Governance', 'Finance'],
+            bottleneck: ['Trust', 'Coordination'],
+            customer: ['Founders', 'Enterprises'],
+            product_type: ['Coordination Infrastructure', 'Platform'],
+            enabling_technology: ['Large Language Models', 'Knowledge Graphs', 'Simulations'],
+            readiness: ['Build Now'],
+            founder_fit: ['Technical Founder', 'Operator-Led'],
+            outcomes: ['Social Trust', 'Better Governance', 'Abundance']
+        }
     }
 ];
 

@@ -261,6 +261,20 @@ export const forecastDatabase: Record<string, ForecastData> = {
         },
         aiRationale: "Public AI operates as a foundational sovereign intelligence layer for governments. The AGI Futures forecaster model projects high probabilities of creating multiple $1B+ regional deployments due to the sticky, high-value nature of public sector contracts. However, because sovereign AI emphasizes localized control over global aggregation, achieving a single $100B+ monopoly is structurally harder compared to consumer tech, leading to a strong, high-floor, mid-ceiling forecast curve."
     },
+    'commonground': {
+        forecast: {
+            id: `fc_commonground`,
+            targetIdeaSlug: 'commonground',
+            sourceType: "AI",
+            updatedAt: new Date().toISOString(),
+            curves: {
+                '2030-01-01': { horizonDate: '2030-01-01', probabilities: generateCurve({ 1e7: 90, 1e9: 60, 1e11: 5 }, 'commonground', 2030) },
+                '2035-01-01': { horizonDate: '2035-01-01', probabilities: generateCurve({ 1e7: 99, 1e9: 85, 1e11: 20 }, 'commonground', 2035) },
+                '2040-01-01': { horizonDate: '2040-01-01', probabilities: generateCurve({ 1e7: 99.9, 1e9: 95, 1e11: 45 }, 'commonground', 2040) }
+            }
+        },
+        aiRationale: "CommonGround AI represents a critical advancement in coordination infrastructure. The AGI Futures forecaster model assigns a high probability of establishing dominance in B2B disputes and early founder/equity mediation by 2030. While initial adoption will be bounded by legal inertia, we project rapid non-linear scaling into the 2035-2040 windows as trust frameworks catch up with computational fairness capabilities. Reaching $100B+ will require capturing global B2B contract enforcement standards."
+    }
 };
 
 export const getForecastForSlug = (slug: string): ForecastData => {
