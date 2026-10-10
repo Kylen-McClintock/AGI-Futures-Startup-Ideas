@@ -30,7 +30,7 @@ export default function AboutPage() {
                     
                     <p className="lead text-2xl text-white font-serif italic mb-12 leading-relaxed border-l-4 border-[#3bf4a4] pl-6 py-2 bg-white/[0.02] rounded-r-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)]">
                         “Whether it is to be Utopia or Oblivion will be a touch-and-go relay race right up to the final moment.”<br />
-                        <span className="text-lg text-white/50 not-italic mt-2 block">— Buckminster Fuller</span>
+                        <span className="text-lg text-white/50 not-italic mt-2 block">- Buckminster Fuller</span>
                     </p>
 
                     <div className="space-y-8">
@@ -63,7 +63,7 @@ export default function AboutPage() {
                                     Kylen McClintock
                                 </a>
                                 <p className="text-white/80 text-lg m-0">
-                                    ex-engineer, venture, and AI product lead
+                                    founder, angel investor, ex-venture and AI product lead
                                 </p>
                             </div>
                             <p className="text-[#3bf4a4] font-mono text-sm tracking-wide mt-3 mb-4">
@@ -73,7 +73,7 @@ export default function AboutPage() {
                                 Currently <strong className="text-white">Co-Founder & CEO of LEVL</strong>, an AI-enabled longevity therapeutics startup.
                             </p>
                             <p className="border-l-2 border-white/10 italic text-white/60 py-2 pl-4 mt-6">
-                                I started LEV to accelerate Longevity Escape Velocity and give people more time. Ironically, building it takes most of mine.
+                                I started LEVL to accelerate Longevity Escape Velocity and give people more time. Ironically, building it takes most of mine.
                             </p>
                         </div>
 
@@ -84,11 +84,22 @@ export default function AboutPage() {
                             <p className="text-xl leading-relaxed">
                                 That is why my team and I are <span className="bg-[#3bf4a4]/20 text-[#3bf4a4] px-2 py-0.5 rounded font-medium">open-sourcing the highest-conviction opportunities</span> I and other founders would pursue ourselves if we weren’t already heads down on our own ventures.
                             </p>
-                            <p className="text-xl leading-relaxed">
-                                If you want to contribute an idea, or you’re considering building one of these, please reach out.
-                                <br/>
-                                <span className="text-[#3bf4a4]/80 italic mt-2 inline-block">Time allowing, I plan to advise, support, and sometimes invest alongside the top builders.</span>
-                            </p>
+                            <div className="pt-6 border-t border-white/10 space-y-4">
+                                <p className="text-xl leading-relaxed">
+                                    As an angel investor, I back relentlessly high-agency teams building AI-native startups. The opportunity to invest into the singularity only comes around once in human history, and I want to put conviction and capital behind the builders steering it toward abundance.
+                                </p>
+                                <p className="text-xl leading-relaxed">
+                                    If you’re a founder building at this frontier,{" "}
+                                    <a 
+                                        href="https://www.linkedin.com/in/kylenmcclintock/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        className="text-[#3bf4a4] underline underline-offset-4 hover:text-[#3bf4a4]/80 transition-colors"
+                                    >
+                                        please reach out
+                                    </a>.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
