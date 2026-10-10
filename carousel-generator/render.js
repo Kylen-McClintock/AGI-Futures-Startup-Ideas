@@ -18,7 +18,7 @@ export async function renderCarousel(slug, carouselData, outputDir, ideaNumber, 
     });
     
     const page = await browser.newPage();
-    await page.setViewport({ width: 1080, height: 1350, deviceScaleFactor: 2 });
+    await page.setViewport({ width: 1080, height: 1350, deviceScaleFactor: 1 });
     
     const templateHtml = await fs.readFile(path.join(__dirname, 'template.html'), 'utf8');
     
