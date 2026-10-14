@@ -219,17 +219,17 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         <div className="glass-panel p-6 border border-white/5 rounded-3xl">
                             <Briefcase className="w-8 h-8 text-[var(--secondary)] mb-4" />
                             <h4 className="text-lg text-white font-medium mb-2">1. Mini Missions</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">Carved from real backlog. Includes project spec, <HoverAcronym acronym="ICP" definition="Ideal customer profile" />, brand guidelines, and historical data.</p>
+                            <p className="text-white/60 leading-relaxed font-light text-sm">Carved from real backlog with messy constraints, <HoverAcronym acronym="ICP" definition="Ideal customer profile" /> context, and planted data traps that defeat lazy one-shot prompting.</p>
                         </div>
                         <div className="glass-panel p-6 border border-white/5 rounded-3xl">
                             <Eye className="w-8 h-8 text-[var(--secondary)] mb-4" />
                             <h4 className="text-lg text-white font-medium mb-2">2. Taste Check</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">Optional 10-20 min prescreen. Pick best ads, rewrite a <HoverAcronym acronym="CTA" definition="Call to action" />, or compare UX flows to filter for seriousness.</p>
+                            <p className="text-white/60 leading-relaxed font-light text-sm">10–15 min prescreen. Critique AI-generated drafts, spot subtle hallucinations, and cut weak angles to filter for editorial taste.</p>
                         </div>
                         <div className="glass-panel p-6 border border-white/5 rounded-3xl">
                             <Target className="w-8 h-8 text-[var(--secondary)] mb-4" />
-                            <h4 className="text-lg text-white font-medium mb-2">3. Orchestrate & Ship</h4>
-                            <p className="text-white/60 leading-relaxed font-light text-sm">Candidates opt in, use any AI tools, and ship. Success depends on judgment plus AI orchestration.</p>
+                            <h4 className="text-lg text-white font-medium mb-2">3. Orchestrate &amp; Defend</h4>
+                            <p className="text-white/60 leading-relaxed font-light text-sm">Candidates bring their full agent stack, ship a live artifact, handle a mid-mission curveball, and defend their tradeoffs in a 5-minute walkthrough.</p>
                         </div>
                         <div className="glass-panel p-6 border border-white/5 rounded-3xl">
                             <LineChart className="w-8 h-8 text-[var(--secondary)] mb-4" />
@@ -285,35 +285,35 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                         items={[
                             {
                                 title: "1. Growth & Creative (Seed/Series A)",
-                                description: "Mission: Paid social and content for a B2B SaaS startup wanting better paid acquisition.",
+                                description: "Mission: Paid social and outbound sprint for a B2B SaaS startup wanting lower CAC.",
                                 icon: Sparkles,
                                 colorTheme: "violet",
-                                details: "Propose 3 concepts for Meta/LinkedIn. Outline a 7-day test plan. Top candidates get $100-$300 real budget in a sandbox to launch, monitor, and adjust. Postmortem reporting required.",
-                                outputs: "Startup gets new creative. Candidate gets a portfolio card: '2.3x ROAS vs control on $200 spend; CPA down 32%'"
+                                details: "Direct AI video/copy agents to ship 3 ad concepts and a 7-day test matrix. Top candidates get $200–$300 real sandbox spend to launch, diagnose live drop-offs, kill losing variants mid-week, and record a postmortem.",
+                                outputs: "Startup gets winning creative. Candidate gets a verified card: '2.3x ROAS vs control on $250 spend; CPA down 32%'"
                             },
                             {
-                                title: "2. UI/UX (Product-heavy teams)",
-                                description: "Mission: Fix an onboarding flow losing users in the first session for a Series A consumer app.",
+                                title: "2. UI/UX & Frontend (Product-heavy teams)",
+                                description: "Mission: Fix an onboarding flow losing users in the first session for a Series A app.",
                                 icon: Target,
                                 colorTheme: "blue",
-                                details: "Record a 10-15 minute Loom walkthrough analyzing friction points. Suggest UX/copy changes using AI. Top candidates get Figma access to ship an updated flow with an experiment design.",
+                                details: "Diagnose session-replay friction, use coding/design agents to ship an interactive working prototype, and defend why specific AI-suggested patterns were rejected in a 5-minute Loom.",
                                 outputs: "If A/B tested, ProofRun attaches the result: 'Selected for test; +8.5 percentage point activation over 30 days.'"
                             },
                             {
                                 title: "3. Product Management (Founder teams)",
-                                description: "Mission: Roadmap decision and PRD for a growth-stage startup.",
+                                description: "Mission: Triage conflicting customer data and ship a build-ready spec + prototype.",
                                 icon: Settings,
                                 colorTheme: "emerald",
-                                details: "Write a 2-page decision memo choosing a roadmap and justifying it using user feedback (NPS comments, analytics). Top candidates receive a real feature request and write a PRD and AI-orchestration plan.",
-                                outputs: "If the feature ships, links PRD to post-launch impact: 'Used as base spec; activation +4%; no change in churn.'"
+                                details: "Given raw support tickets, noisy analytics, and an engineering constraint curveball mid-run, synthesize a 2-page decision memo, working prototype, and agent-execution spec.",
+                                outputs: "If the feature ships, links spec to post-launch impact: 'Used as base spec; activation +4%; zero churn spike.'"
                             },
                             {
-                                title: "4. Analyst Missions (Venture/Firms)",
-                                description: "Mission: Find non-obvious, correct theses based on historical financials and data.",
+                                title: "4. Investment & Strategy Analyst (Venture/Firms)",
+                                description: "Mission: Audit an AI-generated diligence pack, catch planted accounting/market traps, and defend a non-consensus thesis.",
                                 icon: BarChart,
                                 colorTheme: "purple",
-                                details: "Write a 1-2 page memo with a clear thesis, key drivers, major risks, 3 scenarios, and explicit triggers that would change their mind based on curated inputs.",
-                                outputs: "If the firm takes a position, ProofRun timestamps the mission and tracks relative performance vs benchmark."
+                                details: "Anyone can run Deep Research to generate a 10-page memo. Here, candidates must verify primary sources, spot contradictory unit economics in raw data tables, and defend explicit disconfirming triggers live.",
+                                outputs: "If the firm takes a position, ProofRun timestamps the thesis and tracks relative performance vs benchmark."
                             }
                         ]}
                     />

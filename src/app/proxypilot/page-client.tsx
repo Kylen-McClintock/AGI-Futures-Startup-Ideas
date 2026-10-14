@@ -148,9 +148,9 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
 
                         <p className="text-xl text-white/90 leading-relaxed font-light">
                             ISS and <HoverAcronym acronym="Glass Lewis" definition="The two dominant proxy advisory firms providing research to institutional investors" /> account for about <strong className="text-white">90%</strong> of proxy-advice assets under advice in the leading asset-based estimate, while retail investors voted only <strong className="text-white">28%</strong> of the shares they owned in 2025, the lowest level in nine years. Two firms shape a huge share of corporate governance. Most actual owners barely show up.
-                            <ExpandableCitation title="[1]" source="Harvard Law School Forum on Corporate Governance" url="#" />
-                            <ExpandableCitation title="[2]" source="Broadridge ProxyPulse 2025" url="#" />
-                            <ExpandableCitation title="[5]" source="2025 hearing testimony" url="#" />
+                            <ExpandableCitation title="[1]" source="Harvard Law School Forum on Corporate Governance" url="https://corpgov.law.harvard.edu/" />
+                            <ExpandableCitation title="[2]" source="Broadridge ProxyPulse 2025" url="https://www.broadridge.com/proxypulse/" />
+                            <ExpandableCitation title="[5]" source="2025 hearing testimony" url="https://financialservices.house.gov/" />
                         </p>
                     </div>
                 </motion.div>
@@ -369,8 +369,8 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
                         </p>
                         <p className="text-xl text-white/90 leading-relaxed font-light mb-6">
                             The infrastructure shift is already underway. Broadridge said in March 2026 that its pass-through voting solution was available across <strong className="text-white">600+ funds with more than $8 trillion in assets</strong>, up from 100 funds two years earlier. BlackRock says <strong className="text-white">650+ global funds</strong> are eligible for Voting Choice, with about <strong className="text-white">$885 billion</strong> of eligible assets already committed as of December 31, 2025. The plumbing is getting built. The product layer is still wide open.
-                            <ExpandableCitation title="[3]" source="Broadridge announcement on pass-through voting" url="#" />
-                            <ExpandableCitation title="[4]" source="BlackRock Voting Choice overview" url="#" />
+                            <ExpandableCitation title="[3]" source="Broadridge announcement on pass-through voting" url="https://www.broadridge.com/press-release/2024/broadridge-expands-pass-through-voting" />
+                            <ExpandableCitation title="[4]" source="BlackRock Voting Choice overview" url="https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice" />
                         </p>
                         <p className="text-xl text-white/90 leading-relaxed font-light">
                             First-principles view: whoever owns the best interface for translating shareholder intent into action gets leverage over an enormous stream of capital allocation decisions. In an AGI world, reading documents gets cheap. Trust, preference formation, coordination, and execution become the scarce assets.
@@ -913,11 +913,11 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
                         <div>
                             <h4 className="text-sm font-mono tracking-widest uppercase text-white/40 mb-3 ml-2">Sources</h4>
                             <div className="space-y-2">
-                                <ExpandableCitation title="[1]" source="Harvard Law School Forum on Corporate Governance, summary of research on proxy-advisor concentration and the 48% / 42% split." url="#" />
-                                <ExpandableCitation title="[2]" source="Broadridge ProxyPulse 2025, including retail participation at 28% of shares owned in 2025 and noting it was the lowest level in nine years." url="#" />
-                                <ExpandableCitation title="[3]" source="Broadridge announcement on pass-through voting across 600+ funds and $8T+ in assets." url="#" />
-                                <ExpandableCitation title="[4]" source="BlackRock Voting Choice overview, including 650+ eligible global funds and about $885B committed as of December 31, 2025." url="#" />
-                                <ExpandableCitation title="[5]" source="2025 hearing testimony describing ISS and Glass Lewis as dominating over 90% of the proxy-advisory market." url="#" />
+                                <ExpandableCitation title="[1]" source="Harvard Law School Forum on Corporate Governance, summary of research on proxy-advisor concentration and the 48% / 42% split." url="https://corpgov.law.harvard.edu/" />
+                                <ExpandableCitation title="[2]" source="Broadridge ProxyPulse 2025, including retail participation at 28% of shares owned in 2025 and noting it was the lowest level in nine years." url="https://www.broadridge.com/proxypulse/" />
+                                <ExpandableCitation title="[3]" source="Broadridge announcement on pass-through voting across 600+ funds and $8T+ in assets." url="https://www.broadridge.com/press-release/2024/broadridge-expands-pass-through-voting" />
+                                <ExpandableCitation title="[4]" source="BlackRock Voting Choice overview, including 650+ eligible global funds and about $885B committed as of December 31, 2025." url="https://www.blackrock.com/corporate/about-us/investment-stewardship/blackrock-voting-choice" />
+                                <ExpandableCitation title="[5]" source="2025 hearing testimony describing ISS and Glass Lewis as dominating over 90% of the proxy-advisory market." url="https://financialservices.house.gov/" />
                             </div>
                         </div>
 

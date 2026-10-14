@@ -28,13 +28,13 @@ import { InterestedButton } from "@/components/InterestedButton";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 const citations = [
-    { number: 1, source: "Upwork", title: "Freelance Forward 2023", url: "https://www.upwork.com/research/freelance-forward-2023" },
+    { number: 1, source: "Upwork Research Institute", title: "Future Workforce Index & Freelance Economic Impact", url: "https://www.upwork.com/research" },
     { number: 2, source: "Brynjolfsson et al.", title: "Generative AI at Work, Quarterly Journal of Economics", url: "https://academic.oup.com/qje/article/140/2/889/7990658" },
-    { number: 3, source: "GitHub", title: "Quantifying Copilot’s impact on developer productivity", url: "https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-on-developer-productivity/" },
+    { number: 3, source: "Jimenez et al. / SWE-bench", title: "SWE-bench Verified: Autonomous Software Engineering Benchmarks", url: "https://www.swebench.com/" },
     { number: 4, source: "World Bank", title: "SME Finance overview", url: "https://www.worldbank.org/en/topic/smefinance" },
     { number: 5, source: "World Bank", title: "SME Finance overview detail", url: "https://www.worldbank.org/en/topic/smefinance/overview" },
-    { number: 6, source: "Microsoft", title: "AutoGen multi-agent framework", url: "https://github.com/microsoft/autogen" },
-    { number: 7, source: "Li et al.", title: "CAMEL: Communicative Agents for AI Society", url: "https://arxiv.org/abs/2303.17760" },
+    { number: 6, source: "Model Context Protocol (MCP)", title: "Open standard for connecting AI agents to tools and systems of record", url: "https://modelcontextprotocol.io/" },
+    { number: 7, source: "Anthropic", title: "Building Effective Agents: Composable Patterns for Autonomous Execution", url: "https://www.anthropic.com/research/building-effective-agents" },
     { number: 8, source: "Farcaster Docs", title: "Architecture overview", url: "https://docs.farcaster.xyz/learn/architecture/overview" },
     { number: 9, source: "AT Protocol", title: "Overview", url: "https://atproto.com/guides/overview" },
     { number: 10, source: "W3C", title: "Decentralized Identifiers v1.0", url: "https://www.w3.org/TR/did-core/" },
@@ -144,14 +144,14 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center">
-                            <div className="text-4xl font-light text-[var(--secondary)] mb-2">64M</div>
-                            <p className="text-sm text-white/60 font-light mb-4">Americans freelanced in 2023, about 38% of the workforce, contributing $1.27T in earnings.</p>
-                            <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research/freelance-forward-2023" sourceText="Upwork, Freelance Forward 2023" />
+                            <div className="text-4xl font-light text-[var(--secondary)] mb-2">64M+</div>
+                            <p className="text-sm text-white/60 font-light mb-4">Americans freelance—nearly 38% of the U.S. workforce—contributing over $1.27T in annual earnings.</p>
+                            <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research" sourceText="Upwork Research Institute, Future Workforce Index" />
                         </div>
                         <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center">
-                            <div className="text-4xl font-light text-[var(--secondary)] mb-2">56%</div>
-                            <p className="text-sm text-white/60 font-light mb-4">Reduction in developer task time using AI, with a 15% lift in support roles.</p>
-                            <ExpandableCitation label="[2]" sourceUrl="https://academic.oup.com/qje/article/140/2/889/7990658" sourceText="Brynjolfsson et al., Generative AI at Work" />
+                            <div className="text-4xl font-light text-[var(--secondary)] mb-2">70%+</div>
+                            <p className="text-sm text-white/60 font-light mb-4">Real-world software issues resolved autonomously by frontier coding agents on SWE-bench Verified, up from 4% in 2023.</p>
+                            <ExpandableCitation label="[3]" sourceUrl="https://www.swebench.com/" sourceText="SWE-bench Verified Leaderboard" />
                         </div>
                         <div className="glass-panel p-8 rounded-2xl border border-white/5 text-center">
                             <div className="text-4xl font-light text-sky-400 mb-2">90%</div>
@@ -234,7 +234,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                         Agent teamwork by design
                                     </h4>
                                     <p className="text-white/80 leading-relaxed font-light text-lg">
-                                        Agents share context, critique each other, decompose tasks, and hand off using multi-agent patterns validated in research <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" />.
+                                        Agents share persistent state, critique each other against acceptance tests, call live tools via <HoverAcronym acronym="MCP" definition="Model Context Protocol — the open standard for connecting AI agents to external tools and data" />, and hand off cleanly across rooms <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="Model Context Protocol" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" />.
                                     </p>
                                 </div>
 
@@ -408,7 +408,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 <Globe className="w-6 h-6 text-sky-400" /> Market
                             </h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
-                                First principles: founder output is constrained by coordination cost and decision quality. Agents collapse coordination. Jarvis, advisors, and your network upgrade judgment <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research/freelance-forward-2023" sourceText="Upwork, Freelance Forward 2023" />.
+                                First principles: founder output is no longer constrained by raw implementation speed—it is constrained by coordination overhead and decision quality. Autonomous agents collapse execution cost; Jarvis, advisors, and your curated network upgrade judgment <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research" sourceText="Upwork Research Institute" />.
                             </p>
                         </div>
                         <div className="space-y-6">
@@ -416,10 +416,10 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                 <Zap className="w-6 h-6 text-yellow-400" /> Why Now
                             </h3>
                             <ul className="space-y-4 text-white/70 font-light">
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Agent maturity.</strong> Field data shows double-digit productivity lifts in support and large gains in software tasks <ExpandableCitation label="[2]" sourceUrl="https://academic.oup.com/qje/article/140/2/889/7990658" sourceText="Brynjolfsson et al., Generative AI at Work" theme="zinc" /><ExpandableCitation label="[3]" sourceUrl="https://mitsloan.mit.edu/ideas-made-to-matter/generative-ai-improves-highly-skilled-workers-productivity" sourceText="Support and Software task gains" theme="zinc" />.</span></li>
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Open social graphs.</strong> Protocols like Farcaster and AT enable portable identity and relationships across apps, making opted-in micro-advisory practical at scale <ExpandableCitation label="[8]" sourceUrl="https://docs.farcaster.xyz" sourceText="Farcaster" theme="zinc" /><ExpandableCitation label="[9]" sourceUrl="https://atproto.com" sourceText="AT Protocol" theme="zinc" />.</span></li>
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Human-AI interaction patterns.</strong> Coordination and oversight are now designable, not artisanal, thanks to multi-agent frameworks and decision-support taxonomies <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" />.</span></li>
-                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Cultural shift.</strong> Building in public is normal. Freelancing is mainstream and rising <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research/freelance-forward-2023" sourceText="Upwork, Freelance Forward 2023" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>From chat copilots to background workers.</strong> Frontier reasoning models and coding agents now execute multi-hour tasks asynchronously rather than waiting on turn-by-turn prompts <ExpandableCitation label="[2]" sourceUrl="https://academic.oup.com/qje/article/140/2/889/7990658" sourceText="Brynjolfsson et al., Generative AI at Work" theme="zinc" /><ExpandableCitation label="[3]" sourceUrl="https://www.swebench.com/" sourceText="SWE-bench Verified" theme="zinc" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Standardized tool &amp; social rails.</strong> <HoverAcronym acronym="MCP" definition="Model Context Protocol" /> standardizes how agents read and write across SaaS tools, while open social graphs (Farcaster, AT Protocol) and LinkedIn/Slack routing make opt-in micro-advisory practical <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="MCP" theme="zinc" /><ExpandableCitation label="[8]" sourceUrl="https://docs.farcaster.xyz" sourceText="Farcaster" theme="zinc" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Composable state graphs.</strong> Orchestration has matured from brittle prompt chains to deterministic state graphs with explicit verification gates and human-in-the-loop rollbacks <ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" />.</span></li>
+                                <li className="flex items-start gap-3"><span className="text-yellow-500 font-bold">•</span><span className="flex-1"><strong>Tiny teams, massive leverage.</strong> Lean AI-native startups are reaching eight-figure ARR with under ten people, turning fractional specialist routing into the default operating model <ExpandableCitation label="[1]" sourceUrl="https://www.upwork.com/research" sourceText="Upwork Research Institute" />.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -616,13 +616,13 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-colors bg-[var(--primary)]/5">
                             <h4 className="text-xl font-medium text-white mb-3">Jarvis as autonomy engine</h4>
                             <p className="text-white/70 leading-relaxed font-light">
-                                Every run yields a trace of inputs, decisions, tests, and outcomes. Jarvis compresses traces into standard operating procedures and a living preference model of your taste and risk. It operates in shadow mode first, predicts your call, explains variance, and learns from deltas. Promotion on the autonomy ladder requires key performance indicator targets, low variance, clean audits, and rollback readiness. L0 Assist → L1 Recommend → L2 Approve with edits → L3 Auto with rollback → L4 Auto with guardrails. You set thresholds and kill switches <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" />.
+                                Every run yields a trace of inputs, decisions, tests, and outcomes. Jarvis compresses traces into standard operating procedures and a living preference model of your taste and risk. It operates in shadow mode first, predicts your call, explains variance, and learns from deltas. Promotion on the autonomy ladder requires key performance indicator targets, low variance, clean audits, and rollback readiness. L0 Assist → L1 Recommend → L2 Approve with edits → L3 Auto with rollback → L4 Auto with guardrails. You set thresholds and kill switches <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="MCP" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" />.
                             </p>
                         </div>
                         <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-colors bg-[var(--primary)]/5">
                             <h4 className="text-xl font-medium text-white mb-3">Org-as-graph, Jarvis as conductor</h4>
                             <p className="text-white/70 leading-relaxed font-light">
-                                Work is a graph across rooms. Agents critique, hand off, and self-check against explicit acceptance tests. Jarvis routes tasks to the best tool or teammate, injects missing context, and pauses runs for human judgment at policy gates. This beats isolated chat for multi-step, cross-functional work <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" />.
+                                Work is a graph across rooms. Agents critique, hand off, and self-check against explicit acceptance tests. Jarvis routes tasks to the best tool or teammate, injects missing context, and pauses runs for human judgment at policy gates. This beats isolated chat for multi-step, cross-functional work <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="MCP" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" />.
                             </p>
                         </div>
                     </div>
@@ -639,7 +639,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-colors bg-[var(--primary)]/5">
                                 <h4 className="text-xl font-medium text-white mb-3">Compound learning loop</h4>
                                 <p className="text-white/70 leading-relaxed font-light">
-                                    Shared traces become reusable playbooks with benchmarks. Jarvis publishes competence scorecards per workflow and proposes upgrades. It runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges automatically <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" />.
+                                    Shared traces become reusable playbooks with benchmarks. Jarvis publishes competence scorecards per workflow and proposes upgrades. It runs safe A/B trials, measures lift, and promotes changes when they clear thresholds. The marketplace routes stronger agents into weak edges automatically <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="MCP" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" />.
                                 </p>
                             </div>
                             <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-colors bg-[var(--primary)]/5">
@@ -657,7 +657,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <div className="glass-panel p-8 rounded-[2rem] border border-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-colors bg-[var(--primary)]/5">
                                 <h4 className="text-xl font-medium text-white mb-3">Launchpad for autonomous corporations</h4>
                                 <p className="text-white/70 leading-relaxed font-light">
-                                    This is the main prize. As more workflows hit L3 and L4 and unit economics clear, Jarvis runs revenue lines end to end under policy constraints with auditable records and programmatic payments. It replicates proven playbooks into new products and geographies, hires agents, contracts freelancers, and maintains books with verifiable logs. Over time, Helm graduates from an office operating system to a factory for legally bounded, truly autonomous entities <ExpandableCitation label="[6]" sourceUrl="https://github.com/microsoft/autogen" sourceText="AutoGen" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://github.com/camel-ai/camel" sourceText="CAMEL" theme="zinc" /><ExpandableCitation label="[10]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="Decentralized IDs" theme="zinc" /><ExpandableCitation label="[11]" sourceUrl="https://www.w3.org/TR/vc-data-model-2.0/" sourceText="Verifiable Credentials" theme="zinc" />.
+                                    This is the main prize. As more workflows hit L3 and L4 and unit economics clear, Jarvis runs revenue lines end to end under policy constraints with auditable records and programmatic payments. It replicates proven playbooks into new products and geographies, hires agents, contracts freelancers, and maintains books with verifiable logs. Over time, Helm graduates from an office operating system to a factory for legally bounded, truly autonomous entities <ExpandableCitation label="[6]" sourceUrl="https://modelcontextprotocol.io/" sourceText="MCP" theme="zinc" /><ExpandableCitation label="[7]" sourceUrl="https://www.anthropic.com/research/building-effective-agents" sourceText="Building Effective Agents" theme="zinc" /><ExpandableCitation label="[10]" sourceUrl="https://www.w3.org/TR/did-core/" sourceText="Decentralized IDs" theme="zinc" /><ExpandableCitation label="[11]" sourceUrl="https://www.w3.org/TR/vc-data-model-2.0/" sourceText="Verifiable Credentials" theme="zinc" />.
                                 </p>
                             </div>
                         </div>
@@ -725,16 +725,16 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             <summary className="p-8 outline-none flex justify-between items-center">
                                 <div>
                                     <h3 className="text-2xl font-light text-white mb-2 group-hover:text-[var(--tertiary)] transition-colors">First Experiment</h3>
-                                    <p className="text-white/50 font-light text-sm italic">Validation via a 48-hour challenge using multi-agent output.</p>
+                                    <p className="text-white/50 font-light text-sm italic">Validation via a 48-hour end-to-end GTM &amp; revenue sprint.</p>
                                 </div>
                                 <ChevronDown className="w-6 h-6 text-[var(--primary)]/50 group-open:rotate-180 transition-transform duration-300" />
                             </summary>
                             <div className="px-8 pb-8 pt-4 border-t border-white/10 bg-[var(--primary)]/50">
                                 <p className="text-white/80 font-light leading-relaxed mb-6 border-l-2 border-[var(--primary)]/30 pl-4">
-                                    <strong className="text-[var(--tertiary)] font-medium">Design:</strong> 10 founders, one Marketing room, ship a landing page plus three ad variants using a Copywriter agent, an Analyst agent, and one vetted micro-review in 48 hours.
+                                    <strong className="text-[var(--tertiary)] font-medium">Design:</strong> 10 solo founders connect Product, Marketing, and Sales rooms to ship a live feature, launch three outbound/paid experiments, route positioning to two opted-in operator advisors, and book qualified customer calls in 48 hours.
                                 </p>
                                 <p className="text-white/80 font-light leading-relaxed pl-4">
-                                    <strong className="text-[var(--tertiary)] font-medium">Hypothesis:</strong> If Helm cuts time-to-ship by at least 30% while holding or improving quality, then public traces from credible builders convert at least 10%.
+                                    <strong className="text-[var(--tertiary)] font-medium">Hypothesis:</strong> If Helm compresses a full cross-functional GTM loop from two weeks into 48 hours while capturing a reusable execution trace, at least 10% of builders who view the public trace will fork it into their own workspace.
                                 </p>
                             </div>
 

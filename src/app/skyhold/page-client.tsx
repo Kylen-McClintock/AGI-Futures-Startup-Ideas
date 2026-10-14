@@ -624,7 +624,7 @@ export default function SkyholdClientPage({ initialTags }: { initialTags: Projec
                         <OpenSourcePriority 
                             civilizationalImpactScore={57}
                             neglectednessScore={79}
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective."
+                            ideaSpecificText="Publishing open master-planning templates for AV-first streetscapes, vertiport acoustic buffers, and wildfire-hardened microgrids lets regional builders replicate resilient edge communities without reinventing zoning and infrastructure playbooks from scratch."
                         />
                     </div>
 

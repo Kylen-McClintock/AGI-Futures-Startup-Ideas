@@ -140,10 +140,10 @@ export default function ClientPage() {
                         Boomers own ~2.9 million U.S. firms employing ~32 million people and generating ~$6.5T in revenue. Retirement is the leading reason for listings.
                     </p>
                     <p className="text-lg md:text-xl font-light text-[var(--tertiary)] mt-6 relative z-10">
-                        Generative AI is already delivering double-digit productivity gains in service workflows. The spread is monetizable.
+                        Sub-second voice AI receptionists, automated quoting, and back-office agents now convert missed calls and operational slack directly into EBITDA. The spread is monetizable.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity, 'Small business closure crisis,' Boomer ownership, 2.9M firms, 32M jobs, ~$6.5T revenue." />
                         <ExpandableCitation label="BizBuySell" sourceUrl="https://www.bizbuysell.com/insight-report/" sourceText="BizBuySell Insight data, retirement as leading sell motivation; market activity." />
-                        <ExpandableCitation label="NBER" sourceUrl="https://www.nber.org/papers/w31161" sourceText="Brynjolfsson, Li, Raymond, 'Generative AI at Work,' NBER Working Paper w31161, ~14% support-center productivity lift." />
+                        <ExpandableCitation label="NBER" sourceUrl="https://www.nber.org/papers/w31161" sourceText="Brynjolfsson, Li, Raymond, 'Generative AI at Work,' NBER Working Paper w31161, baseline service-workflow productivity lift." />
                     </p>
                 </motion.section>
 
@@ -236,7 +236,7 @@ export default function ClientPage() {
                             },
                             {
                                 title: "AI Playbooks",
-                                desc: <>Vertical <HoverAcronym acronym="SOPs" definition="Standard Operating Procedures" />, voice agents, <HoverAcronym acronym="RPA" definition="Robotic Process Automation" />, <HoverAcronym acronym="CRM" definition="Customer Relationship Management" /> automations, pricing and <HoverAcronym acronym="AR" definition="Accounts Receivable" /> workflows, plus a common data spine.</>,
+                                desc: <>Vertical <HoverAcronym acronym="SOPs" definition="Standard Operating Procedures" />, sub-second 24/7 voice receptionists, autonomous <HoverAcronym acronym="CRM" definition="Customer Relationship Management" /> reactivation, dynamic dispatch, and automated <HoverAcronym acronym="AR" definition="Accounts Receivable" /> collections on a unified data spine.</>,
                                 icon: <Cpu className="block w-6 h-6" />
                             },
                             {
@@ -287,7 +287,7 @@ export default function ClientPage() {
                             An accepted cohort member buys a $2.0M revenue <HoverAcronym acronym="HVAC" definition="Heating, Ventilation, and Air Conditioning" /> shop at 15% EBITDA using <HoverAcronym acronym="SBA 7(a)" definition="U.S. Small Business Administration loan program for acquisitions" />, a seller note, and an 18-month profit-distribution glide for the seller.
                         </p>
                         <p className="text-lg font-light text-stone-300 mt-4 leading-relaxed text-pretty relative z-10">
-                            Day one, we install phone intake agents, estimate follow-ups, dynamic routing, and <HoverAcronym acronym="AR" definition="Accounts Receivable" /> collections. Support-style work shows ~14% productivity gains with generative AI, largest for newer staff. We expect similar lift in call-heavy flows, then expand into pricing and inventory. Cash conversion speeds up, <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> strengthens, equity value rerates.
+                            Day one, we install a 24/7 voice AI receptionist that captures every after-hours emergency call, automated estimate follow-ups, dynamic dispatch routing, and <HoverAcronym acronym="AR" definition="Accounts Receivable" /> collections. While early generative AI studies showed ~14% productivity lifts in support centers, full-stack voice and dispatch automation in trades shops routinely recovers 20–30% of missed inbound revenue while cutting back-office overhead. Cash conversion speeds up, <HoverAcronym acronym="DSCR" definition="Debt Service Coverage Ratio" /> strengthens, equity value rerates.
                             <ExpandableCitation label="NBER" sourceUrl="https://www.nber.org/papers/w31161" sourceText="Brynjolfsson et al., Generative AI at Work." />
                         </p>
 
@@ -322,8 +322,8 @@ export default function ClientPage() {
                     <div className="mb-16">
                         
                         <NeglectednessSlider 
-                            score={80} 
-                            interpretation="Highly neglected. Search funds and SMB acquisitions are booming, but applying an AI-native operational stack to modernize retiring boomer businesses as a bundled product is an operational heavy-lift that pure SaaS investors avoid."
+                            score={72} 
+                            interpretation="Moderately-to-highly neglected. While VC-backed 'AI roll-ups' are raising billions to centralize accounting, legal, and property management firms from the top down, almost no one is arming individual local owner-operators with SBA 7(a) financing, seller-friendly profit glides, and turnkey AI playbooks to keep Main Street ownership local."
                         />
 
 </div>

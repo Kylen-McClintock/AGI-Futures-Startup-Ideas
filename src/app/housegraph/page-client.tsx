@@ -521,7 +521,7 @@ export default function HouseGraphClientPage({ initialTags }: { initialTags: Pro
                         <OpenSourcePriority 
                             civilizationalImpactScore={44}
                             neglectednessScore={76}
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective."
+                            ideaSpecificText="Open-sourcing the Home Passport schema and seller-owned property record standards ensures that structured home intelligence remains portable for homeowners rather than becoming a new lock-in layer controlled by legacy listing portals."
                         />
                     </div>
 

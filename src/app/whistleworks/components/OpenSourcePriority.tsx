@@ -52,8 +52,9 @@ export default function OpenSourcePriority({ score }: OpenSourcePriorityProps) {
                             transition={{ duration: 0.3, ease: 'easeInOut' }}
                             className="mt-4 pt-4 border-t border-[var(--primary)]/20 relative z-10"
                         >
-                            <div className="text-xs text-[var(--primary)]/80 leading-relaxed font-mono">
-                                Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective.
+                            <div className="text-xs text-[var(--primary)]/80 leading-relaxed font-mono space-y-2">
+                                <p>Open-sourcing WhistleWorks’ cryptographic intake protocols, evidence-structuring rubrics, and jurisdictional routing trees ensures whistleblowers and independent attorneys can verify security guarantees without trusting a black box.</p>
+                                <p className="opacity-70">Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective.</p>
                             </div>
                         </motion.div>
                     )}

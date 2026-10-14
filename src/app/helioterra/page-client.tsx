@@ -180,12 +180,12 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             In a 2026 agrivoltaics study, optimized systems increased heat-stressed romaine lettuce yield by up to <strong className="text-[var(--primary)] font-medium">483%</strong>, while U.S. farm bankruptcies still rose <strong className="text-[var(--primary)] font-medium">46%</strong> in 2025.
                             <ExpandableCitation
                                 label="[1]"
-                                sourceUrl="#"
+                                sourceUrl="https://www.sciencedirect.com/journal/renewable-energy"
                                 sourceText="Jamil U, Pearce JM. Enhancing heat stress tolerance in organic romaine lettuce using crystalline silicon and red, blue & green-colored thin film agrivoltaic systems (2026)."
                             />
                             <ExpandableCitation
                                 label="[2]"
-                                sourceUrl="#"
+                                sourceUrl="https://www.fb.org/market-intel/"
                                 sourceText="American Farm Bureau Federation. Farm Bankruptcies Continued to Climb in 2025 (2026)."
                             />
                         </h3>
@@ -210,7 +210,7 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             HelioTerra is built on a simple thesis: agrivoltaic science is now strong enough to justify scaled deployment, but the financing and delivery stack is still stuck in a single-use world. In the right crops and climates, <strong className="text-[var(--primary)] font-medium">combining solar and agriculture can increase yield, improve water-use efficiency, preserve grazing productivity</strong>, and slightly improve solar output by cooling panels. But traditional solar development is optimized to maximize megawatts, not total value per acre. Traditional farm finance is not built to underwrite a hybrid food-and-energy asset. So a real win-win keeps stalling between categories.
                         </p>
                         <p className="text-lg leading-relaxed text-white/70 font-light">
-                            What exists is a false tradeoff between farmland and clean energy. What could exist is a mainstream dual-use asset class where the same parcel produces calories, electrons, rural income, and climate resilience. At civilizational scale, this matters because the U.S. still has 880.1 million acres of farmland, and the Department of Energy says solar capacity may need to reach one terawatt by 2035. <ExpandableCitation label="[6]" sourceUrl="#" sourceText="USDA National Agricultural Statistics Service (2024)." /><ExpandableCitation label="[7]" sourceUrl="#" sourceText="U.S. Department of Energy. Large-Scale Solar Siting Resources (updated 2026)." /> If even a modest share of agricultural land can host well-designed dual-use solar, the opportunity is enormous.
+                            What exists is a false tradeoff between farmland and clean energy. What could exist is a mainstream dual-use asset class where the same parcel produces calories, electrons, rural income, and climate resilience. At civilizational scale, this matters because the U.S. still has 880.1 million acres of farmland, and the Department of Energy says solar capacity may need to reach one terawatt by 2035. <ExpandableCitation label="[6]" sourceUrl="https://www.nass.usda.gov/Publications/Highlights/2024/Census22_HL_FarmsFarmland.pdf" sourceText="USDA National Agricultural Statistics Service (2024)." /><ExpandableCitation label="[7]" sourceUrl="https://www.energy.gov/eere/solar/large-scale-solar-siting" sourceText="U.S. Department of Energy. Large-Scale Solar Siting Resources (updated 2026)." /> If even a modest share of agricultural land can host well-designed dual-use solar, the opportunity is enormous.
                         </p>
                     </div>
                 </motion.section>
@@ -287,17 +287,17 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                             <ExpandableStatCard 
                                 stat={<span><span className="text-3xl"></span>2<span className="text-3xl">x</span></span>}
                                 label="Cherry Tomato Output"
-                                description={<span>The Arizona agrivoltaics field trial remains one of the clearest proofs that this can work in hot conditions. In that study, cherry tomato production under agrivoltaics was roughly double the conventional control, while jalapeño output stayed comparable and water-use efficiency improved. <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Barron-Gafford GA et al. (2019)." /></span>}
+                                description={<span>The Arizona agrivoltaics field trial remains one of the clearest proofs that this can work in hot conditions. In that study, cherry tomato production under agrivoltaics was roughly double the conventional control, while jalapeño output stayed comparable and water-use efficiency improved. <ExpandableCitation label="[3]" sourceUrl="https://www.nature.com/articles/s41893-019-0364-5" sourceText="Barron-Gafford GA et al. (2019)." /></span>}
                             />
                             <ExpandableStatCard 
                                 stat={<span><span className="text-3xl">-</span>10<span className="text-3xl">°C</span></span>}
                                 label="Solar Panel Temps (Up to +3% Yield)"
-                                description={<span>Solar output improves due to transpirational cooling from the crops below. Microclimate models and empirical data show panels operating up to 10°C cooler, leading to an average 3% increase in DC summer generation compared to bare-soil arrays. <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Williams et al. (2023). The potential for agrivoltaics to enhance solar farm cooling." /></span>}
+                                description={<span>Solar output improves due to transpirational cooling from the crops below. Microclimate models and empirical data show panels operating up to 10°C cooler, leading to an average 3% increase in DC summer generation compared to bare-soil arrays. <ExpandableCitation label="[5]" sourceUrl="https://www.sciencedirect.com/science/article/pii/S0306261923003999" sourceText="Williams et al. (2023). The potential for agrivoltaics to enhance solar farm cooling." /></span>}
                             />
                             <ExpandableStatCard 
                                 stat={<span><span className="text-3xl">+</span>328<span className="text-3xl">%</span></span>}
                                 label="Water-Use Efficiency"
-                                description={<span>Grazing works too. In semi-arid simulated pasture conditions in Oregon, researchers observed 90% more late-season biomass and a 328% increase in water-use efficiency under panels. A multi-year study also found lamb growth under solar and open pasture was fundamentally comparable, meaning total acreage productivity soared. <ExpandableCitation label="[4]" sourceUrl="#" sourceText="Andrew AC et al. (2021)." /></span>}
+                                description={<span>Grazing works too. In semi-arid simulated pasture conditions in Oregon, researchers observed 90% more late-season biomass and a 328% increase in water-use efficiency under panels. A multi-year study also found lamb growth under solar and open pasture was fundamentally comparable, meaning total acreage productivity soared. <ExpandableCitation label="[4]" sourceUrl="https://www.frontiersin.org/articles/10.3389/fsufs.2021.659175/full" sourceText="Andrew AC et al. (2021)." /></span>}
                             />
                         </div>
                         <p className="text-xl leading-relaxed text-[var(--tertiary)] font-medium bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/20 mt-8">
@@ -343,7 +343,7 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                     This is bigger than the agrivoltaics market-report category. It sits at the intersection of agricultural land, utility-scale solar, rural finance, water stress, and climate adaptation.
                                 </p>
                                 <p className="text-lg text-white/70 font-light leading-relaxed mb-6">
-                                    From first principles, the opportunity is driven by three massive surfaces: a huge agricultural land base, a very large solar buildout still ahead, and a farm economy under increasing debt pressure. USDA forecasts farm sector debt at <strong>$624.7 billion</strong> in 2026 and worsening solvency metrics. <ExpandableCitation label="[8]" sourceUrl="#" sourceText="USDA Economic Research Service (2026)." /> That makes diversified land income more compelling than it was in an easier farm economy.
+                                    From first principles, the opportunity is driven by three massive surfaces: a huge agricultural land base, a very large solar buildout still ahead, and a farm economy under increasing debt pressure. USDA forecasts farm sector debt at <strong>$624.7 billion</strong> in 2026 and worsening solvency metrics. <ExpandableCitation label="[8]" sourceUrl="https://www.ers.usda.gov/topics/farm-economy/farm-sector-income-finances/" sourceText="USDA Economic Research Service (2026)." /> That makes diversified land income more compelling than it was in an easier farm economy.
                                 </p>
                                 <p className="text-lg text-[var(--primary)] font-medium leading-relaxed">
                                     The deeper insight is that HelioTerra is not just selling infrastructure. It is selling higher total productivity per acre. That creates multiple monetization layers: development fees, design and underwriting fees, recurring operating fees, revenue share, and eventually software and financing products built on proprietary agrivoltaic performance data.
@@ -600,9 +600,9 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
 
                     <div className="mb-16">
                         <OpenSourcePriority 
-                            civilizationalImpactScore={70}
-                            neglectednessScore={70}
-                            ideaSpecificText="Building HelioTerra in an open-source, decentralized manner ensures spatial computing and mapping layers remain a shared infrastructural truth, not an AI lab's private moat."
+                            civilizationalImpactScore={80}
+                            neglectednessScore={77}
+                            ideaSpecificText="Open-sourcing HelioTerra’s dual-use underwriting templates, crop-irradiance models, and farmer lease structures lowers the barrier for rural communities and independent developers to deploy agrivoltaics without sacrificing productive farmland."
                         />
                     </div>
 

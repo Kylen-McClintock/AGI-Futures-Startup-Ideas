@@ -150,7 +150,7 @@ export default function SellCraftClient() {
                         <strong className="text-white">The skill mix is moving fast.</strong> Employers expect major skill turnover this decade, which makes continuous simulation-based upskilling more strategic than one-time onboarding.
                     </li>
                     <li>
-                        <strong className="text-white">The enabling tech is finally here.</strong> <HoverAcronym acronym="LLMs" definition="Large Language Models" theme={theme} />, voice models, better speech analytics, and optional spatial computing make realistic role-play cheap enough to deploy broadly. PwC’s work suggests immersive simulation can materially improve speed, confidence, and cost-effectiveness.
+                        <strong className="text-white">Sub-200ms voice and interactive video avatars are finally here.</strong> Native speech-to-speech models and low-latency video avatars can interrupt, hesitate, push back on price, and mirror real buyer skepticism without awkward turn-taking lag—delivering the behavioral transfer of immersive simulation straight in a browser tab.
                     </li>
                     <li>
                         <strong className="text-white">Hiring is ready for better signal.</strong> The U.S. Office of Personnel Management says work samples mirror real job tasks, relate strongly to job performance, and are often perceived as fair. Recent review work also finds structured interviews among the strongest predictors, with lower racial-group impact than several alternatives.
@@ -176,8 +176,8 @@ export default function SellCraftClient() {
                     <div className="mb-16">
                         
                         <NeglectednessSlider 
-                            score={50} 
-                            interpretation="Moderate neglectedness. Sales coaching and conversational AI training is a well-funded SaaS category. Sellcraft's edge must come from superior immersive roleplay dynamics and actual workflow embedding rather than pure novelty."
+                            score={48} 
+                            interpretation="Moderate neglectedness. Standalone B2B AI sales roleplay is now a crowded SaaS category (Hyperbound, Second Nature, Gong). What remains wide open is connecting the three-sided loop: a consumer game that builds organic distribution (Pitch Quest), a standardized work-sample audition that replaces resume screening (Proving Ground), and enterprise drills grounded in live CRM call blockers (Practice)."
                         />
                     </div>
                 </div>

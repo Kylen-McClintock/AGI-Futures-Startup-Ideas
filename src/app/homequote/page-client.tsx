@@ -32,8 +32,8 @@ const citations = [
     { number: 6, source: "GRAND VIEW", title: "Online On-demand Home Services 2030", url: "https://www.grandviewresearch.com/industry-analysis/online-on-demand-home-services-market-report" },
     { number: 7, source: "MARKSPARK", title: "On Demand Home Services Market", url: "https://marksparksolutions.com/reports/on-demand-home-services-market" },
     { number: 8, source: "GRAND VIEW", title: "U.S. Online On-demand Home Services Outlook", url: "https://www.grandviewresearch.com/horizon/outlook/online-on-demand-home-services-market/united-states" },
-    { number: 9, source: "IBM", title: "What Is Multimodal AI?", url: "https://www.ibm.com/think/topics/multimodal-ai" },
-    { number: 11, source: "BENTOML", title: "Open Source Vision Language Models", url: "https://www.bentoml.com/blog/multimodal-ai-a-guide-to-open-source-vision-language-models" },
+    { number: 9, source: "GOOGLE DEEPMIND / OPENAI", title: "Real-Time Multimodal Video & Voice Streaming APIs (Gemini Live / Realtime API)", url: "https://ai.google.dev/gemini-api/docs" },
+    { number: 11, source: "APPLE DEVELOPER", title: "RoomPlan & LiDAR Spatial 3D Room Scanning APIs", url: "https://developer.apple.com/augmented-reality/roomplan/" },
     { number: 19, source: "IPSOS", title: "Majority Hit with Unexpected Home Repair Costs", url: "https://www.ipsos.com/en-us/news-polls/majority-homeowners-hit-unexpected-home-repair-costs-past-year" }
 ];
 
@@ -378,8 +378,8 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <div className="mb-16">
                         
                         <NeglectednessSlider 
-                            score={82} 
-                            interpretation="Highly neglected in its purest form. While there are countless home services SaaS products built to extract margin for the business owner, almost no one is building a protocol strictly for the homeowner to solicit, normalize, and auto-negotiate bids purely on the demand side. The structural mismatch between consumer desire (transparency) and contractor incentive (opacity) has left this specific consumer-agent wedge completely underfunded."
+                            score={78} 
+                            interpretation="Significantly neglected. Most home-services software either sells lead-gen ads (Thumbtack, Angi) or back-office invoicing after the estimate is already done (ServiceTitan, Jobber). Almost no one owns the deterministic 'pixels-to-labor' scoping layer in between—turning a guided video walkthrough into a binding, auto-bookable job object for both homeowner and crew."
                         />
                     </div>
                 </FadeIn>
@@ -395,8 +395,8 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                             </div>
                             <div className="space-y-8 text-white/70">
                                 <div>
-                                    <h3 className="text-xl text-white font-medium mb-2">1. Multimodal AI is usable now</h3>
-                                    <p className="font-light">Models can interpret images, speech, and text together well enough to structure messy real-world inputs into useful operational data <ExpandableCitation id="9" sourceLabel="IBM" title="What Is Multimodal AI?" fullUrl="https://www.ibm.com/think/topics/multimodal-ai" /><ExpandableCitation id="11" sourceLabel="BENTOML" title="Open Source Vision Language Models" fullUrl="https://www.bentoml.com/blog/multimodal-ai-a-guide-to-open-source-vision-language-models" />. Five years ago this would have been a fragile demo. Now it can power a real workflow with human fallback.</p>
+                                    <h3 className="text-xl text-white font-medium mb-2">1. Real-time bidirectional video &amp; spatial AI</h3>
+                                    <p className="font-light">Streaming multimodal models and phone-native LiDAR can now watch a live camera feed, measure room dimensions, spot stain severity or access bottlenecks in real time, and ask the homeowner clarifying questions mid-walkthrough—“open the cabinet under the sink” or “pan closer to the baseband” <ExpandableCitation id="9" sourceLabel="GOOGLE DEEPMIND" title="Real-Time Multimodal Video & Voice Streaming APIs" fullUrl="https://ai.google.dev/gemini-api/docs" /><ExpandableCitation id="11" sourceLabel="APPLE" title="RoomPlan & LiDAR Spatial 3D Room Scanning APIs" fullUrl="https://developer.apple.com/augmented-reality/roomplan/" />.</p>
                                 </div>
                                 <div>
                                     <h3 className="text-xl text-white font-medium mb-2">2. Digitzation outpaced routing</h3>

@@ -289,12 +289,12 @@ export default function CommonGroundClient() {
 
                     <h2 className="text-4xl font-light text-white mt-32 mb-10">Why Now</h2>
                     <ul className="space-y-4 text-white/80 list-disc list-inside mb-12">
-                        <li>Large Language Models can interpret complex legal and emotional context</li>
-                        <li>Embeddings enable case similarity at scale</li>
-                        <li>Preference learning models approximate human utility functions</li>
-                        <li>Synthetic and human labeling pipelines can bootstrap fairness datasets</li>
+                        <li>Frontier reasoning models with test-time compute can map complex multi-issue trade spaces and identify non-obvious Pareto improvements</li>
+                        <li>Confidential double-blind intake lets each party share true reservation prices and private constraints with a neutral model without tipping their hand to the counterparty</li>
+                        <li>Structured preference elicitation and utility modeling translate messy emotional grievances into quantifiable settlement zones</li>
+                        <li>Agent-to-agent commerce is creating millions of micro-contracts that require sub-second, programmatic dispute resolution</li>
                     </ul>
-                    <p className="text-xl text-[var(--primary)] italic font-light">Pre-2022 this was not feasible. Now it is.</p>
+                    <p className="text-xl text-[var(--primary)] italic font-light">Chatbots summarize arguments. Reasoning engines discover the settlement zone neither side could see.</p>
 
                     <h2 className="text-4xl font-light text-white mt-32 mb-10">Business Model</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -529,7 +529,7 @@ export default function CommonGroundClient() {
                         <OpenSourcePriority 
                             civilizationalImpactScore={90} 
                             neglectednessScore={78} 
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective." 
+                            ideaSpecificText="Open-sourcing CommonGround’s fairness-evaluation rubrics, zero-knowledge preference aggregation protocols, and anonymized precedent schemas ensures AI-mediated arbitration remains auditable, neutral, and trustworthy rather than a proprietary black box." 
                         />
                     </div>
 

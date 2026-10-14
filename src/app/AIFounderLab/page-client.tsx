@@ -35,7 +35,7 @@ import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 const citations = [
     { number: 1, source: "Federal Reserve", title: "Quarterly Report on Household Debt and Credit", url: "https://www.newyorkfed.org/microeconomics/hhdc" },
     { number: 2, source: "College Board", title: "Trends in College Pricing and Student Aid 2024", url: "https://research.collegeboard.org/trends/college-pricing" },
-    { number: 3, source: "Peng et al.", title: "The Impact of AI on Developer Productivity: Evidence from GitHub Copilot", url: "https://arxiv.org/abs/2302.06590" },
+    { number: 3, source: "Jimenez et al. / Anthropic & OpenAI", title: "SWE-bench Verified & Frontier Agentic Software Engineering Benchmarks (2025–2026)", url: "https://www.swebench.com/" },
     { number: 4, source: "NCES", title: "IPEDS and Digest of Education Statistics", url: "https://nces.ed.gov/" }
 ];
 
@@ -127,14 +127,14 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                                 <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">U.S. student loan<br />outstanding balances</p>
                             </div>
                             <div>
-                                <p className="text-5xl font-light text-[var(--primary)] tracking-tighter mb-2">55%</p>
-                                <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">Faster dev time in<br />controlled AI studies</p>
+                                <p className="text-5xl font-light text-[var(--primary)] tracking-tighter mb-2">10x</p>
+                                <p className="text-sm text-white/60 font-mono uppercase tracking-widest leading-relaxed">Compression in<br />idea-to-MVP build time</p>
                             </div>
                         </div>
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
-                            U.S. student loan balances remain above $1.7 trillion, while generative AI is already compressing software build times in controlled studies. The gap between credentialing and real venture output is now too large to ignore
+                            U.S. student loan balances remain above $1.7 trillion, while autonomous coding and research agents now compress full-stack MVP builds from months into days. The gap between four-year credentialing and real venture output is now too large to ignore
                             <ExpandableCitation number={1} source="Federal Reserve" title="Quarterly Report on Household Debt and Credit" />
-                            <ExpandableCitation number={3} source="Peng et al." title="The Impact of AI on Developer Productivity" />.
+                            <ExpandableCitation number={3} source="SWE-bench" title="SWE-bench Verified & Frontier Agentic Software Engineering Benchmarks" />.
                         </p>
 
                         <div ref={chartRef}>
@@ -161,7 +161,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         </div>
 
                         <p className="text-lg text-white/80 leading-relaxed font-light">
-                            AI makes that mismatch worse. When product scaffolding, coding, research, and content creation get faster, the bottleneck shifts away from information access and toward taste, execution, trust, and distribution.
+                            AI makes that mismatch worse. When multi-agent systems can scaffold full-stack software, synthesize deep market research, and spin up growth experiments in hours, the bottleneck shifts completely away from raw implementation and toward taste, problem selection, customer trust, and distribution.
                         </p>
                     </section>
 
@@ -176,8 +176,8 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <InlineTags tags={initialTags?.readiness} theme="blue" />
                         <ul className="space-y-6 text-lg text-white/80 font-light leading-relaxed list-none mb-4">
                             <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">01</span> The economic case for traditional higher education is under more scrutiny as costs remain high and outcomes vary sharply by major and path <ExpandableCitation number={1} source="Federal Reserve" title="Quarterly Report on Household Debt and Credit" /><ExpandableCitation number={2} source="College Board" title="Trends in College Pricing and Student Aid 2024" />.</li>
-                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">02</span> Generative AI tools have already shown measurable productivity gains in real software workflows, shrinking the time from idea to prototype <ExpandableCitation number={3} source="Peng et al." title="The Impact of AI on Developer Productivity" />.</li>
-                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">03</span> The labor market is starting to care more about proof of execution than polished resumes in frontier environments.</li>
+                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">02</span> Software engineering has crossed from autocomplete to autonomous multi-file execution, letting a single high-agency builder ship production products that once required a seed-funded engineering team <ExpandableCitation number={3} source="SWE-bench" title="SWE-bench Verified & Frontier Agentic Software Engineering Benchmarks" />.</li>
+                            <li className="flex gap-4"><span className="text-[var(--primary)] font-mono">03</span> Because AI can generate polished resumes and take-home assignments on command, the frontier labor market is abandoning static credentials in favor of verified proof of execution and shipped outcomes.</li>
                         </ul>
                         <p className="text-lg text-white/80 leading-relaxed font-light mt-8 p-6 glass-panel rounded-2xl border-l-4 border-[var(--primary)] italic">
                             This creates a narrow but powerful window. The best young builders do not want another content library. They want leverage, reps, distribution, and a shot at real upside.

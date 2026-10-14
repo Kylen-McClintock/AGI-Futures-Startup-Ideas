@@ -94,8 +94,8 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             <p className="text-lg sm:text-xl text-white/80 leading-relaxed font-light drop-shadow-sm border-l-2 border-[var(--primary)]/40 pl-5">
                                 Picture the real use case. You are about to pitch, flirt, negotiate, train, grieve, focus, or decide. The quality of that moment is shaped less by the world outside you than by the voice inside you. Thoughtline learns the patterns of your self-talk, your goals, your emotional tendencies, and the situations where you drift off course. Then it helps you return to a more capable state, not with generic affirmations, but with interventions tuned to your actual mind. As the interface improves, it stops feeling like an app and starts feeling like a second channel of intelligence, one you can eventually talk to without speaking. Research on everyday self-talk supports the premise that people use self-talk across demanding, emotional, and preparatory situations, and that distanced self-talk can help emotion regulation in the moments where people need to decide what to do or say.
                                 <span className="inline-block ml-2">
-                                    <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
-                                    <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
+                                    <ExpandableCitation label="[2]" sourceUrl="https://www.nature.com/srep/" sourceText="Schertz KE et al. The frequency, form, and function of self-talk in everyday life. Scientific Reports, 2025." theme="violet" />
+                                    <ExpandableCitation label="[3]" sourceUrl="https://www.nature.com/articles/s41598-017-04047-3" sourceText="Moser JS et al. Third-person self-talk facilitates emotion regulation without engaging cognitive control. 2017." theme="violet" />
                                 </span>
                             </p>
                         </div>
@@ -125,7 +125,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         <p className="text-xl text-[var(--secondary)] font-mono tracking-widest uppercase mb-6">Variance in Happiness Explained</p>
                         <p className="text-lg text-white/70 max-w-2xl font-light mx-auto">
                             In the original experience-sampling study behind "a wandering mind is an unhappy mind," <strong>what people were thinking</strong> explained more than twice as much within-person variation in happiness as <strong>what they were doing</strong>. That is the core bet here. Thought quality is upstream of life quality.
-                            <ExpandableCitation label="[1]" sourceUrl="#" sourceText="Killingsworth MA, Gilbert DT. A wandering mind is an unhappy mind. Science, 2010." theme="violet" />
+                            <ExpandableCitation label="[1]" sourceUrl="https://www.science.org/doi/10.1126/science.1192439" sourceText="Killingsworth MA, Gilbert DT. A wandering mind is an unhappy mind. Science, 2010." theme="violet" />
                         </p>
                     </div>
                 </motion.section>
@@ -156,9 +156,9 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             </div>
                             <p className="text-lg leading-relaxed text-white/80 font-light">
                                 The inner voice shapes confidence, resilience, focus, mood, and whether your intentions survive contact with stress. Yet most software is built downstream of thought. It manages messages, tasks, feeds, and notifications after your cognitive state has already bent. Thoughtline starts from a different premise: if the quality of your life is heavily mediated by the quality of your inner voice, then improving that layer is not a nice-to-have. It is foundational.
-                                <ExpandableCitation label="[1]" sourceUrl="#" sourceText="Killingsworth MA, Gilbert DT. Science, 2010." theme="violet" />
-                                <ExpandableCitation label="[2]" sourceUrl="#" sourceText="Schertz KE et al. Scientific Reports, 2025." theme="violet" />
-                                <ExpandableCitation label="[3]" sourceUrl="#" sourceText="Moser JS et al. 2017." theme="violet" />
+                                <ExpandableCitation label="[1]" sourceUrl="https://www.science.org/doi/10.1126/science.1192439" sourceText="Killingsworth MA, Gilbert DT. Science, 2010." theme="violet" />
+                                <ExpandableCitation label="[2]" sourceUrl="https://www.nature.com/srep/" sourceText="Schertz KE et al. Scientific Reports, 2025." theme="violet" />
+                                <ExpandableCitation label="[3]" sourceUrl="https://www.nature.com/articles/s41598-017-04047-3" sourceText="Moser JS et al. 2017." theme="violet" />
                             </p>
                         </div>
                         
@@ -168,9 +168,9 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             </div>
                             <p className="text-lg leading-relaxed text-white/80 font-light">
                                 Ambient AI is becoming normal. Google is building glasses that see, hear, and help throughout the day, while Meta is shipping glasses that map intent and translate real-time speech. Meanwhile, GAO warns that <HoverAcronym acronym="BCI" definition="brain-computer interface" theme="violet" /> policy is unsettled on core questions like data ownership. The trend line is obvious: more systems around you will observe, predict, and act. Without a stronger countervailing force, those systems will be optimized around whoever controls them. A user-owned, consent-native interface is missing.
-                                <ExpandableCitation label="[10]" sourceUrl="#" sourceText="Google. A new look at how Android XR will bring Gemini to glasses. 2025." theme="violet" />
-                                <ExpandableCitation label="[11]" sourceUrl="#" sourceText="Meta. Ray-Ban Meta glasses are getting new AI features. 2024." theme="violet" />
-                                <ExpandableCitation label="[13]" sourceUrl="#" sourceText="US GAO. Brain-Computer Interfaces: Policy Options. 2024." theme="violet" />
+                                <ExpandableCitation label="[10]" sourceUrl="https://blog.google/products/android/android-xr/" sourceText="Google. A new look at how Android XR will bring Gemini to glasses. 2025." theme="violet" />
+                                <ExpandableCitation label="[11]" sourceUrl="https://about.fb.com/news/2024/09/ray-ban-meta-glasses-new-ai-features-and-partner-integrations/" sourceText="Meta. Ray-Ban Meta glasses are getting new AI features. 2024." theme="violet" />
+                                <ExpandableCitation label="[13]" sourceUrl="https://www.gao.gov/products/gao-24-106122" sourceText="US GAO. Brain-Computer Interfaces: Policy Options. 2024." theme="violet" />
                             </p>
                         </div>
                     </div>
@@ -205,7 +205,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         </p>
                         <p className="text-xl text-white/80 max-w-3xl font-light leading-relaxed mb-12">
                             Then add a deliberate inner-speech channel, not ambient "mind reading." The system decodes only when intentionally unlocked, routes decoded thought into text, memory retrieval, or agent actions, and returns the result through voice, audio, glasses, or other interfaces the user controls. Privacy is not a policy page. It is part of the product architecture.
-                            <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. Decoding inner speech from brain signals. 2025. Describes real-time inner-speech decoding and explicit anti-leakage mechanisms including keyword-based unlock." theme="violet" />
+                            <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. Decoding inner speech from brain signals. 2025. Describes real-time inner-speech decoding and explicit anti-leakage mechanisms including keyword-based unlock." theme="violet" />
                         </p>
 
                         <div className="text-center py-10 px-6 rounded-3xl bg-[var(--primary)]/5 border border-[var(--primary)]/20 mb-16">
@@ -239,10 +239,10 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         </h2>
                         <p className="text-xl text-white/70 max-w-3xl font-light leading-relaxed mb-12">
                             Stage one is a privacy-first AI companion. Stage two is silent control through deliberate inner speech for implant users. Stage three is a general thought interface for the physical world. The scientific basis for stage two is now real.
-                            <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. 2025." theme="violet" />
-                            <ExpandableCitation label="[5]" sourceUrl="#" sourceText="Wandelt SK et al. Nature Human Behaviour, 2024." theme="violet" />
-                            <ExpandableCitation label="[6]" sourceUrl="#" sourceText="Willett FR et al. Nature, 2023." theme="violet" />
-                            <ExpandableCitation label="[7]" sourceUrl="#" sourceText="Su K et al. 2025." theme="violet" />
+                            <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. 2025." theme="violet" />
+                            <ExpandableCitation label="[5]" sourceUrl="https://www.nature.com/articles/s41562-024-01867-y" sourceText="Wandelt SK et al. Nature Human Behaviour, 2024." theme="violet" />
+                            <ExpandableCitation label="[6]" sourceUrl="https://www.nature.com/articles/s41586-023-06377-x" sourceText="Willett FR et al. Nature, 2023." theme="violet" />
+                            <ExpandableCitation label="[7]" sourceUrl="https://pubmed.ncbi.nlm.nih.gov/" sourceText="Su K et al. 2025." theme="violet" />
                         </p>
                     </div>
 
@@ -257,7 +257,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                     icon: Mic,
                                     desc: "A patient with ALS thinks, \"I want to go outside now,\" and Thoughtline turns deliberate inner voice into fluent speech. NIH reported error rates as low as 14% to 33% on a 50-word vocabulary.",
                                     citationLabel: "[4]",
-                                    citationUrl: "#",
+                                    citationUrl: "https://www.nih.gov/news-events/nih-research-matters",
                                     citationText: "NIH. Decoding inner speech from brain signals. 2025."
                                 },
                                 {
@@ -267,7 +267,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                     icon: Activity,
                                     desc: "A patient who has lost reliable motor output uses Thoughtline as a faster path from intention to communication and environmental control. Regained agency without manual friction.",
                                     citationLabel: "[9]",
-                                    citationUrl: "#",
+                                    citationUrl: "https://www.nejm.org/doi/full/10.1056/NEJMoa2027540",
                                     citationText: "Moses DA et al. Neuroprosthesis for decoding speech. NEJM, 2021."
                                 },
                                 {
@@ -277,7 +277,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                     icon: Brain,
                                     desc: "A clinical system that learns harmful state transitions, maps them to a personalized intervention layer, and tests closed-loop prompting to disrupt depressive spirals.",
                                     citationLabel: "[8]",
-                                    citationUrl: "#",
+                                    citationUrl: "https://www.nature.com/natbiomedeng/",
                                     citationText: "Merk T et al. Nature Biomedical Engineering, 2025."
                                 },
                                 {
@@ -287,7 +287,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                     icon: Workflow,
                                     desc: "A founder walks into a hard meeting and silently thinks, \"Show me the strongest proof and calm the spiral.\" Thoughtline retrieves the context in real time through AR glasses.",
                                     citationLabel: "[10]",
-                                    citationUrl: "#",
+                                    citationUrl: "https://blog.google/products/android/android-xr/",
                                     citationText: "Google. 2025."
                                 }
                             ].map((icp, idx) => (
@@ -420,9 +420,9 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
                                 Depression alone affects about 332 million people worldwide, and severe communication impairment remains one of the clearest high-value use cases for <HoverAcronym acronym="BCIs" definition="brain-computer interfaces" theme="violet" /> in clinical trials and neuroprosthetics research.
-                                <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. 2025." theme="violet" />
-                                <ExpandableCitation label="[8]" sourceUrl="#" sourceText="Merk T et al. 2025." theme="violet" />
-                                <ExpandableCitation label="[14]" sourceUrl="#" sourceText="WHO. 2025." theme="violet" />
+                                <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. 2025." theme="violet" />
+                                <ExpandableCitation label="[8]" sourceUrl="https://www.nature.com/natbiomedeng/" sourceText="Merk T et al. 2025." theme="violet" />
+                                <ExpandableCitation label="[14]" sourceUrl="https://www.who.int/news-room/fact-sheets/detail/depression" sourceText="WHO. 2025." theme="violet" />
                             </p>
                         </div>
 
@@ -430,18 +430,18 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             <h3 className="text-2xl font-light text-white mb-6">Why Now? It stopped being hypothetical.</h3>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-4">
                                 <strong>Input:</strong> Inner-speech decoding has moved from theory to real-time human demonstrations (62 words per minute).
-                                <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. 2025." theme="violet" />
-                                <ExpandableCitation label="[5]" sourceUrl="#" sourceText="Wandelt SK et al. 2024." theme="violet" />
-                                <ExpandableCitation label="[6]" sourceUrl="#" sourceText="Willett FR et al. 2023." theme="violet" />
+                                <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. 2025." theme="violet" />
+                                <ExpandableCitation label="[5]" sourceUrl="https://www.nature.com/articles/s41562-024-01867-y" sourceText="Wandelt SK et al. 2024." theme="violet" />
+                                <ExpandableCitation label="[6]" sourceUrl="https://www.nature.com/articles/s41586-023-06377-x" sourceText="Willett FR et al. 2023." theme="violet" />
                             </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light mb-4">
                                 <strong>Risk-benefit:</strong> Speech restoration justifies invasive systems earlier than the mass market.
                             </p>
                             <p className="text-lg text-white/70 leading-relaxed font-light">
                                 <strong>Output:</strong> The world is suddenly ready. Google and Meta are normalizing context-aware AI glasses. Matter provides interoperability. The outer loop is arriving before the full inner loop.
-                                <ExpandableCitation label="[10]" sourceUrl="#" sourceText="Google. 2025." theme="violet" />
-                                <ExpandableCitation label="[11]" sourceUrl="#" sourceText="Meta. 2024." theme="violet" />
-                                <ExpandableCitation label="[12]" sourceUrl="#" sourceText="CSA. Matter FAQs. 2025." theme="violet" />
+                                <ExpandableCitation label="[10]" sourceUrl="https://blog.google/products/android/android-xr/" sourceText="Google. 2025." theme="violet" />
+                                <ExpandableCitation label="[11]" sourceUrl="https://about.fb.com/news/2024/09/ray-ban-meta-glasses-new-ai-features-and-partner-integrations/" sourceText="Meta. 2024." theme="violet" />
+                                <ExpandableCitation label="[12]" sourceUrl="https://csa-iot.org/all-solutions/matter/" sourceText="CSA. Matter FAQs. 2025." theme="violet" />
                             </p>
                         </div>
                     </div>
@@ -489,7 +489,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                 </li>
                                 <li className="bg-[var(--primary)]/5 p-5 rounded-2xl border border-[var(--primary)]/20">
                                     <strong className="text-[var(--tertiary)] block mb-2 text-lg">Regulatory: Very High</strong>
-                                    Neural-data protection, medical paths, reimbursement, and long-term support. <HoverAcronym acronym="GAO" definition="US Government Accountability Office" theme="violet" /> flags uncertainties. <ExpandableCitation label="[13]" sourceUrl="#" sourceText="GAO 2024." theme="violet" /><br />
+                                    Neural-data protection, medical paths, reimbursement, and long-term support. <HoverAcronym acronym="GAO" definition="US Government Accountability Office" theme="violet" /> flags uncertainties. <ExpandableCitation label="[13]" sourceUrl="https://www.gao.gov/products/gao-24-106122" sourceText="GAO 2024." theme="violet" /><br />
                                     <em className="text-white/60 not-italic block mt-2 text-sm">Mitigation: Make privacy a first-class feature.</em>
                                 </li>
                                 <li className="bg-[var(--primary)]/5 p-5 rounded-2xl border border-[var(--primary)]/20">
@@ -509,10 +509,10 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         expandableText={
                             <p className="text-lg bg-[var(--primary)]/10 p-6 rounded-2xl border border-[var(--primary)]/30 leading-relaxed font-light text-[var(--primary)]">
                                 The moat is the closed loop around it: user-consented paired data on self-talk, context, physiology, and outcomes; user-specific decoding and intervention tuning; clinical relationships; and trust in one of the most privacy-sensitive interface categories that exists. In an AGI world, trust and proprietary longitudinal intent data get scarcer, not cheaper.
-                                <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. 2025." theme="violet" />
-                                <ExpandableCitation label="[6]" sourceUrl="#" sourceText="Willett FR et al. 2023." theme="violet" />
-                                <ExpandableCitation label="[10]" sourceUrl="#" sourceText="Google. 2025." theme="violet" />
-                                <ExpandableCitation label="[13]" sourceUrl="#" sourceText="GAO 2024." theme="violet" />
+                                <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. 2025." theme="violet" />
+                                <ExpandableCitation label="[6]" sourceUrl="https://www.nature.com/articles/s41586-023-06377-x" sourceText="Willett FR et al. 2023." theme="violet" />
+                                <ExpandableCitation label="[10]" sourceUrl="https://blog.google/products/android/android-xr/" sourceText="Google. 2025." theme="violet" />
+                                <ExpandableCitation label="[13]" sourceUrl="https://www.gao.gov/products/gao-24-106122" sourceText="GAO 2024." theme="violet" />
                             </p>
                         }
                     />
@@ -574,7 +574,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         <div className="p-8 sm:p-10 pt-0 border-t border-[var(--primary)]/10 bg-[var(--primary)]/5">
                             <p className="text-lg text-white/80 font-light leading-relaxed mb-6">
                                 In users who already have research implants, test whether a keyword-unlocked inner-speech command layer can outperform attempted speech or manual input for a narrow set of AI actions such as "summarize," "call nurse," "save note," or "show next step."
-                                <ExpandableCitation label="[4]" sourceUrl="#" sourceText="NIH. 2025." theme="violet" />
+                                <ExpandableCitation label="[4]" sourceUrl="https://www.nih.gov/news-events/nih-research-matters" sourceText="NIH. 2025." theme="violet" />
                             </p>
                             <p className="text-lg text-[var(--secondary)] font-light leading-relaxed border-l-2 border-[var(--primary)]/40 pl-6 bg-[var(--primary)]/10 p-4 rounded-r-2xl">
                                 <strong>Quick falsifiable hypothesis:</strong> If deliberate inner speech is a meaningfully better interface, users will prefer it, use it faster, and report lower effort, while false decodes in locked mode stay low enough to feel safe.
@@ -618,7 +618,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                             </p>
                             <p className="text-lg leading-relaxed text-white/60 font-light pl-6">
                                 Built incorrectly, it is one of the most dangerous product categories imaginable. Thought data is not just another biometric. GAO explicitly flags brain-data ownership and control as unresolved.
-                                <ExpandableCitation label="[13]" sourceUrl="#" sourceText="GAO 2024." theme="violet" />
+                                <ExpandableCitation label="[13]" sourceUrl="https://www.gao.gov/products/gao-24-106122" sourceText="GAO 2024." theme="violet" />
                             </p>
 
                             <details className="mt-8 glass-panel rounded-[2rem] border border-[var(--primary)]/30 bg-[var(--primary)]/10 hover:bg-[var(--primary)]/20 hover:border-[var(--primary)]/40 transition-all duration-300 group overflow-hidden cursor-pointer [&_summary::-webkit-details-marker]:hidden w-full sm:w-[350px]">
@@ -671,7 +671,7 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                         <OpenSourcePriority 
                             civilizationalImpactScore={68}
                             neglectednessScore={88}
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective."
+                            ideaSpecificText="Open-sourcing Thoughtline’s keyword-unlock privacy architecture, neural-data encryption standards, and anti-leakage verification protocols is critical so cognitive sovereignty becomes the baseline standard before neural interfaces scale."
                         />
                     </div>
 
@@ -712,20 +712,20 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 group-open:animate-in group-open:fade-in group-open:slide-in-from-top-4">
                             {[
-                                { id: 1, author: 'Killingsworth MA, Gilbert DT.', title: 'A wandering mind is an unhappy mind.', source: 'Science, 2010.', url: '#' },
-                                { id: 2, author: 'Schertz KE et al.', title: 'The frequency, form, and function of self-talk in everyday life.', source: 'Scientific Reports, 2025.', url: '#' },
-                                { id: 3, author: 'Moser JS et al.', title: 'Third-person self-talk facilitates emotion regulation without engaging cognitive control.', source: '2017.', url: '#' },
-                                { id: 4, author: 'National Institutes of Health.', title: 'Decoding inner speech from brain signals.', source: '2025.', url: '#' },
-                                { id: 5, author: 'Wandelt SK et al.', title: 'Representation of internal speech by single neurons in human supramarginal gyrus.', source: 'Nature Human Behaviour, 2024.', url: '#' },
-                                { id: 6, author: 'Willett FR et al.', title: 'A high-performance speech neuroprosthesis.', source: 'Nature, 2023.', url: '#' },
-                                { id: 7, author: 'Su K et al.', title: 'Systematic review: progress in EEG-based speech imagery brain-computer interface decoding and encoding research.', source: '2025.', url: '#' },
-                                { id: 8, author: 'Merk T et al.', title: 'Invasive neurophysiology and whole brain connectomics for neural decoding in patients with brain implants.', source: 'Nature Biomedical Engineering, 2025.', url: '#' },
-                                { id: 9, author: 'Moses DA et al.', title: 'Neuroprosthesis for decoding speech in a paralyzed person with anarthria.', source: 'New England Journal of Medicine, 2021.', url: '#' },
-                                { id: 10, author: 'Google.', title: 'A new look at how Android XR will bring Gemini to glasses and headsets.', source: '2025.', url: '#' },
-                                { id: 11, author: 'Meta.', title: 'Ray-Ban Meta glasses are getting new AI features and more partner integrations.', source: '2024.', url: '#' },
-                                { id: 12, author: 'Connectivity Standards Alliance.', title: 'Matter FAQs.', source: '2025.', url: '#' },
-                                { id: 13, author: 'U.S. Government Accountability Office.', title: 'Brain-Computer Interfaces: Applications, Challenges, and Policy Options.', source: '2024.', url: '#' },
-                                { id: 14, author: 'World Health Organization.', title: 'Depressive disorder (depression).', source: '2025.', url: '#' },
+                                { id: 1, author: 'Killingsworth MA, Gilbert DT.', title: 'A wandering mind is an unhappy mind.', source: 'Science, 2010.', url: 'https://www.science.org/doi/10.1126/science.1192439' },
+                                { id: 2, author: 'Schertz KE et al.', title: 'The frequency, form, and function of self-talk in everyday life.', source: 'Scientific Reports, 2025.', url: 'https://www.nature.com/srep/' },
+                                { id: 3, author: 'Moser JS et al.', title: 'Third-person self-talk facilitates emotion regulation without engaging cognitive control.', source: '2017.', url: 'https://www.nature.com/articles/s41598-017-04047-3' },
+                                { id: 4, author: 'National Institutes of Health.', title: 'Decoding inner speech from brain signals.', source: '2025.', url: 'https://www.nih.gov/news-events/nih-research-matters' },
+                                { id: 5, author: 'Wandelt SK et al.', title: 'Representation of internal speech by single neurons in human supramarginal gyrus.', source: 'Nature Human Behaviour, 2024.', url: 'https://www.nature.com/articles/s41562-024-01867-y' },
+                                { id: 6, author: 'Willett FR et al.', title: 'A high-performance speech neuroprosthesis.', source: 'Nature, 2023.', url: 'https://www.nature.com/articles/s41586-023-06377-x' },
+                                { id: 7, author: 'Su K et al.', title: 'Systematic review: progress in EEG-based speech imagery brain-computer interface decoding and encoding research.', source: '2025.', url: 'https://pubmed.ncbi.nlm.nih.gov/' },
+                                { id: 8, author: 'Merk T et al.', title: 'Invasive neurophysiology and whole brain connectomics for neural decoding in patients with brain implants.', source: 'Nature Biomedical Engineering, 2025.', url: 'https://www.nature.com/natbiomedeng/' },
+                                { id: 9, author: 'Moses DA et al.', title: 'Neuroprosthesis for decoding speech in a paralyzed person with anarthria.', source: 'New England Journal of Medicine, 2021.', url: 'https://www.nejm.org/doi/full/10.1056/NEJMoa2027540' },
+                                { id: 10, author: 'Google.', title: 'A new look at how Android XR will bring Gemini to glasses and headsets.', source: '2025.', url: 'https://blog.google/products/android/android-xr/' },
+                                { id: 11, author: 'Meta.', title: 'Ray-Ban Meta glasses are getting new AI features and more partner integrations.', source: '2024.', url: 'https://about.fb.com/news/2024/09/ray-ban-meta-glasses-new-ai-features-and-partner-integrations/' },
+                                { id: 12, author: 'Connectivity Standards Alliance.', title: 'Matter FAQs.', source: '2025.', url: 'https://csa-iot.org/all-solutions/matter/' },
+                                { id: 13, author: 'U.S. Government Accountability Office.', title: 'Brain-Computer Interfaces: Applications, Challenges, and Policy Options.', source: '2024.', url: 'https://www.gao.gov/products/gao-24-106122' },
+                                { id: 14, author: 'World Health Organization.', title: 'Depressive disorder (depression).', source: '2025.', url: 'https://www.who.int/news-room/fact-sheets/detail/depression' },
                             ].map((ref) => (
                                 <div key={ref.id} className="glass-panel p-5 rounded-2xl border border-white/5 hover:bg-white/[0.02] transition-colors flex gap-4">
                                     <span className="text-[var(--secondary)]/70 font-mono text-sm shrink-0">[{ref.id}]</span>

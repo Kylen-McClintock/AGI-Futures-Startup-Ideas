@@ -137,11 +137,11 @@ export function PageClient() {
                             Economics of Confusion
                         </div>
                         <p className="text-3xl md:text-5xl font-light text-white leading-tight mb-8 font-serif">
-                            Average support ticket cost is about <span className="text-[var(--secondary)] font-medium">$15.56</span>. Deflecting 10% of 500,000 tickets saves about <span className="text-[var(--secondary)] font-medium">$0.78 million</span> per year.
+                            AI chatbots deflect the easy FAQs—leaving the <span className="text-[var(--secondary)] font-medium">$15 to $40+</span> escalated tickets where users and agents get stuck inside the actual UI.
                         </p>
                         <p className="text-xl text-[var(--secondary)] leading-relaxed font-light">
-                            Meanwhile, 18% of U.S. online shoppers abandon because checkout is too long or complicated. Clarity converts. Confusion bleeds.
-                            <ExpandableCitation title="[1]" source="HDI, Metric of the Month: Desktop Support Cost per Ticket" url="https://www.thinkhdi.com/library/supportworld/2017/metric-of-month-desktop-support-cost-per-ticket" />
+                            Deflecting just 10% of 500,000 action-level tickets saves <span className="text-white font-normal">$0.78M–$2M+</span> per year, while 18% of U.S. online shoppers still abandon because checkout flows are too long or confusing. Clarity converts. Confusion bleeds.
+                            <ExpandableCitation title="[1]" source="HDI, Metric of the Month: Support Cost per Ticket" url="https://www.thinkhdi.com/library/supportworld/2017/metric-of-month-desktop-support-cost-per-ticket" />
                             <ExpandableCitation title="[2]" source="Baymard Institute, 49 Cart Abandonment Rate Statistics" url="https://baymard.com/lists/cart-abandonment-rate" />
                         </p>
                     </div>
@@ -239,8 +239,8 @@ export function PageClient() {
                             </div>
                             <h4 className="text-xl text-white mb-4">Two runtimes, one spec</h4>
                             <ul className="space-y-4 text-[var(--secondary)] font-light">
-                                <li><strong className="text-[var(--primary)]">Human Guidance Overlay:</strong> native overlay highlights right controls, offers fallbacks on demand.</li>
-                                <li><strong className="text-[var(--primary)]">Agent Tools:</strong> same taskscallable by assistants like Gemini Computer Use. Your site is agent-friendly by design. <ExpandableCitation title="[4]" source="Google, Introducing the Gemini 2.5 Computer Use model" url="https://blog.google/technology/google-deepmind/gemini-computer-use-model/" /></li>
+                                <li><strong className="text-[var(--primary)]">Human Guidance Overlay:</strong> native overlay highlights the exact control and offers step-by-step fallbacks on demand.</li>
+                                <li><strong className="text-[var(--primary)]">Deterministic Agent Tools:</strong> the same tasks are callable directly via MCP or frontier computer-use agents—replacing slow, brittle screenshot-guessing with verified UI actions. <ExpandableCitation title="[4]" source="Google DeepMind, Gemini Computer Use & Browser Agents" url="https://blog.google/technology/google-deepmind/gemini-computer-use-model/" /></li>
                             </ul>
                         </motion.div>
 
@@ -449,15 +449,15 @@ export function PageClient() {
                         <div className="space-y-6 mb-12">
                             <div className="flex gap-4 items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-2 shrink-0" />
-                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">Models can now operate browsers.</strong> Computer-use systems have made live UI interaction economically real.</p>
+                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">Raw pixel-scraping is too slow and brittle for production.</strong> Frontier computer-use agents can browse any site, but guessing from screenshots burns tokens, adds multi-second latency, and breaks on dynamic state. Sites that publish verified task maps execute 10x faster and cheaper.</p>
                             </div>
                             <div className="flex gap-4 items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-2 shrink-0" />
-                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">A neutral standard now exists.</strong> MCP makes cross-model tooling portable enough for one map to serve many assistants.</p>
+                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">A neutral protocol layer now exists.</strong> MCP and emerging WebMCP patterns make cross-model tooling portable enough for one validated UI map to serve every major assistant and browser agent.</p>
                             </div>
                             <div className="flex gap-4 items-start">
                                 <div className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] mt-2 shrink-0" />
-                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">The budget owner already exists.</strong> Support and self-serve teams already measure the cost of confusion and can justify spend fast.</p>
+                                <p className="text-lg text-[var(--secondary)] font-light"><strong className="text-white">The budget owner already exists.</strong> Support and self-serve growth teams already measure the cost of failed workflows and can justify spend on day-one deflection and conversion lift.</p>
                             </div>
                         </div>
 

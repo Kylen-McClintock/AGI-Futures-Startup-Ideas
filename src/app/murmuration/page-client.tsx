@@ -363,8 +363,8 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <div className="max-w-4xl mx-auto">
                 
                 <NeglectednessSlider 
-                    score={85} 
-                    interpretation="Highly neglected. While agent tooling is heavily funded, building a multi-agent orchestration layer specifically to mitigate catastrophic AI risks while still accelerating startup strategy is uncrowded. Building this the *right* (civilizationally optimal) way is the true frontier."
+                    score={74} 
+                    interpretation="While generic agent frameworks and enterprise workflow builders are heavily funded, almost no one is building a cross-company swarm experimentation network that simulates workflows before deployment, prices purely on incremental cash-flow lift, and transfers validated winning patterns across an aligned startup network."
                 />
             </div>
         </ScrollReveal>

@@ -329,21 +329,21 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               </FadeIn>
 
               <FadeIn delay={0.5} className="glass p-6 rounded-2xl">
-                <h4 className="text-[var(--secondary)] font-medium mb-3">5. In-the-moment Coaching</h4>
-                <p className="text-sm text-slate-300">Before conflict, after conflict, before date night, before family events, after missed bids for connection, before intimacy conversations.</p>
+                <h4 className="text-[var(--secondary)] font-medium mb-3">5. In-the-moment Coaching & Voice Rehearsal</h4>
+                <p className="text-sm text-slate-300">Sub-second voice roleplay to rehearse hard conversations in private—before conflict, after conflict, before family events, after missed bids for connection, or before intimacy conversations—so the first draft doesn't happen on your partner.</p>
               </FadeIn>
 
               <FadeIn delay={0.6} className="glass p-6 rounded-xl col-span-1 md:col-span-2 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[var(--primary)]/40 -z-10 group-hover:bg-[var(--primary)]/60 transition-colors" />
                 <h4 className="text-[var(--tertiary)] font-medium mb-3 text-lg flex items-center gap-2">
-                  <Shield className="w-5 h-5" /> 6. Relationship Memory Engine
+                  <Shield className="w-5 h-5" /> 6. Encrypted Relationship Memory Engine
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <p className="text-slate-300 leading-relaxed text-sm">
-                    Attune remembers what she has explicitly said matters, what he keeps forgetting, which gestures land, which conflicts repeat, which repair attempts work, and which goals were set and whether they were honored.
+                    With strict partner-level privacy boundaries and zero-training guarantees, Attune remembers what she has explicitly said matters, what he keeps forgetting, which gestures land, which conflicts repeat, which repair attempts work, and which commitments were honored.
                   </p>
                   <p className="text-[var(--primary)] font-semibold italic flex items-center text-sm md:text-base p-4 bg-[var(--primary)]/10 rounded-lg">
-                    This is the moat. Not prompts. Not chat. Structured relationship memory plus behavior change.
+                    This is the moat. Not prompts. Not chat. Encrypted, longitudinal relationship memory plus real-world behavior change.
                   </p>
                 </div>
               </FadeIn>
@@ -469,25 +469,25 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             <div className="grid lg:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <p className="text-lg text-slate-300">
-                  In an AGI-saturated world, the scarce value is not generic advice. It is: <span className="text-[var(--tertiary)]">persistent state, accurate diagnosis, contextual coaching, and measurable behavior change.</span>
+                  In an AGI-saturated world, generic relationship advice is free—and synthetic AI companions actively compete to siphon away human intimacy. The scarce value is <span className="text-[var(--tertiary)]">persistent bilateral state, honest diagnosis, low-stakes rehearsal, and measurable real-world behavior change.</span>
                 </p>
                 <p className="text-slate-300">
-                  Attune wins because it does not just generate relationship content. It maintains a living model of the relationship, translates messy weekly feedback into role-specific behavioral training, and updates the curriculum continuously.
+                  Single-player chatbots validate whatever the user vents, reinforcing blind spots. Attune wins because it holds a two-sided model of the relationship, translates messy weekly partner feedback into concrete behavioral reps, and measures whether your partner actually felt the difference.
                 </p>
               </div>
 
               <div className="space-y-6">
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Data Moat</h4>
-                  <p className="text-sm text-slate-300">Over time Attune learns which deficits are most common, which interventions change behavior fastest, which patterns predict resentment, and which prompts improve connection.</p>
+                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Outcome-Linked Data Moat</h4>
+                  <p className="text-sm text-slate-300">Over time Attune learns which relational deficits are most common, which micro-interventions change partner perception fastest, which patterns predict resentment, and which repair scripts actually de-escalate conflict.</p>
                 </div>
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Memory Moat</h4>
-                  <p className="text-sm text-slate-300">A generic chatbot cannot easily replicate a persistent relationship graph with weekly updates, partner-specific preferences, and measurable growth trajectories.</p>
+                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Bilateral Memory Moat</h4>
+                  <p className="text-sm text-slate-300">A generic single-player LLM only sees one person's biased narrative. It cannot replicate a permissioned, two-sided relationship graph with weekly sync history, partner-verified preferences, and longitudinal growth trajectories.</p>
                 </div>
                 <div className="p-5 glass-strong rounded-2xl">
-                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Trust Moat</h4>
-                  <p className="text-sm text-slate-300">If Attune becomes the product that most accurately captures "what my partner actually needs from me," switching costs become high.</p>
+                  <h4 className="text-[var(--secondary)] font-medium mb-2 text-sm uppercase tracking-widest">Privacy & Trust Moat</h4>
+                  <p className="text-sm text-slate-300">Intimate context requires compartmentalized encryption—knowing private venting stays private while actionable coaching crosses the bridge. Once Attune holds "what my partner actually needs from me," switching costs are deeply personal.</p>
                 </div>
               </div>
             </div>

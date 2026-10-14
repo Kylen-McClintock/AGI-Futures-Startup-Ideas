@@ -356,7 +356,7 @@ export default function SignalHouseClientPage({ initialTags }: { initialTags: an
                         <OpenSourcePriority 
                             civilizationalImpactScore={60}
                             neglectednessScore={78}
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective."
+                            ideaSpecificText="Open-sourcing Signal House’s attention-protection protocols, focus-session verification standards, and room-curation primitives helps builders create software that restores human agency rather than competing on engagement harvesting."
                         />
                     </div>
 

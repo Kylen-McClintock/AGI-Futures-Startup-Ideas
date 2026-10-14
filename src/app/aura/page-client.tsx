@@ -535,7 +535,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                     <OpenSourcePriority 
                         civilizationalImpactScore={85}
                         neglectednessScore={55}
-                        ideaSpecificText="Open-sourcing Aura guarantees that the most advanced educational models and cognitive architectures aren't gatekept, preventing a catastrophic intelligence divide."
+                        ideaSpecificText="Open-sourcing AURA’s avatar SDK, behavior-graph specification, and consent-driven cloning protocol ensures that embodied AI presence remains an open developer standard rather than a closed garden controlled by a single hardware or platform monopoly."
                     />
                 </div>
 

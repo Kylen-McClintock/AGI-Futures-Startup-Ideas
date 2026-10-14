@@ -298,7 +298,7 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                         
                         <NeglectednessSlider 
                             score={82} 
-                            interpretation="Highly neglected. Most pharma AI focuses on de novo molecule discovery. Building a data platform to systemically index and repurpose off-patent drugs using clinical trial exhaust is culturally opposed to big pharma’s blockbuster orientation."
+                            interpretation="Highly neglected. Consumer microbiome testing is crowded with shallow wellness reports, while traditional biotech focuses on slow single-indication drug trials. Almost no one is building the longitudinal donor-recipient-outcome data graph that connects elite donor phenotyping and strain-level engraftment to reproducible live therapeutics."
                         />
 
 </div>
@@ -521,11 +521,11 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                             <h3 className="text-xl text-white font-medium mb-6 flex items-center gap-3">
                                 <Rocket className="w-6 h-6 text-[var(--secondary)]" /> AGI Future Edge
                             </h3>
-                            <p className="text-lg text-white/70 font-light leading-relaxed mb-6">BiomeX gets stronger in a world of abundant intelligence. AGI helps with:</p>
+                            <p className="text-lg text-white/70 font-light leading-relaxed mb-6">BiomeX gets stronger in a world of abundant intelligence. Frontier bio-foundation models and research agents accelerate:</p>
                             <ul className="space-y-4 text-white/80 font-light text-[15px] pl-2 border-l border-white/10 mb-6">
-                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">donor ranking & phenotype clustering</strong></li>
-                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">literature synthesis & causal hypothesis generation</strong></li>
-                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">outcome attribution</strong> across labs, symptoms, diet, sleep, and stool data</li>
+                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">donor ranking & phenotype clustering</strong> across longitudinal multi-omic and wearable streams</li>
+                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">strain-level engraftment modeling & defined consortia design</strong></li>
+                                <li><span className="text-[var(--primary)] mr-2">✦</span><strong className="text-white">causal outcome attribution</strong> across labs, symptoms, diet, sleep, and metagenomic data</li>
                             </ul>
                             <div className="p-4 bg-[var(--primary)]/10 text-[var(--secondary)] font-medium rounded-xl border border-[var(--primary)]/30">
                                 The scarce asset remains rare human biology with verified transfer effects. That is why this category can compound in an AGI world instead of getting flattened by it.
@@ -552,7 +552,7 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     <OpenSourcePriority 
                         civilizationalImpactScore={69}
                         neglectednessScore={82}
-                        ideaSpecificText="Open-sourcing BioMex’s biomarker discovery models democratizes preventative healthcare algorithms, ensuring longevity isn't purely a function of wealth."
+                        ideaSpecificText="Open-sourcing BiomeX’s donor-phenotyping protocols, safety screening standards, and anonymized engraftment benchmarks accelerates the entire microbiome field while keeping clinical quality high and preventing critical biological transfer insights from being locked inside a single proprietary silo."
                     />
                 </div>
 

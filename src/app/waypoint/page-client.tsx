@@ -511,7 +511,7 @@ export default function WaypointClient() {
                         <OpenSourcePriority 
                             civilizationalImpactScore={87}
                             neglectednessScore={83}
-                            ideaSpecificText="Open source priority is highest for startup ideas that would be civilizationally impactful if implemented; and the space is currently under invested in from a founder quality, capital, or research perspective."
+                            ideaSpecificText="Open-sourcing Waypoint’s project-design schemas, field verification protocols, and blended-repayment underwriting standards ensures that developing-world governments, NGOs, and local builders can turn proven infrastructure solutions into bankable deployments faster."
                         />
                     </div>
                 </motion.section>
