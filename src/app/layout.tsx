@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { AuthHeader } from "@/components/AuthHeader";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { InterestProvider } from "@/components/InterestProvider";
+import { Analytics } from '@vercel/analytics/next';
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -54,6 +55,7 @@ export default function RootLayout({
             <Footer />
           </InterestProvider>
         </NuqsAdapter>
+        <Analytics />
       </body>
     </html>
   );
