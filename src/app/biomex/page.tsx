@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import BiomeXClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/biomex' },
     title: 'BiomeX | Elite microbiome therapeutics - AGI Futures',
     description: 'BiomeX turns elite human microbiomes into a therapeutic platform, starting with donor-derived transplants and compounding toward precision-engineered microbial medicines.',
     openGraph: {

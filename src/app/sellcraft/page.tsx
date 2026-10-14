@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import SellCraftClient from "./page-client";
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/sellcraft' },
   title: "SellCraft - Virtual Sales Proving Ground | AGI Futures",
   description: "An AI-native connected Sales Mastery platform with three products: Pitch Quest, Proving Ground, and Practice. Train and get hired by selling real products to virtual customers.",
   openGraph: {

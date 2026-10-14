@@ -103,7 +103,7 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     </motion.p>
 
                     <div className="mt-8 flex flex-col items-center -space-y-4">
-                        <InlineTags tags={initialTags?.sector} theme="blue" />
+                        <InlineTags linkSectors tags={initialTags?.sector} theme="blue" />
                     </div>
                 </div>
             </section>

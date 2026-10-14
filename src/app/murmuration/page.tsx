@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import MurmurationClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/murmuration' },
     title: 'Murmuration Engine | AI Agent Swarm Intelligence - AGI Futures',
     description: 'An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments and compound learnings.',
     openGraph: {

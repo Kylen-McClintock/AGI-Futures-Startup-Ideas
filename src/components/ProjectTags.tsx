@@ -1,6 +1,8 @@
 import React from "react";
+import Link from "next/link";
 import { Layers, Crosshair, Zap, Users, Globe, Briefcase } from "lucide-react";
 import { ThemeColor, themeMap } from "@/utils/themeMap";
+import { HUB_LINKS } from "@/data/hub-links";
 
 interface TagInfo {
     label: string;
@@ -58,7 +60,7 @@ export function ProjectTags({ tags }: ProjectTagsProps) {
     );
 }
 
-export function InlineTags({ label, tags, theme = 'default' }: { label?: string, tags?: string[], theme?: ThemeColor }) {
+export function InlineTags({ label, tags, theme = 'default', linkSectors = false }: { label?: string, tags?: string[], theme?: ThemeColor, linkSectors?: boolean }) {
     if (!tags || tags.length === 0) return null;
 
     const themeClass = themeMap[theme]?.tagClass || themeMap['default'].tagClass;
@@ -71,11 +73,19 @@ export function InlineTags({ label, tags, theme = 'default' }: { label?: string,
                 </span>
             )}
             <span className="inline-flex flex-wrap gap-1.5 items-center">
-                {tags.map((tag, i) => (
-                    <span key={i} className={`px-2 py-1 rounded-full border text-[10px] sm:text-xs backdrop-blur-md ${themeClass}`}>
-                        {tag}
-                    </span>
-                ))}
+                {tags.map((tag, i) => {
+                    const href = linkSectors ? HUB_LINKS[tag] : undefined;
+                    const cls = `px-2 py-1 rounded-full border text-[10px] sm:text-xs backdrop-blur-md ${themeClass}`;
+                    return href ? (
+                        <Link key={i} href={href} className={`${cls} hover:brightness-125 transition`} title={`More AI startup ideas in ${tag}`}>
+                            {tag}
+                        </Link>
+                    ) : (
+                        <span key={i} className={cls}>
+                            {tag}
+                        </span>
+                    );
+                })}
             </span>
         </span>
     );

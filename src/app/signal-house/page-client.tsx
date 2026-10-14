@@ -85,7 +85,7 @@ export default function SignalHouseClientPage({ initialTags }: { initialTags: an
                             An immersive deep work network where people work and study in beautifully curated virtual rooms, build habitual flow-state spaces, and find aligned collaborators without breaking focus.
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
-                            <InlineTags tags={initialTags?.sector} theme="primary" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="primary" />
                         </div>
                     </motion.div>
 

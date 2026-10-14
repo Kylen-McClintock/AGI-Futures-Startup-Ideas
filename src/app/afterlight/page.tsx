@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import AfterlightClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/afterlight' },
     title: 'Afterlight | End of Life Connection & Memory Preservation - AGI Futures',
     description: 'Afterlight helps maximize meaning in the last chapter of life, by prompting connection and the preservation of stories for the loved ones they leave behind.',
     openGraph: {

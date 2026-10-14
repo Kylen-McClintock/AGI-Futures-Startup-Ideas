@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import AvatarLabClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/avatarlab' },
     title: 'AvatarLab | Organoid Avatars for Safe Personalized Therapy Testing - AGI Futures',
     description: 'Bank your youngest cells. Grow mini-organs from your DNA. Test drugs, nutraceuticals, and combinations on your own biology before you try them.',
     openGraph: {

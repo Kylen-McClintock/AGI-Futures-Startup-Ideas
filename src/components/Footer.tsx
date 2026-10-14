@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, Newspaper } from "lucide-react";
+import { SubscribeCTA } from "@/components/SubscribeCTA";
+import { SUBSTACK_URL } from "@/lib/site";
 
 function ThreadsIcon({ className = "w-4 h-4" }: { className?: string }) {
     return (
@@ -36,12 +38,24 @@ export function Footer() {
     } else if (pathname.includes('/forecasts')) {
         label = "FORECASTS";
         color = "text-[#3bf4a4]";
+    } else if (pathname.startsWith('/match')) {
+        label = "Founder Fit Matcher";
+    } else if (pathname.startsWith('/ideas')) {
+        label = "Ideas by Sector";
     } else if (pathname !== '/' && pathname !== '/about' && pathname !== '/license' && pathname !== '/forecasting') {
         label = "Startup Idea Writeup";
     }
 
+    const hideSubscribe = ['/login', '/onboarding', '/match', '/auth'].some(p => pathname.startsWith(p));
+
     return (
-        <footer className="w-full border-t border-white/10 bg-black backdrop-blur-md py-12 px-6 mt-32">
+        <>
+        {!hideSubscribe && (
+            <div className="mt-32 relative z-10">
+                <SubscribeCTA variant="band" source={pathname === '/' ? 'home' : 'footer'} />
+            </div>
+        )}
+        <footer className={`w-full border-t border-white/10 bg-black backdrop-blur-md py-12 px-6 ${hideSubscribe ? 'mt-32' : 'mt-16'}`}>
             <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-6">
                 
                 {/* Branding or simple wordmark */}
@@ -84,10 +98,26 @@ export function Footer() {
                         <Facebook className="w-4 h-4 text-white/70 group-hover:text-[#3bf4a4] transition-colors" />
                         <span>Facebook</span>
                     </a>
+                    <a 
+                        href={SUBSTACK_URL} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="AGI Futures on Substack"
+                        className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#3bf4a4]/40 text-white/70 hover:text-white transition-all duration-200 text-xs font-mono shadow-sm"
+                    >
+                        <Newspaper className="w-4 h-4 text-white/70 group-hover:text-[#3bf4a4] transition-colors" />
+                        <span>Substack</span>
+                    </a>
                 </div>
 
                 {/* Footer Links */}
                 <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-sm font-medium tracking-wide">
+                    <Link href="/match" className="text-[#3bf4a4]/90 hover:text-[#3bf4a4] transition-colors font-semibold">
+                        Find Your Match
+                    </Link>
+                    <Link href="/ideas" className="text-white/60 hover:text-white transition-colors">
+                        Ideas by Sector
+                    </Link>
                     <Link href="/about" className="text-white/60 hover:text-white transition-colors">
                         About
                     </Link>
@@ -117,5 +147,6 @@ export function Footer() {
                 </div>
             </div>
         </footer>
+        </>
     );
 }

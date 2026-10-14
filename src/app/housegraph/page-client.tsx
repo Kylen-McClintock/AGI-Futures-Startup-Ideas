@@ -90,7 +90,7 @@ export default function HouseGraphClientPage({ initialTags }: { initialTags: Pro
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="teal" />
+                            <InlineTags linkSectors tags={tags.sector} theme="teal" />
                         </div>
                     </motion.div>
                 </header>

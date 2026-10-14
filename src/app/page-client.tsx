@@ -194,6 +194,9 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                     <Link href="/problem-atlas" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/40 border border-white/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-white/5 hover:text-white hover:border-white/30 transition-all font-medium whitespace-nowrap">
                         VIEW PROBLEM ATLAS &rarr;
                     </Link>
+                    <Link href="/match" className="inline-block text-xs sm:text-sm font-mono tracking-widest uppercase text-white/40 border border-white/10 px-5 py-2 sm:px-6 sm:py-3 rounded-full hover:bg-white/5 hover:text-white hover:border-white/30 transition-all font-medium whitespace-nowrap">
+                        FIND YOUR MATCH &rarr;
+                    </Link>
                 </div>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-serif text-[var(--foreground)] leading-[1.2] tracking-tight mb-10">

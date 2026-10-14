@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import AFLClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/AIFounderLab' },
     title: 'AI Founder Lab | The AI-Native Startup Studio - AGI Futures',
     description: 'Turns ambitious builders into founder-grade operators by having them build, sell, and own real ventures.',
     openGraph: {

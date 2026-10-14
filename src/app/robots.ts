@@ -1,13 +1,14 @@
 import { MetadataRoute } from 'next'
+import { SITE_URL } from '@/lib/site'
 
 export default function robots(): MetadataRoute.Robots {
-    const baseUrl = 'https://agifutures.co' // Replace with your actual production domain when available.
-
     return {
         rules: {
             userAgent: '*',
             allow: '/',
+            disallow: ['/login', '/onboarding', '/auth/', '/api/'],
         },
-        sitemap: `${baseUrl}/sitemap.xml`,
+        sitemap: `${SITE_URL}/sitemap.xml`,
+        host: SITE_URL,
     }
 }

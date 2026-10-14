@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/forecasting" },
+    openGraph: { title: "AGI Futures | Forecasting Methodology", description: "The structural rationale behind the AGI Futures Live Forecasts feed and our AI-driven venture metrics for Expected Valuation.", url: "/forecasting" },
     title: "AGI Futures | Forecasting Methodology",
     description: "The structural rationale behind the AGI Futures Live Forecasts feed and our AI-driven venture metrics for Expected Valuation.",
 };

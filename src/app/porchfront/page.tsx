@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import PorchfrontClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/porchfront' },
     title: 'Porchfront | Open Garage Culture OS - AGI Futures',
     description: 'Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.',
     openGraph: {

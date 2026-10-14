@@ -2,12 +2,12 @@ import WildReturnClientPage from './page-client';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/wild-return' },
     title: 'Wild Return | AGI Futures',
     description: 'A nature-grounded end-of-life sanctuary that combines natural burial, palliative care partnerships, death doulas, psychologists, ritual design, and optional licensed psychedelic facilitation.',
     openGraph: {
         title: 'Wild Return | AGI Futures',
         description: 'A nature-grounded end-of-life sanctuary to make dying more peaceful and life more meaningful.',
-        images: ['/wild-return/assets/hero.png'],
     },
 };
 

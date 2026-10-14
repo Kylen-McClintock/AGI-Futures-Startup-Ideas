@@ -3,6 +3,8 @@ import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/license" },
+    openGraph: { title: "AGI Futures | Open License", description: "AGI Futures startup idea writeups are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.", url: "/license" },
     title: "AGI Futures | Open License",
     description: "AGI Futures startup idea writeups are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.",
 };

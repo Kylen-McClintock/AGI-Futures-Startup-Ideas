@@ -127,7 +127,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="indigo" />
+                            <InlineTags linkSectors tags={tags.sector} theme="indigo" />
                         </div>
                     </motion.div>
                 </header>

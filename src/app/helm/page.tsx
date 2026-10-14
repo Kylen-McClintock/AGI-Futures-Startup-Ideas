@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import HelmClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/helm' },
     title: 'Helm | AI Teammates for Solo Founders - AGI Futures',
     description: 'A virtual office where AI teammates, collaborators, and freelancers help you run your company—driving toward increased automation over time.',
     openGraph: {

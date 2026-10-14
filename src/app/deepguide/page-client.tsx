@@ -86,7 +86,7 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="purple" />
+                            <InlineTags linkSectors tags={tags.sector} theme="purple" />
                         </div>
                     </motion.div>
                 </header>

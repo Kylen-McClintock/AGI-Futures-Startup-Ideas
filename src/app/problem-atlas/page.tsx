@@ -6,8 +6,13 @@ export const metadata: Metadata = {
     title: 'Problem Atlas | AGI Futures',
     description: 'A ranked map of high-priority civilizational bottlenecks for founders, researchers, and builders.',
     alternates: {
-        canonical: 'https://agifutures.com/problem-atlas'
-    }
+        canonical: '/problem-atlas'
+    },
+    openGraph: {
+        title: 'Problem Atlas | AGI Futures',
+        description: 'A ranked map of high-priority civilizational bottlenecks for founders, researchers, and builders.',
+        url: '/problem-atlas',
+    },
 };
 
 export default function ProblemAtlasPage() {

@@ -106,7 +106,7 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="blue" />
+                            <InlineTags linkSectors tags={tags.sector} theme="blue" />
                         </div>
                     </motion.div>
                 </header>

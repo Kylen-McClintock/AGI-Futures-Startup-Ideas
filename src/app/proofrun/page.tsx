@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import ProofRunClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/proofrun' },
     title: 'ProofRun | Proof-of-Work Hiring - AGI Futures',
     description: 'ProofRun lets companies turn real backlog work into mini missions so candidates can prove their AI-native skills and flow directly into a recruiter\'s talent pipeline.',
     openGraph: {

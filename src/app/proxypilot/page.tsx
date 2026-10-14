@@ -4,21 +4,19 @@ import ProxyPilotClient from './page-client';
 import { calculateExpectedValuation, calculateTimeToUnicorn } from '@/utils/forecastMath';
 import { getForecastForSlug } from '@/data/forecasts';
 
-import proxypilotOg from './assets/proxypilot_og.png';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/proxypilot' },
     title: 'ProxyPilot | AGI Futures',
     description: 'AI Native Proxy Voting. Transforming the proxy voting deadlock into an opportunity for retail investors to delegate voting power to creators, experts, and AI pods.',
     openGraph: {
         title: 'ProxyPilot | AGI Futures',
         description: 'AI Native Proxy Voting. Transforming the proxy voting deadlock into an opportunity for retail investors to delegate voting power.',
-        images: [{ url: proxypilotOg.src, width: proxypilotOg.width, height: proxypilotOg.height }],
     },
     twitter: {
         card: "summary_large_image",
         title: "ProxyPilot | AGI Futures",
         description: "AI Native Proxy Voting. Transforming the proxy voting deadlock into an opportunity for retail investors to delegate voting power.",
-        images: [proxypilotOg.src],
     }
 };
 

@@ -79,7 +79,7 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                             An AI-native startup studio and university alternative that turns ambitious builders into founder-grade operators by having them <strong className="font-medium text-white">build, sell, and own real ventures</strong>.
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
-                            <InlineTags tags={initialTags?.sector} theme="blue" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="blue" />
                         </div>
                     </motion.div>
 

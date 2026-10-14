@@ -81,7 +81,7 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                             Hearth makes it radically easier to start, join, and operate intentional living communities with people you actually want to share life with, from one house to a distributed network of homes around the world.
                         </p>
                         <div className="mt-8 mb-12 flex flex-col items-center sm:items-start">
-                            <InlineTags tags={initialTags?.sector} theme="amber" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="amber" />
                         </div>
                     </motion.div>
 

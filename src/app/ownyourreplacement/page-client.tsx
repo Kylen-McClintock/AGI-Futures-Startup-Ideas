@@ -125,7 +125,7 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="amber" />
+                            <InlineTags linkSectors tags={tags.sector} theme="amber" />
                         </div>
                     </motion.div>
                 </header>

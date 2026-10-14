@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import DeepGuideClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/deepguide' },
     title: 'DeepGuide | AI Copilot for Psychedelic Therapy - AGI Futures',
     description: 'Keeps facilitators present, captures structured notes, recommends the right exercise at the right moment, and turns outcomes into evolving best practices.',
     openGraph: {

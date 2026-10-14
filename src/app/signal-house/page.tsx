@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import SignalHouseClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/signal-house' },
     title: 'Signal House | Immersive Deep Work Network - AGI Futures',
     description: 'An immersive deep work network where people work and study in beautifully curated virtual rooms, build habitual flow-state spaces, and find aligned collaborators without breaking focus.',
     openGraph: {

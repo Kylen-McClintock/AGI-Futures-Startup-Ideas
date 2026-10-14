@@ -12,6 +12,8 @@ function ThreadsIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
 }
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/about" },
+    openGraph: { title: "AGI Futures | About", description: "Doing what I can to build a maximally beneficial AGI Future.", url: "/about" },
     title: "AGI Futures | About",
     description: "Doing what I can to build a maximally beneficial AGI Future.",
 };

@@ -18,12 +18,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     
     if (!problem) return {};
 
+    const title = `${problem.title} | Problem Atlas | AGI Futures`;
+    const description = problem.short_descriptor + '. ' + problem.preview_text.slice(0, 100) + '...';
     return {
-        title: `${problem.title} | Problem Atlas | AGI Futures`,
-        description: problem.short_descriptor + '. ' + problem.preview_text.slice(0, 100) + '...',
+        title,
+        description,
         alternates: {
-            canonical: `https://agifutures.com/problem-atlas/${slug}`
-        }
+            canonical: `/problem-atlas/${slug}`
+        },
+        openGraph: { title, description, url: `/problem-atlas/${slug}`, type: 'article' },
     };
 }
 

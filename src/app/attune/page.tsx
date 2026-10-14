@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import AttuneClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/attune' },
     title: 'Attune | AI Relationship Coach - AGI Futures',
     description: 'An AI relationship coach to make her feel heard, seen, and supported, consistently.',
     openGraph: {

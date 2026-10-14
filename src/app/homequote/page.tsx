@@ -2,19 +2,17 @@ import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
 import HomeQuoteClientPage from './page-client';
 
-import heroImage from './assets/hq_hero_scan_1772949695780.png';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/homequote' },
     title: 'HomeQuote AI | The Scope-to-Quote Engine - AGI Futures',
     description: 'Turns a user-filmed walkthrough into a structured job object, an exact quote, and infinitely bookable offers from service providers.',
     openGraph: {
         title: 'HomeQuote AI | The Scope-to-Quote Engine - AGI Futures',
         description: 'Turns a user-filmed walkthrough into a structured job object, an exact quote, and bookable offers.',
-        images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height }],
     },
     twitter: {
         card: "summary_large_image",
-        images: [heroImage.src],
     }
 };
 

@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import SkyholdClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/skyhold' },
     title: 'Skyhold | The physical network for the autonomous age - AGI Futures',
     description: 'A thesis-driven real estate company that acquires beautiful, access-constrained land near major metros before autonomous vehicles and eVTOLs reprice it.',
     openGraph: {

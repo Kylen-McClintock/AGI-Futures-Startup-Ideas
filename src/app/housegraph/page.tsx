@@ -4,12 +4,12 @@ import { createClient } from "@/utils/supabase/server";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
+        alternates: { canonical: '/housegraph' },
         title: 'HouseGraph | AGI Futures',
         description: 'Turns every home into a verified, queryable AI agent that can tour, explain, negotiate, and coordinate the sale of that property at a fraction of traditional transaction cost.',
         openGraph: {
             title: 'HouseGraph | AGI Futures',
             description: 'HouseGraph - Autonomous Home Transaction Layer',
-            images: ['/og/housegraph_hero.png'],
         },
     };
 }

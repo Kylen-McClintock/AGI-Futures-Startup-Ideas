@@ -1,19 +1,17 @@
 import { Metadata } from 'next';
 import { createClient } from '@/utils/supabase/server';
-import heroImage from './assets/hero.png';
 import HearthClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/hearth' },
     title: 'Hearth | Friend-Native Housing - AGI Futures',
     description: 'Hearth makes it radically easier to start, join, and operate intentional living communities with people you actually want to share life with.',
     openGraph: {
         title: 'Hearth | Friend-Native Housing - AGI Futures',
         description: 'Hearth makes it radically easier to start, join, and operate intentional living communities.',
-        images: [{ url: heroImage.src, width: heroImage.width, height: heroImage.height }],
     },
     twitter: {
         card: "summary_large_image",
-        images: [heroImage.src],
     }
 };
 

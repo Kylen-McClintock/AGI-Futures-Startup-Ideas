@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import AuraClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/aura' },
     title: 'AURA | Marketplace for AR AI Avatars - AGI Futures',
     description: 'An SDK and marketplace that lets any developer drop lifelike, spatially aware AI companions into AR apps.',
     openGraph: {

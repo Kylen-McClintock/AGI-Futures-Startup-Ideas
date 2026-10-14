@@ -104,7 +104,7 @@ export default function ClientPage() {
                         </motion.p>
 
                         <motion.div variants={fadeInUp}>
-                            <InlineTags tags={initialTags?.sector} theme="amber" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="amber" />
                         </motion.div>
                     </motion.div>
                 </div>

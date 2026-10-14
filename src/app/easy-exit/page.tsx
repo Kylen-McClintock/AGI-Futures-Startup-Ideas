@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import EasyExitClient from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/easy-exit' },
     title: "Easy Exit - Revocation Protocol for Agentic Commerce",
     description: "A free, open-source standard and API for machine-verifiable cancellation, downgrade, pause, and permission revocation.",
     openGraph: {

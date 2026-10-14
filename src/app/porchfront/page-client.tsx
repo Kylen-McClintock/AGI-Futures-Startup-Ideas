@@ -76,7 +76,7 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map, shoppable builds, one-tap installers, and simple tools that reward real-world connection.
                 </p>
                 <div className="relative z-10 mb-16 flex flex-col items-center -space-y-4">
-                    <InlineTags tags={initialTags?.sector} theme="amber" />
+                    <InlineTags linkSectors tags={initialTags?.sector} theme="amber" />
                 </div>
 
                 <motion.div

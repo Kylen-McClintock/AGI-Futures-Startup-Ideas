@@ -82,7 +82,7 @@ export default function WildReturnClientPage({ initialTags }: { initialTags: any
                             A nature-grounded end-of-life sanctuary that combines natural burial, palliative care partnerships, death doulas, psychologists, ritual design, and optional licensed psychedelic facilitation to make dying more peaceful and life more meaningful.
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
-                            <InlineTags tags={initialTags?.sector} theme="primary" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="primary" />
                         </div>
                     </motion.div>
 

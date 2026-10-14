@@ -6,6 +6,8 @@ import { Footer } from "@/components/Footer";
 import { AuthHeader } from "@/components/AuthHeader";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { InterestProvider } from "@/components/InterestProvider";
+import { JsonLd } from "@/components/JsonLd";
+import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SOCIAL_LINKS } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -18,23 +20,39 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agifutures.org"),
+  metadataBase: new URL(SITE_URL),
   title: "AGI Futures Startup Ideas Library",
-  description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
+  description: SITE_DESCRIPTION,
   openGraph: {
     title: "AGI Futures Startup Ideas Library",
-    description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
-    url: "https://agifutures.org",
-    siteName: "AGI Futures",
-    images: [{ url: "/icon.png", width: 800, height: 800 }],
+    description: SITE_DESCRIPTION,
+    siteName: SITE_NAME,
+    type: "website",
   },
+  // Only the card type is set here so every page's own og:title / og:image flow through to X/Threads cards.
   twitter: {
     card: "summary_large_image",
-    title: "AGI Futures Startup Ideas Library",
-    description: "A collection of premium speculative venture theses and product storytelling prototypes exploring the AGI transition.",
-    images: ["/icon.png"],
   },
+  verification: process.env.GOOGLE_SITE_VERIFICATION ? { google: process.env.GOOGLE_SITE_VERIFICATION } : undefined,
 };
+
+const siteJsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
+    sameAs: SOCIAL_LINKS,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description: SITE_DESCRIPTION,
+  },
+];
 
 export default function RootLayout({
   children,
@@ -46,6 +64,7 @@ export default function RootLayout({
       <body suppressHydrationWarning
         className={`${outfit.variable} ${playfair.variable} antialiased bg-background text-foreground min-h-screen`}
       >
+        <JsonLd data={siteJsonLd} />
         <NuqsAdapter>
           <InterestProvider>
             <AuthHeader />

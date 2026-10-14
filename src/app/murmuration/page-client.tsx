@@ -53,7 +53,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
             An AGI-native strategy and execution engine that helps ambitious startups run rapid agent experiments, learn across a private network, and compound those learnings into faster growth, lower cost, and category capture.
           </p>
           <div className="mb-12 flex flex-col items-start -space-y-4">
-            <InlineTags tags={initialTags?.sector} theme="blue" />
+            <InlineTags linkSectors tags={initialTags?.sector} theme="blue" />
           </div>
           <FadeIn delay={0.6} className="mt-16 flex items-center gap-4 text-xs tracking-widest uppercase text-white/40">
             <span>Scroll to discover</span>

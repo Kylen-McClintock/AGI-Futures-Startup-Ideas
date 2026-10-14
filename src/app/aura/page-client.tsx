@@ -90,7 +90,7 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             AURA is an <strong className="font-medium text-white">open-source software development kit</strong> plus <strong className="font-medium text-white">avatar marketplace</strong> that lets any developer drop lifelike, spatially aware AI companions into augmented reality apps.
                         </p>
                         <div className="mt-6 mb-12 flex flex-col -space-y-4">
-                            <InlineTags tags={initialTags?.sector} theme="primary" />
+                            <InlineTags linkSectors tags={initialTags?.sector} theme="primary" />
                         </div>
                     </motion.div>
 

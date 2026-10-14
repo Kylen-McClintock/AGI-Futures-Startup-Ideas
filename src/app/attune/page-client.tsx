@@ -52,7 +52,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               It turns a <strong className="font-semibold text-[var(--primary)]">weekly couple sync, persistent relationship memory, and daily skill reps</strong> into a compounding loop for becoming a meaningfully better boyfriend or husband.
             </p>
             <div className="mt-6 mb-12 flex flex-col items-start -space-y-4">
-              <InlineTags tags={initialTags?.sector} theme="rose" />
+              <InlineTags linkSectors tags={initialTags?.sector} theme="rose" />
             </div>
             <div className="flex items-center gap-4">
               <button className="flex items-center gap-2 px-8 py-4 bg-[var(--primary)] hover:bg-[var(--secondary)] text-black font-semibold rounded-full transition-all hover:shadow-[0_0_30px_rgba(16,185,129,0.4)]">

@@ -1,98 +1,55 @@
 import { MetadataRoute } from 'next'
 import { problems } from '@/data/problem-atlas-data'
+import { ideas, ideaFallbacks } from '@/data/ideas'
+import { getHubSectors } from '@/data/sector-hubs'
+import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://agifutures.co' // Replace with your actual production domain when available.
+    const baseUrl = SITE_URL
+    const now = new Date().toISOString()
 
-    // Calculate dates
-    const date = new Date().toISOString()
+    // Newest idea date drives the homepage + hubs lastModified so Google sees real freshness.
+    const ideaDate = (slug: string) => {
+        const raw = ideaFallbacks[slug]?.created_at
+        const d = raw ? new Date(raw) : null
+        return d && !isNaN(d.getTime()) ? d.toISOString() : now
+    }
+    const latestIdea = ideas.map(i => ideaDate(i.slug)).sort().at(-1) ?? now
+
+    const staticPages: MetadataRoute.Sitemap = [
+        { url: baseUrl, lastModified: latestIdea, changeFrequency: 'weekly', priority: 1 },
+        { url: `${baseUrl}/match`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+        { url: `${baseUrl}/ideas`, lastModified: latestIdea, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/problem-atlas`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
+        { url: `${baseUrl}/singularity-tracker`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
+        { url: `${baseUrl}/forecasts/live`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+        { url: `${baseUrl}/forecasting`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: `${baseUrl}/glossary`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+        { url: `${baseUrl}/Idea-Seeds`, lastModified: now, changeFrequency: 'weekly', priority: 0.5 },
+        { url: `${baseUrl}/about`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+        { url: `${baseUrl}/license`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    ]
+
+    const ideaEntries: MetadataRoute.Sitemap = ideas.map(idea => ({
+        url: `${baseUrl}${idea.href}`,
+        lastModified: ideaDate(idea.slug),
+        changeFrequency: 'monthly',
+        priority: 0.8,
+    }))
+
+    const hubEntries: MetadataRoute.Sitemap = getHubSectors().map(hub => ({
+        url: `${baseUrl}/ideas/${hub.slug}`,
+        lastModified: latestIdea,
+        changeFrequency: 'weekly',
+        priority: 0.8,
+    }))
 
     const problemEntries: MetadataRoute.Sitemap = problems.map(problem => ({
         url: `${baseUrl}/problem-atlas/${problem.slug}`,
-        lastModified: date,
-        changeFrequency: 'weekly',
-        priority: 0.8,
-    }));
+        lastModified: now,
+        changeFrequency: 'monthly',
+        priority: 0.6,
+    }))
 
-    return [
-        {
-            url: baseUrl,
-            lastModified: date,
-            changeFrequency: 'weekly',
-            priority: 1,
-        },
-        {
-            url: `${baseUrl}/helm`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/attune`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/porchfront`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/homequote`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/aura`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/AIFounderLab`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/deepguide`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/main-street-legacy`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/agentable`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/murmuration`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/proxypilot`,
-            lastModified: date,
-            changeFrequency: 'monthly',
-            priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/problem-atlas`,
-            lastModified: date,
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        ...problemEntries,
-    ]
+    return [...staticPages, ...ideaEntries, ...hubEntries, ...problemEntries]
 }

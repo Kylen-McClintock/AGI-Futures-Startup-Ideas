@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getIdeaSeeds } from './actions';
 import { createClient } from '@/utils/supabase/server';
 import IdeaSeedCard from './components/IdeaSeedCard';
@@ -6,6 +7,13 @@ import { Sprout, Plus } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+    title: "Idea Seeds: Community-Submitted AGI-Era Startup Ideas | AGI Futures",
+    description: "Raw startup ideas submitted by builders, voted and refined by the AGI Futures community. Submit yours.",
+    alternates: { canonical: "/Idea-Seeds" },
+    openGraph: { title: "Idea Seeds | AGI Futures", description: "Community-submitted AGI-era startup ideas. Submit yours.", url: "/Idea-Seeds" },
+};
 
 export default async function IdeaSeedsPage() {
     const supabase = await createClient();

@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 import OnboardingClientPage from './page-client';
+
+export const metadata: Metadata = {
+    title: "Builder Onboarding | AGI Futures",
+    robots: { index: false, follow: false },
+};
 
 export default async function OnboardingPage() {
   const supabase = await createClient();

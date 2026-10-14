@@ -89,7 +89,7 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
                             <span className="font-mono text-[10px] uppercase tracking-widest text-[var(--primary)]/60">Sector</span>
-                            <InlineTags tags={tags.sector} theme="violet" />
+                            <InlineTags linkSectors tags={tags.sector} theme="violet" />
                         </div>
                     </motion.div>
                 </header>

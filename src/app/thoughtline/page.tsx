@@ -3,6 +3,7 @@ import { createClient } from '@/utils/supabase/server';
 import ThoughtlineClientPage from './page-client';
 
 export const metadata: Metadata = {
+    alternates: { canonical: '/thoughtline' },
     title: 'Thoughtline | Inner Voice AI Interface - AGI Futures',
     description: 'A personalized AI and neural-interface platform that helps shape your inner voice toward clarity, courage, calm, and focus, then lets you communicate with that AI at the speed of thought.',
     openGraph: {
