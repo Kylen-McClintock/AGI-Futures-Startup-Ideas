@@ -471,102 +471,106 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     />
                 </FadeIn>
 
-                {/* Why Now + PriorArtMatrix & Business Model + UnitEconomicsWidget */}
+                {/* Why Now + PriorArtMatrix */}
                 <FadeIn>
-                    <div className="grid lg:grid-cols-12 gap-10 items-start">
-                        <div className="lg:col-span-6">
-                            <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap" style={{ textWrap: "balance" }}>
-                                <span className="w-8 h-px bg-[var(--primary)]/50 block" />
-                                Why Now
-                            </h2>
-                            <div className="mb-8">
-                                <InlineTags tags={tags.readiness} theme="blue" />
-                            </div>
-                            <div className="space-y-6 text-white/70">
-                                <div>
-                                    <h3 className="text-lg text-white font-medium mb-1.5">1. Bidirectional multimodal video &amp; spatial AI</h3>
-                                    <p className="font-light text-sm sm:text-base leading-relaxed" style={{ textWrap: "pretty" }}>
-                                        Streaming vision-voice models and phone-native LiDAR can now watch a live camera feed, measure room dimensions, spot stain severity or access bottlenecks in real time, and ask the homeowner clarifying questions mid-walkthrough (“open the cabinet under the sink” or “pan closer to the baseboard”)
-                                        <ExpandableCitation
-                                            id="9"
-                                            sourceLabel="GOOGLE DEEPMIND"
-                                            title="Real-Time Multimodal Video & Voice Streaming APIs"
-                                            fullUrl="https://ai.google.dev/gemini-api/docs/live"
-                                        />
-                                        <ExpandableCitation
-                                            id="11"
-                                            sourceLabel="APPLE"
-                                            title="RoomPlan & LiDAR Spatial 3D Room Scanning APIs"
-                                            fullUrl="https://developer.apple.com/augmented-reality/roomplan/"
-                                        />
-                                        .
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg text-white font-medium mb-1.5">2. Booking digitization outpaced scoping</h3>
-                                    <p className="font-light text-sm sm:text-base leading-relaxed" style={{ textWrap: "pretty" }}>
-                                        Consumers expect app-speed checkout, but residential quoting remains stuck in phone tag and 4-hour arrival windows.
-                                    </p>
-                                </div>
-                                <div>
-                                    <h3 className="text-lg text-white font-medium mb-1.5">3. Cost anxiety demands guaranteed upfront scope</h3>
-                                    <p className="font-light text-sm sm:text-base leading-relaxed" style={{ textWrap: "pretty" }}>
-                                        A majority of homeowners delay needed repairs because they fear surprise bills
-                                        <ExpandableCitation
-                                            id="19"
-                                            sourceLabel="IPSOS"
-                                            title="Majority Hit with Unexpected Home Repair Costs"
-                                            fullUrl="https://www.ipsos.com/en-us/news-polls/majority-homeowners-hit-unexpected-home-repair-costs-past-year"
-                                        />
-                                        . Turning a 90-second video into a binding price removes the psychological friction blocking demand.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <PriorArtMatrix />
+                    <h2 className="text-4xl font-serif text-white mb-4 flex items-center gap-4 flex-wrap" style={{ textWrap: "balance" }}>
+                        <span className="w-8 h-px bg-[var(--primary)]/50 block" />
+                        Why Now
+                    </h2>
+                    <div className="mb-8">
+                        <InlineTags tags={tags.readiness} theme="blue" />
+                    </div>
+                    <div className="grid md:grid-cols-3 gap-5 text-white/70">
+                        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 sm:p-6">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] uppercase tracking-widest mb-2">Catalyst 01</div>
+                            <h3 className="text-lg text-white font-medium mb-2">Bidirectional multimodal video &amp; spatial AI</h3>
+                            <p className="font-light text-sm leading-relaxed" style={{ textWrap: "pretty" }}>
+                                Streaming vision-voice models and phone-native LiDAR can watch a live camera feed, measure room dimensions, spot stain severity or access bottlenecks, and ask clarifying questions mid-walkthrough
+                                <ExpandableCitation
+                                    id="9"
+                                    sourceLabel="GOOGLE DEEPMIND"
+                                    title="Real-Time Multimodal Video & Voice Streaming APIs"
+                                    fullUrl="https://ai.google.dev/gemini-api/docs/live"
+                                />
+                                <ExpandableCitation
+                                    id="11"
+                                    sourceLabel="APPLE"
+                                    title="RoomPlan & LiDAR Spatial 3D Room Scanning APIs"
+                                    fullUrl="https://developer.apple.com/augmented-reality/roomplan/"
+                                />
+                                .
+                            </p>
                         </div>
-
-                        <div className="lg:col-span-6">
-                            <div className="bg-[#0a0f14]/80 p-6 sm:p-8 rounded-3xl border border-white/10 backdrop-blur-sm">
-                                <div className="flex flex-col gap-2 mb-6">
-                                    <h2 className="text-3xl font-serif text-white">Business Model</h2>
-                                    <InlineTags tags={tags.product_type} theme="blue" />
-                                </div>
-                                <ul className="grid sm:grid-cols-2 gap-4">
-                                    <li className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
-                                        <div className="text-[var(--secondary)] font-mono text-[10px] mb-1 uppercase tracking-widest">Stream 01</div>
-                                        <strong className="text-white text-sm block mb-1">Scoped Job Take Rate</strong>
-                                        <span className="text-white/60 text-xs leading-relaxed block">
-                                            12% to 15% take on completed jobs. Commands higher margin than raw lead fees because crews receive a booked customer with zero estimator drive time.
-                                        </span>
-                                    </li>
-                                    <li className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
-                                        <div className="text-[var(--secondary)] font-mono text-[10px] mb-1 uppercase tracking-widest">Stream 02</div>
-                                        <strong className="text-white text-sm block mb-1">AI Receptionist SaaS</strong>
-                                        <span className="text-white/60 text-xs leading-relaxed block">
-                                            $199/mo subscription for 24/7 voice/text intake, guided walkthrough links on the provider&apos;s own website, and calendar-aware auto-bidding.
-                                        </span>
-                                    </li>
-                                    <li className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
-                                        <div className="text-[var(--secondary)] font-mono text-[10px] mb-1 uppercase tracking-widest">Stream 03</div>
-                                        <strong className="text-white text-sm block mb-1">Property &amp; Carrier API</strong>
-                                        <span className="text-white/60 text-xs leading-relaxed block">
-                                            Per-scan licensing for multifamily property managers, REITs, and home insurers automating unit turnovers and small-claim payouts.
-                                        </span>
-                                    </li>
-                                    <li className="bg-white/[0.02] border border-white/5 p-4 rounded-2xl">
-                                        <div className="text-[var(--secondary)] font-mono text-[10px] mb-1 uppercase tracking-widest">Stream 04</div>
-                                        <strong className="text-white text-sm block mb-1">Route Density Engine</strong>
-                                        <span className="text-white/60 text-xs leading-relaxed block">
-                                            Dynamic Neighborhood Batching that discounts adjacent bookings on the same street while expanding provider hourly gross profit.
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <UnitEconomicsWidget />
+                        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 sm:p-6">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] uppercase tracking-widest mb-2">Catalyst 02</div>
+                            <h3 className="text-lg text-white font-medium mb-2">Booking digitization outpaced scoping</h3>
+                            <p className="font-light text-sm leading-relaxed" style={{ textWrap: "pretty" }}>
+                                Consumers expect app-speed checkout across every vertical, yet residential quoting remains stuck in voicemail tag, unreturned text threads, and 4-hour estimator arrival windows.
+                            </p>
+                        </div>
+                        <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-5 sm:p-6">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] uppercase tracking-widest mb-2">Catalyst 03</div>
+                            <h3 className="text-lg text-white font-medium mb-2">Cost anxiety demands upfront scope</h3>
+                            <p className="font-light text-sm leading-relaxed" style={{ textWrap: "pretty" }}>
+                                A majority of homeowners delay needed repairs because they fear surprise bills
+                                <ExpandableCitation
+                                    id="19"
+                                    sourceLabel="IPSOS"
+                                    title="Majority Hit with Unexpected Home Repair Costs"
+                                    fullUrl="https://www.ipsos.com/en-us/news-polls/majority-homeowners-hit-unexpected-home-repair-costs-past-year"
+                                />
+                                . Turning a 90-second video into a binding price removes the psychological friction blocking demand.
+                            </p>
                         </div>
                     </div>
+
+                    <PriorArtMatrix />
+                </FadeIn>
+
+                {/* Business Model + UnitEconomicsWidget */}
+                <FadeIn>
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
+                        <h2 className="text-4xl font-serif text-white flex items-center gap-4" style={{ textWrap: "balance" }}>
+                            <span className="w-8 h-px bg-[var(--primary)]/50 block" />
+                            Business Model
+                        </h2>
+                    </div>
+                    <div className="mb-8">
+                        <InlineTags tags={tags.product_type} theme="blue" />
+                    </div>
+
+                    <ul className="grid sm:grid-cols-2 gap-4">
+                        <li className="bg-[#0a0f14]/80 border border-white/10 p-5 sm:p-6 rounded-2xl">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] mb-1.5 uppercase tracking-widest">Stream 01</div>
+                            <strong className="text-white text-base block mb-1.5">Scoped Job Take Rate</strong>
+                            <span className="text-white/65 text-sm leading-relaxed block font-light" style={{ textWrap: "pretty" }}>
+                                12% to 15% take on completed jobs. Commands higher margin than raw lead fees because crews receive a booked customer with zero estimator drive time.
+                            </span>
+                        </li>
+                        <li className="bg-[#0a0f14]/80 border border-white/10 p-5 sm:p-6 rounded-2xl">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] mb-1.5 uppercase tracking-widest">Stream 02</div>
+                            <strong className="text-white text-base block mb-1.5">AI Receptionist SaaS</strong>
+                            <span className="text-white/65 text-sm leading-relaxed block font-light" style={{ textWrap: "pretty" }}>
+                                $199/mo subscription for 24/7 voice/text intake, guided walkthrough links on the provider&apos;s own website, and calendar-aware auto-bidding.
+                            </span>
+                        </li>
+                        <li className="bg-[#0a0f14]/80 border border-white/10 p-5 sm:p-6 rounded-2xl">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] mb-1.5 uppercase tracking-widest">Stream 03</div>
+                            <strong className="text-white text-base block mb-1.5">Property &amp; Carrier API</strong>
+                            <span className="text-white/65 text-sm leading-relaxed block font-light" style={{ textWrap: "pretty" }}>
+                                Per-scan licensing for multifamily property managers, REITs, and home insurers automating unit turnovers and small-claim payouts.
+                            </span>
+                        </li>
+                        <li className="bg-[#0a0f14]/80 border border-white/10 p-5 sm:p-6 rounded-2xl">
+                            <div className="text-[var(--secondary)] font-mono text-[11px] mb-1.5 uppercase tracking-widest">Stream 04</div>
+                            <strong className="text-white text-base block mb-1.5">Route Density Engine</strong>
+                            <span className="text-white/65 text-sm leading-relaxed block font-light" style={{ textWrap: "pretty" }}>
+                                Dynamic Neighborhood Batching that discounts adjacent bookings on the same street while expanding provider hourly gross profit.
+                            </span>
+                        </li>
+                    </ul>
+
+                    <UnitEconomicsWidget />
                 </FadeIn>
 
                 {/* Expandable Scorecards & Stress-Tests */}
