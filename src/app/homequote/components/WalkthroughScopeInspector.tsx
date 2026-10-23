@@ -262,7 +262,7 @@ const SCENARIOS: Scenario[] = [
 export default function WalkthroughScopeInspector({ customerTags }: { customerTags?: string[] }) {
     const [activeScenarioId, setActiveScenarioId] = useState<string>("moveout");
     const [activeHotspotId, setActiveHotspotId] = useState<string>("stain");
-    const [showBids, setShowBids] = useState<boolean>(true);
+    const [showBids, setShowBids] = useState<boolean>(false);
 
     const scenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
     const activeHotspot = scenario.hotspots.find((h) => h.id === activeHotspotId) || scenario.hotspots[0];
@@ -324,8 +324,8 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                 })}
             </div>
 
-            {/* Section 1: Spatial Telemetry Feed (Full Width, Zero Overlap) */}
-            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-6">
+            {/* Section 1: Spatial Telemetry Feed (Compact Interactive View) */}
+            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-4">
                     <div className="flex items-center gap-2.5">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
@@ -333,32 +333,14 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                             01. Guided Spatial Telemetry Feed
                         </span>
                     </div>
-                    <span className="font-mono text-xs text-[var(--secondary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5 whitespace-nowrap">
-                        <Camera className="w-3.5 h-3.5" /> {scenario.walkthroughDuration}
+                    <span className="font-mono text-xs text-[var(--secondary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5">
+                        <Camera className="w-3.5 h-3.5 shrink-0" /> {scenario.walkthroughDuration}
                     </span>
                 </div>
 
                 <p className="text-sm text-white/65 mb-4">{scenario.subtitle}</p>
 
-                {/* Guided Voice Prompts Checklist (Clean 2x2 Grid, Never Overlapped) */}
-                <div className="mb-5">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                        Active Voice &amp; Camera Guidance Prompts
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                        {scenario.prompts.map((prompt, idx) => (
-                            <div
-                                key={idx}
-                                className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
-                            >
-                                <Check className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
-                                <span>{prompt}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* 3 Interactive Spatial Nodes (Structured Grid Instead of Overlapping Absolute Pins) */}
+                {/* 3 Interactive Spatial Nodes */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
                         <span>Extracted LiDAR + Vision Telemetry Nodes</span>
@@ -419,68 +401,42 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                 </AnimatePresence>
             </div>
 
-            {/* Section 2: Compiled Job Object + Autonomous Provider Bids (Full Width, Spacious) */}
+            {/* Section 2: Headline Outcome Summary Strip + Collapsible Deep Schema & Bids */}
             <div className="bg-[#060a0f] border border-[var(--primary)]/30 rounded-2xl p-5 sm:p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--secondary)] block">
+                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--secondary)] block mb-1">
                             02. Compiled Job Object &amp; Instant Dispatch
                         </span>
-                        <span className="text-xs text-white/50">{scenario.jobObject.taskType}</span>
-                    </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
-                        {scenario.jobObject.confidence} Schema Confidence
-                    </span>
-                </div>
-
-                {/* 4-Column Spec Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Area / Spec</span>
-                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.areaSpec}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Labor</span>
-                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.predictedLabor}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Access</span>
-                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.accessConstraint}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Difficulty</span>
-                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.difficulty}</span>
-                    </div>
-                </div>
-
-                {/* BOM + Guaranteed Quote Split Row */}
-                <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
-                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
-                            Required <HoverAcronym acronym="BOM" definition="Bill of Materials and specific equipment required on the service vehicle" theme="blue" /> &amp; Truck Kit
-                        </span>
-                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">{scenario.jobObject.requiredKit}</span>
+                        <div className="text-base sm:text-lg font-medium text-white leading-snug">
+                            {scenario.jobObject.taskType}
+                        </div>
+                        <div className="text-xs font-mono text-white/55 mt-1">
+                            {scenario.jobObject.areaSpec} • {scenario.jobObject.predictedLabor} • {scenario.jobObject.confidence} Schema Confidence
+                        </div>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                    <div className="bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl px-4 py-3 flex flex-col justify-center gap-0.5 overflow-hidden">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
                             Guaranteed Binding Quote
                         </div>
                         <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             ${scenario.jobObject.exactQuote}
                         </div>
-                        <div className="text-xs text-white/60">{scenario.jobObject.varianceCap}</div>
+                        <div className="text-[11px] text-white/60">{scenario.jobObject.varianceCap}</div>
                     </div>
                 </div>
 
-                {/* Expandable Instant-Book Provider Bids */}
-                <div className="border-t border-white/10 pt-4">
+                {/* Expandable Deep Schema, Prompts & Instant-Book Provider Bids */}
+                <div className="border-t border-white/10 mt-4 pt-3.5">
                     <button
                         onClick={() => setShowBids(!showBids)}
                         className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showBids}
                     >
-                        <span>{scenario.providerBids.length} Autonomous Provider Bids Ready for Instant Booking</span>
+                        <span>
+                            {showBids ? "Hide" : "Inspect"} Compiled Job Schema, Camera Prompts &amp; {scenario.providerBids.length} Autonomous Provider Bids
+                        </span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showBids ? "rotate-180" : ""}`} />
                     </button>
 
@@ -493,30 +449,84 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                                 transition={{ duration: 0.25 }}
                                 className="overflow-hidden"
                             >
-                                <div className="grid md:grid-cols-3 gap-3 pt-3">
-                                    {scenario.providerBids.map((bid, i) => (
-                                        <div
-                                            key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
-                                        >
-                                            <div>
-                                                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-2">
-                                                    <span className="text-sm font-medium text-white leading-snug">{bid.name}</span>
-                                                    <span className="text-sm font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold">
-                                                        ${bid.price}
-                                                    </span>
-                                                </div>
-                                                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
-                                                    <span>★ {bid.rating}</span>
-                                                    <span>• {bid.routeDelta}</span>
-                                                    <span className="text-emerald-400">• {bid.slot}</span>
-                                                </div>
-                                            </div>
-                                            <p className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0">
-                                                {bid.agentReason}
-                                            </p>
+                                <div className="pt-4 space-y-4">
+                                    {/* Guided Voice Prompts Checklist */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            Active Voice &amp; Camera Guidance Prompts
                                         </div>
-                                    ))}
+                                        <div className="grid sm:grid-cols-2 gap-2">
+                                            {scenario.prompts.map((prompt, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
+                                                >
+                                                    <Check className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
+                                                    <span>{prompt}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* 4-Column Spec Row */}
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Area / Spec</span>
+                                            <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.areaSpec}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Labor</span>
+                                            <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.predictedLabor}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Access</span>
+                                            <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.accessConstraint}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Difficulty</span>
+                                            <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.difficulty}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Required BOM Box */}
+                                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
+                                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
+                                            Required <HoverAcronym acronym="BOM" definition="Bill of Materials and specific equipment required on the service vehicle" theme="blue" /> &amp; Truck Kit
+                                        </span>
+                                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">{scenario.jobObject.requiredKit}</span>
+                                    </div>
+
+                                    {/* 3 Autonomous Provider Bids */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            {scenario.providerBids.length} Autonomous Provider Bids Ready for Instant Booking
+                                        </div>
+                                        <div className="grid md:grid-cols-3 gap-3">
+                                            {scenario.providerBids.map((bid, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
+                                                >
+                                                    <div>
+                                                        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-2">
+                                                            <span className="text-sm font-medium text-white leading-snug">{bid.name}</span>
+                                                            <span className="text-sm font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold">
+                                                                ${bid.price}
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
+                                                            <span>★ {bid.rating}</span>
+                                                            <span>• {bid.routeDelta}</span>
+                                                            <span className="text-emerald-400">• {bid.slot}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0">
+                                                        {bid.agentReason}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.div>
                         )}

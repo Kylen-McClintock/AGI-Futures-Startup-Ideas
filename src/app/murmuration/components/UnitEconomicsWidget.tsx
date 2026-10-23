@@ -40,75 +40,7 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Full-Width Stacked Sliders */}
-            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Monthly Active Experiment Pods per Startup</span>
-                        <span className="text-[var(--primary)] font-semibold">{activePods} pods</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={2}
-                        max={15}
-                        step={1}
-                        value={activePods}
-                        onChange={(e) => setActivePods(Number(e.target.value))}
-                        className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Monthly Active Experiment Pods"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>2 Pods (Seed Startup)</span>
-                        <span>15 Pods (Series B+ Scaleup)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Verified Revenue / Cost-Saved Uplift per Active Pod</span>
-                        <span className="text-[var(--primary)] font-semibold">
-                            ${(upliftPerPod / 1000).toFixed(0)}k/mo
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={6000}
-                        max={45000}
-                        step={2000}
-                        value={upliftPerPod}
-                        onChange={(e) => setUpliftPerPod(Number(e.target.value))}
-                        className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Verified Revenue or Cost-Saved Uplift per Pod"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>$6k/mo (Single Funnel)</span>
-                        <span>$45k/mo (Core Revenue Loop)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Performance Take Tier (Discounted for Network Graph Contributors)</span>
-                        <span className="text-[var(--primary)] font-semibold">{performanceTakePct}% share</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={10}
-                        max={25}
-                        step={1}
-                        value={performanceTakePct}
-                        onChange={(e) => setPerformanceTakePct(Number(e.target.value))}
-                        className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Performance Take Percentage"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>10% (Full Network Contributor)</span>
-                        <span>25% (Isolated Instance)</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3 Computed Metrics (Full-Width 3-Col Grid) */}
+            {/* 3 Computed Metrics (Visible by Default) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
@@ -147,22 +79,96 @@ export default function UnitEconomicsWidget() {
                 </div>
             </div>
 
-            {/* Expandable Assumptions */}
-            <details className="group border-t border-white/10 pt-3.5 [&_summary::-webkit-details-marker]:hidden">
-                <summary className="list-none cursor-pointer flex items-center justify-between text-xs font-mono text-white/55 hover:text-white/90 transition-colors">
-                    <span>Inspect Underlying Swarm &amp; Attribution Assumptions</span>
-                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+            {/* Expandable Sliders & Underlying Assumptions Drawer */}
+            <details className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/65 hover:text-white transition-colors select-none">
+                    <span>Stress-Test Model Sliders &amp; Attribution Assumptions</span>
+                    <div className="flex items-center gap-2.5">
+                        <span className="text-[11px] text-[var(--primary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-2.5 py-0.5 rounded-full">
+                            {activePods} pods • ${(upliftPerPod / 1000).toFixed(0)}k lift • {performanceTakePct}% share
+                        </span>
+                        <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                    </div>
                 </summary>
-                <div
-                    className="pt-3.5 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed"
-                    style={{ overflowWrap: "break-word" }}
-                >
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Counterfactual Holdout Attribution:</strong> Every deployed swarm pod maintains a 10% to 15% randomized control holdout against the pre-existing human or legacy workflow, ensuring incremental cash-flow lift is statistically verified before performance fees accrue.
-                    </p>
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Network Contributor Discount:</strong> Startups that opt into sharing redacted execution traces and winning weights into the Murmuration Graph qualify for the 10% to 14% take tier (down from 25% for isolated instances) plus equity participation in the network pool.
-                    </p>
+                <div className="p-4 sm:p-5 border-t border-white/10 space-y-5">
+                    <div className="space-y-5">
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Monthly Active Experiment Pods per Startup</span>
+                                <span className="text-[var(--primary)] font-semibold">{activePods} pods</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={2}
+                                max={15}
+                                step={1}
+                                value={activePods}
+                                onChange={(e) => setActivePods(Number(e.target.value))}
+                                className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Monthly Active Experiment Pods"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>2 Pods (Seed Startup)</span>
+                                <span>15 Pods (Series B+ Scaleup)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Verified Revenue / Cost-Saved Uplift per Active Pod</span>
+                                <span className="text-[var(--primary)] font-semibold">
+                                    ${(upliftPerPod / 1000).toFixed(0)}k/mo
+                                </span>
+                            </div>
+                            <input
+                                type="range"
+                                min={6000}
+                                max={45000}
+                                step={2000}
+                                value={upliftPerPod}
+                                onChange={(e) => setUpliftPerPod(Number(e.target.value))}
+                                className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Verified Revenue or Cost-Saved Uplift per Pod"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>$6k/mo (Single Funnel)</span>
+                                <span>$45k/mo (Core Revenue Loop)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Performance Take Tier (Discounted for Network Graph Contributors)</span>
+                                <span className="text-[var(--primary)] font-semibold">{performanceTakePct}% share</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={10}
+                                max={25}
+                                step={1}
+                                value={performanceTakePct}
+                                onChange={(e) => setPerformanceTakePct(Number(e.target.value))}
+                                className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Performance Take Percentage"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>10% (Full Network Contributor)</span>
+                                <span>25% (Isolated Instance)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        className="pt-3.5 border-t border-white/10 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed"
+                        style={{ overflowWrap: "break-word" }}
+                    >
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Counterfactual Holdout Attribution:</strong> Every deployed swarm pod maintains a 10% to 15% randomized control holdout against the pre-existing human or legacy workflow, ensuring incremental cash-flow lift is statistically verified before performance fees accrue.
+                        </p>
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Network Contributor Discount:</strong> Startups that opt into sharing redacted execution traces and winning weights into the Murmuration Graph qualify for the 10% to 14% take tier (down from 25% for isolated instances) plus equity participation in the network pool.
+                        </p>
+                    </div>
                 </div>
             </details>
         </div>

@@ -51,79 +51,7 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Full-Width Stacked Sliders */}
-            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Modular Garage Conversion Kit Price (Flat-Pack Hardware + Beacon)</span>
-                        <span className="text-[var(--secondary)] font-semibold">
-                            ${kitPrice.toLocaleString()}
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={2000}
-                        max={6000}
-                        step={150}
-                        value={kitPrice}
-                        onChange={(e) => setKitPrice(Number(e.target.value))}
-                        className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Modular Conversion Kit Price"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>$2,000 (Social Core Kit)</span>
-                        <span>$6,000 (Flagship Commercial-Grade Kit)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Weekly Open-Door Sessions Hosted per Homeowner</span>
-                        <span className="text-[var(--secondary)] font-semibold">
-                            {weeklySessions} sessions/wk
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={1}
-                        max={7}
-                        step={1}
-                        value={weeklySessions}
-                        onChange={(e) => setWeeklySessions(Number(e.target.value))}
-                        className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Weekly Open-Door Sessions per Host"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>1 Session/wk (Saturday Morning Drop)</span>
-                        <span>7 Sessions/wk (Daily Neighborhood Club)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Average Neighbor Spend &amp; Membership per Open Session</span>
-                        <span className="text-[var(--secondary)] font-semibold">
-                            ${sessionGrossSpend}/session
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={180}
-                        max={750}
-                        step={20}
-                        value={sessionGrossSpend}
-                        onChange={(e) => setSessionGrossSpend(Number(e.target.value))}
-                        className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Average Neighbor Spend or Membership per Session"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>$180 (15 Neighbors @ $12)</span>
-                        <span>$750 (Co-Op Memberships + Pre-Order Drops)</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3 Full-Width Metric Cards */}
+            {/* 3 Full-Width Metric Cards (Visible by Default) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
@@ -162,19 +90,97 @@ export default function UnitEconomicsWidget() {
                 </div>
             </div>
 
-            {/* Expandable Assumptions */}
-            <details className="group border-t border-white/10 pt-3.5 [&_summary::-webkit-details-marker]:hidden">
-                <summary className="list-none cursor-pointer flex items-center justify-between text-xs font-mono text-white/55 hover:text-white/90 transition-colors">
-                    <span>Inspect Underlying Host &amp; Platform Unit Assumptions</span>
-                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+            {/* Expandable Sliders & Underlying Assumptions Drawer */}
+            <details className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/65 hover:text-white transition-colors select-none">
+                    <span>Stress-Test Model Sliders &amp; Host Payback Assumptions</span>
+                    <div className="flex items-center gap-2.5">
+                        <span className="text-[11px] text-[var(--secondary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-2.5 py-0.5 rounded-full">
+                            ${kitPrice.toLocaleString()} kit • {weeklySessions}x/wk • ${sessionGrossSpend}/session
+                        </span>
+                        <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                    </div>
                 </summary>
-                <div className="pt-3.5 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed" style={{ overflowWrap: "break-word" }}>
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Why Hosts Convert in 1 Weekend:</strong> A residential garage already has paid-for square footage, utilities, and street frontage. At {weeklySessions} open sessions per week (${monthlyGrossReceipts.toLocaleString()}/mo gross receipts), the host clears ${hostMonthlyNetIncome.toLocaleString()}/mo net and pays off their ${kitPrice.toLocaleString()} modular kit in {hostPaybackMonths} months.
-                    </p>
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Hardware-Enabled SaaS &amp; Marketplace Flywheel:</strong> Porchfront captures a 42% gross margin on the initial flat-pack kit (${kitGrossProfit.toLocaleString()} Day-1 gross profit covers customer acquisition cost on Day 1), plus 8% Neighbor POS take, $39/mo Studio software, and 15% referral commission when visiting neighbors shop a host&apos;s build.
-                    </p>
+                <div className="p-4 sm:p-5 border-t border-white/10 space-y-5">
+                    <div className="space-y-5">
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Modular Garage Conversion Kit Price (Flat-Pack Hardware + Beacon)</span>
+                                <span className="text-[var(--secondary)] font-semibold">
+                                    ${kitPrice.toLocaleString()}
+                                </span>
+                            </div>
+                            <input
+                                type="range"
+                                min={2000}
+                                max={6000}
+                                step={150}
+                                value={kitPrice}
+                                onChange={(e) => setKitPrice(Number(e.target.value))}
+                                className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Modular Conversion Kit Price"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>$2,000 (Social Core Kit)</span>
+                                <span>$6,000 (Flagship Commercial-Grade Kit)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Weekly Open-Door Sessions Hosted per Homeowner</span>
+                                <span className="text-[var(--secondary)] font-semibold">
+                                    {weeklySessions} sessions/wk
+                                </span>
+                            </div>
+                            <input
+                                type="range"
+                                min={1}
+                                max={7}
+                                step={1}
+                                value={weeklySessions}
+                                onChange={(e) => setWeeklySessions(Number(e.target.value))}
+                                className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Weekly Open-Door Sessions per Host"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>1 Session/wk (Saturday Morning Drop)</span>
+                                <span>7 Sessions/wk (Daily Neighborhood Club)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Average Neighbor Spend &amp; Membership per Open Session</span>
+                                <span className="text-[var(--secondary)] font-semibold">
+                                    ${sessionGrossSpend}/session
+                                </span>
+                            </div>
+                            <input
+                                type="range"
+                                min={180}
+                                max={750}
+                                step={20}
+                                value={sessionGrossSpend}
+                                onChange={(e) => setSessionGrossSpend(Number(e.target.value))}
+                                className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Average Neighbor Spend or Membership per Session"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>$180 (15 Neighbors @ $12)</span>
+                                <span>$750 (Co-Op Memberships + Pre-Order Drops)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pt-3.5 border-t border-white/10 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed" style={{ overflowWrap: "break-word" }}>
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Why Hosts Convert in 1 Weekend:</strong> A residential garage already has paid-for square footage, utilities, and street frontage. At {weeklySessions} open sessions per week (${monthlyGrossReceipts.toLocaleString()}/mo gross receipts), the host clears ${hostMonthlyNetIncome.toLocaleString()}/mo net and pays off their ${kitPrice.toLocaleString()} modular kit in {hostPaybackMonths} months.
+                        </p>
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Hardware-Enabled SaaS &amp; Marketplace Flywheel:</strong> Porchfront captures a 42% gross margin on the initial flat-pack kit (${kitGrossProfit.toLocaleString()} Day-1 gross profit covers customer acquisition cost on Day 1), plus 8% Neighbor POS take, $39/mo Studio software, and 15% referral commission when visiting neighbors shop a host&apos;s build.
+                        </p>
+                    </div>
                 </div>
             </details>
         </div>

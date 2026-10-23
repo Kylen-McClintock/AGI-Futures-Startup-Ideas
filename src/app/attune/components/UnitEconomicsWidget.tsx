@@ -45,73 +45,7 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Full-Width Stacked Sliders */}
-            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Monthly Couple Subscription Price (Full Dyadic Loop + Voice Roleplay)</span>
-                        <span className="text-[var(--secondary)] font-semibold">${monthlyPrice}/mo</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={19}
-                        max={49}
-                        step={2}
-                        value={monthlyPrice}
-                        onChange={(e) => setMonthlyPrice(Number(e.target.value))}
-                        className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Monthly Couple Subscription Price"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>$19/mo (Entry Tier)</span>
-                        <span>$49/mo (Couple + Unlimited Voice)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">12-Month Couple Retention Rate (Anchored by Sunday Sync Ritual)</span>
-                        <span className="text-[var(--secondary)] font-semibold">{retention12Mo}%</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={30}
-                        max={85}
-                        step={2}
-                        value={retention12Mo}
-                        onChange={(e) => setRetention12Mo(Number(e.target.value))}
-                        className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="12-Month Couple Retention Rate"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>30% (Static Quiz Apps)</span>
-                        <span>85% (Weekly Ritual + Memory Graph)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Referral &amp; Gift Viral Coefficient (Friend-to-Friend + Anniversary Gifting)</span>
-                        <span className="text-[var(--secondary)] font-semibold">{viralCoefficient.toFixed(2)}k</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={0.1}
-                        max={0.65}
-                        step={0.05}
-                        value={viralCoefficient}
-                        onChange={(e) => setViralCoefficient(Number(e.target.value))}
-                        className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Referral and Gift Viral Coefficient"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>0.10 (Paid Acquisition Only)</span>
-                        <span>0.65 (High Organic Word-of-Mouth)</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3 Full-Width Metric Cards */}
+            {/* 3 Full-Width Metric Cards (Visible by Default) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
@@ -150,19 +84,91 @@ export default function UnitEconomicsWidget() {
                 </div>
             </div>
 
-            {/* Expandable Underlying Assumptions */}
-            <details className="group border-t border-white/10 pt-3.5 [&_summary::-webkit-details-marker]:hidden">
-                <summary className="list-none cursor-pointer flex items-center justify-between text-xs font-mono text-white/55 hover:text-white/90 transition-colors">
-                    <span>Inspect Underlying Unit &amp; Retention Assumptions</span>
-                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+            {/* Expandable Sliders & Underlying Assumptions Drawer */}
+            <details className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/65 hover:text-white transition-colors select-none">
+                    <span>Stress-Test Model Sliders &amp; Retention Assumptions</span>
+                    <div className="flex items-center gap-2.5">
+                        <span className="text-[11px] text-[var(--secondary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-2.5 py-0.5 rounded-full">
+                            ${monthlyPrice}/mo • {retention12Mo}% 12m ret • {viralCoefficient.toFixed(2)}k
+                        </span>
+                        <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                    </div>
                 </summary>
-                <div className="pt-3.5 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed">
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">AI Inference &amp; Voice COGS ($2.15/mo per couple):</strong> Covers 4 weekly dyadic sync analyses, daily personalized micro-prompt generation, encrypted vector memory updates, and ~12 minutes/month of sub-second voice roleplay rehearsal.
-                    </p>
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Why Dyadic Retention Beats Single-Player Wellness Apps:</strong> Single-player meditation or journaling apps suffer high 60-day churn because quitting is invisible. Attune anchors to a shared Sunday couple ritual where both partners see tangible weekly progress, creating bilateral accountability and deep memory lock-in.
-                    </p>
+                <div className="p-4 sm:p-5 border-t border-white/10 space-y-5">
+                    <div className="space-y-5">
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Monthly Couple Subscription Price (Full Dyadic Loop + Voice Roleplay)</span>
+                                <span className="text-[var(--secondary)] font-semibold">${monthlyPrice}/mo</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={19}
+                                max={49}
+                                step={2}
+                                value={monthlyPrice}
+                                onChange={(e) => setMonthlyPrice(Number(e.target.value))}
+                                className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Monthly Couple Subscription Price"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>$19/mo (Entry Tier)</span>
+                                <span>$49/mo (Couple + Unlimited Voice)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">12-Month Couple Retention Rate (Anchored by Sunday Sync Ritual)</span>
+                                <span className="text-[var(--secondary)] font-semibold">{retention12Mo}%</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={30}
+                                max={85}
+                                step={2}
+                                value={retention12Mo}
+                                onChange={(e) => setRetention12Mo(Number(e.target.value))}
+                                className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="12-Month Couple Retention Rate"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>30% (Static Quiz Apps)</span>
+                                <span>85% (Weekly Ritual + Memory Graph)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Referral &amp; Gift Viral Coefficient (Friend-to-Friend + Anniversary Gifting)</span>
+                                <span className="text-[var(--secondary)] font-semibold">{viralCoefficient.toFixed(2)}k</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={0.1}
+                                max={0.65}
+                                step={0.05}
+                                value={viralCoefficient}
+                                onChange={(e) => setViralCoefficient(Number(e.target.value))}
+                                className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Referral and Gift Viral Coefficient"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>0.10 (Paid Acquisition Only)</span>
+                                <span>0.65 (High Organic Word-of-Mouth)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="pt-3.5 border-t border-white/10 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed">
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">AI Inference &amp; Voice COGS ($2.15/mo per couple):</strong> Covers 4 weekly dyadic sync analyses, daily personalized micro-prompt generation, encrypted vector memory updates, and ~12 minutes/month of sub-second voice roleplay rehearsal.
+                        </p>
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Why Dyadic Retention Beats Single-Player Wellness Apps:</strong> Single-player meditation or journaling apps suffer high 60-day churn because quitting is invisible. Attune anchors to a shared Sunday couple ritual where both partners see tangible weekly progress, creating bilateral accountability and deep memory lock-in.
+                        </p>
+                    </div>
                 </div>
             </details>
         </div>

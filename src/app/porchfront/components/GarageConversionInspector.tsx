@@ -280,7 +280,7 @@ const ARCHETYPES: ArchetypeScenario[] = [
 export default function GarageConversionInspector({ customerTags }: { customerTags?: string[] }) {
     const [activeArchetypeId, setActiveArchetypeId] = useState<string>("espresso-bakery");
     const [activeNodeId, setActiveNodeId] = useState<string>("bifold");
-    const [showConfigs, setShowConfigs] = useState<boolean>(true);
+    const [showConfigs, setShowConfigs] = useState<boolean>(false);
 
     const archetype = ARCHETYPES.find((a) => a.id === activeArchetypeId) || ARCHETYPES[0];
     const activeNode = archetype.nodes.find((n) => n.id === activeNodeId) || archetype.nodes[0];
@@ -342,8 +342,8 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                 })}
             </div>
 
-            {/* Section 1: Spatial & Compliance Node Feed (Full Width, Zero Overlap) */}
-            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-6">
+            {/* Section 1: Spatial & Compliance Node Feed (Compact Interactive View) */}
+            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-4">
                     <div className="flex items-center gap-2.5">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
@@ -351,8 +351,8 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                             01. Spatial Fit &amp; Local Compliance Telemetry
                         </span>
                     </div>
-                    <span className="font-mono text-xs text-[var(--secondary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5 whitespace-nowrap">
-                        <Compass className="w-3.5 h-3.5" /> {archetype.scanDuration}
+                    <span className="font-mono text-xs text-[var(--secondary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5">
+                        <Compass className="w-3.5 h-3.5 shrink-0" /> {archetype.scanDuration}
                     </span>
                 </div>
 
@@ -360,25 +360,7 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                     {archetype.subtitle}
                 </p>
 
-                {/* Automated Pre-Flight Verification Checklist (Clean 2x2 Grid, Never Overlapped) */}
-                <div className="mb-5">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                        Automated Garage Scan &amp; Ordinance Verification Checks
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                        {archetype.checklist.map((checkItem, idx) => (
-                            <div
-                                key={idx}
-                                className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
-                            >
-                                <Check className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
-                                <span>{checkItem}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* 3 Selectable Spatial/Compliance Nodes in a 3-Column Grid (Zero Overlapping Pins) */}
+                {/* 3 Selectable Spatial/Compliance Nodes */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
                         <span>Selectable Spatial &amp; Compliance Nodes</span>
@@ -441,74 +423,44 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                 </AnimatePresence>
             </div>
 
-            {/* Section 2: Compiled PorchfrontNodeSpec + Neighborhood Launch Configurations */}
+            {/* Section 2: Headline Outcome Summary Strip + Collapsible Deep Spec & Launch Configurations */}
             <div className="bg-[#060a0f] border border-[var(--primary)]/30 rounded-2xl p-5 sm:p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--secondary)] block">
+                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--secondary)] block mb-1">
                             02. Compiled PorchfrontNodeSpec &amp; 1-Tap Launch
                         </span>
-                        <span className="text-xs text-white/50">{archetype.porchfrontNodeSpec.archetypeClass}</span>
-                    </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
-                        {archetype.porchfrontNodeSpec.schemaConfidence} Spec Confidence
-                    </span>
-                </div>
-
-                {/* 4-Column Spec Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Footprint</span>
-                        <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.footprintSpec}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Install Time</span>
-                        <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.installTime}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Zoning Status</span>
-                        <span className="text-emerald-400 text-sm leading-snug">{archetype.porchfrontNodeSpec.zoningComplianceStatus}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Payback</span>
-                        <span className="text-[var(--secondary)] text-sm font-semibold leading-snug">
-                            {archetype.porchfrontNodeSpec.projectedPaybackMonths}
-                        </span>
-                    </div>
-                </div>
-
-                {/* Kit BOM + Turnkey Kit Cost Split Row */}
-                <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
-                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
-                            Compiled Kit <HoverAcronym acronym="BOM" definition="Bill of Materials: flat-pack architectural hardware, acoustic baffles, and PorchHours beacon shipped in one pallet" theme="amber" /> &amp; Hardware Spec
-                        </span>
-                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">
-                            {archetype.porchfrontNodeSpec.kitBOM}
-                        </span>
+                        <div className="text-base sm:text-lg font-medium text-white leading-snug">
+                            {archetype.porchfrontNodeSpec.archetypeClass}
+                        </div>
+                        <div className="text-xs font-mono text-white/55 mt-1">
+                            {archetype.porchfrontNodeSpec.zoningComplianceStatus} • Payback: {archetype.porchfrontNodeSpec.projectedPaybackMonths}
+                        </div>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                    <div className="bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl px-4 py-3 flex flex-col justify-center gap-0.5 overflow-hidden">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
                             Turnkey Installed Kit
                         </div>
                         <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             ${archetype.porchfrontNodeSpec.turnkeyKitCost.toLocaleString()}
                         </div>
-                        <div className="text-xs text-white/60">
-                            {archetype.porchfrontNodeSpec.revenueGuardrail}
+                        <div className="text-[11px] text-white/60">
+                            Install: {archetype.porchfrontNodeSpec.installTime}
                         </div>
                     </div>
                 </div>
 
-                {/* Expandable 3 Neighborhood Launch Configurations */}
-                <div className="border-t border-white/10 pt-4">
+                {/* Expandable Ordinance Checklist, Node Schema & 3 Neighborhood Launch Configurations */}
+                <div className="border-t border-white/10 mt-4 pt-3.5">
                     <button
                         onClick={() => setShowConfigs(!showConfigs)}
                         className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showConfigs}
                     >
-                        <span>Compare {archetype.launchConfigs.length} Neighborhood Launch Configurations</span>
+                        <span>
+                            {showConfigs ? "Hide" : "Inspect"} Ordinance Checklist, Hardware BOM &amp; {archetype.launchConfigs.length} Launch Configurations
+                        </span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showConfigs ? "rotate-180" : ""}`} />
                     </button>
 
@@ -521,30 +473,88 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                                 transition={{ duration: 0.25 }}
                                 className="overflow-hidden"
                             >
-                                <div className="grid md:grid-cols-3 gap-3 pt-3">
-                                    {archetype.launchConfigs.map((cfg, i) => (
-                                        <div
-                                            key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
-                                        >
-                                            <div>
-                                                <div className="flex flex-col items-start gap-1 mb-2">
-                                                    <span className="text-sm font-medium text-white leading-snug">{cfg.name}</span>
-                                                    <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold leading-snug">
-                                                        ${cfg.kitPrice.toLocaleString()} Kit
-                                                    </span>
-                                                </div>
-                                                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
-                                                    <span>{cfg.tierBadge}</span>
-                                                    <span>• {cfg.installWindow}</span>
-                                                    <span className="text-emerald-400">• {cfg.monthlyHostNet}</span>
-                                                </div>
-                                            </div>
-                                            <p className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0" style={{ textWrap: "pretty" }}>
-                                                {cfg.configurationNotes}
-                                            </p>
+                                <div className="pt-4 space-y-4">
+                                    {/* Automated Pre-Flight Verification Checklist */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            Automated Garage Scan &amp; Ordinance Verification Checks
                                         </div>
-                                    ))}
+                                        <div className="grid sm:grid-cols-2 gap-2">
+                                            {archetype.checklist.map((checkItem, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
+                                                >
+                                                    <Check className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
+                                                    <span>{checkItem}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* 4-Column Spec Row */}
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Footprint</span>
+                                            <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.footprintSpec}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Install Time</span>
+                                            <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.installTime}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Zoning Status</span>
+                                            <span className="text-emerald-400 text-sm leading-snug">{archetype.porchfrontNodeSpec.zoningComplianceStatus}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Payback</span>
+                                            <span className="text-[var(--secondary)] text-sm font-semibold leading-snug">
+                                                {archetype.porchfrontNodeSpec.projectedPaybackMonths}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    {/* Kit BOM */}
+                                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
+                                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
+                                            Compiled Kit <HoverAcronym acronym="BOM" definition="Bill of Materials: flat-pack architectural hardware, acoustic baffles, and PorchHours beacon shipped in one pallet" theme="amber" /> &amp; Hardware Spec
+                                        </span>
+                                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">
+                                            {archetype.porchfrontNodeSpec.kitBOM}
+                                        </span>
+                                    </div>
+
+                                    {/* 3 Neighborhood Launch Configurations */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            Compare {archetype.launchConfigs.length} Neighborhood Launch Configurations
+                                        </div>
+                                        <div className="grid md:grid-cols-3 gap-3">
+                                            {archetype.launchConfigs.map((cfg, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
+                                                >
+                                                    <div>
+                                                        <div className="flex flex-col items-start gap-1 mb-2">
+                                                            <span className="text-sm font-medium text-white leading-snug">{cfg.name}</span>
+                                                            <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold leading-snug">
+                                                                ${cfg.kitPrice.toLocaleString()} Kit
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
+                                                            <span>{cfg.tierBadge}</span>
+                                                            <span>• {cfg.installWindow}</span>
+                                                            <span className="text-emerald-400">• {cfg.monthlyHostNet}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0" style={{ textWrap: "pretty" }}>
+                                                        {cfg.configurationNotes}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.div>
                         )}

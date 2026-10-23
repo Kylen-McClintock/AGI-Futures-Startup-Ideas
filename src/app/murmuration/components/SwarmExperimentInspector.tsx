@@ -278,7 +278,7 @@ const MISSIONS: SwarmMission[] = [
 export default function SwarmExperimentInspector({ customerTags }: { customerTags?: string[] }) {
     const [activeMissionId, setActiveMissionId] = useState<string>("outbound");
     const [activeNodeId, setActiveNodeId] = useState<string>("intent");
-    const [showPods, setShowPods] = useState<boolean>(true);
+    const [showPods, setShowPods] = useState<boolean>(false);
 
     const mission = MISSIONS.find((m) => m.id === activeMissionId) || MISSIONS[0];
     const activeNode = mission.nodes.find((n) => n.id === activeNodeId) || mission.nodes[0];
@@ -340,8 +340,8 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                 })}
             </div>
 
-            {/* Section 1: Telemetry & Sandbox Guardrails Feed (Full Width, Zero Overlap) */}
-            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-6">
+            {/* Section 1: Telemetry Feed (Compact Interactive View) */}
+            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-4">
                     <div className="flex items-center gap-2.5">
                         <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
@@ -349,32 +349,14 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                             01. Live Workflow Telemetry &amp; Shadow Replay
                         </span>
                     </div>
-                    <span className="font-mono text-xs text-[var(--primary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5 whitespace-nowrap">
-                        <Activity className="w-3.5 h-3.5" /> {mission.replayWindow}
+                    <span className="font-mono text-xs text-[var(--primary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5">
+                        <Activity className="w-3.5 h-3.5 shrink-0" /> {mission.replayWindow}
                     </span>
                 </div>
 
                 <p className="text-sm text-white/65 mb-4" style={{ textWrap: "pretty" }}>{mission.subtitle}</p>
 
-                {/* Sandbox Safety & Statistical Guardrails Checklist (Clean 2x2 Grid, Never Overlapped) */}
-                <div className="mb-5">
-                    <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                        Active Sandbox Guardrails &amp; Holdout Controls
-                    </div>
-                    <div className="grid sm:grid-cols-2 gap-2">
-                        {mission.guardrails.map((guardrail, idx) => (
-                            <div
-                                key={idx}
-                                className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
-                            >
-                                <Check className="w-3.5 h-3.5 text-[var(--primary)] shrink-0" />
-                                <span>{guardrail}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* 3 Interactive Telemetry Nodes (Structured 3-Column Grid, Zero Overlap) */}
+                {/* 3 Interactive Telemetry Nodes */}
                 <div className="mb-4">
                     <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
                         <span>Bottleneck &amp; Opportunity Telemetry Nodes</span>
@@ -438,68 +420,42 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                 </AnimatePresence>
             </div>
 
-            {/* Section 2: Compiled SwarmExperimentObject + Autonomous Agent Pod Allocations */}
+            {/* Section 2: Headline Outcome Summary Strip + Collapsible Deep Schema & Pods */}
             <div className="bg-[#060a0f] border border-[var(--primary)]/30 rounded-2xl p-5 sm:p-6">
-                <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-5">
+                <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] block">
+                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--primary)] block mb-1">
                             02. Compiled SwarmExperimentObject &amp; Pod Allocation
                         </span>
-                        <span className="text-xs text-white/50">{mission.experimentObject.missionType}</span>
-                    </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--primary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
-                        {mission.experimentObject.confidence} Simulation Fit
-                    </span>
-                </div>
-
-                {/* 4-Column Spec Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Baseline</span>
-                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.baselineMetric}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Shadow Replay</span>
-                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.sandboxReplaySize}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Simulated Lift</span>
-                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.predictedUplift}</span>
-                    </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
-                        <span className="text-white/40 block text-[10px] uppercase mb-1">Kill Gate</span>
-                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.killThreshold}</span>
-                    </div>
-                </div>
-
-                {/* Stack + Verified Monthly Uplift Split Row */}
-                <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
-                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
-                            Required <HoverAcronym acronym="MCP" definition="Model Context Protocol connectors and sandboxed tool bindings for agent execution" theme="primary" /> &amp; Sandbox Bindings
-                        </span>
-                        <span className="text-sm font-mono text-[var(--primary)] leading-relaxed">{mission.experimentObject.requiredStack}</span>
+                        <div className="text-base sm:text-lg font-medium text-white leading-snug">
+                            {mission.experimentObject.missionType}
+                        </div>
+                        <div className="text-xs font-mono text-white/55 mt-1">
+                            {mission.experimentObject.predictedUplift} • {mission.experimentObject.confidence} Simulation Fit
+                        </div>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                    <div className="bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl px-4 py-3 flex flex-col justify-center gap-0.5 overflow-hidden">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--primary)]">
                             Verified Net Monthly Uplift
                         </div>
                         <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             +${(mission.experimentObject.verifiedMonthlyGain / 1000).toFixed(1)}k/mo
                         </div>
-                        <div className="text-xs text-white/60">{mission.experimentObject.holdoutSplit}</div>
+                        <div className="text-[11px] text-white/60">{mission.experimentObject.holdoutSplit}</div>
                     </div>
                 </div>
 
-                {/* Expandable Competing Agent Pod Allocations */}
-                <div className="border-t border-white/10 pt-4">
+                {/* Expandable Guardrails, Experiment Schema & Competing Agent Pod Allocations */}
+                <div className="border-t border-white/10 mt-4 pt-3.5">
                     <button
                         onClick={() => setShowPods(!showPods)}
                         className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--primary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showPods}
                     >
-                        <span>{mission.agentPodBids.length} Competing Agent Pod Topologies Benchmarked in Shadow Mode</span>
+                        <span>
+                            {showPods ? "Hide" : "Inspect"} Sandbox Guardrails, Experiment Schema &amp; {mission.agentPodBids.length} Competing Agent Pods
+                        </span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showPods ? "rotate-180" : ""}`} />
                     </button>
 
@@ -512,33 +468,87 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                                 transition={{ duration: 0.25 }}
                                 className="overflow-hidden"
                             >
-                                <div className="grid md:grid-cols-3 gap-3 pt-3">
-                                    {mission.agentPodBids.map((pod, i) => (
-                                        <div
-                                            key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
-                                        >
-                                            <div>
-                                                <div className="flex flex-col items-start gap-1 mb-2">
-                                                    <span className="text-sm font-medium text-white leading-snug">{pod.name}</span>
-                                                    <span className="text-xs font-mono text-[var(--primary)] bg-[var(--primary)]/10 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/25 font-semibold leading-snug">
-                                                        {pod.projectedLift}
-                                                    </span>
-                                                </div>
-                                                <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
-                                                    <span>{pod.architecture}</span>
-                                                    <span>• {pod.latencyDelta}</span>
-                                                    <span className="text-emerald-400">• {pod.computeBudget}</span>
-                                                </div>
-                                            </div>
-                                            <p
-                                                className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0"
-                                                style={{ textWrap: "pretty" }}
-                                            >
-                                                {pod.routingReason}
-                                            </p>
+                                <div className="pt-4 space-y-4">
+                                    {/* Sandbox Safety & Statistical Guardrails Checklist */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            Active Sandbox Guardrails &amp; Holdout Controls
                                         </div>
-                                    ))}
+                                        <div className="grid sm:grid-cols-2 gap-2">
+                                            {mission.guardrails.map((guardrail, idx) => (
+                                                <div
+                                                    key={idx}
+                                                    className="flex items-center gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2 rounded-lg font-mono"
+                                                >
+                                                    <Check className="w-3.5 h-3.5 text-[var(--primary)] shrink-0" />
+                                                    <span>{guardrail}</span>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    {/* 4-Column Spec Row */}
+                                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono">
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Baseline</span>
+                                            <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.baselineMetric}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Shadow Replay</span>
+                                            <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.sandboxReplaySize}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Simulated Lift</span>
+                                            <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.predictedUplift}</span>
+                                        </div>
+                                        <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                            <span className="text-white/40 block text-[10px] uppercase mb-1">Kill Gate</span>
+                                            <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.killThreshold}</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Required MCP & Sandbox Bindings */}
+                                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
+                                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
+                                            Required <HoverAcronym acronym="MCP" definition="Model Context Protocol connectors and sandboxed tool bindings for agent execution" theme="primary" /> &amp; Sandbox Bindings
+                                        </span>
+                                        <span className="text-sm font-mono text-[var(--primary)] leading-relaxed">{mission.experimentObject.requiredStack}</span>
+                                    </div>
+
+                                    {/* 3 Competing Agent Pod Topologies */}
+                                    <div>
+                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
+                                            {mission.agentPodBids.length} Competing Agent Pod Topologies Benchmarked in Shadow Mode
+                                        </div>
+                                        <div className="grid md:grid-cols-3 gap-3">
+                                            {mission.agentPodBids.map((pod, i) => (
+                                                <div
+                                                    key={i}
+                                                    className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
+                                                >
+                                                    <div>
+                                                        <div className="flex flex-col items-start gap-1 mb-2">
+                                                            <span className="text-sm font-medium text-white leading-snug">{pod.name}</span>
+                                                            <span className="text-xs font-mono text-[var(--primary)] bg-[var(--primary)]/10 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/25 font-semibold leading-snug">
+                                                                {pod.projectedLift}
+                                                            </span>
+                                                        </div>
+                                                        <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
+                                                            <span>{pod.architecture}</span>
+                                                            <span>• {pod.latencyDelta}</span>
+                                                            <span className="text-emerald-400">• {pod.computeBudget}</span>
+                                                        </div>
+                                                    </div>
+                                                    <p
+                                                        className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0"
+                                                        style={{ textWrap: "pretty" }}
+                                                    >
+                                                        {pod.routingReason}
+                                                    </p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
                                 </div>
                             </motion.div>
                         )}

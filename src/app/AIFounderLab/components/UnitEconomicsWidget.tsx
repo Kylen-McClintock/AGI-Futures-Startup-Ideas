@@ -43,73 +43,7 @@ export function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Full-Width Stacked Sliders */}
-            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Fellows per Annual Cohort ({totalPods} Active Venture Pods)</span>
-                        <span className="text-[var(--secondary)] font-semibold">{fellowsPerCohort} fellows</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={60}
-                        max={300}
-                        step={20}
-                        value={fellowsPerCohort}
-                        onChange={(e) => setFellowsPerCohort(Number(e.target.value))}
-                        className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Fellows per Annual Cohort"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>60 Fellows (1 Campus Hub)</span>
-                        <span>300 Fellows (Multi-Hub Network)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Studio Equity Stake % in Graduated Spinouts</span>
-                        <span className="text-[var(--secondary)] font-semibold">{studioEquityPct}% stake</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={10}
-                        max={25}
-                        step={1}
-                        value={studioEquityPct}
-                        onChange={(e) => setStudioEquityPct(Number(e.target.value))}
-                        className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Studio Equity Stake Percentage in Spinouts"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>10% (Light Residency)</span>
-                        <span>25% (Full Co-Build + Seed Check)</span>
-                    </div>
-                </div>
-
-                <div>
-                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/75">Pods Reaching Seed Spinout or HoldCo Breakeven</span>
-                        <span className="text-[var(--secondary)] font-semibold">{breakevenPodPct}% ({viablePods} pods)</span>
-                    </div>
-                    <input
-                        type="range"
-                        min={15}
-                        max={50}
-                        step={5}
-                        value={breakevenPodPct}
-                        onChange={(e) => setBreakevenPodPct(Number(e.target.value))}
-                        className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
-                        aria-label="Percent of Pods Reaching Seed or Cash-Flow Breakeven"
-                    />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
-                        <span>15% (Conservative Selection)</span>
-                        <span>50% (High Hit-Rate)</span>
-                    </div>
-                </div>
-            </div>
-
-            {/* 3 Full-Width Metric Cards */}
+            {/* 3 Full-Width Metric Cards (Visible by Default) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
                 <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
@@ -148,22 +82,94 @@ export function UnitEconomicsWidget() {
                 </div>
             </div>
 
-            {/* Expandable Underlying Studio Assumptions */}
-            <details className="group border-t border-white/10 pt-3.5 [&_summary::-webkit-details-marker]:hidden">
-                <summary className="list-none cursor-pointer flex items-center justify-between text-xs font-mono text-white/55 hover:text-white/90 transition-colors">
-                    <span>Inspect Underlying Campus &amp; Spinout Unit Assumptions</span>
-                    <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+            {/* Expandable Sliders & Underlying Studio Assumptions Drawer */}
+            <details className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/65 hover:text-white transition-colors select-none">
+                    <span>Stress-Test Model Sliders &amp; Spinout Assumptions</span>
+                    <div className="flex items-center gap-2.5">
+                        <span className="text-[11px] text-[var(--secondary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-2.5 py-0.5 rounded-full">
+                            {fellowsPerCohort} fellows • {studioEquityPct}% equity • {breakevenPodPct}% hit-rate
+                        </span>
+                        <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                    </div>
                 </summary>
-                <div
-                    className="pt-3.5 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed"
-                    style={{ overflowWrap: "break-word" }}
-                >
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Downside Protection via Operating Cash Flow:</strong> Unlike pure pre-seed funds that wait 8 to 10 years for liquidity, AI Founder Lab covers campus lease blocks (~$550/mo off-season university dorm wholesale rate) and inference compute from day one through enterprise prototype sponsorships, premium residency tiers, and cash-flowing micro-SaaS pods inside the studio HoldCo.
-                    </p>
-                    <p className="m-0" style={{ textWrap: "pretty" }}>
-                        • <strong className="text-white/90">Power-Law Upside via Pre-Negotiated Spinout Equity:</strong> Because AFL provides co-founder matching, agentic build harnesses, initial B2B design partners, and the first $250k to $500k seed check, the studio earns a 12% to 20% common-equivalent stake at formation cost rather than competing in priced Series A auctions.
-                    </p>
+                <div className="p-4 sm:p-5 border-t border-white/10 space-y-5">
+                    <div className="space-y-5">
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Fellows per Annual Cohort ({totalPods} Active Venture Pods)</span>
+                                <span className="text-[var(--secondary)] font-semibold">{fellowsPerCohort} fellows</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={60}
+                                max={300}
+                                step={20}
+                                value={fellowsPerCohort}
+                                onChange={(e) => setFellowsPerCohort(Number(e.target.value))}
+                                className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Fellows per Annual Cohort"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>60 Fellows (1 Campus Hub)</span>
+                                <span>300 Fellows (Multi-Hub Network)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Studio Equity Stake % in Graduated Spinouts</span>
+                                <span className="text-[var(--secondary)] font-semibold">{studioEquityPct}% stake</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={10}
+                                max={25}
+                                step={1}
+                                value={studioEquityPct}
+                                onChange={(e) => setStudioEquityPct(Number(e.target.value))}
+                                className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Studio Equity Stake Percentage in Spinouts"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>10% (Light Residency)</span>
+                                <span>25% (Full Co-Build + Seed Check)</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                                <span className="text-white/75">Pods Reaching Seed Spinout or HoldCo Breakeven</span>
+                                <span className="text-[var(--secondary)] font-semibold">{breakevenPodPct}% ({viablePods} pods)</span>
+                            </div>
+                            <input
+                                type="range"
+                                min={15}
+                                max={50}
+                                step={5}
+                                value={breakevenPodPct}
+                                onChange={(e) => setBreakevenPodPct(Number(e.target.value))}
+                                className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
+                                aria-label="Percent of Pods Reaching Seed or Cash-Flow Breakeven"
+                            />
+                            <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                                <span>15% (Conservative Selection)</span>
+                                <span>50% (High Hit-Rate)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        className="pt-3.5 border-t border-white/10 text-xs sm:text-sm text-white/70 space-y-2 font-light leading-relaxed"
+                        style={{ overflowWrap: "break-word" }}
+                    >
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Downside Protection via Operating Cash Flow:</strong> Unlike pure pre-seed funds that wait 8 to 10 years for liquidity, AI Founder Lab covers campus lease blocks (~$550/mo off-season university dorm wholesale rate) and inference compute from day one through enterprise prototype sponsorships, premium residency tiers, and cash-flowing micro-SaaS pods inside the studio HoldCo.
+                        </p>
+                        <p className="m-0" style={{ textWrap: "pretty" }}>
+                            • <strong className="text-white/90">Power-Law Upside via Pre-Negotiated Spinout Equity:</strong> Because AFL provides co-founder matching, agentic build harnesses, initial B2B design partners, and the first $250k to $500k seed check, the studio earns a 12% to 20% common-equivalent stake at formation cost rather than competing in priced Series A auctions.
+                        </p>
+                    </div>
                 </div>
             </details>
         </div>

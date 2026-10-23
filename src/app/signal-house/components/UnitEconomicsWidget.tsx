@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calculator } from "lucide-react";
+import { Calculator, ChevronDown } from "lucide-react";
 
 export default function UnitEconomicsWidget() {
     const [activeMembersPerRoom, setActiveMembersPerRoom] = useState(250);
@@ -42,99 +42,112 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            <div className="space-y-5 mb-8">
-                <div>
-                    <div className="flex justify-between items-center text-xs sm:text-sm mb-2 gap-2">
-                        <span className="text-white/75">Active Monthly Practitioners per Canonical Niche Room</span>
-                        <span className="font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
-                            {activeMembersPerRoom} members
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={50}
-                        max={1000}
-                        step={25}
-                        value={activeMembersPerRoom}
-                        onChange={(e) => setActiveMembersPerRoom(Number(e.target.value))}
-                        className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
-                    />
-                </div>
-
-                <div>
-                    <div className="flex justify-between items-center text-xs sm:text-sm mb-2 gap-2">
-                        <span className="text-white/75">Signal House Pro Subscription (Cross-Device Shield + Personal Room)</span>
-                        <span className="font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
-                            ${proPrice}/mo
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={12}
-                        max={49}
-                        step={1}
-                        value={proPrice}
-                        onChange={(e) => setProPrice(Number(e.target.value))}
-                        className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
-                    />
-                </div>
-
-                <div>
-                    <div className="flex justify-between items-center text-xs sm:text-sm mb-2 gap-2">
-                        <span className="text-white/75">Host Curated Tribe Pass (80% to Host / 20% Platform Take)</span>
-                        <span className="font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
-                            ${hostPassPrice}/mo
-                        </span>
-                    </div>
-                    <input
-                        type="range"
-                        min={15}
-                        max={120}
-                        step={5}
-                        value={hostPassPrice}
-                        onChange={(e) => setHostPassPrice(Number(e.target.value))}
-                        className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
-                    />
-                </div>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
-                <div className="bg-black/40 border border-white/10 rounded-2xl p-4">
+            {/* 3 Headline Metrics Visible by Default */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 mb-5">
+                <div className="bg-black/40 border border-white/10 rounded-2xl p-4 overflow-hidden">
                     <div className="text-[10px] font-mono uppercase tracking-widest text-white/45 mb-1">
                         Platform Net Rev / Room
                     </div>
-                    <div className="text-2xl sm:text-3xl font-serif text-white whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-serif text-white">
                         ${platformNetPerRoom.toLocaleString()}/mo
                     </div>
-                    <div className="text-[11px] text-white/50 mt-1">
+                    <div className="text-[11px] text-white/50 mt-1 leading-snug">
                         After ${infraCostPerRoom}/mo presence &amp; audio infra
                     </div>
                 </div>
 
-                <div className="bg-black/40 border border-white/10 rounded-2xl p-4">
+                <div className="bg-black/40 border border-white/10 rounded-2xl p-4 overflow-hidden">
                     <div className="text-[10px] font-mono uppercase tracking-widest text-white/45 mb-1">
                         Host Monthly Payout
                     </div>
-                    <div className="text-2xl sm:text-3xl font-serif text-[var(--secondary)] whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-serif text-[var(--secondary)]">
                         ${hostNetMonthlyPayout.toLocaleString()}/mo
                     </div>
-                    <div className="text-[11px] text-white/50 mt-1">
+                    <div className="text-[11px] text-white/50 mt-1 leading-snug">
                         From {nichePassHolders} credentialed tribe members
                     </div>
                 </div>
 
-                <div className="bg-[var(--primary)]/15 border border-[var(--primary)]/35 rounded-2xl p-4">
+                <div className="bg-[var(--primary)]/15 border border-[var(--primary)]/35 rounded-2xl p-4 overflow-hidden">
                     <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
                         Net ARR @ 1,000 Niche Rooms
                     </div>
-                    <div className="text-2xl sm:text-3xl font-serif text-emerald-300 whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-serif text-emerald-300">
                         ${annualPlatformARR1000Rooms}M/yr
                     </div>
-                    <div className="text-[11px] text-white/70 mt-1">
+                    <div className="text-[11px] text-white/70 mt-1 leading-snug">
                         Zero paid CAC via host-led organic distribution
                     </div>
                 </div>
             </div>
+
+            {/* Expandable Sliders & Assumptions Drawer */}
+            <details className="group bg-black/40 border border-white/10 rounded-2xl overflow-hidden [&_summary::-webkit-details-marker]:hidden">
+                <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 flex flex-wrap items-center justify-between gap-2 text-xs font-mono text-white/65 hover:text-white transition-colors select-none">
+                    <span>Stress-Test Model Sliders &amp; Room Assumptions</span>
+                    <div className="flex items-center gap-2.5">
+                        <span className="text-[11px] text-[var(--secondary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-2.5 py-0.5 rounded-full">
+                            {activeMembersPerRoom} members • ${proPrice} Pro • ${hostPassPrice} Pass
+                        </span>
+                        <ChevronDown className="w-4 h-4 group-open:rotate-180 transition-transform duration-200 shrink-0" />
+                    </div>
+                </summary>
+                <div className="p-4 sm:p-5 border-t border-white/10 space-y-5">
+                    <div>
+                        <div className="flex flex-wrap justify-between items-center text-xs sm:text-sm mb-2 gap-2">
+                            <span className="text-white/75">Active Monthly Practitioners per Canonical Niche Room</span>
+                            <span className="font-mono text-[var(--secondary)] font-semibold">
+                                {activeMembersPerRoom} members
+                            </span>
+                        </div>
+                        <input
+                            type="range"
+                            min={50}
+                            max={1000}
+                            step={25}
+                            value={activeMembersPerRoom}
+                            onChange={(e) => setActiveMembersPerRoom(Number(e.target.value))}
+                            className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
+                        />
+                    </div>
+
+                    <div>
+                        <div className="flex flex-wrap justify-between items-center text-xs sm:text-sm mb-2 gap-2">
+                            <span className="text-white/75">Signal House Pro Subscription (Cross-Device Shield + Personal Room)</span>
+                            <span className="font-mono text-[var(--secondary)] font-semibold">
+                                ${proPrice}/mo
+                            </span>
+                        </div>
+                        <input
+                            type="range"
+                            min={12}
+                            max={49}
+                            step={1}
+                            value={proPrice}
+                            onChange={(e) => setProPrice(Number(e.target.value))}
+                            className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
+                        />
+                    </div>
+
+                    <div>
+                        <div className="flex flex-wrap justify-between items-center text-xs sm:text-sm mb-2 gap-2">
+                            <span className="text-white/75">Host Curated Tribe Pass (80% to Host / 20% Platform Take)</span>
+                            <span className="font-mono text-[var(--secondary)] font-semibold">
+                                ${hostPassPrice}/mo
+                            </span>
+                        </div>
+                        <input
+                            type="range"
+                            min={15}
+                            max={120}
+                            step={5}
+                            value={hostPassPrice}
+                            onChange={(e) => setHostPassPrice(Number(e.target.value))}
+                            className="w-full accent-[var(--primary)] bg-white/10 h-1.5 rounded-lg cursor-pointer"
+                        />
+                    </div>
+                </div>
+            </details>
         </div>
     );
 }

@@ -74,38 +74,38 @@ export function PriorArtMatrix() {
                 </h3>
             </div>
 
-            <div className="space-y-3">
-                {ERAS.map((item, idx) => {
+            <div className="space-y-2.5">
+                {ERAS.map((item) => {
                     const isActive = item.status === "active";
                     return (
                         <details
                             key={item.id}
                             name="afl-prior-art"
-                            open={idx === 3}
                             className={`group rounded-2xl border transition-all overflow-hidden [&_summary::-webkit-details-marker]:hidden ${
                                 isActive
                                     ? "bg-[var(--primary)]/10 border-[var(--primary)]/40"
                                     : "bg-black/40 border-white/10 hover:border-white/20"
                             }`}
                         >
-                            <summary className="list-none cursor-pointer p-5 sm:p-6 select-none">
-                                {/* Top Metadata Row: Wave Label on Left, Status Pill + Chevron on Right */}
-                                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
-                                    <div className="flex items-center gap-2">
+                            <summary className="list-none cursor-pointer px-4 sm:px-5 py-3.5 sm:py-4 select-none">
+                                <div className="flex flex-wrap items-center justify-between gap-2.5">
+                                    <div className="flex flex-wrap items-center gap-2 min-w-0">
                                         {isActive ? (
                                             <CheckCircle2 className="w-4 h-4 text-[var(--secondary)] shrink-0" />
                                         ) : (
                                             <AlertTriangle className="w-4 h-4 text-amber-400/80 shrink-0" />
                                         )}
                                         <span className="font-mono text-xs uppercase tracking-wider text-white/50">
-                                            {item.era}
+                                            {item.era}:
                                         </span>
-                                        <span className="text-xs text-white/35 font-mono">• {item.examples}</span>
+                                        <span className="text-white font-medium text-sm sm:text-base leading-snug">
+                                            {item.archetype}
+                                        </span>
                                     </div>
 
                                     <div className="flex items-center gap-2.5 shrink-0">
                                         <span
-                                            className={`text-[10px] font-mono uppercase tracking-widest px-3 py-1 rounded-full border whitespace-nowrap ${
+                                            className={`text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 rounded-full border leading-snug ${
                                                 isActive
                                                     ? "bg-[var(--primary)]/20 text-[var(--tertiary)] border-[var(--primary)]/40"
                                                     : "bg-amber-500/10 text-amber-300/90 border-amber-500/20"
@@ -116,37 +116,37 @@ export function PriorArtMatrix() {
                                         <ChevronDown className="w-4 h-4 text-white/40 group-open:rotate-180 transition-transform duration-200 shrink-0" />
                                     </div>
                                 </div>
-
-                                {/* 100% Full-Width Title & Summary Underneath */}
-                                <div className="w-full">
-                                    <div className="text-white font-medium text-base sm:text-lg mb-1">
-                                        {item.archetype}
-                                    </div>
-                                    <p className="text-sm sm:text-base text-white/70 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
-                                        {item.summary}
-                                    </p>
-                                </div>
                             </summary>
 
                             <div
-                                className="px-5 sm:px-6 pb-5 pt-3 border-t border-white/5 grid sm:grid-cols-2 gap-4 text-sm"
+                                className="px-4 sm:px-5 pb-5 pt-3.5 border-t border-white/5 space-y-3.5 text-sm"
                                 style={{ overflowWrap: "break-word" }}
                             >
-                                <div className="bg-black/40 p-4 rounded-xl border border-white/5">
-                                    <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-1.5">
-                                        Mechanism &amp; Structural Bottleneck
+                                <div>
+                                    <div className="text-xs text-white/40 font-mono mb-1">
+                                        Examples: {item.examples}
                                     </div>
-                                    <p className="text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
-                                        {item.structuralBottleneck}
+                                    <p className="text-sm sm:text-base text-white/75 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                        {item.summary}
                                     </p>
                                 </div>
-                                <div className="bg-black/40 p-4 rounded-xl border border-white/5">
-                                    <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--secondary)] mb-1.5">
-                                        Talent &amp; Unit Economics Outcome
+                                <div className="grid sm:grid-cols-2 gap-4">
+                                    <div className="bg-black/40 p-4 rounded-xl border border-white/5">
+                                        <div className="font-mono text-[10px] uppercase tracking-widest text-white/40 mb-1.5">
+                                            Mechanism &amp; Structural Bottleneck
+                                        </div>
+                                        <p className="text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                            {item.structuralBottleneck}
+                                        </p>
                                     </div>
-                                    <p className="text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
-                                        {item.unitEconomicsImpact}
-                                    </p>
+                                    <div className="bg-black/40 p-4 rounded-xl border border-white/5">
+                                        <div className="font-mono text-[10px] uppercase tracking-widest text-[var(--secondary)] mb-1.5">
+                                            Talent &amp; Unit Economics Outcome
+                                        </div>
+                                        <p className="text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                            {item.unitEconomicsImpact}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </details>
