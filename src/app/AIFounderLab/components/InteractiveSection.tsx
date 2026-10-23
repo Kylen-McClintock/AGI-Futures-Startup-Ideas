@@ -1,62 +1,127 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown, Sparkles } from "lucide-react";
+import { useState, useRef, useEffect, useId } from "react";
+import { ChevronDown } from "lucide-react";
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-interface InteractiveSectionProps {
-    title: string;
-    defaultVisibleText: string;
-    expandableText: React.ReactNode;
-    icon?: React.ReactNode;
+function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
 }
 
-export function InteractiveSection({ title, defaultVisibleText, expandableText, icon }: InteractiveSectionProps) {
-    const [isExpanded, setIsExpanded] = useState(false);
+interface Props {
+    title: string;
+    score?: number;
+    scoreLabel?: string;
+    summary: string | React.ReactNode;
+    children: React.ReactNode;
+    className?: string;
+    defaultExpanded?: boolean;
+}
+
+export function InteractiveSection({
+    title,
+    score,
+    scoreLabel,
+    summary,
+    children,
+    className,
+    defaultExpanded = false
+}: Props) {
+    const [expanded, setExpanded] = useState(defaultExpanded);
+    const panelRef = useRef<HTMLDivElement>(null);
+    const panelId = useId();
+
+    useEffect(() => {
+        const el = panelRef.current;
+        if (!el) return;
+
+        // Feature detection and fallback for hidden="until-found"
+        if (!("onbeforematch" in HTMLElement.prototype)) {
+            if (!expanded) {
+                el.removeAttribute("hidden");
+                setExpanded(true);
+            }
+            return;
+        }
+
+        const handleBeforeMatch = () => {
+            setExpanded(true);
+        };
+
+        el.addEventListener("beforematch", handleBeforeMatch);
+        return () => {
+            el.removeEventListener("beforematch", handleBeforeMatch);
+        };
+    }, [expanded]);
 
     return (
-        <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--primary)]/5 to-transparent z-0 pointer-events-none" />
+        <div
+            className={cn(
+                "bg-neutral-900/60 backdrop-blur-md rounded-3xl border border-white/10 overflow-hidden transition-all duration-300 hover:border-[var(--primary)]/40 hover:shadow-[0_0_30px_rgba(249,115,22,0.08)]",
+                className
+            )}
+        >
+            <button
+                onClick={() => setExpanded(!expanded)}
+                aria-expanded={expanded}
+                aria-controls={panelId}
+                className="w-full text-left p-6 sm:p-8 flex flex-col gap-3 group cursor-pointer"
+            >
+                <div className="flex flex-wrap items-center justify-between gap-4 w-full">
+                    <h3 className="text-2xl sm:text-3xl text-white font-serif" style={{ textWrap: "balance" }}>
+                        {title}
+                    </h3>
 
-            <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4 text-[var(--primary)]">
-                    {icon || <Sparkles className="w-5 h-5" />}
-                    <h3 className="text-lg font-mono uppercase tracking-widest">{title}</h3>
+                    {score !== undefined ? (
+                        <div className="flex-shrink-0 inline-flex items-center gap-3 bg-[var(--primary)]/15 px-4 py-2 rounded-2xl border border-[var(--primary)]/20 transition-colors group-hover:border-[var(--primary)]/40">
+                            <div className="flex items-baseline gap-2">
+                                <span className="text-2xl sm:text-3xl font-light text-[var(--secondary)] leading-none whitespace-nowrap">
+                                    {score}
+                                    <span className="text-sm text-[var(--secondary)]/50">/100</span>
+                                </span>
+                                {scoreLabel && (
+                                    <span className="text-[11px] font-mono uppercase tracking-widest text-[var(--tertiary)]/80 whitespace-nowrap">
+                                        {scoreLabel}
+                                    </span>
+                                )}
+                            </div>
+                            <ChevronDown
+                                className={`w-5 h-5 text-[var(--secondary)] transition-transform duration-300 ${
+                                    expanded ? "rotate-180" : ""
+                                }`}
+                            />
+                        </div>
+                    ) : (
+                        <div className="flex-shrink-0 w-9 h-9 rounded-full bg-[var(--primary)]/15 border border-[var(--primary)]/30 flex items-center justify-center group-hover:bg-[var(--primary)]/25 transition-colors">
+                            <ChevronDown
+                                className={`w-5 h-5 text-[var(--secondary)] transition-transform duration-300 ${
+                                    expanded ? "rotate-180" : ""
+                                }`}
+                            />
+                        </div>
+                    )}
                 </div>
 
-                <p className="text-lg text-white/90 leading-relaxed font-light mb-4">
-                    {defaultVisibleText}
-                </p>
+                <div className="text-white/70 font-light leading-relaxed text-base sm:text-lg w-full" style={{ textWrap: "pretty" }}>
+                    {summary}
+                </div>
+            </button>
 
-                <AnimatePresence>
-                    {isExpanded && (
-                        <motion.div
-                            initial={{ opacity: 0, height: 0 }}
-                            animate={{ opacity: 1, height: "auto" }}
-                            exit={{ opacity: 0, height: 0 }}
-                            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-                            className="overflow-hidden"
-                        >
-                            <div className="pt-4 border-t border-white/10 text-white/70 space-y-4 leading-relaxed font-light">
-                                {expandableText}
-                            </div>
-                        </motion.div>
-                    )}
-                </AnimatePresence>
-
-                <button
-                    onClick={() => setIsExpanded(!isExpanded)}
-                    className="mt-6 flex items-center text-sm font-mono uppercase tracking-widest text-[var(--primary)]/80 hover:text-[var(--primary)] transition-colors"
+            <div
+                ref={panelRef}
+                id={panelId}
+                {...(!expanded ? ({ hidden: "until-found" } as any) : {})}
+            >
+                <div
+                    className="border-t border-white/10 bg-neutral-950/85 p-6 sm:p-8 pt-6 text-white/75 leading-relaxed"
+                    style={{ overflowWrap: "break-word" }}
                 >
-                    {isExpanded ? "Collapse Details" : "Expand Details"}
-                    <motion.div
-                        animate={{ rotate: isExpanded ? 180 : 0 }}
-                        transition={{ duration: 0.3 }}
-                    >
-                        <ChevronDown className="w-4 h-4 ml-2" />
-                    </motion.div>
-                </button>
+                    {children}
+                </div>
             </div>
         </div>
     );
 }
+
+export default InteractiveSection;

@@ -35,9 +35,9 @@ export function CoreLoopVisual() {
                             className="absolute top-0 left-1/2 -translate-x-1/2 h-1/2 origin-bottom flex flex-col items-center justify-start pb-4"
                             style={{ transform: `translateX(-50%) rotate(${angle}deg)` }}
                         >
-                            <div className="w-16 h-16 rounded-full glass-strong shadow-[0_0_20px_rgba(16,185,129,0.2)] border-[var(--primary)]/30 flex items-center justify-center relative">
+                            <div className="w-16 h-16 rounded-full glass-strong shadow-[0_0_20px_rgba(244,63,94,0.25)] border-[var(--primary)]/30 flex items-center justify-center relative">
                                 <div className="absolute inset-1 rounded-full border border-[var(--secondary)]/20 animate-pulse" />
-                                <div className="w-2 h-2 rounded-full bg-[var(--secondary)] shadow-[0_0_10px_#34d399]" />
+                                <div className="w-2 h-2 rounded-full bg-[var(--secondary)] shadow-[0_0_10px_#fb7185]" />
                             </div>
                         </div>
                     );
@@ -60,7 +60,7 @@ export function CoreLoopVisual() {
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             transition={{ delay: index * 0.15 }}
-                            className="px-4 py-2 glass rounded-full text-xs md:text-sm font-medium text-[var(--primary)] whitespace-nowrap border-[var(--primary)]/20 shadow-lg"
+                            className="px-4 py-2 glass rounded-full text-xs md:text-sm font-medium text-[var(--secondary)] whitespace-nowrap border-[var(--primary)]/20 shadow-lg"
                         >
                             {step}
                         </motion.div>
@@ -70,8 +70,8 @@ export function CoreLoopVisual() {
 
             {/* Center piece */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-24 h-24 rounded-full bg-[var(--primary)]/80 border border-[var(--primary)]/30 flex items-center justify-center shadow-[0_0_40px_rgba(16,185,129,0.2)]">
-                    <span className="font-serif text-lg text-[var(--primary)] tracking-wider">ATTUNE</span>
+                <div className="w-24 h-24 rounded-full bg-[var(--primary)]/80 border border-[var(--primary)]/30 flex items-center justify-center shadow-[0_0_40px_rgba(244,63,94,0.3)]">
+                    <span className="font-serif text-lg text-white tracking-wider">ATTUNE</span>
                 </div>
             </div>
         </div>
