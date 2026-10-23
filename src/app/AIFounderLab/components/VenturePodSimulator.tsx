@@ -387,18 +387,18 @@ export function VenturePodSimulator({ customerTags }: { customerTags?: string[] 
                                 <button
                                     key={node.id}
                                     onClick={() => setActiveNodeId(node.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
                                             ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(249,115,22,0.25)]"
                                             : "bg-neutral-950/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 w-full mb-1.5">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
                                         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--secondary)]">
-                                            <ScanLine className="w-3 h-3" />
+                                            <ScanLine className="w-3 h-3 shrink-0" />
                                             {node.code}
                                         </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                                             {node.verificationScore}
                                         </span>
                                     </div>
@@ -424,7 +424,7 @@ export function VenturePodSimulator({ customerTags }: { customerTags?: string[] 
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
                                 {activeNode.label}
                             </span>
-                            <span className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-400">
                                 Telemetry Integrity: {activeNode.verificationScore}
                             </span>
                         </div>
@@ -447,56 +447,54 @@ export function VenturePodSimulator({ customerTags }: { customerTags?: string[] 
                         </span>
                         <span className="text-xs text-white/50">{track.fellowProofObject.ventureName}</span>
                     </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
                         {track.fellowProofObject.graduationReadiness} Spinout Readiness
                     </span>
                 </div>
 
                 {/* 4-Column Proof Spec Row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">
                             Verified <HoverAcronym acronym="MRR" definition="Monthly Recurring Revenue verified directly via read-only Stripe and bank webhooks" theme="orange" />
                         </span>
-                        <span className="text-white/95 text-sm whitespace-nowrap">{track.fellowProofObject.verifiedMRR}</span>
+                        <span className="text-white/95 text-sm leading-snug">{track.fellowProofObject.verifiedMRR}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Shipped Code</span>
-                        <span className="text-white/95 text-sm whitespace-nowrap">{track.fellowProofObject.shippedPRs}</span>
+                        <span className="text-white/95 text-sm leading-snug">{track.fellowProofObject.shippedPRs}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Customer Discovery</span>
-                        <span className="text-white/95 text-sm whitespace-nowrap">{track.fellowProofObject.customerCalls}</span>
+                        <span className="text-white/95 text-sm leading-snug">{track.fellowProofObject.customerCalls}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">
                             Earned Equity (<HoverAcronym acronym="bps" definition="Basis points of company ownership (100 bps = 1% equity stake)" theme="orange" />)
                         </span>
-                        <span className="text-[var(--secondary)] text-sm font-semibold whitespace-nowrap">{track.fellowProofObject.earnedEquityBps}</span>
+                        <span className="text-[var(--secondary)] text-sm font-semibold leading-snug">{track.fellowProofObject.earnedEquityBps}</span>
                     </div>
                 </div>
 
                 {/* Leverage + Valuation Split Row */}
                 <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center">
+                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
                         <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
                             AI Agent Leverage &amp; Student Debt Comparison
                         </span>
-                        <span className="text-sm font-mono text-[var(--secondary)]">
+                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">
                             {track.fellowProofObject.agentLeverageRatio} • {track.fellowProofObject.tuitionDebt} (vs. $200k+ 4-Yr Degree)
                         </span>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex items-center justify-between gap-4">
-                        <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
-                                Spinout / HoldCo Outcome
-                            </div>
-                            <div className="text-xs text-white/60 mt-0.5">Pre-committed Studio Terms</div>
+                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
+                            Spinout / HoldCo Outcome
                         </div>
-                        <div className="text-xl sm:text-2xl font-serif text-white font-medium shrink-0 whitespace-nowrap">
+                        <div className="text-lg sm:text-xl font-serif text-white font-medium leading-snug">
                             {track.fellowProofObject.seedSpinoutValuation}
                         </div>
+                        <div className="text-xs text-white/60">Pre-committed Studio Terms</div>
                     </div>
                 </div>
 
@@ -504,7 +502,7 @@ export function VenturePodSimulator({ customerTags }: { customerTags?: string[] 
                 <div className="border-t border-white/10 pt-4">
                     <button
                         onClick={() => setShowMilestones(!showMilestones)}
-                        className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
+                        className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showMilestones}
                     >
                         <span>Compare {track.spinoutMilestones.length} Graduation &amp; Spinout Capital Gates</span>
@@ -524,12 +522,12 @@ export function VenturePodSimulator({ customerTags }: { customerTags?: string[] 
                                     {track.spinoutMilestones.map((milestone, i) => (
                                         <div
                                             key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between"
+                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                         >
                                             <div>
-                                                <div className="flex items-start justify-between gap-2 mb-1.5">
-                                                    <span className="text-sm font-medium text-white">{milestone.name}</span>
-                                                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 shrink-0 whitespace-nowrap">
+                                                <div className="flex flex-col items-start gap-1.5 mb-2">
+                                                    <span className="text-sm font-medium text-white leading-snug">{milestone.name}</span>
+                                                    <span className="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 leading-snug">
                                                         {milestone.statusBadge}
                                                     </span>
                                                 </div>

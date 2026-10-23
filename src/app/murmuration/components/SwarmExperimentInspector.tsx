@@ -387,18 +387,18 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                                 <button
                                     key={node.id}
                                     onClick={() => setActiveNodeId(node.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
                                             ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(33,222,154,0.25)]"
                                             : "bg-[#09101a]/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 w-full mb-1.5">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
                                         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--primary)]">
-                                            <ScanLine className="w-3 h-3" />
+                                            <ScanLine className="w-3 h-3 shrink-0" />
                                             {node.code}
                                         </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                                             {node.confidence}
                                         </span>
                                     </div>
@@ -424,7 +424,7 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--primary)] font-semibold">
                                 {activeNode.code}: {activeNode.label}
                             </span>
-                            <span className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-400">
                                 Prior Match Confidence: {activeNode.confidence}
                             </span>
                         </div>
@@ -447,50 +447,48 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                         </span>
                         <span className="text-xs text-white/50">{mission.experimentObject.missionType}</span>
                     </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--primary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-[var(--primary)]/20 text-[var(--primary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
                         {mission.experimentObject.confidence} Simulation Fit
                     </span>
                 </div>
 
                 {/* 4-Column Spec Row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Baseline</span>
-                        <span className="text-white/95 text-sm">{mission.experimentObject.baselineMetric}</span>
+                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.baselineMetric}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Shadow Replay</span>
-                        <span className="text-white/95 text-sm">{mission.experimentObject.sandboxReplaySize}</span>
+                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.sandboxReplaySize}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Simulated Lift</span>
-                        <span className="text-white/95 text-sm">{mission.experimentObject.predictedUplift}</span>
+                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.predictedUplift}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Kill Gate</span>
-                        <span className="text-white/95 text-sm">{mission.experimentObject.killThreshold}</span>
+                        <span className="text-white/95 text-sm leading-snug">{mission.experimentObject.killThreshold}</span>
                     </div>
                 </div>
 
                 {/* Stack + Verified Monthly Uplift Split Row */}
                 <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center">
+                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
                         <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
                             Required <HoverAcronym acronym="MCP" definition="Model Context Protocol connectors and sandboxed tool bindings for agent execution" theme="primary" /> &amp; Sandbox Bindings
                         </span>
-                        <span className="text-sm font-mono text-[var(--primary)]">{mission.experimentObject.requiredStack}</span>
+                        <span className="text-sm font-mono text-[var(--primary)] leading-relaxed">{mission.experimentObject.requiredStack}</span>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex items-center justify-between gap-4">
-                        <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--primary)]">
-                                Verified Net Monthly Uplift
-                            </div>
-                            <div className="text-xs text-white/60 mt-0.5">{mission.experimentObject.holdoutSplit}</div>
+                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--primary)]">
+                            Verified Net Monthly Uplift
                         </div>
-                        <div className="text-2xl sm:text-3xl font-serif text-white font-medium shrink-0 whitespace-nowrap">
+                        <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             +${(mission.experimentObject.verifiedMonthlyGain / 1000).toFixed(1)}k/mo
                         </div>
+                        <div className="text-xs text-white/60">{mission.experimentObject.holdoutSplit}</div>
                     </div>
                 </div>
 
@@ -498,7 +496,7 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                 <div className="border-t border-white/10 pt-4">
                     <button
                         onClick={() => setShowPods(!showPods)}
-                        className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[var(--primary)] hover:text-white transition-colors py-1 cursor-pointer"
+                        className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--primary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showPods}
                     >
                         <span>{mission.agentPodBids.length} Competing Agent Pod Topologies Benchmarked in Shadow Mode</span>
@@ -518,12 +516,12 @@ export default function SwarmExperimentInspector({ customerTags }: { customerTag
                                     {mission.agentPodBids.map((pod, i) => (
                                         <div
                                             key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between"
+                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                         >
                                             <div>
-                                                <div className="flex items-start justify-between gap-2 mb-1.5">
-                                                    <span className="text-sm font-medium text-white">{pod.name}</span>
-                                                    <span className="text-sm font-mono text-[var(--primary)] font-semibold shrink-0 whitespace-nowrap">
+                                                <div className="flex flex-col items-start gap-1 mb-2">
+                                                    <span className="text-sm font-medium text-white leading-snug">{pod.name}</span>
+                                                    <span className="text-xs font-mono text-[var(--primary)] bg-[var(--primary)]/10 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/25 font-semibold leading-snug">
                                                         {pod.projectedLift}
                                                     </span>
                                                 </div>

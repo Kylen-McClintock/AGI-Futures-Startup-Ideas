@@ -43,12 +43,12 @@ export function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Interactive Sliders */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
+            {/* 3 Full-Width Stacked Sliders */}
+            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Fellows per Annual Cohort</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">{fellowsPerCohort} fellows</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Fellows per Annual Cohort ({totalPods} Active Venture Pods)</span>
+                        <span className="text-[var(--secondary)] font-semibold">{fellowsPerCohort} fellows</span>
                     </div>
                     <input
                         type="range"
@@ -60,17 +60,16 @@ export function UnitEconomicsWidget() {
                         className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Fellows per Annual Cohort"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">60 (1 Campus)</span>
-                        <span className="whitespace-nowrap">{totalPods} Venture Pods</span>
-                        <span className="whitespace-nowrap">300 (Multi-Hub)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>60 Fellows (1 Campus Hub)</span>
+                        <span>300 Fellows (Multi-Hub Network)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Studio Equity Stake %</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">{studioEquityPct}% stake</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Studio Equity Stake % in Graduated Spinouts</span>
+                        <span className="text-[var(--secondary)] font-semibold">{studioEquityPct}% stake</span>
                     </div>
                     <input
                         type="range"
@@ -82,16 +81,16 @@ export function UnitEconomicsWidget() {
                         className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Studio Equity Stake Percentage in Spinouts"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">10% (Light)</span>
-                        <span className="whitespace-nowrap">25% (Full Co-Build)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>10% (Light Residency)</span>
+                        <span>25% (Full Co-Build + Seed Check)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Pods Reaching Seed / Cash-Flow</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">{breakevenPodPct}% ({viablePods} pods)</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Pods Reaching Seed Spinout or HoldCo Breakeven</span>
+                        <span className="text-[var(--secondary)] font-semibold">{breakevenPodPct}% ({viablePods} pods)</span>
                     </div>
                     <input
                         type="range"
@@ -103,48 +102,48 @@ export function UnitEconomicsWidget() {
                         className="w-full accent-[#f97316] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Percent of Pods Reaching Seed or Cash-Flow Breakeven"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">15% (Conservative)</span>
-                        <span className="whitespace-nowrap">50% (High Hit-Rate)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>15% (Conservative Selection)</span>
+                        <span>50% (High Hit-Rate)</span>
                     </div>
                 </div>
             </div>
 
             {/* 3 Full-Width Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Fellow Debt vs. University
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-emerald-400 font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-emerald-400 font-semibold">
                         $0 Debt
                     </div>
-                    <div className="text-xs text-white/50 mt-1">
-                        Saves <span className="text-white/80 font-mono whitespace-nowrap">${cohortDebtSavedM}M</span> vs. 4-yr degree debt
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
+                        Saves <span className="text-white/80 font-mono">${cohortDebtSavedM}M</span> vs. 4-yr degree debt
                     </div>
                 </div>
 
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Annual Cash-Flow + Tuition Rev
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold">
                         ${grossCohortCashM.toFixed(2)}M / yr
                     </div>
-                    <div className="text-xs text-white/50 mt-1">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         HoldCo rev-share + enterprise briefs
                     </div>
                 </div>
 
-                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5">
+                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-[var(--tertiary)] mb-1.5">
                         Expected Studio Carry Value
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${expectedCarryValueM}M
                     </div>
-                    <div className="text-xs text-white/60 mt-1">
-                        Across <span className="whitespace-nowrap">{viablePods} spinouts</span> (<HoverAcronym acronym="MOIC" definition="Multiple on Invested Capital across studio seed checks and campus operating costs" theme="orange" /> ~5.4x)
+                    <div className="text-xs text-white/60 mt-1 leading-snug">
+                        Across {viablePods} spinouts (<HoverAcronym acronym="MOIC" definition="Multiple on Invested Capital across studio seed checks and campus operating costs" theme="orange" /> ~5.4x)
                     </div>
                 </div>
             </div>

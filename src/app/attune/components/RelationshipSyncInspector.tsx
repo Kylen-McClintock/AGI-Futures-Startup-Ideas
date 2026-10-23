@@ -383,18 +383,18 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                 <button
                                     key={sig.id}
                                     onClick={() => setActiveSignalId(sig.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
                                             ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(244,63,94,0.25)]"
                                             : "bg-[#09101a]/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 w-full mb-1.5">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
                                         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--secondary)]">
-                                            <Activity className="w-3 h-3" />
+                                            <Activity className="w-3 h-3 shrink-0" />
                                             {sig.code}
                                         </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                                             {sig.confidence}
                                         </span>
                                     </div>
@@ -419,7 +419,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
                                 {activeSignal.code}: {activeSignal.label}
                             </span>
-                            <span className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-400">
                                 Pattern Match Confidence: {activeSignal.confidence}
                             </span>
                         </div>
@@ -443,25 +443,25 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                         </span>
                         <span className="text-xs text-white/50">{scenario.coachingObject.dyadicPattern}</span>
                     </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
                         {scenario.coachingObject.confidence} Graph Alignment
                     </span>
                 </div>
 
                 {/* Structured Memory Graph Update + Translated Partner Need */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs mb-3">
-                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 font-mono block text-[10px] uppercase mb-1">
                             Structured Memory Graph Update
                         </span>
-                        <span className="text-white/95 text-sm font-mono block mb-1.5">
+                        <span className="text-white/95 text-sm font-mono block mb-1.5 break-words">
                             {scenario.coachingObject.memoryGraphUpdate}
                         </span>
                         <span className="text-white/55 text-xs block">
                             Privacy: {scenario.coachingObject.privacyBoundary}
                         </span>
                     </div>
-                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 font-mono block text-[10px] uppercase mb-1">
                             Translated Partner Need (De-Escalated)
                         </span>
@@ -473,7 +473,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
 
                 {/* Concrete Micro-Reps + Target Impact Split Row */}
                 <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center">
+                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
                         <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
                             Concrete Weekly Micro-Reps &amp; Voice Rehearsal
                         </span>
@@ -485,16 +485,14 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                         </span>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex items-center justify-between gap-4">
-                        <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
-                                Predicted Weekly Lift
-                            </div>
-                            <div className="text-xs text-white/60 mt-0.5">{scenario.coachingObject.verificationMetric}</div>
+                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
+                            Predicted Weekly Lift
                         </div>
-                        <div className="text-xl sm:text-2xl font-serif text-white font-medium shrink-0 whitespace-nowrap">
+                        <div className="text-lg sm:text-xl font-serif text-white font-medium leading-snug">
                             {scenario.coachingObject.weeklyTargetScore}
                         </div>
+                        <div className="text-xs text-white/60">{scenario.coachingObject.verificationMetric}</div>
                     </div>
                 </div>
 
@@ -502,7 +500,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                 <div className="border-t border-white/10 pt-4">
                     <button
                         onClick={() => setShowPrompts(!showPrompts)}
-                        className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
+                        className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showPrompts}
                     >
                         <span>{scenario.dailyPrompts.length} Timed Daily Behavioral Micro-Prompts Scheduled</span>
@@ -522,15 +520,15 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                     {scenario.dailyPrompts.map((prompt, i) => (
                                         <div
                                             key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between"
+                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                         >
                                             <div>
-                                                <div className="flex items-center justify-between gap-2 mb-1.5">
-                                                    <span className="inline-flex items-center gap-1.5 text-xs font-mono text-white font-semibold whitespace-nowrap">
-                                                        <Clock className="w-3 h-3 text-[var(--secondary)]" />
+                                                <div className="flex flex-col items-start gap-1.5 mb-2">
+                                                    <span className="inline-flex items-center gap-1.5 text-xs font-mono text-white font-semibold">
+                                                        <Clock className="w-3 h-3 text-[var(--secondary)] shrink-0" />
                                                         {prompt.dayTime}
                                                     </span>
-                                                    <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2 py-0.5 rounded-full border border-[var(--primary)]/30 whitespace-nowrap">
+                                                    <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 leading-snug">
                                                         {prompt.channel}
                                                     </span>
                                                 </div>

@@ -51,12 +51,12 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Sliders */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
+            {/* 3 Full-Width Stacked Sliders */}
+            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Modular Conversion Kit Price</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Modular Garage Conversion Kit Price (Flat-Pack Hardware + Beacon)</span>
+                        <span className="text-[var(--secondary)] font-semibold">
                             ${kitPrice.toLocaleString()}
                         </span>
                     </div>
@@ -70,16 +70,16 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Modular Conversion Kit Price"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">$2,000 (Social Core)</span>
-                        <span className="whitespace-nowrap">$6,000 (Flagship)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>$2,000 (Social Core Kit)</span>
+                        <span>$6,000 (Flagship Commercial-Grade Kit)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Weekly Open-Door Sessions</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Weekly Open-Door Sessions Hosted per Homeowner</span>
+                        <span className="text-[var(--secondary)] font-semibold">
                             {weeklySessions} sessions/wk
                         </span>
                     </div>
@@ -93,17 +93,17 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Weekly Open-Door Sessions per Host"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">1 / wk (Weekend Drop)</span>
-                        <span className="whitespace-nowrap">7 / wk (Daily Club)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>1 Session/wk (Saturday Morning Drop)</span>
+                        <span>7 Sessions/wk (Daily Neighborhood Club)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Avg. Neighbor Spend / Session</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">
-                            ${sessionGrossSpend}
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Average Neighbor Spend &amp; Membership per Open Session</span>
+                        <span className="text-[var(--secondary)] font-semibold">
+                            ${sessionGrossSpend}/session
                         </span>
                     </div>
                     <input
@@ -116,47 +116,47 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f59e0b] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Average Neighbor Spend or Membership per Session"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">$180 (15 Neighbors)</span>
-                        <span className="whitespace-nowrap">$750 (Co-Op / Drops)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>$180 (15 Neighbors @ $12)</span>
+                        <span>$750 (Co-Op Memberships + Pre-Order Drops)</span>
                     </div>
                 </div>
             </div>
 
             {/* 3 Full-Width Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Host Monthly Net Income
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${hostMonthlyNetIncome.toLocaleString()}/mo
                     </div>
-                    <div className="text-xs text-white/50 mt-1">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         Net of 24% supplies, 8% POS take &amp; $39 SaaS
                     </div>
                 </div>
 
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Host Kit Payback Period
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold">
                         {hostPaybackMonths} months
                     </div>
-                    <div className="text-xs text-white/50 mt-1">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         $0 commercial rent vs. $8k/mo storefront lease
                     </div>
                 </div>
 
-                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5">
+                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-[var(--tertiary)] mb-1.5">
                         Platform Take + Kit Margin / Node
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${(totalYearOneNodeMargin / 1000).toFixed(2)}k / yr
                     </div>
-                    <div className="text-xs text-white/60 mt-1">
+                    <div className="text-xs text-white/60 mt-1 leading-snug">
                         ${kitGrossProfit.toLocaleString()} kit GP + ${(annualSoftwareAndTake / 1000).toFixed(2)}k POS/SaaS (<HoverAcronym acronym="LTV:CAC" definition="3-Year Node Lifetime Value to Host Acquisition Cost ratio (~6.4x with block-level viral referrals)" theme="amber" /> 6.4x)
                     </div>
                 </div>

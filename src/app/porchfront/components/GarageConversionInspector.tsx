@@ -391,18 +391,18 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                                 <button
                                     key={node.id}
                                     onClick={() => setActiveNodeId(node.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
                                             ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(245,158,11,0.25)]"
                                             : "bg-[#09101a]/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 w-full mb-1.5">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
                                         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--secondary)]">
-                                            <ScanLine className="w-3 h-3" />
+                                            <ScanLine className="w-3 h-3 shrink-0" />
                                             {node.code}
                                         </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                                             {node.complianceConfidence}
                                         </span>
                                     </div>
@@ -427,7 +427,7 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
                                 {activeNode.label}
                             </span>
-                            <span className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-400">
                                 Fit &amp; Ordinance Confidence: {activeNode.complianceConfidence}
                             </span>
                         </div>
@@ -450,28 +450,28 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                         </span>
                         <span className="text-xs text-white/50">{archetype.porchfrontNodeSpec.archetypeClass}</span>
                     </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
                         {archetype.porchfrontNodeSpec.schemaConfidence} Spec Confidence
                     </span>
                 </div>
 
                 {/* 4-Column Spec Row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Footprint</span>
-                        <span className="text-white/95 text-sm">{archetype.porchfrontNodeSpec.footprintSpec}</span>
+                        <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.footprintSpec}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Install Time</span>
-                        <span className="text-white/95 text-sm">{archetype.porchfrontNodeSpec.installTime}</span>
+                        <span className="text-white/95 text-sm leading-snug">{archetype.porchfrontNodeSpec.installTime}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Zoning Status</span>
-                        <span className="text-emerald-400 text-sm">{archetype.porchfrontNodeSpec.zoningComplianceStatus}</span>
+                        <span className="text-emerald-400 text-sm leading-snug">{archetype.porchfrontNodeSpec.zoningComplianceStatus}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Payback</span>
-                        <span className="text-[var(--secondary)] text-sm font-semibold">
+                        <span className="text-[var(--secondary)] text-sm font-semibold leading-snug">
                             {archetype.porchfrontNodeSpec.projectedPaybackMonths}
                         </span>
                     </div>
@@ -479,26 +479,24 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
 
                 {/* Kit BOM + Turnkey Kit Cost Split Row */}
                 <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center">
+                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
                         <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
                             Compiled Kit <HoverAcronym acronym="BOM" definition="Bill of Materials: flat-pack architectural hardware, acoustic baffles, and PorchHours beacon shipped in one pallet" theme="amber" /> &amp; Hardware Spec
                         </span>
-                        <span className="text-sm font-mono text-[var(--secondary)]">
+                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">
                             {archetype.porchfrontNodeSpec.kitBOM}
                         </span>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex items-center justify-between gap-4">
-                        <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
-                                Turnkey Installed Kit
-                            </div>
-                            <div className="text-xs text-white/60 mt-0.5">
-                                {archetype.porchfrontNodeSpec.revenueGuardrail}
-                            </div>
+                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
+                            Turnkey Installed Kit
                         </div>
-                        <div className="text-3xl font-serif text-white font-medium shrink-0 whitespace-nowrap">
+                        <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             ${archetype.porchfrontNodeSpec.turnkeyKitCost.toLocaleString()}
+                        </div>
+                        <div className="text-xs text-white/60">
+                            {archetype.porchfrontNodeSpec.revenueGuardrail}
                         </div>
                     </div>
                 </div>
@@ -507,7 +505,7 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                 <div className="border-t border-white/10 pt-4">
                     <button
                         onClick={() => setShowConfigs(!showConfigs)}
-                        className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
+                        className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showConfigs}
                     >
                         <span>Compare {archetype.launchConfigs.length} Neighborhood Launch Configurations</span>
@@ -527,19 +525,19 @@ export default function GarageConversionInspector({ customerTags }: { customerTa
                                     {archetype.launchConfigs.map((cfg, i) => (
                                         <div
                                             key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between"
+                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                         >
                                             <div>
-                                                <div className="flex items-start justify-between gap-2 mb-1.5">
-                                                    <span className="text-sm font-medium text-white">{cfg.name}</span>
-                                                    <span className="text-base font-mono text-[var(--secondary)] font-semibold shrink-0 whitespace-nowrap">
-                                                        ${cfg.kitPrice.toLocaleString()}
+                                                <div className="flex flex-col items-start gap-1 mb-2">
+                                                    <span className="text-sm font-medium text-white leading-snug">{cfg.name}</span>
+                                                    <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold leading-snug">
+                                                        ${cfg.kitPrice.toLocaleString()} Kit
                                                     </span>
                                                 </div>
                                                 <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[11px] font-mono text-white/50 mb-3">
                                                     <span>{cfg.tierBadge}</span>
                                                     <span>• {cfg.installWindow}</span>
-                                                    <span className="text-emerald-400 whitespace-nowrap">• {cfg.monthlyHostNet}</span>
+                                                    <span className="text-emerald-400">• {cfg.monthlyHostNet}</span>
                                                 </div>
                                             </div>
                                             <p className="text-xs text-white/65 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 m-0" style={{ textWrap: "pretty" }}>

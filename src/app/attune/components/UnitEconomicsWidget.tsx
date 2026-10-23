@@ -45,12 +45,12 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Sliders */}
-            <div className="grid sm:grid-cols-3 gap-6 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
+            {/* 3 Full-Width Stacked Sliders */}
+            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Monthly Couple Price</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">${monthlyPrice}/mo</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Monthly Couple Subscription Price (Full Dyadic Loop + Voice Roleplay)</span>
+                        <span className="text-[var(--secondary)] font-semibold">${monthlyPrice}/mo</span>
                     </div>
                     <input
                         type="range"
@@ -62,16 +62,16 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Monthly Couple Subscription Price"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">$19 (Solo Tier)</span>
-                        <span className="whitespace-nowrap">$49 (Couple + Voice)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>$19/mo (Entry Tier)</span>
+                        <span>$49/mo (Couple + Unlimited Voice)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">12-Mo Couple Retention</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">{retention12Mo}%</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">12-Month Couple Retention Rate (Anchored by Sunday Sync Ritual)</span>
+                        <span className="text-[var(--secondary)] font-semibold">{retention12Mo}%</span>
                     </div>
                     <input
                         type="range"
@@ -83,16 +83,16 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="12-Month Couple Retention Rate"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">30% (Static App)</span>
-                        <span className="whitespace-nowrap">85% (Weekly Sync)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>30% (Static Quiz Apps)</span>
+                        <span>85% (Weekly Ritual + Memory Graph)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Referral / Gift Viral K</span>
-                        <span className="text-[var(--secondary)] font-semibold whitespace-nowrap">{viralCoefficient.toFixed(2)}k</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Referral &amp; Gift Viral Coefficient (Friend-to-Friend + Anniversary Gifting)</span>
+                        <span className="text-[var(--secondary)] font-semibold">{viralCoefficient.toFixed(2)}k</span>
                     </div>
                     <input
                         type="range"
@@ -104,47 +104,47 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#f43f5e] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Referral and Gift Viral Coefficient"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">0.10 (Paid Only)</span>
-                        <span className="whitespace-nowrap">0.65 (Friend Loop)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>0.10 (Paid Acquisition Only)</span>
+                        <span>0.65 (High Organic Word-of-Mouth)</span>
                     </div>
                 </div>
             </div>
 
             {/* 3 Full-Width Metric Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         LTV per Couple
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${ltvPerCouple}
                     </div>
-                    <div className="text-xs text-white/50 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         ~{avgLifetimeMonths} mo avg life • {ltvToCac}x LTV:CAC
                     </div>
                 </div>
 
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Net Contribution Margin
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-[var(--secondary)] font-semibold">
                         ${grossMonthlyMarginPerCouple.toFixed(2)}/mo
                     </div>
-                    <div className="text-xs text-white/50 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         {netMarginPct}% margin after $2.15 AI &amp; voice
                     </div>
                 </div>
 
-                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5">
+                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-[var(--tertiary)] mb-1.5">
                         Annualized Cohort ARR / 10k Couples
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${annualizedCohortARR.toFixed(2)}M
                     </div>
-                    <div className="text-xs text-white/60 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/60 mt-1 leading-snug">
                         ${effectiveCAC} effective CAC w/ viral loop
                     </div>
                 </div>

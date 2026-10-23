@@ -371,18 +371,18 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                                 <button
                                     key={spot.id}
                                     onClick={() => setActiveHotspotId(spot.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
                                             ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(59,130,246,0.25)]"
                                             : "bg-[#09101a]/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 w-full mb-1.5">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
                                         <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--secondary)]">
-                                            <ScanLine className="w-3 h-3" />
+                                            <ScanLine className="w-3 h-3 shrink-0" />
                                             {spot.code}
                                         </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
                                             {spot.confidence}
                                         </span>
                                     </div>
@@ -407,7 +407,7 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
                                 {activeHotspot.code}: {activeHotspot.label}
                             </span>
-                            <span className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-400">
                                 Detection Confidence: {activeHotspot.confidence}
                             </span>
                         </div>
@@ -428,50 +428,48 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                         </span>
                         <span className="text-xs text-white/50">{scenario.jobObject.taskType}</span>
                     </div>
-                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full whitespace-nowrap">
+                    <span className="bg-[var(--primary)]/20 text-[var(--tertiary)] border border-[var(--primary)]/30 text-xs font-mono px-3 py-1 rounded-full">
                         {scenario.jobObject.confidence} Schema Confidence
                     </span>
                 </div>
 
                 {/* 4-Column Spec Row */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-mono mb-3">
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Area / Spec</span>
-                        <span className="text-white/95 text-sm">{scenario.jobObject.areaSpec}</span>
+                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.areaSpec}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Est. Labor</span>
-                        <span className="text-white/95 text-sm">{scenario.jobObject.predictedLabor}</span>
+                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.predictedLabor}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Access</span>
-                        <span className="text-white/95 text-sm">{scenario.jobObject.accessConstraint}</span>
+                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.accessConstraint}</span>
                     </div>
-                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5">
+                    <div className="bg-white/[0.03] p-3.5 rounded-xl border border-white/5 overflow-hidden">
                         <span className="text-white/40 block text-[10px] uppercase mb-1">Difficulty</span>
-                        <span className="text-white/95 text-sm">{scenario.jobObject.difficulty}</span>
+                        <span className="text-white/95 text-sm leading-snug">{scenario.jobObject.difficulty}</span>
                     </div>
                 </div>
 
                 {/* BOM + Guaranteed Quote Split Row */}
                 <div className="grid sm:grid-cols-12 gap-3 mb-5">
-                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center">
+                    <div className="sm:col-span-7 bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
                         <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
                             Required <HoverAcronym acronym="BOM" definition="Bill of Materials and specific equipment required on the service vehicle" theme="blue" /> &amp; Truck Kit
                         </span>
-                        <span className="text-sm font-mono text-[var(--secondary)]">{scenario.jobObject.requiredKit}</span>
+                        <span className="text-sm font-mono text-[var(--secondary)] leading-relaxed">{scenario.jobObject.requiredKit}</span>
                     </div>
 
-                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex items-center justify-between gap-4">
-                        <div>
-                            <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
-                                Guaranteed Binding Quote
-                            </div>
-                            <div className="text-xs text-white/60 mt-0.5">{scenario.jobObject.varianceCap}</div>
+                    <div className="sm:col-span-5 bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl p-4 flex flex-col justify-center gap-1 overflow-hidden">
+                        <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
+                            Guaranteed Binding Quote
                         </div>
-                        <div className="text-3xl font-serif text-white font-medium shrink-0">
+                        <div className="text-2xl sm:text-3xl font-serif text-white font-medium leading-snug">
                             ${scenario.jobObject.exactQuote}
                         </div>
+                        <div className="text-xs text-white/60">{scenario.jobObject.varianceCap}</div>
                     </div>
                 </div>
 
@@ -479,7 +477,7 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                 <div className="border-t border-white/10 pt-4">
                     <button
                         onClick={() => setShowBids(!showBids)}
-                        className="w-full flex items-center justify-between text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
+                        className="w-full flex items-center justify-between gap-2 text-left text-xs font-mono uppercase tracking-wider text-[var(--secondary)] hover:text-white transition-colors py-1 cursor-pointer"
                         aria-expanded={showBids}
                     >
                         <span>{scenario.providerBids.length} Autonomous Provider Bids Ready for Instant Booking</span>
@@ -499,12 +497,12 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                                     {scenario.providerBids.map((bid, i) => (
                                         <div
                                             key={i}
-                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between"
+                                            className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                         >
                                             <div>
-                                                <div className="flex items-start justify-between gap-2 mb-1.5">
-                                                    <span className="text-sm font-medium text-white">{bid.name}</span>
-                                                    <span className="text-base font-mono text-[var(--secondary)] font-semibold shrink-0">
+                                                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-2">
+                                                    <span className="text-sm font-medium text-white leading-snug">{bid.name}</span>
+                                                    <span className="text-sm font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 font-semibold">
                                                         ${bid.price}
                                                     </span>
                                                 </div>

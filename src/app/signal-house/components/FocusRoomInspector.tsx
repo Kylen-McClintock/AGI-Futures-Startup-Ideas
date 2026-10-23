@@ -315,7 +315,7 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                 <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)] mb-0.5">
                                     {item.niche}
                                 </div>
-                                <div className="text-sm font-medium truncate">{item.name}</div>
+                                <div className="text-sm font-medium leading-snug">{item.name}</div>
                             </button>
                         );
                     })}
@@ -331,41 +331,41 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                             <span className="text-xs font-mono uppercase tracking-wider text-white/90 font-semibold">
                                 {scenario.name}
                             </span>
-                            <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 whitespace-nowrap">
+                            <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30">
                                 {scenario.occupancy}
                             </span>
                         </div>
                         <div className="flex flex-wrap items-center gap-4 text-xs text-white/55 font-mono">
                             <span>{scenario.host}</span>
                             <span className="inline-flex items-center gap-1 text-white/70">
-                                <Volume2 className="w-3.5 h-3.5 text-[var(--secondary)]" />
+                                <Volume2 className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
                                 {scenario.soundscape}
                             </span>
                         </div>
                     </div>
 
                     {/* Focus vs Social Mode Toggle */}
-                    <div className="inline-flex rounded-xl bg-white/[0.04] p-1 border border-white/10">
+                    <div className="inline-flex flex-wrap rounded-xl bg-white/[0.04] p-1 border border-white/10 gap-1">
                         <button
                             onClick={() => setMode("focus")}
-                            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                                 mode === "focus"
                                     ? "bg-[var(--primary)] text-white shadow"
                                     : "text-white/60 hover:text-white"
                             }`}
                         >
-                            <Lock className="w-3.5 h-3.5" />
+                            <Lock className="w-3.5 h-3.5 shrink-0" />
                             Deep Focus Mode
                         </button>
                         <button
                             onClick={() => setMode("social")}
-                            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all cursor-pointer whitespace-nowrap ${
+                            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono uppercase tracking-wider transition-all cursor-pointer ${
                                 mode === "social"
                                     ? "bg-emerald-500/80 text-white shadow"
                                     : "text-white/60 hover:text-white"
                             }`}
                         >
-                            <Unlock className="w-3.5 h-3.5" />
+                            <Unlock className="w-3.5 h-3.5 shrink-0" />
                             Social Collision Mode
                         </button>
                     </div>
@@ -401,21 +401,21 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                 <button
                                     key={node.id}
                                     onClick={() => setActiveNodeId(node.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer ${
+                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer overflow-hidden ${
                                         isSelected
                                             ? "bg-[var(--primary)]/20 border-[var(--secondary)] text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]"
                                             : "bg-white/[0.02] border-white/10 text-white/70 hover:border-white/25 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex items-center justify-between gap-2 mb-1">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
                                         <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)]">
                                             NODE 0{index + 1}
                                         </span>
-                                        <span className="text-[10px] font-mono text-emerald-400 whitespace-nowrap">
+                                        <span className="text-[10px] font-mono text-emerald-400">
                                             {node.metric}
                                         </span>
                                     </div>
-                                    <div className="text-xs sm:text-sm font-medium text-white">{node.label}</div>
+                                    <div className="text-xs sm:text-sm font-medium text-white leading-snug">{node.label}</div>
                                 </button>
                             );
                         })}
@@ -427,7 +427,7 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                             <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
                                 {activeNode.label}: {activeNode.metric}
                             </span>
-                            <span className="text-xs font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20 whitespace-nowrap">
+                            <span className="text-xs font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
                                 Telemetry Confidence: {activeNode.confidence}
                             </span>
                         </div>
@@ -443,43 +443,43 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                 <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4 pb-3 border-b border-white/10">
                         <div className="flex items-center gap-2">
-                            <Shield className="w-4 h-4 text-[var(--secondary)]" />
+                            <Shield className="w-4 h-4 text-[var(--secondary)] shrink-0" />
                             <span className="text-xs font-mono uppercase tracking-widest text-white/90">
                                 Compiled FocusGraph Room State
                             </span>
                         </div>
                         <div className="flex flex-wrap items-center gap-2">
-                            <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-1 rounded-md border border-[var(--primary)]/25 whitespace-nowrap">
+                            <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-1 rounded-md border border-[var(--primary)]/25">
                                 {scenario.completionLift}
                             </span>
-                            <span className="text-xs font-mono text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20 whitespace-nowrap">
+                            <span className="text-xs font-mono text-amber-300 bg-amber-500/10 px-2.5 py-1 rounded-md border border-amber-500/20">
                                 +{scenario.sparksEarned} Sparks / Sprint
                             </span>
                         </div>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Room ID</div>
-                            <div className="text-white/90 font-mono truncate">{scenario.specs.roomId}</div>
+                            <div className="text-white/90 font-mono break-all">{scenario.specs.roomId}</div>
                         </div>
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Admission Filter</div>
                             <div className="text-white/90 font-medium">{scenario.specs.curationFilter}</div>
                         </div>
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Sprint Cadence</div>
                             <div className="text-[var(--secondary)] font-mono">{scenario.specs.sessionProtocol}</div>
                         </div>
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Distraction Shield</div>
                             <div className="text-white/90">{scenario.specs.distractionShield}</div>
                         </div>
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Sensory Cue Layer</div>
                             <div className="text-white/90">{scenario.specs.ambientLayer}</div>
                         </div>
-                        <div className="bg-black/40 p-3 rounded-xl border border-white/5">
+                        <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
                             <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Cohort Habit Stickiness</div>
                             <div className="text-emerald-300 font-mono">{scenario.specs.habitRetention30d}</div>
                         </div>
@@ -490,7 +490,7 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                 <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                         <div className="flex items-center gap-2">
-                            <Users className="w-4 h-4 text-[var(--secondary)]" />
+                            <Users className="w-4 h-4 text-[var(--secondary)] shrink-0" />
                             <span className="text-xs font-mono uppercase tracking-widest text-white/90">
                                 {mode === "focus"
                                     ? "Co-Present Peers (Protected Until Sprint Ends)"
@@ -506,12 +506,12 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                         {scenario.matches.map((peer) => (
                             <div
                                 key={peer.handle}
-                                className="p-4 rounded-xl bg-black/40 border border-white/10 flex flex-col justify-between gap-3"
+                                className="p-4 rounded-xl bg-black/40 border border-white/10 flex flex-col justify-between gap-3 overflow-hidden"
                             >
                                 <div>
-                                    <div className="flex items-center justify-between gap-2 mb-1">
+                                    <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
                                         <span className="text-sm font-medium text-white">{peer.handle}</span>
-                                        <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2 py-0.5 rounded-full border border-[var(--primary)]/30 whitespace-nowrap">
+                                        <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2 py-0.5 rounded-full border border-[var(--primary)]/30">
                                             {peer.sparks.toLocaleString()} Sparks
                                         </span>
                                     </div>
@@ -522,11 +522,11 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                     </div>
                                 </div>
 
-                                <div className="pt-2 border-t border-white/10 flex items-center justify-between gap-2">
-                                    <span className="text-[11px] font-mono text-emerald-300 truncate">
+                                <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5">
+                                    <span className="text-[11px] font-mono text-emerald-300 leading-snug">
                                         {mode === "focus" ? "🔒 Unlocks after sprint" : peer.intentTag}
                                     </span>
-                                    <span className="text-[10px] font-mono text-white/50 whitespace-nowrap">
+                                    <span className="text-[10px] font-mono text-white/50">
                                         {peer.matchScore}
                                     </span>
                                 </div>

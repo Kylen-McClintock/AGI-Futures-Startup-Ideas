@@ -40,12 +40,12 @@ export default function UnitEconomicsWidget() {
                 </span>
             </div>
 
-            {/* 3 Sliders */}
-            <div className="grid sm:grid-cols-3 gap-6 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
+            {/* 3 Full-Width Stacked Sliders */}
+            <div className="space-y-5 mb-6 bg-black/40 p-5 rounded-2xl border border-white/5">
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Active Experiment Pods</span>
-                        <span className="text-[var(--primary)] font-semibold whitespace-nowrap">{activePods} pods</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Monthly Active Experiment Pods per Startup</span>
+                        <span className="text-[var(--primary)] font-semibold">{activePods} pods</span>
                     </div>
                     <input
                         type="range"
@@ -57,16 +57,16 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Monthly Active Experiment Pods"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">2 (Seed)</span>
-                        <span className="whitespace-nowrap">15 (Series B+)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>2 Pods (Seed Startup)</span>
+                        <span>15 Pods (Series B+ Scaleup)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Verified Uplift / Pod</span>
-                        <span className="text-[var(--primary)] font-semibold whitespace-nowrap">
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Verified Revenue / Cost-Saved Uplift per Active Pod</span>
+                        <span className="text-[var(--primary)] font-semibold">
                             ${(upliftPerPod / 1000).toFixed(0)}k/mo
                         </span>
                     </div>
@@ -80,16 +80,16 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Verified Revenue or Cost-Saved Uplift per Pod"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">$6k/mo</span>
-                        <span className="whitespace-nowrap">$45k/mo</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>$6k/mo (Single Funnel)</span>
+                        <span>$45k/mo (Core Revenue Loop)</span>
                     </div>
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
-                        <span className="text-white/70">Performance Take Tier</span>
-                        <span className="text-[var(--primary)] font-semibold whitespace-nowrap">{performanceTakePct}% share</span>
+                    <div className="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm font-mono mb-2">
+                        <span className="text-white/75">Performance Take Tier (Discounted for Network Graph Contributors)</span>
+                        <span className="text-[var(--primary)] font-semibold">{performanceTakePct}% share</span>
                     </div>
                     <input
                         type="range"
@@ -101,47 +101,47 @@ export default function UnitEconomicsWidget() {
                         className="w-full accent-[#21de9a] cursor-pointer h-1.5 bg-white/10 rounded-lg"
                         aria-label="Performance Take Percentage"
                     />
-                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1.5">
-                        <span className="whitespace-nowrap">10% (Network Sync)</span>
-                        <span className="whitespace-nowrap">25% (Isolated)</span>
+                    <div className="flex justify-between text-[11px] font-mono text-white/35 mt-1">
+                        <span>10% (Full Network Contributor)</span>
+                        <span>25% (Isolated Instance)</span>
                     </div>
                 </div>
             </div>
 
             {/* 3 Computed Metrics (Full-Width 3-Col Grid) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Net Client Retained Lift
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         +${(netClientRetainedMonthly / 1000).toFixed(1)}k/mo
                     </div>
-                    <div className="text-xs text-white/50 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         {clientRoiMultiple}x net ROI after platform share
                     </div>
                 </div>
 
-                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5">
+                <div className="bg-white/[0.03] border border-white/5 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-white/45 mb-1.5">
                         Net Contribution / Mo
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-[var(--primary)] font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-[var(--primary)] font-semibold">
                         ${(netContribution / 1000).toFixed(1)}k/mo
                     </div>
-                    <div className="text-xs text-white/50 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/50 mt-1 leading-snug">
                         After ${(totalComputeCost / 1000).toFixed(1)}k sandbox compute
                     </div>
                 </div>
 
-                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5">
+                <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-2xl p-4 sm:p-5 overflow-hidden">
                     <div className="text-xs font-mono uppercase tracking-wider text-[var(--primary)] mb-1.5">
                         Annualized Client ACV
                     </div>
-                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold whitespace-nowrap">
+                    <div className="text-2xl sm:text-3xl font-mono text-white font-semibold">
                         ${(annualizedPlatformArrPerClient / 1000).toFixed(0)}k/yr
                     </div>
-                    <div className="text-xs text-white/60 mt-1 whitespace-nowrap">
+                    <div className="text-xs text-white/60 mt-1 leading-snug">
                         Base + Uplift (<HoverAcronym acronym="NRR" definition="Net Revenue Retention: expands automatically as startups deploy additional experiment pods" theme="primary" /> 145%+)
                     </div>
                 </div>

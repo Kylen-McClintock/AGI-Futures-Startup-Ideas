@@ -93,7 +93,7 @@ export default function ValueFlowLoop() {
             </div>
 
             {/* 5-Stage Compact Stepper Bar */}
-            <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 mb-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2.5 mb-5">
                 {STEPS.map((step) => {
                     const Icon = step.icon;
                     const isSelected = step.id === activeStep.id;
@@ -101,7 +101,7 @@ export default function ValueFlowLoop() {
                         <button
                             key={step.id}
                             onClick={() => setActiveStepId(step.id)}
-                            className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
+                            className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                 isSelected
                                     ? "bg-[var(--primary)]/15 border-[var(--primary)]/60 shadow-[0_0_20px_rgba(33,222,154,0.15)]"
                                     : "bg-black/40 border-white/5 hover:border-white/20 hover:bg-white/[0.03]"
