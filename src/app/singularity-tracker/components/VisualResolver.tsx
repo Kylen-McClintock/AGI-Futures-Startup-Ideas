@@ -141,6 +141,236 @@ function InteractiveSeriesGraph({ metric, isAscent }: { metric: Metric, isAscent
   );
 }
 
+function LevUncertaintyVisualizer() {
+  const [cohort, setCohort] = React.useState<'p99' | 'p80'>('p99');
+  const isP99 = cohort === 'p99';
+
+  const levSpec = isP99
+    ? {
+        cohortBadge: 'Top 1% PoA (99th Pct)',
+        p25: 'May 2033',
+        p50: 'October 2036',
+        p75: 'Jan 2041',
+        p10: 'Jul 2030',
+        p90: 'May 2045',
+        poaP25: '0.620',
+        poaP50: '0.665',
+        poaP75: '0.715',
+        accent: '#cc55ff',
+        secondary: '#21de9a',
+      }
+    : {
+        cohortBadge: 'Top 20% PoA (80th Pct)',
+        p25: 'Apr 2038',
+        p50: 'February 2042',
+        p75: 'Oct 2046',
+        p10: 'Apr 2035',
+        p90: 'Sep 2051',
+        poaP25: '0.795',
+        poaP50: '0.842',
+        poaP75: '0.895',
+        accent: '#38bdf8',
+        secondary: '#cc55ff',
+      };
+
+  return (
+    <div
+      className="relative w-full h-full flex flex-col justify-between p-4 sm:p-6 overflow-hidden"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Top Bar: Title + Cohort Toggle */}
+      <div className="flex flex-wrap items-center justify-between gap-2 z-10">
+        <div className="flex items-center gap-2">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#cc55ff] font-bold">
+            Bayesian Probability Distribution (P25 • P50 Median • P75)
+          </span>
+        </div>
+        <div className="inline-flex items-center rounded-lg bg-black/70 border border-white/15 p-0.5 font-mono text-[10px]">
+          <button
+            type="button"
+            onClick={() => setCohort('p99')}
+            className={`px-2.5 py-1 rounded-md transition-colors cursor-pointer ${
+              isP99
+                ? 'bg-[#cc55ff]/25 text-white border border-[#cc55ff]/50 font-bold'
+                : 'text-white/50 hover:text-white'
+            }`}
+          >
+            Top 1% PoA (99th)
+          </button>
+          <button
+            type="button"
+            onClick={() => setCohort('p80')}
+            className={`px-2.5 py-1 rounded-md transition-colors cursor-pointer ${
+              !isP99
+                ? 'bg-sky-500/25 text-white border border-sky-400/50 font-bold'
+                : 'text-white/50 hover:text-white'
+            }`}
+          >
+            Top 20% PoA (80th)
+          </button>
+        </div>
+      </div>
+
+      {/* Middle: Prominent P50 Readouts + Probability Density Curve */}
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-4 items-center my-auto py-2 z-10">
+        {/* Left: Prominent 50th Percentile LEV Date & PoA */}
+        <div className="md:col-span-5 flex flex-col gap-2 bg-black/50 border border-white/10 rounded-xl p-3.5">
+          <div className="flex flex-wrap items-center justify-between gap-1">
+            <span className="text-[10px] font-mono uppercase tracking-widest text-white/50">
+              50th Percentile LEV Prediction
+            </span>
+            <span
+              className="text-[10px] font-mono font-bold px-2 py-0.5 rounded border"
+              style={{
+                color: levSpec.accent,
+                borderColor: `${levSpec.accent}50`,
+                backgroundColor: `${levSpec.accent}15`,
+              }}
+            >
+              {levSpec.cohortBadge}
+            </span>
+          </div>
+          <div className="text-2xl sm:text-3xl font-mono font-bold text-white tracking-tight">
+            {levSpec.p50}
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-2 text-[11px] font-mono pt-1 border-t border-white/10">
+            <span className="text-emerald-300">
+              25th Pct: <strong>{levSpec.p25}</strong>
+            </span>
+            <span className="text-amber-300">
+              75th Pct: <strong>{levSpec.p75}</strong>
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] font-mono text-white/60 pt-1 border-t border-white/5">
+            <span>
+              PoA P50: <strong className="text-white">{levSpec.poaP50} bio-yr/yr</strong>
+            </span>
+            <span>
+              IQR: {levSpec.poaP25}–{levSpec.poaP75}
+            </span>
+          </div>
+        </div>
+
+        {/* Right: Probability Distribution Density Curve SVG */}
+        <div className="md:col-span-7 flex flex-col justify-center bg-black/40 border border-white/10 rounded-xl p-3">
+          <svg viewBox="0 0 320 110" className="w-full h-24 sm:h-28 overflow-visible">
+            <defs>
+              <linearGradient id={`lev-iqr-${cohort}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={levSpec.accent} stopOpacity="0.48" />
+                <stop offset="100%" stopColor={levSpec.accent} stopOpacity="0.06" />
+              </linearGradient>
+              <linearGradient id={`lev-tail-${cohort}`} x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor={levSpec.accent} stopOpacity="0.16" />
+                <stop offset="100%" stopColor={levSpec.accent} stopOpacity="0.01" />
+              </linearGradient>
+            </defs>
+
+            {/* Baseline axis */}
+            <line x1="16" y1="86" x2="304" y2="86" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
+
+            {/* Full distribution tail fill */}
+            <path
+              d="M 16,86 C 48,85 74,72 104,44 C 122,26 136,14 150,14 C 166,14 184,28 206,50 C 236,74 268,84 304,86 Z"
+              fill={`url(#lev-tail-${cohort})`}
+            />
+
+            {/* Shaded 25th to 75th Percentile Interquartile Range (x=108 to x=202) */}
+            <path
+              d="M 108,86 L 108,40 C 124,24 137,14 150,14 C 166,14 182,27 202,46 L 202,86 Z"
+              fill={`url(#lev-iqr-${cohort})`}
+            />
+
+            {/* Smooth PDF curve */}
+            <path
+              d="M 16,86 C 48,85 74,72 104,44 C 122,26 136,14 150,14 C 166,14 184,28 206,50 C 236,74 268,84 304,86"
+              fill="none"
+              stroke={levSpec.accent}
+              strokeWidth="2.2"
+            />
+
+            {/* P25 Marker (x=108) */}
+            <line
+              x1="108"
+              y1="40"
+              x2="108"
+              y2="86"
+              stroke="#34d399"
+              strokeWidth="1.2"
+              strokeDasharray="3 2"
+            />
+            <circle cx="108" cy="40" r="3" fill="#34d399" />
+            <text x="102" y="33" textAnchor="end" fill="#6ee7b7" fontSize="8.5" className="font-mono">
+              25th: {levSpec.p25}
+            </text>
+
+            {/* P50 Median Marker (x=150) */}
+            <line x1="150" y1="14" x2="150" y2="86" stroke="#ffffff" strokeWidth="2" />
+            <circle
+              cx="150"
+              cy="14"
+              r="4.5"
+              fill="#ffffff"
+              stroke={levSpec.accent}
+              strokeWidth="2"
+            />
+            <text
+              x="150"
+              y="7"
+              textAnchor="middle"
+              fill="#ffffff"
+              fontSize="9.5"
+              fontWeight="bold"
+              className="font-mono"
+            >
+              50th (Median): {levSpec.p50}
+            </text>
+
+            {/* P75 Marker (x=202) */}
+            <line
+              x1="202"
+              y1="46"
+              x2="202"
+              y2="86"
+              stroke="#fbbf24"
+              strokeWidth="1.2"
+              strokeDasharray="3 2"
+            />
+            <circle cx="202" cy="46" r="3" fill="#fbbf24" />
+            <text x="208" y="39" textAnchor="start" fill="#fcd34d" fontSize="8.5" className="font-mono">
+              75th: {levSpec.p75}
+            </text>
+
+            {/* X-Axis Labels */}
+            <text x="20" y="100" fill="rgba(255,255,255,0.45)" fontSize="8" className="font-mono">
+              P10: {levSpec.p10}
+            </text>
+            <text
+              x="155"
+              y="100"
+              textAnchor="middle"
+              fill="rgba(255,255,255,0.75)"
+              fontSize="8"
+              className="font-mono"
+            >
+              50% Probability Mass (IQR: P25–P75)
+            </text>
+            <text
+              x="300"
+              y="100"
+              textAnchor="end"
+              fill="rgba(255,255,255,0.45)"
+              fontSize="8"
+              className="font-mono"
+            >
+              P90: {levSpec.p90}
+            </text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function VisualResolver({ metric }: { metric: Metric }) {
   // Extract number from currentValue if it's a string, or just use a default max scale factor
   const valRaw = typeof metric.currentValue === 'number' ? metric.currentValue : parseFloat(metric.currentValue as string) || 100;
@@ -438,6 +668,13 @@ export function VisualResolver({ metric }: { metric: Metric }) {
         return <InteractiveSeriesGraph metric={metric} isAscent={true} />;
 
       case 'HaloRing':
+        if (
+          metric.id === 'hero-lev-readiness' ||
+          metric.id === 'kpi-lev-readiness' ||
+          metric.id === 'sub-long-lev'
+        ) {
+          return <LevUncertaintyVisualizer />;
+        }
         return (
           <div className="relative w-full h-full flex items-center justify-center">
             {/* Scale Notches */}
