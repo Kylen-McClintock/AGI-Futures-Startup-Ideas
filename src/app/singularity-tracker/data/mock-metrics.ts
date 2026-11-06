@@ -1,6 +1,10 @@
 import { Metric } from '../types';
 import { exhaustiveMetrics } from './exhaustive-metrics';
 import { extendedMetrics } from './extended-metrics';
+import {
+  canonicalLongevityHeroMetric,
+  canonicalLongevitySubMetrics,
+} from './canonical-longevity-metrics';
 
 export const baseMockMetrics: Metric[] = [
   // ==========================================
@@ -905,4 +909,15 @@ export const baseMockMetrics: Metric[] = [
   }
 ];
 
-export const mockMetrics: Metric[] = [...baseMockMetrics, ...exhaustiveMetrics, ...extendedMetrics];
+const nonLongevityMetrics: Metric[] = [
+  ...baseMockMetrics,
+  ...exhaustiveMetrics,
+  ...extendedMetrics,
+].filter((m) => m.category !== 'Longevity');
+
+export const mockMetrics: Metric[] = [
+  ...nonLongevityMetrics.filter((m) => m.isHero),
+  canonicalLongevityHeroMetric,
+  ...nonLongevityMetrics.filter((m) => !m.isHero),
+  ...canonicalLongevitySubMetrics,
+];
