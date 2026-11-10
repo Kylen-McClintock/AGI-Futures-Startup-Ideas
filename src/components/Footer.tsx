@@ -127,6 +127,9 @@ export function Footer() {
                     <Link href="/forecasts/live" className="text-white/60 hover:text-white transition-colors font-semibold">
                         Live Forecasts
                     </Link>
+                    <a href="/futuregraph" className="text-white/60 hover:text-white transition-colors font-semibold">
+                        FutureGraph
+                    </a>
                     <Link href="/forecasting" className="text-white/60 hover:text-white transition-colors">
                         Forecasting Methodology
                     </Link>

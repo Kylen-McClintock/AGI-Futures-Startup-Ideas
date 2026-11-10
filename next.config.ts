@@ -20,6 +20,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        {
+          source: "/futuregraph",
+          destination: "https://futuregraph-beta.vercel.app/futuregraph",
+        },
+        {
+          source: "/futuregraph/:path*",
+          destination: "https://futuregraph-beta.vercel.app/futuregraph/:path*",
+        },
+      ],
+    };
+  },
 };
 
 export default nextConfig;
