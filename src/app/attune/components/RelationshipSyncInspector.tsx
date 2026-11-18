@@ -2,16 +2,16 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Heart, Sparkles, ChevronDown, Activity, Check, Clock } from "lucide-react";
+import { Heart, Sparkles, ChevronDown, ShieldCheck, Check, Clock, Lock, MessageCircleHeart } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 
-type SignalNode = {
+type RelationalMoment = {
     id: string;
-    code: string;
+    tag: string;
     label: string;
-    rawPartnerInput: string;
-    coachingTranslation: string;
-    confidence: string;
+    herPrivateShare: string;
+    hisQuietCoaching: string;
+    whyItLands: string;
 };
 
 type MicroPrompt = {
@@ -29,17 +29,16 @@ type Scenario = {
     subtitle: string;
     syncDuration: string;
     syncCaptures: string[];
-    signals: SignalNode[];
-    coachingObject: {
-        dyadicPattern: string;
-        memoryGraphUpdate: string;
+    moments: RelationalMoment[];
+    weeklyShift: {
+        patternShift: string;
+        rememberedDetail: string;
         translatedPartnerNeed: string;
         concreteMicroReps: string;
         rehearsalMode: string;
         privacyBoundary: string;
-        confidence: string;
-        weeklyTargetScore: string;
-        verificationMetric: string;
+        feltOutcome: string;
+        followUpCheck: string;
     };
     dailyPrompts: MicroPrompt[];
 };
@@ -47,220 +46,217 @@ type Scenario = {
 const SCENARIOS: Scenario[] = [
     {
         id: "mental-load",
-        badge: "Scenario 01",
-        title: "Scenario 01: Invisible Mental Load & Logistics",
-        subtitle: "Dual-career week with family travel prep, pediatric appointments, and household planning fatigue.",
-        syncDuration: "9m 40s Sunday Sync",
+        badge: "Everyday Partnership",
+        title: "Invisible Mental Load & Logistics",
+        subtitle: "A dual-career week with upcoming holiday travel, appointments, and household planning fatigue.",
+        syncDuration: "10-Min Sunday Sync",
         syncCaptures: [
-            "Her input: 'I feel like the default household manager whenever travel comes up'",
-            "His input: 'I am happy to help, I just need to know what is on the list'",
-            "Upcoming stressor: 4-day Thanksgiving trip + Thursday work deadline",
-            "Memory recall: Waiting to be asked for help triggers her 'carrying it alone' fatigue"
+            "Her check-in: 'I feel like the default household manager whenever family travel comes up'",
+            "His check-in: 'I genuinely want to pull my weight, I just do not always see what is on her mental list'",
+            "Calendar context: 4-day trip Friday morning + her major Thursday 2pm presentation",
+            "Remembered preference: Waiting to be asked for tasks still leaves her holding the checklist"
         ],
-        signals: [
+        moments: [
             {
                 id: "delegation-trap",
-                code: "SIGNAL 01",
-                label: "The 'Just Ask Me' Delegation Trap",
-                rawPartnerInput: "When he says 'just tell me what to do,' I still have to hold the entire checklist in my head, research options, and assign tasks.",
-                coachingTranslation: "Shift from helper mode (executing tasks she assigns) to owner mode (owning an entire domain end-to-end before she brings it up).",
-                confidence: "98.4%"
+                tag: "The Friction",
+                label: "Moving From 'Helper' to 'Owner'",
+                herPrivateShare: "When he says 'just tell me what to do,' he means well, but I still have to hold the whole checklist in my head, research options, and assign tasks.",
+                hisQuietCoaching: "Skip asking 'How can I help?' Pick one whole lane, Friday airport transit and pet boarding, and own every detail from booking to confirmation before she brings it up.",
+                whyItLands: "Drops an entire branch of mental tabs from her head instead of adding a delegation task."
             },
             {
                 id: "calendar-collision",
-                code: "SIGNAL 02",
-                label: "Thursday Stress Window Detected",
-                rawPartnerInput: "She has a Q4 board presentation Thursday at 2pm; flight leaves Friday morning at 8am.",
-                coachingTranslation: "High-leverage support window: take 100% of Wednesday/Thursday dinner, pet boarding, and packing logistics off her plate proactively.",
-                confidence: "99.1%"
+                tag: "Timing Window",
+                label: "Protecting Her Crunch Day",
+                herPrivateShare: "My Thursday 2pm board presentation has me stretched thin, and knowing we fly out Friday at 8am makes Wednesday night feel overwhelming.",
+                hisQuietCoaching: "Wednesday and Thursday evenings are high-leverage care windows: cover dinner both nights without asking her to choose a menu.",
+                whyItLands: "Proactive support 24 hours before peak stress feels ten times more caring than reactive help afterward."
             },
             {
                 id: "appreciation-cue",
-                code: "SIGNAL 03",
-                label: "Proactive Closure Confirmation",
-                rawPartnerInput: "Past memory node #14: She relaxes only when she knows a logistics loop is fully closed, not just 'in progress.'",
-                coachingTranslation: "Send a brief closure text once a task is done ('Confirmed sitter + boarding pass check-in set, you are completely covered for Thursday').",
-                confidence: "97.6%"
+                tag: "Closing the Loop",
+                label: "Giving Explicit Peace of Mind",
+                herPrivateShare: "I can only actually stop worrying about a trip detail when I know for sure it is booked and confirmed, not just 'being looked into.'",
+                hisQuietCoaching: "Once boarding and rides are set, send one calm closure note: 'Sitter and Friday 6am car are both confirmed, you are completely covered for Thursday.'",
+                whyItLands: "Lets her nervous system actually put the responsibility down."
             }
         ],
-        coachingObject: {
-            dyadicPattern: "Helper vs. Owner Asymmetry on Household Logistics",
-            memoryGraphUpdate: "Linked Node #42 (Travel Prep Stress) + Node #14 (Explicit Closure Preference)",
-            translatedPartnerNeed: "She does not need willingness to help when asked; she needs visible, end-to-end ownership of upcoming trip logistics so she can drop the mental checklist.",
-            concreteMicroReps: "1. Own pet boarding + airport transfer end-to-end by Tuesday 6pm. 2. Close the loop verbally before she asks. 3. Handle Wednesday/Thursday dinners solo.",
-            rehearsalMode: "45s Voice Check-In: Practice offering full domain ownership without sounding transactional",
-            privacyBoundary: "Raw venting encrypted; only constructive action reps cross the partner bridge",
-            confidence: "98.3%",
-            weeklyTargetScore: "+34% Perceived Support",
-            verificationMetric: "Verified in next Sunday Sync"
+        weeklyShift: {
+            patternShift: "From Waiting for a List -> Proactive End-to-End Ownership",
+            rememberedDetail: "Remembers her travel-prep stress trigger and her preference for explicit 'loop-closed' confirmation",
+            translatedPartnerNeed: "She does not need willingness to help when asked; she needs visible ownership of upcoming logistics so she can stop carrying the invisible clipboard.",
+            concreteMicroReps: "1. Book pet boarding + Friday ride by Tuesday 6pm. 2. Send a calm closure text once confirmed. 3. Own Wednesday and Thursday dinners solo.",
+            rehearsalMode: "45s Private Voice Practice: Offering full ownership warmly without sounding like you want a gold star",
+            privacyBoundary: "Raw venting stays private in her vault; he receives calm, constructive action coaching",
+            feltOutcome: "She feels carried, not managed",
+            followUpCheck: "Gently checked in next Sunday's 10-min sync"
         },
         dailyPrompts: [
             {
                 dayTime: "Tue • 5:15 PM",
-                triggerContext: "Pre-commute transition (72 hrs before trip)",
-                channel: "2-Min Action Rep",
-                promptScript: "Take 3 minutes now to confirm Friday airport transport and pet drop-off. Then tell her: 'I handled Friday morning transport and boarding end-to-end, so you do not need to think about Friday logistics.'",
-                expectedOutcome: "Removes background cognitive load 48 hours before her Thursday deadline."
+                triggerContext: "72 hours before Friday departure",
+                channel: "2-Min Ownership Nudge",
+                promptScript: "Confirm Friday morning airport ride and pet drop-off now. Then text her: 'Handled Friday morning car and boarding end-to-end, so Friday logistics are off your plate.'",
+                expectedOutcome: "Clears background stress two full days before her Thursday talk."
             },
             {
                 dayTime: "Wed • 6:00 PM",
-                triggerContext: "Evening before her Q4 presentation",
-                channel: "60s Voice Rehearsal",
-                promptScript: "Instead of asking 'What do you want to do for dinner?', say: 'I have dinner covered tonight and tomorrow night so you can stay locked in on your deck. Want me to bring you a plate at 7:00?'",
-                expectedOutcome: "Eliminates decision fatigue during peak work stress."
+                triggerContext: "Evening before her big presentation",
+                channel: "Zero-Decision Dinner Cue",
+                promptScript: "Instead of asking 'What sounds good for dinner?', say: 'I have dinner handled tonight and tomorrow so you can stay locked in on your talk. Want a plate at 7:00?'",
+                expectedOutcome: "Removes decision fatigue right when her bandwidth is lowest."
             },
             {
                 dayTime: "Thu • 4:30 PM",
-                triggerContext: "Post-presentation decompression",
-                channel: "Attunement Check-In",
-                promptScript: "Ask how the presentation felt before talking about trip packing. Listen for 90 seconds and validate the effort she put in all week.",
-                expectedOutcome: "Pairs instrumental logistics relief with emotional presence."
+                triggerContext: "Right after her presentation wraps",
+                channel: "Presence & Warmth Cue",
+                promptScript: "Ask how the presentation felt before mentioning a single packing detail. Listen for two minutes and celebrate the effort she put in all week.",
+                expectedOutcome: "Pairs practical relief with genuine emotional presence."
             }
         ]
     },
     {
         id: "conflict-repair",
-        badge: "Scenario 02",
-        title: "Scenario 02: Post-Conflict Repair & De-escalation",
-        subtitle: "Recurring tension after a rushed conversation where he jumped straight to fixing instead of validating.",
-        syncDuration: "11m 15s Sunday Sync",
+        badge: "Conflict & Safety",
+        title: "Repairing After a Missed Bid",
+        subtitle: "Recovering cleanly when he jumped straight into problem-solving while she just needed him in her corner.",
+        syncDuration: "11-Min Sunday Sync",
         syncCaptures: [
-            "Her input: 'When I shared stress about my sister, I felt lectured instead of supported'",
-            "His input: 'I was trying to offer practical solutions, and then she shut down'",
-            "Conflict signature: Premature problem-solving -> withdrawal -> defensive explanation",
-            "Memory recall: Owning impact before explaining intent cuts repair time by 70%"
+            "Her check-in: 'When I vented about my sister, I felt lectured instead of backed up'",
+            "His check-in: 'I tried to offer helpful fixes, and I got confused when she pulled away'",
+            "Recurring loop: Premature advice -> she goes quiet -> he defends his good intentions",
+            "Remembered preference: Owning how it landed before explaining intent softens tension immediately"
         ],
-        signals: [
+        moments: [
             {
                 id: "fix-reflex",
-                code: "SIGNAL 01",
-                label: "Premature Problem-Solving Reflex",
-                rawPartnerInput: "I just wanted to vent for five minutes and feel like he was on my team, not get a 3-step optimization plan.",
-                coachingTranslation: "Pause the fixer reflex. When she shares relational stress, lead with warmth and alliance ('That sounds exhausting, I see why you are frustrated') before offering advice.",
-                confidence: "98.9%"
+                tag: "The Misfire",
+                label: "Pausing the Fixer Reflex",
+                herPrivateShare: "I already knew the practical options. I just wanted five minutes to vent and feel like my partner was on my team.",
+                hisQuietCoaching: "Pause problem-solving for the first three minutes. Lead with alliance: 'That sounds exhausting, I completely see why you are frustrated.'",
+                whyItLands: "Emotional validation opens the door; premature solutions feel like impatience."
             },
             {
                 id: "intent-vs-impact",
-                code: "SIGNAL 02",
-                label: "Intent Defense vs. Impact Ownership",
-                rawPartnerInput: "When I said I felt dismissed, he spent ten minutes explaining why he meant well, which made me feel even less heard.",
-                coachingTranslation: "In repair, defending your good intentions feels like arguing with her feelings. Acknowledge the impact first: 'I jumped into fixing mode and left you feeling alone in it.'",
-                confidence: "97.8%"
+                tag: "Clean Repair",
+                label: "Owning Impact Before Intent",
+                herPrivateShare: "When I said I felt brushed off, he spent ten minutes explaining why he meant well, which left me feeling even more alone.",
+                hisQuietCoaching: "Drop the 'but I was only trying to help' defense. Start repair with: 'I jumped into fixing mode on Saturday and left you feeling alone in it. I am sorry.'",
+                whyItLands: "Shows emotional maturity and stops a 5-minute hurt from becoming a 3-day freeze."
             },
             {
                 id: "repair-window",
-                code: "SIGNAL 03",
-                label: "Low-Stakes Reconnection Bid",
-                rawPartnerInput: "Past memory node #29: Warm physical touch + a concise, unprompted ownership statement re-opens emotional safety fastest.",
-                coachingTranslation: "Initiate a 60-second clean repair tonight without asking her to process a 45-minute meta-conversation.",
-                confidence: "96.7%"
+                tag: "Shared Shorthand",
+                label: "Preventing the Next Misfire",
+                herPrivateShare: "Warm touch plus one honest sentence reconnects me way faster than a heavy 45-minute post-mortem.",
+                hisQuietCoaching: "Keep tonight's repair warm, physical, and under 60 seconds, then adopt a simple mid-week check: 'Want me in team-and-listening mode, or brainstorming mode?'",
+                whyItLands: "Replaces guesswork with an easy, affectionate cue both partners trust."
             }
         ],
-        coachingObject: {
-            dyadicPattern: "Fixer Reflex -> Partner Shutdown -> Defensive Intent Loop",
-            memoryGraphUpdate: "Updated Node #08 (Family Stress Triggers) + Node #29 (Clean Repair Protocol)",
-            translatedPartnerNeed: "She knows you care; what she needs in repair is for you to own how your fixing mode landed before explaining why you did it.",
-            concreteMicroReps: "1. Complete 90-second voice repair rehearsal. 2. Deliver clean impact-first repair tonight. 3. Use the 'Support or Solutions?' check-in mid-week.",
-            rehearsalMode: "90s Interactive Voice Roleplay: Practice owning impact without adding 'but I was just trying to help'",
-            privacyBoundary: "Private roleplay audio deleted post-session; structured progress logged",
-            confidence: "97.9%",
-            weeklyTargetScore: "+41% Repair Speed",
-            verificationMetric: "Verified in next Sunday Sync"
+        weeklyShift: {
+            patternShift: "From Defending Good Intentions -> Clean, Warm Impact Repair",
+            rememberedDetail: "Remembers that defending intent escalates distance, while brief unprompted ownership restores warmth",
+            translatedPartnerNeed: "She already knows you care; what brings her close again is hearing that you understand how your fixing reflex felt on her side.",
+            concreteMicroReps: "1. Practice a 60-second clean repair out loud on the drive home. 2. Deliver it warmly tonight with zero 'but'. 3. Ask one deepening question mid-week.",
+            rehearsalMode: "90s Voice Roleplay: Practicing clean repair without slipping into self-defense",
+            privacyBoundary: "Voice rehearsal audio is ephemeral and deleted immediately after practice",
+            feltOutcome: "Conflict repairs in minutes, not days",
+            followUpCheck: "Gently checked in next Sunday's 10-min sync"
         },
         dailyPrompts: [
             {
                 dayTime: "Mon • 6:10 PM",
-                triggerContext: "In-car voice rehearsal before arriving home",
-                channel: "90s Voice Roleplay",
-                promptScript: "Rehearse out loud: 'Hey, I have been thinking about Saturday. When you talked about your sister, I went straight into problem-solving instead of just being in your corner. I get why that felt frustrating.'",
-                expectedOutcome: "Rehearses dropping the defensive 'but' before the real conversation."
+                triggerContext: "Private car commute before walking in",
+                channel: "90s Voice Rehearsal",
+                promptScript: "Try saying out loud: 'Hey, I kept thinking about Saturday. When you talked about your sister, I went straight into fixing mode instead of just being in your corner. I get why that felt frustrating.'",
+                expectedOutcome: "Gets the defensive rough draft out of the way before you see her."
             },
             {
                 dayTime: "Wed • 7:45 PM",
-                triggerContext: "Mid-week evening wind-down",
-                channel: "2-Min Listening Rep",
-                promptScript: "When she brings up a stressful topic tonight, ask one deepening question ('What part of that has been weighing on you most?') before offering any suggestion.",
-                expectedOutcome: "Rebuilds safety around sharing everyday emotional friction."
+                triggerContext: "Evening catch-up on the couch",
+                channel: "Listening Rep",
+                promptScript: "When she shares a stressful moment tonight, ask one curious follow-up ('What part of that has been weighing on you most?') before offering any idea.",
+                expectedOutcome: "Rebuilds safety around sharing everyday stress."
             },
             {
                 dayTime: "Fri • 5:30 PM",
-                triggerContext: "End-of-week transition ritual",
-                channel: "Micro-Check-In",
-                promptScript: "Use the calibrated framing phrase: 'Do you want me in listening-and-team mode right now, or brainstorming mode?'",
-                expectedOutcome: "Gives both partners a shared shorthand that prevents future misfires."
+                triggerContext: "Unwinding at the end of the workweek",
+                channel: "Light Shorthand Cue",
+                promptScript: "Use the shared phrase warmly: 'Do you want me in listening-and-team mode right now, or troubleshooting mode?'",
+                expectedOutcome: "Turns a past friction point into an inside-joke alliance."
             }
         ]
     },
     {
         id: "emotional-attunement",
-        badge: "Scenario 03",
-        title: "Scenario 03: Emotional Attunement & Bid Recognition",
-        subtitle: "Breaking out of 'parallel roommate mode' by catching subtle daily bids for connection and affection.",
-        syncDuration: "10m 05s Sunday Sync",
+        badge: "Romance & Presence",
+        title: "Breaking Out of 'Roommate Drift'",
+        subtitle: "Trading parallel phone scrolling for small, specific moments of feeling pursued and deeply known.",
+        syncDuration: "10-Min Sunday Sync",
         syncCaptures: [
-            "Her input: 'We were efficient all week, but it felt like we were running a household together, not dating'",
-            "His input: 'I thought we had a smooth week, I missed that she was feeling distant'",
-            "Intimacy gap: Non-sexual warmth and curiosity during the week predict weekend closeness",
-            "Memory recall: Screen-down greetings and specific compliments land 3x stronger than generic check-ins"
+            "Her check-in: 'We ran the house smoothly all week, yet it felt like co-managers rather than romantic partners'",
+            "His check-in: 'I thought we had an easy week, I completely missed that she was feeling unseen'",
+            "Connection pattern: Weekday micro-warmth predicts weekend closeness far better than rare grand gestures",
+            "Remembered preference: Planning a date only feels romantic if she does not have to pick the restaurant"
         ],
-        signals: [
+        moments: [
             {
                 id: "micro-bids",
-                code: "SIGNAL 01",
-                label: "Missed Kitchen & Hallway Bids",
-                rawPartnerInput: "When I share a random observation or sigh at the counter while he stays glued to his phone, I stop reaching out by Friday.",
-                coachingTranslation: "Treat the first 3 minutes of reunion after work as a high-leverage connection window: phone in pocket, eye contact, and a 6-second warm embrace.",
-                confidence: "98.6%"
+                tag: "Daily Reunion",
+                label: "The First Three Minutes Home",
+                herPrivateShare: "When I share a small thought at the kitchen counter while he stays looking at his phone, I quietly stop reaching out by Friday.",
+                hisQuietCoaching: "Treat walking through the door (or closing your laptop) as sacred: phone stays in pocket, eye contact, and a real 6-second hug before checking messages.",
+                whyItLands: "Anchors the transition from work mode to 'us' mode every single day."
             },
             {
                 id: "specific-seen",
-                code: "SIGNAL 02",
-                label: "Specific vs. Generic Appreciation",
-                rawPartnerInput: "'You look nice' is fine, but I feel truly seen when he notices something specific I cared about or put energy into.",
-                coachingTranslation: "Upgrade generic praise to partner-specific observation: name one specific detail about her energy, outfit, or how she handled a moment.",
-                confidence: "97.4%"
+                tag: "Feeling Known",
+                label: "Specific Over Generic Praise",
+                herPrivateShare: "'You look nice' is sweet, yet I light up when he notices something specific I cared about or how I handled a hard moment.",
+                hisQuietCoaching: "Trade generic compliments for one specific observation: name a detail about her laugh, how she handled a call, or something thoughtful she did.",
+                whyItLands: "Feeling specifically known is the single strongest predictor of lasting intimacy."
             },
             {
                 id: "date-initiative",
-                code: "SIGNAL 03",
-                label: "Zero-Friction Date Curation",
-                rawPartnerInput: "Past memory node #19: Planning a date only counts as romantic relief if she does not have to pick the spot and book the table.",
-                coachingTranslation: "Propose a fully baked Friday plan by Tuesday noon using her saved preference profile (cozy corner booth, walkable wine bar).",
-                confidence: "99.0%"
+                tag: "Romantic Initiative",
+                label: "Zero-Decision Date Planning",
+                herPrivateShare: "When 'let's do date night' turns into 'where do you want to go?', it accidentally becomes one more thing for me to plan.",
+                hisQuietCoaching: "Book her favorite style of spot (cozy corner booth, walkable wine bar) by Tuesday noon so all she has to say is yes.",
+                whyItLands: "Combines romantic pursuit with genuine mental rest."
             }
         ],
-        coachingObject: {
-            dyadicPattern: "High Operational Efficiency / Low Emotional Presence ('Roommate Drift')",
-            memoryGraphUpdate: "Linked Node #19 (Zero-Decision Date Preference) + Node #33 (Reunion Rituals)",
-            translatedPartnerNeed: "She wants to feel pursued and specifically noticed during ordinary Tuesday and Wednesday moments, not just on special occasions.",
-            concreteMicroReps: "1. Phone-down 6-second hug at daily reunion. 2. Book Friday date spot by Tuesday noon with zero decision load on her. 3. Share one specific observation mid-week.",
-            rehearsalMode: "60s Calibration: Turning towards casual conversational bids in real time",
-            privacyBoundary: "Preference graph encrypted with partner-controlled visibility",
-            confidence: "98.5%",
-            weeklyTargetScore: "+38% Felt Romance & Warmth",
-            verificationMetric: "Verified in next Sunday Sync"
+        weeklyShift: {
+            patternShift: "From Efficient Co-Managers -> Intentional Weekday Pursuit",
+            rememberedDetail: "Draws on her saved date preferences (quiet corner booth, neighborhood wine bar) and reunion ritual",
+            translatedPartnerNeed: "She wants to feel pursued and specifically noticed on ordinary Tuesdays and Wednesdays, not only on anniversaries.",
+            concreteMicroReps: "1. Phone-in-pocket 6-second hug at daily reunion. 2. Book Friday date table by Tuesday noon. 3. Share one specific appreciation Thursday night.",
+            rehearsalMode: "60s Calibration: Catching everyday conversational bids in the kitchen",
+            privacyBoundary: "Partner preference memory stays encrypted and fully editable by each partner",
+            feltOutcome: "Warmth & spark return mid-week",
+            followUpCheck: "Gently checked in next Sunday's 10-min sync"
         },
         dailyPrompts: [
             {
                 dayTime: "Tue • 12:15 PM",
-                triggerContext: "Midday planning window",
-                channel: "Proactive Romance Rep",
-                promptScript: "Send a concrete invite right now: 'I booked us a corner table at Osteria for Friday at 7:30. All you have to do is show up with me.'",
-                expectedOutcome: "Creates anticipation early in the week while removing decision load."
+                triggerContext: "Tuesday midday break",
+                channel: "Proactive Date Nudge",
+                promptScript: "Book the table first, then text her: 'Grabbed us a corner booth at Osteria for Friday at 7:30. All you have to do is show up with me.'",
+                expectedOutcome: "Sparks anticipation on Tuesday with zero planning burden on her."
             },
             {
                 dayTime: "Wed • 5:45 PM",
-                triggerContext: "Arriving home / ending remote workday",
-                channel: "Reunion Ritual Rep",
-                promptScript: "Put your phone in your pocket before opening the door. Give her a full 6-second hug and ask: 'What was the best or weirdest part of your day today?'",
-                expectedOutcome: "Interrupts roommate drift at the exact transition point between work and home."
+                triggerContext: "Wrapping up the workday",
+                channel: "Reunion Ritual Cue",
+                promptScript: "Slip your phone into your pocket before walking into the kitchen. Give her a full 6-second hug and ask: 'What was the best part of your day?'",
+                expectedOutcome: "Breaks parallel screen habit right at the evening transition."
             },
             {
                 dayTime: "Thu • 8:15 PM",
-                triggerContext: "Evening connection cue",
-                channel: "Specificity Rep",
-                promptScript: "Tell her one specific thing you noticed or admired about her this week (how she handled a call, a detail she planned, or the way she laughed).",
-                expectedOutcome: "Reinforces the core driver of relationship satisfaction: feeling deeply known."
+                triggerContext: "Quiet Thursday evening moment",
+                channel: "Specificity Cue",
+                promptScript: "Tell her one specific thing you noticed or admired about her this week, whether a small detail she arranged or the energy she brought into the room.",
+                expectedOutcome: "Deepens the feeling of being genuinely seen and cherished."
             }
         ]
     }
@@ -268,36 +264,36 @@ const SCENARIOS: Scenario[] = [
 
 export default function RelationshipSyncInspector({ customerTags }: { customerTags?: string[] }) {
     const [activeScenarioId, setActiveScenarioId] = useState<string>("mental-load");
-    const [activeSignalId, setActiveSignalId] = useState<string>("delegation-trap");
+    const [activeMomentId, setActiveMomentId] = useState<string>("delegation-trap");
     const [showPrompts, setShowPrompts] = useState<boolean>(false);
 
     const scenario = SCENARIOS.find((s) => s.id === activeScenarioId) || SCENARIOS[0];
-    const activeSignal = scenario.signals.find((sig) => sig.id === activeSignalId) || scenario.signals[0];
+    const activeMoment = scenario.moments.find((m) => m.id === activeMomentId) || scenario.moments[0];
 
     const handleScenarioChange = (newId: string) => {
         setActiveScenarioId(newId);
         const found = SCENARIOS.find((s) => s.id === newId);
-        if (found && found.signals.length > 0) {
-            setActiveSignalId(found.signals[0].id);
+        if (found && found.moments.length > 0) {
+            setActiveMomentId(found.moments[0].id);
         }
     };
 
     return (
         <div
             id="attune-prototype"
-            className="scroll-mt-28 bg-[#0a0f14]/90 p-6 sm:p-10 rounded-3xl border border-[var(--primary)]/20 backdrop-blur-md relative overflow-hidden shadow-[0_0_50px_rgba(244,63,94,0.08)]"
+            className="scroll-mt-28 bg-[#0e0a10]/90 p-6 sm:p-10 rounded-3xl border border-[var(--primary)]/25 backdrop-blur-md relative overflow-hidden shadow-[0_20px_60px_-15px_rgba(244,63,94,0.12)]"
         >
-            <div className="absolute top-0 right-0 w-72 h-72 bg-[var(--primary)]/10 blur-[110px] rounded-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-80 h-80 bg-[var(--primary)]/10 blur-[120px] rounded-full pointer-events-none" />
 
             {/* Header + ICP Tags */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-5">
                 <div>
                     <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-2">
-                        <Sparkles className="w-3.5 h-3.5 text-[var(--primary)]" />
-                        Interactive Product Artifact
+                        <MessageCircleHeart className="w-3.5 h-3.5 text-[var(--primary)]" />
+                        Interactive Partner Bridge
                     </div>
                     <h2 className="text-3xl sm:text-4xl font-serif text-white" style={{ textWrap: "balance" }}>
-                        Weekly Couple Sync &amp; Relationship Memory Engine
+                        How Her Honest Sunday Check-In Becomes His Best Weekday Move
                     </h2>
                 </div>
                 {customerTags && customerTags.length > 0 && (
@@ -307,8 +303,8 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                 )}
             </div>
 
-            <p className="text-white/70 font-light text-base sm:text-lg mb-6 max-w-3xl" style={{ textWrap: "pretty" }}>
-                Instead of letting unspoken resentment build or relying on generic self-help advice, couples complete a 10-minute Sunday sync. Select a relationship scenario below and inspect each signal node to see how <strong className="text-white font-medium">Attune</strong> updates its bilateral memory graph, compiles a <code className="text-xs font-mono text-[var(--secondary)] bg-white/5 px-1.5 py-0.5 rounded">PartnerCoachingObject</code>, and schedules timed daily micro-reps.
+            <p className="text-slate-300 font-light text-base sm:text-lg mb-6 max-w-3xl" style={{ textWrap: "pretty" }}>
+                She never has to nag or repeat herself, and he never feels lectured. Choose a real couple pattern below to see how <strong className="text-white font-medium">Attune</strong> holds her raw feelings privately while translating them into calm, well-timed action reps for him.
             </p>
 
             {/* Scenario Selector Tabs */}
@@ -319,130 +315,146 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                         <button
                             key={item.id}
                             onClick={() => handleScenarioChange(item.id)}
-                            className={`text-left p-3.5 rounded-xl transition-all cursor-pointer border ${
+                            className={`text-left p-3.5 rounded-xl transition-all cursor-pointer border overflow-hidden ${
                                 isActive
                                     ? "bg-[var(--primary)]/15 border-[var(--primary)]/50 text-white shadow-[0_0_20px_rgba(244,63,94,0.15)]"
-                                    : "bg-transparent border-transparent text-white/50 hover:text-white/80 hover:bg-white/[0.03]"
+                                    : "bg-transparent border-transparent text-white/55 hover:text-white/85 hover:bg-white/[0.03]"
                             }`}
                         >
                             <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
                                 {item.badge}
                             </div>
-                            <div className="text-sm font-medium leading-snug">{item.title.replace(/^Scenario \d+:\s*/, "")}</div>
+                            <div className="text-sm font-medium leading-snug">{item.title}</div>
                         </button>
                     );
                 })}
             </div>
 
-            {/* Section 1: Dyadic Sync Telemetry & Signal Nodes (Compact Interactive View) */}
-            <div className="bg-black/60 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
+            {/* Section 1: Moment Selector + Warm 2-Column Asymmetric Partner Bridge */}
+            <div className="bg-black/45 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
                 <div className="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-3.5 mb-4">
                     <div className="flex items-center gap-2.5">
-                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-                        <span className="font-mono text-xs uppercase tracking-widest text-white/90">
-                            01. Bilateral Weekly Sync Capture &amp; Memory Recall
+                        <Heart className="w-4 h-4 text-[var(--secondary)] shrink-0" />
+                        <span className="text-sm font-medium text-white/95">
+                            {scenario.subtitle}
                         </span>
                     </div>
-                    <span className="font-mono text-xs text-[var(--secondary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5">
-                        <Heart className="w-3.5 h-3.5 shrink-0" /> {scenario.syncDuration}
+                    <span className="text-xs text-[var(--tertiary)] bg-[var(--primary)]/10 px-3 py-1 rounded-full border border-[var(--primary)]/20 inline-flex items-center gap-1.5 shrink-0">
+                        <Clock className="w-3.5 h-3.5 shrink-0" /> {scenario.syncDuration}
                     </span>
                 </div>
 
-                <p className="text-sm text-white/65 mb-4" style={{ textWrap: "pretty" }}>
-                    {scenario.subtitle}
-                </p>
-
-                {/* 3 Interactive Signal Nodes */}
+                {/* 3 Relational Moment Tabs */}
                 <div className="mb-4">
-                    <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                        <span>Extracted Dyadic Memory &amp; Friction Signals</span>
-                        <span>Select Signal Node to Inspect</span>
+                    <div className="text-xs text-slate-400 mb-2">
+                        Choose a moment from their week:
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                        {scenario.signals.map((sig) => {
-                            const selected = sig.id === activeSignal.id;
+                        {scenario.moments.map((m) => {
+                            const selected = m.id === activeMoment.id;
                             return (
                                 <button
-                                    key={sig.id}
-                                    onClick={() => setActiveSignalId(sig.id)}
+                                    key={m.id}
+                                    onClick={() => setActiveMomentId(m.id)}
                                     className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between overflow-hidden ${
                                         selected
-                                            ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(244,63,94,0.25)]"
-                                            : "bg-[#09101a]/90 border-white/10 text-white/70 hover:border-[var(--primary)]/40 hover:text-white"
+                                            ? "bg-[var(--primary)]/20 border-[var(--primary)] text-white shadow-[0_0_20px_rgba(244,63,94,0.2)]"
+                                            : "bg-white/[0.02] border-white/10 text-slate-300 hover:border-[var(--primary)]/40 hover:text-white"
                                     }`}
                                 >
-                                    <div className="flex flex-wrap items-center justify-between gap-1.5 w-full mb-1.5">
-                                        <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-[var(--secondary)]">
-                                            <Activity className="w-3 h-3 shrink-0" />
-                                            {sig.code}
-                                        </span>
-                                        <span className="font-mono text-[10px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
-                                            {sig.confidence}
-                                        </span>
-                                    </div>
-                                    <div className="text-sm font-medium leading-snug">{sig.label}</div>
+                                    <span className="text-[11px] font-mono uppercase tracking-wider text-[var(--secondary)] mb-1">
+                                        {m.tag}
+                                    </span>
+                                    <div className="text-sm font-medium leading-snug">{m.label}</div>
                                 </button>
                             );
                         })}
                     </div>
                 </div>
 
-                {/* Active Signal Node Readout */}
+                {/* Warm 2-Column Asymmetric Partner Bridge */}
                 <AnimatePresence mode="wait">
                     <motion.div
-                        key={activeSignal.id}
+                        key={activeMoment.id}
                         initial={{ opacity: 0, y: 4 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -4 }}
                         transition={{ duration: 0.18 }}
-                        className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-xl p-4"
+                        className="space-y-3"
                     >
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
-                            <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
-                                {activeSignal.code}: {activeSignal.label}
-                            </span>
-                            <span className="text-xs font-mono text-emerald-400">
-                                Pattern Match Confidence: {activeSignal.confidence}
-                            </span>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                            {/* Left: Her Private Voice */}
+                            <div className="bg-white/[0.03] border border-white/10 rounded-2xl p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
+                                <div>
+                                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span className="text-xs font-medium text-rose-200">
+                                            What She Shares in Sunday Sync
+                                        </span>
+                                        <span className="inline-flex items-center gap-1 text-[11px] text-slate-400 bg-white/5 px-2.5 py-0.5 rounded-full border border-white/10">
+                                            <Lock className="w-3 h-3 text-[var(--secondary)] shrink-0" />
+                                            Private Vault
+                                        </span>
+                                    </div>
+                                    <p className="text-sm sm:text-base font-serif italic text-white/90 leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                        &ldquo;{activeMoment.herPrivateShare}&rdquo;
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Right: His Quiet Coaching */}
+                            <div className="bg-[var(--primary)]/12 border border-[var(--primary)]/35 rounded-2xl p-4 sm:p-5 flex flex-col justify-between overflow-hidden">
+                                <div>
+                                    <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                                        <span className="text-xs font-medium text-[var(--tertiary)]">
+                                            How Attune Quietly Coaches Him
+                                        </span>
+                                        <span className="inline-flex items-center gap-1 text-[11px] text-rose-200 bg-[var(--primary)]/20 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30">
+                                            <Sparkles className="w-3 h-3 shrink-0" />
+                                            Zero-Nagging Translation
+                                        </span>
+                                    </div>
+                                    <p className="text-sm sm:text-base text-white/95 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                        {activeMoment.hisQuietCoaching}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <p className="text-sm text-white/90 mb-2.5 leading-relaxed" style={{ textWrap: "pretty" }}>
-                            <strong className="text-white/60 font-mono text-xs uppercase mr-1.5">Partner Signal:</strong>
-                            “{activeSignal.rawPartnerInput}”
-                        </p>
-                        <div className="text-xs font-mono text-[var(--tertiary)] bg-black/50 px-3.5 py-2.5 rounded-lg border border-white/5 leading-relaxed">
-                            Translated Coaching Directive: {activeSignal.coachingTranslation}
+
+                        <div className="text-xs sm:text-sm text-rose-200/90 bg-white/[0.03] px-4 py-2.5 rounded-xl border border-white/5 flex flex-wrap items-center gap-2">
+                            <strong className="font-medium text-white">Why it lands:</strong>
+                            <span>{activeMoment.whyItLands}</span>
                         </div>
                     </motion.div>
                 </AnimatePresence>
             </div>
 
-            {/* Section 2: Headline Outcome Summary Strip + Collapsible Deep Schema & Daily Prompts */}
-            <div className="bg-[#060a0f] border border-[var(--primary)]/30 rounded-2xl p-5 sm:p-6">
+            {/* Section 2: Headline Relationship Shift + Collapsible Timed Nudges */}
+            <div className="bg-[#09070c] border border-[var(--primary)]/25 rounded-2xl p-5 sm:p-6">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
-                        <span className="font-mono text-xs uppercase tracking-widest text-[var(--secondary)] block mb-1">
-                            02. Compiled PartnerCoachingObject &amp; Weekly Rep Schedule
+                        <span className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] block mb-1">
+                            This Week&apos;s Relational Shift
                         </span>
                         <div className="text-base sm:text-lg font-medium text-white leading-snug">
-                            {scenario.coachingObject.dyadicPattern}
+                            {scenario.weeklyShift.patternShift}
                         </div>
-                        <div className="text-xs font-mono text-white/55 mt-1">
-                            {scenario.coachingObject.rehearsalMode} • {scenario.coachingObject.confidence} Graph Alignment
+                        <div className="text-xs text-slate-400 mt-1">
+                            {scenario.weeklyShift.rehearsalMode}
                         </div>
                     </div>
 
                     <div className="bg-gradient-to-r from-[var(--primary)]/20 to-[var(--primary)]/5 border border-[var(--primary)]/40 rounded-xl px-4 py-3 flex flex-col justify-center gap-0.5 overflow-hidden">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--tertiary)]">
-                            Predicted Weekly Lift
+                            Felt Partner Outcome
                         </div>
                         <div className="text-lg sm:text-xl font-serif text-white font-medium leading-snug">
-                            {scenario.coachingObject.weeklyTargetScore}
+                            {scenario.weeklyShift.feltOutcome}
                         </div>
-                        <div className="text-[11px] text-white/60">{scenario.coachingObject.verificationMetric}</div>
+                        <div className="text-[11px] text-slate-300">{scenario.weeklyShift.followUpCheck}</div>
                     </div>
                 </div>
 
-                {/* Expandable Sync Captures, Coaching Object Schema & 3 Timed Daily Behavioral Micro-Prompts */}
+                {/* Expandable Sync Context, Privacy Boundary & 3 Timed Weekday Nudges */}
                 <div className="border-t border-white/10 mt-4 pt-3.5">
                     <button
                         onClick={() => setShowPrompts(!showPrompts)}
@@ -450,7 +462,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                         aria-expanded={showPrompts}
                     >
                         <span>
-                            {showPrompts ? "Hide" : "Inspect"} Dyadic Memory Graph, Partner Translation &amp; {scenario.dailyPrompts.length} Timed Daily Prompts
+                            {showPrompts ? "Hide" : "See"} Full Sunday Sync Context, Privacy Guardrails &amp; {scenario.dailyPrompts.length} Timed Weekday Nudges
                         </span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showPrompts ? "rotate-180" : ""}`} />
                     </button>
@@ -467,14 +479,14 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                 <div className="pt-4 space-y-4">
                                     {/* Sync Capture Inputs */}
                                     <div>
-                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                                            Captured Two-Sided Sync Inputs &amp; Longitudinal Context
+                                        <div className="text-xs font-medium text-slate-400 mb-2">
+                                            What the 10-Minute Sunday Sync Captured
                                         </div>
                                         <div className="grid sm:grid-cols-2 gap-2">
                                             {scenario.syncCaptures.map((capture, idx) => (
                                                 <div
                                                     key={idx}
-                                                    className="flex items-start gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-white/75 px-3 py-2.5 rounded-lg font-mono"
+                                                    className="flex items-start gap-2.5 text-xs bg-white/[0.02] border border-white/5 text-slate-200 px-3 py-2.5 rounded-xl"
                                                 >
                                                     <Check className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0 mt-0.5" />
                                                     <span>{capture}</span>
@@ -483,46 +495,34 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                         </div>
                                     </div>
 
-                                    {/* Structured Memory Graph Update + Translated Partner Need */}
+                                    {/* Memory + Privacy Guardrails */}
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
                                         <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 overflow-hidden">
-                                            <span className="text-white/40 font-mono block text-[10px] uppercase mb-1">
-                                                Structured Memory Graph Update
+                                            <span className="text-slate-400 font-mono block text-[10px] uppercase mb-1">
+                                                Longitudinal Relationship Memory
                                             </span>
-                                            <span className="text-white/95 text-sm font-mono block mb-1.5 break-words">
-                                                {scenario.coachingObject.memoryGraphUpdate}
+                                            <span className="text-white/95 text-sm block mb-1.5 leading-relaxed">
+                                                {scenario.weeklyShift.rememberedDetail}
                                             </span>
-                                            <span className="text-white/55 text-xs block">
-                                                Privacy: {scenario.coachingObject.privacyBoundary}
+                                            <span className="text-slate-400 text-xs inline-flex items-center gap-1.5">
+                                                <ShieldCheck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                                                {scenario.weeklyShift.privacyBoundary}
                                             </span>
                                         </div>
                                         <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 overflow-hidden">
-                                            <span className="text-white/40 font-mono block text-[10px] uppercase mb-1">
-                                                Translated Partner Need (De-Escalated)
+                                            <span className="text-slate-400 font-mono block text-[10px] uppercase mb-1">
+                                                Core Underlying Need
                                             </span>
                                             <p className="text-white/90 text-sm leading-relaxed m-0" style={{ textWrap: "pretty" }}>
-                                                {scenario.coachingObject.translatedPartnerNeed}
+                                                {scenario.weeklyShift.translatedPartnerNeed}
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Concrete Micro-Reps */}
-                                    <div className="bg-white/[0.03] p-4 rounded-xl border border-white/5 flex flex-col justify-center overflow-hidden">
-                                        <span className="text-white/40 block text-[10px] font-mono uppercase mb-1">
-                                            Concrete Weekly Micro-Reps &amp; Voice Rehearsal
-                                        </span>
-                                        <span className="text-sm text-[var(--secondary)] mb-1 leading-relaxed">
-                                            {scenario.coachingObject.concreteMicroReps}
-                                        </span>
-                                        <span className="text-xs font-mono text-white/50">
-                                            {scenario.coachingObject.rehearsalMode}
-                                        </span>
-                                    </div>
-
-                                    {/* 3 Timed Daily Behavioral Micro-Prompts */}
+                                    {/* 3 Timed Daily Nudges */}
                                     <div>
-                                        <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
-                                            {scenario.dailyPrompts.length} Timed Daily Behavioral Micro-Prompts Scheduled
+                                        <div className="text-xs font-medium text-slate-400 mb-2">
+                                            His {scenario.dailyPrompts.length} Timed Nudges Across the Week
                                         </div>
                                         <div className="grid md:grid-cols-3 gap-3">
                                             {scenario.dailyPrompts.map((prompt, i) => (
@@ -531,24 +531,24 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                                     className="p-4 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[var(--primary)]/40 transition-colors flex flex-col justify-between overflow-hidden"
                                                 >
                                                     <div>
-                                                        <div className="flex flex-col items-start gap-1.5 mb-2">
+                                                        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-2">
                                                             <span className="inline-flex items-center gap-1.5 text-xs font-mono text-white font-semibold">
                                                                 <Clock className="w-3 h-3 text-[var(--secondary)] shrink-0" />
                                                                 {prompt.dayTime}
                                                             </span>
-                                                            <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 leading-snug">
+                                                            <span className="text-[10px] font-mono text-[var(--tertiary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30 leading-snug">
                                                                 {prompt.channel}
                                                             </span>
                                                         </div>
-                                                        <div className="text-[11px] font-mono text-white/50 mb-2.5">
-                                                            Trigger: {prompt.triggerContext}
+                                                        <div className="text-xs text-slate-400 mb-2.5">
+                                                            Moment: {prompt.triggerContext}
                                                         </div>
-                                                        <p className="text-xs text-white/85 leading-relaxed bg-black/40 p-2.5 rounded-lg border border-white/5 mb-2.5" style={{ textWrap: "pretty" }}>
+                                                        <p className="text-xs text-white/90 leading-relaxed bg-black/40 p-3 rounded-lg border border-white/5 mb-2.5" style={{ textWrap: "pretty" }}>
                                                             {prompt.promptScript}
                                                         </p>
                                                     </div>
-                                                    <div className="text-[11px] font-mono text-emerald-400/90">
-                                                        Impact: {prompt.expectedOutcome}
+                                                    <div className="text-xs text-rose-200/90">
+                                                        {prompt.expectedOutcome}
                                                     </div>
                                                 </div>
                                             ))}

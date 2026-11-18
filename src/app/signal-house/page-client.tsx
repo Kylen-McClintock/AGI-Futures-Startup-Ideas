@@ -19,7 +19,6 @@ import { HoverAcronym } from "@/components/HoverAcronym";
 // Local Components
 import { AttentionChart } from "./components/AttentionChart";
 import { InteractiveSection } from "./components/InteractiveSection";
-import { ICPGrid } from "./components/ICPGrid";
 import FocusRoomInspector from "./components/FocusRoomInspector";
 import ValueFlowLoop from "./components/ValueFlowLoop";
 import PriorArtMatrix from "./components/PriorArtMatrix";
@@ -266,19 +265,15 @@ export default function SignalHouseClientPage({ initialTags }: { initialTags: an
                         <FocusRoomInspector customerTags={initialTags?.customer} />
                     </section>
 
-                    {/* SPECIFIC EXAMPLE PER ICP */}
-                    <section>
-                        <div className="my-12 rounded-3xl overflow-hidden glass-panel border border-[var(--primary)]/20 relative aspect-[21/9]">
-                            <Image src={geothermalCaveImage} alt="Geothermal Cave Workspace" fill quality={100} className="object-cover" />
+                    {/* VISUAL BREATHER: GEOTHERMAL CAVE WORKSPACE */}
+                    <div className="my-12 rounded-3xl overflow-hidden glass-panel border border-[var(--primary)]/20 relative aspect-[21/9]">
+                        <Image src={geothermalCaveImage} alt="Geothermal Cave Workspace" fill quality={100} className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex items-end p-6 sm:p-8">
+                            <p className="text-white/90 text-sm sm:text-base font-light m-0" style={{ textWrap: "pretty" }}>
+                                Every niche develops its own architectural vernacular, acoustic signature, and daily sprint rhythm.
+                            </p>
                         </div>
-                        <h2 className="text-4xl font-serif text-center text-white mb-4" style={{ textWrap: "balance" }}>
-                            Specific Example per ICP
-                        </h2>
-                        <div className="flex justify-center mb-6">
-                            <InlineTags tags={initialTags?.customer} theme="violet" />
-                        </div>
-                        <ICPGrid />
-                    </section>
+                    </div>
 
                     {/* NEGLECTEDNESS SLIDER */}
                     <div>

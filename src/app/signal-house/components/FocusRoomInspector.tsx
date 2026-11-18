@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import { Shield, Sparkles, Radio, Users, Clock, CheckCircle2, Lock, Unlock, Volume2, ChevronDown } from "lucide-react";
+import { Shield, Radio, Users, CheckCircle2, Lock, Sparkles, Volume2, ChevronDown } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 
-interface RoomNode {
+interface RitualPillar {
     id: string;
+    pillarTag: string;
     label: string;
     metric: string;
     detail: string;
-    confidence: string;
 }
 
 interface CollaboratorMatch {
@@ -18,7 +18,7 @@ interface CollaboratorMatch {
     activeArtifact: string;
     intentTag: string;
     sparks: number;
-    matchScore: string;
+    signalFit: string;
 }
 
 interface RoomScenario {
@@ -31,9 +31,8 @@ interface RoomScenario {
     completionLift: string;
     sparksEarned: number;
     ritualCues: string[];
-    nodes: RoomNode[];
+    pillars: RitualPillar[];
     specs: {
-        roomId: string;
         curationFilter: string;
         sessionProtocol: string;
         distractionShield: string;
@@ -48,45 +47,44 @@ const SCENARIOS: Record<string, RoomScenario> = {
         id: "founders",
         name: "AI-Native Founders Penthouse",
         niche: "Venture & Agent Infrastructure",
-        host: "Curated by @kyle_agi (Top 1% Host)",
+        host: "Hosted by @kyle_agi",
         occupancy: "42 / 50 Active Sprinters",
-        soundscape: "Rain on Glass + 40Hz Binaural Drone",
-        completionLift: "+44% Session Completion",
+        soundscape: "Rain on Glass + Warm Analog Drone",
+        completionLift: "+44% Deep-Block Completion",
         sparksEarned: 120,
         ritualCues: [
-            "OS-level block on X, Hacker News, Discord, and email tabs for 90 minutes",
-            "Live GitHub commit & artifact ship ticker visible only during break windows",
-            "Zero-interruption presence indicator (avatars glow violet while locked in)",
-            "Automatic 12-minute post-sprint unmasked collision window"
+            "OS and browser shield pauses X, Hacker News, Discord, and inbox tabs for 90 minutes",
+            "Shipped commits and artifacts stay silent until the 12-minute break bell rings",
+            "Ambient desk beacons show peers locked in side-by-side with zero camera pressure",
+            "12-minute post-sprint lounge surfaces what everyone just built for warm intros"
         ],
-        nodes: [
+        pillars: [
             {
                 id: "shield",
-                label: "Cross-Device Shield",
-                metric: "0 Tab Switches / 90m",
-                detail: "Browser extension + desktop daemon suppresses notifications and blocks feed domains while the sprint timer is active, eliminating attention residue.",
-                confidence: "99.4%"
+                pillarTag: "Ritual 01",
+                label: "Cross-Device Distraction Shield",
+                metric: "0 Feed Detours / 90m",
+                detail: "Lightweight browser and desktop guard mutes notifications and pauses feed tabs while the sprint clock runs, protecting working memory from attention residue."
             },
             {
                 id: "cue",
-                label: "Contextual Habit Anchor",
-                metric: "3.8m Time-to-Flow",
-                detail: "Identical lighting, rain density, acoustic profile, and desk perspective condition automatic task initiation within 4 minutes of room entry.",
-                confidence: "96.8%"
+                pillarTag: "Ritual 02",
+                label: "Conditioned Flow Environment",
+                metric: "<4 Min Into Flow",
+                detail: "Returning to the exact same rain-lit skyline, desk angle, and acoustic profile conditions rapid task initiation without willpower friction."
             },
             {
                 id: "sparks",
-                label: "Proof-of-Work Sparks",
-                metric: "+120 Sparks Minted",
-                detail: "Verified uninterrupted focus blocks mint non-transferable Sparks that upgrade room architecture and unlock high-trust founder rooms.",
-                confidence: "100%"
+                pillarTag: "Ritual 03",
+                label: "Earned Proof-of-Focus Sparks",
+                metric: "+120 Sparks Earned",
+                detail: "Completed uninterrupted blocks mint non-transferable Sparks that evolve your personal studio and qualify you for high-trust founder rooms."
             }
         ],
         specs: {
-            roomId: "SH-ROOM-FOUNDERS-01",
             curationFilter: "GitHub / Stripe Verified or Host Invite",
-            sessionProtocol: "90m Deep Focus + 12m Social Collision",
-            distractionShield: "Strict OS & Browser Feed Lock",
+            sessionProtocol: "90m Protected Sprint + 12m Break Lounge",
+            distractionShield: "OS & Browser Feed Pause",
             ambientLayer: "Procedural Rain + Warm Analog Synth",
             habitRetention30d: "68% D30 Repeat Attendance"
         },
@@ -94,172 +92,170 @@ const SCENARIOS: Record<string, RoomScenario> = {
             {
                 handle: "@elena_sys",
                 role: "Systems Architect (Ex-Modal)",
-                activeArtifact: "Shipping low-latency MCP tool router in Rust",
-                intentTag: "Looking for design partners",
+                activeArtifact: "Just shipped low-latency MCP tool router in Rust",
+                intentTag: "Open to 3 design partners",
                 sparks: 4820,
-                matchScore: "98% Signal Match"
+                signalFit: "High Overlap"
             },
             {
                 handle: "@marcus_v",
                 role: "Technical Founder (YC W25)",
-                activeArtifact: "Benchmarking voice-to-SQL evaluation harness",
+                activeArtifact: "Benchmarked voice-to-SQL evaluation harness",
                 intentTag: "Hiring founding infra engineer",
                 sparks: 3910,
-                matchScore: "94% Signal Match"
+                signalFit: "Complementary Stack"
             },
             {
                 handle: "@sara_quant",
                 role: "AI Product Designer",
-                activeArtifact: "Prototyping spatial canvas for multi-agent workflows",
-                intentTag: "Open to seed advisory swaps",
+                activeArtifact: "Prototyped spatial canvas for multi-agent runs",
+                intentTag: "Trading seed UX feedback",
                 sparks: 5190,
-                matchScore: "91% Signal Match"
+                signalFit: "Shared Domain"
             }
         ]
     },
     observatory: {
         id: "observatory",
-        name: "Storm-Lit Physics & Alignment Observatory",
-        niche: "Frontier ML Research & Technical Study",
-        host: "Curated by Alignment Commons Lab",
+        name: "Storm-Lit Physics & ML Observatory",
+        niche: "Frontier Research & Technical Study",
+        host: "Hosted by Alignment Commons Lab",
         occupancy: "64 / 75 Active Researchers",
-        soundscape: "High-Altitude Wind + Soft Mechanical Keyclicks",
-        completionLift: "+51% Problem-Set Throughput",
+        soundscape: "High-Altitude Wind + Soft Keyclicks",
+        completionLift: "+51% Derivation Throughput",
         sparksEarned: 150,
         ritualCues: [
-            "Synchronized 120-minute deep-reading and derivation blocks on the hour",
-            "Shared arXiv paper & Lean4 proof pinning on the observatory blackboard",
-            "Silent co-presence with zero webcam pressure or performative chat",
-            "Topic-tagged post-block lounge for peer proof-checking and lab study"
+            "Synchronized 120-minute reading and proof blocks starting on the even hour",
+            "Shared arXiv paper and Lean4 theorem pins visible on the break-window board",
+            "Silent co-presence among 60+ serious peers without performative chat",
+            "15-minute post-block seminar corner for proof-checking and study partners"
         ],
-        nodes: [
+        pillars: [
             {
                 id: "shield",
-                label: "Academic Focus Lock",
-                metric: "120m Unbroken Block",
-                detail: "Whitelists local IDE, PDF reader, Overleaf, and arXiv while muting messaging apps so complex mathematical state is never dropped mid-proof.",
-                confidence: "99.1%"
+                pillarTag: "Ritual 01",
+                label: "Deep-Derivation Whitelist",
+                metric: "120m Unbroken State",
+                detail: "Keeps local IDE, Overleaf, PDF reader, and arXiv active while silencing chat channels so intricate mathematical context never collapses mid-proof."
             },
             {
                 id: "cue",
-                label: "Social Facilitation Field",
-                metric: "64 Co-Present Peers",
-                detail: "Visible ambient indicators of 60+ peers working on adjacent technical problems trigger social facilitation without social anxiety.",
-                confidence: "95.7%"
+                pillarTag: "Ritual 02",
+                label: "Quiet Peer Facilitation",
+                metric: "64 Co-Present Scholars",
+                detail: "Seeing dozens of peers tackling hard derivations in the same quiet dome creates library-grade accountability from anywhere in the world."
             },
             {
                 id: "sparks",
-                label: "Citation & Proof Sparks",
-                metric: "+150 Sparks Minted",
-                detail: "Completing 3 consecutive morning blocks unlocks the Inner Dome study tier and surfaces your research question to senior fellows.",
-                confidence: "100%"
+                pillarTag: "Ritual 03",
+                label: "Research Streak Credentials",
+                metric: "+150 Sparks Earned",
+                detail: "Sustained morning study streaks open access to the Inner Dome seminar tier and highlight your open research questions to senior fellows."
             }
         ],
         specs: {
-            roomId: "SH-ROOM-OBSERVATORY-04",
-            curationFilter: "arXiv / .edu / Proof-of-Study Streak",
-            sessionProtocol: "120m Deep Study + 15m Seminar Lounge",
+            curationFilter: "arXiv / .edu / Verified 7-Day Study Streak",
+            sessionProtocol: "120m Deep Study + 15m Seminar Break",
             distractionShield: "Whitelist: LaTeX, arXiv, Lean4, Jupyter",
-            ambientLayer: "Sub-Bass Thunder + Dome Acoustics",
+            ambientLayer: "Distant Thunder + Observatory Acoustics",
             habitRetention30d: "74% D30 Repeat Attendance"
         },
         matches: [
             {
                 handle: "@devon_interp",
                 role: "Mechanistic Interpretability PhD",
-                activeArtifact: "Sparse autoencoder feature attribution run",
-                intentTag: "Comparing SAE scaling laws",
+                activeArtifact: "Completed sparse autoencoder attribution sweep",
+                intentTag: "Comparing scaling curves",
                 sparks: 7240,
-                matchScore: "99% Signal Match"
+                signalFit: "Direct Topic Match"
             },
             {
                 handle: "@lin_formal",
                 role: "Formal Verification Researcher",
-                activeArtifact: "Formalizing theorem 4.2 in Lean 4",
-                intentTag: "Pair-debugging tactics during break",
+                activeArtifact: "Formalized lemma 4.2 in Lean 4",
+                intentTag: "Pair-debugging tactics on break",
                 sparks: 6150,
-                matchScore: "95% Signal Match"
+                signalFit: "Shared Proof Stack"
             },
             {
                 handle: "@aria_bio",
                 role: "Computational Biology Fellow",
-                activeArtifact: "Protein binder diffusion loss curves",
-                intentTag: "Looking for JAX kernel feedback",
+                activeArtifact: "Tuned protein binder diffusion loss schedule",
+                intentTag: "Trading JAX kernel tips",
                 sparks: 4480,
-                matchScore: "90% Signal Match"
+                signalFit: "Compute Overlap"
             }
         ]
     },
     lodge: {
         id: "lodge",
         name: "Alpine Long-Form Writers Lodge",
-        niche: "Books, Investigative Essays & Deep Synthesis",
-        host: "Curated by The Monograph Guild",
+        niche: "Books, Investigative Essays & Synthesis",
+        host: "Hosted by The Monograph Guild",
         occupancy: "28 / 35 Active Writers",
-        soundscape: "Hearth Crackling + Distant Snowfall",
-        completionLift: "+39% Daily Word-Count Consistency",
+        soundscape: "Cedar Hearth + Quiet Snowfall",
+        completionLift: "+39% Daily Drafting Consistency",
         sparksEarned: 95,
         ritualCues: [
-            "Same ultrawide window seat, morning light angle, and hearth audio every day at 7:00 AM",
-            "Live word-count & structural draft milestone tracker without exposing raw text",
-            "Strict no-link-dropping rule during active writing blocks",
-            "Optional 10-minute editorial swap with 2 matched writers after the bell"
+            "Same dawn window seat, cedar hearth audio, and 7:00 AM bell every morning",
+            "Private word-count cadence ring without exposing raw unfinished prose",
+            "Zero link-dropping or self-promotion inside active writing blocks",
+            "Optional 10-minute structural swap with two fellow essayists after the bell"
         ],
-        nodes: [
+        pillars: [
             {
                 id: "shield",
-                label: "Research Rabbit-Hole Guard",
-                metric: "Max 2 Lookup Tabs",
-                detail: "Prevents 'just checking one citation' from turning into a 45-minute browser detour by capping open reference tabs during drafting mode.",
-                confidence: "98.3%"
+                pillarTag: "Ritual 01",
+                label: "Rabbit-Hole Tab Cap",
+                metric: "Max 2 Reference Tabs",
+                detail: "Stops 'checking one quick footnote' from spiraling into 45 minutes of wandering by capping open lookup tabs while drafting."
             },
             {
                 id: "cue",
-                label: "Morning Ritual Stability",
-                metric: "19-Day Streak Active",
-                detail: "Consistent visual and auditory cues turn opening the Alpine Lodge on a secondary monitor into an automatic Pavolvian trigger for prose generation.",
-                confidence: "97.2%"
+                pillarTag: "Ritual 02",
+                label: "Dawn Writing Anchor",
+                metric: "19-Day Morning Streak",
+                detail: "Opening the snow-lit lodge at the same hour pairs sensory familiarity with immediate prose momentum."
             },
             {
                 id: "sparks",
-                label: "Drafting Velocity Sparks",
-                metric: "+95 Sparks Minted",
-                detail: "Unlocks custom desk artifacts (vintage typewriter, rare botanical specimens, mountain vista upgrades) as visible proof of cumulative hours.",
-                confidence: "100%"
+                pillarTag: "Ritual 03",
+                label: "Studio Craft Artifacts",
+                metric: "+95 Sparks Earned",
+                detail: "Cumulative drafting hours customize your lodge desk with tactile literary heirlooms and open doors to invite-only book salons."
             }
         ],
         specs: {
-            roomId: "SH-ROOM-ALPINE-09",
             curationFilter: "Published Substack / Book Contract / 7-Day Streak",
-            sessionProtocol: "75m Drafting Sprint + 10m Salon",
-            distractionShield: "Draft-Only Mode (2 Reference Tab Cap)",
-            ambientLayer: "Cedar Hearth + Low-Frequency Wind",
+            sessionProtocol: "75m Drafting Sprint + 10m Editorial Salon",
+            distractionShield: "Draft Mode (2 Lookup Tab Cap)",
+            ambientLayer: "Crackling Hearth + Low Alpine Wind",
             habitRetention30d: "71% D30 Repeat Attendance"
         },
         matches: [
             {
                 handle: "@claire_macro",
                 role: "Economic Historian & Author",
-                activeArtifact: "Drafting Ch. 6: Industrial Grid Bottlenecks",
-                intentTag: "Swapping structural edits on intros",
+                activeArtifact: "Drafted 1,400 words on Ch. 6: Grid Bottlenecks",
+                intentTag: "Swapping intro structure notes",
                 sparks: 8910,
-                matchScore: "97% Signal Match"
+                signalFit: "Editorial Peer"
             },
             {
                 handle: "@jonas_tech",
                 role: "Deep-Tech Essayist",
-                activeArtifact: "3,400-word semiconductor lithography deep dive",
-                intentTag: "Fact-checking EUV supply chain",
+                activeArtifact: "Finished EUV lithography supply-chain section",
+                intentTag: "Sanity-checking fab timelines",
                 sparks: 5630,
-                matchScore: "93% Signal Match"
+                signalFit: "Adjacent Beat"
             },
             {
                 handle: "@maya_urban",
                 role: "Architecture & Cities Critic",
-                activeArtifact: "Essay on autonomous transit & land repricing",
-                intentTag: "Open to cross-substack recs",
+                activeArtifact: "Polished essay on autonomous transit & land",
+                intentTag: "Open to cross-publication swaps",
                 sparks: 6020,
-                matchScore: "89% Signal Match"
+                signalFit: "Reader Overlap"
             }
         ]
     }
@@ -267,12 +263,12 @@ const SCENARIOS: Record<string, RoomScenario> = {
 
 export default function FocusRoomInspector({ customerTags }: { customerTags?: string[] }) {
     const [activeScenarioKey, setActiveScenarioKey] = useState<string>("founders");
-    const [activeNodeId, setActiveNodeId] = useState<string>("shield");
+    const [activePillarId, setActivePillarId] = useState<string>("shield");
     const [mode, setMode] = useState<"focus" | "social">("focus");
     const [showDeepSchema, setShowDeepSchema] = useState<boolean>(false);
 
     const scenario = SCENARIOS[activeScenarioKey];
-    const activeNode = scenario.nodes.find((n) => n.id === activeNodeId) || scenario.nodes[0];
+    const activePillar = scenario.pillars.find((p) => p.id === activePillarId) || scenario.pillars[0];
 
     return (
         <div className="bg-[#090712]/90 border border-white/10 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-2xl relative overflow-hidden">
@@ -283,16 +279,16 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                 <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-[var(--secondary)] bg-[var(--primary)]/10 border border-[var(--primary)]/25 px-3 py-1.5 rounded-full">
                         <Radio className="w-3.5 h-3.5 animate-pulse" />
-                        Interactive Room Engine &amp; Serendipity Simulator
+                        Interactive Focus Room Preview
                     </div>
                     {customerTags && <InlineTags tags={customerTags} theme="violet" />}
                 </div>
                 <div>
                     <h3 className="text-2xl sm:text-3xl font-serif text-white mb-2" style={{ textWrap: "balance" }}>
-                        Protected Deep Focus Meets High-Signal Collision
+                        Step Inside a Canonical Room: Protected Sprint vs. Break Bell
                     </h3>
-                    <p className="text-sm sm:text-base text-white/65 font-light max-w-3xl leading-relaxed" style={{ textWrap: "pretty" }}>
-                        Select a canonical niche room and toggle between <strong className="text-white font-medium">Deep Focus Mode</strong> (zero interruptions, cross-device distraction lock) and <strong className="text-white font-medium">Social Collision Mode</strong> (unmasked post-sprint intent tags and collaborator matching).
+                    <p className="text-sm sm:text-base text-white/70 font-light max-w-3xl leading-relaxed" style={{ textWrap: "pretty" }}>
+                        Choose one of three flagship rooms below, then flip the live room state between <strong className="text-white font-medium">Deep Focus Mode</strong> (interruptions locked while everyone builds) and the <strong className="text-white font-medium">12-Min Break Lounge</strong> (where peers unmask what they just shipped).
                     </p>
                 </div>
 
@@ -305,9 +301,9 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                 key={item.id}
                                 onClick={() => {
                                     setActiveScenarioKey(item.id);
-                                    setActiveNodeId(item.nodes[0].id);
+                                    setActivePillarId(item.pillars[0].id);
                                 }}
-                                className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer ${
+                                className={`text-left p-3.5 rounded-2xl border transition-all cursor-pointer overflow-hidden ${
                                     isSelected
                                         ? "bg-[var(--primary)]/15 border-[var(--primary)]/50 text-white shadow-[0_0_20px_rgba(139,92,246,0.18)]"
                                         : "bg-white/[0.02] border-white/10 text-white/65 hover:border-white/25 hover:text-white"
@@ -323,22 +319,22 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                 </div>
             </div>
 
-            {/* Room Status Bar + Mode Switcher + 3 Telemetry Nodes (Compact Default) */}
+            {/* Room Status Bar + Live Mode Switcher */}
             <div className="bg-black/50 border border-white/10 rounded-2xl p-5 sm:p-6 mb-4">
                 <div className="flex flex-wrap items-center justify-between gap-4 pb-5 mb-5 border-b border-white/10">
                     <div>
                         <div className="flex flex-wrap items-center gap-2.5 mb-1">
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-                            <span className="text-xs font-mono uppercase tracking-wider text-white/90 font-semibold">
+                            <span className={`w-2.5 h-2.5 rounded-full animate-pulse ${mode === "focus" ? "bg-[var(--secondary)]" : "bg-emerald-400"}`} />
+                            <span className="text-sm font-medium text-white">
                                 {scenario.name}
                             </span>
                             <span className="text-xs font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2.5 py-0.5 rounded-full border border-[var(--primary)]/30">
                                 {scenario.occupancy}
                             </span>
                         </div>
-                        <div className="flex flex-wrap items-center gap-4 text-xs text-white/55 font-mono">
+                        <div className="flex flex-wrap items-center gap-4 text-xs text-white/60">
                             <span>{scenario.host}</span>
-                            <span className="inline-flex items-center gap-1 text-white/70">
+                            <span className="inline-flex items-center gap-1.5 text-white/75">
                                 <Volume2 className="w-3.5 h-3.5 text-[var(--secondary)] shrink-0" />
                                 {scenario.soundscape}
                             </span>
@@ -366,88 +362,136 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                     : "text-white/60 hover:text-white"
                             }`}
                         >
-                            <Unlock className="w-3.5 h-3.5 shrink-0" />
-                            Social Collision Mode
+                            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                            12-Min Break Lounge
                         </button>
                     </div>
                 </div>
 
-                {/* 3 Selectable Telemetry Nodes */}
-                <div>
-                    <div className="text-[11px] font-mono uppercase tracking-widest text-white/45 mb-2.5">
-                        Inspect Focus Graph Telemetry Nodes (Click to Inspect)
-                    </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
-                        {scenario.nodes.map((node, index) => {
-                            const isSelected = node.id === activeNode.id;
-                            return (
-                                <button
-                                    key={node.id}
-                                    onClick={() => setActiveNodeId(node.id)}
-                                    className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer overflow-hidden ${
-                                        isSelected
-                                            ? "bg-[var(--primary)]/20 border-[var(--secondary)] text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]"
-                                            : "bg-white/[0.02] border-white/10 text-white/70 hover:border-white/25 hover:text-white"
-                                    }`}
-                                >
-                                    <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
-                                        <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)]">
-                                            NODE 0{index + 1}
-                                        </span>
-                                        <span className="text-[10px] font-mono text-emerald-400">
-                                            {node.metric}
-                                        </span>
-                                    </div>
-                                    <div className="text-xs sm:text-sm font-medium text-white leading-snug">{node.label}</div>
-                                </button>
-                            );
-                        })}
-                    </div>
+                {/* Live View Switches Dynamically Based on Focus vs. Break Mode */}
+                {mode === "focus" ? (
+                    <div>
+                        <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-white/55 mb-2.5">
+                            <span>Active Sprint Rituals (DMs &amp; Pings Locked):</span>
+                            <span className="font-mono text-[11px] text-[var(--secondary)]">Select ritual to inspect</span>
+                        </div>
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+                            {scenario.pillars.map((pillar) => {
+                                const isSelected = pillar.id === activePillar.id;
+                                return (
+                                    <button
+                                        key={pillar.id}
+                                        onClick={() => setActivePillarId(pillar.id)}
+                                        className={`text-left p-3.5 rounded-xl border transition-all cursor-pointer overflow-hidden ${
+                                            isSelected
+                                                ? "bg-[var(--primary)]/20 border-[var(--secondary)] text-white shadow-[0_0_15px_rgba(139,92,246,0.2)]"
+                                                : "bg-white/[0.02] border-white/10 text-white/70 hover:border-white/25 hover:text-white"
+                                        }`}
+                                    >
+                                        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
+                                            <span className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)]">
+                                                {pillar.pillarTag}
+                                            </span>
+                                            <span className="text-[10px] font-mono text-emerald-300">
+                                                {pillar.metric}
+                                            </span>
+                                        </div>
+                                        <div className="text-xs sm:text-sm font-medium text-white leading-snug">{pillar.label}</div>
+                                    </button>
+                                );
+                            })}
+                        </div>
 
-                    {/* Active Node Readout Bar */}
-                    <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-xl p-4">
-                        <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
-                            <span className="text-xs font-mono uppercase tracking-wider text-[var(--secondary)] font-semibold">
-                                {activeNode.label}: {activeNode.metric}
-                            </span>
-                            <span className="text-xs font-mono text-emerald-300 bg-emerald-500/10 px-2.5 py-0.5 rounded-full border border-emerald-500/20">
-                                Telemetry Confidence: {activeNode.confidence}
+                        <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/30 rounded-xl p-4">
+                            <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                                <span className="text-xs font-medium text-white">
+                                    {activePillar.label}
+                                </span>
+                                <span className="text-xs font-mono text-[var(--secondary)] bg-black/40 px-2.5 py-0.5 rounded-full border border-white/10">
+                                    {activePillar.metric}
+                                </span>
+                            </div>
+                            <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
+                                {activePillar.detail}
+                            </p>
+                        </div>
+                    </div>
+                ) : (
+                    <div>
+                        <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                            <div className="flex items-center gap-2">
+                                <Users className="w-4 h-4 text-emerald-300 shrink-0" />
+                                <span className="text-xs sm:text-sm font-medium text-white">
+                                    Sprint Bell Rang: 3 High-Signal Peers Ready to Connect
+                                </span>
+                            </div>
+                            <span className="text-xs font-mono text-emerald-300">
+                                Zero cold outreach • Grounded in what you just built
                             </span>
                         </div>
-                        <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed" style={{ textWrap: "pretty" }}>
-                            {activeNode.detail}
-                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                            {scenario.matches.map((peer) => (
+                                <div
+                                    key={peer.handle}
+                                    className="p-4 rounded-xl bg-emerald-500/[0.05] border border-emerald-500/25 flex flex-col justify-between gap-3 overflow-hidden"
+                                >
+                                    <div>
+                                        <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1">
+                                            <span className="text-sm font-medium text-white">{peer.handle}</span>
+                                            <span className="text-[10px] font-mono text-emerald-300 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">
+                                                {peer.sparks.toLocaleString()} Sparks
+                                            </span>
+                                        </div>
+                                        <div className="text-xs text-white/60 mb-2.5">{peer.role}</div>
+                                        <div className="text-xs text-white/90 bg-black/40 border border-white/5 rounded-lg p-2.5" style={{ textWrap: "pretty" }}>
+                                            <span className="text-white/45 font-mono uppercase text-[10px] block mb-0.5">Just Shipped:</span>
+                                            {peer.activeArtifact}
+                                        </div>
+                                    </div>
+
+                                    <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5">
+                                        <span className="text-[11px] font-mono text-emerald-300 leading-snug">
+                                            {peer.intentTag}
+                                        </span>
+                                        <span className="text-[10px] font-mono text-white/50">
+                                            {peer.signalFit}
+                                        </span>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
+                )}
             </div>
 
-            {/* Headline Outcome Summary Strip + Collapsible Room Specs & Peer Collisions */}
+            {/* Headline Outcome Summary Strip + Collapsible Room Specs */}
             <div className="bg-white/[0.02] border border-white/10 rounded-2xl p-5 sm:p-6">
                 <div className="flex flex-wrap items-center justify-between gap-4">
                     <div>
                         <div className="flex items-center gap-2 mb-1">
                             <Shield className="w-4 h-4 text-[var(--secondary)] shrink-0" />
-                            <span className="text-xs font-mono uppercase tracking-widest text-white/90">
-                                Compiled FocusGraph Room State
+                            <span className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)]">
+                                Room Rhythm &amp; Community Curation
                             </span>
                         </div>
                         <div className="text-base sm:text-lg font-medium text-white leading-snug">
                             {scenario.specs.sessionProtocol} • {scenario.specs.habitRetention30d}
                         </div>
-                        <div className="text-xs font-mono text-white/55 mt-1">
-                            Admission: {scenario.specs.curationFilter}
+                        <div className="text-xs text-white/60 mt-1">
+                            Entry Standard: {scenario.specs.curationFilter}
                         </div>
                     </div>
 
                     <div className="bg-[var(--primary)]/15 border border-[var(--primary)]/35 rounded-xl px-4 py-3 flex flex-col justify-center gap-0.5 overflow-hidden">
                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)]">
-                            Verified Sprint Outcome
+                            Measured Habit Lift
                         </div>
                         <div className="text-lg sm:text-xl font-serif text-white font-medium leading-snug">
                             {scenario.completionLift}
                         </div>
                         <div className="text-[11px] font-mono text-amber-300">
-                            +{scenario.sparksEarned} Sparks / Sprint • {scenario.matches.length} Peer Matches
+                            +{scenario.sparksEarned} Sparks / Sprint
                         </div>
                     </div>
                 </div>
@@ -459,105 +503,37 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                         aria-expanded={showDeepSchema}
                     >
                         <span>
-                            {showDeepSchema ? "Hide" : "Inspect"} Room Curation Rules, FocusGraph Schema &amp; {scenario.matches.length} Peer Collisions
+                            {showDeepSchema ? "Hide" : "See"} Room Curation Norms &amp; Environmental Design Specs
                         </span>
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showDeepSchema ? "rotate-180" : ""}`} />
                     </button>
 
                     {showDeepSchema && (
-                        <div className="pt-4 space-y-5">
-                            {/* 4 Ritual Cues in 2x2 Grid */}
-                            <div>
-                                <div className="text-[11px] font-mono uppercase tracking-widest text-white/45 mb-2.5">
-                                    Active Room Behavior &amp; Curation Rules
-                                </div>
-                                <div className="grid sm:grid-cols-2 gap-2.5">
-                                    {scenario.ritualCues.map((cue, idx) => (
-                                        <div
-                                            key={idx}
-                                            className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80 bg-white/[0.03] border border-white/5 rounded-xl p-3"
-                                        >
-                                            <CheckCircle2 className="w-4 h-4 text-[var(--secondary)] shrink-0 mt-0.5" />
-                                            <span style={{ textWrap: "pretty" }}>{cue}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            {/* 6 Room Spec Cards */}
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 text-xs">
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Room ID</div>
-                                    <div className="text-white/90 font-mono break-all">{scenario.specs.roomId}</div>
-                                </div>
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Admission Filter</div>
-                                    <div className="text-white/90 font-medium">{scenario.specs.curationFilter}</div>
-                                </div>
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Sprint Cadence</div>
-                                    <div className="text-[var(--secondary)] font-mono">{scenario.specs.sessionProtocol}</div>
-                                </div>
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Distraction Shield</div>
-                                    <div className="text-white/90">{scenario.specs.distractionShield}</div>
-                                </div>
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Sensory Cue Layer</div>
-                                    <div className="text-white/90">{scenario.specs.ambientLayer}</div>
-                                </div>
-                                <div className="bg-black/40 p-3 rounded-xl border border-white/5 overflow-hidden">
-                                    <div className="text-white/40 font-mono uppercase text-[10px] mb-0.5">Cohort Habit Stickiness</div>
-                                    <div className="text-emerald-300 font-mono">{scenario.specs.habitRetention30d}</div>
-                                </div>
-                            </div>
-
-                            {/* Collaborator Collisions */}
-                            <div>
-                                <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                                    <div className="flex items-center gap-2">
-                                        <Users className="w-4 h-4 text-[var(--secondary)] shrink-0" />
-                                        <span className="text-xs font-mono uppercase tracking-widest text-white/90">
-                                            {mode === "focus"
-                                                ? "Co-Present Peers (Protected Until Sprint Ends)"
-                                                : "Unlocked Post-Sprint Collaborator Collisions"}
-                                        </span>
+                        <div className="pt-4 space-y-4">
+                            <div className="grid sm:grid-cols-2 gap-2.5">
+                                {scenario.ritualCues.map((cue, idx) => (
+                                    <div
+                                        key={idx}
+                                        className="flex items-start gap-2.5 text-xs sm:text-sm text-white/80 bg-white/[0.03] border border-white/5 rounded-xl p-3"
+                                    >
+                                        <CheckCircle2 className="w-4 h-4 text-[var(--secondary)] shrink-0 mt-0.5" />
+                                        <span style={{ textWrap: "pretty" }}>{cue}</span>
                                     </div>
-                                    <span className="text-[11px] font-mono text-white/50">
-                                        {mode === "focus" ? "DMs & pings locked during sprint" : "1-tap intro enabled for 12 minutes"}
-                                    </span>
+                                ))}
+                            </div>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                                <div className="bg-black/40 p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                    <div className="text-white/45 font-mono uppercase text-[10px] mb-0.5">Distraction Guard</div>
+                                    <div className="text-white/90 font-medium">{scenario.specs.distractionShield}</div>
                                 </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                                    {scenario.matches.map((peer) => (
-                                        <div
-                                            key={peer.handle}
-                                            className="p-4 rounded-xl bg-black/40 border border-white/10 flex flex-col justify-between gap-3 overflow-hidden"
-                                        >
-                                            <div>
-                                                <div className="flex flex-wrap items-center justify-between gap-1.5 mb-1.5">
-                                                    <span className="text-sm font-medium text-white">{peer.handle}</span>
-                                                    <span className="text-[10px] font-mono text-[var(--secondary)] bg-[var(--primary)]/15 px-2 py-0.5 rounded-full border border-[var(--primary)]/30">
-                                                        {peer.sparks.toLocaleString()} Sparks
-                                                    </span>
-                                                </div>
-                                                <div className="text-xs text-white/55 mb-2.5">{peer.role}</div>
-                                                <div className="text-xs text-white/85 bg-white/[0.03] border border-white/5 rounded-lg p-2.5 mb-2" style={{ textWrap: "pretty" }}>
-                                                    <span className="text-white/40 font-mono uppercase text-[10px] block mb-0.5">Working On:</span>
-                                                    {peer.activeArtifact}
-                                                </div>
-                                            </div>
-
-                                            <div className="pt-2 border-t border-white/10 flex flex-wrap items-center justify-between gap-1.5">
-                                                <span className="text-[11px] font-mono text-emerald-300 leading-snug">
-                                                    {mode === "focus" ? "🔒 Unlocks after sprint" : peer.intentTag}
-                                                </span>
-                                                <span className="text-[10px] font-mono text-white/50">
-                                                    {peer.matchScore}
-                                                </span>
-                                            </div>
-                                        </div>
-                                    ))}
+                                <div className="bg-black/40 p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                    <div className="text-white/45 font-mono uppercase text-[10px] mb-0.5">Sensory Cue Layer</div>
+                                    <div className="text-white/90 font-medium">{scenario.specs.ambientLayer}</div>
+                                </div>
+                                <div className="bg-black/40 p-3.5 rounded-xl border border-white/5 overflow-hidden">
+                                    <div className="text-white/45 font-mono uppercase text-[10px] mb-0.5">30-Day Habit Retention</div>
+                                    <div className="text-emerald-300 font-mono">{scenario.specs.habitRetention30d}</div>
                                 </div>
                             </div>
                         </div>

@@ -12,7 +12,6 @@ import attune_memory_engine from "./assets/attune_memory_engine.png";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
-import { CoreLoopVisual } from "./components/CoreLoopVisual";
 import RelationshipSyncInspector from "./components/RelationshipSyncInspector";
 import ValueFlowLoop from "./components/ValueFlowLoop";
 import PriorArtMatrix from "./components/PriorArtMatrix";
@@ -438,19 +437,14 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
 
                 {/* Product Component breakdown */}
                 <RevealSection>
-                    <h2 className="text-4xl font-serif font-medium mb-4 text-center text-[var(--primary)]" style={{ textWrap: "balance" }}>
-                        The Product Architecture
+                    <h2 className="text-4xl font-serif font-medium mb-3 text-center text-[var(--primary)]" style={{ textWrap: "balance" }}>
+                        Six Synchronized Product Layers
                     </h2>
-                    <p className="text-center text-[var(--primary)]/60 mb-16 uppercase tracking-widest text-sm font-bold">
-                        The Core Loop is the Company
+                    <p className="text-center text-slate-400 mb-12 text-base max-w-2xl mx-auto" style={{ textWrap: "pretty" }}>
+                        Each layer reinforces the weekly rhythm between private reflection, practical daily reps, and longitudinal memory.
                     </p>
 
-                    <CoreLoopVisual />
-
-                    <div className="mt-20 space-y-16">
-                        <h3 className="text-2xl font-serif text-[var(--tertiary)] mb-8 border-b border-white/10 pb-4" style={{ textWrap: "balance" }}>
-                            Six Synchronized Product Layers
-                        </h3>
+                    <div className="space-y-12">
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <FadeIn delay={0.1} className="glass p-6 rounded-2xl border border-white/5">
@@ -471,7 +465,7 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                                 </p>
                                 <div className="flex gap-2 flex-wrap mt-3">
                                     {["Top priorities", "New preferences", "Verified progress", "Early drift"].map((t) => (
-                                        <span key={t} className="text-xs px-2.5 py-1 bg-white/10 rounded-full text-slate-200 whitespace-nowrap">
+                                        <span key={t} className="text-xs px-2.5 py-1 bg-white/10 rounded-full text-slate-200 leading-snug">
                                             {t}
                                         </span>
                                     ))}
@@ -567,35 +561,35 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                             "Communication & repair training",
                             "Intimacy & household partnership"
                         ].map((t) => (
-                            <span key={t} className="px-3.5 py-2 bg-white/5 border border-white/10 rounded-xl font-mono text-xs text-[var(--secondary)] whitespace-nowrap">
+                            <span key={t} className="px-3.5 py-2 bg-white/5 border border-white/10 rounded-xl font-mono text-xs text-[var(--secondary)] leading-snug">
                                 {t}
                             </span>
                         ))}
                     </div>
                     <div className="grid sm:grid-cols-3 gap-4 mb-8">
-                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl">
+                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl overflow-hidden">
                             <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
                                 U.S. Committed Couples
                             </div>
-                            <div className="text-3xl font-serif text-white mb-1 whitespace-nowrap">68M+</div>
+                            <div className="text-2xl sm:text-3xl font-serif text-white mb-1 leading-snug">68M+</div>
                             <p className="text-xs text-slate-400 m-0" style={{ textWrap: "pretty" }}>
                                 Married and cohabiting couples in the U.S., with over 2.1M new marriages annually seeking preventive habits.
                             </p>
                         </div>
-                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl">
+                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl overflow-hidden">
                             <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
                                 Therapy Price Gap
                             </div>
-                            <div className="text-3xl font-serif text-white mb-1 whitespace-nowrap">$250/hr vs. $29/mo</div>
+                            <div className="text-2xl sm:text-3xl font-serif text-white mb-1 leading-snug">$250/hr vs. $29/mo</div>
                             <p className="text-xs text-slate-400 m-0" style={{ textWrap: "pretty" }}>
                                 Captures the massive population priced out of $6,000/yr private couples therapy or unwilling to enter clinical care first.
                             </p>
                         </div>
-                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl">
+                        <div className="bg-white/[0.03] border border-white/10 p-5 rounded-2xl overflow-hidden">
                             <div className="text-xs font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
                                 Buyer-User Alignment
                             </div>
-                            <div className="text-3xl font-serif text-white mb-1 whitespace-nowrap">2-Sided Loop</div>
+                            <div className="text-2xl sm:text-3xl font-serif text-white mb-1 leading-snug">2-Sided Loop</div>
                             <p className="text-xs text-slate-400 m-0" style={{ textWrap: "pretty" }}>
                                 High female invitation intent paired with private, non-shaming male skill-building.
                             </p>
