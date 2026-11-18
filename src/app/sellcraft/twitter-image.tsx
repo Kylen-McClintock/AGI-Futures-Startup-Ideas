@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("sellcraft", "sellcraft/assets/sellcraft_grounded_hero.jpg");
+    return renderIdeaOg("sellcraft", "sellcraft/assets/sellcraft_hero.png");
 }

@@ -25,8 +25,8 @@ import { SkillTransition } from "./components/SkillTransition";
 import { MarketGrowthChart } from "./components/MarketGrowthChart";
 
 // Assets
-import heroImgOriginal from "./assets/sellcraft_grounded_hero.jpg";
-import heroImg from "./assets/sellcraft_grounded_hero.jpg";
+import heroImgOriginal from "./assets/sellcraft_hero.png";
+import heroImg from "./assets/sellcraft_hologram_hero.png";
 import pitchQuestImg from "./assets/sellcraft_pitch_quest.png";
 import provingGroundImg from "./assets/sellcraft_proving_ground.png";
 import practiceImg from "./assets/sellcraft_practice.png";

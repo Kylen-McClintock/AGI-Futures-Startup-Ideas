@@ -23,7 +23,7 @@ import ICPGrid from './components/ICPGrid';
 import ValueFlow from './components/ValueFlow';
 
 // Assets
-import heroImage from './assets/public_ai_grounded_hero.jpg';
+import heroImage from './assets/policy_layers.png';
 import runtimeImage from './assets/runtime.png';
 import mandateImage from './assets/mandate.png';
 import twinImage from './assets/twin.png';
