@@ -1,15 +1,16 @@
 import { Metadata } from 'next';
-import { createClient } from '@/utils/supabase/server';
+import { createStaticClient } from '@/utils/supabase/static';
 import HomeQuoteClientPage from './page-client';
 
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     alternates: { canonical: '/homequote' },
-    title: 'HomeQuote AI | The Scope-to-Quote Engine - AGI Futures',
-    description: 'Turns a user-filmed walkthrough into a structured job object, an exact quote, and infinitely bookable offers from service providers.',
+    title: 'HomeQuote AI: AI Home Services Quoting & Video Walkthrough Marketplace | AGI Futures',
+    description: 'Startup blueprint + interactive simulator: turning smartphone walkthrough videos into structured job scopes, exact quotes, and bookable contractor bids.',
     openGraph: {
-        title: 'HomeQuote AI | The Scope-to-Quote Engine - AGI Futures',
-        description: 'Turns a user-filmed walkthrough into a structured job object, an exact quote, and bookable offers.',
+        title: 'HomeQuote AI: AI Home Services Quoting & Video Walkthrough Marketplace',
+        description: 'Turns a user-filmed walkthrough into a structured job object, an exact quote, and bookable contractor offers.',
     },
     twitter: {
         card: "summary_large_image",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 export default async function HomeQuotePage() {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
 
     // Fetch tags for HomeQuote
     const { data: project } = await supabase

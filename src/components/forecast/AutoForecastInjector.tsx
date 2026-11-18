@@ -4,6 +4,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import CategoryFrontierForecast from "./CategoryFrontierForecast";
 import { getForecastForSlug } from "@/data/forecasts";
+import { BlueprintActionBar } from "@/components/BlueprintActionBar";
+import { ideas } from "@/data/ideas";
 
 export function AutoForecastInjector() {
     const pathname = usePathname();
@@ -50,7 +52,9 @@ export function AutoForecastInjector() {
     if (isExcludedRoute) return null;
 
     // Extract slug from pathname (e.g., "/agentable" -> "agentable")
-    const slug = pathname.split('/').filter(Boolean).pop() || "";
+    const rawSlug = pathname.split('/').filter(Boolean).pop() || "";
+    const matchedIdea = ideas.find((i) => i.slug.toLowerCase() === rawSlug.toLowerCase());
+    const slug = matchedIdea?.slug || rawSlug;
     const forecastData = getForecastForSlug(slug);
 
     return (
@@ -62,7 +66,8 @@ export function AutoForecastInjector() {
                 "--tertiary": themeConfig.tertiary 
             } as React.CSSProperties : undefined}
         >
-            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-24" />
+            <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-16" />
+            {matchedIdea && <BlueprintActionBar projectSlug={matchedIdea.slug} />}
             <CategoryFrontierForecast 
                 initialForecast={forecastData.forecast} 
                 aiRationale={forecastData.aiRationale}

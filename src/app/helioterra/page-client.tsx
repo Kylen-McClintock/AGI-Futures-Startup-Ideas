@@ -657,15 +657,14 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                                 <div>[7] U.S. Department of Energy. <em>Large-Scale Solar Siting Resources</em> (updated 2026).</div>
                                 <div>[8] USDA Economic Research Service. <em>Farm Sector Income & Finances: Assets, Debt, and Wealth</em> (updated 2026).</div>
                             </div>
-                        
-            </div>
-        </details>
-                    
-                <ArtifactSection projectSlug="helioterra" />
-            </div>
+                        </div>
+                    </details>
+                </div>
                 </details>
 
             </div >
+            <AutoForecastInjector />
+            <ArtifactSection projectSlug="helioterra" />
         </main >
     );
 }

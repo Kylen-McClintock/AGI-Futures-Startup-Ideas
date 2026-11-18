@@ -6,9 +6,11 @@ import { ChevronDown, ChevronUp, ExternalLink, MessageSquareText, FileText, Imag
 import Link from 'next/link';
 import { SubmitArtifactModal } from "./SubmitArtifactModal";
 import { PrivateNotesSection } from "./PrivateNotesSection";
+import { useInterest } from "./InterestProvider";
 
 export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
     const supabase = createClient();
+    const { openAuthModal } = useInterest();
     const [isExpanded, setIsExpanded] = useState(false);
     const [artifacts, setArtifacts] = useState<any[]>([]);
     const [projectId, setProjectId] = useState<string | null>(null);
@@ -119,7 +121,10 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
 
     const handleLike = async (artifactId: string, currentLikes: number) => {
         if (!profile) {
-            alert("Please sign in to upvote artifacts.");
+            openAuthModal({
+                headline: "Sign In to Upvote Proof-of-Work",
+                subline: "Verify your Builder account with email to upvote community prototypes, architectures, and field notes."
+            });
             return;
         }
         if (likedArtifacts.has(artifactId)) return;
@@ -188,7 +193,13 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
     };
 
     const handleSubmitComment = async (artifactId: string, parentId?: string) => {
-        if (!profile) { alert("Please sign in to comment."); return; }
+        if (!profile) {
+            openAuthModal({
+                headline: "Sign In to Add a Field Note",
+                subline: "Sign in with your email to post build notes, critiques, and implementation links."
+            });
+            return;
+        }
         const textKey = parentId || artifactId;
         const text = newCommentText[textKey]?.trim();
         const hasMedia = (commentMedia[textKey] || []).length > 0;
@@ -394,9 +405,18 @@ export function ArtifactSection({ projectSlug }: { projectSlug: string }) {
                             </button>
                          </>
                      ) : (
-                        <Link href="/login" className="px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs font-mono tracking-widest uppercase transition-colors">
+                        <button
+                            type="button"
+                            onClick={() =>
+                                openAuthModal({
+                                    headline: "Attach Proof-of-Work to This Thesis",
+                                    subline: "Sign in with your email to share prototypes, architecture notes, or field research on this blueprint."
+                                })
+                            }
+                            className="px-4 py-2 rounded-full border border-white/20 bg-white/5 hover:bg-white/10 text-white text-xs font-mono tracking-widest uppercase transition-colors cursor-pointer"
+                        >
                             Sign in to contribute
-                        </Link>
+                        </button>
                      )}
                 </div>
             </div>

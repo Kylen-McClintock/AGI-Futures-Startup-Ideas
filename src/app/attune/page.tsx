@@ -1,19 +1,21 @@
 import { Metadata } from 'next';
-import { createClient } from '@/utils/supabase/server';
+import { createStaticClient } from '@/utils/supabase/static';
 import AttuneClientPage from './page-client';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     alternates: { canonical: '/attune' },
-    title: 'Attune | AI Relationship Coach - AGI Futures',
-    description: 'An AI relationship coach to make her feel heard, seen, and supported, consistently.',
+    title: 'Attune: AI Relationship Coach & Partner Communication Bridge | AGI Futures',
+    description: 'Startup blueprint + interactive partner bridge simulator: private, consent-first AI relationship coaching for couples communication and emotional attunement.',
     openGraph: {
-        title: 'Attune | AI Relationship Coach - AGI Futures',
-        description: 'An AI relationship coach to make her feel heard, seen, and supported, consistently.',
+        title: 'Attune: AI Relationship Coach & Partner Communication Bridge',
+        description: 'Private, consent-first AI relationship coaching to help partners feel heard, seen, and supported.',
     }
 };
 
 export default async function AttunePage() {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
 
     // Fetch tags for Attune
     const { data: project } = await supabase

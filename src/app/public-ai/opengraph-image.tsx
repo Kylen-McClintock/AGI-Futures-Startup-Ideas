@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("public-ai", "public-ai/assets/hero.png");
+    return renderIdeaOg("public-ai", "public-ai/assets/public_ai_grounded_hero.jpg");
 }

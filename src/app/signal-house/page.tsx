@@ -1,19 +1,21 @@
 import { Metadata } from 'next';
-import { createClient } from '@/utils/supabase/server';
+import { createStaticClient } from '@/utils/supabase/static';
 import SignalHouseClientPage from './page-client';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     alternates: { canonical: '/signal-house' },
-    title: 'Signal House | Immersive Deep Work Network - AGI Futures',
-    description: 'An immersive deep work network where people work and study in beautifully curated virtual rooms, build habitual flow-state spaces, and find aligned collaborators without breaking focus.',
+    title: 'Signal House: Virtual Co-Working, Deep Work Rooms & Flow Network | AGI Futures',
+    description: 'Startup blueprint + interactive focus room simulator: curated virtual rooms for habitual flow-state deep work and high-signal peer breaks.',
     openGraph: {
-        title: 'Signal House | Immersive Deep Work Network - AGI Futures',
-        description: 'An immersive deep work network where people work and study in beautifully curated virtual rooms.',
+        title: 'Signal House: Virtual Co-Working, Deep Work Rooms & Flow Network',
+        description: 'Curated virtual rooms for habitual flow-state deep work and aligned collaborators.',
     }
 };
 
 export default async function SignalHousePage() {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
 
     // Fetch tags for Signal House
     const { data: project } = await supabase

@@ -19,7 +19,7 @@ import { ValueFlowDiagram } from "./components/ValueFlowDiagram";
 import { MarketTAMChart } from "./components/MarketTAMChart";
 
 // Import local images
-import heroImg from "./assets/easy_exit_hero_1773609319540.png";
+import heroImg from "./assets/easy_exit_grounded_hero.jpg";
 import problemImg from "./assets/easy_exit_problem_1773609335782.png";
 import solutionImg from "./assets/easy_exit_solution_1773609351808.png";
 import marketImg from "./assets/easy_exit_market_1773609367126.png";

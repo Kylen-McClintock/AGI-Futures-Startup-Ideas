@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("easy-exit", "easy-exit/assets/easy_exit_hero_1773609319540.png");
+    return renderIdeaOg("easy-exit", "easy-exit/assets/easy_exit_grounded_hero.jpg");
 }

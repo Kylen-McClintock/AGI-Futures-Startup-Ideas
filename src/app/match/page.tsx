@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ideas, ideaFallbacks } from "@/data/ideas";
+import { ROLES, type RoleId } from "@/lib/match/score";
 import MatchClient, { type MatchIdea } from "./match-client";
 
 export const metadata: Metadata = {
@@ -13,8 +14,8 @@ export const metadata: Metadata = {
     },
 };
 
-export default async function MatchPage({ searchParams }: { searchParams: Promise<{ sector?: string }> }) {
-    const { sector } = await searchParams;
+export default async function MatchPage({ searchParams }: { searchParams: Promise<{ sector?: string; role?: string }> }) {
+    const { sector, role } = await searchParams;
 
     const counts = new Map<string, number>();
     for (const fb of Object.values(ideaFallbacks)) for (const s of fb.tags?.sector ?? []) counts.set(s, (counts.get(s) ?? 0) + 1);
@@ -22,6 +23,7 @@ export default async function MatchPage({ searchParams }: { searchParams: Promis
 
     const matchIdeas: MatchIdea[] = ideas.map(i => ({ slug: i.slug, title: i.title, scoreTitle: i.scoreTitle, href: i.href, image: i.image }));
     const initialSector = sector && sectors.includes(sector) ? sector : undefined;
+    const initialRole = role && ROLES.some(r => r.id === role) ? (role as RoleId) : undefined;
 
-    return <MatchClient ideas={matchIdeas} sectors={sectors} initialSector={initialSector} />;
+    return <MatchClient ideas={matchIdeas} sectors={sectors} initialSector={initialSector} initialRole={initialRole} />;
 }

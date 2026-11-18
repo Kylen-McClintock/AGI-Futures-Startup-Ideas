@@ -759,15 +759,14 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 <div className="md:col-span-2">[16] Cosgrave, N. et al. "Hospital admissions due to adverse drug reactions..." <em>Age and Ageing</em>. 2025.</div>
                                 <div className="md:col-span-2">[17] Gawronski, B. E. et al. "Estimating preferences and willingness to pay for pharmacogenomic testing..." 2024.</div>
                             </div>
-                        
-            </div>
-        </details>
-                    
-                <ArtifactSection projectSlug="avatarlab" />
-            </div>
+                        </div>
+                    </details>
+                </div>
                 </details>
 
             </div >
+            <AutoForecastInjector />
+            <ArtifactSection projectSlug="avatarlab" />
         </main >
     );
 }

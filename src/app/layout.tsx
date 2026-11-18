@@ -7,6 +7,7 @@ import { AuthHeader } from "@/components/AuthHeader";
 import { NuqsAdapter } from 'nuqs/adapters/next/app';
 import { InterestProvider } from "@/components/InterestProvider";
 import { JsonLd } from "@/components/JsonLd";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION, SOCIAL_LINKS } from "@/lib/site";
 
 const outfit = Outfit({
@@ -40,17 +41,32 @@ const siteJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": `${SITE_URL}/#organization`,
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/logo.png`,
+    founder: {
+      "@type": "Person",
+      "@id": "https://kylen.vc/#kylen",
+      name: "Kylen McClintock",
+      url: "https://kylen.vc/",
+    },
+    parentOrganization: {
+      "@type": "Organization",
+      "@id": "https://kylen.vc/#hyperabundance",
+      name: "HyperAbundance",
+      url: "https://kylen.vc/",
+    },
     sameAs: SOCIAL_LINKS,
   },
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
+    publisher: { "@id": `${SITE_URL}/#organization` },
   },
 ];
 
@@ -73,6 +89,7 @@ export default function RootLayout({
             <Footer />
           </InterestProvider>
         </NuqsAdapter>
+        <Analytics />
       </body>
     </html>
   );

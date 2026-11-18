@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { ArrowRight, Check, Loader2 } from "lucide-react";
 import { subscribe } from "@/app/actions/subscribe";
 import { SUBSTACK_URL } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 type Variant = "band" | "compact";
 
@@ -56,6 +57,7 @@ export function SubscribeCTA({
             f.submit();
         }
         setState("done");
+        trackEvent("subscribe_submitted", { source, ideaSlug: ideaSlug ?? null });
         onSubscribed?.(email.trim().toLowerCase());
     };
 

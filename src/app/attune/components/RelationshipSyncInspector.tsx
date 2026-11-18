@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Heart, Sparkles, ChevronDown, ShieldCheck, Check, Clock, Lock, MessageCircleHeart } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { SearchableDrawer } from "@/components/SearchableDrawer";
 
 type RelationalMoment = {
     id: string;
@@ -467,16 +468,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showPrompts ? "rotate-180" : ""}`} />
                     </button>
 
-                    <AnimatePresence initial={false}>
-                        {showPrompts && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="pt-4 space-y-4">
+                    <SearchableDrawer open={showPrompts} onReveal={() => setShowPrompts(true)}>
                                     {/* Sync Capture Inputs */}
                                     <div>
                                         <div className="text-xs font-medium text-slate-400 mb-2">
@@ -554,10 +546,7 @@ export default function RelationshipSyncInspector({ customerTags }: { customerTa
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    </SearchableDrawer>
                 </div>
             </div>
         </div>

@@ -9,6 +9,8 @@ import { ScrollProgress } from '@/components/ScrollProgress';
 import { HoverAcronym } from '@/components/HoverAcronym';
 import { ExpandableCitation } from '@/components/ExpandableCitation';
 import { NeglectednessSlider } from '@/components/NeglectednessSlider';
+import { AutoForecastInjector } from '@/components/forecast/AutoForecastInjector';
+import { ArtifactSection } from '@/components/ArtifactSection';
 
 import ExpandableScore from './components/ExpandableScore';
 import OpenSourcePriority from './components/OpenSourcePriority';
@@ -488,6 +490,8 @@ export default function PageClient() {
                 </section>
 
             </div>
+            <AutoForecastInjector />
+            <ArtifactSection projectSlug="whistleworks" />
         </main>
     );
 }

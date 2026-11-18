@@ -61,6 +61,18 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Native modal dialog scroll containment (modern-web-guidance: prevent-page-scroll-under-modal-dialog) */
+dialog:modal {
+  overscroll-behavior: contain;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(2, 8, 6, 0.78);
+  backdrop-filter: blur(8px);
+}
+
 ::selection {
   background: var(--primary);
   color: #000;

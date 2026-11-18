@@ -14,6 +14,14 @@ function ThreadsIcon({ className = "w-4 h-4" }: { className?: string }) {
     );
 }
 
+function XIcon({ className = "w-3.5 h-3.5" }: { className?: string }) {
+    return (
+        <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+    );
+}
+
 export function Footer() {
     const pathname = usePathname() || "";
     
@@ -69,6 +77,16 @@ export function Footer() {
                 {/* Social Channels */}
                 <div className="flex flex-wrap items-center justify-center gap-3 my-1">
                     <a 
+                        href="https://x.com/agi_futures" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        aria-label="AGI Futures on X"
+                        className="group flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-[#3bf4a4]/40 text-white/70 hover:text-white transition-all duration-200 text-xs font-mono shadow-sm"
+                    >
+                        <XIcon className="w-3.5 h-3.5 text-white/70 group-hover:text-[#3bf4a4] transition-colors" />
+                        <span>X</span>
+                    </a>
+                    <a 
                         href="https://www.instagram.com/agi_futures/" 
                         target="_blank" 
                         rel="noopener noreferrer" 
@@ -89,7 +107,7 @@ export function Footer() {
                         <span>Threads</span>
                     </a>
                     <a 
-                        href="https://www.facebook.com/profile.php?id=61595298569347" 
+                        href="https://www.facebook.com/1345646945305928" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         aria-label="AGI Futures on Facebook"

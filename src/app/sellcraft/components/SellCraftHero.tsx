@@ -18,7 +18,7 @@ export default function SellCraftHero({ theme, heroImg }: Props) {
       <div className="absolute inset-x-0 -top-32 h-[120%] -z-10 bg-black">
         <Image
           src={heroImg}
-          alt="SellCraft dashboard hovering over Tomorrowland city"
+          alt="Founders collaborating across a sunlit glass boardroom table"
           fill
           priority
           quality={100}

@@ -857,6 +857,7 @@ function CivilizationalImpactCard() {
                     )}
                 </AnimatePresence>
             
+                <AutoForecastInjector />
                 <ArtifactSection projectSlug="handraise" />
             </div>
         </motion.div>

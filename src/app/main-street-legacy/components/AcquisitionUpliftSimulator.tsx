@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Sparkles, ChevronDown, ScanLine, Check, TrendingUp } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { SearchableDrawer } from "@/components/SearchableDrawer";
 
 type UpliftNode = {
     id: string;
@@ -456,16 +457,7 @@ export default function AcquisitionUpliftSimulator({ customerTags }: { customerT
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showDeepSchema ? "rotate-180" : ""}`} />
                     </button>
 
-                    <AnimatePresence initial={false}>
-                        {showDeepSchema && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="pt-4 space-y-4">
+                    <SearchableDrawer open={showDeepSchema} onReveal={() => setShowDeepSchema(true)}>
                                     {/* Day-1 AI Playbook Install Checklist */}
                                     <div>
                                         <div className="text-[10px] font-mono uppercase tracking-widest text-stone-400 mb-2">
@@ -545,10 +537,7 @@ export default function AcquisitionUpliftSimulator({ customerTags }: { customerT
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    </SearchableDrawer>
                 </div>
             </div>
         </div>

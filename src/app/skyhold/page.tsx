@@ -1,19 +1,21 @@
 import { Metadata } from 'next';
-import { createClient } from '@/utils/supabase/server';
+import { createStaticClient } from '@/utils/supabase/static';
 import SkyholdClientPage from './page-client';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     alternates: { canonical: '/skyhold' },
-    title: 'Skyhold | The physical network for the autonomous age - AGI Futures',
-    description: 'A thesis-driven real estate company that acquires beautiful, access-constrained land near major metros before autonomous vehicles and eVTOLs reprice it.',
+    title: 'Skyhold: Autonomous Vehicle & eVTOL Real Estate Thesis | AGI Futures',
+    description: 'Startup blueprint + parcel repricing simulator: acquiring scenic, access-constrained land near major metros before robotaxis, Starlink, and eVTOLs reprice it.',
     openGraph: {
-        title: 'Skyhold | The physical network for the autonomous age - AGI Futures',
-        description: 'A thesis-driven real estate company that acquires beautiful, access-constrained land near major metros before autonomous vehicles and eVTOLs reprice it.',
+        title: 'Skyhold: Autonomous Vehicle & eVTOL Real Estate Thesis',
+        description: 'Acquiring scenic, access-constrained land near major metros before autonomous vehicles and eVTOLs reprice it.',
     }
 };
 
 export default async function SkyholdPage() {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
 
     // Fetch tags for Skyhold
     const { data: project } = await supabase

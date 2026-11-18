@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Compass, Car, Plane, Shield, Users, ChevronDown, Check, Flame, Zap } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { SearchableDrawer } from "@/components/SearchableDrawer";
 
 type MobilityStageId = "manual" | "av" | "evtol";
 
@@ -425,16 +426,7 @@ export default function AccessRepricingSimulator({ customerTags }: { customerTag
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showMasterplan ? "rotate-180" : ""}`} />
                     </button>
 
-                    <AnimatePresence initial={false}>
-                        {showMasterplan && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="pt-4 space-y-4">
+                    <SearchableDrawer open={showMasterplan} onReveal={() => setShowMasterplan(true)}>
                                     {/* Resident Narrative */}
                                     <div className="bg-[var(--primary)]/10 border border-[var(--primary)]/25 rounded-xl p-4">
                                         <div className="text-[10px] font-mono uppercase tracking-widest text-[var(--secondary)] mb-1">
@@ -482,10 +474,7 @@ export default function AccessRepricingSimulator({ customerTags }: { customerTag
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    </SearchableDrawer>
                 </div>
             </div>
         </div>

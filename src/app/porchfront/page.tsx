@@ -1,19 +1,21 @@
 import { Metadata } from 'next';
-import { createClient } from '@/utils/supabase/server';
+import { createStaticClient } from '@/utils/supabase/static';
 import PorchfrontClientPage from './page-client';
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
     alternates: { canonical: '/porchfront' },
-    title: 'Porchfront | Open Garage Culture OS - AGI Futures',
-    description: 'Turn sidewalk-facing garages into community hubs and micro-businesses—with a live neighborhood map and simple tools that reward real-world connection.',
+    title: 'Porchfront: Neighborhood Third Places & Micro-Retail Garage OS | AGI Futures',
+    description: 'Startup blueprint + block activation simulator: turning residential garages and front yards into walkable neighborhood third places and micro-businesses.',
     openGraph: {
-        title: 'Porchfront | Open Garage Culture OS - AGI Futures',
-        description: 'Turn sidewalk-facing garages into community hubs and micro-businesses.',
+        title: 'Porchfront: Neighborhood Third Places & Micro-Retail Garage OS',
+        description: 'Turning residential garages into walkable community hubs and micro-businesses.',
     }
 };
 
 export default async function PorchfrontPage() {
-    const supabase = await createClient();
+    const supabase = createStaticClient();
 
     // Fetch tags for Porchfront
     const { data: project } = await supabase

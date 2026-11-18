@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Shield, Radio, Users, CheckCircle2, Lock, Sparkles, Volume2, ChevronDown } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
+import { SearchableDrawer } from "@/components/SearchableDrawer";
 
 interface RitualPillar {
     id: string;
@@ -508,8 +509,7 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showDeepSchema ? "rotate-180" : ""}`} />
                     </button>
 
-                    {showDeepSchema && (
-                        <div className="pt-4 space-y-4">
+                    <SearchableDrawer open={showDeepSchema} onReveal={() => setShowDeepSchema(true)}>
                             <div className="grid sm:grid-cols-2 gap-2.5">
                                 {scenario.ritualCues.map((cue, idx) => (
                                     <div
@@ -536,8 +536,7 @@ export default function FocusRoomInspector({ customerTags }: { customerTags?: st
                                     <div className="text-emerald-300 font-mono">{scenario.specs.habitRetention30d}</div>
                                 </div>
                             </div>
-                        </div>
-                    )}
+                    </SearchableDrawer>
                 </div>
             </div>
         </div>

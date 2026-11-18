@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Camera, Sparkles, ChevronDown, ScanLine, Check } from "lucide-react";
 import { InlineTags } from "@/components/ProjectTags";
 import { HoverAcronym } from "@/components/HoverAcronym";
+import { SearchableDrawer } from "@/components/SearchableDrawer";
 
 type Hotspot = {
     id: string;
@@ -440,16 +441,7 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                         <ChevronDown className={`w-4 h-4 shrink-0 transition-transform ${showBids ? "rotate-180" : ""}`} />
                     </button>
 
-                    <AnimatePresence initial={false}>
-                        {showBids && (
-                            <motion.div
-                                initial={{ height: 0, opacity: 0 }}
-                                animate={{ height: "auto", opacity: 1 }}
-                                exit={{ height: 0, opacity: 0 }}
-                                transition={{ duration: 0.25 }}
-                                className="overflow-hidden"
-                            >
-                                <div className="pt-4 space-y-4">
+                    <SearchableDrawer open={showBids} onReveal={() => setShowBids(true)}>
                                     {/* Guided Voice Prompts Checklist */}
                                     <div>
                                         <div className="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-2">
@@ -527,10 +519,7 @@ export default function WalkthroughScopeInspector({ customerTags }: { customerTa
                                             ))}
                                         </div>
                                     </div>
-                                </div>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
+                    </SearchableDrawer>
                 </div>
             </div>
         </div>

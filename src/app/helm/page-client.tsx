@@ -832,13 +832,13 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                     ))}
                                 </div>
                             </div>
-                        
-                <ArtifactSection projectSlug="helm" />
-            </div>
+                        </div>
                     </details>
                 </RevealSection>
 
             </div >
+            <AutoForecastInjector />
+            <ArtifactSection projectSlug="helm" />
         </main >
     );
 }

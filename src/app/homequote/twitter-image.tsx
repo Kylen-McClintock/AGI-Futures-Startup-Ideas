@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("homequote", "homequote/assets/hq_hero_scan_1772949695780.png");
+    return renderIdeaOg("homequote", "homequote/assets/hq_widescreen_grounded_hero.jpg");
 }

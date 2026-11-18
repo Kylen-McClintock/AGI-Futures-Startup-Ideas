@@ -8,6 +8,7 @@ import { runMatch, unlockBrief, type MatchBrief, type MatchPick } from "./action
 import { ROLES, EXPERIENCE, CAPITAL, COMMITMENT, type RoleId, type ExperienceId, type CapitalId, type CommitmentId } from "@/lib/match/score";
 import { SubscribeCTA } from "@/components/SubscribeCTA";
 import { SITE_URL } from "@/lib/site";
+import { trackEvent } from "@/lib/analytics";
 
 export type MatchIdea = { slug: string; title: string; scoreTitle: string; href: string; image: StaticImageData };
 
@@ -38,8 +39,8 @@ function Question({ n, title, hint, children }: { n: number; title: string; hint
     );
 }
 
-export default function MatchClient({ ideas, sectors, initialSector }: { ideas: MatchIdea[]; sectors: string[]; initialSector?: string }) {
-    const [roles, setRoles] = useState<RoleId[]>([]);
+export default function MatchClient({ ideas, sectors, initialSector, initialRole }: { ideas: MatchIdea[]; sectors: string[]; initialSector?: string; initialRole?: RoleId }) {
+    const [roles, setRoles] = useState<RoleId[]>(initialRole ? [initialRole] : []);
     const [experience, setExperience] = useState<ExperienceId | null>(null);
     const [capital, setCapital] = useState<CapitalId | null>(null);
     const [commitment, setCommitment] = useState<CommitmentId | null>(null);
@@ -62,9 +63,10 @@ export default function MatchClient({ ideas, sectors, initialSector }: { ideas: 
 
     const submit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!ready) { setError("Answer questions 1–4 to get your match."); return; }
+        if (!ready) { setError("Answer questions 1-4 to get your match."); return; }
         setError("");
         setPhase("loading");
+        trackEvent("match_started", { roles: roles.join(","), experience, capital, commitment });
         window.scrollTo({ top: 0, behavior: "smooth" });
         const res = await runMatch({ roles, experience, capital, commitment, sectors: picked, advantage });
         if (!res.ok) { setError(res.error); setPhase("form"); return; }
@@ -73,6 +75,7 @@ export default function MatchClient({ ideas, sectors, initialSector }: { ideas: 
         setBrief(null);
         setBriefState("locked");
         setPhase("results");
+        trackEvent("match_completed", { topSlug: res.picks[0]?.slug ?? null, topFit: res.picks[0]?.fit ?? null });
     };
 
     const onSubscribed = async (email: string) => {
@@ -187,10 +190,10 @@ export default function MatchClient({ ideas, sectors, initialSector }: { ideas: 
                         {/* Share */}
                         <div className="flex flex-wrap items-center gap-2">
                             <span className="text-xs font-mono uppercase tracking-widest text-white/40 mr-2">Share your match</span>
-                            <a className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}>X</a>
-                            <a className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://www.threads.net/intent/post?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`}>Threads</a>
-                            <a className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}>LinkedIn</a>
-                            <button type="button" onClick={async () => { await navigator.clipboard.writeText(`${shareText} ${shareUrl}`); setCopied(true); setTimeout(() => setCopied(false), 2000); }} className="inline-flex items-center gap-1.5 text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40">
+                            <a onClick={() => trackEvent("match_shared", { channel: "x", topSlug: top?.slug ?? null })} className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://x.com/intent/post?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}>Share on X</a>
+                            <a onClick={() => trackEvent("match_shared", { channel: "threads", topSlug: top?.slug ?? null })} className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://www.threads.net/intent/post?text=${encodeURIComponent(`${shareText} ${shareUrl}`)}`}>Share on Threads</a>
+                            <a onClick={() => trackEvent("match_shared", { channel: "linkedin", topSlug: top?.slug ?? null })} className="text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40" target="_blank" rel="noopener noreferrer" href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}>LinkedIn</a>
+                            <button type="button" onClick={async () => { await navigator.clipboard.writeText(`${shareText} ${shareUrl}`); trackEvent("match_shared", { channel: "copy", topSlug: top?.slug ?? null }); setCopied(true); setTimeout(() => setCopied(false), 2000); }} className="inline-flex items-center gap-1.5 text-sm border border-white/15 rounded-full px-4 py-2 text-white/75 hover:text-white hover:border-white/40 cursor-pointer">
                                 {copied ? <Check className="w-3.5 h-3.5" /> : <Copy className="w-3.5 h-3.5" />} {copied ? "Copied" : "Copy link"}
                             </button>
                         </div>
@@ -204,7 +207,7 @@ export default function MatchClient({ ideas, sectors, initialSector }: { ideas: 
                                 {briefState === "loading" ? (
                                     <div className="flex items-center gap-3 text-white/70" role="status"><Loader2 className="w-5 h-5 animate-spin text-[#21de9a]" /> Writing your brief…</div>
                                 ) : matchId ? (
-                                    <SubscribeCTA variant="compact" source="match" ideaSlug={top.slug} buttonLabel="Unlock brief" onSubscribed={onSubscribed} />
+                                    <SubscribeCTA variant="compact" source="match" ideaSlug={top.slug} buttonLabel="Get 30-Day Brief" onSubscribed={onSubscribed} />
                                 ) : (
                                     <SubscribeCTA variant="compact" source="match" ideaSlug={top.slug} />
                                 )}
