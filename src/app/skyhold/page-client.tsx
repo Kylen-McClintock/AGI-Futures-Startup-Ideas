@@ -18,7 +18,7 @@ import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Assets
-import heroImage from "./assets/hero_hd.png";
+import heroImage from "./assets/hero_hd_hires.jpg";
 import solariumImage from "./assets/solarium_hd.png";
 import evtolImage from "./assets/evtol_hd.png";
 import avCommuteImage from "./assets/av_commute.png";

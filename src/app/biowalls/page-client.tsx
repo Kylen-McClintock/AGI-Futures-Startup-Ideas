@@ -15,7 +15,7 @@ import { themeMap } from "@/utils/themeMap";
 
 // Assets
 import heroImage from './assets/office_lobby_wall_v1.png';
-import cloudForestOld from './assets/cloud_forest.png';
+import cloudForestOld from './assets/cloud_forest_hires.jpg';
 import cloudForestPanel from './assets/cloud_forest_v3.png';
 import desertMonolith from './assets/desert_monolith_v2.png';
 import freshwaterCliff from './assets/freshwater_cliff_v2.png';

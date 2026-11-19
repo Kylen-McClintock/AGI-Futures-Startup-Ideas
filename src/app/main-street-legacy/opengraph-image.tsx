@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("main-street-legacy", "main-street-legacy/assets/hero.png");
+    return renderIdeaOg("main-street-legacy", "main-street-legacy/assets/hero.jpg");
 }

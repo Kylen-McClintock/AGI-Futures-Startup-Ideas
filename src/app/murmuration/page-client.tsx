@@ -19,9 +19,10 @@ import { InterestedButton } from "@/components/InterestedButton";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 
-import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.png";
-import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.png";
-import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.png";
+import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.jpg";
+import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.jpg";
+import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.jpg";
+import murmuration_network_graph from "./assets/murmuration_network_graph.jpg";
 
 const DEFAULT_TAGS = {
   sector: ["AI", "Enterprise SaaS", "Coordination"],
@@ -459,6 +460,16 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
           </div>
 
           <UnitEconomicsWidget />
+        </ScrollReveal>
+
+        {/* PARALLAX VISUAL 4: CROSS-COMPANY MURMURATION GRAPH */}
+        <ScrollReveal className="py-12">
+          <ParallaxImage
+            src={murmuration_network_graph}
+            alt="Cross-company Murmuration Graph linking autonomous startup studios across coastal twilight hills"
+            prompt="Dusk coastal headland valley dotted with five glowing timber-and-glass startup studios connected overhead by luminous emerald-and-gold starling murmuration arcs."
+            className="aspect-[21/9] w-full rounded-3xl"
+          />
         </ScrollReveal>
 
         {/* UNIQUE GO TO MARKET */}

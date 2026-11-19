@@ -17,8 +17,8 @@ import { useState } from "react";
 import { themeMap } from "@/utils/themeMap";
 
 // Images
-import heroImg from "./assets/proxypilot_hero_1773874900098.png";
-import appMockupImg from "./assets/proxypilot_app_mockup_1773874913773.png";
+import heroImg from "./assets/proxypilot_hero_hires.jpg";
+import appMockupImg from "./assets/proxypilot_app_mockup.jpg";
 import mandateStudioImg from "./assets/proxypilot_mandate_studio_1773874926094.png";
 import icpCreatorImg from "./assets/proxypilot_icp_creator.png";
 import icpRetailImg from "./assets/proxypilot_icp_retail.png";
@@ -378,7 +378,7 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
                     </motion.div>
                     
                     <motion.div {...FADE_UP} className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden border border-[var(--primary)]/20 shadow-[0_0_50px_rgba(139,92,246,0.1)_inset]">
-                        <Image src={require('./assets/proxypilot_market_infrastructure_1773941679237.png')} alt="Market Infrastructure" fill className="object-cover" quality={100} />
+                        <Image src={require('./assets/proxypilot_market_infrastructure.jpg')} alt="Market Infrastructure" fill className="object-cover" quality={100} />
                         <div className="absolute inset-x-0 bottom-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
                             <p className="text-white/90 font-light text-sm italic border-l-2 border-[var(--primary)] pl-3">The infrastructure shift from theoretical models to reality.</p>
                         </div>
@@ -387,7 +387,7 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
 
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                      <motion.div {...FADE_UP} className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden border border-white/10 order-last lg:order-first">
-                        <Image src={require('./assets/proxypilot_activism_mandate_1773941692345.png')} alt="Activism Mandate" fill className="object-cover" quality={100} />
+                        <Image src={require('./assets/proxypilot_activism_mandate.jpg')} alt="Activism Mandate" fill className="object-cover" quality={100} />
                      </motion.div>
                     
                     <motion.div {...FADE_UP} className="glass-panel p-10 rounded-3xl border border-[var(--primary)]/10 bg-white/[0.02]">

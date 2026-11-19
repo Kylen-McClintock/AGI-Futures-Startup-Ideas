@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("thoughtline", "thoughtline/assets/thoughtline_hero.png");
+    return renderIdeaOg("thoughtline", "thoughtline/assets/thoughtline_hero_hires.jpg");
 }

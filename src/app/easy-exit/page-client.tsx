@@ -19,9 +19,9 @@ import { ValueFlowDiagram } from "./components/ValueFlowDiagram";
 import { MarketTAMChart } from "./components/MarketTAMChart";
 
 // Import local images
-import heroImg from "./assets/easy_exit_hero_1773609319540.png";
-import problemImg from "./assets/easy_exit_problem_1773609335782.png";
-import solutionImg from "./assets/easy_exit_solution_1773609351808.png";
+import heroImg from "./assets/easy_exit_hero_hires.jpg";
+import problemImg from "./assets/easy_exit_problem.jpg";
+import solutionImg from "./assets/easy_exit_solution.jpg";
 import marketImg from "./assets/easy_exit_market_1773609367126.png";
 import impactImg from "./assets/easy_exit_impact_1773609385141.png";
 

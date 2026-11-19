@@ -19,11 +19,11 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/proofrun_hero.png';
+import heroImage from './assets/proofrun_hero_hires.jpg';
 import missionDashboardImage from './assets/proofrun_mission_dashboard.png';
 import candidatePortfolioImage from './assets/proofrun_candidate_portfolio.png';
-import impactFlowImage from './assets/proofrun_impact_flow.png';
-import aiOrchestrationImage from './assets/proofrun_ai_orchestration.png';
+import impactFlowImage from './assets/proofrun_impact_flow.jpg';
+import aiOrchestrationImage from './assets/proofrun_ai_orchestration.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function ProofRunClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {

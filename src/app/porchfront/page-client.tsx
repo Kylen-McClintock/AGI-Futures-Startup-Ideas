@@ -31,7 +31,7 @@ import us_block_party from "./assets/us_block_party.png";
 import lush_neighborhood_street from "./assets/lush_neighborhood_street.png";
 import us_suburb_bakery from "./assets/us_suburb_bakery.png";
 import us_suburb_repair_cafe from "./assets/us_suburb_repair_cafe.png";
-import hero_garage_cafe from "./assets/hero_garage_cafe.png";
+import hero_garage_cafe from "./assets/hero_garage_cafe_hires.jpg";
 
 import { LonelinessChart } from "./components/LonelinessChart";
 import GarageConversionInspector from "./components/GarageConversionInspector";

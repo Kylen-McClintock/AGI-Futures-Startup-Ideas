@@ -22,7 +22,7 @@ import { ScrollProgress } from "@/components/ScrollProgress"; // Added by user i
 import { useInView } from "react-intersection-observer";
 
 // Assets
-import heroImage from "./assets/aura_hero_vista.png";
+import heroImage from "./assets/aura_hero_vista.jpg";
 import cookImage from "./assets/aura_use_case_cooking.png";
 import fitImage from "./assets/aura_use_case_fitness.png";
 import officeImage from "./assets/aura_use_case_office.png";

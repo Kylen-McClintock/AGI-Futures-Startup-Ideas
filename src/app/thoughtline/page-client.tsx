@@ -17,12 +17,12 @@ import { ChevronDown, Brain, Link as LinkIcon, Radio, BrainCircuit, Mic, Workflo
 import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 
 // Assets
-import heroImage from './assets/thoughtline_hero.png';
+import heroImage from './assets/thoughtline_hero_hires.jpg';
 import clinicalImage from './assets/thoughtline_clinical.png';
 import interfaceImage from './assets/thoughtline_interface.png';
 import glassesImage from './assets/thoughtline_glasses.png';
 import futureImage from './assets/thoughtline_future.png';
-import mechanismImage from './assets/thoughtline_mechanism.png';
+import mechanismImage from './assets/thoughtline_mechanism.jpg';
 import psychImage from './assets/thoughtline_psych.png';
 import impactImage from './assets/thoughtline_impact.png';
 

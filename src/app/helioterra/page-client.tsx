@@ -34,7 +34,7 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/hero.png';
+import heroImage from './assets/hero_hires.jpg';
 import microclimateImage from './assets/microclimate.png';
 import dashboardImage from './assets/dashboard.png';
 import grazingImage from './assets/grazing.png';

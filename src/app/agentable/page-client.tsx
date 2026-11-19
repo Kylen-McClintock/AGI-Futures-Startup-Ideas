@@ -15,7 +15,7 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { useState } from "react";
 import { themeMap } from "@/utils/themeMap";
 
-import heroImg from "./assets/hero.png";
+import heroImg from "./assets/hero.jpg";
 import problemImg from "./assets/problem_peaceful.png";
 import solutionImg from "./assets/solution.png";
 import ecosystemImg from "./assets/ecosystem.png";

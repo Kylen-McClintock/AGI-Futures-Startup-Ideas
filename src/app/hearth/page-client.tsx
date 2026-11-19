@@ -22,8 +22,8 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { HoverAcronym } from "@/components/HoverAcronym";
 
 // Assets
-import heroImage from "./assets/hero_new.png";
-import originalHeroImage from "./assets/hero.png";
+import heroImage from "./assets/hero_new_hires.jpg";
+import originalHeroImage from "./assets/hero_hires.jpg";
 import nomadImage from "./assets/use_case_nomad.png";
 import familyImage from "./assets/use_case_family.png";
 import founderImage from "./assets/use_case_founder.png";

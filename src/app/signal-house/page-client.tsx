@@ -32,7 +32,7 @@ import mountainLodgeImage from "./assets/mountain_lodge.png";
 import rainforestCanopyImage from "./assets/rainforest_canopy.png";
 import orbitalCampusImage from "./assets/orbital_campus.png";
 import geothermalCaveImage from "./assets/geothermal_cave.png";
-import heroV3Image from "./assets/hero_v3.png";
+import heroV3Image from "./assets/hero_v3_hires.jpg";
 import flowPodImage from "./assets/flow_pod.png";
 
 const citationsList = [

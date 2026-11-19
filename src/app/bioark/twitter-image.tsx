@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("bioark", "bioark/assets/hero.png");
+    return renderIdeaOg("bioark", "bioark/assets/hero_hires.jpg");
 }

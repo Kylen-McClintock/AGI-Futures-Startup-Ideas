@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("housegraph", "housegraph/assets/housegraph_hero.png");
+    return renderIdeaOg("housegraph", "housegraph/assets/housegraph_hero_hires.jpg");
 }

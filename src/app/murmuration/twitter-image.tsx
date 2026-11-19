@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("murmuration", "murmuration/assets/hero_strategy_dashboard.png");
+    return renderIdeaOg("murmuration", "murmuration/assets/hero_strategy_dashboard.jpg");
 }

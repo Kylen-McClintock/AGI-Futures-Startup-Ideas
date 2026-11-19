@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("helioterra", "helioterra/assets/hero.png");
+    return renderIdeaOg("helioterra", "helioterra/assets/hero_hires.jpg");
 }

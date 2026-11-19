@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("proofrun", "proofrun/assets/proofrun_hero.png");
+    return renderIdeaOg("proofrun", "proofrun/assets/proofrun_hero_hires.jpg");
 }

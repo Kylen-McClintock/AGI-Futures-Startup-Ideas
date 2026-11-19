@@ -21,7 +21,7 @@ import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 
-import heroImg from "./assets/hq_hero_scan_1772949695780.png";
+import heroImg from "./assets/hq_hero_scan.jpg";
 import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
 import dispatchMapImg from "./assets/hq_dispatch_map_1772949722344.png";
 import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173.png";

@@ -18,9 +18,9 @@ import WhistleWorksValueFlow from './components/WhistleWorksValueFlow';
 import MotionGrid from './components/MotionGrid';
 import TogglableICP from './components/TogglableICP';
 
-import heroImage from './assets/hero_vista_hires.png';
+import heroImage from './assets/hero_vista_hires.jpg';
 import intakeFlowImage from './assets/intake_flow.png';
-import networkImage from './assets/network_nodes.png';
+import networkImage from './assets/network_nodes.jpg';
 import civImpactImage from './assets/civ_impact.png';
 import icpGrantImage from './assets/icp_grant.png';
 import icpHealthImage from './assets/icp_health.png';

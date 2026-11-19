@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("proxypilot", "proxypilot/assets/proxypilot_hero_1773874900098.png");
+    return renderIdeaOg("proxypilot", "proxypilot/assets/proxypilot_hero_hires.jpg");
 }

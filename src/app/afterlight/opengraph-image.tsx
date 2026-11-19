@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("afterlight", "afterlight/assets/afterlight_hero_1773354206295.png");
+    return renderIdeaOg("afterlight", "afterlight/assets/afterlight_hero_hires.jpg");
 }

@@ -21,7 +21,7 @@ import { ExampleGrid } from './components/ExampleGrid';
 import { ParetoDiagram } from './components/ParetoDiagram';
 
 // Assets
-import defaultHeroImage from './assets/hero_negotiation_realistic.png';
+import defaultHeroImage from './assets/hero_negotiation_realistic_hires.jpg';
 import oldHeroImage from './assets/hero.png';
 import inUseNegotiationImage from './assets/in_use_negotiation.png';
 import inUseDashboardImage from './assets/in_use_dashboard.png';

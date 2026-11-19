@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("aura", "aura/assets/aura_hero_vista.png");
+    return renderIdeaOg("aura", "aura/assets/aura_hero_vista.jpg");
 }

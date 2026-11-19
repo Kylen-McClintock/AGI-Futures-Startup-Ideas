@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("waypoint", "waypoint/assets/waypoint_hero.png");
+    return renderIdeaOg("waypoint", "waypoint/assets/waypoint_hero_hires.jpg");
 }

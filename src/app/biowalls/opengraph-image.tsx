@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("biowalls", "biowalls/assets/cloud_forest.png");
+    return renderIdeaOg("biowalls", "biowalls/assets/cloud_forest_hires.jpg");
 }

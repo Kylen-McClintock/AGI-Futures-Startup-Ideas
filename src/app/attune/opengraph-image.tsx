@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("attune", "attune/assets/attune_hero_vista.png");
+    return renderIdeaOg("attune", "attune/assets/attune_hero_vista_hires.jpg");
 }

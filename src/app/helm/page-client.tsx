@@ -19,9 +19,9 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/helm_hero.png';
+import heroImage from './assets/helm_hero_hires.jpg';
 import jarvisImage from './assets/helm_jarvis.png';
-import graphImage from './assets/helm_graph.png';
+import graphImage from './assets/helm_graph.jpg';
 import networkImage from './assets/helm_network.png';
 import icpNetworkImage from './assets/helm_icp_network.png';
 import { InterestedButton } from "@/components/InterestedButton";

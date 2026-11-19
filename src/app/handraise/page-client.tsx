@@ -16,10 +16,10 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/handraise_hero.png';
-import graphImage from './assets/handraise_graph.png';
+import heroImage from './assets/handraise_hero.jpg';
+import graphImage from './assets/handraise_graph.jpg';
 import productImage from "./assets/handraise_product.png";
-import networkImage from "./assets/handraise_network.png";
+import networkImage from "./assets/handraise_network.jpg";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';

@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("porchfront", "porchfront/assets/hero_garage_cafe.png");
+    return renderIdeaOg("porchfront", "porchfront/assets/hero_garage_cafe_hires.jpg");
 }

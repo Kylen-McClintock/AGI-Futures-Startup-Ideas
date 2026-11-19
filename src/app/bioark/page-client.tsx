@@ -14,7 +14,7 @@ import { themeMap } from "@/utils/themeMap";
 import { Leaf, Activity, ChevronDown, ChevronRight, Layers, ShieldCheck, Search, Users, Shield, Target, Building, BookOpen, Globe2 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/hero.png';
+import heroImage from './assets/hero_hires.jpg';
 import sourcingImage from './assets/sourcing.png';
 import trustGraphImage from './assets/trust_graph.png';
 import amphibianVistaImage from './assets/amphibian_vista.png';

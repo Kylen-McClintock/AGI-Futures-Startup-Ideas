@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("skyhold", "skyhold/assets/hero.webp");
+    return renderIdeaOg("skyhold", "skyhold/assets/hero_hires.jpg");
 }

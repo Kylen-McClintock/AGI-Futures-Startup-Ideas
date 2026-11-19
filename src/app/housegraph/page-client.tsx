@@ -17,7 +17,7 @@ import { themeMap } from "@/utils/themeMap";
 import { FileText, ChevronDown, Activity, CheckCircle, Database } from "lucide-react";
 
 // Assets
-import heroImage from './assets/housegraph_hero.png';
+import heroImage from './assets/housegraph_hero_hires.jpg';
 import passportImage from './assets/housegraph_passport_v2.png';
 import tourImage from './assets/housegraph_tour_v2.png';
 import transactionOsImage from './assets/housegraph_transaction_os_v2.png';

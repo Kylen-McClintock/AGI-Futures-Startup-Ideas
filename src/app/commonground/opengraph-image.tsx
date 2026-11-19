@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("commonground", "commonground/assets/hero_negotiation_realistic.png");
+    return renderIdeaOg("commonground", "commonground/assets/hero_negotiation_realistic_hires.jpg");
 }

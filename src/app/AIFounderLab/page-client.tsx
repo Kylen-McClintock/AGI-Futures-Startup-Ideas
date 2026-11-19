@@ -26,8 +26,8 @@ import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 import { useInView } from "react-intersection-observer";
 
 // Assets
-import heroImage from "./assets/afl_hero_campus.png";
-import campusImage from "./assets/afl_campus_transformation.png";
+import heroImage from "./assets/afl_hero_campus_hires.jpg";
+import campusImage from "./assets/afl_campus_transformation.jpg";
 import protoImage from "./assets/afl_prototyping_workspace.png";
 import guildImage from "./assets/afl_guild_collaboration.png";
 import dashImage from "./assets/afl_build_league_dashboard.png";

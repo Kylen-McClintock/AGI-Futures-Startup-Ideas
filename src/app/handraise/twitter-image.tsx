@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("handraise", "handraise/assets/handraise_hero.png");
+    return renderIdeaOg("handraise", "handraise/assets/handraise_hero.jpg");
 }

@@ -19,12 +19,12 @@ import { AutoForecastInjector } from "@/components/forecast/AutoForecastInjector
 import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
-import heroImg from "./assets/hero.png";
-import operatorHubImg from "./assets/operator-hub.png";
-import hvacTransformedImg from "./assets/hvac-transformed.png";
-import mechanicImg from "./assets/mechanic.png";
-import syndicateImg from "./assets/syndicate.png";
-import futureMainStreetImg from "./assets/future-main-street.png";
+import heroImg from "./assets/hero.jpg";
+import operatorHubImg from "./assets/operator-hub.jpg";
+import hvacTransformedImg from "./assets/hvac-transformed.jpg";
+import mechanicImg from "./assets/mechanic.jpg";
+import syndicateImg from "./assets/syndicate.jpg";
+import futureMainStreetImg from "./assets/future-main-street.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 

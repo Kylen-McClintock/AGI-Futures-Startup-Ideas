@@ -18,7 +18,7 @@ import ICPUseCases from './components/ICPUseCases';
 import ValueFlow from "./components/ValueFlow";
 import { Layers, Activity, Smartphone, Link as LinkIcon, ChevronDown, CheckCircle, Flame, Droplets, MapPin, SearchCheck, Zap, Server, BarChart, ShieldCheck, Sparkles, Coins } from "lucide-react";
 
-import heroImage from './assets/waypoint_hero.png';
+import heroImage from './assets/waypoint_hero_hires.jpg';
 import dashImage from './assets/waypoint_fin_dash.png';
 import fieldImage from './assets/waypoint_field_device.png';
 import cleanCookingImage from './assets/waypoint_clean_cooking.png';

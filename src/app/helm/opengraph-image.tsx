@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("helm", "helm/assets/helm_hero.png");
+    return renderIdeaOg("helm", "helm/assets/helm_hero_hires.jpg");
 }

@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("civicpath", "civicpath/assets/hero.png");
+    return renderIdeaOg("civicpath", "civicpath/assets/hero.jpg");
 }

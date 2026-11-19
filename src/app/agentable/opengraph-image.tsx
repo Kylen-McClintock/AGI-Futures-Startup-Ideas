@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("agentable", "agentable/assets/hero.png");
+    return renderIdeaOg("agentable", "agentable/assets/hero.jpg");
 }

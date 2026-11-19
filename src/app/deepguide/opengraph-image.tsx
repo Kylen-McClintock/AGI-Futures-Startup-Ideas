@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("deepguide", "deepguide/assets/deepguide_hero.png");
+    return renderIdeaOg("deepguide", "deepguide/assets/deepguide_hero_hires.jpg");
 }

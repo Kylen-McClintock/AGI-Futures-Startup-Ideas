@@ -15,10 +15,11 @@ import { HoverAcronym } from "@/components/HoverAcronym";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/afterlight_hero_1773354206295.png';
+import heroImage from './assets/afterlight_hero_hires.jpg';
 import timelineImage from './assets/afterlight_timeline_1773354220095.png';
 import appImage from './assets/afterlight_app_1773354236688.png';
 import closingImage from './assets/afterlight_closing_1773354249527.png';
+import intergenerationalStoriesImage from './assets/afterlight_intergenerational_stories.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -248,9 +249,12 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                             <div className="p-6 bg-white/[0.03] border-l-4 border-[var(--primary)] text-xl text-white font-medium italic rounded-r-2xl my-6">
                                 "Share your perspective so we can capture the fullest version of this memory."
                             </div>
-                            <p className="text-lg text-white/80 font-light leading-relaxed">
+                            <p className="text-lg text-white/80 font-light leading-relaxed mb-8">
                                 That framing invites richness, not contradiction. It turns memory capture into a multi-perspective family process.
                             </p>
+                            <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl border border-white/10 group">
+                                <Image src={intergenerationalStoriesImage} alt="Three generations of a family laughing over treasured photographs in a sunlit garden conservatory as Afterlight captures their shared story" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                            </div>
                         </div>
                     </div>
 

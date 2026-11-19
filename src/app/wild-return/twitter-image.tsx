@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("wild-return", "wild-return/assets/hero.png");
+    return renderIdeaOg("wild-return", "wild-return/assets/hero_hires.jpg");
 }

@@ -23,7 +23,7 @@ import ICPGrid from './components/ICPGrid';
 import ValueFlow from './components/ValueFlow';
 
 // Assets
-import heroImage from './assets/policy_layers.png';
+import heroImage from './assets/hero.jpg';
 import runtimeImage from './assets/runtime.png';
 import mandateImage from './assets/mandate.png';
 import twinImage from './assets/twin.png';
@@ -31,7 +31,7 @@ import icpCityImage from './assets/icp_city.png';
 import icpMinistryImage from './assets/icp_ministry.png';
 import icpRegionImage from './assets/icp_region.png';
 import marketScaleImage from './assets/civic_ui.png';
-import sovereignDashboardImage from './assets/sovereign_dashboard.png';
+import sovereignDashboardImage from './assets/sovereign_dashboard.jpg';
 
 import { ChevronDown } from 'lucide-react';
 

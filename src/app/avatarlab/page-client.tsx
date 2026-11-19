@@ -29,8 +29,8 @@ import {
 } from "lucide-react";
 
 // Assets
-import heroImage from './assets/avatarlab_hero_v2.png';
-import organoidsImage from './assets/avatarlab_organoids.png';
+import heroImage from './assets/avatarlab_hero_v2_hires.jpg';
+import organoidsImage from './assets/avatarlab_organoids.jpg';
 import twinOsImage from './assets/avatarlab_twinos.png';
 import graphImage from './assets/avatarlab_graph.png';
 import cellbankImage from './assets/avatarlab_cellbank_v2.png';

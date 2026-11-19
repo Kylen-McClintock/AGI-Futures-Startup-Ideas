@@ -22,7 +22,7 @@ import { ScoreCard, RiskItem } from "./components/ScoreCard";
 import { ICPSection } from "./components/ICPSection";
 
 // Assets
-import heroImage from "./assets/hero.png";
+import heroImage from "./assets/hero_hires.jpg";
 import sanctuaryImage from "./assets/sanctuary.png";
 import ritualImage from "./assets/ritual.png";
 import palliativeImage from "./assets/palliative.png";

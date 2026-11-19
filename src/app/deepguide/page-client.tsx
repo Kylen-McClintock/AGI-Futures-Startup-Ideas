@@ -14,8 +14,8 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/deepguide_hero.png';
-import modalityGraphImage from './assets/deepguide_modality_graph.png';
+import heroImage from './assets/deepguide_hero_hires.jpg';
+import modalityGraphImage from './assets/deepguide_modality_graph.jpg';
 import safetyDashboardImage from './assets/deepguide_safety_dashboard.png';
 import clinicalTrainingImage from './assets/deepguide_clinical_training.png';
 import hologramTherapyImage from './assets/deepguide_hologram_therapy.png';

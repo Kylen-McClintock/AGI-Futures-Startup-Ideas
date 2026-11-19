@@ -6,5 +6,5 @@ export const size = OG_SIZE;
 export const contentType = "image/png";
 
 export default function Image() {
-    return renderIdeaOg("AIFounderLab", "AIFounderLab/assets/afl_hero_campus.png");
+    return renderIdeaOg("AIFounderLab", "AIFounderLab/assets/afl_hero_campus_hires.jpg");
 }

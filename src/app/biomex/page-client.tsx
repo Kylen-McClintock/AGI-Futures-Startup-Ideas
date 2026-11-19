@@ -19,10 +19,11 @@ import { themeMap } from "@/utils/themeMap";
 import { Activity, Beaker, ShieldPlus, ChevronDown, Link as LinkIcon, FlaskConical, Stethoscope, Dna, Rocket } from "lucide-react";
 
 // Assets
-import heroVista from './assets/hero_vista.png';
+import heroVista from './assets/hero_vista.jpg';
 import clinicLab from './assets/clinic_lab.png';
-import capsuleProduct from './assets/capsule_product.png';
+import capsuleProduct from './assets/capsule_product.jpg';
 import donorNetwork from './assets/donor_network.png';
+import donorPhenotypes from './assets/biomex_donor_phenotypes.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -173,6 +174,11 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                     <p className="text-xl text-white/80 leading-relaxed font-light mb-12">
                         <HoverAcronym acronym="FMT" definition="Fecal Microbiota Transplantation" theme="emerald" /> has real signal, but the category is still blunt. The clearest validated wedge is recurrent <em className="text-white/90">Clostridioides difficile</em> infection, where the FDA now lists approved fecal microbiota products and the American Gastroenterological Association recommends fecal microbiota-based therapies for many adults after standard antibiotics. Outside that wedge, the market is fragmented, donor selection is mostly generic, manufacturing is uneven, and the regulatory perimeter is tight. Clinics have a modality. They do not yet have a precision layer.
                     </p>
+
+                    <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/10 group border border-white/10">
+                        <Image src={donorPhenotypes} alt="Elite older adult and endurance athlete running along a coastal boardwalk with 0.1% microbiome recovery metrics" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/50 via-transparent to-transparent pointer-events-none" />
+                    </div>
 
                     <div className="glass-panel p-10 rounded-[2rem] border border-[var(--primary)]/30 group bg-black/40 relative overflow-hidden">
                         <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
