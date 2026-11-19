@@ -26,7 +26,7 @@ import ValueFlow from './components/ValueFlow';
 import heroImage from './assets/hero.jpg';
 import runtimeImage from './assets/runtime.png';
 import mandateImage from './assets/mandate.png';
-import twinImage from './assets/twin.png';
+import twinImage from './assets/twin.jpg';
 import icpCityImage from './assets/icp_city.png';
 import icpMinistryImage from './assets/icp_ministry.png';
 import icpRegionImage from './assets/icp_region.png';

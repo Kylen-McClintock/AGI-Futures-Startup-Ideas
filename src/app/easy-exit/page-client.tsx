@@ -24,6 +24,7 @@ import problemImg from "./assets/easy_exit_problem.jpg";
 import solutionImg from "./assets/easy_exit_solution.jpg";
 import marketImg from "./assets/easy_exit_market_1773609367126.png";
 import impactImg from "./assets/easy_exit_impact_1773609385141.png";
+import trustVaultImg from "./assets/easy_exit_trust_vault.jpg";
 
 export default function EasyExitClient() {
     const theme = themeMap['emerald'];
@@ -328,6 +329,14 @@ export default function EasyExitClient() {
                             Meanwhile, payment networks and consumer-finance apps have already trained the market to expect subscription visibility and intervention from banking surfaces.
                         </p>
                     </div>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="w-full aspect-video md:aspect-[21/9] relative rounded-3xl overflow-hidden border border-white/10 mt-10"
+                    >
+                        <Image src={trustVaultImg} alt="Architectural revocation key beside a cryptographic Consent Revoked and Zero Retention proof" fill className="object-cover" quality={100} />
+                    </motion.div>
                 </section>
 
                 {/* BUSINESS MODEL */}

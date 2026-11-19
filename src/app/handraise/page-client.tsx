@@ -18,8 +18,9 @@ import {
 // Assets
 import heroImage from './assets/handraise_hero.jpg';
 import graphImage from './assets/handraise_graph.jpg';
-import productImage from "./assets/handraise_product.png";
+import productImage from "./assets/handraise_product.jpg";
 import networkImage from "./assets/handraise_network.jpg";
+import breakthroughImage from "./assets/handraise_breakthrough_moment.jpg";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -316,6 +317,10 @@ export default function HandraiseClientPage() {
                                 You choose topics, micro-time slots, and compensation. Every ask arrives pre-packaged. Accept or pass with one tap. Your help earns portable credits, public proof of skill, and visibility that leads to paid micro-work, full-time roles, or formal advisory.
                             </p>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[4/3] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mt-12 shadow-2xl border border-white/10 group">
+                        <Image src={breakthroughImage} alt="Founders and a matched domain mentor sharing a breakthrough conversation on a sunlit stone courtyard" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
                 </motion.section>
 

@@ -17,7 +17,7 @@ import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hero.jpg";
 import problemImg from "./assets/problem_peaceful.png";
-import solutionImg from "./assets/solution.png";
+import solutionImg from "./assets/solution.jpg";
 import ecosystemImg from "./assets/ecosystem.png";
 import agingAssistedImg from "./assets/aging_assisted.png";
 import autonomousNavImg from "./assets/autonomous_nav.png";

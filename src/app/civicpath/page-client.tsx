@@ -16,8 +16,8 @@ import { themeMap } from "@/utils/themeMap";
 // Assets
 import dashboardImage from './assets/hero.jpg';
 import simulatorImage from './assets/simulator.jpg';
-import immigrantAppImage from './assets/immigrant_app.png';
-import situationRoomImage from './assets/situation_room.png';
+import immigrantAppImage from './assets/immigrant_app.jpg';
+import situationRoomImage from './assets/situation_room.jpg';
 import gateImage from './assets/gate.jpg';
 import intakeImage from './assets/intake.png';
 import ValueFlowScenarios from './components/ValueFlowScenarios';

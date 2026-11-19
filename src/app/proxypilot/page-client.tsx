@@ -20,7 +20,7 @@ import { themeMap } from "@/utils/themeMap";
 import heroImg from "./assets/proxypilot_hero_hires.jpg";
 import appMockupImg from "./assets/proxypilot_app_mockup.jpg";
 import mandateStudioImg from "./assets/proxypilot_mandate_studio_1773874926094.png";
-import icpCreatorImg from "./assets/proxypilot_icp_creator.png";
+import icpCreatorImg from "./assets/proxypilot_icp_creator.jpg";
 import icpRetailImg from "./assets/proxypilot_icp_retail.png";
 import icpPlatformImg from "./assets/proxypilot_icp_platform.png";
 

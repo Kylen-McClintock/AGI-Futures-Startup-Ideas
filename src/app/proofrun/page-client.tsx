@@ -20,8 +20,8 @@ import {
 
 // Assets
 import heroImage from './assets/proofrun_hero_hires.jpg';
-import missionDashboardImage from './assets/proofrun_mission_dashboard.png';
-import candidatePortfolioImage from './assets/proofrun_candidate_portfolio.png';
+import missionDashboardImage from './assets/proofrun_mission_dashboard.jpg';
+import candidatePortfolioImage from './assets/proofrun_candidate_portfolio.jpg';
 import impactFlowImage from './assets/proofrun_impact_flow.jpg';
 import aiOrchestrationImage from './assets/proofrun_ai_orchestration.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
