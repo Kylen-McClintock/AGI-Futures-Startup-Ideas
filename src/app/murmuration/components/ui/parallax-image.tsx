@@ -23,22 +23,24 @@ export function ParallaxImage({
         offset: ["start end", "end start"]
     });
 
-    const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+    const y = useTransform(scrollYProgress, [0, 1], ["-4%", "4%"]);
 
     return (
-        <div ref={ref} className={cn("relative overflow-hidden rounded-2xl border border-white/10 group bg-[var(--card)]", className)}>
+        <div ref={ref} className={cn("relative overflow-hidden rounded-3xl border border-white/15 group bg-[var(--card)] shadow-2xl", className)}>
             <motion.div
                 style={{ y }}
-                className="absolute inset-x-0 -inset-y-16"
+                className="absolute inset-x-0 -inset-y-4"
             >
                 {src ? (
                     <Image
                         src={src}
                         alt={alt}
                         fill
+                        sizes="(max-width: 1024px) 100vw, 896px"
                         quality={100}
                         className="object-cover"
                         priority={priority}
+                        fetchPriority={priority ? "high" : undefined}
                     />
                 ) : (
                     <div className="w-full h-full flex flex-col items-center justify-center p-8 text-center text-gray-400 text-sm relative z-0">
@@ -49,9 +51,6 @@ export function ParallaxImage({
                     </div>
                 )}
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/90 via-[var(--background)]/10 to-transparent pointer-events-none" />
-            {/* Gloss reflection overlay */}
-            <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.04] to-transparent pointer-events-none" />
         </div>
     );
 }

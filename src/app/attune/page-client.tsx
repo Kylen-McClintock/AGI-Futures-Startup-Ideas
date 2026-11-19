@@ -109,63 +109,60 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                 <InterestedButton projectSlug="attune" />
             </div>
 
-            {/* Hero Section */}
-            <section className="relative min-h-[90vh] flex items-center justify-center pt-24 px-6 md:px-12 lg:px-24">
-                <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[var(--primary)]/20 via-[#060913] to-[#060913]">
-                    <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[var(--primary)]/10 rounded-full blur-[120px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
-                </div>
+            {/* Unified Full-Brightness Framed Hero Section */}
+            <header className="relative z-10 max-w-4xl mx-auto px-6 md:px-12 pt-28 pb-12">
+                <div className="absolute inset-x-0 top-0 h-[500px] -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[var(--primary)]/15 via-transparent to-transparent pointer-events-none" />
 
-                <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <RevealSection delay={0.2} className="max-w-2xl">
-                        <h1
-                            className="text-5xl md:text-7xl font-serif font-medium leading-[1.1] mb-6 tracking-tight text-white drop-shadow-2xl"
-                            style={{ textWrap: "balance" }}
-                        >
-                            An AI relationship coach to make her feel{" "}
-                            <span className="text-[var(--secondary)] font-serif italic">heard, seen, and supported,</span> consistently.
-                        </h1>
-                        <p
-                            className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-xl"
-                            style={{ textWrap: "pretty" }}
-                        >
-                            It turns a{" "}
-                            <strong className="font-semibold text-[var(--primary)]">
-                                weekly couple sync, persistent relationship memory, and daily skill reps
-                            </strong>{" "}
-                            into a compounding loop for becoming a meaningfully better boyfriend or husband.
-                        </p>
-                        <div className="mt-6 mb-10 flex flex-col items-start -space-y-4">
-                            <InlineTags linkSectors tags={tags.sector} theme="rose" />
-                        </div>
-                        <div className="flex flex-wrap items-center gap-4">
-                            <button
-                                type="button"
-                                onClick={scrollToPrototype}
-                                className="flex items-center gap-2 px-8 py-4 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white font-semibold rounded-full transition-all cursor-pointer hover:shadow-[0_0_30px_rgba(244,63,94,0.4)]"
-                            >
-                                See the Prototype <ArrowRight className="w-5 h-5" />
-                            </button>
-                            <div className="sm:hidden">
-                                <InterestedButton projectSlug="attune" />
-                            </div>
-                        </div>
-                    </RevealSection>
+                <RevealSection delay={0.1} className="relative w-full mb-10">
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group">
+                        <Image
+                            src={attune_couple_connection}
+                            alt="A warm cinematic shot of a couple sitting on a mid-century sofa looking at a glowing tablet together."
+                            fill
+                            sizes="(max-width: 1024px) 100vw, 896px"
+                            quality={100}
+                            className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
+                            priority
+                            fetchPriority="high"
+                        />
+                    </div>
+                </RevealSection>
 
-                    <RevealSection delay={0.4} className="relative w-full mt-8 lg:mt-0">
-                        <div className="relative w-full max-w-md mx-auto aspect-square rounded-[2rem] overflow-hidden border border-white/10 shadow-[0_20px_60px_-15px_rgba(244,63,94,0.3)]">
-                            <Image
-                                src={attune_couple_connection}
-                                alt="A warm cinematic shot of a couple sitting on a mid-century sofa looking at a glowing tablet together."
-                                fill
-                                quality={100}
-                                className="object-cover"
-                                priority
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-[#060913] via-transparent to-transparent opacity-80" />
+                <RevealSection delay={0.2}>
+                    <h1
+                        className="text-4xl sm:text-6xl font-serif font-medium leading-[1.1] mb-6 tracking-tight text-white drop-shadow-2xl"
+                        style={{ textWrap: "balance" }}
+                    >
+                        An AI relationship coach to make her feel{" "}
+                        <span className="text-[var(--secondary)] font-serif italic">heard, seen, and supported,</span> consistently.
+                    </h1>
+                    <p
+                        className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light max-w-3xl"
+                        style={{ textWrap: "pretty" }}
+                    >
+                        It turns a{" "}
+                        <strong className="font-semibold text-[var(--primary)]">
+                            weekly couple sync, persistent relationship memory, and daily skill reps
+                        </strong>{" "}
+                        into a compounding loop for becoming a meaningfully better boyfriend or husband.
+                    </p>
+                    <div className="mt-6 mb-8 flex flex-col items-start -space-y-4">
+                        <InlineTags linkSectors tags={tags.sector} theme="rose" />
+                    </div>
+                    <div className="flex flex-wrap items-center gap-4">
+                        <button
+                            type="button"
+                            onClick={scrollToPrototype}
+                            className="flex items-center gap-2 px-8 py-4 bg-[var(--primary)] hover:bg-[var(--secondary)] text-white font-semibold rounded-full transition-all cursor-pointer hover:shadow-[0_0_30px_rgba(244,63,94,0.4)]"
+                        >
+                            See the Prototype <ArrowRight className="w-5 h-5" />
+                        </button>
+                        <div className="sm:hidden">
+                            <InterestedButton projectSlug="attune" />
                         </div>
-                    </RevealSection>
-                </div>
-            </section>
+                    </div>
+                </RevealSection>
+            </header>
 
             <div className="max-w-4xl mx-auto px-6 md:px-12 mt-20 space-y-28">
                 {/* Headline Stat */}

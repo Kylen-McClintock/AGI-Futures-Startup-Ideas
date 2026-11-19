@@ -90,7 +90,7 @@ export default function WildReturnClientPage({ initialTags }: { initialTags: any
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden glass-panel border border-white/10 mt-8"
+                        className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden glass-panel border border-white/10 mt-8"
                     >
                         <Image
                             src={heroImage}
@@ -98,9 +98,8 @@ export default function WildReturnClientPage({ initialTags }: { initialTags: any
                             fill
                             quality={100}
                             className="object-cover"
-                            priority
+                            priority fetchPriority="high"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                     </motion.div>
 
                     <motion.div

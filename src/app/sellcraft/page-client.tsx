@@ -59,26 +59,8 @@ export default function SellCraftClient() {
 
 
       {/* Narrative wrapper */}
-      <div className="max-w-4xl mx-auto px-6 py-24 md:py-32 space-y-32">
+      <div className="max-w-4xl mx-auto px-6 py-24 md:py-28 space-y-28">
         <SellCraftHero theme={theme} heroImg={heroImg} />
-
-        {/* Hero Vision Image */}
-        <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden border border-white/10 shadow-2xl"
-        >
-            <Image
-                src={heroImg}
-                alt="SellCraft Vision"
-                fill
-                quality={100}
-                className="object-cover"
-                priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        </motion.div>
 
         {/* --- HEADLINE STAT --- */}
         <section className="space-y-8">

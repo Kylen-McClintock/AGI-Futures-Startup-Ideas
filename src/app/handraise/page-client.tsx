@@ -66,7 +66,7 @@ export default function HandraiseClientPage() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-white/5"
+                        className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-white/5"
                     >
                         <Image
                             src={heroImage}
@@ -74,9 +74,8 @@ export default function HandraiseClientPage() {
                             fill
                             quality={100}
                             className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                            priority
+                            priority fetchPriority="high"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/90 via-[var(--primary)]/20 to-transparent pointer-events-none" />
                     </motion.div>
 
                     <motion.div

@@ -69,51 +69,57 @@ export default function EasyExitClient() {
                 />
             </div>
 
-            {/* HERO SECTION */}
-            <header className="relative w-full min-h-[90vh] flex flex-col justify-center items-center py-32 px-6 z-10">
-                <div className="absolute inset-0 w-full h-full overflow-hidden rounded-b-[4rem] border-b border-white/5">
-                    <Image 
-                        src={heroImg} 
-                        alt="Lush sci-fi cityscape representing abundance" 
+            {/* UNIFIED FULL-BRIGHTNESS FRAMED HERO SECTION */}
+            <header className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-16">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                >
+                    <Image
+                        src={heroImg}
+                        alt="Easy Exit Protocol architectural banking pavilion with transparent subscription revocation control"
                         fill
+                        sizes="(max-width: 1024px) 100vw, 896px"
                         priority
-                        className="object-cover opacity-40 scale-105"
+                        fetchPriority="high"
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
                         quality={100}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#09090b]/80 via-[#09090b]/40 to-[#09090b]" />
-                </div>
-                
-                <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1, ease: "easeOut" }}
-                    className="relative z-10 max-w-5xl mx-auto text-center mt-20"
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-left"
                 >
-                    <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 text-[var(--primary)] text-sm font-mono uppercase tracking-widest backdrop-blur-md">
+                    <div className="inline-block mb-5 px-4 py-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 text-[var(--primary)] text-xs font-mono uppercase tracking-widest backdrop-blur-md">
                         Protocol For Agentic Commerce
                     </div>
-                    <h1 className="text-6xl md:text-8xl font-light tracking-tight mb-8 text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-[var(--primary)]/50">
+                    <h1 className="text-5xl md:text-7xl font-light tracking-tight mb-4 text-white">
                         Easy Exit
                     </h1>
-                    <p className="text-3xl md:text-5xl font-serif font-light text-white/90 leading-tight mb-12 max-w-4xl mx-auto">
+                    <p className="text-2xl md:text-4xl font-serif font-light text-white/90 leading-tight mb-8">
                         Revocation Protocol for Agentic Commerce
                     </p>
-                    
-                    <div className="max-w-4xl mx-auto text-left mb-12 space-y-6">
-                        <div className="bg-black/40 p-10 rounded-3xl backdrop-blur-xl border border-[var(--primary)]/30 shadow-[0_0_40px_rgba(var(--primary),0.15)] relative overflow-hidden">
+
+                    <div className="mb-8 space-y-5">
+                        <div className="bg-black/40 p-8 rounded-3xl backdrop-blur-xl border border-[var(--primary)]/30 shadow-[0_0_40px_rgba(var(--primary),0.15)] relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--primary)]/20 blur-[60px] rounded-full" />
-                            <p className="text-2xl md:text-3xl text-white font-medium leading-relaxed relative z-10">
+                            <p className="text-xl md:text-2xl text-white font-medium leading-relaxed relative z-10">
                                 Easy Exit Protocol is a free, open-source standard and <HoverAcronym acronym="API" definition="Application Programming Interface" theme="emerald" /> for machine-verifiable cancellation, downgrade, pause, and permission revocation, starting with subscriptions and becoming the trust layer for agentic commerce.
                             </p>
                         </div>
-                        <div className="bg-black/20 p-8 rounded-3xl backdrop-blur-md border border-white/5 pl-10 border-l-[3px] border-l-[var(--primary)]/50">
-                            <p className="text-lg md:text-xl text-white/70 font-light leading-relaxed">
+                        <div className="bg-black/20 p-7 rounded-3xl backdrop-blur-md border border-white/5 pl-8 border-l-[3px] border-l-[var(--primary)]/50">
+                            <p className="text-lg text-white/75 font-light leading-relaxed">
                                 Your bank, wallet, software dashboard, or personal AI shows every recurring commitment you have made, what it costs, when it renews, what the cancellation terms are, and whether exit is instant, delayed, or adversarial. You tap once, verify identity, and the revocation propagates across the merchant, payment rail, and audit log. In a world where software agents will increasingly sign us up for things, the winning merchants will not just be easy to buy from. They will be easy to leave. That becomes a new trust primitive.
                             </p>
                         </div>
                     </div>
 
-                    <div className="flex justify-center">
+                    <div>
                         <InlineTags tags={['AI', 'Finance', 'Governance']} theme="emerald" />
                     </div>
                 </motion.div>

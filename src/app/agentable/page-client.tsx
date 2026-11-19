@@ -69,52 +69,50 @@ export function PageClient() {
             {/* Nav Space */}
             <div className="h-24 w-full" />
 
-            {/* HERO SECTION */}
-            <section className="relative px-6 pt-12 pb-24 md:pt-24 md:pb-32 max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    <motion.div
-                        className="lg:col-span-6 z-10"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--secondary)] text-xs font-mono uppercase tracking-widest mb-8">
-                            <Activity className="w-3.5 h-3.5" /> Live UI Maps
-                        </div>
+            {/* UNIFIED FULL-BRIGHTNESS FRAMED HERO SECTION */}
+            <header className="relative z-10 px-6 pt-8 pb-20 max-w-4xl mx-auto">
+                <motion.div
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                >
+                    <Image
+                        src={heroImg}
+                        alt="Agentable live machine-readable UI map and autonomous execution dashboard"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
+                        priority
+                        fetchPriority="high"
+                        quality={100}
+                    />
+                </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-[1.1] mb-8 font-serif">
-                            Agentable
-                        </h1>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--secondary)] text-xs font-mono uppercase tracking-widest mb-6">
+                        <Activity className="w-3.5 h-3.5" /> Live UI Maps
+                    </div>
 
-                        <p className="text-xl sm:text-2xl text-[var(--secondary)] leading-snug font-light max-w-2xl mb-8">
-                            <span className="text-white">Make software legible to people and AI.</span> Turns websites and apps into a machine-readable UI map, guides humans in-flow, and lets AI agents complete the same tasks.
-                        </p>
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-[1.1] mb-6 font-serif">
+                        Agentable
+                    </h1>
 
-                        <InlineTags
-                            tags={['AI', 'Security']}
-                            label="Sector"
-                            theme="cyan"
-                        />
-                    </motion.div>
+                    <p className="text-xl sm:text-2xl text-[var(--secondary)] leading-snug font-light max-w-3xl mb-8">
+                        <span className="text-white">Make software legible to people and AI.</span> Turns websites and apps into a machine-readable UI map, guides humans in-flow, and lets AI agents complete the same tasks.
+                    </p>
 
-                    <motion.div
-                        className="lg:col-span-6 relative aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary)]/20 to-transparent z-10 mix-blend-overlay" />
-                        <Image
-                            src={heroImg}
-                            alt="Tomorrowland vision of a digital UI map overlaid on a futuristic city"
-                            fill
-                            className="object-cover"
-                            priority
-                            quality={100}
-                        />
-                    </motion.div>
-                </div>
-            </section>
+                    <InlineTags
+                        tags={['AI', 'Security']}
+                        label="Sector"
+                        theme="cyan"
+                    />
+                </motion.div>
+            </header>
 
             {/* ONE-LINER THESIS */}
             <section className="px-6 py-24 bg-transparent border-y border-white/5">

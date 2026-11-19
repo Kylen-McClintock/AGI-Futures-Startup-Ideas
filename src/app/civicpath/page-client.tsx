@@ -61,17 +61,16 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-[0_0_60px_-15px_var(--primary)] group border border-[var(--primary)]/20"
+                        className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-[0_0_60px_-15px_var(--primary)] group border border-[var(--primary)]/20"
                     >
                         <Image
                             src={dashboardImage}
                             alt="Massive glowing holographic dashboard displaying live immigration probability and civic value in a futuristic employment center"
                             fill
                             quality={100}
-                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02] opacity-90"
-                            priority
+                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
+                            priority fetchPriority="high"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent pointer-events-none" />
                     </motion.div>
 
                     <motion.div

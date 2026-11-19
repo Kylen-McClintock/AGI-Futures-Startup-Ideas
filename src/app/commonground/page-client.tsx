@@ -90,28 +90,29 @@ export default function CommonGroundClient() {
                 {/* Hero Section */}
                 <header className="mb-32">
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
+                        initial={{ opacity: 0, scale: 0.98 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group"
+                        transition={{ duration: 0.9, ease: "easeOut" }}
+                        className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
                     >
                         <Image
                             src={defaultHeroImage}
                             alt="CommonGround AI"
                             fill
+                            sizes="(max-width: 1024px) 100vw, 896px"
                             quality={100}
-                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            className="object-cover transition-transform duration-1000 group-hover:scale-[1.02]"
                             priority
+                            fetchPriority="high"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)]/90 via-black/40 to-transparent pointer-events-none" />
-                        <div className="absolute bottom-10 left-10 text-white font-mono text-xs tracking-widest uppercase opacity-70">Human Coordination Infrastructure</div>
                     </motion.div>
 
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.3 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
                     >
+                        <div className="text-[var(--secondary)] font-mono text-xs tracking-widest uppercase mb-4">Human Coordination Infrastructure</div>
                         <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-6">
                             CommonGround AI
                         </h1>

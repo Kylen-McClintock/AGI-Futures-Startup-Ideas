@@ -90,50 +90,56 @@ export default function PageClient() {
         <main style={rootStyle} className="min-h-screen bg-black text-zinc-100 selection:bg-[var(--primary)] selection:text-white pb-32">
             <ScrollProgress title="WhistleWorks" theme={themeKey} />
 
-            {/* Hero Section */}
-            <section className="relative w-full h-[85vh] min-h-[600px] flex items-end pb-24 overflow-hidden">
-                <Image
-                    src={heroImage}
-                    alt="WhistleWorks Analytical Hub"
-                    fill
-                    quality={100}
-                    className="object-cover opacity-60"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-                
-                <div className="relative z-10 max-w-5xl mx-auto px-6 w-full">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
-                            Whistle<span className="text-[var(--primary)]">Works</span>
-                        </h1>
-                        <h2 className="text-2xl md:text-3xl font-light text-[var(--primary)] tracking-tight mb-4 drop-shadow-[0_0_15px_var(--primary)]">
-                            Make Identifying Corruption Profitable
-                        </h2>
-                        <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed mb-6 font-light">
-                            A privacy-first whistleblower platform that helps insiders turn fraud evidence into high-merit legal cases, then uses the resulting case data to build better fraud-detection systems.
-                        </p>
-                        
-                        {/* Sector Tags placed directly below one-liner */}
-                        <InlineTags 
-                            label="SECTOR"
-                            tags={['Governance', 'Security', 'AI']} 
-                            theme={themeKey}
-                        />
+            {/* Unified Full-Brightness Framed Hero Section */}
+            <header className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-12">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                >
+                    <Image
+                        src={heroImage}
+                        alt="WhistleWorks Analytical Hub"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                        quality={100}
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
+                        priority
+                        fetchPriority="high"
+                    />
+                </motion.div>
 
-                        {/* Visual Headline Stat */}
-                        <div className="mt-12 bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm max-w-4xl">
-                            <p className="text-sm md:text-base leading-relaxed text-zinc-300">
-                                <span className="font-semibold text-white">Headline stat:</span> In the Minnesota Feeding Our Future scandal, prosecutors alleged more than <strong className="text-[var(--primary)] text-xl">$250 million</strong> in pandemic-era child nutrition funds were fraudulently obtained, with the network expanding to <strong className="text-[var(--primary)] text-xl">more than 250 sites</strong> and one sponsor jumping from about <strong className="text-[var(--primary)] text-xl">$3.4 million</strong> in federal funds in 2019 to nearly <strong className="text-[var(--primary)] text-xl">$200 million</strong> in 2021. Fake attendance rosters, shell companies, kickbacks, and even a juror-bribery attempt all appeared in the case. This is what broken detection and broken incentives look like in the wild.
-                            </p>
-                        </div>
-                    </motion.div>
-                </div>
-            </section>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                >
+                    <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+                        Whistle<span className="text-[var(--primary)]">Works</span>
+                    </h1>
+                    <h2 className="text-2xl md:text-3xl font-light text-[var(--primary)] tracking-tight mb-4 drop-shadow-[0_0_15px_var(--primary)]">
+                        Make Identifying Corruption Profitable
+                    </h2>
+                    <p className="text-xl md:text-2xl text-zinc-300 max-w-3xl leading-relaxed mb-6 font-light">
+                        A privacy-first whistleblower platform that helps insiders turn fraud evidence into high-merit legal cases, then uses the resulting case data to build better fraud-detection systems.
+                    </p>
+
+                    {/* Sector Tags placed directly below one-liner */}
+                    <InlineTags
+                        label="SECTOR"
+                        tags={['Governance', 'Security', 'AI']}
+                        theme={themeKey}
+                    />
+
+                    {/* Visual Headline Stat */}
+                    <div className="mt-10 bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm max-w-4xl">
+                        <p className="text-sm md:text-base leading-relaxed text-zinc-300">
+                            <span className="font-semibold text-white">Headline stat:</span> In the Minnesota Feeding Our Future scandal, prosecutors alleged more than <strong className="text-[var(--primary)] text-xl">$250 million</strong> in pandemic-era child nutrition funds were fraudulently obtained, with the network expanding to <strong className="text-[var(--primary)] text-xl">more than 250 sites</strong> and one sponsor jumping from about <strong className="text-[var(--primary)] text-xl">$3.4 million</strong> in federal funds in 2019 to nearly <strong className="text-[var(--primary)] text-xl">$200 million</strong> in 2021. Fake attendance rosters, shell companies, kickbacks, and even a juror-bribery attempt all appeared in the case. This is what broken detection and broken incentives look like in the wild.
+                        </p>
+                    </div>
+                </motion.div>
+            </header>
 
             {/* Body Content */}
             <div className="max-w-4xl mx-auto px-6 space-y-24 mt-20">

@@ -81,9 +81,6 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 
 export default function HomeQuoteClientPage({ initialTags }: { initialTags: any }) {
     const containerRef = useRef(null);
-    const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end start"] });
-    const y = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-    const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     const tags = {
         sector: initialTags?.sector || DEFAULT_TAGS.sector,
@@ -109,27 +106,32 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
         >
             <ScrollProgress title="HomeQuote AI" theme="blue" />
 
-            {/* Hero Section */}
-            <section ref={containerRef} className="relative h-[90vh] md:h-screen w-full overflow-hidden flex items-end justify-center pb-24 md:pb-32">
-                <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+            {/* Unified Full-Brightness Framed Hero Section */}
+            <header ref={containerRef} className="relative z-10 max-w-4xl mx-auto px-6 sm:px-12 pt-28 pb-12">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                >
                     <Image
                         src={heroImg}
                         alt="HomeQuote AI Hero Visualization"
                         fill
-                        className="object-cover object-center"
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
                         quality={100}
                         priority
-                        sizes="100vw"
+                        fetchPriority="high"
+                        sizes="(max-width: 1024px) 100vw, 896px"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#06090c] via-[#06090c]/40 to-black/20" />
                 </motion.div>
 
-                <div className="relative z-10 container mx-auto px-6 sm:px-12 flex flex-col items-center text-center max-w-4xl">
+                <div className="flex flex-col items-start text-left">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        className="mb-6 px-4 py-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 backdrop-blur-md text-[var(--secondary)] font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="mb-5 px-4 py-1.5 rounded-full border border-[var(--primary)]/30 bg-[var(--primary)]/10 backdrop-blur-md text-[var(--secondary)] font-mono text-xs uppercase tracking-widest inline-flex items-center gap-2 shadow-[0_0_20px_rgba(59,130,246,0.2)]"
                     >
                         <span className="w-2 h-2 rounded-full bg-[var(--secondary)] animate-pulse" />
                         Venture Thesis
@@ -138,8 +140,8 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white leading-tight mb-8"
+                        transition={{ duration: 0.8, delay: 0.15 }}
+                        className="text-5xl md:text-7xl font-serif font-light text-white leading-tight mb-5"
                         style={{ textWrap: "balance" }}
                     >
                         HomeQuote <span className="text-[var(--secondary)] italic font-medium">AI</span>
@@ -147,18 +149,18 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                     <motion.p
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.4 }}
+                        transition={{ duration: 0.8, delay: 0.25 }}
                         className="text-xl md:text-3xl text-white/90 font-light max-w-2xl leading-relaxed"
                         style={{ textWrap: "balance" }}
                     >
                         The Scope-to-Quote Engine
                     </motion.p>
 
-                    <div className="mt-8 flex flex-col items-center -space-y-4">
+                    <div className="mt-7 flex flex-col items-start -space-y-4">
                         <InlineTags linkSectors tags={tags.sector} theme="blue" />
                     </div>
                 </div>
-            </section>
+            </header>
 
             <div className="container mx-auto px-6 sm:px-12 max-w-4xl pt-16 md:pt-24 space-y-28">
                 <div className="flex justify-center mt-[-2rem] relative z-20">

@@ -487,96 +487,107 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                 </div>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {sortedProjects.map((project) => (
-                    <Link
+            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                {sortedProjects.map((project, index) => (
+                    <article
                         key={project.slug}
-                        href={project.href}
-                        className={`group block glass-panel p-8 pt-16 rounded-3xl border border-white/10 ${project.themeColor} transition-all duration-300 hover:bg-white/[0.04] relative overflow-hidden`}
+                        className={`group relative flex flex-col glass-panel rounded-3xl border border-white/10 ${project.themeColor} transition-all duration-300 hover:bg-white/[0.04] hover:border-white/25 overflow-hidden focus-within:ring-2 focus-within:ring-[var(--primary)]`}
                     >
-                        {/* Background Image Overlay */}
-                        <div className="absolute inset-0 z-0">
-                            <Image src={project.image} alt={`${project.title} Hero`} fill sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw" quality={85} className="object-cover opacity-[38%] group-hover:opacity-[46%] transition-opacity duration-500" />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/72 to-black/45 group-hover:from-black/88 group-hover:via-black/65 transition-colors duration-500" />
-                        </div>
-                        {/* The hover gradient is specific to the theme color, and requires raw tailwind string rendering, so we inject a pseudo-color overlay */}
-                        <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 z-0`} style={{ background: 'currentColor' }} />
+                        {/* Top Media: Full-Brightness 16:9 Hero Window */}
+                        <div className="relative w-full aspect-[16/9] overflow-hidden bg-black/40 shrink-0">
+                            <Image
+                                src={project.image}
+                                alt={`${project.title} Hero`}
+                                fill
+                                sizes="(min-width: 1024px) 384px, (min-width: 640px) 50vw, 100vw"
+                                quality={90}
+                                priority={index < 2}
+                                fetchPriority={index < 2 ? "high" : undefined}
+                                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
+                            />
+                            <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/45 to-transparent pointer-events-none" />
 
-                        {/* Badges */}
-                        <div className="absolute top-4 right-3 sm:right-4 z-20 flex flex-col items-end gap-2 w-full pr-0 sm:pr-0 pl-4">
-                            <div className="flex flex-nowrap justify-end gap-1 sm:gap-1.5 items-center">
-                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'impact' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'impact' ? 'text-white' : 'text-white/60'}>Impact:</span>
-                                    <span className={sortBy === 'impact' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.civilizational_impact_score}</span>
+                            {/* Frosted Score Badges (compact, high-contrast over sunlit imagery) */}
+                            <div className="absolute top-3 right-3 z-10 flex flex-col items-end gap-1.5 max-w-[calc(100%-1.5rem)] pointer-events-none">
+                                <div className="flex flex-wrap justify-end gap-1 sm:gap-1.5 items-center">
+                                    <div className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono border flex items-center gap-1 backdrop-blur-md transition-colors ${sortBy === 'impact' ? 'border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.15)]' : 'border-white/15 bg-black/70'}`}>
+                                        <span className={sortBy === 'impact' ? 'text-white' : 'text-white/75'}>Impact:</span>
+                                        <span className={sortBy === 'impact' ? 'text-[var(--primary)] font-semibold' : 'text-white font-semibold'}>{project.civilizational_impact_score}</span>
+                                    </div>
+                                    <div className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono border flex items-center gap-1 backdrop-blur-md transition-colors ${sortBy === 'moat' ? 'border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.15)]' : 'border-white/15 bg-black/70'}`}>
+                                        <span className={sortBy === 'moat' ? 'text-white' : 'text-white/75'}>Moat:</span>
+                                        <span className={sortBy === 'moat' ? 'text-[var(--primary)] font-semibold' : 'text-white font-semibold'}>{project.moat_score}</span>
+                                    </div>
+                                    <div className={`px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-mono border flex items-center gap-1 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.15)]' : 'border-white/15 bg-black/70'}`}>
+                                        <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/75'}>Diff:</span>
+                                        <span className={sortBy === 'difficulty' ? 'text-[var(--primary)] font-semibold' : 'text-white font-semibold'}>{project.difficulty_score}</span>
+                                    </div>
                                 </div>
-                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'moat' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'moat' ? 'text-white' : 'text-white/60'}>Moat:</span>
-                                    <span className={sortBy === 'moat' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.moat_score}</span>
-                                </div>
-                                <div className={`glass-panel px-1.5 py-1 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] whitespace-nowrap font-mono border flex items-center gap-1 sm:gap-1.5 backdrop-blur-md transition-colors ${sortBy === 'difficulty' ? 'border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)]' : 'border-white/10'}`}>
-                                    <span className={sortBy === 'difficulty' ? 'text-white' : 'text-white/60'}>Diff:</span>
-                                    <span className={sortBy === 'difficulty' ? 'text-[var(--primary)] font-semibold' : 'text-white font-medium'}>{project.difficulty_score}</span>
-                                </div>
+
+                                {/* Dynamic Outcome Badge */}
+                                {activeTags.find(t => t.category === 'outcomes') && (
+                                    <div className="px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
+                                        <span className="text-white/90 font-medium">{activeTags.find(t => t.category === 'outcomes')?.tag}:</span>
+                                        <span className="text-[var(--primary)] font-bold bg-black/50 px-1.5 py-0.5 rounded-full leading-none">
+                                            {project.civilizational_impact_ratings?.[activeTags.find(t => t.category === 'outcomes')!.tag]?.ai_scored || 0}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {/* Forecast Badges */}
+                                {sortBy === 'expectedValuation2030' && project.expectedValuation2030 !== undefined && (
+                                    <div className="px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
+                                        <span className="text-white/90 font-medium">Expected Val ('30):</span>
+                                        <span className="text-[var(--primary)] font-bold bg-black/50 px-1.5 py-0.5 rounded-full leading-none">
+                                            ${project.expectedValuation2030 >= 1_000_000_000 ? (project.expectedValuation2030 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2030 / 1_000_000).toFixed(1) + 'M'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {sortBy === 'expectedValuation2035' && project.expectedValuation2035 !== undefined && (
+                                    <div className="px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
+                                        <span className="text-white/90 font-medium">Expected Val ('35):</span>
+                                        <span className="text-[var(--primary)] font-bold bg-black/50 px-1.5 py-0.5 rounded-full leading-none">
+                                            ${project.expectedValuation2035 >= 1_000_000_000 ? (project.expectedValuation2035 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2035 / 1_000_000).toFixed(1) + 'M'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {sortBy === 'expectedValuation2040' && project.expectedValuation2040 !== undefined && (
+                                    <div className="px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
+                                        <span className="text-white/90 font-medium">Expected Val ('40):</span>
+                                        <span className="text-[var(--primary)] font-bold bg-black/50 px-1.5 py-0.5 rounded-full leading-none">
+                                            ${project.expectedValuation2040 >= 1_000_000_000 ? (project.expectedValuation2040 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2040 / 1_000_000).toFixed(1) + 'M'}
+                                        </span>
+                                    </div>
+                                )}
+
+                                {sortBy === 'timeToUnicorn' && project.timeToUnicorn !== undefined && (
+                                    <div className="px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-black/80 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
+                                        <span className="text-white/90 font-medium">Time to $1B:</span>
+                                        <span className="text-[var(--primary)] font-bold bg-black/50 px-1.5 py-0.5 rounded-full leading-none">
+                                            {project.timeToUnicorn === Infinity ? '>2040' : Math.round(project.timeToUnicorn)}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
-                            
-                            {/* Dynamic Outcome Badge */}
-                            {activeTags.find(t => t.category === 'outcomes') && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/20 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">{activeTags.find(t => t.category === 'outcomes')?.tag}:</span>
-                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        {project.civilizational_impact_ratings?.[activeTags.find(t => t.category === 'outcomes')!.tag]?.ai_scored || 0}
-                                    </span>
-                                </div>
-                            )}
-
-                            {/* Forecast Badges */}
-                            {sortBy === 'expectedValuation2030' && project.expectedValuation2030 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">Expected Val ('30):</span>
-                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        ${project.expectedValuation2030 >= 1_000_000_000 ? (project.expectedValuation2030 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2030 / 1_000_000).toFixed(1) + 'M'}
-                                    </span>
-                                </div>
-                            )}
-
-                            {sortBy === 'expectedValuation2035' && project.expectedValuation2035 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">Expected Val ('35):</span>
-                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        ${project.expectedValuation2035 >= 1_000_000_000 ? (project.expectedValuation2035 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2035 / 1_000_000).toFixed(1) + 'M'}
-                                    </span>
-                                </div>
-                            )}
-
-                            {sortBy === 'expectedValuation2040' && project.expectedValuation2040 !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">Expected Val ('40):</span>
-                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        ${project.expectedValuation2040 >= 1_000_000_000 ? (project.expectedValuation2040 / 1_000_000_000).toFixed(1) + 'B' : (project.expectedValuation2040 / 1_000_000).toFixed(1) + 'M'}
-                                    </span>
-                                </div>
-                            )}
-
-                            {sortBy === 'timeToUnicorn' && project.timeToUnicorn !== undefined && (
-                                <div className="glass-panel px-2.5 py-1 rounded-full text-[10px] font-mono border border-[var(--primary)] bg-[var(--primary)]/10 shadow-[0_0_10px_rgba(255,255,255,0.1)] flex items-center gap-1.5 backdrop-blur-md">
-                                    <span className="text-white/90 font-medium">Time to $1B:</span>
-                                    <span className="text-[var(--primary)] font-bold bg-black/40 px-1.5 py-0.5 rounded-full leading-none">
-                                        {project.timeToUnicorn === Infinity ? '>2040' : Math.round(project.timeToUnicorn)}
-                                    </span>
-                                </div>
-                            )}
                         </div>
 
-                        <div className="relative z-10 flex flex-col h-full mt-2">
+                        {/* Card Body: Clean Editorial Surface */}
+                        <div className="flex flex-col flex-1 p-6 bg-[#070b0f]/90">
                             {INTERACTIVE_SIMULATOR_SLUGS.has(project.slug) && (
-                                <div className="mb-2">
+                                <div className="mb-2.5">
                                     <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#21de9a]/15 border border-[#21de9a]/40 text-[#21de9a] leading-snug">
                                         <Layers className="w-3 h-3 shrink-0" />
                                         Interactive Simulator
                                     </span>
                                 </div>
                             )}
-                            <h2 className={`text-2xl font-serif text-white mb-1.5 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors`}>{project.title}</h2>
+                            <h2 className={`text-2xl font-serif text-white mb-1.5 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors`}>
+                                <Link href={project.href} className="after:content-[''] after:absolute after:inset-0 focus-visible:outline-none">
+                                    {project.title}
+                                </Link>
+                            </h2>
                             <div className="mb-5 flex-1 flex flex-col gap-2">
                                 <p className="text-sm text-white/90 font-medium leading-snug">
                                     {project.scoreTitle}
@@ -585,16 +596,16 @@ function HomeClientInner({ projects }: { projects: ProjectData[] }) {
                                     {project.description}
                                 </p>
                             </div>
-                            <div className="flex items-center justify-between mt-auto pt-3 border-t border-white/10 relative isolate">
+                            <footer className="flex items-center justify-between mt-auto pt-3 border-t border-white/10">
                                 <span className={`inline-flex items-center text-xs font-mono uppercase tracking-widest text-white/60 min-w-0 pr-2 ${project.hoverTextColor || 'group-hover:text-[var(--primary)]'} transition-colors`}>
                                     Read Blueprint <ArrowRight className="w-4 h-4 ml-2 shrink-0 group-hover:translate-x-1.5 transition-transform" />
                                 </span>
-                                <div onClick={(e) => e.preventDefault()} className="ml-2 transform scale-90 origin-right shrink-0">
+                                <div className="relative z-10 ml-2 transform scale-90 origin-right shrink-0">
                                     <InterestedButton projectSlug={project.slug} iconOnly={true} />
                                 </div>
-                            </div>
+                            </footer>
                         </div>
-                    </Link>
+                    </article>
                 ))}
             </div>
         </div>

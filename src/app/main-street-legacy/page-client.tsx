@@ -83,45 +83,48 @@ export default function ClientPage() {
                 <InterestedButton projectSlug="main-street-legacy" />
             </div>
 
-            {/* Immersive Hero Section */}
-            <section className="relative min-h-[90vh] md:min-h-screen flex items-end pb-24 md:pb-32 px-6 pt-32">
-                <div className="absolute inset-0 z-0 select-none">
+            {/* Unified Full-Brightness Framed Hero Section */}
+            <header className="relative z-10 max-w-4xl mx-auto px-6 pt-28 pb-16">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                >
                     <Image
                         src={heroImg}
                         alt="Main Street Legacy futuristic cityscape with Americana roots"
                         fill
-                        className="object-cover opacity-40 mix-blend-screen mask-image-b"
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
                         priority
+                        fetchPriority="high"
                         quality={100}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/80 to-transparent"></div>
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.12),transparent_50%)]"></div>
-                </div>
+                </motion.div>
 
-                <div className="relative z-10 max-w-5xl mx-auto w-full">
-                    <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
-                        <motion.h1
-                            variants={fadeInUp}
-                            className="text-5xl md:text-7xl lg:text-8xl font-serif tracking-tight text-white mb-6 leading-[1.1]"
-                            style={{ textWrap: "balance" }}
-                        >
-                            Main Street <span className="text-[var(--secondary)] italic">Legacy</span>
-                        </motion.h1>
+                <motion.div initial="hidden" animate="visible" variants={staggerContainer}>
+                    <motion.h1
+                        variants={fadeInUp}
+                        className="text-5xl md:text-7xl font-serif tracking-tight text-white mb-5 leading-[1.1]"
+                        style={{ textWrap: "balance" }}
+                    >
+                        Main Street <span className="text-[var(--secondary)] italic">Legacy</span>
+                    </motion.h1>
 
-                        <motion.p
-                            variants={fadeInUp}
-                            className="text-xl md:text-2xl font-light text-stone-300 max-w-3xl leading-relaxed mb-8"
-                            style={{ textWrap: "pretty" }}
-                        >
-                            AI-Native SMB Succession Engine. Buy better. Operate smarter. Compound faster.
-                        </motion.p>
+                    <motion.p
+                        variants={fadeInUp}
+                        className="text-xl md:text-2xl font-light text-stone-300 max-w-3xl leading-relaxed mb-8"
+                        style={{ textWrap: "pretty" }}
+                    >
+                        AI-Native SMB Succession Engine. Buy better. Operate smarter. Compound faster.
+                    </motion.p>
 
-                        <motion.div variants={fadeInUp}>
-                            <InlineTags linkSectors tags={initialTags?.sector} theme="emerald" />
-                        </motion.div>
+                    <motion.div variants={fadeInUp}>
+                        <InlineTags linkSectors tags={initialTags?.sector} theme="emerald" />
                     </motion.div>
-                </div>
-            </section>
+                </motion.div>
+            </header>
 
             {/* Main Blueprint Content */}
             <article className="relative z-10 max-w-4xl mx-auto px-6 pb-32">

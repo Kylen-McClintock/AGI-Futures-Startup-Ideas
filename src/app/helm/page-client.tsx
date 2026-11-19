@@ -99,7 +99,7 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
-                        className="relative w-full aspect-[2/1] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-[var(--primary)]/20"
+                        className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl shadow-[var(--primary)]/20 group border border-[var(--primary)]/20"
                     >
                         <Image
                             unoptimized
@@ -108,9 +108,8 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             fill
                             quality={100}
                             className="object-cover transition-transform duration-1000 group-hover:scale-105"
-                            priority
+                            priority fetchPriority="high"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/80 via-transparent to-transparent pointer-events-none" />
                     </motion.div>
 
                     <motion.div

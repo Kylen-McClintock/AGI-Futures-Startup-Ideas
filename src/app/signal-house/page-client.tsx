@@ -105,10 +105,9 @@ export default function SignalHouseClientPage({ initialTags }: { initialTags: an
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.2 }}
-                        className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden glass-panel border border-white/10"
+                        className="relative w-full aspect-[16/9] rounded-3xl overflow-hidden glass-panel border border-white/10"
                     >
-                        <Image src={heroV3Image} alt="Signal House Observatory" fill quality={100} className="object-cover" priority />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <Image src={heroV3Image} alt="Signal House Observatory" fill quality={100} className="object-cover" priority fetchPriority="high" />
                     </motion.div>
                 </header>
 

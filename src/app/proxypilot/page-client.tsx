@@ -57,64 +57,63 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
             <div className="h-24 w-full" />
 
             {/* HERO SECTION */}
-            <section className="relative px-6 pt-12 pb-24 md:pt-24 md:pb-32 max-w-7xl mx-auto">
-                <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-                    <motion.div
-                        className="lg:col-span-6 z-10"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                    >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--secondary)] text-xs font-mono uppercase tracking-widest mb-8">
-                            <Activity className="w-3.5 h-3.5" /> Retail Power Unlocked
-                        </div>
+            {/* UNIFIED FULL-BRIGHTNESS FRAMED HERO SECTION */}
+            <header className="relative z-10 px-6 pt-8 pb-20 max-w-4xl mx-auto">
+                <motion.div
+                    className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mb-10 border border-white/15 shadow-2xl shadow-[var(--primary)]/15 group"
+                    initial={{ opacity: 0, scale: 0.98 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.9, ease: "easeOut" }}
+                >
+                    <Image
+                        src={heroImg}
+                        alt="A cinematic futuristic city showing massive structural coordination"
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 896px"
+                        className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.02]"
+                        priority
+                        fetchPriority="high"
+                        quality={100}
+                    />
+                </motion.div>
 
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-[1.1] mb-8 font-serif">
-                            ProxyPilot
-                        </h1>
-                        <p className="text-2xl sm:text-3xl text-[var(--secondary)] font-serif mb-6">
-                            AI Native Proxy Voting
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[var(--primary)]/10 border border-[var(--primary)]/20 text-[var(--secondary)] text-xs font-mono uppercase tracking-widest mb-6">
+                        <Activity className="w-3.5 h-3.5" /> Retail Power Unlocked
+                    </div>
+
+                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-light text-white tracking-tight leading-[1.1] mb-4 font-serif">
+                        ProxyPilot
+                    </h1>
+                    <p className="text-2xl sm:text-3xl text-[var(--secondary)] font-serif mb-6">
+                        AI Native Proxy Voting
+                    </p>
+
+                    <p className="text-xl sm:text-2xl text-[var(--secondary)] leading-snug font-light max-w-3xl mb-8">
+                        ProxyPilot turns proxy voting into a followable, programmable layer of shareholder power. Investors can delegate live votes to trusted operators, analysts, and public thinkers, or turn their own values into a custom voting policy that runs automatically across every company they own.
+                    </p>
+
+                    <div className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/10 bg-[var(--primary)]/5 mb-8 shadow-inner">
+                        <strong className="text-white/80 font-serif text-lg block mb-3">"From ideas to mandates."</strong>
+                        <p className="text-white/60 font-light leading-relaxed text-sm mb-3">
+                            Picture the flow. A respected operator posts a brutal thread on X: vote out this board, kill this comp package, block this dilution. Shareholders do not just nod along. They click once and delegate the vote.
                         </p>
-
-                        <p className="text-xl sm:text-2xl text-[var(--secondary)] leading-snug font-light max-w-2xl mb-8">
-                            ProxyPilot turns proxy voting into a followable, programmable layer of shareholder power. Investors can delegate live votes to trusted operators, analysts, and public thinkers, or turn their own values into a custom voting policy that runs automatically across every company they own.
+                        <p className="text-white/60 font-light leading-relaxed text-sm">
+                            Then the bigger unlock appears. They can follow trusted voices where they want, write their own rules where they do not, and automate as much of the process as they choose. Proxy voting stops feeling like paperwork and starts feeling like a live interface for power.
                         </p>
-                        
-                        <div className="glass-panel p-6 rounded-2xl border border-[var(--primary)]/10 bg-[var(--primary)]/5 max-w-2xl mb-8 shadow-inner">
-                            <strong className="text-white/80 font-serif text-lg block mb-3">"From ideas to mandates."</strong>
-                            <p className="text-white/60 font-light leading-relaxed text-sm mb-3">
-                                Picture the flow. A respected operator posts a brutal thread on X: vote out this board, kill this comp package, block this dilution. Shareholders do not just nod along. They click once and delegate the vote.
-                            </p>
-                            <p className="text-white/60 font-light leading-relaxed text-sm">
-                                Then the bigger unlock appears. They can follow trusted voices where they want, write their own rules where they do not, and automate as much of the process as they choose. Proxy voting stops feeling like paperwork and starts feeling like a live interface for power.
-                            </p>
-                        </div>
+                    </div>
 
-                        <InlineTags
-                            tags={initialData?.project_tags?.[0]?.sector || ['Governance', 'Finance', 'Democracy', 'AI']}
-                            label="Sector"
-                            theme="violet"
-                        />
-                    </motion.div>
-
-                    <motion.div
-                        className="lg:col-span-6 relative aspect-square lg:aspect-[4/5] rounded-[2rem] overflow-hidden"
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-[var(--primary)]/20 to-transparent z-10 mix-blend-overlay" />
-                        <Image
-                            src={heroImg}
-                            alt="A cinematic futuristic city showing massive structural coordination"
-                            fill
-                            className="object-cover"
-                            priority
-                            quality={100}
-                        />
-                    </motion.div>
-                </div>
-            </section>
+                    <InlineTags
+                        tags={initialData?.project_tags?.[0]?.sector || ['Governance', 'Finance', 'Democracy', 'AI']}
+                        label="Sector"
+                        theme="violet"
+                    />
+                </motion.div>
+            </header>
 
             {/* HEADLINE STAT */}
             <section className="px-6 py-24 max-w-5xl mx-auto">
