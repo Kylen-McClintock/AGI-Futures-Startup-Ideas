@@ -712,3 +712,15 @@ export const glossaryData: GlossaryTerm[] = [
     definition: "Ensuring a deployed system actually does what the human users intend in the real world (building the right thing), often achieved via robust field testing."
   }
 ];
+
+export function slugifyGlossaryTerm(term: string): string {
+  return term
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+export function getGlossaryTermBySlug(slug: string): GlossaryTerm | undefined {
+  const normalized = slug.toLowerCase();
+  return glossaryData.find((item) => slugifyGlossaryTerm(item.term) === normalized);
+}
