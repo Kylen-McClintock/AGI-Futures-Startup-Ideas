@@ -21,6 +21,8 @@ import solutionImg from "./assets/solution.jpg";
 import ecosystemImg from "./assets/ecosystem.jpg";
 import agingAssistedImg from "./assets/aging_assisted_hires.jpg";
 import autonomousNavImg from "./assets/autonomous_nav.jpg";
+import indexLeaderboardImg from "./assets/agentable_index_leaderboard.jpg";
+import sharedMapImpactImg from "./assets/agentable_shared_map_impact.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -575,9 +577,19 @@ export function PageClient() {
                             <span className="w-8 h-px bg-[var(--primary)]/30 mr-4" /> Go-to-Market
                         </h2>
                         <h3 className="text-3xl text-white font-serif mb-6">Launch the Agentability Index</h3>
-                        <p className="text-xl text-[var(--secondary)] font-light mb-12">
+                        <p className="text-xl text-[var(--secondary)] font-light mb-10">
                             A public leaderboard ranking major websites on task clarity, validation freshness, and agent-readiness. This gives the company a built-in media engine. The best companies buy to improve their ranking and earn the Verified-Current badge.
                         </p>
+                        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden mb-10 shadow-2xl border border-white/10 group">
+                            <Image
+                                src={indexLeaderboardImg}
+                                alt="Product engineers inspecting the live public Agentability Index leaderboard across web categories inside a sunlit canal-side studio"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+                        </div>
                         <InlineTags tags={['Technical Founder', 'Venture-Scale']} label="Founder Fit" theme="cyan" />
                     </motion.div>
 
@@ -612,9 +624,20 @@ export function PageClient() {
                     <h3 className="text-3xl md:text-5xl text-white font-serif font-light mb-8 leading-tight">
                         If AI agents become a major way humans interact with digital systems, then <span className="text-[var(--secondary)]">legibility becomes a safety primitive</span>.
                     </h3>
-                    <p className="text-xl text-[var(--secondary)] font-light leading-relaxed mb-12">
+                    <p className="text-xl text-[var(--secondary)] font-light leading-relaxed mb-10">
                         Agentable pushes the internet toward a future where software does less blind guessing and more explicit, inspectable action. A web that can explain itself to both humans and machines is easier to navigate, easier to audit, and easier to trust.
                     </p>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={sharedMapImpactImg}
+                            alt="Grandmother and grandson smiling together on a sunlit sofa as a clean guided cursor highlights a flight booking step on a glass tablet"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+                    </div>
 
                     <CivilizationalImpactCard />
 

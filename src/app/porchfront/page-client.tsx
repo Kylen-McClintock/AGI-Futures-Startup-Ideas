@@ -33,6 +33,7 @@ import us_suburb_bakery from "./assets/us_suburb_bakery_hires.jpg";
 import us_suburb_repair_cafe from "./assets/us_suburb_repair_cafe_hires.jpg";
 import hero_garage_cafe from "./assets/hero_garage_cafe_hires.jpg";
 import evening_courtyard from "./assets/porchfront_evening_courtyard.jpg";
+import modular_kit_install from "./assets/porchfront_modular_kit_install.jpg";
 
 import { LonelinessChart } from "./components/LonelinessChart";
 import GarageConversionInspector from "./components/GarageConversionInspector";
@@ -744,6 +745,18 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                 Tens of millions of hybrid and remote knowledge workers now spend their weekdays in residential neighborhoods that lack a single walkable espresso bar, gym co-op, or social hub.
                             </p>
                         </div>
+                    </div>
+
+                    <div className="relative h-[340px] md:h-[440px] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl group my-10">
+                        <Image
+                            src={modular_kit_install}
+                            alt="Neighbors assembling a flat-pack cedar-and-steel Porchfront modular coffee counter inside a Craftsman garage while an autonomous ride-hail pod passes on the street"
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
+                            sizes="(max-width: 1024px) 100vw, 896px"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#06090c]/75 to-transparent" />
                     </div>
 
                     <PriorArtMatrix />

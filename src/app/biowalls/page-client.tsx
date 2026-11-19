@@ -21,6 +21,7 @@ import desertMonolith from './assets/desert_monolith_v2_hires.jpg';
 import freshwaterCliff from './assets/freshwater_cliff_v2_hires.jpg';
 import prairieLightwall from './assets/prairie_lightwall_v3_hires.jpg';
 import dartFrog from './assets/macro_frog_hires.jpg';
+import modularEngineeringImage from './assets/biowalls_modular_engineering.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -620,6 +621,17 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
                         <p className="text-xl text-[var(--tertiary)] font-light border-l-2 border-[var(--primary)]/40 pl-6 mt-8">
                             Long term, this becomes an operating system for living architecture.
                         </p>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mt-10 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={modularEngineeringImage}
+                            alt="Ecological engineer inspecting a modular misted living moss and wild orchid wall beside closed-loop telemetry in a sunlit atrium"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                     </div>
                 </motion.section>
 

@@ -9,6 +9,7 @@ import attune_dual_sync from "./assets/attune_dual_sync_hires.jpg";
 import attune_hero_vista from "./assets/attune_hero_vista_hires.jpg";
 import attune_kitchen_moment from "./assets/attune_kitchen_moment_hires.jpg";
 import attune_memory_engine from "./assets/attune_memory_engine.jpg";
+import attune_ritual_evening from "./assets/attune_ritual_evening.jpg";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
@@ -695,6 +696,17 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                     </div>
 
                     <UnitEconomicsWidget />
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mt-10 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={attune_ritual_evening}
+                            alt="Long-term couple laughing together while preparing dinner with fresh herbs in a golden-hour mid-century kitchen"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+                    </div>
                 </RevealSection>
 
                 {/* AGI-era Edge & Defensibility + 4 Expandable Scorecards */}

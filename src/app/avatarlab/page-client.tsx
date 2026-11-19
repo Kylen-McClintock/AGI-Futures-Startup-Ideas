@@ -34,6 +34,7 @@ import organoidsImage from './assets/avatarlab_organoids.jpg';
 import twinOsImage from './assets/avatarlab_twinos_hires.jpg';
 import graphImage from './assets/avatarlab_graph_hires.jpg';
 import cellbankImage from './assets/avatarlab_cellbank_v2_hires.jpg';
+import patientPrecisionImage from './assets/avatarlab_patient_precision_impact.jpg';
 
 // Components
 import ProductStackFlow from './components/ProductStackFlow';
@@ -616,6 +617,17 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-12">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={patientPrecisionImage}
+                            alt="Oncologist reviewing a 48-therapy personal organoid twin screening result with a relieved patient in a sunlit consultation suite"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">

@@ -21,6 +21,8 @@ import graphImage from './assets/handraise_graph.jpg';
 import productImage from "./assets/handraise_product.jpg";
 import networkImage from "./assets/handraise_network.jpg";
 import breakthroughImage from "./assets/handraise_breakthrough_moment.jpg";
+import silentRoutingUxImage from "./assets/handraise_silent_routing_ux.jpg";
+import serendipityCityImage from "./assets/handraise_serendipity_city.jpg";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -515,9 +517,20 @@ export default function HandraiseClientPage() {
                             </p>
                         </div>
 
-                        <div className="p-6 rounded-2xl border border-[var(--secondary)]/30 bg-[var(--primary)]/10 text-[var(--primary)]">
+                        <div className="p-6 rounded-2xl border border-[var(--secondary)]/30 bg-[var(--primary)]/10 text-[var(--primary)] mb-10">
                             <strong className="block mb-2 text-lg font-medium">User wedge.</strong>
                             <p className="font-light">Early-stage founders buy first because they face frequent high-leverage decisions, have real but underused networks, and cannot afford slow or low-signal advice.</p>
+                        </div>
+
+                        <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 group">
+                            <Image
+                                src={silentRoutingUxImage}
+                                alt="Sunlit cafe table glass tablet showing Handraise zero-spam warm routing verified by two mutual founders"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                         </div>
                     </div>
 
@@ -573,6 +586,17 @@ export default function HandraiseClientPage() {
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-12">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={serendipityCityImage}
+                            alt="Two smiling founders shaking hands over coffee in a sunlit courtyard cafe after a trusted warm-network introduction"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12 items-center">

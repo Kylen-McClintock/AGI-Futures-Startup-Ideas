@@ -25,6 +25,7 @@ import hvacTransformedImg from "./assets/hvac-transformed.jpg";
 import mechanicImg from "./assets/mechanic.jpg";
 import syndicateImg from "./assets/syndicate.jpg";
 import futureMainStreetImg from "./assets/future-main-street.jpg";
+import mainStreetHandoffImg from "./assets/main_street_handoff.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -690,6 +691,16 @@ export default function ClientPage() {
                     className="mb-20 text-center border-t border-white/10 pt-20"
                 >
                     <h2 className="text-3xl font-serif text-white mb-6">Civilizational Impact</h2>
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden mb-10 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={mainStreetHandoffImg}
+                            alt="Retiring master metalworker handing brass shop keys to an incoming AI-literate local operator over a scheduling tablet inside a sunlit CNC shop"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+                    </div>
                     <p className="text-xl font-light text-stone-300 leading-relaxed max-w-2xl mx-auto mb-8" style={{ textWrap: "pretty" }}>
                         Keep productive local firms alive. Transfer ownership to a new class of <strong className="text-[var(--secondary)] font-normal">AI-literate local operators</strong>. Raise wages through efficiency and deliver higher-reliability service for communities, channeling the Boomer exit wave toward broad abundance instead of closure or absentee consolidation.
                         <ExpandableCitation label="Project Equity" sourceUrl="https://project-equity.org" sourceText="Project Equity" />

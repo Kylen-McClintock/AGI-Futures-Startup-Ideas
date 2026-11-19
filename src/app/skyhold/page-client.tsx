@@ -26,6 +26,7 @@ import thermalCircuitImage from "./assets/thermal_circuit_hires.jpg";
 import forestViewImage from "./assets/forest_view_hires.jpg";
 import communityHubImage from "./assets/community_hub_hires.jpg";
 import architectureImage from "./assets/architecture_hires.jpg";
+import microgridSanctuaryImage from "./assets/skyhold_microgrid_sanctuary.jpg";
 
 export default function SkyholdClientPage({ initialTags }: { initialTags: ProjectTagsProps["tags"] }) {
     const tags = {
@@ -545,6 +546,17 @@ export default function SkyholdClientPage({ initialTags }: { initialTags: Projec
                             <h2 className="text-3xl sm:text-5xl font-serif text-white tracking-tight">Civilizational Impact</h2>
                         </div>
                         <InlineTags tags={tags.outcomes} theme="emerald" />
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={microgridSanctuaryImage}
+                            alt="Golden-hour Pacific Northwest mountain ridge homestead enclave with solar-tile timber homes, defensible stone water channels, autonomous electric shuttle, and families gathering around an outdoor hearth"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-10 mb-14">

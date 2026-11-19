@@ -23,6 +23,8 @@ import mandateStudioImg from "./assets/proxypilot_mandate_studio_1773874926094_h
 import icpCreatorImg from "./assets/proxypilot_icp_creator.jpg";
 import icpRetailImg from "./assets/proxypilot_icp_retail_hires.jpg";
 import icpPlatformImg from "./assets/proxypilot_icp_platform_hires.jpg";
+import creatorMandateGtmImg from "./assets/proxypilot_creator_mandate_gtm.jpg";
+import shareholderDemocracyImg from "./assets/proxypilot_shareholder_democracy.jpg";
 
 // Shared Animation Settings
 const FADE_UP: any = {
@@ -427,9 +429,20 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
                     <p className="text-white/90 leading-relaxed font-light mb-6 text-left">
                         A shareholder who agrees clicks once, connects their account, and delegates that company’s vote, or only that issue category, in minutes. The creator converts audience into real influence. The shareholder converts agreement into action. And once inside the platform, the user sees the bigger unlock: they can follow multiple delegates, create a personal policy, automate recurring decisions, and fine-tune as much of the process as they want.
                     </p>
-                    <p className="text-white/90 leading-relaxed font-light mb-12 text-left">
+                    <p className="text-white/90 leading-relaxed font-light mb-10 text-left">
                         This is a much more native growth loop than trying to convince random people to care about proxy season in the abstract. It piggybacks on where financial opinion already spreads and gives that content a missing primitive: direct governance action. Retail participation is still just <strong>28%</strong> of shares owned, which means there is a huge reservoir of dormant shareholder power waiting for a much better interface.
                     </p>
+
+                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden mb-10 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={creatorMandateGtmImg}
+                            alt="Finance educator sharing a 1-tap ProxyPilot Creator Mandate synced with 42,800 followers from a warm brick studio"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+                    </div>
 
                     <div className="text-left glass-panel p-8 rounded-2xl border border-white/5">
                         <h4 className="text-xl text-white font-medium mb-4">Who buys first and why they cannot wait</h4>
@@ -774,6 +787,17 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
 
             {/* IMPACT SECTION */}
             <section className="px-6 py-32 max-w-7xl mx-auto">
+                <motion.div {...FADE_UP} className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mb-14 shadow-2xl border border-white/10 group">
+                    <Image
+                        src={shareholderDemocracyImg}
+                        alt="Sunlit Nordic timber-and-glass shareholder assembly hall displaying live retail proxy voting mobilization across corporate boards"
+                        fill
+                        quality={100}
+                        className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/50 via-transparent to-transparent pointer-events-none" />
+                </motion.div>
+
                 <div className="grid lg:grid-cols-2 gap-16 items-start">
                     <motion.div {...FADE_UP}>
                         <h2 className="text-sm font-mono tracking-widest uppercase text-[var(--primary)]/70 mb-6 flex items-center">

@@ -30,6 +30,8 @@ import heroImg from "./assets/sellcraft_hologram_hero.jpg";
 import pitchQuestImg from "./assets/sellcraft_pitch_quest.jpg";
 import provingGroundImg from "./assets/sellcraft_proving_ground_hires.jpg";
 import practiceImg from "./assets/sellcraft_practice_hires.jpg";
+import liveSimArenaImg from "./assets/sellcraft_live_simulation_arena.jpg";
+import humanPersuasionImg from "./assets/sellcraft_human_persuasion_impact.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function SellCraftClient() {
@@ -217,6 +219,16 @@ export default function SellCraftClient() {
                 <li><strong className="text-white">Practice:</strong> Annual seat license, setup fee, premium integrations, manager analytics</li>
                 <li><strong className="text-white">Longer-term:</strong> Skill passport, benchmark data products, internal mobility and promotion workflows, vertical scenario packs</li>
             </ul>
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden mt-8 shadow-2xl border border-white/10 group">
+                <Image
+                    src={liveSimArenaImg}
+                    alt="Sales founder rehearsing an enterprise security objection in front of a live SellCraft telemetry simulator in a sunlit loft"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+            </div>
         </section>
 
         {/* --- MOAT --- */}
@@ -395,6 +407,16 @@ export default function SellCraftClient() {
             <p className="text-xl leading-relaxed text-neutral-300">
                 If AI compresses the cost of building, then the bottleneck shifts toward human coordination, persuasion, and trust. SellCraft helps more people build those skills earlier, signal them more fairly, and compound them faster. That improves matching, mobility, and productivity. It makes the labor market less credentialist and more performance-linked. That is directionally good for abundance.
             </p>
+            <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl border border-white/10 group">
+                <Image
+                    src={humanPersuasionImg}
+                    alt="Founders and an executive buyer sharing a warm handshake across a walnut conference table inside a sunlit greenhouse boardroom"
+                    fill
+                    quality={100}
+                    className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
+            </div>
             <div className="mt-8">
                 <ExpandableScoreCard 
                     title="Civilizational Impact Score" 
