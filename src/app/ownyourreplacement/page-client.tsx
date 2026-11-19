@@ -22,11 +22,11 @@ import {
 
 // Assets
 import heroImage from './assets/hero_hires.jpg';
-import cadWorkflowImage from './assets/cad_workflow.png';
+import cadWorkflowImage from './assets/cad_workflow_hires.jpg';
 import pricingEngineImage from './assets/pricing_engine.jpg';
-import manualLaborImage from './assets/manual_labor.png';
-import thematicClosingImage from './assets/thematic_closing.png';
-import arWorkerDataImg from './assets/ar_worker_data.png';
+import manualLaborImage from './assets/manual_labor_hires.jpg';
+import thematicClosingImage from './assets/thematic_closing_hires.jpg';
+import arWorkerDataImg from './assets/ar_worker_data_hires.jpg';
 
 // Components
 import { ICPUseCases } from './components/ICPUseCases';

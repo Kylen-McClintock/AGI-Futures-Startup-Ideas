@@ -19,10 +19,10 @@ import { themeMap } from "@/utils/themeMap";
 // Images
 import heroImg from "./assets/proxypilot_hero_hires.jpg";
 import appMockupImg from "./assets/proxypilot_app_mockup.jpg";
-import mandateStudioImg from "./assets/proxypilot_mandate_studio_1773874926094.png";
+import mandateStudioImg from "./assets/proxypilot_mandate_studio_1773874926094_hires.jpg";
 import icpCreatorImg from "./assets/proxypilot_icp_creator.jpg";
-import icpRetailImg from "./assets/proxypilot_icp_retail.png";
-import icpPlatformImg from "./assets/proxypilot_icp_platform.png";
+import icpRetailImg from "./assets/proxypilot_icp_retail_hires.jpg";
+import icpPlatformImg from "./assets/proxypilot_icp_platform_hires.jpg";
 
 // Shared Animation Settings
 const FADE_UP: any = {

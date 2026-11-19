@@ -24,13 +24,13 @@ import ValueFlow from './components/ValueFlow';
 
 // Assets
 import heroImage from './assets/hero.jpg';
-import runtimeImage from './assets/runtime.png';
-import mandateImage from './assets/mandate.png';
+import runtimeImage from './assets/runtime_hires.jpg';
+import mandateImage from './assets/mandate_hires.jpg';
 import twinImage from './assets/twin.jpg';
-import icpCityImage from './assets/icp_city.png';
-import icpMinistryImage from './assets/icp_ministry.png';
-import icpRegionImage from './assets/icp_region.png';
-import marketScaleImage from './assets/civic_ui.png';
+import icpCityImage from './assets/icp_city_hires.jpg';
+import icpMinistryImage from './assets/icp_ministry_hires.jpg';
+import icpRegionImage from './assets/icp_region_hires.jpg';
+import marketScaleImage from './assets/civic_ui_hires.jpg';
 import sovereignDashboardImage from './assets/sovereign_dashboard.jpg';
 
 import { ChevronDown } from 'lucide-react';

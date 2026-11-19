@@ -16,9 +16,10 @@ import { themeMap } from "@/utils/themeMap";
 // Assets
 import heroImage from './assets/deepguide_hero_hires.jpg';
 import modalityGraphImage from './assets/deepguide_modality_graph.jpg';
-import safetyDashboardImage from './assets/deepguide_safety_dashboard.png';
-import clinicalTrainingImage from './assets/deepguide_clinical_training.png';
-import hologramTherapyImage from './assets/deepguide_hologram_therapy.png';
+import safetyDashboardImage from './assets/deepguide_safety_dashboard_hires.jpg';
+import clinicalTrainingImage from './assets/deepguide_clinical_training_hires.jpg';
+import hologramTherapyImage from './assets/deepguide_hologram_therapy_hires.jpg';
+import integrationJourneyImage from './assets/deepguide_integration_journey.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -575,6 +576,17 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={integrationJourneyImage}
+                            alt="Patient peacefully journaling over morning tea on a cedar veranda overlooking a misty mountain lake during post-session integration"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/50 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">

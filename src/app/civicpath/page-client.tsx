@@ -19,7 +19,7 @@ import simulatorImage from './assets/simulator.jpg';
 import immigrantAppImage from './assets/immigrant_app.jpg';
 import situationRoomImage from './assets/situation_room.jpg';
 import gateImage from './assets/gate.jpg';
-import intakeImage from './assets/intake.png';
+import intakeImage from './assets/intake.jpg';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";

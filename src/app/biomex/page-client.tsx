@@ -20,9 +20,9 @@ import { Activity, Beaker, ShieldPlus, ChevronDown, Link as LinkIcon, FlaskConic
 
 // Assets
 import heroVista from './assets/hero_vista.jpg';
-import clinicLab from './assets/clinic_lab.png';
+import clinicLab from './assets/clinic_lab_hires.jpg';
 import capsuleProduct from './assets/capsule_product.jpg';
-import donorNetwork from './assets/donor_network.png';
+import donorNetwork from './assets/donor_network_hires.jpg';
 import donorPhenotypes from './assets/biomex_donor_phenotypes.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";

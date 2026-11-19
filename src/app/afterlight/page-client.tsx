@@ -16,9 +16,9 @@ import { themeMap } from "@/utils/themeMap";
 
 // Assets
 import heroImage from './assets/afterlight_hero_hires.jpg';
-import timelineImage from './assets/afterlight_timeline_1773354220095.png';
-import appImage from './assets/afterlight_app_1773354236688.png';
-import closingImage from './assets/afterlight_closing_1773354249527.png';
+import timelineImage from './assets/afterlight_timeline_1773354220095_hires.jpg';
+import appImage from './assets/afterlight_app_1773354236688_hires.jpg';
+import closingImage from './assets/afterlight_closing_1773354249527_hires.jpg';
 import intergenerationalStoriesImage from './assets/afterlight_intergenerational_stories.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";

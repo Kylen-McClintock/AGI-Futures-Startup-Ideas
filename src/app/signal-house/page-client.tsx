@@ -25,15 +25,15 @@ import PriorArtMatrix from "./components/PriorArtMatrix";
 import UnitEconomicsWidget from "./components/UnitEconomicsWidget";
 
 // Assets
-import dashboardImage from "./assets/dashboard.png";
-import underwaterImage from "./assets/underwater_lounge.png";
-import cyberLibraryImage from "./assets/cyber_library.png";
-import mountainLodgeImage from "./assets/mountain_lodge.png";
-import rainforestCanopyImage from "./assets/rainforest_canopy.png";
-import orbitalCampusImage from "./assets/orbital_campus.png";
-import geothermalCaveImage from "./assets/geothermal_cave.png";
+import dashboardImage from "./assets/dashboard_hires.jpg";
+import underwaterImage from "./assets/underwater_lounge_hires.jpg";
+import cyberLibraryImage from "./assets/cyber_library_hires.jpg";
+import mountainLodgeImage from "./assets/mountain_lodge_hires.jpg";
+import rainforestCanopyImage from "./assets/rainforest_canopy_hires.jpg";
+import orbitalCampusImage from "./assets/orbital_campus_hires.jpg";
+import geothermalCaveImage from "./assets/geothermal_cave_hires.jpg";
 import heroV3Image from "./assets/hero_v3_hires.jpg";
-import flowPodImage from "./assets/flow_pod.png";
+import flowPodImage from "./assets/flow_pod_hires.jpg";
 
 const citationsList = [
     { number: 1, source: "University of California", title: "Gloria Mark's attention research summaries", url: "https://www.psychologytoday.com/us/contributors/gloria-mark-phd" },

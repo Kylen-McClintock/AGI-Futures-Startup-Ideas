@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { ArtifactSection } from "@/components/ArtifactSection";
 import { InterestedButton } from "@/components/InterestedButton";
-import attune_couple_connection from "./assets/attune_couple_connection.png";
-import attune_daily_reps from "./assets/attune_daily_reps.png";
-import attune_dual_sync from "./assets/attune_dual_sync.png";
+import attune_couple_connection from "./assets/attune_couple_connection_hires.jpg";
+import attune_daily_reps from "./assets/attune_daily_reps_hires.jpg";
+import attune_dual_sync from "./assets/attune_dual_sync_hires.jpg";
 import attune_hero_vista from "./assets/attune_hero_vista_hires.jpg";
-import attune_kitchen_moment from "./assets/attune_kitchen_moment.png";
+import attune_kitchen_moment from "./assets/attune_kitchen_moment_hires.jpg";
 import attune_memory_engine from "./assets/attune_memory_engine.jpg";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";

@@ -35,12 +35,12 @@ import {
 
 // Assets
 import heroImage from './assets/hero_hires.jpg';
-import microclimateImage from './assets/microclimate.png';
-import dashboardImage from './assets/dashboard.png';
-import grazingImage from './assets/grazing.png';
-import icpGrowerImage from './assets/icp_grower.png';
-import icpDeveloperImage from './assets/icp_developer.png';
-import heatStressedCropsImage from './assets/heat_stressed_crops.png';
+import microclimateImage from './assets/microclimate_hires.jpg';
+import dashboardImage from './assets/dashboard_hires.jpg';
+import grazingImage from './assets/grazing_hires.jpg';
+import icpGrowerImage from './assets/icp_grower_hires.jpg';
+import icpDeveloperImage from './assets/icp_developer_hires.jpg';
+import heatStressedCropsImage from './assets/heat_stressed_crops_hires.jpg';
 
 export default function HelioTerraClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks

@@ -15,15 +15,15 @@ import { Leaf, Activity, ChevronDown, ChevronRight, Layers, ShieldCheck, Search,
 
 // Assets
 import heroImage from './assets/hero_hires.jpg';
-import sourcingImage from './assets/sourcing.png';
-import trustGraphImage from './assets/trust_graph.png';
-import amphibianVistaImage from './assets/amphibian_vista.png';
-import portfolioImage from './assets/portfolio.png';
-import icpNonprofitImage from './assets/icp_nonprofit.png';
-import icpBotanicImage from './assets/icp_botanic.png';
-import icpFunderImage from './assets/icp_funder.png';
-import icpZooImage from './assets/icp_zoo.png';
-import icpCreatorImage from './assets/icp_creator.png';
+import sourcingImage from './assets/sourcing_hires.jpg';
+import trustGraphImage from './assets/trust_graph_hires.jpg';
+import amphibianVistaImage from './assets/amphibian_vista_hires.jpg';
+import portfolioImage from './assets/portfolio_hires.jpg';
+import icpNonprofitImage from './assets/icp_nonprofit_hires.jpg';
+import icpBotanicImage from './assets/icp_botanic_hires.jpg';
+import icpFunderImage from './assets/icp_funder_hires.jpg';
+import icpZooImage from './assets/icp_zoo_hires.jpg';
+import icpCreatorImage from './assets/icp_creator_hires.jpg';
 
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";

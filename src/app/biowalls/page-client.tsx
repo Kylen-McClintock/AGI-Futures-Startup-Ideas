@@ -14,13 +14,13 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { themeMap } from "@/utils/themeMap";
 
 // Assets
-import heroImage from './assets/office_lobby_wall_v1.png';
+import heroImage from './assets/office_lobby_wall_v1_hires.jpg';
 import cloudForestOld from './assets/cloud_forest_hires.jpg';
-import cloudForestPanel from './assets/cloud_forest_v3.png';
-import desertMonolith from './assets/desert_monolith_v2.png';
-import freshwaterCliff from './assets/freshwater_cliff_v2.png';
-import prairieLightwall from './assets/prairie_lightwall_v3.png';
-import dartFrog from './assets/macro_frog.png';
+import cloudForestPanel from './assets/cloud_forest_v3_hires.jpg';
+import desertMonolith from './assets/desert_monolith_v2_hires.jpg';
+import freshwaterCliff from './assets/freshwater_cliff_v2_hires.jpg';
+import prairieLightwall from './assets/prairie_lightwall_v3_hires.jpg';
+import dartFrog from './assets/macro_frog_hires.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 

@@ -24,6 +24,7 @@ import missionDashboardImage from './assets/proofrun_mission_dashboard.jpg';
 import candidatePortfolioImage from './assets/proofrun_candidate_portfolio.jpg';
 import impactFlowImage from './assets/proofrun_impact_flow.jpg';
 import aiOrchestrationImage from './assets/proofrun_ai_orchestration.jpg';
+import builderBreakthroughImage from './assets/proofrun_builder_breakthrough.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 
 export default function ProofRunClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -397,6 +398,17 @@ export default function ProofRunClientPage({ initialTags }: { initialTags: Proje
                                 </p>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mt-12 shadow-2xl border border-white/10 group">
+                        <Image
+                            src={builderBreakthroughImage}
+                            alt="Self-taught builder celebrating a verified ProofRun job offer after passing a paid work-trial mission from a sunlit rooftop studio"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0b0a09]/50 via-transparent to-transparent pointer-events-none" />
                     </div>
                 </motion.section>
 

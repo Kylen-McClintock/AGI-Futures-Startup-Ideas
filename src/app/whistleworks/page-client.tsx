@@ -21,12 +21,12 @@ import TogglableICP from './components/TogglableICP';
 import heroImage from './assets/hero_vista_hires.jpg';
 import intakeFlowImage from './assets/intake_flow.jpg';
 import networkImage from './assets/network_nodes.jpg';
-import civImpactImage from './assets/civ_impact.png';
-import icpGrantImage from './assets/icp_grant.png';
-import icpHealthImage from './assets/icp_health.png';
-import icpJournalImage from './assets/icp_journal.png';
-import problemConceptImage from './assets/problem_corruption_hires.png';
-import gtmNetworkImage from './assets/gtm_network.png';
+import civImpactImage from './assets/civ_impact.jpg';
+import icpGrantImage from './assets/icp_grant_hires.jpg';
+import icpHealthImage from './assets/icp_health_hires.jpg';
+import icpJournalImage from './assets/icp_journal_hires.jpg';
+import problemConceptImage from './assets/problem_corruption_hires_hires.jpg';
+import gtmNetworkImage from './assets/gtm_network.jpg';
 
 import { 
     Users, 

@@ -20,10 +20,10 @@ import { Layers, Activity, Smartphone, Link as LinkIcon, ChevronDown, CheckCircl
 
 import heroImage from './assets/waypoint_hero_hires.jpg';
 import dashImage from './assets/waypoint_fin_dash.jpg';
-import fieldImage from './assets/waypoint_field_device.png';
-import cleanCookingImage from './assets/waypoint_clean_cooking.png';
-import problemPumpImage from './assets/waypoint_problem.png';
-import businessTechImage from './assets/waypoint_tech.png';
+import fieldImage from './assets/waypoint_field_device_hires.jpg';
+import cleanCookingImage from './assets/waypoint_clean_cooking_hires.jpg';
+import problemPumpImage from './assets/waypoint_problem_hires.jpg';
+import businessTechImage from './assets/waypoint_tech_hires.jpg';
 
 const inter = Inter({ subsets: ["latin"] });
 

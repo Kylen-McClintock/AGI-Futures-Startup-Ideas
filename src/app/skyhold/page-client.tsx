@@ -19,13 +19,13 @@ import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
 // Assets
 import heroImage from "./assets/hero_hd_hires.jpg";
-import solariumImage from "./assets/solarium_hd.png";
-import evtolImage from "./assets/evtol_hd.png";
-import avCommuteImage from "./assets/av_commute.png";
-import thermalCircuitImage from "./assets/thermal_circuit.png";
-import forestViewImage from "./assets/forest_view.png";
-import communityHubImage from "./assets/community_hub.png";
-import architectureImage from "./assets/architecture.png";
+import solariumImage from "./assets/solarium_hd_hires.jpg";
+import evtolImage from "./assets/evtol_hd_hires.jpg";
+import avCommuteImage from "./assets/av_commute_hires.jpg";
+import thermalCircuitImage from "./assets/thermal_circuit_hires.jpg";
+import forestViewImage from "./assets/forest_view_hires.jpg";
+import communityHubImage from "./assets/community_hub_hires.jpg";
+import architectureImage from "./assets/architecture_hires.jpg";
 
 export default function SkyholdClientPage({ initialTags }: { initialTags: ProjectTagsProps["tags"] }) {
     const tags = {

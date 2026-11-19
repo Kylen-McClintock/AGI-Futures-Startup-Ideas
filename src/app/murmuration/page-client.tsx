@@ -23,6 +23,7 @@ import hero_strategy_dashboard from "./assets/hero_strategy_dashboard.jpg";
 import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.jpg";
 import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.jpg";
 import murmuration_network_graph from "./assets/murmuration_network_graph.jpg";
+import murmuration_safety_harness from "./assets/murmuration_safety_harness.jpg";
 
 const DEFAULT_TAGS = {
   sector: ["AI", "Enterprise SaaS", "Coordination"],
@@ -641,6 +642,15 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               <p className="text-[var(--primary)] font-serif italic text-xl border-t border-white/10 pt-6 mt-6" style={{ textWrap: "balance" }}>
                 In that sense, Murmuration Engine is not just helping startups pass a company-level Great Filter. It is helping build the simulation and validation infrastructure that reduces the odds humanity hits a literal Great Filter of its own.
               </p>
+            </div>
+
+            <div className="mt-10">
+              <ParallaxImage
+                src={murmuration_safety_harness}
+                alt="Pre-deployment counterfactual shadow mode safety harness verifying swarm trajectories in an alpine observatory"
+                prompt="Counterfactual shadow-mode safety harness displaying multi-envelope trajectory safety curves and pre-deployment approval metrics inside a sunlit alpine glass observatory."
+                className="aspect-[21/9] w-full rounded-3xl"
+              />
             </div>
           </div>
 

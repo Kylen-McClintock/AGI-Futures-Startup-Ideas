@@ -18,13 +18,13 @@ import { InteractiveScoreCard } from "./components/InteractiveScoreCard";
 
 // Assets
 import heroImage from './assets/thoughtline_hero_hires.jpg';
-import clinicalImage from './assets/thoughtline_clinical.png';
-import interfaceImage from './assets/thoughtline_interface.png';
-import glassesImage from './assets/thoughtline_glasses.png';
-import futureImage from './assets/thoughtline_future.png';
+import clinicalImage from './assets/thoughtline_clinical_hires.jpg';
+import interfaceImage from './assets/thoughtline_interface_hires.jpg';
+import glassesImage from './assets/thoughtline_glasses_hires.jpg';
+import futureImage from './assets/thoughtline_future_hires.jpg';
 import mechanismImage from './assets/thoughtline_mechanism.jpg';
-import psychImage from './assets/thoughtline_psych.png';
-import impactImage from './assets/thoughtline_impact.png';
+import psychImage from './assets/thoughtline_psych_hires.jpg';
+import impactImage from './assets/thoughtline_impact_hires.jpg';
 
 export default function ThoughtlineClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     const [activeIcp, setActiveIcp] = useState(0);

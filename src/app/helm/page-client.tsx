@@ -20,10 +20,11 @@ import {
 
 // Assets
 import heroImage from './assets/helm_hero_hires.jpg';
-import jarvisImage from './assets/helm_jarvis.png';
+import jarvisImage from './assets/helm_jarvis_hires.jpg';
 import graphImage from './assets/helm_graph.jpg';
-import networkImage from './assets/helm_network.png';
-import icpNetworkImage from './assets/helm_icp_network.png';
+import networkImage from './assets/helm_network_hires.jpg';
+import icpNetworkImage from './assets/helm_icp_network_hires.jpg';
+import morningBriefingImage from './assets/helm_morning_briefing.jpg';
 import { InterestedButton } from "@/components/InterestedButton";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -675,6 +676,11 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                             </div>
                             <InlineTags tags={tags.outcomes} theme="indigo" />
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[21/9] rounded-[2rem] overflow-hidden mb-12 shadow-2xl border border-white/10 group">
+                        <Image unoptimized src={morningBriefingImage} alt="Solo founder reviewing a calm overnight revenue and pull request morning briefing from a sunlit coastal balcony" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[var(--primary)]/30 via-transparent to-transparent pointer-events-none" />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-16">

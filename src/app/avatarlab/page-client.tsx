@@ -31,9 +31,9 @@ import {
 // Assets
 import heroImage from './assets/avatarlab_hero_v2_hires.jpg';
 import organoidsImage from './assets/avatarlab_organoids.jpg';
-import twinOsImage from './assets/avatarlab_twinos.png';
-import graphImage from './assets/avatarlab_graph.png';
-import cellbankImage from './assets/avatarlab_cellbank_v2.png';
+import twinOsImage from './assets/avatarlab_twinos_hires.jpg';
+import graphImage from './assets/avatarlab_graph_hires.jpg';
+import cellbankImage from './assets/avatarlab_cellbank_v2_hires.jpg';
 
 // Components
 import ProductStackFlow from './components/ProductStackFlow';

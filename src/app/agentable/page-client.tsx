@@ -16,11 +16,11 @@ import { useState } from "react";
 import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hero.jpg";
-import problemImg from "./assets/problem_peaceful.png";
+import problemImg from "./assets/problem_peaceful_hires.jpg";
 import solutionImg from "./assets/solution.jpg";
-import ecosystemImg from "./assets/ecosystem.png";
-import agingAssistedImg from "./assets/aging_assisted.png";
-import autonomousNavImg from "./assets/autonomous_nav.png";
+import ecosystemImg from "./assets/ecosystem.jpg";
+import agingAssistedImg from "./assets/aging_assisted_hires.jpg";
+import autonomousNavImg from "./assets/autonomous_nav.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 

@@ -22,12 +22,12 @@ import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { themeMap } from "@/utils/themeMap";
 
 import heroImg from "./assets/hq_hero_scan.jpg";
-import arDeviceImg from "./assets/hq_ar_device_1772949709085.png";
+import arDeviceImg from "./assets/hq_ar_device_1772949709085_hires.jpg";
 import dispatchMapImg from "./assets/hq_dispatch_map.jpg";
-import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173.png";
-import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184.png";
-import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671.png";
-import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109.png";
+import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173_hires.jpg";
+import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184_hires.jpg";
+import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671_hires.jpg";
+import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109_hires.jpg";
 
 const DEFAULT_TAGS = {
     sector: ["AI", "Housing"],

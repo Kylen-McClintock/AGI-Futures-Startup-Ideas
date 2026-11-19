@@ -24,10 +24,10 @@ import { HoverAcronym } from "@/components/HoverAcronym";
 // Assets
 import heroImage from "./assets/hero_new_hires.jpg";
 import originalHeroImage from "./assets/hero_hires.jpg";
-import nomadImage from "./assets/use_case_nomad.png";
-import familyImage from "./assets/use_case_family.png";
-import founderImage from "./assets/use_case_founder.png";
-import agingImage from "./assets/use_case_aging.png";
+import nomadImage from "./assets/use_case_nomad_hires.jpg";
+import familyImage from "./assets/use_case_family_hires.jpg";
+import founderImage from "./assets/use_case_founder_hires.jpg";
+import agingImage from "./assets/use_case_aging_hires.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 

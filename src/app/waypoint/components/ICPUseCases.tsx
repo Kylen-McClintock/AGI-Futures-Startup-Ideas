@@ -5,9 +5,9 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, ArrowRight } from 'lucide-react';
 
-import icpNgo from '../assets/waypoint_icp_ngo.png';
-import icpGov from '../assets/waypoint_icp_gov.png';
-import icpFund from '../assets/waypoint_icp_fund.png';
+import icpNgo from '../assets/waypoint_icp_ngo_hires.jpg';
+import icpGov from '../assets/waypoint_icp_gov_hires.jpg';
+import icpFund from '../assets/waypoint_icp_fund_hires.jpg';
 
 const ICPData = [
   {

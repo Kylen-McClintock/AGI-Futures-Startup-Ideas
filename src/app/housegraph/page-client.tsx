@@ -18,12 +18,12 @@ import { FileText, ChevronDown, Activity, CheckCircle, Database } from "lucide-r
 
 // Assets
 import heroImage from './assets/housegraph_hero_hires.jpg';
-import passportImage from './assets/housegraph_passport_v2.png';
-import tourImage from './assets/housegraph_tour_v2.png';
-import transactionOsImage from './assets/housegraph_transaction_os_v2.png';
-import enterpriseImage from './assets/housegraph_enterprise_v2.png';
-import problemImage from './assets/housegraph_problem.png';
-import gtmImage from './assets/housegraph_gtm.png';
+import passportImage from './assets/housegraph_passport_v2_hires.jpg';
+import tourImage from './assets/housegraph_tour_v2_hires.jpg';
+import transactionOsImage from './assets/housegraph_transaction_os_v2_hires.jpg';
+import enterpriseImage from './assets/housegraph_enterprise_v2_hires.jpg';
+import problemImage from './assets/housegraph_problem_hires.jpg';
+import gtmImage from './assets/housegraph_gtm_hires.jpg';
 
 export default function HouseGraphClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks

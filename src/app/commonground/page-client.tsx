@@ -22,13 +22,13 @@ import { ParetoDiagram } from './components/ParetoDiagram';
 
 // Assets
 import defaultHeroImage from './assets/hero_negotiation_realistic_hires.jpg';
-import oldHeroImage from './assets/hero.png';
-import inUseNegotiationImage from './assets/in_use_negotiation.png';
-import inUseDashboardImage from './assets/in_use_dashboard.png';
-import unCivImpactImage from './assets/un_civ_impact.png';
-import founderDisputeImage from './assets/founder_dispute.png';
-import divorceImage from './assets/divorce_settlement_hologram.png';
-import enterpriseImage from './assets/enterprise_contract.png';
+import oldHeroImage from './assets/hero_hires.jpg';
+import inUseNegotiationImage from './assets/in_use_negotiation_hires.jpg';
+import inUseDashboardImage from './assets/in_use_dashboard_hires.jpg';
+import unCivImpactImage from './assets/un_civ_impact_hires.jpg';
+import founderDisputeImage from './assets/founder_dispute_hires.jpg';
+import divorceImage from './assets/divorce_settlement_hologram_hires.jpg';
+import enterpriseImage from './assets/enterprise_contract_hires.jpg';
 
 export default function CommonGroundClient() {
     const containerRef = useRef<HTMLDivElement>(null);

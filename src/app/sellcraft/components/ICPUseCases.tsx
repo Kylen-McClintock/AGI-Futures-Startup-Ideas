@@ -6,8 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Gamepad2, UserCheck, TrendingUp, Bot, ArrowRight, CheckCircle2, Users, Gift, ShieldAlert } from "lucide-react";
 
 import pitchQuestImg from "../assets/sellcraft_pitch_quest.jpg";
-import provingGroundImg from "../assets/sellcraft_proving_ground_new.png";
-import practiceImg from "../assets/sellcraft_practice_new.png";
+import provingGroundImg from "../assets/sellcraft_proving_ground_new_hires.jpg";
+import practiceImg from "../assets/sellcraft_practice_new_hires.jpg";
 
 const useCases = [
     {

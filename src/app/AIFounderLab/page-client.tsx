@@ -28,9 +28,10 @@ import { useInView } from "react-intersection-observer";
 // Assets
 import heroImage from "./assets/afl_hero_campus_hires.jpg";
 import campusImage from "./assets/afl_campus_transformation.jpg";
-import protoImage from "./assets/afl_prototyping_workspace.png";
-import guildImage from "./assets/afl_guild_collaboration.png";
-import dashImage from "./assets/afl_build_league_dashboard.png";
+import protoImage from "./assets/afl_prototyping_workspace_hires.jpg";
+import guildImage from "./assets/afl_guild_collaboration_hires.jpg";
+import dashImage from "./assets/afl_build_league_dashboard_hires.jpg";
+import launchDayImage from "./assets/afl_launch_day_v2.jpg";
 
 const DEFAULT_TAGS = {
     sector: ["AI", "Education", "Governance"],
@@ -589,10 +590,21 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8" style={{ textWrap: "pretty" }}>
                             A civilization heading toward AGI needs more people who can build, coordinate, and deploy technology responsibly. It does not need more credential inflation.
                         </p>
-                        <div className="p-8 rounded-3xl bg-gradient-to-br from-[var(--primary)]/10 to-transparent border border-[var(--primary)]/20 mb-12">
+                        <div className="p-8 rounded-3xl bg-gradient-to-br from-[var(--primary)]/10 to-transparent border border-[var(--primary)]/20 mb-10">
                             <p className="text-lg text-white/80 leading-relaxed font-light italic m-0" style={{ textWrap: "pretty" }}>
                                 &ldquo;Best case, AFL becomes one of the highest-throughput training grounds for abundance-oriented founders. It channels elite ambition toward company creation, scientific acceleration, and tools that expand human flourishing, instead of defaulting that ambition into status games, bureaucracy, or pure engagement extraction.&rdquo;
                             </p>
+                        </div>
+
+                        <div className="glass-panel p-2 rounded-3xl border border-white/5 relative overflow-hidden group mb-12">
+                            <div className="aspect-[16/9] sm:aspect-[21/9] rounded-2xl overflow-hidden relative">
+                                <Image
+                                    src={launchDayImage}
+                                    alt="Young founder demonstrating a live robotic arm prototype on Demo Day inside a sunlit collegiate amphitheater"
+                                    fill
+                                    className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                />
+                            </div>
                         </div>
 
                         <OpenSourcePriority

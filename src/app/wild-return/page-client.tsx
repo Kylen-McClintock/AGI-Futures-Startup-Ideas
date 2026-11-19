@@ -23,12 +23,12 @@ import { ICPSection } from "./components/ICPSection";
 
 // Assets
 import heroImage from "./assets/hero_hires.jpg";
-import sanctuaryImage from "./assets/sanctuary.png";
-import ritualImage from "./assets/ritual.png";
-import palliativeImage from "./assets/palliative.png";
-import landImage from "./assets/land.png";
+import sanctuaryImage from "./assets/sanctuary_hires.jpg";
+import ritualImage from "./assets/ritual_hires.jpg";
+import palliativeImage from "./assets/palliative_hires.jpg";
+import landImage from "./assets/land_hires.jpg";
 
-import icpCoupleImage from "./assets/icp_couple.png";
+import icpCoupleImage from "./assets/icp_couple_hires.jpg";
 
 // Acronyms
 // GBC: Green Burial Council

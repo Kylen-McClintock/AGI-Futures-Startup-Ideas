@@ -27,11 +27,12 @@ import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 import { themeMap } from "@/utils/themeMap";
 
-import us_block_party from "./assets/us_block_party.png";
-import lush_neighborhood_street from "./assets/lush_neighborhood_street.png";
-import us_suburb_bakery from "./assets/us_suburb_bakery.png";
-import us_suburb_repair_cafe from "./assets/us_suburb_repair_cafe.png";
+import us_block_party from "./assets/us_block_party_hires.jpg";
+import lush_neighborhood_street from "./assets/lush_neighborhood_street_hires.jpg";
+import us_suburb_bakery from "./assets/us_suburb_bakery_hires.jpg";
+import us_suburb_repair_cafe from "./assets/us_suburb_repair_cafe_hires.jpg";
 import hero_garage_cafe from "./assets/hero_garage_cafe_hires.jpg";
+import evening_courtyard from "./assets/porchfront_evening_courtyard.jpg";
 
 import { LonelinessChart } from "./components/LonelinessChart";
 import GarageConversionInspector from "./components/GarageConversionInspector";
@@ -1012,6 +1013,18 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                                 Domestic robots can create and maintain lush front-yard gardens (planting, pruning, seasonal refresh), making porches more inviting and blocks measurably friendlier.
                             </p>
                         </div>
+                    </div>
+
+                    <div className="relative h-[340px] md:h-[440px] w-full overflow-hidden rounded-3xl border border-white/10 shadow-2xl group my-10">
+                        <Image
+                            src={evening_courtyard}
+                            alt="Neighbors sharing a twilight supper and outdoor cinema inside an open Craftsman residential garage courtyard under warm string lights"
+                            fill
+                            className="object-cover object-center group-hover:scale-105 transition-transform duration-[2s]"
+                            quality={100}
+                            sizes="(max-width: 1024px) 100vw, 896px"
+                        />
+                        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#06090c]/80 to-transparent" />
                     </div>
 
                     <OpenSourcePriority

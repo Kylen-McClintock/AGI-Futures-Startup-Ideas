@@ -23,12 +23,12 @@ import { useInView } from "react-intersection-observer";
 
 // Assets
 import heroImage from "./assets/aura_hero_vista.jpg";
-import cookImage from "./assets/aura_use_case_cooking.png";
-import fitImage from "./assets/aura_use_case_fitness.png";
-import officeImage from "./assets/aura_use_case_office.png";
-import connectImage from "./assets/aura_connection_avatar.png";
-import arGlassesImage from "./assets/aura_use_case_ar_glasses.png";
-import carHudImage from "./assets/aura_use_case_autonomous_car.png";
+import cookImage from "./assets/aura_use_case_cooking_hires.jpg";
+import fitImage from "./assets/aura_use_case_fitness_hires.jpg";
+import officeImage from "./assets/aura_use_case_office_hires.jpg";
+import connectImage from "./assets/aura_connection_avatar_hires.jpg";
+import arGlassesImage from "./assets/aura_use_case_ar_glasses_hires.jpg";
+import carHudImage from "./assets/aura_use_case_autonomous_car_hires.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 

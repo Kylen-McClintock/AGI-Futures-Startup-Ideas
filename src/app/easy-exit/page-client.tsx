@@ -22,8 +22,8 @@ import { MarketTAMChart } from "./components/MarketTAMChart";
 import heroImg from "./assets/easy_exit_hero_hires.jpg";
 import problemImg from "./assets/easy_exit_problem.jpg";
 import solutionImg from "./assets/easy_exit_solution.jpg";
-import marketImg from "./assets/easy_exit_market_1773609367126.png";
-import impactImg from "./assets/easy_exit_impact_1773609385141.png";
+import marketImg from "./assets/easy_exit_market_1773609367126_hires.jpg";
+import impactImg from "./assets/easy_exit_impact_1773609385141_hires.jpg";
 import trustVaultImg from "./assets/easy_exit_trust_vault.jpg";
 
 export default function EasyExitClient() {
