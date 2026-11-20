@@ -20,6 +20,7 @@ import safetyDashboardImage from './assets/deepguide_safety_dashboard_hires.jpg'
 import clinicalTrainingImage from './assets/deepguide_clinical_training_hires.jpg';
 import hologramTherapyImage from './assets/deepguide_hologram_therapy_hires.jpg';
 import integrationJourneyImage from './assets/deepguide_integration_journey.jpg';
+import clinicianPrepImage from './assets/deepguide_clinician_prep.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -336,6 +337,16 @@ export default function DeepGuideClientPage({ initialTags }: { initialTags: Proj
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             Who we serve and <br className="hidden sm:block" /><span className="text-white/50">how we grow.</span>
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-10 group">
+                        <Image
+                            src={clinicianPrepImage}
+                            alt="Therapist reviewing a longitudinal patient preparation brief and biometric baseline tablet in a calm sunlit clinical lounge"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-8">

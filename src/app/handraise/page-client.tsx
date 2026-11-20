@@ -23,6 +23,7 @@ import networkImage from "./assets/handraise_network.jpg";
 import breakthroughImage from "./assets/handraise_breakthrough_moment.jpg";
 import silentRoutingUxImage from "./assets/handraise_silent_routing_ux.jpg";
 import serendipityCityImage from "./assets/handraise_serendipity_city.jpg";
+import proofOfHelpImage from "./assets/handraise_proof_of_help.jpg";
 
 // Components
 import { HoverAcronym } from '@/components/HoverAcronym';
@@ -412,6 +413,16 @@ export default function HandraiseClientPage() {
                                 </p>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={proofOfHelpImage}
+                            alt="Portable Proof-of-Help impact card displaying verified contributor reputation and closed-loop founder decision outcome"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
                 </motion.section>
 

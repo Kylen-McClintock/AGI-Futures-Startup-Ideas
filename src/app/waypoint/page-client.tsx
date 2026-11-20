@@ -24,6 +24,7 @@ import fieldImage from './assets/waypoint_field_device_hires.jpg';
 import cleanCookingImage from './assets/waypoint_clean_cooking_hires.jpg';
 import problemPumpImage from './assets/waypoint_problem_hires.jpg';
 import businessTechImage from './assets/waypoint_tech_hires.jpg';
+import microgridVillageImage from './assets/waypoint_microgrid_village.jpg';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -450,6 +451,16 @@ export default function WaypointClient() {
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-12 group">
+                        <Image
+                            src={microgridVillageImage}
+                            alt="Solar microgrid, clean water pumping station, and thriving community market hub powered by verified infrastructure telemetry"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">

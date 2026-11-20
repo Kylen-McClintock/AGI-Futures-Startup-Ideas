@@ -28,6 +28,7 @@ import neighborhoodImg from "./assets/hq_neighborhood_van_1772949737173_hires.jp
 import groundedHeroImg from "./assets/hq_hero_grounded_1772952881184_hires.jpg";
 import cleanerTabletImg from "./assets/hq_cleaner_tablet_1772952910671_hires.jpg";
 import kitchenLaptopImg from "./assets/hq_kitchen_laptop_1772952899109_hires.jpg";
+import instantBidApprovalImg from "./assets/homequote_instant_bid_approval.jpg";
 
 const DEFAULT_TAGS = {
     sector: ["AI", "Housing"],
@@ -524,6 +525,16 @@ export default function HomeQuoteClientPage({ initialTags }: { initialTags: any 
                                 . Turning a 90-second video into a binding price removes the psychological friction blocking demand.
                             </p>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-10 group">
+                        <Image
+                            src={instantBidApprovalImg}
+                            alt="Homeowner reviewing three binding contractor bids and scheduled service windows generated from a 90-second walkthrough video"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <PriorArtMatrix />

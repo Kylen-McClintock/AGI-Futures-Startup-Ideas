@@ -25,6 +25,7 @@ import futureImage from './assets/thoughtline_future_hires.jpg';
 import mechanismImage from './assets/thoughtline_mechanism.jpg';
 import psychImage from './assets/thoughtline_psych_hires.jpg';
 import impactImage from './assets/thoughtline_impact_hires.jpg';
+import silentFlowImage from './assets/thoughtline_silent_flow.jpg';
 
 export default function ThoughtlineClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     const [activeIcp, setActiveIcp] = useState(0);
@@ -443,6 +444,16 @@ export default function ThoughtlineClientPage({ initialTags }: { initialTags: Pr
                                 <ExpandableCitation label="[12]" sourceUrl="https://csa-iot.org/all-solutions/matter/" sourceText="CSA. Matter FAQs. 2025." theme="violet" />
                             </p>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={silentFlowImage}
+                            alt="Designer in lightweight AR glasses silently controlling spatial workspace lighting and smart home instruments in real time"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
                 </motion.section>
 

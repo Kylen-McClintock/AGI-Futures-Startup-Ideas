@@ -26,6 +26,7 @@ import mechanicImg from "./assets/mechanic.jpg";
 import syndicateImg from "./assets/syndicate.jpg";
 import futureMainStreetImg from "./assets/future-main-street.jpg";
 import mainStreetHandoffImg from "./assets/main_street_handoff.jpg";
+import modernFleetImg from "./assets/main_street_modern_fleet.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -684,6 +685,16 @@ export default function ClientPage() {
                         </p>
                     </div>
                 </motion.section>
+
+                <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-20 group">
+                    <Image
+                        src={modernFleetImg}
+                        alt="AI-upgraded local service fleet depot with electric vans and technicians reviewing live dispatch tablets at sunrise"
+                        fill
+                        quality={100}
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                </div>
 
                 {/* Civilizational Impact */}
                 <motion.section

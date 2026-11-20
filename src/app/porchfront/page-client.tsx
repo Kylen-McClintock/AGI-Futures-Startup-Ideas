@@ -34,6 +34,7 @@ import us_suburb_repair_cafe from "./assets/us_suburb_repair_cafe_hires.jpg";
 import hero_garage_cafe from "./assets/hero_garage_cafe_hires.jpg";
 import evening_courtyard from "./assets/porchfront_evening_courtyard.jpg";
 import modular_kit_install from "./assets/porchfront_modular_kit_install.jpg";
+import botanical_yard from "./assets/porchfront_botanical_yard.jpg";
 
 import { LonelinessChart } from "./components/LonelinessChart";
 import GarageConversionInspector from "./components/GarageConversionInspector";
@@ -831,6 +832,16 @@ export default function PorchfrontClientPage({ initialTags }: { initialTags: any
                     </ul>
 
                     <UnitEconomicsWidget />
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={botanical_yard}
+                            alt="Lush front-yard botanical garden maintained by quiet domestic robotics framing a welcoming residential Porchfront micro-cafe"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
                 </FadeIn>
 
                 {/* 4 Expandable Scorecards & Stress-Tests */}

@@ -35,6 +35,7 @@ import twinOsImage from './assets/avatarlab_twinos_hires.jpg';
 import graphImage from './assets/avatarlab_graph_hires.jpg';
 import cellbankImage from './assets/avatarlab_cellbank_v2_hires.jpg';
 import patientPrecisionImage from './assets/avatarlab_patient_precision_impact.jpg';
+import microfluidicRoboticsImage from './assets/avatarlab_microfluidic_robotics.jpg';
 
 // Components
 import ProductStackFlow from './components/ProductStackFlow';
@@ -388,6 +389,16 @@ export default function AvatarLabClientPage({ initialTags }: { initialTags: Proj
                                 </p>
                             </div>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={microfluidicRoboticsImage}
+                            alt="Automated microfluidic organ-on-chip robotics array feeding high-throughput patient assay data into TwinOS"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
                 </motion.section>
 

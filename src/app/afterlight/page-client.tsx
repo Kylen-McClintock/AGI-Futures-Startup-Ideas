@@ -20,6 +20,7 @@ import timelineImage from './assets/afterlight_timeline_1773354220095_hires.jpg'
 import appImage from './assets/afterlight_app_1773354236688_hires.jpg';
 import closingImage from './assets/afterlight_closing_1773354249527_hires.jpg';
 import intergenerationalStoriesImage from './assets/afterlight_intergenerational_stories.jpg';
+import estateClarityImage from './assets/afterlight_estate_clarity.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -489,6 +490,16 @@ export default function AfterlightClientPage({ initialTags }: { initialTags: Pro
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-12 group">
+                        <Image
+                            src={estateClarityImage}
+                            alt="Adult siblings reviewing a calm, organized family legacy plan and keepsake archive together at a sunlit wooden dining table"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">

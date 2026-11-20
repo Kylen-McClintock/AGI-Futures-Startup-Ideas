@@ -27,6 +27,7 @@ import forestViewImage from "./assets/forest_view_hires.jpg";
 import communityHubImage from "./assets/community_hub_hires.jpg";
 import architectureImage from "./assets/architecture_hires.jpg";
 import microgridSanctuaryImage from "./assets/skyhold_microgrid_sanctuary.jpg";
+import evtolRidgeImage from "./assets/skyhold_evtol_ridge.jpg";
 
 export default function SkyholdClientPage({ initialTags }: { initialTags: ProjectTagsProps["tags"] }) {
     const tags = {
@@ -408,6 +409,16 @@ export default function SkyholdClientPage({ initialTags }: { initialTags: Projec
                         </ul>
                     </div>
                 </motion.section>
+
+                <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-20 group">
+                    <Image
+                        src={evtolRidgeImage}
+                        alt="Electric VTOL landing pad perched on a scenic timber ridgeline connecting remote Skyhold residences to a distant coastal metro"
+                        fill
+                        quality={100}
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                </div>
 
                 {/* Full-Width Expandable Scorecards */}
                 <motion.section

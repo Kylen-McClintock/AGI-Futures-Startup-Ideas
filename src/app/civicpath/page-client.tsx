@@ -20,6 +20,7 @@ import immigrantAppImage from './assets/immigrant_app.jpg';
 import situationRoomImage from './assets/situation_room.jpg';
 import gateImage from './assets/gate.jpg';
 import intakeImage from './assets/intake.jpg';
+import talentCityImpactImage from './assets/civicpath_talent_city_impact.jpg';
 import ValueFlowScenarios from './components/ValueFlowScenarios';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
@@ -450,6 +451,16 @@ export default function CivicPathClientPage({ initialTags }: { initialTags: Proj
                                 <li><strong>Employer Verification:</strong> Sub-licenses sold to enterprises navigating sponsored visas to pre-score their candidates.</li>
                             </ul>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={talentCityImpactImage}
+                            alt="Engineers, researchers, and founders arriving at a sunlit international innovation plaza welcoming global talent"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
                 </motion.section>
 

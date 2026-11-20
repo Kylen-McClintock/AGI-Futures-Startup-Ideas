@@ -24,6 +24,7 @@ import icpBotanicImage from './assets/icp_botanic_hires.jpg';
 import icpFunderImage from './assets/icp_funder_hires.jpg';
 import icpZooImage from './assets/icp_zoo_hires.jpg';
 import icpCreatorImage from './assets/icp_creator_hires.jpg';
+import backASpeciesUxImage from './assets/bioark_back_a_species_ux.jpg';
 
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
@@ -554,6 +555,16 @@ export default function BioArkClientPage({ initialTags }: { initialTags: Project
                             AGI may expand our ability to coordinate, it cannot cheaply restore lineages that were never preserved. BioArk uses better intelligence to protect the biological options that still exist, while there is still time.
                         </p>
                     </motion.div>
+                </div>
+
+                <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl my-12 group">
+                    <Image
+                        src={backASpeciesUxImage}
+                        alt="BioArk Back a Species public sponsorship portal showing endangered amphibian breeding milestones and verified stewardship updates"
+                        fill
+                        quality={100}
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
                 </div>
 
                 <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent my-20" />

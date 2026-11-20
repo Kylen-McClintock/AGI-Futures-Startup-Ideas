@@ -29,6 +29,7 @@ import officeImage from "./assets/aura_use_case_office_hires.jpg";
 import connectImage from "./assets/aura_connection_avatar_hires.jpg";
 import arGlassesImage from "./assets/aura_use_case_ar_glasses_hires.jpg";
 import carHudImage from "./assets/aura_use_case_autonomous_car_hires.jpg";
+import everydayPresenceImage from "./assets/aura_spatial_everyday_impact.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -504,13 +505,20 @@ export default function AuraClientPage({ initialTags }: { initialTags: any }) {
                             <ExpandableCitation number={12} source="Rousseau et al." title="Risk and Protective Factors Associated With Support of Violent Radicalization" />
                             <ExpandableCitation number={13} source="National Counterterrorism Center" title="Terrorism Prevention" />
                         </p>
-                        <div className="p-8 pb-32 mb-12 rounded-3xl bg-gradient-to-br from-[var(--primary)]/10 to-transparent border border-[var(--primary)]/20 relative">
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-10 group">
+                            <Image
+                                src={everydayPresenceImage}
+                                alt="Sunlit living room workshop where an embodied spatial AI companion supports calm everyday skill-building and human connection"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
+
+                        <div className="p-8 mb-12 rounded-3xl bg-gradient-to-br from-[var(--primary)]/10 to-transparent border border-[var(--primary)]/20 relative">
                             <p className="text-lg text-white/80 leading-relaxed font-light relative z-10 italic">
                                 "If AURA becomes the default embodied-agent layer and chooses the right incentives, it does more than create a big company. It helps bend everyday AI toward human flourishing, social cohesion, resilience, and ender prevention."
                             </p>
-                            <div className="absolute -bottom-8 -right-8 opacity-10 blur-[2px] pointer-events-none w-1/2 aspect-square mix-blend-screen scale-150">
-                                <Image src={connectImage} alt="" fill className="object-cover rounded-full mix-blend-lighten" />
-                            </div>
                         </div>
                     </section>
                     

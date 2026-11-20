@@ -25,6 +25,7 @@ import graphImage from './assets/helm_graph.jpg';
 import networkImage from './assets/helm_network_hires.jpg';
 import icpNetworkImage from './assets/helm_icp_network_hires.jpg';
 import morningBriefingImage from './assets/helm_morning_briefing.jpg';
+import spatialCompanyHqImage from './assets/helm_spatial_company_hq.jpg';
 import { InterestedButton } from "@/components/InterestedButton";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -224,6 +225,17 @@ export default function HelmClientPage({ initialTags, initialScores }: { initial
                                         A literal building that levels up with progress. Marketing has a campaign wall and creative bin. Sales shows a live pipeline you can drag. Product has a whiteboard and <HoverAcronym acronym="PRD" definition="Product Requirements Document" /> shelf. Dev has a terminal with tests and pull requests. Finance shows cash, burn, runway. Hit milestones to unlock rooms, dashboards, and power-ups. Pay to customize themes, layouts, and department mascots.
                                     </p>
                                 </div>
+                            </div>
+
+                            <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl group">
+                                <Image
+                                    src={spatialCompanyHqImage}
+                                    alt="Architectural cutaway of a Helm spatial company headquarters showing live autonomous departments across product, engineering, sales, and finance"
+                                    fill
+                                    unoptimized
+                                    quality={100}
+                                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                />
                             </div>
 
                             {/* 2 & 3. Agent teamwork & Jarvis */}

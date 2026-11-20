@@ -24,6 +24,7 @@ import swarm_workflow_hologram from "./assets/swarm_workflow_hologram.jpg";
 import logistics_dashboard_vista from "./assets/logistics_dashboard_vista.jpg";
 import murmuration_network_graph from "./assets/murmuration_network_graph.jpg";
 import murmuration_safety_harness from "./assets/murmuration_safety_harness.jpg";
+import murmuration_incumbent_teardown from "./assets/murmuration_incumbent_teardown.jpg";
 
 const DEFAULT_TAGS = {
   sector: ["AI", "Enterprise SaaS", "Coordination"],
@@ -495,9 +496,15 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
               <div className="flex items-start gap-2.5"><Layers className="w-4 h-4 text-[var(--primary)] shrink-0 mt-0.5" /> <span>What the highest-probability sequence of category capture looks like</span></div>
             </div>
           </div>
-          <p className="text-white/90 italic text-lg" style={{ textWrap: "pretty" }}>
+          <p className="text-white/90 italic text-lg mb-10" style={{ textWrap: "pretty" }}>
             This is useful on its own, not empty brand marketing. It attracts ambitious founders already primed to move and demonstrates the product&apos;s core simulation engine in public, category by category.
           </p>
+          <ParallaxImage
+            src={murmuration_incumbent_teardown}
+            alt="Murmuration incumbent vulnerability teardown workbench mapping legacy enterprise overhead against a 15-person AI-native swarm"
+            prompt="High-resolution strategic cost-structure teardown workstation comparing bloated legacy enterprise SG&A against a nimble AI-native startup swarm."
+            className="aspect-[16/9] w-full rounded-3xl"
+          />
         </ScrollReveal>
 
         {/* 4 EXPANDABLE SCORECARDS: MOAT, AGI SCALING SENSITIVITY, DIFFICULTY TO GET TO MARKET, FIRST EXPERIMENT */}

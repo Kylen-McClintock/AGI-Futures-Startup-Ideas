@@ -27,6 +27,7 @@ import pricingEngineImage from './assets/pricing_engine.jpg';
 import manualLaborImage from './assets/manual_labor_hires.jpg';
 import thematicClosingImage from './assets/thematic_closing_hires.jpg';
 import arWorkerDataImg from './assets/ar_worker_data_hires.jpg';
+import royaltyLedgerImage from './assets/oyr_royalty_ledger.jpg';
 
 // Components
 import { ICPUseCases } from './components/ICPUseCases';
@@ -347,6 +348,16 @@ export default function OwnYourReplacementClientPage({ initialTags }: { initialT
                         </p>
                         
                         <BusinessModelFlow />
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                            <Image
+                                src={royaltyLedgerImage}
+                                alt="Worker royalty ledger dashboard tracking verified skill-trace attribution payouts as downstream AI models train on contributed expertise"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
                     </div>
                 </motion.section>
 

@@ -32,6 +32,8 @@ import icpMinistryImage from './assets/icp_ministry_hires.jpg';
 import icpRegionImage from './assets/icp_region_hires.jpg';
 import marketScaleImage from './assets/civic_ui_hires.jpg';
 import sovereignDashboardImage from './assets/sovereign_dashboard.jpg';
+import sovereignVaultImage from './assets/public_ai_sovereign_vault.jpg';
+import civicServiceImpactImage from './assets/public_ai_civic_service_impact.jpg';
 
 import { ChevronDown } from 'lucide-react';
 
@@ -272,6 +274,16 @@ export default function PublicAIClient({ initialTags = {} }: any) {
                                 That layer ingests statutes, regulations, agency rules, case history, language norms, policy memos, procedural steps, appeals history, and optional citizen preference data. It also connects safely to government systems through a privacy-preserving integration fabric: role-based retrieval, field-level permissions, audit logging, encryption at rest and in transit, selective redaction, secure connectors, and deployment options that match the jurisdiction's requirements.
                             </p>
                         </div>
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                            <Image
+                                src={sovereignVaultImage}
+                                alt="Sovereign civic compute vault routing statutory rules through encrypted role-based retrieval boundaries"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
                     </div>
 
                     <div className="my-16">
@@ -467,7 +479,17 @@ export default function PublicAIClient({ initialTags = {} }: any) {
                     </div>
 
                     {/* CIVILIZATIONAL IMPACT (using glass panel <details>) */}
-                    <div className="my-16 mb-24">
+                    <div className="my-16 mb-24 space-y-10">
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl group">
+                            <Image
+                                src={civicServiceImpactImage}
+                                alt="Sunlit municipal civic hall where caseworkers and residents resolve permits and public services with transparent AI verification"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
+
                         <details className="group glass-panel rounded-3xl border border-[var(--primary)]/20 overflow-hidden [&_summary::-webkit-details-marker]:hidden cursor-pointer">
                             <summary className="p-8 flex items-center justify-between outline-none bg-[var(--primary)]/5 hover:bg-[var(--primary)]/10 transition-colors">
                                 <div className="flex flex-col gap-2">

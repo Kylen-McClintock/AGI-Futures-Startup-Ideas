@@ -32,6 +32,7 @@ import protoImage from "./assets/afl_prototyping_workspace_hires.jpg";
 import guildImage from "./assets/afl_guild_collaboration_hires.jpg";
 import dashImage from "./assets/afl_build_league_dashboard_hires.jpg";
 import launchDayImage from "./assets/afl_launch_day_v2.jpg";
+import venturePodSprintImage from "./assets/afl_venture_pod_sprint.jpg";
 
 const DEFAULT_TAGS = {
     sector: ["AI", "Education", "Governance"],
@@ -426,6 +427,16 @@ export default function AFLClientPage({ initialTags }: { initialTags: any }) {
                             <p className="text-white/80 font-light leading-relaxed m-0" style={{ textWrap: "pretty" }}>
                                 Weekly demos, kill decisions, shipping leaderboards, customer wins, and founder diaries become content. The audience watches ventures get built in real time, and the best applicants self-select in because they want to be seen. <strong className="font-medium text-white">Visibility becomes distribution.</strong> People do not just apply to learn. They apply to enter the arena.
                             </p>
+                        </div>
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-10 group">
+                            <Image
+                                src={venturePodSprintImage}
+                                alt="Small AI Founder Lab venture pod shipping live customer prototypes and telemetry inside a sunlit timber studio"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
                         </div>
                     </section>
 

@@ -24,6 +24,7 @@ import transactionOsImage from './assets/housegraph_transaction_os_v2_hires.jpg'
 import enterpriseImage from './assets/housegraph_enterprise_v2_hires.jpg';
 import problemImage from './assets/housegraph_problem_hires.jpg';
 import gtmImage from './assets/housegraph_gtm_hires.jpg';
+import closingDayImage from './assets/housegraph_closing_day.jpg';
 
 export default function HouseGraphClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
     // Fallbacks
@@ -464,6 +465,16 @@ export default function HouseGraphClientPage({ initialTags }: { initialTags: Pro
                         <h2 className="text-4xl sm:text-5xl font-light text-white tracking-tight leading-tight">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-12 group">
+                        <Image
+                            src={closingDayImage}
+                            alt="Young couple receiving keys on a sunlit front porch with a verified HouseGraph digital home passport"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-12 mb-12">

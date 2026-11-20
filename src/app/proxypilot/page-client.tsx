@@ -25,6 +25,7 @@ import icpRetailImg from "./assets/proxypilot_icp_retail_hires.jpg";
 import icpPlatformImg from "./assets/proxypilot_icp_platform_hires.jpg";
 import creatorMandateGtmImg from "./assets/proxypilot_creator_mandate_gtm.jpg";
 import shareholderDemocracyImg from "./assets/proxypilot_shareholder_democracy.jpg";
+import brokerageRailsImg from "./assets/proxypilot_brokerage_rails.jpg";
 
 // Shared Animation Settings
 const FADE_UP: any = {
@@ -606,6 +607,16 @@ export default function ProxyPilotClient({ initialData, valuationForecast }: { i
                             </div>
                         )}
                     </motion.div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={brokerageRailsImg}
+                            alt="Enterprise ProxyPilot brokerage integration workbench routing verified shareholder proxy ballots across consumer retail apps"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
 
                     <div className="bg-transparent mt-12 p-8 rounded-2xl border border-white/5 border-l-4 border-l-[var(--primary)]">
                         <h4 className="text-xl text-white font-medium mb-4">The Synthesis</h4>

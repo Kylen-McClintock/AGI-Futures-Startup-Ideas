@@ -40,6 +40,7 @@ import dashboardImage from './assets/dashboard_hires.jpg';
 import grazingImage from './assets/grazing_hires.jpg';
 import icpGrowerImage from './assets/icp_grower_hires.jpg';
 import icpDeveloperImage from './assets/icp_developer_hires.jpg';
+import dualHarvestImpactImage from './assets/helioterra_dual_harvest_impact.jpg';
 import heatStressedCropsImage from './assets/heat_stressed_crops_hires.jpg';
 
 export default function HelioTerraClientPage({ initialTags }: { initialTags: ProjectTagsProps['tags'] }) {
@@ -519,6 +520,16 @@ export default function HelioTerraClientPage({ initialTags }: { initialTags: Pro
                         <h2 className="text-5xl sm:text-6xl font-light text-white tracking-tight leading-tight mb-12">
                             Civilizational Impact.
                         </h2>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mb-14 group">
+                        <Image
+                            src={dualHarvestImpactImage}
+                            alt="Golden hour agrivoltaic harvest beneath elevated bifacial solar arrays shading thriving rows of specialty crops"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="grid md:row-gap-12 md:grid-cols-2 gap-12 mb-16">

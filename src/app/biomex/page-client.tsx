@@ -24,6 +24,7 @@ import clinicLab from './assets/clinic_lab_hires.jpg';
 import capsuleProduct from './assets/capsule_product.jpg';
 import donorNetwork from './assets/donor_network_hires.jpg';
 import donorPhenotypes from './assets/biomex_donor_phenotypes.jpg';
+import engineeredConsortiaLab from './assets/biomex_engineered_consortia_lab.jpg';
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -536,6 +537,16 @@ export default function BiomeXClientPage({ initialTags }: { initialTags: Project
                                 The scarce asset remains rare human biology with verified transfer effects. That is why this category can compound in an AGI world instead of getting flattened by it.
                             </div>
                         </div>
+                    </div>
+
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-12 group">
+                        <Image
+                            src={engineeredConsortiaLab}
+                            alt="Automated microbial consortia synthesis laboratory pairing anaerobic bioreactors with longitudinal metagenomic profiling"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     <div className="p-6 bg-white/[0.02] border border-white/5 rounded-3xl mt-12 group hover:bg-white/[0.04] transition-colors">

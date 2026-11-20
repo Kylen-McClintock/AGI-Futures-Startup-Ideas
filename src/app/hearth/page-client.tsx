@@ -28,6 +28,7 @@ import nomadImage from "./assets/use_case_nomad_hires.jpg";
 import familyImage from "./assets/use_case_family_hires.jpg";
 import founderImage from "./assets/use_case_founder_hires.jpg";
 import agingImage from "./assets/use_case_aging_hires.jpg";
+import dreamPlannerImage from "./assets/hearth_dream_planner_ux.jpg";
 import { NeglectednessSlider } from "@/components/NeglectednessSlider";
 import { OpenSourcePriority } from "@/components/OpenSourcePriority";
 
@@ -416,6 +417,16 @@ export default function HearthClientPage({ initialTags, initialScores }: { initi
                                     <p className="text-white/70 font-light leading-relaxed">Document the first 10 "Founding Hearths" in public. Make them aesthetically excellent and narratively legible. Each one becomes both case study and cultural propaganda.</p>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl mt-10 group">
+                            <Image
+                                src={dreamPlannerImage}
+                                alt="Design Your Dream Compound simulator showing multi-household site plan, budget splits, and governance rules"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
                         </div>
                     </section>
 

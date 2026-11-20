@@ -25,6 +25,7 @@ import solutionImg from "./assets/easy_exit_solution.jpg";
 import marketImg from "./assets/easy_exit_market_1773609367126_hires.jpg";
 import impactImg from "./assets/easy_exit_impact_1773609385141_hires.jpg";
 import trustVaultImg from "./assets/easy_exit_trust_vault.jpg";
+import verifiedReceiptImg from "./assets/easy_exit_verified_receipt.jpg";
 
 export default function EasyExitClient() {
     const theme = themeMap['emerald'];
@@ -366,9 +367,18 @@ export default function EasyExitClient() {
                     </div>
                 </section>
                 
-                <section className="py-12">
+                <section className="py-12 space-y-12">
                     <h3 className="text-2xl font-light text-white text-center mb-8">Agent-to-Merchant Revocation Flow</h3>
                     <ValueFlowDiagram />
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl group">
+                        <Image
+                            src={verifiedReceiptImg}
+                            alt="Cryptographically signed Easy Exit revocation receipt showing instant subscription termination and zero remaining billing obligations"
+                            fill
+                            quality={100}
+                            className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        />
+                    </div>
                 </section>
 
                 {/* SCORING (Moat / Difficulty / Open Source) */}

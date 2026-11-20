@@ -27,6 +27,7 @@ import sanctuaryImage from "./assets/sanctuary_hires.jpg";
 import ritualImage from "./assets/ritual_hires.jpg";
 import palliativeImage from "./assets/palliative_hires.jpg";
 import landImage from "./assets/land_hires.jpg";
+import sanctuaryPavilionImage from "./assets/wild_return_sanctuary_pavilion.jpg";
 
 import icpCoupleImage from "./assets/icp_couple_hires.jpg";
 
@@ -170,6 +171,16 @@ export default function WildReturnClientPage({ initialTags }: { initialTags: any
                         <p className="text-lg text-white/80 leading-relaxed font-light mb-8">
                             The mechanism is straightforward. When death is made less industrial, more local, and more embodied, families get more agency, more coherence, and a better container for grief. When burial is tied to protected land and ecological stewardship, the disposition itself becomes restorative rather than extractive. 
                         </p>
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl my-10 group">
+                            <Image
+                                src={sanctuaryPavilionImage}
+                                alt="Quiet timber and stone memorial pavilion overlooking protected coastal meadowland and wildflower trails at golden hour"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
 
                         <h3 className="text-2xl font-serif text-white mt-12 mb-8">The Five Layers</h3>
                         <div className="space-y-6">

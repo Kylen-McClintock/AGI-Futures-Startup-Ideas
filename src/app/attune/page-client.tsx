@@ -10,6 +10,7 @@ import attune_hero_vista from "./assets/attune_hero_vista_hires.jpg";
 import attune_kitchen_moment from "./assets/attune_kitchen_moment_hires.jpg";
 import attune_memory_engine from "./assets/attune_memory_engine.jpg";
 import attune_ritual_evening from "./assets/attune_ritual_evening.jpg";
+import attune_sunday_checkin from "./assets/attune_sunday_checkin.jpg";
 import { ExpandableCitation } from "@/components/ExpandableCitation";
 import { RelationshipStatGraph } from "./components/RelationshipStatGraph";
 import { RevealSection, FadeIn } from "./components/RevealSection";
@@ -443,6 +444,16 @@ export default function HomeClientPage({ initialTags }: { initialTags: any }) {
                     </p>
 
                     <div className="space-y-12">
+
+                        <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/15 shadow-2xl group">
+                            <Image
+                                src={attune_sunday_checkin}
+                                alt="Couple sharing morning coffee over a sunlit kitchen table while completing their guided 10-minute Sunday Attune relationship sync"
+                                fill
+                                quality={100}
+                                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                            />
+                        </div>
 
                         <div className="grid md:grid-cols-2 gap-8">
                             <FadeIn delay={0.1} className="glass p-6 rounded-2xl border border-white/5">
