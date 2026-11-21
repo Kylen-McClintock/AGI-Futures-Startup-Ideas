@@ -19,7 +19,7 @@ import avatarlab_hero from "@/app/avatarlab/assets/avatarlab_hero_hires.jpg";
 import proofrun_hero from "@/app/proofrun/assets/proofrun_hero_hires.jpg";
 import handraise_hero from "@/app/handraise/assets/handraise_hero.jpg";
 import hearth_hero from "@/app/hearth/assets/hero_hires.jpg";
-import biophilia_ark_hero from "@/app/biowalls/assets/cloud_forest_hires.jpg";
+import biophilia_ark_hero from "@/app/biowalls/assets/office_lobby_wall_v1_hires.jpg";
 import sellcraft_hero from "@/app/sellcraft/assets/sellcraft_hologram_hero.jpg";
 import afterlight_hero from "@/app/afterlight/assets/afterlight_hero_hires.jpg";
 import civicpath_hero from "@/app/civicpath/assets/hero.jpg";

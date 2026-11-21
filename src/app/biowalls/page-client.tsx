@@ -283,8 +283,8 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
                     <div className="grid md:grid-cols-2 gap-8 mb-8">
                         {/* Desert Monolith */}
                         <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
-                            <div className="relative h-64 w-full">
-                                <Image src={desertMonolith} alt="Desert Monolith" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="relative aspect-[16/9] w-full overflow-hidden">
+                                <Image src={desertMonolith} alt="Flush-integrated Desert Monolith portal sculpted in Navajo sandstone with warm vertical light cleft, reflective water sill, and leopard gecko" fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Desert Monolith</h3>
@@ -304,8 +304,8 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
 
                         {/* Freshwater Cliff */}
                         <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
-                            <div className="relative h-64 w-full">
-                                <Image src={freshwaterCliff} alt="Freshwater Cliff" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="relative aspect-[16/9] w-full overflow-hidden">
+                                <Image src={freshwaterCliff} alt="Flush limestone Freshwater Cliff paludarium with cascading slate ledges and sunlit stream with schooling tetras" fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Freshwater Cliff</h3>
@@ -325,8 +325,8 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
 
                         {/* Cloud Forest Wall */}
                         <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
-                            <div className="relative h-64 w-full">
-                                <Image src={cloudForestPanel} alt="Cloud Forest Wall" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="relative aspect-[16/9] w-full overflow-hidden">
+                                <Image src={cloudForestPanel} alt="Full-wall flush Cloud Forest portal inside a smoked-walnut and honed-travertine living room with mist, arching mossy branches, and poison dart frogs" fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Cloud Forest Wall</h3>
@@ -346,8 +346,8 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
 
                         {/* Prairie Lightwall */}
                         <div className="glass-panel rounded-3xl overflow-hidden border border-white/5 hover:border-[var(--primary)]/20 transition-colors group flex flex-col">
-                            <div className="relative h-64 w-full">
-                                <Image src={prairieLightwall} alt="Prairie Lightwall" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+                            <div className="relative aspect-[16/9] w-full overflow-hidden">
+                                <Image src={prairieLightwall} alt="Flush horizontal Prairie Lightwall with living native tallgrasses, mineral-earth strata, and warm golden-hour microLED sky light" fill quality={100} className="object-cover transition-transform duration-700 group-hover:scale-105" />
                             </div>
                             <div className="p-8 flex-1 flex flex-col">
                                 <h3 className="text-2xl font-light text-white mb-3 flex items-center gap-2">Prairie Lightwall</h3>
@@ -507,8 +507,8 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
                                 Content focuses on extreme high-definition macro photography of the micro-ecosystems, showcasing the vividly alive, perfectly controlled miniature worlds just behind the glass.
                             </p>
                         </div>
-                        <div className="md:w-1/2 relative h-64 sm:h-80 w-full rounded-2xl overflow-hidden border border-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-colors shadow-2xl shadow-black/50">
-                            <Image src={dartFrog} alt="High definition macro photography of a vivid poison dart frog inside a luxury biowall" fill className="object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <div className="md:w-1/2 relative aspect-[16/9] w-full rounded-2xl overflow-hidden border border-[var(--primary)]/10 group-hover:border-[var(--primary)]/30 transition-colors shadow-2xl shadow-black/50">
+                            <Image src={dartFrog} alt="High definition macro photography of a vivid yellow-and-black poison dart frog and jewel orchid inside a flush luxury biowall" fill quality={100} className="object-cover transition-transform duration-1000 group-hover:scale-105" />
                         </div>
                     </div>
                 </motion.section>
@@ -622,15 +622,14 @@ export default function BioWallsClientPage({ initialTags }: { initialTags: Proje
                         </p>
                     </div>
 
-                    <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] rounded-[2rem] overflow-hidden mt-10 shadow-2xl border border-white/10 group">
+                    <div className="relative w-full aspect-[16/9] rounded-[2rem] overflow-hidden mt-10 shadow-2xl border border-white/15 group">
                         <Image
                             src={modularEngineeringImage}
-                            alt="Ecological engineer inspecting a modular misted living moss and wild orchid wall beside closed-loop telemetry in a sunlit atrium"
+                            alt="Designer fitting living moss into a 3D-printed sculpted mineral-composite habitat wall module alongside the BioWalls Digital Twin OS"
                             fill
                             quality={100}
                             className="object-cover transition-transform duration-1000 group-hover:scale-105"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#06090c]/45 via-transparent to-transparent pointer-events-none" />
                     </div>
                 </motion.section>
 
